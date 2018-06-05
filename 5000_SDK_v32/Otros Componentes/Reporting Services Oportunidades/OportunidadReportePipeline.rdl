@@ -1,0 +1,1740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Campana">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=esther;Initial Catalog=Pos20Suc18</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos Campana:</Prompt>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>8b55dc45-a262-45ec-a6ad-8a2069404b73</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DatosPipe">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Empresa">
+            <Value>=Parameters!Empresa.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Sucursal">
+            <Value>=Parameters!Sucursal.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@AgenteD">
+            <Value>=Parameters!AgenteD.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@AgenteA">
+            <Value>=Parameters!AgenteA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Plantilla">
+            <Value>=Parameters!Plantilla.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Moneda">
+            <Value>=Parameters!Moneda.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FechaD">
+            <Value>=Parameters!FechaD.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FechaA">
+            <Value>=Parameters!FechaA.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>spOportunidadReportePipeline</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Clave">
+          <DataField>Clave</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RID">
+          <DataField>RID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PorcentajePonderado">
+          <DataField>PorcentajePonderado</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PorcentajeAvanceClave">
+          <DataField>PorcentajeAvanceClave</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PorcentajeAvance">
+          <DataField>PorcentajeAvance</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ImporteOportunidad">
+          <DataField>ImporteOportunidad</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Etiqueta">
+          <DataField>Etiqueta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImporteEstimadoClave">
+          <DataField>ImporteEstimadoClave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ImporteEstimado">
+          <DataField>ImporteEstimado</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NumLeadsClave">
+          <DataField>NumLeadsClave</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Empresa">
+          <DataField>Empresa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmpresaNombre">
+          <DataField>EmpresaNombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion2">
+          <DataField>Direccion2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion3">
+          <DataField>Direccion3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion4">
+          <DataField>Direccion4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Titulo">
+          <DataField>Titulo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Reporte">
+          <DataField>Reporte</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClaveT">
+          <Value>(TODAS)</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EmpresaLista">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <CommandText>SELECT Empresa, Nombre FROM Empresa</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Empresa">
+          <DataField>Empresa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgenteLista">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>spOportunidadAgenteLista</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Agente">
+          <DataField>Agente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SucursalLista">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>spOportunidadSucursalLista</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Sucursal">
+          <DataField>Sucursal</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EmpresaNombre">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Empresa">
+            <Value>=Parameters!Empresa.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT Nombre FROM Empresa WHERE Empresa = @Empresa</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgenteDNombre">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@AgenteD">
+            <Value>=Parameters!AgenteD.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT Nombre FROM Agente WHERE Agente=@AgenteD</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgenteANombre">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@AgenteA">
+            <Value>=Parameters!AgenteA.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT Nombre FROM Agente WHERE Agente=@AgenteA</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SucursalNombre">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Sucursal">
+            <Value>=Parameters!Sucursal.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT Nombre FROM Sucursal WHERE Sucursal = @Sucursal</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="MonedaLista">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <CommandText>SELECT Moneda FROM Mon ORDER BY Orden</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Moneda">
+          <DataField>Moneda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ListaPlantillas">
+      <Query>
+        <DataSourceName>Campana</DataSourceName>
+        <CommandText>SELECT ID, Plantilla FROM OportunidadPlantilla WHERE ISNULL(Estatus,'') = 'Activa'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Plantilla">
+          <DataField>Plantilla</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Chart Name="Chart5">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart5_CategoryGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Etiqueta.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <Label>=Fields!Etiqueta.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Num Leads Clave</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="NumLeadsClave">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!NumLeadsClave.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                        <Label>=FormatCurrency(Fields!ImporteEstimadoClave.Value, 0)</Label>
+                        <Visible>true</Visible>
+                      </ChartDataLabel>
+                      <ToolTip>#VALY</ToolTip>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>OportunidadReportePipelineD</ReportName>
+                              <Parameters>
+                                <Parameter Name="Empresa">
+                                  <Value>=Parameters!Empresa.Value</Value>
+                                </Parameter>
+                                <Parameter Name="Sucursal">
+                                  <Value>=Parameters!Sucursal.Value</Value>
+                                </Parameter>
+                                <Parameter Name="AgenteD">
+                                  <Value>=Parameters!AgenteD.Value</Value>
+                                </Parameter>
+                                <Parameter Name="AgenteA">
+                                  <Value>=Parameters!AgenteA.Value</Value>
+                                </Parameter>
+                                <Parameter Name="FechaD">
+                                  <Value>=Parameters!FechaD.Value</Value>
+                                </Parameter>
+                                <Parameter Name="FechaA">
+                                  <Value>=Parameters!FechaA.Value</Value>
+                                </Parameter>
+                                <Parameter Name="Plantilla">
+                                  <Value>=Parameters!Plantilla.Value</Value>
+                                </Parameter>
+                                <Parameter Name="Moneda">
+                                  <Value>=Parameters!Moneda.Value</Value>
+                                </Parameter>
+                                <Parameter Name="Clave">
+                                  <Value>=Fields!Clave.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Funnel</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Título del eje</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Título del eje</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Título del eje</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Título del eje</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Título del gráfico</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>Sin datos disponibles</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DatosPipe</DataSetName>
+            <Top>3.18868cm</Top>
+            <Left>0.14973cm</Left>
+            <Height>9.28625cm</Height>
+            <Width>17.11152cm</Width>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>11.00563in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="RID1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Count(Fields!RID.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RID1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Titulo">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Titulo.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Titulo.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.46875in</Size>
+                    <CellContents>
+                      <Textbox Name="Titulo">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Titulo.Value</Value>
+                                <Style>
+                                  <FontSize>18pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Titulo</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Reporte">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Reporte.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Reporte.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>0.25in</Size>
+                        <CellContents>
+                          <Textbox Name="Reporte">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Reporte.Value</Value>
+                                    <Style />
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Reporte</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>None</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DatosPipe</DataSetName>
+            <Top>0.1241in</Top>
+            <Left>0.05895in</Left>
+            <Height>0.96875in</Height>
+            <Width>11.00563in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix2">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox14">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox15">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox15</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox18">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox18</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox19">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Empresa</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox19</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>4.02083in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="RID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Count(Fields!RID.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RID</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="EmpresaNombre1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!EmpresaNombre.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!EmpresaNombre.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="EmpresaNombre1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!EmpresaNombre.Value</Value>
+                                <Style>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>EmpresaNombre1</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Direccion2">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Direccion2.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Direccion2.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>0.25in</Size>
+                        <CellContents>
+                          <Textbox Name="Direccion2">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Direccion2.Value</Value>
+                                    <Style>
+                                      <FontSize>9pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Direccion2</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>None</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Direccion3">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Direccion3.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Direccion3.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixHeader>
+                            <Size>0.25in</Size>
+                            <CellContents>
+                              <Textbox Name="Direccion3">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>=Fields!Direccion3.Value</Value>
+                                        <Style>
+                                          <FontSize>9pt</FontSize>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Direccion3</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>LightGrey</Color>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember>
+                              <Group Name="Direccion4">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!Direccion4.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!Direccion4.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                              <TablixHeader>
+                                <Size>0.25in</Size>
+                                <CellContents>
+                                  <Textbox Name="Direccion4">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!Direccion4.Value</Value>
+                                            <Style>
+                                              <FontSize>9pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Direccion4</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>LightGrey</Color>
+                                        <Style>None</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <TablixMembers>
+                                <TablixMember />
+                              </TablixMembers>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Empresa">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Empresa.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Empresa.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.08333in</Size>
+                    <CellContents>
+                      <Textbox Name="Empresa">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Empresa.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Empresa</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DatosPipe</DataSetName>
+            <Top>1.25539in</Top>
+            <Left>6.96042in</Left>
+            <Height>1.25in</Height>
+            <Width>4.10416in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="TotalActividades2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>4.57698cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.00031cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ImporteOportunidad2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Label>Total Actividades</Label>
+                                  <Value>T</Value>
+                                  <ToolTip>Total Actividades</ToolTip>
+                                  <MarkupType>HTML</MarkupType>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>otal Actividades:</Value>
+                                  <ToolTip>Total Actividades</ToolTip>
+                                  <MarkupType>HTML</MarkupType>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ImporteOportunidad</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>#e5e5e5</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ImporteOportunidad">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!ImporteEstimadoClave.Value)</Value>
+                                  <ActionInfo>
+                                    <Actions>
+                                      <Action>
+                                        <Drillthrough>
+                                          <ReportName>OportunidadReportePipelineD</ReportName>
+                                          <Parameters>
+                                            <Parameter Name="Empresa">
+                                              <Value>=Parameters!Empresa.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="Sucursal">
+                                              <Value>=Parameters!Sucursal.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="AgenteD">
+                                              <Value>=Parameters!AgenteD.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="AgenteA">
+                                              <Value>=Parameters!AgenteA.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="FechaD">
+                                              <Value>=Parameters!FechaD.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="FechaA">
+                                              <Value>=Parameters!FechaA.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="Plantilla">
+                                              <Value>=Parameters!Plantilla.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="Moneda">
+                                              <Value>=Parameters!Moneda.Value</Value>
+                                            </Parameter>
+                                            <Parameter Name="Clave">
+                                              <Value>=Fields!ClaveT.Value</Value>
+                                            </Parameter>
+                                          </Parameters>
+                                        </Drillthrough>
+                                      </Action>
+                                    </Actions>
+                                  </ActionInfo>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>OportunidadReportePipelineD</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="Empresa">
+                                      <Value>=Parameters!Empresa.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="Sucursal">
+                                      <Value>=Parameters!Sucursal.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="AgenteD">
+                                      <Value>=Parameters!AgenteD.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="AgenteA">
+                                      <Value>=Parameters!AgenteA.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="FechaD">
+                                      <Value>=Parameters!FechaD.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="FechaA">
+                                      <Value>=Parameters!FechaA.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="Plantilla">
+                                      <Value>=Parameters!Plantilla.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="Moneda">
+                                      <Value>=Parameters!Moneda.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="Clave">
+                                      <Value>=Fields!ClaveT.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>#e5e5e5</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DatosPipe</DataSetName>
+            <Top>12.43938cm</Top>
+            <Left>7.68396cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.57729cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>13.14521cm</Height>
+        <Style />
+      </Body>
+      <Width>28.87132cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.50825cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Logo">
+              <Source>Embedded</Source>
+              <Value>Logo</Value>
+              <Top>0.05in</Top>
+              <Left>0.05895in</Left>
+              <Height>2.27542cm</Height>
+              <Width>6.50875cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.5cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="textbox16">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=WeekdayName(Weekday(Globals!ExecutionTime)) &amp; ", " &amp; Day(Globals!ExecutionTime) &amp; " de " &amp; MonthName(Month(Globals!ExecutionTime)) &amp; " de " &amp; Year(Globals!ExecutionTime) &amp; ", " &amp; TimeOfDay</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Height>0.5cm</Height>
+              <Width>14.60177cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <TopBorder>
+                  <Style>Solid</Style>
+                </TopBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Página " &amp; Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Left>14.60177cm</Left>
+              <Height>0.5cm</Height>
+              <Width>13.50226cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <TopBorder>
+                  <Style>Solid</Style>
+                </TopBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style />
+        </PageFooter>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
+        <LeftMargin>2.5cm</LeftMargin>
+        <RightMargin>2.5cm</RightMargin>
+        <TopMargin>2.5cm</TopMargin>
+        <BottomMargin>2.5cm</BottomMargin>
+        <ColumnSpacing>1cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Empresa">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>EmpresaLista</DataSetName>
+          <ValueField>Empresa</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Empresa</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EmpresaLista</DataSetName>
+          <ValueField>Empresa</ValueField>
+          <LabelField>Nombre</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Sucursal">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>-1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sucursal</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SucursalLista</DataSetName>
+          <ValueField>Sucursal</ValueField>
+          <LabelField>Nombre</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="AgenteD">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(Todos)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Del Agente</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>AgenteLista</DataSetName>
+          <ValueField>Agente</ValueField>
+          <LabelField>Nombre</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="AgenteA">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(Todos)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Al Agente</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>AgenteLista</DataSetName>
+          <ValueField>Agente</ValueField>
+          <LabelField>Nombre</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Plantilla">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ListaPlantillas</DataSetName>
+          <ValueField>ID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Plantilla</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ListaPlantillas</DataSetName>
+          <ValueField>Plantilla</ValueField>
+          <LabelField>Plantilla</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Moneda">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>MonedaLista</DataSetName>
+          <ValueField>Moneda</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Moneda</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>MonedaLista</DataSetName>
+          <ValueField>Moneda</ValueField>
+          <LabelField>Moneda</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="FechaD">
+      <DataType>DateTime</DataType>
+      <Prompt>De la Fecha</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FechaA">
+      <DataType>DateTime</DataType>
+      <Prompt>A la Fecha</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Logo">
+      <MIMEType>image/bmp</MIMEType>
+      <ImageData>Qk3O+AAAAAAAADYAAAAoAAAA9gAAAFYAAAABABgAAAAAAAAAAAAgLgAAIC4AAAAAAAAAAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+jdqWAWvYVN/////////////////////////////////vz7tXY3rWgi9/Dp////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z6N2pYBa9hU3////////////////////////////////+/Pu1djetaCL38On/////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////f399bW1v////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Po3algFr2FTf////////////////////////////////78+7V2N61oIvjz7f//////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+vr6lZWVY2Njw8PD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6NbC2bma9ezj////////////////9Ovi2Lma6dfE/////////////////////Pr34ciuy59zxZVjzaR54ces9/Hr////////////////////////5tG83cGk+vby////////////5c+53sKm+/j0////////////48213sKl+/fz////////5c63yJtsx5dn4civ/fv54Mar59K+////////5c643MCi+fXw/////////v3838So2bmY9vDq////////7+HT1K+KxpZlyJps1rSR7d/Q//7+////////////////////9u/o2bqb6tnG/////////////////Pr438Wq4smw//79////////////////////////////////7N3N2bma9u/n////////////+PLs272e59O/////////+/fz2bmYxZRizKF27uHT+PLs2bma8+rg////8+jdqWAWv4lT+fPu1bKOxZNhzaR56tnH/////////////vz7tXY3rmol9e3l3sGlxpVlyZxu48qy/v7+////////////////////59O/z6V8xZRjy59y272f8+je////////5tG8276g+fPu////////////9ezk2bma7t/Q
+/////fz62LeV1bGN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6+vqWlpZeXl5iYmJlZWXCwsL////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/f22eTuZQgDRq4P////////////////Rq4SZQwC2eDr9/Pz////////////z6uC4fD+dSgCqYxuzcjGvbCejVQbgxqz///////////////////////+9hEqkWAvy6N3///////////+5fkKnXA/06+H///////////+1eDmmWw7z6uH////Yt5afTwCpYBa4fD+tZyG8hEulWQzGlWP///////+4fD+iVQbw5dj////////Ws4+aRQC8hEv69/P////VsYyiVAWjVQaxbyyycS+oXRK4fUL+/v3////////////////////o1cKbRwDHmGf////////////////58u2rYxyxbyv+/Pv////////////////////////////////No3maRADo07/////////////t3c2fTQDAilP////8+fbAilOdSwCxby22dziuaSS+iFCcSADm0Lr////z6N2qYhmzcjG0dTSpYBezczKlWg2gUADSrIT////////+/Pu1dzirZBy4fUCnXRGzcjKqYhmdSwDCjlv7+PX////////8+fbFk2KeTACnXRGycjCxbyykWQvNo3j///////+9hEugUADu4NL////////////lzbaaRADRqYL////x5dmhUQCb
+RwD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////r6+paWll5eXmVlZWZmZmNjY2VlZcLCwv////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Pp3qphGKJTBLqARv7+/f///////////7yETKJSA6hfFPDl2f////////37+ryDSp9OANa0kvfx6/////z59+/i1Pn07////////////////////////8CKUqlfFvPp3////////////72ESqtkGvXs4////////////7l/QqpjGfXt5fv39K9rJ6pjG/Hm2/////Tr4rd7PZ5MAM2kev///////7yDSKddEfHm2v///+zcy6RXCq5rJ/bv5////+LIr55MALl+Qu/h0/79/P7+/vbu5vDl2P///////////////////////+nXxaBPAMqdb/////////////////nz7q9rJrV2Nf78+////////////////////////////////9CogJ9MAOnVwv///////////+7f0KRVB8OQW////+jVwZ5MAMGMV/38+////+XPuaddEqNUBOrZyP////Po3axlHaBPAMSTYPbv6P////Lm2rl9QJ5MAOHJsP////78+7d5O55NALZ5O/Dj1/////fx6smbbJtIAM6lev///////82keZxIAMmbbfTr4f////38+/Lo3fXt5P///////8CKU6VYC+/i1P///////////+bQup9MANOtiP////r28sGLVryDSP//////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////+fn5lZWVXl5eZWVlZmZmZmZmZmZmY2NjZWVlwcHB////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4sqxolICwItVqmIa9Orh////////9/DprWgjuXxAp10S3L6g////////6dbEn08Ayp1v////////////////////////////////////////////////wIpTqWAX8+nf////////////vYRLq2Qb9ezj////////////uX9DqmMa9u7m+PPtq2Mbt3o7////////////59TAn04AzaN4////////vINJp14T9u/n+/j1s3MzolQG6NbC/////v39uX9DqF8W9e7m////////////////////////////////////////////6dfFoFAAyp1v////////////////+fPur2sntXY2/vz7////////////////////////////////0KiAn00A6dXC////////////7t/QpFYIw5Bc////48y0nEkA1bOP////////////yZptoVIC69vK////8+jdqmEYr20p/Pj1////////////7+HTpFgMu4BG/v79/v38tng5pFgM7d7P/////////////Pr4sG4rq2Mb+PLr9/DqqWEYt3s+////////////////////////////////wIpUpVkM7+LU////////////5tC6n00A062I/////////////v79////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////5+fmVlZVeXl5lZWVmZmZmZmZmZmZmZmZmZmZjY2NkZGTBwcH////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////JnXCoXxTgxaumWg3hx67////////p1sShUQLYt5WzczHBi1b////////YtpSdTADgxq369vL59fD59fD59fD59fD69/P+/v7////////////////////AilOpYBfz6d////////////+9hEurZBv17OP///////////+5f0OqYxr06+L+/v7BjVahUQHgxqv////////v4dOgUADNo3j///////+9hEuhUgTbvZ/Ln3OcSQDWs4/////////38OmsZh+4fD/7+PT59fD59fD59fD59fD59fD9+/r////////////////////p18WgUADKnW/////////////////58+6vaye1djb+/Pv////////////////////////////////QqICfTQDp1cL////////////u39CkVgjDkFz////06+GpYRewbivy5tv////////RqoShUgLr28r////z6N2pYBa9hU3////////////////+/v61eDisZR738On///+1djetaCL48uz////////////////JnG2gTwDs3Mzs3MugTwDNo3n79/T59fD59fD59fD59fD69vH+/fz////AilSlWQzv4tT////////////m0LqfTQDTrYj/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////n5+ZSUlF5eXmVlZWZmZmZmZmZmZmZmZmZmZmZmZmZmZmNjY2RkZMDAwP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////38+rR1NbNyMffx6rBtKsaWZv///////9Swi6JTBO/i1cSSYK1nIPjz7v///9Swi6FRAaxnIK5pJK1oIq1oIq1oIrBsKLuCR/fw6f///////////////////8CKU6lgGPPp4P///////////72ETKtkHPXs5P///////////7mARKpjGfTq4f////Tr4rqARqJTBLZ4OsaVZMGNWKFRAM2jeP///////72FTKFTA6RWCKBRAcaVZP////////////Ts4q1nIaZbD65qJa1oIq1oIq1oIq9rJq9sKNy/of///////////////////+nXxaBQAMqdb/////////////////nz7q9rJ7V2Nv78+////////////////////////////////9CogJ9NAOnWw////////////+7f0aRWCMOPW////////+PLs6tkHadcEb2FTMiaa7Z3OaNVB+vbyv////Po3algFr6HT////////////////////7uARqhfFfPo3v///7V2N65pJPjx6////////////////9KrhJ1LAOjTv+nYxqFRAqtkG65pJK1oIq1oIq1oIrBtKbFwLe3ez////8CKVKVZDe/i1f///////////+bRu59NANOtiP//////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////+fn5k5OTXV1dZWVlZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY2NjZGRkvb29/Pz8////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8ubbplsPw5Fd////wo9bsW8s/Pn2////vYVMrWki+/j1276foE8A6NXB////38Onnk0Ayp1v3L6h27yd27yd3b+ir2snqmIY9+/o////////////////////wItUqF8V9Ovi////////////vIRLqmMa9u7m////////////uX5CqmQb9ezk/////////vz75M21yp5xvodQtXc3oVEBzaN4////////vINJqWEXx5proE4A1rKP////////////+vfzsG4qr2sn3L+h27yd27yd3L6gzKF1m0cA1rSR////////////////////6dfFoFAAyp1v////////////////+fPur2sntXY2/vz7////////////////////////////////0KiAn00A6tfE////////////7uHSo1UGw5Bd////////////9u/n2rqbxZRivINLrmkjo1YH69rJ////8+jdqWAWuX9D/////////////////fz7tHQyrGUd9/Dp////tXY3q2Qc9/Dp////////////////xpVkoE8A7NvL8eTYpFcJvYVM3cCj27yd27yd3L+hvYVNn00A6tnH////wIpUpFgK8eXY////////////5s+5n00A0qyG////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////4+PiTk5NdXV1lZWVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZbW1toaGja2tr////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////hx6yeTADau5v////cv6KjVQbv4dT69vKtZyG9hk3////u39GiVAfPpn3////y592lWQ3KnnL///////////////+xbiy2ejz+/fz////////////////////AilSfTgDgxqz////////9/PqycS+gTwDn0r7////////69/OtaCKwbiv79/P////////////////////////n076dSwDVsY3///////+8g0moXhPz6+HNonehUQHdwKP////////////GlWSoXhT58+/////////////au5yeTQDn1MD////////////////////p18WgUADKnW/////////////////58+6vaye1djb+/Pv////////////////////////////////QqYCeTQDOpHr////////////fxKidTADNpHn////////////////////////////GlWSjVgfv4dP////z6N2rYxunXBHv4tT////////////m0r2hUgS8g0r+/v3+/fy2eTufTwDewaT////////////27+irZR6sZh338ev8+veycS+3ej3////////////////Cj1qpYRf27ub////AjFaeTADau5z////////////SrIWdSgDavJ3/////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////j4+JOTk15eXmVlZWZmZmZmZmZmZmZmZmZmZmNjY15eXmVlZWZmZmZmZmVlZV9fX4+Pj9ra2vr6+v///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8maa6JTBuzczf////Dk16RYCtq7m+7g0aBRA9WxjP////v39LFuK7Z4Ov79/P///82jeKBPANm6mfn18Pjx6s2id55MANy/oP///////////////////////7yESqJVB65rJuDFqu/i1Myidp9OAK5rJ7FwLuTNtu/h08iaa5tIAMmcbv////////Xt5Nm5mPDk1/n07/Dk17h7PqFTBOzdzf///////7yDSaddEvPp3v7+/b6IUZ9PAODGq/////////Dj1qZbELp/RPLn2/z59unWwqhgFrZ4Ofv49f///////////////////+nXxaBQAMqdb/////////////////nz7q9rJ7V2Nv78+////////////////////////////////9CpgKFRAahgFtGqg+7f0eTMta5qJKBQAejWwv///////+jVwd7CpvXs4/jz7eTMtaVYDLV3OPz59v////Lm26phGKddEbJxL+PNtvLo3ePLs6xnIZ9PAOTOuP////78+7V3OKRYC6xmH9q6mvLn3OrZx7qARZtHANGshP///////9/DqJ9OAMuecfbv6Pr28tu9n59PAMmcbf///////7+KU6JUB6pjGtq6mfDj1uDFqqddEqdcEfLn2///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////+Pj4k5OTXl5eZmZmZmZmZmZmZmZmZmZmZmZmYWFhcHBwlpaWYmJiZGRkZWVlX19fpaWl/Pz8/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////fv5tHQ0rmol+fTv/////fr5s3IxwY1Y3L6hoE8B6dfD////////xZRjploO8eba/////fv5yZtto1cJrWchq2MbolMCzKB0/v38////////////////////////uH1Atng41bKNpVoNolQFnEcAtnc48ujez6V8pFgJolMDm0gAuHs+9e3k////////7+HTrGchplwQrGcgpFcKo1YI1bGN////////////vINJp10S8eba////+fTvtng6pVgL48y1////////5c+5rWgiplwRr2snolQFsW8t7t/Q////////////////////////6dfFoFAAyp1v////////////////+fPur2sntXY2/vz7////////////////////////////////0KiAoFAB1bKPtHQ0o1UGnUoAolQE0qyF//7+////////17WTpVoNqWAWrGUeoE8Armol6djF////////7+PWplsOzqV6yp9ypFcKploOnUsAplsP2LiW/////////Pn3snEvu4FG2rubp10SploNoE8AoFAAyp1v/fv5////////////17SSp1wRqmIZrWkioVEAvodQ+PPu////////vINJs3Mx2LeVqV8WpFYInUkAplsP3cCh///////////////////////////////////////////////////////////////////////////////////////////////////////////////39/eRkZFeXl5m
+ZmZmZmZmZmZmZmZmZmZmZmZhYWFsbGzT09P///+rq6tfX19dXV2jo6P////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////x5NilWQ2/iVH////////////ImmuxbyzAilSsZh/38On////////ew6idSwDdwKP////////////t3s/ZuJjYuJbs3Mz////////////////////////////////v4tXw49b////v4tTcvqDhx6359O/////////s3MzbvZ3iyrH79/P////////////////48uvlz7jZuZndwKLw49b///////////////+8g0mnXRLx5tr////////59O7o1cLv4dT////////////48+3gx63Vso/hyK759fD////////////////////////////p18WgUADKnW/////////////////58++vaye1djb+/Pz////////////////////////////////QqICfTQDt3Mz79/PiyK/cvqDu3s/////////////////////x5drfxanYuJfhyK/38er////////////7+PXr28r38ev////s3c3bvZ7ewqby59z////////////+/fzu4NHx5tr////z6N7ewqXcvqDt3c3////////////////////////z6N7cvqDWtJHn0r3+/v3////////////w49bv4tX////z6uDewqXdwaTx5tr///////////////////////////////////////////////////////////////////////////////////////////////////////////////b29pGRkV5eXmZmZmZmZmZmZmZmZmZm
+ZmZmZmFhYWxsbNPT0////////////6mpqZubm/39/f///////////////+nXxdOuiNWxje7f0P///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9/EqJ1MANWyjf///////////+LJsKZbEKdcD7yDSf////////////Hl2aVZDcKPW////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7yDSaddEvHm2v///////////////////////////////////////////////////////////////////////////////+nXxaBQAMqdb/////////////////37+rBsKbZ4OP///////////////////////////////////9CogJ9NAOnVwv//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9vb2kJCQXl5eZmZmZmZmZmZmZmZmZmZmZmZmYWFhbW1t09PT
+/////////////////////f39////////////////z6d+o1YHnk0Ank0AplsP2beX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w5FenEkA6NbD////////////9OrhqF4TmkYA0KmC/////////////fv6s3IxqWAW9/Hq////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////vINJp10S8eba////////////////////////////////////////////////////////////////////////////////6NXCnEgAyJpq/Pn2zKF2xJJgxZVjwo9cpFgKp1wQxZNixZRjxJJgzqV7+/j1////////////////0KiAn00A6dXC///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////29vaQkJBeXl5mZmZmZmZmZmZmZmZmZmZmZmZhYWFtbW3U1NT/////////////////
+///////////////////////PqH+gUACiVASkVwmkVwmhUwKhUwPXtZL////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9+/nBjVi6f0T38On////////////+/v3GlWOwbi7q2Mb////////////////TrYexcC/u3s////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+4fD6iVATw5Nj////////////////////////////////////////////////////////////////////////////////t3s+xby3UsIv69fG5fkGtaSOvayevbCi0dDOzczKvayevayetaSO7gkj69vL////////////////No3mZQwDo077///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////b29pCQkF5eXmZmZmZmZmZmZmZmZmZmZmZmZmFhYW1tbdTU1P//////////////////////////////////
+/////9a0kKFRAaNVBqRXCaRXCaRXCaRXCaJUBaJUA9e0kf////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7+/fv49f37+f////////////////////78+/z59v/////////////////////+/vv49f38+v///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9e1ksufcvfw6f////////////////////////////////////////////////////////////////////////////////7+/fz59v38+v///vz69/z59vz59vz59vz59/z59/z59vz59vv59vz6+P///v///////////////+PLs8aVZfLm2///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9fX1j4+PXl5eZmZmZmZmZmZmZmZmZmZmZmZmYWFhbW1t1NTU////////////////////////////////////////4MWro1UGo1QF
+pFcJpFcJpFcJpFcJpFcJpFcJolQFolMD1rSQ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////19fWOjo5eXl5mZmZmZmZmZmZmZmZmZmZmZmZhYWFubm7V1dX////////////////////////////////////////s3c2pXxWhUwOkVwmkVwmkVwmkVwmk
+VwmkVwmkVwmkVwmiVAWhUwPWs4////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////X19Y6Ojl1dXWZmZmZmZmZmZmZmZmZmZmZmZmFhYW5ubtXV1f////////////////////////////////////////nz7rN0M6BQAKRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRX
+CaRXCaJUBaFTAtWyjv////////////////////////////////////////////////////////////////////////////////////////////////////////////////////bv6Ovbyvfw6f////////////////////////bu5uzby/jx6/////////////////////////////////////////////////////////////////z59u3dzuvbyuvayfXs5P////////////////////////////////////////////7+/e7h0+7g0v////////////////////////////////////////////////////Xs4+7f0Ozbyuzby+zby+zby+zby+zby+zby+vbyvLn2////////////////////////////////////////////////////////+/i1e3f0P7+/v////////////////////Ln2+zdzfz59/////////////////////////////////////////////////n07+vbyt7Dp9Wxjc+nftGpgta0keDGrOzcy/n08P////////////////////////////////////////////////Pp3+zcy/r28v////////////////////////////////////////////////v28+zdzeDFqtWyjtCnf9Cogdazj9/EqevayPjy7P//////////////////////////////////////////////////////////////////////////////////////////////9fX1jY2NXV1dZmZmZmZmZmZmZmZmZmZmZmZmYWFhbm5u1tbW////////////////////////////////////////////xpdnn04ApFcJpFcJpFcJpFcJpFcJpFYIpFYIpFcJpFcJpFcJpFcJpFcJolQF
+oVMD1bGN////////////////////////////////////////////////////////////////////////////////////////////////////////////38SprWgio1YIrmol4cmv////////////////3sGkrWcgpFYIr2wn48y0////////////////////////////////////////////////////////7+HTt3o8pVgLpFcJoVIB0KiA////////////////////////////////////9Ovi1rSQuHw/plwQploNwItV+PLs////////////////////////////////6tjHzaN4t3s+rWcgplsPpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFYIqF8Vz6Z8/fz7////////////////////////////////////////8+jdwo5ap1wQpVkMvoZP9u/n/////////v37z6Z8qF8VpFgKt3s97+LV/////////////////////////////////fv55M22xpVksW4rpFcJn04An04An04An04An04An04ApFgKsW8sxpVk5c+5/v38//////////////////////////////7+1bGNqWIYpFcJtHQz6tnH/////////////////////////////////v7959K+yJprsnEvpVkMn04An04An04An04An04An04Ao1YIr20pw5Bd4smw/Pr4///////////////////////////////////////////////////////////////////////////////09PSNjY1dXV1mZmZmZmZmZmZmZmZmZmZmZmZhYWFvb2/W1tb////////////////////////////////////////////fxaqhUwOkVgikVwmkVwmkVwmkVwmkVwmhUgGgUACjVgekVwmkVwmkVwmkVwmkVwmiVAWhUgLVsYz/
+///////////////////////////////////////////////////////////////////////////////////////////////////z6uCpYBegTwCjVQafTgCsZR317OT////////y5tunXhOgTwCjVQaeTQCuaSP27+j////////////////////////////////////////////////9/Pu8g0mdSwCjVAWjVQagUADPp37////////////////////////////27ubOpXusZR6fTgCfTwCiVASiVASdSgDNo3j////////////////////////q18W+iFCkVwmeTQCfTgChUgGiVAWjVQajVQajVQajVQajVQajVQajVQajVQahUgKfTwDiybH////////////////////////////////////p1cOuaSOeTACiUwSiVAWdSgDImmz////////jy7OfTwChUgKjVAWdSwC8hEv9/fv////////////////////////gxau3ej2hUgKeTQCgUACjVQakVgikVwikVwmkVwmkVwikVgijVQagUACeTQCiUwO6gEbo1cL////////////////////////q2MWiVAOhUQCjVQaeTAC2eDr7+PT////////////////////////kzbW6gEWjVAWeTQCgUACjVAWkVgikVwikVwmkVwmkVwikVgijVQahUQCeTQChUQC3ej3kzbb///////////////////////////////////////////////////////////////////////T09IyMjF1dXWZmZmZmZmZmZmZmZmZmZmZmZmFhYW9vb9fX1/////////////////////////////////////////////bv565qJKFTA6RXCaRXCaRXCaRXCaRXCaBPAMKPW86keaFRAKNVBqRXCaRXCaRXCaRXCaRXCaJUBaFSAtSwi///////////
+/////////////////////////////////////////////////////////////////////////////////////+XQuaBQAKRXCaRXCaRXCaJSA+jVwf///////+PLs6BQAKRXCaRXCaRXCKNUBuvZx/////////////////////////////////////////////////fw6a9pJKJUBaRXCaRXCaFSAdCogP///////////////////////9/Eqa5qJZ5MAKFSAaRXCKRXCaRXCaRXCaFSAbd7Pf////////////////78+9GqgqVZDJ9NAKNVBaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaBQAM6kev///////////////////////////////+/h06tjHKBPAKRXCaRXCaRXCaFSArR0NP79/f///8+mfaBRAKRXCaRXCaJUBa5qJffx6v////////////////bu58KPW6FSAp9PAKNVB6RXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaNVB59OAKVZDNazj////////////////////9e2lKBQAKRXCaRXCaNVBqpjGvLo3f////////////////n18MeYaaNUBZ9OAKNVBqRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaNWB59OAKNVBtCogP7+/v//////////////////////////////////////////////////////////9PT0jIyMXV1dZmZmZmZmZmZmZmZmZmZmZmZmYWFhcHBw19fX////////////////////////////////////////////////yZxun08ApFcJpFcJpFcJpFcJpFcJoVIBs3Ew+PPt////z6Z9oVEAo1UGpFcJpFcJpFcJpFcJpFcJolQFoVIC1LCK////////////////////
+////////////////////////////////////////////////////////////////////////5c63oVICpFcJpFcJpFcJolQE6NTA////////4sqxoVIBpFcJpFcJpFcIo1UG6tfF////////////////////////////////////////////////9/DpsGwoolQFpFcJpFcJoVIB0KiA////////////////////1K+KolMEoFAApFcJpFcJpFcJpFcJpFcJo1YHnUsAyZts/////////////Pr4w5Bdn00AolMEpFcJpFcJpFcJpFcJpFcJpFYIpFYIpFYIpFYIpFYIpFYIpFYIpFYIpFYIolQFnk0A3sOn/////////////////////////////fz6u4FHoE8ApFcJpFcJpFcJpFcInUsAxJJg////////z6Z9oVIBpFcJpFcJolQFsG0p9/Do////////////8eTYs3MxnkwAo1UHpFcJpFcJpFcJpFcJpFcJo1UHoVICoVEAoVEAolMDo1YHpFcJpFcJpFcJpFcJpFcJolMDoFAA1rKP////////////////17WToVIBpFcJpFcJo1UGq2Ud8ujc////////////9ezjt3w/nkwAo1UGpFcJpFcJpFcJpFcJpFcJo1YHolMDoVEAoVEAolMDo1UHpFcJpFcJpFcJpFcJpFcJolQFn04Az6V8///////////////////////////////////////////////////////z8/OLi4teXl5mZmZmZmZmZmZmZmZmZmZmZmZhYWFwcHDY2Nj////////////////////////////////////////////////r28mlWQujVQekVwmkVwmkVwmkVwmjVQamWw7q2Mb////////////Rq4ShUQCjVQakVwmkVwmkVwmkVwmkVwmiVAWhUgLTron/////////////////////////////
+///////////////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfq2Mb////////////////////////////////////////////////38OmwbCiiVAWkVwmkVwmhUgHQqID////////////////ewaShUgGiVAWkVwmkVwmkVwmkVwmhUgKeTQCgUAC4fUD06+H////////+/fzEkl+eTQCkVgekVwmkVwmkVwmkVgigUQCfTQCfTgCgTwCgTwCgTwCgTwCgTwCgTwCgTwCfTgCiVAXGlmb8+vj////////////////////////////m0LuiUwOkVwikVwmkVwmkVgifTwC1dzjy59v////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////58+62dzmfTQCkVwmkVwmkVwmkVwmjVQegTwCfTgCiVAWrZByvbCivayaqYhiiUwOfTgCgTwCjVgikVwmkVwmkVwmjVAWlWAvr2sr////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////8+fW8g0qeTQCkVwmkVwmkVwmkVwmjVgegTwCfTQCiUwOqYxqvbCivbCeqYxqiVASfTgCgTwCjVgekVwmkVwmkVwmjVQaiVATkzrf///////////////////////////////////////////////Pz84uLi11dXWZmZmZmZmZmZmZmZmZmZmZmZmFhYXBwcNjY2P////////////////////////////////////////////////7+/b6HUKBQAKRXCaRXCaRXCaRXCaRXCaBQANKshf///////////////////9GrhKFRAKNUBaRXCaRXCaRXCaRXCaRXCaJUBaFSAtOuiP//////////////////////////////////////
+/////////////////////////////////////////////+XPuKFSAqRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCKNVB+rYxv////////////////////////////////////////////////fw6bBsKKJUBaRXCaRXCaFSAdCogP////////////bw6K5oIqFSAqRXCaRXCaRXCaJUBZ9NAKpiGsSTYeLKsvv49f///////////9OuiaBPAKNWCKRXCaRXCaRXCaJTBJ9PALBuKsmcbty+oePNteTNt+TNtuTNtuTNtuTNtuTNtuTNtevayf///////////////////////////////////8mbbaBRAKRXCaRXCaRXCaJTBMeXZ/n08P///////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f///////+PMtJ9PAKRXCaRXCaRXCaRXCaBQAKJTA7d6PNOth+nWw/Pp3vfw6vfv6PHm2+jUwNGrg7R2NqFQAKJUBKRXCaRXCaRXCaBQAMKOW////////////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f///////+rZxqFSAqRXCKRXCaRXCaRXCaBRAKFRALR1NdCogOfTvvLn3Pfw6ffw6fLn3OnWw9Swird6PaFSAaJTA6RXCaRXCaRXCaBRALuBR/79/P//////////////////////////////////////8/PzioqKXV1dZmZmZmZmZmZmZmZmZmZmZmZmYGBgcHBw2dnZ////////////////////////////////////////////////////5tG8o1UGpFYIpFcJpFcJpFcJpFcJoVIBtng6/Pn2////////////////////////0qyGoVEBo1QFpFcJpFcJpFcJpFcJpFcJolQFoVIB062H////////////////////////////////////////////////
+////////////////////////////////5c+4oVICpFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcIo1UH6tjG////////////////////////////////////////////////9/DpsGwoolQFpFcJpFcJoVIB0KiA////////////2ruboFAApFcJpFcJpFcJo1QFploNzqR68+je////////////////////7eDRplsPolQFpFcJpFcJpFcJoVICp1wR1K+L+PLs/////////////////////////////////////////////////////////////////////////////v7+uH1AoVICpFcJpFcJolMDsnIw/Pr4////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////48y0n04ApFcJpFcJpFcIn08As3Qz4ciu/fz6////////////////////////////////+/j117WUqWAWo1YHpFcJpFcJolQFrmok9/Dp////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////6tnGoVICpFYHpFcJpFcJoE8AsG0q3cCj+/j1/////////////////////////////////fv63L2gq2Qco1UHpFcJpFcJo1UGqWAW8ufb///////////////////////////////////z8/OKiopdXV1mZmZmZmZmZmZmZmZmZmZmZmZgYGBxcXHZ2dn//////////////////////////////////////////////////////v69hk6gUQCkVwmkVwmkVwmkVwmjVgijVgjm0bz////////////////////////////////SrYihUgGjVAWkVwmkVwmkVwmkVwmkVwmjVAWhUQHSrYf/////////////////////////////////////////////////////////
+///////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfq2Mb////////////////////////////////////////////////38OmwbCiiVAWkVwmkVwmhUgHQqID////////////Ai1WhUgGkVwmkVwmjVgelWQvexKj////////////////////////////Cj1qgUACkVwmkVwmkVwmiUwOpYRjm0rz////////////////////////////////////////////////////////////////////////////////////69fKycjCiUwSkVwmkVwmhUgHGl2b////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////59O62ejydSgCeTACeTAC+h0/48+z////////////////////////////////////////////////MoXWhUgGkVwmkVwmjVQepYBbw49f////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////8+fW9hUydSgCeTQCeSwC5fUH17OL////////////////////////////////////////////////UsIyhUQGkVwmkVwmkVgiiVAXq2Mb///////////////////////////////Ly8omJiV5eXmZmZmZmZmZmZmZmZmZmZmZmZmBgYHFxcdra2v///////////////////////////////////////////////////////+vZyKVYCqNWCKRXCaRXCaRXCaRXCaBQAMKOWv///////////////////////////////////////9OuiKFSAqJUBaRXCaRXCaRXCaRXCaRXCaNVBaFRAdGshf//////////////////////////////////////////////////////////////////
+/////+XPuKFSAqRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCKNVB+rYxv////////////////////////////////////////////////fw6bBsKKJUBaRXCaRXCaFSAdCogP////////z697R0NaJTA6RXCaRXCaFSAryESv////////////////////////////Dj1qdcEKNVB6RXCaRXCaNWCKRWB+HHrf////////////////////////////////////////////////////////////////////////////////////////fv6LBsKKJUBaRXCaRXCaFSAc2kev///////////////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f////////////Xs5MuhdL6HT9Kshvv49f////////////////////////////////////////////Dk2NGpgq1nIaNWB6RXCaRXCaNVBqpjGvLn3f///////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f////////////jy68+mfL6HT8+mffnz7v////////////////////////////////////////////Ln3dSviq9sKKNVB6RXCaRXCaNWB6VYCuzdzf//////////////////////////8fHxiYmJXl5eZmZmZmZmZmZmZmZmZmZmZmZmYGBgcXFx2tra////////////////////////////////////////////////////////////xpZmoFAApFcJpFcJpFcJpFcJo1UHplsO7d7P////////////////////////////////////////////06+JoVIColQFpFcJpFcJpFcJpFcJpFcJo1UGoVEB0auE////////////////////////////////////////////////////////////////////5c+4oVIC
+pFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcIo1UH6tjG////////////////////////////////////////////////9/DpsGwoolQFpFcJpFcJoVIB0KiA////////9/DpsGwoolQFpFcJpFcJoVIBzqV8////////////////////////////1LGMoFAApFcJpFcJpFcJoVEAxpVk////////////////////////////////////////////////////////////////////////////////////////////9u/nr2snolQFpFcJpFcJoVIB0aqC////////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////////////////////////////////////////////////////////////7+PV2bmZvodQqF8Un00AolMDpFcJpFcJpFcJoVIBtng5/Pn3////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////////////////////////////////////////////////////////////8eXZ276fwIxWqmIZn04AoVICpFcJpFcJpFcJoVMDsG0p+fPu///////////////////////x8fGIiIheXl5mZmZmZmZmZmZmZmZmZmZmZmZgYGBxcXHb29v////////////////////////////////////////////////////////////17OSrYxujVQakVwmkVwmkVwmkVwmgUQDDkF3////////////////////////////////////////////////////Ur4qhUgKiVAWkVwmkVwmkVwmkVwmkVwmjVQahUQHRq4P////////////////////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmi
+VAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfq2Mb////////////////////////////////////////////////38OmwbCiiVAWkVwmkVwmhUgHQqID////////06+GtaCGjVQWkVwmkVwmhUgHUsIv///////////////////////////++hk2hUgGkVwmkVwmkVgimWw7q2cj+/v7+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv+/Pv9/Pv//v7////////27+evayeiVAWkVwmkVwmhUgHQqID////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////////////////////////////////////////////7+fXq2MbSq4S6f0OnXhOfTgCfTgCiUwOkVwmkVwmkVwmkVwmjVQefTwDcvp/////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////////////////////////////////////////////9+/ns3MzUsIu7gkipYRafTgCfTQCiUgKkVwikVwmkVwmkVwmjVgieTQDSroj///////////////////////Hx8YiIiF5eXmZmZmZmZmZmZmZmZmZmZmZmZmBgYHJyctvb2////////////////////////////////////////////////////////////////9m6maBRAKRXCaRXCaRXCaRXCaRWCKRYCurYxf///////////////////////////////////////////////////////9OuiaFSAqNVBqRXCaRXCaRXCaRXCaRXCaNVBqFRANGqg////////////////////////////////////////////////////////////+XPuKFSAqRXCaRXCaRXCaJUBejVwf//////
+/+LLsqFSAaRXCaRXCaRXCKNVB+rYxv////////////////////////////////////////////////fw6bBsKKJUBaRXCaRXCaFSAdCogP////////Pp36xmH6NVBqRXCaRXCaFSAda1kf////////////////////////r28rJxL6JTBKRXCaRXCaRWCKZbD7V3N7Z4OrZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObZ4ObN0MunXxf////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f////////////////////////////////////jx6+TMtcmdbrR0M6RXCJ9NAJ9OAKJTBKRXCKRXCaRXCaRXCaRXCaRXCaFSAp9OAMiaav79/P///////////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f////////////////////////////////////n07+bRu8yhdbV3OKVZC59NAJ9OAKJTA6RWCKRXCaRXCaRXCaRXCaRXCaJTBJ5MAMGOWPz7+P//////////////////8fHxiIiIXl5eZmZmZmZmZmZmZmZmZmZmZmZmYGBgcnJy3Nzc/////////////////////////////////////////////////////////////////v79uoFHoVICpFcJpFcJpFcJpFcJoVICuX9D/v79////////////////////////////////////////////////////////////066HoVEAo1QFpFcJpFcJpFcJpFcJpFcJo1UGoVEA0KmB////////////////////////////////////////////////////////5c+4oVICpFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJ
+pFcJpFcIo1UH6tjG////////////////////////////////////////////////9u7nr2sno1QFpFcJpFcJoVIB0KiA////////8+nfrGYfo1UGpFcJpFcJoVIB06+J////////////////////////9ezjrmkjo1QFpFcJpFcJpFcJpFYIoFAAn08An08An08An08An08An08An08An08An08An08An08An08An08An08An08An08An08An08An08AnEkA4suz////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////////////////////////6NTByJlqr2snoVEBnk0AoE8Ao1UGpFcJpFcJpFcJpFcJpFcJpFcJpFYIoVIBnkwAqF8V1K6J/v38////////////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////////////////////////6tnIyp5ysW8solMCn00AoE8Ao1QFpFcJpFcJpFcJpFcJpFcJpFcJpFcIoVICnkwAploPzqV7/Pr4///////////////////x8fGGhoZeXl5mZmZmZmZmZmZmZmZmZmZmZmZgYGBycnLc3Nz////////////////////////////////////////////////////////////////////x5dqoXxSjVQekVwmkVwmkVwmkVwmhUQDbvZ7////////////////////////////////////////////////////////////////////TrYehUgGiVAWkVwmkVwmkVwmkVwmkVwmjVQagUADTr4r////////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfq
+2Mb////////////////////////////////////////////////y59yqYhqjVQakVwmkVwmhUgHUsIv////////z6d+sZh+jVQakVwmkVwmhUgHSrYb////////////////////////06uCtZiCjVQWkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmkVwmhUgHkzrj////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////////////////o1cK9hEujVQeeTAChUQCjVgekVwmkVwmkVwmkVwmkVwmkVwmkVgihUgKfTQCfTgCsZh/KnW/w5Nf////////////////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////////////////s3MzAi1WkWAqeTQCgUACjVgekVwmkVwmkVwmkVwmkVwmkVwmkVgiiUgKfTgCfTgCqYxrGlmXs3c3//////////////////////+np6YeHh1tbW2ZmZmZmZmZmZmZmZmZmZmZmZmRkZHp6et3d3f///////////////////////////////////////////////////////////////////////9u9nqBRAKRXCaRXCaRXCaRXCaNVBqtlHfXt5P///////////////////////////////////////////////////////////////////////9OuiaNVB6NWCKRXCaRXCaRXCaRXCaRXCaJUBKZbD/Dj1v///////////////////////////////////////////////+XPuKFSAqRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCKNVB+rYxv//////////
+/////////////////////////////////////+fSvKJUBaRXCaRXCaRXCaBRAN/EqP////////Pp36xmH6NVBqRXCaRXCaFSAdKth/////////////////////////Xt5K5pJKNUBaRXCaRXCaRXCaRXCaJUBaJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKJUBKRWCKRXCaRXCaRXCaRXCaJUBejVwv////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f///////////////9OviaRYC59NAKNVBqRXCaRXCaRXCaRXCaRXCaRXCaNVB6BQAJ9NAKBQAKxlHcCKVNu9n/Xs4////////////////////////////////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f///////////////9m4mKZcEJ9NAKNUBaRXCaRXCaRXCaRXCaRXCaRXCaNWB6FRAJ9NAKBPAKpiGb6GTtm5l/Pp3v//////////////////////////////pKSkWlpaZWVlZmZmZmZmZmZmZmZmZmZmZmZmYWFhtLS0////////////////////////////////////////////////////////////////////////////wY1YoVIBpFcJpFcJpFcJpFcJoVIBwIxW////////////////////////////////////////////////////////////////////////////////062HoVMDpFcJpFcJpFcJpFcJpFcJpFcJoE8A3cKl////////////////////////////////////////////////5c+4oVICpFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcIo1UH6tjG////////////////////////
+////////////////////////ypxvoVEApFcJpFcJpFYIpVkM7d3O////////8+nfrGYfo1UGpFcJpFcJoVIB0q2H////////////////////////+/j2tHMzolMDpFcJpFcJpFcJpVkMqF0Tp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp1wQp14TploOpFcIpFcJpFcJo1YHp10S7+HT////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////////1rOQoE8AolMEpFcJpFcJpFcJpFcJpFcJo1QFn08An00AolQEsW8sxpdm4Mas9Orh////////////////////////////////////////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////////3b+ioVICoVICpFcJpFcJpFcJpFcJpFcJo1UGoE8An00AoVICr2woxJJg3sKm8ujd///////////////////////////////////////////4+Pienp5cXFxlZWVmZmZmZmZmZmZmZmZmZmZlZWVubm7Ly8v////////////////////////////////////////////////////////////////////58+6wbiuiVASkVwmkVwmkVwmkVwmgUQDcvqD////////////////////////////////////////////////////////////////////////////59fC/ilOiVAWkVwmkVwmkVwmkVwmkVwmkVwmgUADiyrL////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfq2Mb/////////////////////////////////////
+///////06uGrYxujVQakVwmkVwmiUwSycTD69vL////////z6d+sZh+jVQakVwmkVwmhUgHSrYf////////////////////////////AjFahUgGkVwmkVwmjVgimXBDhyK/v4dTu4NLu4NLu4NLu4NLu4NLu4NLu4NLu4NLu4NLu4NLu4NLu4NLr28mvayaiVAWkVwmkVwmiVASxbiz59PD////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////y6N6oXxWiUwOkVwmkVwmkVwmjVgigUACfTQClWQy2eTvOpHrn07/59e/////////////////////////////////////////////////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////27+itaCKiUgKkVwmkVwmkVwmkVgigUACfTQCkVwm1djfLoHTlz7n38ev///////////////////////////////////////////////////////////z8/J6enl9fX2VlZWZmZmZmZmZmZmZmZmZmZmJiYmhoaMrKyv///////////////////////////////////////////////////////////////+zcy6VZC6RWCKRXCaRXCaRXCaNWB6heFPHk1/////////////////////////////////////////////////////////////////////////jz7buBSJ9OAKRXCaRXCaRXCaRXCaRXCaRXCaBQALFvLfjx6////////////////////////////////////////////////+XPuKFSAqRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCKNVB+rYxv///////////////////////////////////////////8KPW6BQ
+AKRXCaRXCaRXCaBQAM2jeP////////////Pp36xmH6NVBqRXCaRXCaFSAdKth////////////////////////////9q6mqBRAKRXCaRXCaRXCaFSAc2ieP///////////////////////////////////////////////////9/EqKNVB6RXCKRXCaRXCaFRAMORXv////////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f///////9q6mqBQAKRXCaRXCaRXCaNWB6FSAbR0NNGqg+3dzf79+////////////////////////////////////////////////////////////////////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f///////+DIrqBRAKRXCaRXCaRXCaNWB6FRALFwLc6le+rZyPz6+P///////////////////////////////////////////////////////////////////////////f39n5+fX19fZWVlZmZmZmZmZmZmZmZmZmZmYmJiZ2dnysrK////////////////////////////////////////////////////////////276foFEApFcJpFcJpFcJpFcJolMDtXc4/fr4////////////////////////////////////////////////////////////////////+PPtuoFGn04ApFcJpFcJpFcJpFcJpFcJpFcJoFEAq2Qc6tjG////////////////////////////////////////////////////5c+4oVICpFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcIo1UH6tjG////////////////////////////////////////zqV7oVEBpFYIpFcJpFcJo1UG
+p1wR8OTX////////////8+nfrGYfo1UGpFcJpFcJoVIB0q2H////////////////////////////9OvhqmIZo1UGpFcJpFcJo1YHo1YI4Mar////////////////////////////////////////////7+HTqmQbolQEpFcJpFcJpFcIolMD5M21////////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////zKJ3oVIBpFcJpFcJpFYHp10S272e+/j1////////////////////////////////////////////////6djF4cmv9Org////////////////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////1LGMoVEApFcJpFcJpFYIpVkM1rOQ+fXw////////////////////////////////////////////////69vK4civ8eba///////////////////////////////9/f2fn59eXl5lZWVmZmZmZmZmZmZmZmZmZmZiYmJnZ2fIyMj////////////////////////////////////////////////////////JnG6hUgGkVwmkVwmkVwmkVwmhUgHGlmX////////////////////////////////////////////////////////////////////48uy6gEWfTgCkVwmkVwmkVwmkVwmkVwmkVwmgUQCrZR3q2Mb////////////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwijVQfr2cj////////////////////////////////27+fGlWWhUQCjVQekVwmkVwmkVwmfTgDLn3P/////////
+///////06+GsZh+jVQakVwmkVwmhUgHSroj////////////////////////////////KnXCgTwCkVwmkVwmkVwmiUwSnXhLgxav////////////////////////////////////r28qwbiuhUQCkVwmkVwmkVwmhUQC2eTv8+vf////////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////Pp36hUQCkVwmkVwmkVgemWxDjzLT////////////////////////////////////////////27ubFk2GjVAWeTQCrZBzkzbb////////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////YtpSgUQCkVwmkVwmkVgikWArdwKP////////////////////////////////////////////48+3KnW6kVgieTQCoXxTewqb///////////////////////////////39/aCgoF9fX2VlZWZmZmZmZmZmZmZmZmZmZmJiYmdnZ8jIyP///////////////////////////////////////////////////7qBRqFSAqRXCaRXCaRXCaRXCaFRANm5mP////////////////////////////////////////////////////////////////jy7LqARZ9OAKRXCaRXCaRXCaRXCaRXCaRXCaBRAKtlHerYxv///////////////////////////////////////////////////////////+XPuKFSAqRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCKNVB+vZyP////////////////////r18e3ez9Ksha5qJp9OAKNWB6RXCaRXCaRXCaBRALFvLPfx6v////////////////Tr4axm
+H6NVBqRXCaRXCaFSAdOuiP////////////////////////////////Tq4KtlHKJTA6RXCaRXCaRXCaJTA6NWB8mbbfDi1f////////////////////Xs49OvialgFqBQAKRXCaRXCaRXCaNWB6JUBeTOt/////////////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////8+nfqFSAaRXCaRXCaJUBbBtKffw6f///////+HIrqFRAKRXCaRXCaRXCaNVBqZaDcyhdvDi1f////////////////////////////Ln3NSwi69rJ59NAKNVBqRXCJ9OALNyMfr28v///////////9e2lKFSAaRXCaRXCaNVBqtlHfLo3f///////+jVwaJUBaRXCKRXCaRXCaNVBqRXCciaa+3ez/////////////////////////////Tr4ti3lrJwLp9OAKJUBaRXCaBPAK1oIvbv6P///////////////////////////////f39oaGhXl5eZWVlZmZmZmZmZmZmZmZmZmZmYmJiZ2dnyMjI////////////////////////////////////////////+fXxsnEvolMEpFcJpFcJpFcJpFcJo1QF6dXB////////////////////////////////////////////////////////////9/HruX9En04ApFcJpFcJpFcJpFcJpFcJpFcJoFAAq2Ye6tnH////////////////////////////////////////////////////////////////5c+4oVICpFcJpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcJpFYIs3MzuH1BuHw/uHw/uHw/uHs+snEvploOn00AoVEApFcJpFcJpFcJpFcJoVEBp10S6tjG////////zKF2tnk6uH1AtXc4ploOpFYIpFcJpFcJ
+o1YHrmoluX5BuHw/uHw/t3s+u4JI3cCj////////////3sKlolICo1UGpFcJpFcJpFcJo1UGn00AqF4UvINKzKF20q2Hz6d9wIxWrGYgn04AolMDpFcJpFcJpFcJpFYIn04Ayp5x////////////////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////z6d+oVIBpFcJpFcJolQFsG0p9/Dp////////9/Lsr2wooVICpFcJpFcJpFcJolQFnk0AqF4UuoBFy6Bz17aU3MCi2rqazqR6vIRLqmIZn04AoVEBpFcJpFcJpFcJo1UGqmEZ8+nf////////////17aUoVIBpFcJpFcJo1UGq2Ud8ujd////////+/j0tXY3oVEApFcJpFcJpFcJo1UGn00AplsQuX1Byp1v1rSS3L+h27ycz6h/v4hRrGYfn04AoFAApFcJpFcJpFcJo1YHploN7d/Q///////////////////////////////////9/f2hoaFeXl5lZWVmZmZmZmZmZmZmZmZmZmZiYmJmZmbHx8f////////////////////////////////////////y6N2rZR2jVQakVwmkVwmkVwmjVQaqYRjx5dn////////////////////////////////////////////////////////38eu5f0KfTgCkVwmkVwmkVwmkVwmkVwmkVwmgUACsZh/q2cj////////////////////////////////////////////////////////////////////lz7ihUgKkVwmkVwmkVwmiVAXo1cH////////iy7KhUgGkVwmkVwmkVwmkVwmgUACfTgCfTgCfTgCfTgCfTgCgUACiVAWkVwmkVwmkVwmkVwmkVwmgTwCnXRLjzLT////////cv6GgUACfTQCfTgCgTwCkVgikVwmkVwmkVwmkVwmhUgKfTgCf
+TgCfTgCfTgCeTAChUQDfw6f////////////QqH+gTwCjVAWkVwmkVwmkVwmkVwmiUwSfTgCfTgCfTgCfTgCfTQChUgGkVwikVwmkVwmkVwmkVgifTQC/iFD8+ff////////////////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////Pp36hUgGkVwmkVwmiVAWwbSn38On////////////dwaWhUgGiVAWkVwmkVwmkVwmkVwmiUwSfTgCfTQCfTgCfTgCfTgCfTgCfTgCiUwOkVwmkVwmkVwmkVwmkVwmeTQC5fUL8+vf////////////XtpShUgGkVwmkVwmjVQarZR3y6N3////////////kzrejVQaiVASkVwmkVwmkVwmkVwmiVASfTgCfTQCfTgCfTgCfTgCfTgCfTQChUgGkVgikVwmkVwmkVwmkVwmfTgCzcjD59O////////////////////////////////////////39/aKiol5eXmVlZWZmZmZmZmZmZmZmZmZmZmJiYmZmZsbGxv///////////////////////////////////+3dzqVaDaRWCKRXCaRXCaRXCaJUBLBuK/fx6/////////////////////////////////////////////////////fx6rl+Qp9OAKRXCaRXCaRXCaRXCaRXCaRXCaBQAKxmH+vayf///////////////////////////////////////////////////////////////////////+TOtqBRAKRXCaRXCaRXCaJUBejVwf///////+LLsqFSAaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaJUBZ5MALBtKefUv////////+nWxKheFKJUBKRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRXCaRX
+CaBQALuBRv///////////////9CogKJTA6BRAKRXCaRXCaRXCaRXCaRXCaRXCaRXCKRXCaRXCaRXCaRXCaRXCaRXCaJTA59OAMGMVvr28v////////////////////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////86le6FSAaRXCaRXCaJUBbBtKffw6f///////////////9GqgqFRAKFRAaRXCaRXCaRXCaRXCaRXCaRXCaRXCKRWCKRXCKRXCaRXCaRXCaRXCaRXCaRXCaJUBZ5MALFwLe3ez////////////////9a0kaFSAKRXCaRXCaNVBqtlHfLo3f///////////////9e1k6JTBKBRAKRXCaRXCaRXCaRXCaRXCaRXCaRXCKRWCKRWCKRXCaRXCaRXCaRXCaRXCaRXCaNVBp5MAK1pI+jVwv///////////////////////////////////////////////v7+oqKiXl5eZWVlZmZmZmZmZmZmZmZmZmZmYmJiZmZmxsbG////////////////////////////////59O/olMDpFcJpFcJpFcJpFcJolMDtnk6/fz6////////////////////////////////////////////////9/HpuH1Cn04ApFcJpFcJpFcJpFcJpFcJpFcJoFAArGYg69vK////////////////////////////////////////////////////////////////////////////6tnIoVIDo1YHpFcJpFcJolQF6NXB////////4suyoVIBpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcIo1YHoVEAnk0ApVkMx5ho9u7m////////6tjGrGUeoVEBpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJn08AvYZN////
+////////////////3sKmrWkjnkwAoVIBpFYIpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJolMEnk0AplwQ0aqD/fz6////////////////////////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////1bKOn00ApFcJpFcJolQFsG0p9/Dp////////////////////2rubqmMankwAoVIBpFYIpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFYIolICnk0ApFgKx5ho9u/n////////////////////3cKmn04ApFcJpFcJo1UGq2Ud8ujd////////////////////38SorWginkwAoVEApFYIpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcJpFcIolMDnk0Ao1UGw5Bd8+nf///////////////////////////////////////////////////////+/v6jo6NeXl5lZWVmZmZmZmZmZmZmZmZmZmZiYmJmZmbFxcX////////////////////////////hx62hUgGkVwmkVwmkVwmkVwmhUgG7gkj////////////////////////////////////////////////38Om4fUCfTgCkVwmkVwmkVwmkVwmkVwmkVwmgUACsZyHr28r////////////////////////////////////////////////////////////////////////////////8+vjAilSeSwCfTQCfTQCcSgDn0r3////////gyK2bSACfTQCfTQCfTQCfTQCfTQCfTQCfTQCfTQCfTQCfTQCfTQCfTgChUQGuaiTHmGnr2sn////////9/Prcv6KlWAubRwCfTQCfTQCfTQCfTQCfTgCjVgikVwmkVwmkVwmkVwmhUgKfTQCfTQCfTQCfTQCeTAClWAvl0Ln/////////////////
+///////17OTMonasZh+fTgCfTQCfTgCgUQChUgGhUQCgTwCfTQCfTQCnXRLDkF3s3cz////////////////////////////////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////06d+vbCedSwCfTQCcSgCrZBz27+j////////////////////////y59vKnW+sZR6fTwCfTQCfTgChUQCiUwKiUwOiUwOhUQGfTwCfTQCfTgCqYRjEkl/p18T////////////////////////////38eq1dTadSwCfTQCeSwCmXBDx59v////////////////////////07OPNo3muaSSgUACfTQCfTgCgUQCiUgKiUwOiUwOhUgGgTwCfTQCfTgCoXhTBjFjm0bz///////////////////////////////////////////////////////////////////7+/qOjo19fX2VlZWZmZmZmZmZmZmZmZmZmZmJiYmVlZcXFxf///////////////////////9u9n6FSAaRXCaRXCaRXCaRXCaFSAcGMV/////////////////////////////////////////////fw6Lh8QJ9OAKRXCaRXCaRXCaRXCaRXCaRXCaBQAKxnIevcy/////////////////////////////////////////////////////////////////////////////////////////r28tSwi8STYMWTYMSRXvDk1////////+zdzcOQXMWTYcWTYcWTYcWTYcWTYcWTYcWTYcWTYcWTYcWTYcmbbdWxjObQu/fw6P///////////////+3ezsWTYcKOWcWTYcWTYcWTYcWTYcWTYcCLVadcEaRWCKRXCaRXCaNVBrR2NsWTYsWTYcWTYcSSX8iaaujVwf//////////////////////////////////
+//Xs5N3AosWUYrd6PLBtKq1oIq9sJ7V2NsGMVta1kvDj1v////////////////////////////////////////////bv569rJ6JUBaRXCaRXCaFSAc2jef////////////////////////Ln282jeMSSX8SRXsyhdfr18f////////////////////////////////Ts497BpcaWZrd7Pa9sKKpjG6hgFalhF65pJLZ4OcWTYNu+n/Ln3f////////////////////////////////////////Xs5M+nfsSSX8SSX8mcbvfw6f////////////////////////////////bv5+DFq8iZa7h8QLBtKatkG6hgFalgF61oIrV2NsOQXNm5mfDk2P///////////////////////////////////////////////////////////////////////////////v7+pKSkX19fZWVlZmZmZmZmZmZmZmZmZmZmYmJiZWVlxMTE////////////////////2LaWoVIBpFcJpFcJpFcJpFcJoVIBxZVj////////////////////////////////////////9u/ouHw/n04ApFcJpFcJpFcJpFcJpFcJpFcJoFAArWgi7NzM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+////////////////////////////9/DqrGcgo1UGpFcJpFcJoVIB1LGN////////////////////////////////////////////////////////////////////////
+//7++PLs9e3k9/Dp/fv5////////////////////////////////////////////////////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////////////////////////////////////////////////////////////////////////////////9/Hq8ufd8OTX8eXZ9u7m/vz7////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+PLs8ujd8OTX8eXZ9e3k/fv5///////////////////////////////////////////////////////////////////////////////////////////////+/v6lpaVfX19lZWVmZmZmZmZmZmZmZmZmZmZiYmJlZWXExMT////////////////YtpWhUgGkVwmkVwmkVwmkVwmhUgHHmGn////////////////////////////////////27+e4ez6fTgCkVwmkVwmkVwmkVwmkVwmkVwmgUACtaCLs3Mz////////////////////////////////////////////////////////////////////////////////////////////c3NzKysr////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z6eCsZh+jVQakVwmkVwmhUgHSrYf/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////27+evayeiVAWkVwmkVwmhUgHNo3n////////////////////Kysrg4OD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Q0NDZ2dn///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7+/qWlpV9fX2VlZWZmZmZmZmZmZmZmZmZmZmNjY2VlZdDQ0P///////////9i2laFSAaRXCaRXCaRXCaRXCaFSAceYaP////////////////////////////////bu5rd7PZ9OAKRXCaRXCaRXCaRXCaRXCaRXCaBQAK1oI+zdzf///////////////////////////////////////////////////////////////////////////////////////////////9DQ0GNjY5KSkqmpqaqqqqioqOnp6f////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Pp36xmH6NVBqRXCaRXCaFSAdKth///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////6qqqmxsbJycnKqqqqioqLW1tfj4+P///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7e3t2hoaJiYmKqqqqioqLCwsPPz8////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////v7+pqamX19fZWVlZmZmZmZmZmZmZmZmZmZmX19fsbGx////////////2LWUoVIBpFcJpFcJpFcJpFcJoVIBxpdn////////////////////////////9u7mt3o9n04ApFcJpFcJpFcJpFcJpFcJpFcJoFAArmkj7d7O////////////////////////////////////////////////////////////////////////////////////////////////////09PTYGBgXl5eXV1dXV1dWlpa1tbW////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+nfrGYfo1UGpFcJpFcJoVIB0q2H////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////9u/nr2snolQFpFcJpFcJoVIBzaN5////////////////////r6+vXV1dXV1dXV1dWlpacnJy8fHx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////vLy8Xl5eXV1dXV1dW1tbampq6enp//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+np6dfX19kZGRmZmZmZmZmZmZmZmZhYWGxsbH////////////au5yhUgGkVwmkVwmkVwmkVwmhUgHDkF3////////////////////////27uW3ejyfTgCkVwmkVwmkVwmkVwmkVwmkVwmgUACuaiTt3s7////////////////////////////////////////////////////////////////////////////////////////////////////////S0tJiYmJmZmZmZmZmZmZiYmLX19f////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z6d+sZh+jVQakVwmkVwmhUgHRrIX/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////27+evayeiVAWkVwmkVwmhUgHNo3n///////////////////+urq5hYWFmZmZmZmZjY2N5eXnx8fH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+7u7thYWFmZmZmZmZkZGRxcXHp6en//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6enp19fX2RkZGZmZmZmZmZmZmFhYaurq////////////9/EqKFSAaRXCaRXCaRXCaRXCaFSAb6HT/////////////////////Xt5bZ5O59OAKRXCaRXCaRXCaRXCaRXCaRXCaBQAK5qJe3f0P///////////////////////////////////////////////////////////////////////////////////////////////////////////9fX12BgYGZmZmZmZmZmZmJiYtra2v////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Pp36xmH6NVBqRXCaRXCaBPANSwi///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////bv569rJ6JUBaRXCaRXCaFSAc2jef///////////////////7CwsF9fX2ZmZmZmZmJiYnd3d/T09P///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////76+vl9fX2ZmZmZmZmRkZHBwcOvr6///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////qKioX19fZGRkZmZmZmZmYWFhoqKi////////////5c+5oVIBpFcJpFcJpFcJpFcJoVICuX1B////////////////9Orhtnk6n04ApFcJpFcJpFcJpFcJpFcJpFcJoFAArmol7t/Q////////////////////////////////////////////////////////////////////////////////////////////////////////////////8fHxenp6W1tbYGBgW1tbfn5+8/Pz////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8ujeqWEXoE8AoVEAn00ApVgK7NzL////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9u/n
+r2snolQFpFcJpFcJoVIBzaN5////////////////////2traZGRkXl5eYGBgWVlZnZ2d/v7+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////5eXlampqXV1dYGBgWlpakZGR/Pz8//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+oqKhfX19kZGRmZmZhYWGWlpb////////////r2sijVgikVwikVwmkVwmkVwmiUwO0dDT79/T////////9+/m8hEqeTQCkVwmkVwmkVwmkVwmkVwmkVwmgUACuaybu39H////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////d3d2Kiop3d3eMjIzg4OD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////17OO2eDquaSSvaiW1djbfxKn////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////27+evayeiVAWkVwmk
+VwmhUgHNo3n////////////////////////FxcWBgYF4eHidnZ3z8/P////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Ozs6EhIR4eHiXl5ft7e3//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6mpqV9fX2RkZGFhYYqKiv////////////Dj1qlgFqNVB6RXCaRXCaRXCaNUBa5pJPXt5P////////79/LV3OKFSAqRXCaRXCaRXCaRXCaRXCaBQAK9rJu7g0f////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Hx8f////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////79/Pfx6vbv6Pbv6P37+P////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////bu5q9qJqJUBaRXCaRXCaFSAc2jef//
+//////////////////////////r6+vPz8/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z8/PLy8v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////qqqqX19fYWFhgYGB+Pj4////////9u/nr2snolQFpFcJpFcJpFcJo1YHplwQ7uDS////////////w5FdoVIBpFcJpFcJpFcJpFcJoFAAr2wn7uHS////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+PLrrmololQEpFcJpFcJoVIBzaN5////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+qqqpdXV11dXXu7u7////////9+/m2eDiiUwOkVwmkVwmkVwmkVwmhUgLkzrf////////////SrYehUgCkVwmkVwmkVwmgUACvbSju4dP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/v3CjlqcSQChUgKiUwOfTgDMoXb/////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6qqqmRkZOHh4f///////////8CLVaFSAaRXCaRXCaRXCaRXCaFSAdWyjf///////////+TMtaFSAqRXCaRXCaBQAK9tKO/i0/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Xs47+IUqpiGalgFqZbD9CogP//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////p6enzc3N////////////0Kh/oVIBpFcJpFcJpFcJpFcJoVIBw5Fd////////////8eXZqWAWo1UHoE8Ar20q7+LU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+jd8OTY8OTY9/Hq////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/v7t7e3////////////hx62hUQCkVwmkVwmkVwmkVwmiUwO1dTb8+fb////////8+fa1dTadSwCwbirv4tX/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/h06dcEaNWB6RXCaRXCaRXCaNVB6hfFfHl2P///////////8SSYK1oJPDj1v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+vbysnEvolMEpFcJpFcJpFcJpFcJoVEA4MWq////////////6dfE7t/R////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CjlmhUgGkVwmkVwmkVwmkVwmhUgHHl2f/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9m5maFRAKRXCaRXCaRXCaRXCaJTBLJyMPv38///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7t/Rp1sPo1YHpFcJpFcJpFcJpFYIpFgK6tjF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+fe1djeiUwOkVwmkVwmkVwmkVwmgUQDQqYH/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82hdqBQAKRXCaRXCaRXCaRXCaFRAMaWZv//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6tfFolMDo1UGpFcJpFcJpFYIn04A2bub////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/fzHl2ieTACeTQCfTgCeSwC6f0T69fH/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z7+dazkbqARbh8QM+mffnz7v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////09PTtra2wMDA6+vr////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////5+fmcnJxhYWFdXV1dXV1ycnLR0dH/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7W1tVxcXGRkZGZmZmZmZl9fX3R0dO7u7v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Pz8g4ODYWFhZmZmZmZmZmZmZmZmX19fycnJ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7+/uAgIBiYmJmZmZmZmZmZmZmZmZfX1/Dw8P/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////6KiolxcXGZmZmZmZmZmZmNjY2hoaOPj4///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////6+vrfn5+YWFhZmZmZWVlY2NjtLS0////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////19fWampplZWV1dXXJycn//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>es-MX</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>59a0ca97-fbb4-436f-8528-f8ed6b48e550</rd:ReportID>
+</Report>
