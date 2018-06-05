@@ -1,0 +1,73 @@
+[DineroTCont.vis/SELECT]
+Dinero.TipoCambio          TC,
+CtaDineroDestino.Cuenta    CtaDineroDestino_Cuenta,
+CtaDineroDestino.Moneda    CtaDineroDestino_Moneda,
+Dinero.TipoCambioDestino   Dinero_TipoCambioDestino,
+(SELECT ZonaImpuesto FROM Cte WHERE Cte.Cliente = CXC_Cliente) CTE_ZonaImpuesto,
+(SELECT Tipo FROM Cte WHERE Cte.Cliente = CXC_Cliente) CTE_Tipo,
+CtaDinero.Cuenta           CtaDinero_Cuenta,
+Dinero.ContactoTipo       Dinero_ContactoTipo,
+Dinero.Contacto           Dinero_Contacto,
+(SELECT Categoria FROM Prov WHERE Prov.Proveedor = Dinero.Contacto AND Dinero.ContactoTipo = 'Proveedor') Prov_Categoria,
+(SELECT Tipo FROM Prov WHERE Prov.Proveedor = Dinero.Contacto AND Dinero.ContactoTipo = 'Proveedor') Tipo_Proveedor,
+Mon.TipoCambioVenta        Mon_TCVenta,
+Mon.TipoCambio             Mon_TCSAT,
+dbo.fnTCMonHist(Dinero.FechaEmision) "TCSat",
+(SELECT Cuenta FROM Concepto WHERE Concepto.Concepto = DO.OrigenConcepto AND Concepto.Modulo = 'GAS') Concepto_Cuenta,
+CtaDinero.Cuenta,
+'Din_IVA'          = ISNULL(Dinero.Importe* Dinero.IVAFiscal, 0),
+DO.OrigenModulo ModuloOrigen,
+DO.*,
+ROUND(DO.SubTotal * ISNULL(DO.Retencion1,0) / 100,2) Imp_Retencion1,
+ROUND(DO.SubTotal * ISNULL(DO.Retencion2,0) / 100,2) Imp_Retencion2,
+ROUND(DO.SubTotal * ISNULL(DO.Retencion3,0) / 100,2) Imp_Retencion3,
+(SELECT ISNULL(cd.Importe,0) FROM Dinero d LEFT JOIN Dinero d2 ON d.OrigenID = d2.MovID AND d.Origen = d2.Mov LEFT JOIN Cxc c ON d2.Origen = c.Mov AND d2.OrigenID = c.MovID LEFT JOIN CxcD cd ON c.ID = CD.ID AND cd.Aplica = 'Saldo a Favor' WHERE d.ID = Dinero.ID) SaldoCxc,
+ISNULL(DO.GD_Retencion2,0) RETENCION_IVA,
+(SELECT ISNULL(cd.Importe,0) FROM Dinero d LEFT JOIN Dinero d2 ON d.OrigenID = d2.MovID AND d.Origen = d2.Mov LEFT JOIN Cxc c ON d2.Origen = c.Mov AND d2.OrigenID = c.MovID LEFT JOIN CxcD cd ON c.ID = CD.ID AND cd.Aplica = 'Redondeo' WHERE d.ID = Dinero.ID) ImpRedondeoCxc,
+(SELECT ISNULL(cd.Importe,0) FROM Dinero d LEFT JOIN Dinero d2 ON d.OrigenID = d2.MovID AND d.Origen = d2.Mov LEFT JOIN Cxp c ON d2.Origen = c.Mov AND d2.OrigenID = c.MovID LEFT JOIN CxpD cd ON c.ID = CD.ID AND cd.Aplica = 'Redondeo' WHERE d.ID = Dinero.ID) ImpRedondeoCxp,
+(select distinct c.TipoCambio  from dinero d left jOIN Dinero dd ON dd.MovID = d.OrigenID AND dd.Mov = 'Solicitud Deposito' LEFT JOIN Cxc c ON c.MovID = dd.OrigenID AND c.Mov = 'Cobro' where d.ID = Dinero.ID) CxcCobro1,
+(select distinct c.ClienteTipoCambio  from dinero d left jOIN Dinero dd ON dd.MovID = d.OrigenID AND dd.Mov = 'Solicitud Deposito' LEFT JOIN Cxc c ON c.MovID = dd.OrigenID AND c.Mov = 'Cobro' where d.ID = Dinero.ID) CxcCobro2,
+(SELECT C1.ClienteTipoCambio FROM DineroD D1 LEFT JOIN Dinero D2 ON D1.Aplica = D2.Mov AND D1.AplicaID= D2.MovID LEFT JOIN Cxc C1 ON D2.Origen = C1.Mov AND D2.OrigenID= C1.MovID LEFT JOIN CxcD C2 ON C1.ID= C2.ID WHERE C2.AplicaID = DO.Vtas_MovID AND D1.ID = Dinero.ID) CxcCobro3,
+(SELECT DISTINCT P.TipoCambio FROM Dinero C LEFT JOIN Dinero SC ON C.Origen = SC.Mov AND C.OrigenID = SC.MovID LEFT JOIN Cxp P ON SC.Origen = P.Mov AND SC.OrigenID = P.MovID WHERE C.ID = Dinero.ID) CxpTC1,
+(SELECT DISTINCT P.ProveedorTipoCambio FROM Dinero C LEFT JOIN Dinero SC ON C.Origen = SC.Mov AND C.OrigenID = SC.MovID LEFT JOIN Cxp P ON SC.Origen = P.Mov AND SC.OrigenID = P.MovID WHERE C.ID = Dinero.ID) CxpTC2,
+(SELECT ISNULL(cd.Importe,0) FROM Dinero d LEFT JOIN Dinero d2 ON d.OrigenID = d2.MovID AND d.Origen = d2.Mov LEFT JOIN Cxp c ON d2.Origen = c.Mov AND d2.OrigenID = c.MovID LEFT JOIN CxpD cd ON c.ID = CD.ID AND cd.Aplica = 'Saldo a Favor' WHERE d.ID = Dinero.ID) SaFCxp,
+(Case When OrigenConcepto in( 'ADVALOREM','IGI','ALMACENAJES','BODEGA','BODEGA NACIONAL','CUSTODIA','DTA','FLETES','HONORARIO AGENTE ADUANAL','IVA','OTROS','PREVALIDACION','SEGUROS') Then 1 else 0 End) GD
+
+
+[DineroTCont.vis/Vista]
+ListaCampos.Cambios=Insertar<TAB>CtaDinero.Cuenta<TAB>74
+ListaCalculados=FechaPoliza<BR>TipoCambioHist
+SQL.Cambios=Insertar<TAB>  CtaDinero.Cuenta,<TAB>75
+
+[DineroTCont.vis/TipoCambioHist]
+Clave=TipoCambioHist
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=(Monetario)
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=TipoCambioHist
+Formula=SQL(<T>Select TipoCambio from MonHist where Convert(Varchar(20),fecha,126)=<T>+Comillas(Dinero.FechaEmision)+<T>and moneda=<T>+Comillas(Dinero.Moneda))
+
+[DineroTCont.vis/CtaDinero.Cuenta]
+Clave=CtaDinero.Cuenta
+Nombre=Cuenta Contable
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=Config.ContCtaDinero
+MascaraEdicion=Config.CtaFormato
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+TipoDatos=Texto
+LigaTabla=CtaDinero
+LigaCampo=Cuenta
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Cuenta
+

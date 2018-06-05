@@ -1,0 +1,10 @@
+[ActivoFijoT.vis/SELECT]
+ActivoF.DepreciacionAnual,
+ActivoFCat.Cuenta,
+ActivoFCat.CuentaFiscal,
+ActivoFCat.CuentaDepreciacion,
+
+'Descripcion'= (SELECT Descripcion1 FROM Art WHERE Art.Articulo = ActivoFijoD.Articulo)
+
+[ActivoFijoT.vis/FROM]
+LEFT JOIN ActivoFCat ON ActivoFcat.Categoria = ActivoF.Categoria

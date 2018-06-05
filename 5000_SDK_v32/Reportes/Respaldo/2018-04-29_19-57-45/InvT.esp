@@ -1,0 +1,3 @@
+[InvT.vis/SELECT]
+AlmacenCuenta = (SELECT Alm.Cuenta from Alm where InvD.Almacen=Alm.Almacen),
+CuentaDestino= (SELECT Alm.Cuenta from Alm where Inv.AlmacenDestino=Alm.Almacen)

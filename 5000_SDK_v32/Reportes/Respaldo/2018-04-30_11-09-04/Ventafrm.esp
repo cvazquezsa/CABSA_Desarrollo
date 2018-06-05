@@ -1,0 +1,20 @@
+[Venta.frm/Acciones.Abrir]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.CopiarOtros]
+Expresion=GuardarCambios<BR>Si<BR>  Forma(<T>EspecificarFechas<T>)<BR>Entonces<BR>  Asigna(Info.ID, Venta:Venta.ID)<BR>  Asigna(Info.MovTipo, MovTipo(<T>VTAS<T>, Venta:Venta.Mov))<BR>  Asigna(Info.Cliente, Venta:Venta.Cliente)<BR>  Asigna(Info.EnviarA, Venta:Venta.EnviarA)<BR>  Asigna(Info.Nombre, Venta:Cte.Nombre)<BR>  EjecutarSQL(<T>spVentaCteD :nEstacion, :tEmpresa, :tCliente, :fDel, :fAl<T>, EstacionTrabajo, Empresa, Info.Cliente, Info.FechaD, Info.FechaA)<BR>  Forma(<T>VentaCopiar<T>)<BR>Fin
+Antes=S
+AntesExpresiones=GuardarCambios   <BR>EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)
+
+[Venta.frm/Acciones.MovCopiar]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.Nuevo]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.Eliminar]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 1)<BR>Fin

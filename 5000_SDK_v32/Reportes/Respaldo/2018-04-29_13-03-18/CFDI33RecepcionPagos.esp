@@ -1,0 +1,225 @@
+
+[Cxc.frm/Forma.ListaAcciones]
+Otros8=AnticiposRelacionados
+AnticiposRelacionados=CFDRelacionadoVenta
+CFDRelacionadoVenta=TimbreCobro
+TimbreCobro=CFDIRegenerarPDF
+CFDIRegenerarPDF=Otros9
+
+[Cxc.frm/Acciones.AnticiposRelacionados]
+Nombre=AnticiposRelacionados
+Boton=0
+Menu=&Edición
+NombreDesplegar=Relacionados CXC
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoAnticipos
+Antes=S
+Visible=S
+GuardarAntes=S
+ActivoCondicion=Cxc:Cxc.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna( Info.ID, Cxc:Cxc.ID )<BR>Asigna( Info.Modulo, <T>CXC<T> )<BR>Asigna(Info.Cliente, Cxc:Cxc.Cliente)
+
+
+[Cxc.frm/Acciones.CFDRelacionadoVenta]
+Nombre=CFDRelacionadoVenta
+Boton=0
+NombreDesplegar=CFDI Relacionados Ventas
+GuardarAntes=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoVenta
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+Menu=&Edición
+ActivoCondicion=Cxc:Cxc.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna( Info.Cliente, Cxc:Cxc.Cliente )<BR>Asigna( Info.Modulo, <T>CXC<T> )<BR>Asigna( Info.Id, Cxc:Cxc.ID )<BR>EjecutarSQL(<T>spActualizarVentaOrigen :tEmpresa, :nID<T>, Empresa, Cxc:Cxc.ID)
+
+[Cxc.frm/Acciones.TimbreCobro]
+Nombre=TimbreCobro
+Boton=0
+Menu=&Edición
+NombreDesplegar=Timbrar Pago
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Antes=S
+Expresion=Asigna(Info.ID, Cxc:Cxc.ID)<BR>FormaModal(<T>CFDICobroParcial<T>)
+ActivoCondicion=Cxc:Cxc.Estatus = <T>CONCLUIDO<T>
+AntesExpresiones=EjecutarSQL(<T>EXEC spCFDICobroParcialMovimientosCxc :nEstacion, :tEmpresa, :nID<T>, EstacionTrabajo, Empresa, Cxc:Cxc.ID)
+VisibleCondicion= MovTipo( <T>CXC<T>, Cxc:Cxc.Mov ) en (<T>CXC.C<T>, <T>CXC.ANC<T>, <T>CXC.NET<T>)
+
+[Cxc.frm/Acciones.CFDIRegenerarPDF]
+Nombre=CFDIRegenerarPDF
+Boton=0
+Menu=&Edición
+NombreDesplegar=Regenerar PDF
+EnMenu=S
+TipoAccion=Expresion
+Activo=S
+Expresion=EjecutarSQL(<T>spCFDICobroParcialRegenerarPDF :nEstacion, :tModulo, :nID<T>, EstacionTrabajo, <T>CXC<T>, Cxc:Cxc.ID)<BR>FormaModal(<T>CFDICobroParcialPDF<T>)
+VisibleCondicion=SQL(<T>SELECT Timbrado FROM CFDICobroParcialTimbrado WHERE IDModulo = :nID AND Modulo = :tModulo<T>, Cxc:Cxc.ID, <T>CXC<T>)
+
+[MenuHerramientaCxc.dlg/Dialogo.ListaAcciones]
+Cuotas=PagosParciales
+PagosParciales=(Fin)
+
+[MenuHerramientaCxc.dlg/Acciones.PagosParciales]
+Nombre=PagosParciales
+Boton=0
+NombreDesplegar=Timbrado de Recepción de pagos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CFDICobroParcialFiltros
+EspacioPrevio=S
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.ID, 0) <BR>Asigna(Info.Modulo, <T>CXC<T>) 
+
+
+[MenuHerramientaDinero.dlg/Dialogo.ListaAcciones]
+Reevaluacion=PagosParciales
+PagosParciales=(Fin)
+
+[MenuHerramientaDinero.dlg/Acciones.PagosParciales]
+Nombre=PagosParciales
+Boton=0
+NombreDesplegar=Timbrado de Recepción de pagos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CFDICobroParcialFiltros
+Activo=S
+Antes=S
+Visible=S
+EspacioPrevio=S
+AntesExpresiones=Asigna(Info.ID, 0)<BR>Asigna(Info.Modulo, <T>DIN<T>)
+
+[CxcCampos.frm/Forma]
+ListaCarpetas=(Lista)
+PosicionInicialIzquierda=521
+PosicionInicialArriba=245
+PosicionInicialAncho=429
+PosicionInicialAlturaCliente=268
+
+[CxcCampos.frm/Ficha]
+Pestana=S
+PestanaOtroNombre=S
+PestanaNombre=Campos
+
+[CxcCampos.frm/Ficha.Cxc.Concepto]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Referencia]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Condicion]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Vencimiento]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Observaciones]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Agente]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.Proyecto]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.UEN]
+ColorFuente=
+
+[CxcCampos.frm/Ficha.Cxc.FechaRevision]
+ColorFuente=
+
+[CxcCampos.frm/CFDI]
+Estilo=Ficha
+Pestana=S
+PestanaOtroNombre=S
+PestanaNombre=CFDI
+Clave=CFDI
+PermiteEditar=S
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=A1
+Vista=CFDICxcDocRelacionado
+Fuente={Tahoma, 8, Negro, []}
+FichaEspacioEntreLineas=6
+FichaEspacioNombres=100
+FichaEspacioNombresAuto=S
+FichaNombres=Arriba
+FichaAlineacion=Izquierda
+FichaAlineacionDerecha=S
+FichaColorFondo=Plata
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+ListaEnCaptura=(Lista)
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=General
+FiltroGeneral=CFDICxcDocRelacionado.ID = {Info.ID}
+CondicionVisible=MovTipo(<T>CXC<T>, Info.Mov) EN (<T>CXC.F<T>,<T>CXC.NC<T>)
+
+[CxcCampos.frm/CFDI.CFDICxcDocRelacionado.UUID]
+Carpeta=CFDI
+Clave=CFDICxcDocRelacionado.UUID
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=37
+ColorFondo=Blanco
+
+[CxcCampos.frm/CFDI.CFDICxcDocRelacionado.Serie]
+Carpeta=CFDI
+Clave=CFDICxcDocRelacionado.Serie
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=11
+ColorFondo=Blanco
+
+[CxcCampos.frm/CFDI.CFDICxcDocRelacionado.Folio]
+Carpeta=CFDI
+Clave=CFDICxcDocRelacionado.Folio
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=11
+
+[CxcCampos.frm/CFDI.CFDICxcDocRelacionado.NumParcialidad]
+Carpeta=CFDI
+Clave=CFDICxcDocRelacionado.NumParcialidad
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=12
+
+[CxcCampos.frm/CFDI.ListaEnCaptura]
+(Inicio)=CFDICxcDocRelacionado.UUID
+CFDICxcDocRelacionado.UUID=CFDICxcDocRelacionado.Serie
+CFDICxcDocRelacionado.Serie=CFDICxcDocRelacionado.Folio
+CFDICxcDocRelacionado.Folio=CFDICxcDocRelacionado.NumParcialidad
+CFDICxcDocRelacionado.NumParcialidad=(Fin)
+
+[CxcCampos.frm/Forma.ListaCarpetas]
+(Inicio)=Ficha
+Ficha=CFDI
+CFDI=(Fin)

@@ -1,0 +1,227 @@
+[MenuHerramientaCont.dlg/Dialogo]
+PosicionInicialArriba=415
+
+[MenuHerramientaCont.dlg/Dialogo.ListaAcciones]
+MenuHerramientaContReg=ContElectronica
+ContElectronica=CFDValido
+CFDValido=(Fin)
+
+[MenuHerramientaCont.dlg/Acciones.CFDValido]
+Nombre=CFDValido
+Boton=0
+NombreDesplegar=&Administrador de &Documentos
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=CFDValido
+
+[MenuHerramientaCont.dlg/Acciones.ContElectronica]
+Nombre=ContElectronica
+Boton=0
+NombreDesplegar=&Contabilidad Electrónica
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=ContabilidadElectronica
+
+[Dinero.tbl/FormaPago]
+RequeridoActivo=S
+
+[Dinero.frm/Acciones.Otros7]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Información Adicional
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+Expresion=SI<BR>Info.FormaPago<>''<BR>Entonces<BR>SI MovTipo(<T>DIN<T>, Dinero:Dinero.Mov) EN (<T>DIN.D<T>, <T>DIN.DE<T>)<BR>Entonces<BR>FormaModal(<T>ContSAtInfoAdiIngreso<T>)<BR>Sino<BR>FormaModal(<T>ContSATInfoCompDinero<T>)<BR>Fin<BR>Sino<BR>Error('Debe seleccionar una forma de pago')<BR>Fin
+AntesExpresiones=Asigna(Info.ID,Dinero:Dinero.ID)<BR>Asigna(Info.Estatus,Dinero:Dinero.Estatus)<BR>Asigna(Info.FormaPago,Dinero:Dinero.FormaPago)<BR>Asigna(Info.Mov,Dinero:Dinero.Mov)
+Visible=S
+
+
+[Dinero.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>DIN<T>)<BR>Asigna(Info.ID,Dinero:Dinero.ID)<BR>Asigna(Info.Mov,Dinero:Dinero.Mov)<BR>Asigna(Info.MovID,Dinero:Dinero.MovID)<BR>Asigna(Info.Moneda,Dinero:Dinero.Moneda)<BR>Asigna(Info.TipoCambio,Dinero:Dinero.TipoCambio)<BR>Asigna(Info.Estatus,Dinero:Dinero.Estatus)<BR>Asigna(Info.Clave,MovTipo(<T>DIN<T>,Dinero:Dinero.Mov))
+
+[Venta.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>VTAS<T>)<BR>Asigna(Info.ID,Venta:Venta.ID)<BR>Asigna(Info.Mov,Venta:Venta.Mov)<BR>Asigna(Info.MovID,Venta:Venta.MovID)<BR>Asigna(Info.Moneda,Venta:Venta.Moneda)<BR>Asigna(Info.TipoCambio,Venta:Venta.TipoCambio)<BR>Asigna(Info.Estatus,Venta:Venta.Estatus)
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarCfdConcentrado(:tEmpresa,:tModulo)<T>,Empresa,<T>VTAS<T>)
+
+[Cxp.frm/Acciones.Otros7]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+Visible=S
+DespuesGuardar=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>CXP<T>)<BR>Asigna(Info.ID,Cxp:Cxp.ID)<BR>Asigna(Info.Mov,Cxp:Cxp.Mov)<BR>Asigna(Info.MovID,Cxp:Cxp.MovID)<BR>Asigna(Info.Moneda,Cxp:Cxp.Moneda)<BR>Asigna(Info.TipoCambio,Cxp:Cxp.TipoCambio)<BR>Asigna(Info.Estatus,Cxp:Cxp.Estatus)
+
+[Cxp.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes CFD - CBB
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,CXP:CXP.Id)<BR>Asigna(Info.Modulo,<T>CXP<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,1,<T>CXP<T>,CXP:CXP.Mov)
+Expresion=FormaModal(<T>ContSATCFDCBBModulo<T>)
+
+[Cxp.frm/Acciones.Otros9]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes Extranjeros
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,CXP:CXP.Id)<BR>Asigna(Info.Modulo,<T>CXP<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,2,<T>CXP<T>,CXP:CXP.Mov)
+Expresion=FormaModal(<T>ContSATExtranjeroModulo<T>)
+
+[Cxc.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>CXC<T>)<BR>Asigna(Info.ID,Cxc:Cxc.ID)<BR>Asigna(Info.Mov,Cxc:Cxc.Mov)<BR>Asigna(Info.MovID,Cxc:Cxc.MovID)<BR>Asigna(Info.Moneda,Cxc:Cxc.Moneda)<BR>Asigna(Info.TipoCambio,Cxc:Cxc.TipoCambio)<BR>Asigna(Info.Estatus,Cxc:Cxc.Estatus)
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarCfdConcentrado(:tEmpresa,:tModulo)<T>,Empresa,<T>CXC<T>)
+
+[Nomina.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>NOM<T>)<BR>Asigna(Info.ID,Nomina:Nomina.ID)<BR>Asigna(Info.Mov,Nomina:Nomina.Mov)<BR>Asigna(Info.MovID,Nomina:Nomina.MovID)<BR>Asigna(Info.Moneda,Nomina:Nomina.Moneda)<BR>Asigna(Info.TipoCambio,Nomina:Nomina.TipoCambio)<BR>Asigna(Info.Estatus,Nomina:Nomina.Estatus)
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarCfdConcentrado(:tEmpresa,:tModulo)<T>,Empresa,<T>NOM<T>)
+
+[Cont.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>CONT<T>)<BR>Asigna(Info.ID,Cont:Cont.ID)<BR>Asigna(Info.Mov,Cont:Cont.Mov)<BR>Asigna(Info.MovID,Cont:Cont.MovID)<BR>Asigna(Info.Moneda,Cont:Cont.Moneda)<BR>Asigna(Info.TipoCambio,Cont:Cont.TipoCambio)<BR>Asigna(Info.Estatus,Cont:Cont.Estatus)
+
+[Gasto.frm/Acciones.Otros7]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>GAS<T>)<BR>Asigna(Info.ID,Gasto:Gasto.ID)<BR>Asigna(Info.Mov,Gasto:Gasto.Mov)<BR>Asigna(Info.MovID,Gasto:Gasto.MovID)<BR>Asigna(Info.Moneda,Gasto:Gasto.Moneda)<BR>Asigna(Info.TipoCambio,Gasto:Gasto.TipoCambio)<BR>Asigna(Info.Estatus,Gasto:Gasto.Estatus)
+
+[Gasto.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes CFD - CBB
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,Gasto:Gasto.Id)<BR>Asigna(Info.Modulo,<T>GAS<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,1,<T>GAS<T>,Gasto:Gasto.Mov)
+Expresion=FormaModal(<T>ContSATCFDCBBModulo<T>)
+
+[Gasto.frm/Acciones.Otros9]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes Extranjeros
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,Gasto:Gasto.Id)<BR>Asigna(Info.Modulo,<T>GAS<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,2,<T>GAS<T>,Gasto:Gasto.Mov)
+Expresion=FormaModal(<T>ContSATExtranjeroModulo<T>)
+
+[Compra.frm/Acciones.Otros7]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes
+GuardarAntes=S
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+Expresion=FormaModal(<T>CFDConcentrado<T>)
+AntesExpresiones=Asigna(Info.Modulo,<T>COMS<T>)<BR>Asigna(Info.ID,Compra:Compra.ID)<BR>Asigna(Info.Mov,Compra:Compra.Mov)<BR>Asigna(Info.MovID,Compra:Compra.MovID)<BR>Asigna(Info.Moneda,Compra:Compra.Moneda)<BR>Asigna(Info.TipoCambio,Compra:Compra.TipoCambio)<BR>Asigna(Info.Estatus,Compra:Compra.Estatus)
+
+[Compra.frm/Acciones.Otros8]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes CFD - CBB
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,Compra:Compra.Id)<BR>Asigna(Info.Modulo,<T>COMS<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,1,<T>COMS<T>,Compra:Compra.Mov)
+Expresion=FormaModal(<T>ContSATCFDCBBModulo<T>)
+
+[Compra.frm/Acciones.Otros9]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Comprobantes Extranjeros
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+AntesExpresiones=Asigna(Info.Id,Compra:Compra.Id)<BR>Asigna(Info.Modulo,<T>COMS<T>)<BR>
+VisibleCondicion=SQL(<T>SELECT dbo.fnDesplegarAsociarCompOtros(:nIndicador,:tModulo,:tMov)<T>,2,<T>COMS<T>,Compra:Compra.Mov)
+Expresion=FormaModal(<T>ContSATExtranjeroModulo<T>)
+
+[Compra.frm/Acciones.Otros6]
+Menu=&Edición
+Boton=0
+NombreDesplegar=Asociar Pedimentos
+GuardarAntes=S
+Antes=S
+DespuesGuardar=S
+Activo=S
+Visible=S
+AntesExpresiones=Asigna(Info.Id,Compra:Compra.Id)<BR>Asigna(Info.Modulo,<T>COMS<T>)<BR>Asigna(Info.MovId,Compra:Compra.MovId)<BR>Asigna(Info.Mov,Compra:Compra.Mov)
+Expresion=FormaModal(<T>ContSATPedimentos<T>)
+
+

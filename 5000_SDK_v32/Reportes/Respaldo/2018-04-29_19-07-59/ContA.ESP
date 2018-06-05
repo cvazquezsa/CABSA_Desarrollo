@@ -1,0 +1,79 @@
+[ContA.vis/SELECT]
+ISNULL((SELECT SUM(Debe) FROM ContD WHERE ContD.Presupuesto=0 AND ContD.ID = Cont.ID),0.0) AS Cargos, 
+ISNULL((SELECT SUM(Haber) FROM ContD WHERE ContD.ID = Cont.ID),0.000001) AS Abonos, 
+ROUND((SELECT SUM(Debe) FROM ContD WHERE ContD.Presupuesto=0 AND ContD.ID = Cont.ID) - (SELECT SUM(Haber) FROM ContD WHERE ContD.ID = Cont.ID),2) AS Diferencia,
+Cont.Origen,
+Cont.OrigenID
+
+
+[Cont.frm/Carpeta.Detalle]
+HojaVistaOmision=Normal
+
+[Cont.frm/Ficha.Cont.TipoCambio]
+Tamano=10
+
+[Cont.frm/Ficha.Cont.OrigenTipoCambio]
+Tamano=10
+
+
+[Cont.frm/Acciones.Otros1]
+Nombre=Otros1
+Menu=&Edición
+EnMenu=S
+Boton=5
+NombreEnBoton=S
+EspacioPrevio=S
+NombreDesplegar=Regenerar
+EnBarraHerramientas=S
+TipoAccion=Expresion
+ConCondicion=S
+EjecucionConError=S
+Visible=S
+RefrescarDespues=S
+Expresion=Si<BR>   Confirmacion( <T>Esta seguro de Regenerar la Póliza?<T>, BotonSi , BotonNo  ) =  BotonSi <BR>Entonces<BR>Asigna(Info.Modulo,SQL(<T>SELECT OrigenTipo FROM Cont WHERE ID = :nID<T>, ContD:ContD.ID))<BR>Asigna(Info.ID,SQL(<T>dbo.xp_BorraPolizaSinAfectar :nID<T>, ContD:ContD.ID))<BR>Si Info.ID>0 Entonces<BR> GenerarPolizas(Info.Modulo,Info.ID)<BR> Sino <BR>Informacion(Cont:Cont.FechaEmision)<BR>GenerarPolizas(Cont:Cont.FechaEmision)<BR> Fin<BR>Fin
+ActivoCondicion=ConDatos(Cont:Cont.OrigenTipo) y (Cont:Cont.Estatus='SINAFECTAR')
+;ActivoCondicion=ConDatos(Cont:Cont.OrigenTipo)
+EjecucionCondicion=ConDatos(Cont:Cont.OrigenTipo)
+EjecucionMensaje=<T>La póliza no fue generada en automático<T>
+
+
+
+;[Cont.frm/Acciones.Otros2]
+;Nombre=Otros2
+;Menu=&Edición
+;EnMenu=S
+;TipoAccion=Expresion
+;Boton=64
+;NombreEnBoton=S
+;EnBarraHerramientas=S
+;NombreDesplegar=Prorratear
+;EspacioPrevio=S
+;Activo=S
+;Visible=S
+;ConCondicion=S
+;EjecucionConError=S
+;RefrescarDespues=S
+;Expresion=EjecutarSQL(<T>dbo.spContProrratear :cSuc, :nID, :nRenglon<T>, Usuario.Sucursal, ContD:ContD.ID, ContD:ContD.Renglon )
+;ActivoCondicion=(Cont:Cont.Estatus = <T>SINAFECTAR<T>)
+;EjecucionCondicion=(Cont:Cont.Estatus = <T>SINAFECTAR<T>) y (SQL(<T>dbo.spCantCentrosCosto :cCta<T>, ContD:ContD.Cuenta) > 0)
+;EjecucionMensaje=<T>La cuenta no tiene Centros de Costo asignados<T>
+
+
+[Cont.frm/Acciones.Otros3]
+Nombre=Otros3
+Menu=&Edición
+EnMenu=S
+Boton=10
+NombreEnBoton=S
+EspacioPrevio=S
+NombreDesplegar=+/- Importe
+EnBarraHerramientas=S
+TipoAccion=Expresion
+ConCondicion=S
+EjecucionConError=S
+Visible=S
+RefrescarDespues=S
+Expresion=Si<BR>   Confirmacion( <T>Esta seguro de invertir los valores?<T>, BotonSi , BotonNo  ) =  BotonSi <BR>Entonces<BR>  EjecutarSQL(<T>dbo.xpInvierteImpPoliza :nID<T>, ContD:ContD.ID)<BR>Fin
+ActivoCondicion=(Cont:Cont.Estatus = <T>SINAFECTAR<T>)
+EjecucionCondicion=(Cont:Cont.Estatus = <T>SINAFECTAR<T>)
+EjecucionMensaje=<T>La póliza debe estar en estatus Sin Afectar<T>

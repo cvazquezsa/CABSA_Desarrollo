@@ -1,0 +1,4 @@
+[VentaT.vis/SELECT]
+'CuentaContPesos' = (SELECT Cuenta FROM Cte WHERE Cliente = Venta.Cliente),
+'CuentaAlmacen' = (SELECT Cuenta FROM Alm WHERE Almacen = VentaD.Almacen),
+'Concuenta' = (SELECT Cuenta FROM Concepto WHERE Concepto = Venta.Concepto)

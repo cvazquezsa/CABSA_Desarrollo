@@ -1,0 +1,51 @@
+[Venta.frm/Forma.ListaAcciones]
+Otros8=AnticiposRelacionados
+AnticiposRelacionados=CFDRelacionadoVentaSaldo
+CFDRelacionadoVentaSaldo=CFDIVentaTimbrada
+CFDIVentaTimbrada=Otros9
+
+[Venta.frm/Acciones.AnticiposRelacionados]
+Nombre=AnticiposRelacionados
+Boton=0
+Menu=&Edición
+NombreDesplegar=Relacionados CXC
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoAnticipos
+Antes=S
+Visible=S
+GuardarAntes=S
+ActivoCondicion=Venta:Venta.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna(Info.ID, Venta:Venta.ID)<BR>Asigna( Info.Modulo, <T>VTAS<T> )<BR>Asigna(Info.Cliente, Venta:Venta.Cliente)
+
+[Venta.frm/Acciones.CFDIVentaTimbrada]
+Nombre=CFDIVentaTimbrada
+Boton=0
+Menu=&Edición
+NombreDesplegar=CFDI Relacionados Ventas
+GuardarAntes=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoVenta
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+ActivoCondicion=Venta:Venta.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna( Info.Cliente, Venta:Venta.Cliente )<BR>Asigna( Info.Modulo, <T>VTAS<T> )<BR>Asigna( Info.Id, Venta:Venta.ID )<BR>Asigna( Anexo.Mov, Venta:Venta.Mov )
+
+[Venta.frm/Acciones.CFDRelacionadoVentaSaldo]
+Nombre=CFDRelacionadoVentaSaldo
+Boton=0
+Menu=&Edición
+NombreDesplegar=CFDI Relacionados Venta Saldo
+GuardarAntes=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoVentaSaldo
+Activo=S
+Antes=S
+DespuesGuardar=S
+Visible=S
+ActivoCondicion=Venta:Venta.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna( Info.Cliente, Venta:Venta.Cliente )<BR>Asigna( Info.Modulo, <T>VTAS<T> )<BR>Asigna( Info.Id, Venta:Venta.ID )

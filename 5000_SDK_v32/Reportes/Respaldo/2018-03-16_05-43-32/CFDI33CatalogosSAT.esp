@@ -1,0 +1,2570 @@
+[MenuPrincipal.dlg/Acciones.Config.Fiscal]
+VisibleCondicion=
+Visible=S
+
+[MenuRepFiscal.dlg/Dialogo.ListaAcciones]
+MenuRepFiscalEcuador=MenuRepFiscalObligacion
+MenuRepFiscalObligacion=(Fin)
+
+[MenuRepFiscal.dlg/Acciones.MenuRepFiscalObligacion]
+Nombre=MenuRepFiscalObligacion
+Boton=0
+NombreDesplegar=Obligaciones Fiscales
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepFiscalObligacion
+Activo=S
+Visible=S
+
+[MenuCfgFiscal.dlg/Dialogo]
+PosicionInicialArriba=275
+PosicionInicialAlturaCliente=138
+
+[MenuCfgFiscal.dlg/Dialogo.ListaAcciones]
+(Inicio)=CatalogosSAT
+CatalogosSAT=MapeoIntelisis
+MapeoIntelisis=FiscalRegimen
+FiscalRegimen=FiscalRegimenRegla
+FiscalRegimenRegla=TipoImpuesto
+TipoImpuesto=ObligacionFiscal
+ObligacionFiscal=ObligacionesFiscales
+ObligacionesFiscales=(Fin)
+
+[MenuCfgFiscal.dlg/Acciones.CatalogosSAT]
+Nombre=CatalogosSAT
+Boton=0
+NombreDesplegar=&Maestros SAT
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCfgFiscalSAT
+Activo=S
+Visible=S
+
+[MenuCfgFiscal.dlg/Acciones.MapeoIntelisis]
+Nombre=MapeoIntelisis
+Boton=0
+NombreDesplegar=&Mapeos Intelisis
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCtaDireccionFiscal
+Activo=S
+Visible=S
+
+[MenuCfgFiscal.dlg/Acciones.FiscalRegimen]
+Visible=
+VisibleCondicion=General.Fiscal o General.TipoImpuesto
+
+[MenuCfgFiscal.dlg/Acciones.FiscalRegimenRegla]
+Visible=
+VisibleCondicion=General.Fiscal o General.TipoImpuesto
+
+[MenuCfgFiscal.dlg/Acciones.ObligacionFiscal]
+Visible=
+VisibleCondicion=General.Fiscal o General.TipoImpuesto
+
+[MenuCfgFiscal.dlg/Acciones.TipoImpuesto]
+Visible=
+VisibleCondicion=General.Fiscal o General.TipoImpuesto
+
+[MenuCfgFiscal.dlg/Acciones.FiscalZona]
+Visible=
+VisibleCondicion=General.Fiscal o General.TipoImpuesto
+
+[MenuCfgFiscal.dlg/Acciones.ObligacionesFiscales]
+Nombre=ObligacionesFiscales
+Boton=0
+NombreDesplegar=&Reportes Obligaciones Fiscales
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCfgFiscalObligacion
+Activo=S
+Visible=S
+
+[Mon.tbl/Clave]
+AyudaEnCaptura=Vista
+AyudaForma=SATMonedaLista
+AyudaVista=SATMoneda
+AyudaCampo=SATMoneda.Clave
+
+[Empresa.tbl/Colonia]
+Tamano=100
+TamanoValidacion=100
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValorRefrescar=Si(Info.Copiar, Info.Colonia, Empresa:Empresa.Colonia)
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>,  Empresa:Empresa.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>,  Empresa:Empresa.Colonia) > 0, 1=1)
+
+
+[Empresa.tbl/CodigoPostal]
+ValorRefrescar=Si(Info.Copiar, Info.CodigoPostal, Empresa:Empresa.CodigoPostal)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>,  Empresa:Empresa.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>,  Empresa:Empresa.CodigoPostal) > 0, 1=1)
+
+
+[Empresa.tbl/Poblacion]
+ValorRefrescar=Si(Info.Copiar, Info.Localidad,  Empresa:Empresa.Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaBusquedaRapida=Si(ConDatos(Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Empresa:Empresa.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Empresa:Empresa.Poblacion) > 0, 1=1)
+
+
+[Empresa.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaMemTabla=
+AyudaMemRenglones=
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Empresa:Empresa.Estado)
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Nombre, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Empresa:Empresa.Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Empresa:Empresa.Estado)
+TipoDatos=Texto
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Empresa:Empresa.Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Empresa:Empresa.Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+
+
+[Empresa.tbl/Pais]
+OpcionesColumnas=
+AyudaEnCaptura=Expresion
+OpcionesPredefinidas=
+Requerido=
+ValorRefrescar=Si(Info.Copiar, Info.Pais, Empresa:Empresa.Pais)
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ListaRefrescar=(Lista)
+ConRefrescar=S
+RequeridoActivo=S
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Empresa:Empresa.Pais) > 0
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+[Empresa.tbl/Grupo]
+ValorRefrescar=Si(Info.Copiar, Asigna(Info.Copiar, Falso), Empresa:Empresa.Grupo)
+
+[Empresa.tbl/Delegacion]
+ValorRefrescar=Si(Info.Copiar, Info.Delegacion, Empresa:Empresa.Delegacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaBusquedaRapida=Si(ConDatos(Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Empresa:Empresa.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Empresa:Empresa.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Empresa:Empresa.Delegacion) > 0, 1=1)
+
+
+[Empresa.tbl/FiscalRegimen]
+AyudaEnCaptura=Vista
+AyudaForma=FiscalRegimenLista
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+
+[Empresa.tbl/CodigoPostal.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=Grupo
+Grupo=(Fin)
+
+[Empresa.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Grupo
+Grupo=(Fin)
+
+[Empresa.tbl/Estado.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Pais
+Pais=Grupo
+Grupo=(Fin)
+
+[Empresa.tbl/Delegacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=Grupo
+Grupo=(Fin)
+
+[Empresa.tbl/Colonia.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=Grupo
+Grupo=(Fin)
+
+[Empresa.tbl/Pais.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Grupo
+Grupo=(Fin)
+
+[SerieLoteProp.frm/Forma]
+PosicionInicialIzquierda=391
+PosicionInicialArriba=15
+PosicionInicialAncho=706
+PosicionInicialAlturaCliente=612
+
+[SerieLoteProp.frm/Lista.Columnas]
+Clave=92
+Descripcion=234
+UnidadMedida=95
+Importacion=64
+Exportacion=64
+
+[SerieLoteProp.frm/Pedimento]
+CampoColorFondo=Plata
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.ValorComercial]
+Tamano=21
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.IGI]
+Tamano=21
+
+[SerieLoteProp.frm/Pedimento.Prov.Nombre]
+Tamano=39
+
+[SerieLoteProp.frm/Rectificacion]
+CampoColorFondo=Blanco
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.PedimentoClave2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.PedimentoRegimen2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.PedimentoTipo2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.Vencimiento2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.ValorDolares2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.ValorAduana2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.ValorComercial2]
+Tamano=21
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.AgenteAduanal2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.ProvDestino.Nombre]
+Tamano=39
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.Aduana2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.DTA2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.IVA2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.IGI2]
+Tamano=21
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.Total2]
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.Clave2]
+Tamano=21
+ColorFuente=
+
+[SerieLoteProp.frm/Pedimento.Aduana.Denominacion]
+Tamano=21
+
+[SerieLoteProp.frm/Rectificacion.Aduana2.Seccion]
+ColorFuente=
+
+[Rectificacion.Aduana2.Denominacion]
+Tamano=21
+ColorFuente=
+
+[SerieLoteProp.frm/Rectificacion.ListaEnCaptura]
+SerieLoteProp.IGI2=SerieLoteProp.FracccionArancelaria2
+SerieLoteProp.FracccionArancelaria2=SerieLoteProp.PesoBruto2
+SerieLoteProp.PesoBruto2=SerieLoteProp.UnidadAduana2
+SerieLoteProp.UnidadAduana2=SerieLoteProp.CantidadAduana2
+SerieLoteProp.CantidadAduana2=Total2
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.ContribEfectivo]
+Tamano=27
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.ImporteTotal]
+Tamano=27
+
+[SerieLoteProp.frm/Pedimento.ListaEnCaptura]
+SerieLoteProp.PedimentoRegimen=SerieLoteProp.Clave
+SerieLoteProp.IGI=SerieLoteProp.FracccionArancelaria
+SerieLoteProp.Clave=SerieLoteProp.PedimentoTipo
+SerieLoteProp.FracccionArancelaria=SerieLoteProp.PesoBruto
+SerieLoteProp.PesoBruto=SerieLoteProp.CantidadAduana
+SerieLoteProp.CantidadAduana=SerieLoteProp.UnidadAduana
+SerieLoteProp.UnidadAduana=Total
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.FracccionArancelaria]
+Carpeta=Pedimento
+Clave=SerieLoteProp.FracccionArancelaria
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.PesoBruto]
+Carpeta=Pedimento
+Clave=SerieLoteProp.PesoBruto
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.UnidadAduana]
+Carpeta=Pedimento
+Clave=SerieLoteProp.UnidadAduana
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.CantidadAduana]
+Carpeta=Pedimento
+Clave=SerieLoteProp.CantidadAduana
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLoteProp.frm/Pedimento.SerieLoteProp.Clave]
+Carpeta=Pedimento
+Clave=SerieLoteProp.Clave
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.FracccionArancelaria2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.FracccionArancelaria2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.PesoBruto2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.PesoBruto2
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.UnidadAduana2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.UnidadAduana2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLoteProp.frm/Rectificacion.SerieLoteProp.CantidadAduana2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.CantidadAduana2
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLotePropLista.frm/Forma]
+PosicionInicialIzquierda=391
+PosicionInicialArriba=15
+PosicionInicialAncho=706
+PosicionInicialAlturaCliente=612
+
+[SerieLotePropLista.frm/Lista.Columnas]
+Clave=92
+Descripcion=234
+UnidadMedida=95
+Importacion=64
+Exportacion=64
+
+[SerieLotePropLista.frm/Pedimento]
+CampoColorFondo=Plata
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.ValorComercial]
+Tamano=21
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.IGI]
+Tamano=21
+
+[SerieLotePropLista.frm/Pedimento.Prov.Nombre]
+Tamano=39
+
+[SerieLotePropLista.frm/Rectificacion]
+CampoColorFondo=Blanco
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.PedimentoClave2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.PedimentoRegimen2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.PedimentoTipo2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.Vencimiento2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.ValorDolares2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.ValorAduana2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.ValorComercial2]
+Tamano=21
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.AgenteAduanal2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.ProvDestino.Nombre]
+Tamano=39
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.Aduana2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.DTA2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.IVA2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.IGI2]
+Tamano=21
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.Total2]
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.Clave2]
+Tamano=21
+ColorFuente=
+
+[SerieLotePropLista.frm/Pedimento.Aduana.Denominacion]
+Tamano=21
+
+[SerieLotePropLista.frm/Rectificacion.Aduana2.Seccion]
+ColorFuente=
+
+[Rectificacion.Aduana2.Denominacion]
+Tamano=21
+ColorFuente=
+
+[SerieLotePropLista.frm/Rectificacion.ListaEnCaptura]
+SerieLoteProp.IGI2=SerieLoteProp.FracccionArancelaria2
+SerieLoteProp.FracccionArancelaria2=SerieLoteProp.PesoBruto2
+SerieLoteProp.PesoBruto2=SerieLoteProp.UnidadAduana2
+SerieLoteProp.UnidadAduana2=SerieLoteProp.CantidadAduana2
+SerieLoteProp.CantidadAduana2=Total2
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.ContribEfectivo]
+Tamano=27
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.ImporteTotal]
+Tamano=27
+
+[SerieLotePropLista.frm/Pedimento.ListaEnCaptura]
+SerieLoteProp.PedimentoRegimen=SerieLoteProp.Clave
+SerieLoteProp.IGI=SerieLoteProp.FracccionArancelaria
+SerieLoteProp.Clave=SerieLoteProp.PedimentoTipo
+SerieLoteProp.FracccionArancelaria=SerieLoteProp.PesoBruto
+SerieLoteProp.PesoBruto=SerieLoteProp.CantidadAduana
+SerieLoteProp.CantidadAduana=SerieLoteProp.UnidadAduana
+SerieLoteProp.UnidadAduana=Total
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.FracccionArancelaria]
+Carpeta=Pedimento
+Clave=SerieLoteProp.FracccionArancelaria
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.PesoBruto]
+Carpeta=Pedimento
+Clave=SerieLoteProp.PesoBruto
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.UnidadAduana]
+Carpeta=Pedimento
+Clave=SerieLoteProp.UnidadAduana
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.CantidadAduana]
+Carpeta=Pedimento
+Clave=SerieLoteProp.CantidadAduana
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLotePropLista.frm/Pedimento.SerieLoteProp.Clave]
+Carpeta=Pedimento
+Clave=SerieLoteProp.Clave
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.FracccionArancelaria2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.FracccionArancelaria2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.PesoBruto2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.PesoBruto2
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.UnidadAduana2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.UnidadAduana2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+
+[SerieLotePropLista.frm/Rectificacion.SerieLoteProp.CantidadAduana2]
+Carpeta=Rectificacion
+Clave=SerieLoteProp.CantidadAduana2
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+Tamano=17
+
+[SerieLoteProp.tbl/Tabla]
+SQL=(Lista)
+
+[SerieLoteProp.tbl/Clave2]
+Tamano=21
+MascaraEdicion=99  99  9999  9999999
+
+[SerieLoteProp.tbl/Tabla.ListaCampos]
+Observaciones=ContribOFP
+ContribOFP=ContribEfectivo
+ContribEfectivo=ContribTotal
+ContribTotal=Contraprestacion
+Contraprestacion=ImporteTotal
+ImporteTotal=FracccionArancelaria
+FracccionArancelaria=PesoBruto
+PesoBruto=UnidadAduana
+UnidadAduana=CantidadAduana
+CantidadAduana=FracccionArancelaria2
+FracccionArancelaria2=PesoBruto2
+PesoBruto2=UnidadAduana2
+UnidadAduana2=CantidadAduana2
+CantidadAduana2=Clave
+Clave=(Fin)
+
+[SerieLoteProp.tbl/Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Propiedades,
+Propiedades,=Extra1,
+Extra1,=Extra2,
+Extra2,=Extra3,
+Extra3,=Fecha1,
+Fecha1,=Fecha2,
+Fecha2,=Fecha3,
+Fecha3,=Factor1,
+Factor1,=Factor2,
+Factor2,=Factor3,
+Factor3,=PedimentoClave,
+PedimentoClave,=PedimentoRegimen,
+PedimentoRegimen,=PedimentoTipo,
+PedimentoTipo,=Vencimiento,
+Vencimiento,=ValorDolares,
+ValorDolares,=ValorAduana,
+ValorAduana,=ValorComercial,
+ValorComercial,=AgenteAduanal,
+AgenteAduanal,=Aduana,
+Aduana,=DTA,
+DTA,=IVA,
+IVA,=IGI,
+IGI,=TieneRectificacion,
+TieneRectificacion,=PedimentoClave2,
+PedimentoClave2,=PedimentoRegimen2,
+PedimentoRegimen2,=PedimentoTipo2,
+PedimentoTipo2,=Vencimiento2,
+Vencimiento2,=ValorDolares2,
+ValorDolares2,=ValorAduana2,
+ValorAduana2,=ValorComercial2,
+ValorComercial2,=AgenteAduanal2,
+AgenteAduanal2,=Aduana2,
+Aduana2,=DTA2,
+DTA2,=IVA2,
+IVA2,=IGI2,
+IGI2,=Clave2,
+Clave2,=Observaciones,
+Observaciones,=ContribOFP,
+ContribOFP,=ContribEfectivo,
+ContribEfectivo,=ContribTotal,
+ContribTotal,=Contraprestacion,
+Contraprestacion,=ImporteTotal,
+ImporteTotal,=FracccionArancelaria,
+FracccionArancelaria,=PesoBruto,
+PesoBruto,=UnidadAduana,
+UnidadAduana,=CantidadAduana,
+CantidadAduana,=FracccionArancelaria2,
+FracccionArancelaria2,=PesoBruto2,
+PesoBruto2,=UnidadAduana2,
+UnidadAduana2,=CantidadAduana2,
+CantidadAduana2,=Clave
+Clave=FROM SerieLoteProp
+FROM SerieLoteProp=(Fin)
+
+[SerieLoteProp.tbl/FracccionArancelaria]
+Clave=FracccionArancelaria
+Nombre=Fracccion Arancelaria
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATFraccionArancelariaLista
+AyudaVista=SATFraccionArancelaria
+AyudaCampo=SATFraccionArancelaria.Clave
+
+[SerieLoteProp.tbl/PesoBruto]
+Clave=PesoBruto
+Nombre=Peso Bruto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[SerieLoteProp.tbl/UnidadAduana]
+Clave=UnidadAduana
+Nombre=Unidad Aduana
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATUnidadAduanaLista
+AyudaVista=SATUnidadAduana
+AyudaCampo=SATUnidadAduana.Clave
+
+[SerieLoteProp.tbl/CantidadAduana]
+Clave=CantidadAduana
+Nombre=Cantidad Aduana
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[SerieLoteProp.tbl/FracccionArancelaria2]
+Clave=FracccionArancelaria2
+Nombre=Fracccion Arancelaria
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATFraccionArancelariaLista
+AyudaVista=SATFraccionArancelaria
+AyudaCampo=SATFraccionArancelaria.Clave
+
+[SerieLoteProp.tbl/PesoBruto2]
+Clave=PesoBruto2
+Nombre=Peso Bruto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[SerieLoteProp.tbl/UnidadAduana2]
+Clave=UnidadAduana2
+Nombre=Unidad Aduana
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATUnidadAduanaLista
+AyudaVista=SATUnidadAduana
+AyudaCampo=SATUnidadAduana.Clave
+
+[SerieLoteProp.tbl/CantidadAduana2]
+Clave=CantidadAduana2
+Nombre=Cantidad Aduana
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[SerieLoteProp.tbl/Clave]
+Clave=Clave
+Nombre=Número Pedimento
+Visible=S
+TamanoValidacion=21
+TipoDatos=Texto
+Tamano=21
+MascaraEdicion=99  99  9999  9999999
+
+
+[SerieLoteProp.tbl/ContribOFP]
+Clave=ContribOFP
+Nombre=Contribuciones Otras Formas de Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SerieLoteProp.tbl/ContribEfectivo]
+Clave=ContribEfectivo
+Nombre=Contribuciones Efectivo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SerieLoteProp.tbl/ContribTotal]
+Clave=ContribTotal
+Nombre=Total de Contribuciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SerieLoteProp.tbl/Contraprestacion]
+Clave=Contraprestacion
+Nombre=Contraprestación
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SerieLoteProp.tbl/ImporteTotal]
+Clave=ImporteTotal
+Nombre=Importe Total
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SerieLoteProp.vis/Vista]
+SQL=(Lista)
+
+[SerieLoteProp.vis/SerieLoteProp.Clave2]
+Tamano=21
+
+[SerieLoteProp.vis/SerieLoteProp.ContribOFP]
+Clave=SerieLoteProp.ContribOFP
+Nombre=Contribuciones Otras Formas de Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=SerieLoteProp
+LigaCampo=ContribOFP
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ContribOFP
+
+[SerieLoteProp.vis/SerieLoteProp.ContribEfectivo]
+Clave=SerieLoteProp.ContribEfectivo
+Nombre=Contribuciones Efectivo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=SerieLoteProp
+LigaCampo=ContribEfectivo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ContribEfectivo
+
+[SerieLoteProp.vis/SerieLoteProp.ContribTotal]
+Clave=SerieLoteProp.ContribTotal
+Nombre=Total de Contribuciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=SerieLoteProp
+LigaCampo=ContribTotal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ContribTotal
+
+[SerieLoteProp.vis/SerieLoteProp.Contraprestacion]
+Clave=SerieLoteProp.Contraprestacion
+Nombre=Contraprestación
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=SerieLoteProp
+LigaCampo=Contraprestacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Contraprestacion
+
+[SerieLoteProp.vis/SerieLoteProp.ImporteTotal]
+Clave=SerieLoteProp.ImporteTotal
+Nombre=Importe Total
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=SerieLoteProp
+LigaCampo=ImporteTotal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ImporteTotal
+
+[SerieLoteProp.vis/Vista.ListaCampos]
+SerieLoteProp.Observaciones=SerieLoteProp.ContribOFP
+SerieLoteProp.ContribOFP=SerieLoteProp.ContribEfectivo
+SerieLoteProp.ContribEfectivo=SerieLoteProp.ContribTotal
+SerieLoteProp.ContribTotal=SerieLoteProp.Contraprestacion
+SerieLoteProp.Contraprestacion=SerieLoteProp.ImporteTotal
+SerieLoteProp.ImporteTotal=SerieLoteProp.FracccionArancelaria
+SerieLoteProp.FracccionArancelaria=SerieLoteProp.PesoBruto
+SerieLoteProp.PesoBruto=SerieLoteProp.UnidadAduana
+SerieLoteProp.UnidadAduana=SerieLoteProp.CantidadAduana
+SerieLoteProp.CantidadAduana=SerieLoteProp.FracccionArancelaria2
+SerieLoteProp.FracccionArancelaria2=SerieLoteProp.PesoBruto2
+SerieLoteProp.PesoBruto2=SerieLoteProp.UnidadAduana2
+SerieLoteProp.UnidadAduana2=SerieLoteProp.CantidadAduana2
+SerieLoteProp.CantidadAduana2=SerieLoteProp.Clave
+SerieLoteProp.Clave=Prov.Proveedor
+
+[SerieLoteProp.vis/Vista.SQL]
+(Inicio)=SELECT
+SELECT=SerieLoteProp.Propiedades,
+SerieLoteProp.Propiedades,=SerieLoteProp.Extra1,
+SerieLoteProp.Extra1,=SerieLoteProp.Extra2,
+SerieLoteProp.Extra2,=SerieLoteProp.Extra3,
+SerieLoteProp.Extra3,=SerieLoteProp.Fecha1,
+SerieLoteProp.Fecha1,=SerieLoteProp.Fecha2,
+SerieLoteProp.Fecha2,=SerieLoteProp.Fecha3,
+SerieLoteProp.Fecha3,=SerieLoteProp.Factor1,
+SerieLoteProp.Factor1,=SerieLoteProp.Factor2,
+SerieLoteProp.Factor2,=SerieLoteProp.Factor3,
+SerieLoteProp.Factor3,=SerieLoteProp.PedimentoClave,
+SerieLoteProp.PedimentoClave,=SerieLoteProp.PedimentoRegimen,
+SerieLoteProp.PedimentoRegimen,=SerieLoteProp.PedimentoTipo,
+SerieLoteProp.PedimentoTipo,=SerieLoteProp.Vencimiento,
+SerieLoteProp.Vencimiento,=SerieLoteProp.ValorDolares,
+SerieLoteProp.ValorDolares,=SerieLoteProp.ValorAduana,
+SerieLoteProp.ValorAduana,=SerieLoteProp.ValorComercial,
+SerieLoteProp.ValorComercial,=SerieLoteProp.AgenteAduanal,
+SerieLoteProp.AgenteAduanal,=SerieLoteProp.Aduana,
+SerieLoteProp.Aduana,=SerieLoteProp.DTA,
+SerieLoteProp.DTA,=SerieLoteProp.IVA,
+SerieLoteProp.IVA,=SerieLoteProp.IGI,
+SerieLoteProp.IGI,=SerieLoteProp.TieneRectificacion,
+SerieLoteProp.TieneRectificacion,=SerieLoteProp.PedimentoClave2,
+SerieLoteProp.PedimentoClave2,=SerieLoteProp.PedimentoRegimen2,
+SerieLoteProp.PedimentoRegimen2,=SerieLoteProp.PedimentoTipo2,
+SerieLoteProp.PedimentoTipo2,=SerieLoteProp.Vencimiento2,
+SerieLoteProp.Vencimiento2,=SerieLoteProp.ValorDolares2,
+SerieLoteProp.ValorDolares2,=SerieLoteProp.ValorAduana2,
+SerieLoteProp.ValorAduana2,=SerieLoteProp.ValorComercial2,
+SerieLoteProp.ValorComercial2,=SerieLoteProp.AgenteAduanal2,
+SerieLoteProp.AgenteAduanal2,=SerieLoteProp.Aduana2,
+SerieLoteProp.Aduana2,=SerieLoteProp.DTA2,
+SerieLoteProp.DTA2,=SerieLoteProp.IVA2,
+SerieLoteProp.IVA2,=SerieLoteProp.IGI2,
+SerieLoteProp.IGI2,=SerieLoteProp.Clave2,
+SerieLoteProp.Clave2,=SerieLoteProp.Observaciones,
+SerieLoteProp.Observaciones,=SerieLoteProp.ContribOFP,
+SerieLoteProp.ContribOFP,=SerieLoteProp.ContribEfectivo,
+SerieLoteProp.ContribEfectivo,=SerieLoteProp.ContribTotal,
+SerieLoteProp.ContribTotal,=SerieLoteProp.Contraprestacion,
+SerieLoteProp.Contraprestacion,=SerieLoteProp.ImporteTotal,
+SerieLoteProp.ImporteTotal,=SerieLoteProp.FracccionArancelaria,
+SerieLoteProp.FracccionArancelaria,=SerieLoteProp.PesoBruto,
+SerieLoteProp.PesoBruto,=SerieLoteProp.UnidadAduana,
+SerieLoteProp.UnidadAduana,=SerieLoteProp.CantidadAduana,
+SerieLoteProp.CantidadAduana,=SerieLoteProp.FracccionArancelaria2,
+SerieLoteProp.FracccionArancelaria2,=SerieLoteProp.PesoBruto2,
+SerieLoteProp.PesoBruto2,=SerieLoteProp.UnidadAduana2,
+SerieLoteProp.UnidadAduana2,=SerieLoteProp.CantidadAduana2,
+SerieLoteProp.CantidadAduana2,=SerieLoteProp.Clave,
+SerieLoteProp.Clave,=Prov.Proveedor,
+Prov.Proveedor,=Prov.Nombre,
+Prov.Nombre,=ProvDestino.Proveedor,
+ProvDestino.Proveedor,=ProvDestino.Nombre,
+ProvDestino.Nombre,=PedimentoClave.PedimentoClave,
+PedimentoClave.PedimentoClave,=PedimentoClave.Temporalidad,
+PedimentoClave.Temporalidad,=PedimentoClave2.PedimentoClave,
+PedimentoClave2.PedimentoClave,=PedimentoClave2.Temporalidad,
+PedimentoClave2.Temporalidad,=Aduana.Aduana,
+Aduana.Aduana,=Aduana.Seccion,
+Aduana.Seccion,=Aduana.Denominacion,
+Aduana.Denominacion,=Aduana2.Aduana,
+Aduana2.Aduana,=Aduana2.Seccion,
+Aduana2.Seccion,=Aduana2.Denominacion
+Aduana2.Denominacion=FROM SerieLoteProp
+FROM SerieLoteProp=LEFT OUTER JOIN Prov ON SerieLoteProp.AgenteAduanal<IGUAL>Prov.Proveedor
+LEFT OUTER JOIN Prov ON SerieLoteProp.AgenteAduanal<IGUAL>Prov.Proveedor=LEFT OUTER JOIN Prov ProvDestino ON SerieLoteProp.AgenteAduanal2<IGUAL>ProvDestino.Proveedor
+LEFT OUTER JOIN Prov ProvDestino ON SerieLoteProp.AgenteAduanal2<IGUAL>ProvDestino.Proveedor=LEFT OUTER JOIN PedimentoClave ON SerieLoteProp.PedimentoClave<IGUAL>PedimentoClave.PedimentoClave
+LEFT OUTER JOIN PedimentoClave ON SerieLoteProp.PedimentoClave<IGUAL>PedimentoClave.PedimentoClave=LEFT OUTER JOIN PedimentoClave PedimentoClave2 ON SerieLoteProp.PedimentoClave2<IGUAL>PedimentoClave2.PedimentoClave
+LEFT OUTER JOIN PedimentoClave PedimentoClave2 ON SerieLoteProp.PedimentoClave2<IGUAL>PedimentoClave2.PedimentoClave=LEFT OUTER JOIN Aduana ON SerieLoteProp.Aduana<IGUAL>Aduana.Aduana
+LEFT OUTER JOIN Aduana ON SerieLoteProp.Aduana<IGUAL>Aduana.Aduana=LEFT OUTER JOIN Aduana Aduana2 ON SerieLoteProp.Aduana2<IGUAL>Aduana2.Aduana
+LEFT OUTER JOIN Aduana Aduana2 ON SerieLoteProp.Aduana2<IGUAL>Aduana2.Aduana=(Fin)
+
+
+[SerieLoteProp.vis/SerieLoteProp.FracccionArancelaria]
+Clave=SerieLoteProp.FracccionArancelaria
+LigaTabla=SerieLoteProp
+LigaCampo=FracccionArancelaria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=FracccionArancelaria
+
+[SerieLoteProp.vis/SerieLoteProp.PesoBruto]
+Clave=SerieLoteProp.PesoBruto
+LigaTabla=SerieLoteProp
+LigaCampo=PesoBruto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=PesoBruto
+
+[SerieLoteProp.vis/SerieLoteProp.UnidadAduana]
+Clave=SerieLoteProp.UnidadAduana
+LigaTabla=SerieLoteProp
+LigaCampo=UnidadAduana
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=UnidadAduana
+
+[SerieLoteProp.vis/SerieLoteProp.CantidadAduana]
+Clave=SerieLoteProp.CantidadAduana
+LigaTabla=SerieLoteProp
+LigaCampo=CantidadAduana
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=CantidadAduana
+
+[SerieLoteProp.vis/SerieLoteProp.FracccionArancelaria2]
+Clave=SerieLoteProp.FracccionArancelaria2
+Nombre=Fracccion Arancelaria
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATFraccionArancelariaLista
+AyudaVista=SATFraccionArancelaria
+AyudaCampo=SATFraccionArancelaria.Clave
+LigaTabla=SerieLoteProp
+LigaCampo=FracccionArancelaria2
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FracccionArancelaria2
+
+[SerieLoteProp.vis/SerieLoteProp.PesoBruto2]
+Clave=SerieLoteProp.PesoBruto2
+Nombre=Peso Bruto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+LigaTabla=SerieLoteProp
+LigaCampo=PesoBruto2
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=PesoBruto2
+
+[SerieLoteProp.vis/SerieLoteProp.UnidadAduana2]
+Clave=SerieLoteProp.UnidadAduana2
+Nombre=Unidad Aduana
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=SATUnidadAduanaLista
+AyudaVista=SATUnidadAduana
+AyudaCampo=SATUnidadAduana.Clave
+LigaTabla=SerieLoteProp
+LigaCampo=UnidadAduana2
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=UnidadAduana2
+
+[SerieLoteProp.vis/SerieLoteProp.CantidadAduana2]
+Clave=SerieLoteProp.CantidadAduana2
+Nombre=Cantidad Aduana
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+LigaTabla=SerieLoteProp
+LigaCampo=CantidadAduana2
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CantidadAduana2
+
+[SerieLoteProp.vis/SerieLoteProp.Clave]
+Clave=SerieLoteProp.Clave
+Nombre=Número Pedimiento
+Visible=S
+TamanoValidacion=21
+TipoDatos=Texto
+Tamano=21
+MascaraEdicion=99  99  9999  9999999
+LigaTabla=SerieLoteProp
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Clave
+
+[Condicion.tbl/CFD_metodoDePago]
+TipoDatos=Texto
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DiferirFechaAcumulacion
+ConRefrescar=S
+ListaRefrescar=DiferirFechaAcumulacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATMetodoPago WHERE Clave = :tClave<T>, CFD_metodoDePago) > 0
+Formula=SQLEnLista(<T>SELECT Clave FROM SATMetodoPago<T>)
+
+[Condicion.tbl/CFD_formaDePago]
+TipoDatos=Texto
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATFormaPago WHERE Descripcion = :tDesc<T>, CFD_formaDePago) > 0
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATFormaPago<T>)
+
+[Condicion.tbl/Tabla.ListaCampos]
+CFD_metodoDePago=wMostrar
+wMostrar=wPagoConTDC
+wPagoConTDC=DiferirFechaAcumulacion
+DiferirFechaAcumulacion=(Fin)
+
+[Condicion.tbl/Tabla.SQL]
+Meses,=PorSemanas,
+DAImpPrimerDoc,=DADiaEspecifico,
+FacturaCobroIntegradoParcial,=CFD_formaDePago,
+Semanas,=Orden,
+DADiaEspecifico,=ControlAnticipos,
+CFD_formaDePago,=CFD_metodoDePago,
+CFD_metodoDePago=
+FROM=
+Condicion=
+CFD_metodoDePago,=wMostrar,
+wMostrar,=wPagoConTDC,
+wPagoConTDC,=DiferirFechaAcumulacion
+DiferirFechaAcumulacion=FROM Condicion
+FROM Condicion=(Fin)
+
+[Condicion.tbl/wMostrar]
+Clave=wMostrar
+Nombre=wMostrar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Condicion.tbl/wPagoConTDC]
+Clave=wPagoConTDC
+Nombre=wPagoConTDC
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Condicion.tbl/DiferirFechaAcumulacion]
+Clave=DiferirFechaAcumulacion
+Nombre=Diferir Fecha Acumulación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ValorRefrescar=Falso
+CondicionEdicion=CFD_metodoDePago <> <T>Pago en una sola exhibición<T>
+
+[CteCFD.tbl/InfoPago]
+TipoDatos=Texto
+
+[CteCFD.tbl/InfoFormaPago]
+TipoDatos=Texto
+
+[CteCFD.tbl/Tabla.ListaCampos]
+InfoFormaPago=CFDFlexEnviar
+CFDFlexEnviar=CFDFlexEnviarTipo
+CFDFlexEnviarTipo=NumRegIdTrib
+NumRegIdTrib=TipoProceso
+TipoProceso=TipoComite
+TipoComite=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=TipoComplemento
+TipoComplemento=(Fin)
+
+[CteCFD.tbl/Tabla.SQL]
+EnviarMensaje,=CFDFlexEnviar,
+InfoPago,=InfoFormaPago,
+InfoFormaPago=
+FROM=
+CteCFD=
+CFDFlexEnviar,=CFDFlexEnviarTipo,
+CFDFlexEnviarTipo,=Cta,
+InfoFormaPago,=NumRegIdTrib
+NumRegIdTrib,=TipoProceso,
+TipoProceso,=TipoComite,
+TipoComite,=IdContabilidad,
+IdContabilidad,=ClaveEntidad,
+ClaveEntidad,=Ambito,
+Ambito,=EntidadIdContabilidad,
+EntidadIdContabilidad,=TipoComplemento
+TipoComplemento=FROM CteCFD
+FROM CteCFD=(Fin)
+
+[CteCFD.tbl/CFDFlexEnviar]
+Clave=CFDFlexEnviar
+Nombre=CFDFlexEnviar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[CteCFD.tbl/CFDFlexEnviarTipo]
+Clave=CFDFlexEnviarTipo
+Nombre=CFDFlexEnviarTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[CteCFD.tbl/NumRegIdTrib]
+Clave=NumRegIdTrib
+Nombre=Registro ID Tributario
+Visible=S
+TamanoValidacion=40
+TipoDatos=Texto
+Tamano=40
+
+[CteCFD.tbl/TipoProceso]
+Clave=TipoProceso
+Nombre=Tipo Proceso
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/TipoComite]
+Clave=TipoComite
+Nombre=Tipo Comité
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorRefrescar=Nulo
+CondicionDespliege=TipoProceso=<T>Ordinario<T>
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/IdContabilidad]
+Clave=IdContabilidad
+Nombre=Id Contabilidad
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+CondicionDespliege=TipoComite<><T>Ejecutivo Estatal<T>
+ValorRefrescar=Nulo
+
+[CteCFD.tbl/ClaveEntidad]
+Clave=ClaveEntidad
+Nombre=Clave Entidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.ClaveEstado
+AyudaBusquedaRapida=Asigna(Info.Pais, <T>MEX<T>)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+CondicionDespliege=TipoComite<><T>Ejecutivo Nacional<T>
+ValorRefrescar=Nulo
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATEstado WHERE ClaveEstado=:tClaveEstado<T>, ClaveEntidad) > 0
+
+[CteCFD.tbl/Ambito]
+Clave=Ambito
+Nombre=Ámbito
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>) y (TipoProceso<><T>Ordinario<T>)
+ValorRefrescar=Nulo
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/EntidadIdContabilidad]
+Clave=EntidadIdContabilidad
+Nombre=Id Contabilidad (Entidad)
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+CondicionDespliege=TipoComite<><T>Ejecutivo Nacional<T>
+ValorRefrescar=Nulo
+
+[CteCFD.tbl/Ambito.ListaOpciones]
+(Inicio)=Federal
+Federal=Local
+Local=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaRefrescar]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaRefrescarCondiciones]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=(Fin)
+[TipoProceso]
+Clave=TipoProceso
+Nombre=Tipo Proceso
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/TipoComite]
+Clave=TipoComite
+Nombre=Tipo Comité
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorRefrescar=Nulo
+CondicionDespliege=TipoProceso=<T>Ordinario<T>
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/IdContabilidad]
+Clave=IdContabilidad
+Nombre=Id Contabilidad
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Estatal<T>) y (TipoProceso=<T>Ordinario<T>)
+
+[CteCFD.tbl/ClaveEntidad]
+Clave=ClaveEntidad
+Nombre=Clave Entidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.ClaveEstado
+AyudaBusquedaRapida=Asigna(Info.Pais, <T>MEX<T>)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>)
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATEstado WHERE ClaveEstado=:tClaveEstado<T>, ClaveEntidad) > 0
+
+[CteCFD.tbl/Ambito]
+Clave=Ambito
+Nombre=Ámbito
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>) y (TipoProceso<><T>Ordinario<T>)
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/EntidadIdContabilidad]
+Clave=EntidadIdContabilidad
+Nombre=Id Contabilidad (Entidad)
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>)
+
+[CteCFD.tbl/TipoComplemento]
+Clave=TipoComplemento
+Nombre=Complemento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[CteCFD.tbl/TipoComplemento.ListaOpciones]
+(Inicio)=N/A
+N/A=Comercio Exterior
+Comercio Exterior=INE
+INE=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaRefrescar]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaRefrescarCondiciones]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaOpciones]
+(Inicio)=Ordinario
+Ordinario=Precampaña
+Precampaña=Campaña
+Campaña=(Fin)
+
+[CteCFD.tbl/TipoComite.ListaRefrescar]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[CteCFD.tbl/TipoComite.ListaRefrescarCondiciones]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[CteCFD.tbl/TipoComite.ListaOpciones]
+(Inicio)=Directivo Estatal
+Directivo Estatal=Ejecutivo Nacional
+Ejecutivo Nacional=Ejecutivo Estatal
+Ejecutivo Estatal=(Fin)
+
+[CteCFD.tbl/Ambito.ListaOpciones]
+(Inicio)=Federal
+Federal=Local
+Local=(Fin)
+
+[CteCFD.tbl/TipoProceso.ListaOpciones]
+(Inicio)=Ordinario
+Ordinario=Precampaña
+Precampaña=Campaña
+Campaña=(Fin)
+
+[CteEnviarA.tbl/Tabla.ListaCampos]
+FiscalZona=GUID
+GUID=TipoProceso
+TipoProceso=TipoComite
+TipoComite=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=InstitucionFin
+InstitucionFin=FormaPago
+FormaPago=Cuenta
+Cuenta=(Fin)
+
+[CteEnviarA.tbl/Tabla.SQL]
+FiscalZona,=GUID,
+GUID,=TipoProceso,
+TipoProceso,=TipoComite,
+TipoComite,=IdContabilidad,
+IdContabilidad,=ClaveEntidad,
+ClaveEntidad,=Ambito,
+Ambito,=EntidadIdContabilidad
+EntidadIdContabilidad=InstitucionFin,
+InstitucionFin,=FormaPago,
+FormaPago,=Cuenta
+Cuenta=FROM CteEnviarA
+
+[CteEnviarA.tbl/GUID]
+Clave=GUID
+Nombre=GUID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[CteEnviarA.tbl/TipoProceso]
+Clave=TipoProceso
+Nombre=Tipo Proceso
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+
+[CteEnviarA.tbl/TipoComite]
+Clave=TipoComite
+Nombre=Tipo Comité
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorRefrescar=Nulo
+CondicionDespliege=TipoProceso=<T>Ordinario<T>
+ListaOpciones=(Lista)
+
+[CteEnviarA.tbl/IdContabilidad]
+Clave=IdContabilidad
+Nombre=Id Contabilidad
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Estatal<T>) y (TipoProceso=<T>Ordinario<T>)
+
+[CteEnviarA.tbl/ClaveEntidad]
+Clave=ClaveEntidad
+Nombre=Clave Entidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.ClaveEstado
+AyudaBusquedaRapida=Asigna(Info.Pais, <T>MEX<T>)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>)
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATEstado WHERE ClaveEstado=:tClaveEstado<T>, ClaveEntidad) > 0
+
+[CteEnviarA.tbl/Ambito]
+Clave=Ambito
+Nombre=Ámbito
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>) y (TipoProceso<><T>Ordinario<T>)
+ListaOpciones=(Lista)
+
+[CteEnviarA.tbl/EntidadIdContabilidad]
+Clave=EntidadIdContabilidad
+Nombre=Id Contabilidad (Entidad)
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+ValorRefrescar=Nulo
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>)
+
+[CteEnviarA.tbl/TipoComplemento]
+Clave=TipoComplemento
+Nombre=Complemento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[CteEnviarA.tbl/Colonia]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[CteEnviarA.tbl/CodigoPostal]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[CteEnviarA.tbl/Poblacion]
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, Poblacion)
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[CteEnviarA.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Nombre, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+[CteEnviarA.tbl/Pais]
+AyudaEnCaptura=Expresion
+OpcionesColumnas=
+OpcionesPredefinidas=
+OpcionesRenglones=
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+[CteEnviarA.tbl/Delegacion]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Delegacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[CteEnviarA.tbl/FiscalRegimen]
+AyudaEnCaptura=Vista
+AyudaForma=FiscalRegimenLista
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+
+[CteEnviarA.tbl/Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[CteEnviarA.tbl/FormaPago]
+Clave=FormaPago
+Nombre=Forma de Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=SATFormaPagoLista
+AyudaVista=SATFormaPago
+AyudaCampo=SATFormaPago.Clave
+
+[CteEnviarA.tbl/InstitucionFin]
+Clave=InstitucionFin
+Nombre=Banco
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=InstitucionFinLista
+AyudaVista=InstitucionFin
+AyudaCampo=InstitucionFin.Institucion
+
+[CteEnviarA.tbl/TipoProceso.ListaRefrescar]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[CteEnviarA.tbl/TipoProceso.ListaRefrescarCondiciones]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[CteEnviarA.tbl/TipoProceso.ListaOpciones]
+(Inicio)=Ordinario
+Ordinario=Precampaña
+Precampaña=Campaña
+Campaña=(Fin)
+
+[CteEnviarA.tbl/TipoComite.ListaRefrescar]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[CteEnviarA.tbl/TipoComite.ListaRefrescarCondiciones]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[CteEnviarA.tbl/TipoComite.ListaOpciones]
+(Inicio)=Directivo Estatal
+Directivo Estatal=Ejecutivo Nacional
+Ejecutivo Nacional=Ejecutivo Estatal
+Ejecutivo Estatal=(Fin)
+
+[CteEnviarA.tbl/Ambito.ListaOpciones]
+(Inicio)=Federal
+Federal=Local
+Local=(Fin)
+
+[CteEnviarA.tbl/TipoComplemento.ListaOpciones]
+(Inicio)=N/A
+N/A=Comercio Exterior
+Comercio Exterior=INE
+INE=(Fin)
+
+[CteEnviarA.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[CteEnviarA.tbl/Colonia.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[CteEnviarA.tbl/CodigoPostal.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[CteEnviarA.tbl/Delegacion.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[CteEnviarA.tbl/Estado.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[CteEnviarA.tbl/Pais.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[Cte.tbl/Colonia]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+
+[Cte.tbl/CodigoPostal]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+
+
+[Cte.tbl/Poblacion]
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+
+[Cte.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaMemTabla=
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Pais, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+
+[Cte.tbl/Pais]
+AyudaEnCaptura=Expresion
+OpcionesColumnas=
+OpcionesRenglones=
+OpcionesPredefinidas=
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaMemEnBlanco=S
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+[Cte.tbl/Delegacion]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Delegacion) > 0, 1=1)
+
+
+[Cte.tbl/FiscalRegimen]
+AyudaEnCaptura=Vista
+AyudaMemTabla=
+AyudaForma=FiscalRegimenLista
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+
+[Cte.tbl/Colonia.ListaRefrescar]
+CodigoPostal=Poblacion
+Pais=Ruta
+LocalidadCNBV=
+Poblacion=Estado
+
+[Cte.tbl/CodigoPostal.ListaRefrescar]
+Colonia=Poblacion
+Pais=Ruta
+LocalidadCNBV=
+Poblacion=Estado
+
+[Cte.tbl/Delegacion.ListaRefrescar]
+Estado=Poblacion
+Pais=Ruta
+LocalidadCNBV=
+Poblacion=Pais
+
+[Cte.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Cte.tbl/Estado.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Cte.tbl/Pais.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[Personal.tbl/Colonia]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+
+[Personal.tbl/Poblacion]
+ValorRefrescar=Si(Info.Copiar,  Asigna(Info.Copiar, Falso) Info.Localidad, Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+
+[Personal.tbl/Estado]
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Nombre, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+TipoDatos=Texto
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+[Personal.tbl/Pais]
+OpcionesColumnas=
+OpcionesRenglones=
+AyudaEnCaptura=Expresion
+OpcionesPredefinidas=
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+
+[Personal.tbl/CodigoPostal]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+
+
+[Personal.tbl/Delegacion]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Delegacion) > 0, 1=1)
+
+[Personal.tbl/Colonia.ListaRefrescar]
+Pais=Poblacion
+Poblacion=(Fin)
+
+[Personal.tbl/CodigoPostal.ListaRefrescar]
+Pais=Poblacion
+Poblacion=(Fin)
+
+[Personal.tbl/Delegacion.ListaRefrescar]
+Pais=Poblacion
+Poblacion=(Fin))
+
+[Personal.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Estado
+Estado=Pais
+Pais=CodigoPostal
+CodigoPostal=(Fin)
+
+[Personal.tbl/Estado.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Pais
+Pais=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=(Fin)
+
+[Personal.tbl/Pais.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Estado
+Estado=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=(Fin)
+
+[Prov.tbl/Colonia]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+
+[Prov.tbl/CodigoPostal]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[Prov.tbl/Poblacion]
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[Prov.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+
+[Prov.tbl/Pais]
+AyudaEnCaptura=Expresion
+OpcionesColumnas=
+OpcionesRenglones=
+OpcionesPredefinidas=
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+
+[Prov.tbl/Delegacion]
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Delegacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+
+[Prov.tbl/FiscalRegimen]
+AyudaEnCaptura=Vista
+AyudaForma=FiscalRegimen
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+
+[Prov.tbl/Colonia.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[Prov.tbl/CodigoPostal.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[Prov.tbl/Delegacion.ListaRefrescar]
+Pais=Poblacion
+Poblacion=Ruta
+
+[Prov.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Prov.tbl/Estado.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Prov.tbl/Pais.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[Sucursal.tbl/Colonia]
+Tamano=100
+TamanoValidacion=100
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Colonia, Sucursal:Sucursal.Colonia)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Sucursal:Sucursal.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Sucursal:Sucursal.Colonia) > 0, 1=1)
+
+
+[Sucursal.tbl/CodigoPostal]
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.CodigoPostal, Sucursal:Sucursal.CodigoPostal)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Sucursal:Sucursal.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, Sucursal:Sucursal.CodigoPostal) > 0, 1=1)
+
+
+[Sucursal.tbl/Poblacion]
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, Sucursal:Sucursal.Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Sucursal:Sucursal.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Sucursal:Sucursal.Poblacion) > 0, 1=1)
+
+
+[Sucursal.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Nombre, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Sucursal:Sucursal.Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Sucursal:Sucursal.Estado)
+TipoDatos=Texto
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Sucursal:Sucursal.Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Sucursal:Sucursal.Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+[Sucursal.tbl/Pais]
+OpcionesColumnas=
+AyudaEnCaptura=Expresion
+OpcionesPredefinidas=
+ValorRefrescar=Si(Info.Copiar, Info.Pais, Sucursal:Sucursal.Pais)
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Sucursal:Sucursal.Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+
+[Sucursal.tbl/Delegacion]
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Asigna(Info.Copiar, Falso) Info.Delegacion, Sucursal:Sucursal.Delegacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Sucursal:Sucursal.CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Sucursal:Sucursal.Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Sucursal:Sucursal.Delegacion) > 0, 1=1)
+
+[Sucursal.tbl/FiscalRegimen]
+AyudaEnCaptura=Vista
+AyudaForma=FiscalRegimenLista
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+
+[Sucursal.tbl/Pais.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Poblacion
+Poblacion=Delegacion
+Delegacion=(Fin)
+
+[Sucursal.tbl/Colonia.ListaRefrescar]
+(Inicio)=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=Delegacion
+Delegacion=(Fin)
+
+[Sucursal.tbl/CodigoPostal.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=Delegacion
+Delegacion=(Fin)
+
+[Sucursal.tbl/Poblacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Delegacion
+Delegacion=(Fin)
+
+[Sucursal.tbl/Estado.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Pais
+Pais=Poblacion
+Poblacion=Delegacion
+Delegacion=(Fin)
+
+[Sucursal.tbl/Delegacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=(Fin)
+
+[TipoImpuesto.tbl/Tabla]
+SQL=(Lista)
+
+[TipoImpuesto.tbl/Tabla.ListaCampos]
+CuentaDeudora=Clave
+Clave=(Fin)
+
+[TipoImpuesto.tbl/Clave]
+Clave=Clave
+Nombre=Clave SAT
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+AyudaEnCaptura=Vista
+AyudaForma=SATTipoImpuestoLista
+AyudaVista=SATTipoImpuesto
+AyudaCampo=SATTipoImpuesto.Clave
+
+[TipoImpuesto.tbl/Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TipoImpuesto,
+TipoImpuesto,=Tasa,
+Tasa,=Concepto,
+Concepto,=Referencia,
+Referencia,=CodigoFiscal,
+CodigoFiscal,=Tipo,
+Tipo,=TieneMovimientos,
+TieneMovimientos,=CuentaDeudora,
+CuentaDeudora,=CuentaAcreedora,
+CuentaAcreedora,=Clave
+Clave=FROM TipoImpuesto
+FROM TipoImpuesto=(Fin)
+
+[Unidad.tbl/Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=3
+Tamano=3
+Mayusculas=S
+TipoDatos=Texto
+AyudaEnCaptura=Vista
+AyudaForma=SATUnidadAduanaLista
+AyudaVista=SATUnidadAduana
+AyudaCampo=SATUnidadAduana.Clave
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATUnidadAduana WHERE Clave=:tClave<T>, Clave) > 0
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[VentaCobro.tbl/Referencia1]
+AyudaEnCaptura=Vista
+AyudaForma=FormaPagoCteLista
+AyudaVista=FormaPagoCte
+AyudaCampo=Cuenta
+ValorPorOmision=SQL(<T>SELECT TOP 1 CUENTA FROM fnFPagoSucCte(:tEmpresa,:tCliente,:nSucursal)<T>,Empresa,{Info.Cliente},{Info.EnviarA})
+
+[VentaCobro.tbl/Referencia2]
+AyudaEnCaptura=Vista
+AyudaForma=FormaPagoCteLista
+AyudaVista=FormaPagoCte
+AyudaCampo=Cuenta
+
+[VentaCobro.tbl/Referencia3]
+AyudaEnCaptura=Vista
+AyudaForma=FormaPagoCteLista
+AyudaVista=FormaPagoCte
+AyudaCampo=Cuenta
+
+[VentaCobro.tbl/Referencia4]
+AyudaEnCaptura=Vista
+AyudaForma=FormaPagoCteLista
+AyudaVista=FormaPagoCte
+AyudaCampo=Cuenta
+
+[VentaCobro.tbl/Referencia5]
+AyudaEnCaptura=Vista
+AyudaForma=FormaPagoCteLista
+AyudaVista=FormaPagoCte
+AyudaCampo=Cuenta
+
+[EmpresaCFD.frm/SAT.EmpresaCFD.XSL]
+Tamano=81
+[EmpresaCFD.frm/SAT.EmpresaCFD.XSLAnterior]
+Tamano=81
+
+[Venta.frm/Acciones.Abrir]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.CopiarOtros]
+Expresion=GuardarCambios<BR>Si<BR>  Forma(<T>EspecificarFechas<T>)<BR>Entonces<BR>  Asigna(Info.ID, Venta:Venta.ID)<BR>  Asigna(Info.MovTipo, MovTipo(<T>VTAS<T>, Venta:Venta.Mov))<BR>  Asigna(Info.Cliente, Venta:Venta.Cliente)<BR>  Asigna(Info.EnviarA, Venta:Venta.EnviarA)<BR>  Asigna(Info.Nombre, Venta:Cte.Nombre)<BR>  EjecutarSQL(<T>spVentaCteD :nEstacion, :tEmpresa, :tCliente, :fDel, :fAl<T>, EstacionTrabajo, Empresa, Info.Cliente, Info.FechaD, Info.FechaA)<BR>  Forma(<T>VentaCopiar<T>)<BR>Fin
+Antes=S
+AntesExpresiones=GuardarCambios   <BR>EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)
+
+[Venta.frm/Acciones.MovCopiar]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.Nuevo]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 0)<BR>Fin
+
+[Venta.frm/Acciones.Eliminar]
+Antes=S
+AntesExpresiones=Asigna(Info.Cantidad, 0)<BR>Asigna(Info.Cantidad, SQL(<T>SELECT COUNT(*) FROM VENTA WHERE ID = :dID<T>, Venta:Venta.ID))<BR>//Informacion(Info.Cantidad)<BR>Si<BR>    Info.Cantidad > 0<BR>Entonces<BR>    GuardarCambios<BR>    EjecutarSQL(<T>EXEC spVentaActualizaDevolucion :nId, :nEliminar<T>, Venta:Venta.ID, 1)<BR>Fin
+
+[VentaD.tbl/Cantidad]
+CondicionEdicion=noen MovTipoEn(<T>VTAS<T>, Venta:Venta.Mov, (VTAS.D))
+
+[Agente.tbl/CodigoPostal]
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+
+[Agente.tbl/Colonia]
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+
+[Agente.tbl/Poblacion]
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+[Agente.tbl/Estado]
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Pais, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+AyudaRefrescar=S

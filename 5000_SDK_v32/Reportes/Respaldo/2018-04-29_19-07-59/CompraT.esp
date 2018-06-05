@@ -1,0 +1,6 @@
+[CompraT.vis/SELECT]
+Art.UnidadTraspaso,
+(SELECT Cuenta FROM Prov WHERE Proveedor = Compra.Proveedor) ProvCompraCta,
+(SELECT CuentaRetencion FROM Prov WHERE Proveedor = Compra.Proveedor) ProvCompraCtaComp,
+(SELECT Cuenta FROM Alm WHERE Almacen= Compra.Almacen) CuentaAlmacen,
+(SELECT Cuenta FROM ActivoFCat WHERE ActivoFCat.Categoria = Art.CategoriaActivoFijo) CuentaAF

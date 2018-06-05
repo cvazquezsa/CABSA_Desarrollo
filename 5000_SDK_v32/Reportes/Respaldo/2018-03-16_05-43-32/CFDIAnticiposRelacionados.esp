@@ -1,0 +1,17 @@
+[Venta.frm/Forma.ListaAcciones]
+Otros8=AnticiposRelacionados
+AnticiposRelacionados=Otros9
+
+[Venta.frm/Acciones.AnticiposRelacionados]
+Nombre=AnticiposRelacionados
+Boton=0
+Menu=&Edición
+NombreDesplegar=Anticipos Relacionados
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=CFDRelacionadoAnticipos
+Antes=S
+Visible=S
+GuardarAntes=S
+ActivoCondicion=Venta:Venta.Estatus = <T>SINAFECTAR<T>
+AntesExpresiones=Asigna(Info.ID, Venta:Venta.ID)<BR>Asigna(Info.Cliente, Venta:Venta.Cliente)

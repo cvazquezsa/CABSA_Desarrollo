@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACS>
+<ASPEL 
+SesionPruebas="https://pcfdi.aspel.com.mx/pcfd/cgi-bin/Sesion.dll/soap/IsrvSesion" 
+SesionProd="http://cfdi.aspel.com.mx/pcfd/cgi-bin/Sesion.dll/soap/IsrvSesion" 
+TimbrarPruebas="https://pcfdi.aspel.com.mx/pcfd33/cgi-bin/SelladoCfdi33.dll/soap/IsrvCFD33" 
+TimbrarProd="https://cfdi.aspel.com.mx/pcfd33/cgi-bin/SelladoCfdi33.dll/soap/IsrvCFD33" 
+CancelaPruebas="https://pcfdi.aspel.com.mx/pcfd/cgi-bin/srvCancelacionCFDI.dll/soap/IsrvCancelacionCFDI" 
+CancelaProd="https://cfdi.aspel.com.mx/pcfd/cgi-bin/srvCancelacionCFDI.dll/soap/IsrvCancelacionCFDI"  
+ContratoPruebas="https://pcfdi.aspel.com.mx/pcfd/cgi-bin/srvpcfd.dll/soap/IsrvCFD" 
+ContratoProd="https://cfdi.aspel.com.mx/pcfd/cgi-bin/srvpcfd.dll/soap/IsrvCFD"
+NominaPruebas="https://pcfdi.aspel.com.mx/pcfdmasivo33/cgi-bin/SelladoNomina.dll/soap/IsrvCFD33"
+NominaProd="https://cfdi.aspel.com.mx/pcfdmasivo33/cgi-bin/SelladoNomina.dll/soap/IsrvCFD33" 
+RetencionesPruebas="https://pcfdi.aspel.com.mx/pcfd/cgi-bin/Sesion.dll/soap/IsrvSesion"
+RetencionesProd="http://cfdi.aspel.com.mx/pcfd/cgi-bin/Sesion.dll/soap/IsrvSesion"/>
+<EDICOM WebServiceFactura="https://cfdiws.sedeb2b.com/EdiwinWS/services/CFDi?wsdl"  WebServiceRetencion="https://webpre.sedeb2b.com/EdiwinWS/services/CFDi?wsdl"></EDICOM>
+<EKOMERCIO WebServiceCCE11="http://edixcfdisecure.ekomercio.com/WSCFDIBuilderPlusXML/WSCFDBuilderPlus.asmx" 
+WSPruebasCFDICCE11="http://edixcfdisecure.ekomercio.com/WSCFDIBuilderPlusXML/WSCFDBuilderPlus.asmx"
+TimbrarPruebasCFDI="http://148.244.218.6/WSCFDIBuilderPlus/WSCFDBuilderPlus.asmx" 
+TimbrarPruebasNomina="http://200.34.168.212/WSCFDBuilderPlusTurbo_Test2014/WSCFDBuilderPlus.asmx"  
+TimbrarPruebasRetencion="http://recepciontest.ekomercio.com/WSCFDITimbrado_Pruebas/WSCFDITimbrado.asmx"  
+TimbrarProdRetencion="https://edixcfdisecure.ekomercio.com/WSCFDTimbrado_Produccion/WSCFDITimbrado.asmx" 
+WebService="http://148.244.218.6/WSCFDIBuilderPlus/WSCFDBuilderPlus.asmx"></EKOMERCIO>
+<FORMASDIGITALES  TimbrarPruebas="http://dev33.facturacfdi.mx/WSForcogsaService?wsdl" TimbrarProd="https://www.facturacfdi.mx/WSTimbrado/WSForcogsaService" CancelaPruebas="https://dev.facturacfdi.mx81/WSTimbrado/WSForcogsaService" CancelaProd="https://www.facturacfdi.mx/WSTimbrado/WSForcogsaService" RetTimbrarPruebas="https://dev.facturacfdi.mx81/retenciones/wsreciberetencionservice" RetTimbrarProd="https://facturacfdi.mx/retenciones/wsreciberetencionservice" RCancelaPruebas="https://dev.facturacfdi.mx81/retenciones/wscancelaretenciones" RCancelaProd="https://facturacfdi.mx/retenciones/wscancelaretenciones"></FORMASDIGITALES>
+<FEL WebServiceProd="http://www.fel.mx/WSTimbrado33/WSCFDI33.svc?WSDL"
+WebServicePruebas="http://www.fel.mx/WSTimbrado33Test/WSCFDI33.svc?WSDL"
+WSRetencionPruebas="http://www.fel.mx/WSRetencionesTest/WSRetencion.svc?WSDL"
+WSRetencionProd="http://www.fel.mx/WSRetenciones/WSRetencion.svc?WSDL"></FEL>
+<INVOICEONE WebService="https://invoiceone.mx/TimbreCFDI/TimbreCFDI.asmx" ></INVOICEONE>
+<LEVICOM TimbrarPruebas="http://sandbox-v3.edcinvoice-cfdi.com/cfdiwebservice/CfdiWebService.asmx" TimbrarProd="http://cfdi33.webservicescarvajal.com/cfdiwebservice/CfdiWebService.asmx" CancelaPruebas="http://sandbox-v3.edcinvoice-cfdi.com/cfdiwebservice/CfdiWebService.asmx" CancelaProd="http://cfdi33.webservicescarvajal.com/cfdiwebservice/CfdiWebService.asmx" RetTimbrarPruebas="https://www.edcinvoice-cfdi.com/cfdiwebService/CFDIService.asmx" RetTimbrarProd="" RCancelaPruebas="" RCancelaProd="" ></LEVICOM>
+<MASTEREDI TimbrarPruebas="http://72.3.203.137:101/TimbradoCFDServiceExternal.asmx" TimbrarProd="https://www.masfacturaweb.com.mx:99/TimbradoCFDServiceExternal.asmx" CancelaPruebas="http://72.3.203.137:101/TimbradoCFDServiceExternal.asmx" CancelaProd="https://www.masfacturaweb.com.mx:99/TimbradoCFDServiceExternal.asmx" RetTimbrarPruebas="http://72.3.203.137:101/TimbradoCFDServiceExternal.asmx" RetTimbrarProd="https://www.masfacturaweb.com.mx:99/TimbradoCFDServiceExternal.asmx" RCancelaPruebas="http://72.3.203.137:101/TimbradoCFDServiceExternal.asmx" RCancelaProd="https://www.masfacturaweb.com.mx:99/TimbradoCFDServiceExternal.asmx" ></MASTEREDI>
+<SOLUCIONFACTIBLE TimbrarPruebas="http://testing.solucionfactible.com/ws/services/Timbrado?wsdl" TimbrarProd="https://solucionfactible.com/ws/services/Timbrado?wsdl" CancelaPruebas="http://testing.solucionfactible.com/ws/services/Timbrado?wsdl" CancelaProd="https://solucionfactible.com/ws/services/Timbrado?wsdl" RetTimbrarPruebas="http://testing.solucionfactible.com/ws/services/Timbrado?wsdl" RetTimbrarProd="https://solucionfactible.com/ws/services/Timbrado?wsdl" RCancelaPruebas="http://testing.solucionfactible.com/ws/services/Timbrado?wsdl" RCancelaProd="https://solucionfactible.com/ws/services/Timbrado?wsdl" ></SOLUCIONFACTIBLE >
+<KONESH TimbrarPruebas="http://pruebas.cfdinova.com.mx:59080/axis2/services/TimbradorIntegradores?wsdl" TimbrarProd="https://lb00.cfdinova.com.mx/axis2/services/TimbradorIntegradores?wsdl" CancelaPruebas="https://pruebas.cfdinova.com.mx/axis2/services/CancelaComprobante?wsdl" CancelaProd="https://lb00.cfdinova.com.mx/axis2/services/CancelaComprobante?wsdl" RetTimbrarPruebas="https://pruebas.cfdinova.com.mx/axis2/services/TimbradorConstanciaRetenciones?wsdl" RetTimbrarProd="https://lb04.cfdinova.com.mx/axis2/services/TimbradorConstanciaRetenciones?wsdl" RCancelaPruebas="" RCancelaProd=""></KONESH> 
+<Prodigia TimbrarPruebas="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" TimbrarProd="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" CancelaPruebas="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" CancelaProd="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" RetTimbrarPruebas="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" RetTimbrarProd="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" RCancelaPruebas="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl" RCancelaProd="http://timbrado.pade.mx/servicio/Timbrado3.3?wsdl"></Prodigia> 
+<G4S TimbrarPruebas="http://test.documentagface.com/mx.com.fact.wsfront/FactWSFront.asmx"  TimbrarProd="https://www.documentagface.com/mx.com.fact.wsfront/FactWSFront.asmx"> </G4S>
+<SERVISIM mRutaTimbrarPruebas="http://200.53.180.5/wstest/CFDI.svc" SoapTimbrado="http://timbrado.servisim.com/"></SERVISIM>
+<FACTURAINTELIGENTE WebServicePruebas="https://www.appfacturainteligente.com/WSTimbrado33Test/WSCFDI33.svc?WSDL" 
+WebServiceProd="https://www.appfacturainteligente.com/WSTimbrado33/WSCFDI33.svc?WSDL"
+WSRetencionPruebas="https://www.appfacturainteligente.com/WSRetencionesTest/WSRetencion.svc" 
+WSRetencionProd="https://www.appfacturainteligente.com/WSRetenciones/WSRetencion.svc" 
+WebServiceNom12="http://facturainteligenteintegraciones.com/WSIntegralNom12/ComprobantesTimbrado.asmx">
+</FACTURAINTELIGENTE>
+</PACS>

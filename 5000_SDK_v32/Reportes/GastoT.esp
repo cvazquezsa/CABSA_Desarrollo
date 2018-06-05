@@ -1,0 +1,30 @@
+[GastoT.vis/SELECT]
+'Cuenta' = (SELECT Cuenta FROM Concepto WHERE Modulo= 'GAS' AND Concepto.Concepto = GastoT.Concepto),
+'CuentaProv' = (SELECT Cuenta FROM Prov WHERE Prov.Proveedor = GastoT.Acreedor),
+'Retencion_ISR' = (SELECT SUM(GastoD.Retencion)  FROM GastoD WHERE GastoD.ID = GastoT.ID),
+'Retencion_IVA' = (SELECT SUM(GastoD.Retencion2) FROM GastoD WHERE GastoD.ID = GastoT.ID),
+'Prov_FiscalRegimen' = (SELECT FiscalRegimen FROM Prov WHERE Prov.Proveedor = GastoT.Acreedor),
+'Porc_IVA'    = (SELECT Impuestos FROM Concepto WHERE Modulo= 'GAS' AND Concepto.Concepto = GastoT.Concepto),
+'TipoImpuestos'    = GastoT.TipoImpuesto1,
+'Porc_RetISR' = (SELECT Tasa FROM TipoImpuesto WHERE GastoT.TipoRetencion1 = TipoImpuesto.TipoImpuesto),
+'Porc_RetIVA' = (SELECT Tasa FROM TipoImpuesto WHERE GastoT.TipoRetencion2 = TipoImpuesto.TipoImpuesto),
+'Porc_Ret3'   = (SELECT Tasa FROM TipoImpuesto WHERE GastoT.TipoRetencion3 = TipoImpuesto.TipoImpuesto),
+GastoT.TipoRetencion1,
+GastoT.TipoRetencion2,
+GastoT.TipoRetencion3,
+'Concepto.TipoOperacion' = (SELECT TipoOperacion FROM Concepto WHERE Modulo= 'GAS' AND Concepto.Concepto = GastoT.Concepto),
+'No_Deducible' = (SELECT SUM(GastoD.Importe) FROM GastoD WHERE GastoD.ID = GastoT.ID AND GastoD.Concepto='No Deducibles'),
+'CtaBco' = (SELECT c.Cuenta FROM CtaDinero c WHERE c.CtaDinero= Gasto.CtaDinero),
+Gasto.Comentarios
+
+[GastoT.vis/FROM]
+JOIN Gasto ON GastoT.ID = Gasto.ID
+
+[Gasto.tbl/TieneRetencion]
+ValorPorOmision=Verdadero
+
+[Gasto.frm/Ficha.Gasto.TipoCambio]
+Tamano=10
+
+
+
