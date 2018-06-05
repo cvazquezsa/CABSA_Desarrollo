@@ -1,0 +1,33 @@
+
+[Vista]
+Icono=0
+Clave=ConceptoFE
+Nombre=ConceptoFE
+Modulos=(Todos)
+Singular=ConceptoFE
+ListaTablas=ConceptoFE
+TablaPrincipal=ConceptoFE
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=ConceptoFE.ConceptoFE
+SQL=(Lista)
+[ConceptoFE.ConceptoFE]
+Clave=ConceptoFE.ConceptoFE
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=ConceptoFE
+LigaCampo=ConceptoFE
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ConceptoFE
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=ConceptoFE.ConceptoFE
+ConceptoFE.ConceptoFE=FROM ConceptoFE
+FROM ConceptoFE=(Fin)
