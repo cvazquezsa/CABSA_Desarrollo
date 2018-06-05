@@ -1,0 +1,63 @@
+
+[Tabla]
+Icono=0
+Clave=CitCfgConsecutivo
+Nombre=Configurar Consecutivo
+Archivo=CitCfgConsecutivo
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+
+SQL=(Lista)
+ListaRelaciones=CteTipo
+LlavePrimaria=TipoCliente
+[TipoCliente]
+Clave=TipoCliente
+Nombre=Tipo Cliente
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+Requerido=S
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Tipo FROM CteTipo<T> )
+[Prefijo]
+Clave=Prefijo
+Nombre=Prefijo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Requerido=S
+[LargoSubfijo]
+Clave=LargoSubfijo
+Nombre=Largo Subfijo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+Requerido=S
+[Relaciones.CteTipo]
+TipoRelacion=Forzosa
+LlaveLocal=TipoCliente
+Clave=CteTipo
+TablaRemota=CteTipo
+LlaveRemota=Tipo
+
+[Tabla.ListaCampos]
+(Inicio)=TipoCliente
+TipoCliente=Prefijo
+Prefijo=LargoSubfijo
+LargoSubfijo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TipoCliente,
+TipoCliente,=Prefijo,
+Prefijo,=LargoSubfijo
+LargoSubfijo=FROM CitCfgConsecutivo
+FROM CitCfgConsecutivo=(Fin)

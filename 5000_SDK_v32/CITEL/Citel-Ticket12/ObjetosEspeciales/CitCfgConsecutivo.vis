@@ -1,0 +1,71 @@
+
+[Vista]
+Icono=0
+Clave=CitCfgConsecutivo
+Nombre=CitCfgConsecutivo
+Modulos=(Todos)
+ListaTablas=CitCfgConsecutivo
+TablaPrincipal=CitCfgConsecutivo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[CitCfgConsecutivo.TipoCliente]
+Clave=CitCfgConsecutivo.TipoCliente
+Nombre=Tipo Cliente
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+Requerido=N
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Tipo FROM CteTipo<T> )
+LigaTabla=CitCfgConsecutivo
+LigaCampo=TipoCliente
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCliente
+
+[CitCfgConsecutivo.Prefijo]
+Clave=CitCfgConsecutivo.Prefijo
+Nombre=Prefijo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+Requerido=N
+LigaTabla=CitCfgConsecutivo
+LigaCampo=Prefijo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Prefijo
+
+[CitCfgConsecutivo.LargoSubfijo]
+Clave=CitCfgConsecutivo.LargoSubfijo
+Nombre=Largo Subfijo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+Requerido=N
+LigaTabla=CitCfgConsecutivo
+LigaCampo=LargoSubfijo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=LargoSubfijo
+
+[Vista.ListaCampos]
+(Inicio)=CitCfgConsecutivo.TipoCliente
+CitCfgConsecutivo.TipoCliente=CitCfgConsecutivo.Prefijo
+CitCfgConsecutivo.Prefijo=CitCfgConsecutivo.LargoSubfijo
+CitCfgConsecutivo.LargoSubfijo=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=CitCfgConsecutivo.TipoCliente,
+CitCfgConsecutivo.TipoCliente,=CitCfgConsecutivo.Prefijo,
+CitCfgConsecutivo.Prefijo,=CitCfgConsecutivo.LargoSubfijo
+CitCfgConsecutivo.LargoSubfijo=FROM CitCfgConsecutivo
+FROM CitCfgConsecutivo=(Fin)
