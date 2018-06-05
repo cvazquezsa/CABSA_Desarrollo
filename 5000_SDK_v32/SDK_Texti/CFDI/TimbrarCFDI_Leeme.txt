@@ -1,0 +1,125 @@
+******************************************************* Notas Timbrado CFDI ******************************************************
+
+Los archivos que se utilizan para timbrar son los siguientes:
+TimbrarCFDI.EXE    -> Es el componente que timbra los CFDI.
+ProveedorCFD.dll   -> Es una dll que utiliza el TimbrarCFDI para timbrar.
+Pruebas.ini        -> Es un archivo de configuración que se modifica para determinar si se timbra en el servidor de pruebas de EDICOM o en el servidor
+                      de producción.
+ProveedoresPAC.ini -> Se utiliza para especificar las URL's de los servidores de producción y/o de prueba de los distintos PAC's 
+
+Se puede utilizar este RFC AAA010101AAA para todas las pruebas de timbrado para este certificado y llave aaa010101aaa__csd_01 la contraseña es 12345678a
+para Levicom hay que utilizar este RFC LAI860308KB9
+----------------------------------------------------------------------------------------------------------------------------------
+
+EDICOM
+Claves de prueba para timbrar:
+Usuario:    INTELISISTST
+Contraseña: ewqbhautn
+
+NOTAS EDICOM: 
+Se podrá timbrar las pruebas con los certificados de prueba con el SAT.
+
+En el archivo ProveedoresPAC.ini, La URL de edicom es el servidor 
+de producción, así que es muy importante que en el directorio donde se
+encuentra el TimbrarCFDI este presente el archivo prueba.ini 
+donde se debe de especificar EDICOM=1 para que se apunte al servidor de pruebas. 
+de lo contrario, se enviarán facturas de prueba al SAT.
+---------------------------------------------
+
+ASPEL
+Claves de prueba para timbrar:
+Contraseña Certificado: 12345678a
+Usuario:                AAA010101AAA
+Contraseña:             12345678
+
+En el archivo ProveedoresPAC.ini, las lineas con la propiedad referente 
+a Aspel que estan comentadas son los URL's de los servidores de producción de Aspel. 
+Por default están Habilitados los servidores de pruebas. Para Timbrar las facturas
+en un ambiente de producción, se deberán de habilitar los URL's de los servidores
+de producción.
+---------------------------------------------
+
+SOLUCIONFACTIBLE
+
+usuario:	testing@solucionfactible.com
+contraseña:	timbrado.SF.16672
+
+-----------------------------------------------
+
+MASTEREDI
+
+Usuario: 	MFW-7346
+Contraseña: 	ADMIN123*
+
+-----------------------------------------------
+
+FEL
+
+Usuario: 	DEMO000000FEL
+Contraseña: 	pruebaTimbrado#
+
+-----------------------------------------------
+
+
+KONESH
+
+Usuario: 	ctaaUzfTFYa37 (valor no requerido) debido a que se configura en el ProveedoresPac.ini
+Contraseña: 	ctaaUzfTFYa37
+
+
+-----------------------------------------------
+
+Levicom
+
+Usuario: 	901484
+Contraseña: 	&amp;AkM131&amp;(Contraseña Original &AkM131& cambiar el & por &amp; simpre)
+
+-----------------------------------------------
+
+InvoiceOne
+
+
+Usuario:	WEB01010
+Contraseña:	demoprue
+
+-----------------------------------------------
+
+FoliosDigitales
+
+Usuario:	DEMO860107KD9
+Contraseña: 	jdXM5@uUgr+
+
+-----------------------------------------------
+
+FacturaInteligente
+
+Usuario: 	DEMO860107KD9
+Contraseña:	jdXM5@uUgr+
+
+-----------------------------------------------
+
+EXPIDETUFACTURA
+
+Usuario: 	pruebas
+Contraseña:	123456
+
+-----------------------------------------------
+
+EKOMERCIO
+
+Usuario: 	ekomercio
+Contraseña:	aserri
+
+-----------------------------------------------
+
+FORMASDIGITALES
+
+Usuario:	pruebasWS
+Contraseña:	pruebasWS
+
+-----------------------------------------------
+
+SERVISIM
+
+Usuario:	1
+Contraseña:	atenea1307
