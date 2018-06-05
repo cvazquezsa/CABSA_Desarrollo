@@ -1,0 +1,299 @@
+
+[Tabla]
+Icono=0
+Clave=layout_logd
+Nombre=layout_logd
+Archivo=layout_logd
+Modulos=(Todos)
+Singular=layout_logd
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+CampoID=log_id
+SQL=(Lista)
+[log_id]
+Clave=log_id
+Nombre=log_id
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[d_id]
+Clave=d_id
+Nombre=d_id
+Visible=S
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+UnicamenteLectura=S
+[folio]
+Clave=folio
+Nombre=Aplicación
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Vista
+AyudaForma=MFAMovimientoLista
+AyudaVista=MFAMovimientoLista
+AyudaCampo=MFAMovimientoLista.Movimiento
+AyudaBusquedaRapida=Asigna(Info.Modulo, aplicacion_origen_modulo)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+CondicionEdicion=layout_log:layout_log.accion <> <T>procesar<T> y(layout_log:layout_log.EstatusAnalisis = EstatusSinAfectar)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Documento Incorrecto<T>
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(*) FROM MFAMovimientoLista WHERE Modulo = :tModulo AND Movimiento = :tMovimiento AND Empresa = :tEmpresa<T>, Info.Modulo, folio, Empresa) > 0<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Falso<BR>Fin
+[referencia]
+Clave=referencia
+Nombre=Documento
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+AyudaEnCaptura=Vista
+AyudaForma=MFAMovimientoLista
+AyudaVista=MFAMovimientoLista
+AyudaCampo=MFAMovimientoLista.Movimiento
+AyudaBusquedaRapida=Asigna(Info.Modulo, aplicacion_origen_modulo)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+CondicionEdicion=layout_log:layout_log.accion <> <T>procesar<T>  y(layout_log:layout_log.EstatusAnalisis = EstatusSinAfectar)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Aplicación Incorrecta<T>
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(*) FROM MFAMovimientoLista WHERE Modulo = :tModulo AND Movimiento = :tMovimiento AND Empresa = :tEmpresa<T>, Info.Modulo, referencia, Empresa) > 0<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Falso<BR>Fin
+[aplicacion_origen_id]
+Clave=aplicacion_origen_id
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[aplicacion_origen_modulo]
+Clave=aplicacion_origen_modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=layout_log:layout_log.accion <> <T>procesar<T>
+OpcionesUnicamente=S
+CondicionEdicion=layout_log:layout_log.accion <> <T>procesar<T>  y(layout_log:layout_log.EstatusAnalisis = EstatusSinAfectar)
+ListaOpciones=(Lista)
+[aplicacion_tipo_aplicacion]
+Clave=aplicacion_tipo_aplicacion
+Nombre=Tipo Aplicación
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[empresa]
+Clave=empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+[origen_vista]
+Clave=origen_vista
+Nombre=origen_vista
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+
+
+
+
+
+
+[aplicacion_Mov]
+Clave=aplicacion_Mov
+Nombre=aplicacion_Mov
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[aplicacion_MovID]
+Clave=aplicacion_MovID
+Nombre=aplicacion_MovID
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+
+[Accion]
+Clave=Accion
+Nombre=Acción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+
+OpcionesUnicamente=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CondicionEdicion=layout_log:layout_log.EstatusAnalisis = EstatusSinAfectar
+
+
+
+
+
+
+ListaOpciones=(Lista)
+
+
+
+[aplicacion_origen_modulo.ListaOpciones]
+(Inicio)=COMS
+COMS=GAS
+GAS=VTAS
+VTAS=CXP
+CXP=CXC
+CXC=CR
+CR=DIN
+DIN=(Fin)
+
+[Accion.ListaOpciones]
+(Inicio)=A-Agregar Anticipo
+A-Agregar Anticipo=B-Agregar Comp. Gasto
+B-Agregar Comp. Gasto=C-Agregar Factura
+C-Agregar Factura=D-Agregar Nota Cargo
+D-Agregar Nota Cargo=E-Agregar Nota Credito
+E-Agregar Nota Credito=F-Agregar Devolucion
+F-Agregar Devolucion=G-Agregar Prestamo
+G-Agregar Prestamo=H-Cambiar a Aplicacion
+H-Cambiar a Aplicacion=I-Cambiar a Cobro
+I-Cambiar a Cobro=J-Cambiar a Endoso
+J-Cambiar a Endoso=K-Cambiar a Pago
+K-Cambiar a Pago=L-Cambiar a Redoc.
+L-Cambiar a Redoc.=M-Excep. Ap.
+M-Excep. Ap.=N-Excep. Doc.
+N-Excep. Doc.=O-Excep. Ap. Esp.
+O-Excep. Ap. Esp.=P-Excep. Doc. Esp.
+P-Excep. Doc. Esp.=Q-Excep. Reporte
+Q-Excep. Reporte=R-Excep. Reporte IEPS
+R-Excep. Reporte IEPS=S-Excep. Reporte IETU
+S-Excep. Reporte IETU=T-Excep. Reporte IVA
+T-Excep. Reporte IVA=(Fin)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=log_id
+log_id=d_id
+d_id=folio
+folio=referencia
+referencia=aplicacion_origen_id
+aplicacion_origen_id=aplicacion_origen_modulo
+aplicacion_origen_modulo=aplicacion_tipo_aplicacion
+aplicacion_tipo_aplicacion=empresa
+empresa=origen_vista
+origen_vista=aplicacion_Mov
+aplicacion_Mov=aplicacion_MovID
+aplicacion_MovID=Accion
+Accion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=log_id,
+log_id,=d_id,
+d_id,=folio,
+folio,=referencia,
+referencia,=aplicacion_origen_id,
+aplicacion_origen_id,=aplicacion_origen_modulo,
+aplicacion_origen_modulo,=aplicacion_tipo_aplicacion,
+aplicacion_tipo_aplicacion,=empresa,
+empresa,=origen_vista,
+origen_vista,=aplicacion_Mov,
+aplicacion_Mov,=aplicacion_MovID,
+aplicacion_MovID,=Accion
+Accion=FROM layout_logd
+FROM layout_logd=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=log_id
+log_id=d_id
+d_id=(Fin)

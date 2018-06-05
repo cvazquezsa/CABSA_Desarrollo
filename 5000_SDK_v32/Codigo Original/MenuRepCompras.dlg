@@ -1,0 +1,203 @@
+[Dialogo]
+Clave=MenuRepCompras
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=376
+PosicionInicialArriba=214
+PosicionInicialAltura=316
+PosicionInicialAncho=272
+
+PosicionInicialAlturaCliente=306
+[Acciones.Acum]
+Nombre=Acum
+Boton=0
+NombreDesplegar=&Acumulados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCompraAcumU
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Acum<T>)
+[Acciones.Mov]
+Nombre=Mov
+Boton=0
+NombreDesplegar=&Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCompraMov
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Mov<T>)
+[Acciones.Gerenciales]
+Nombre=Gerenciales
+Boton=0
+NombreDesplegar=&Gerenciales
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepGerencialesCompras
+Activo=S
+Visible=S
+
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=G&eneral de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraAnalisisMov
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/General<T>)
+[Acciones.Detalle]
+Nombre=Detalle
+Boton=0
+NombreDesplegar=General de M&ovimientos - Detalle
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraAnalisisMovDetalle
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Detalle<T>)
+[Acciones.Diario]
+Nombre=Diario
+Boton=0
+NombreDesplegar=&Diario de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraAnalisisMovDiario
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Diario<T>)
+[Acciones.Pendientes]
+Nombre=Pendientes
+Boton=0
+NombreDesplegar=Movimientos &Pendientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraBackOrder
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Pendientes<T>)
+[Acciones.Comparativo]
+Nombre=Comparativo
+Boton=0
+NombreDesplegar=&Comparativo Mes -Año
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraComparativo
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Comparativo<T>)
+[Acciones.Cumplimiento]
+Nombre=Cumplimiento
+Boton=0
+NombreDesplegar=C&umplimiento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCompraCumplimiento
+Activo=S
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Cumplimiento<T>)
+[Acciones.ImportacionSerieLote]
+Nombre=ImportacionSerieLote
+Boton=0
+NombreDesplegar=Importaciones con Saldo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCompraImportacionSerieLote
+Activo=S
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/ImportacionSerieLote<T>)
+[Acciones.ImportacionEstadoCuenta]
+Nombre=ImportacionEstadoCuenta
+Boton=0
+NombreDesplegar=Estado de Cuenta de Importaciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCompraImportacionEstadoCuenta
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/ImportacionEstadoCuenta<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Acum
+Acum=Mov
+Mov=Gerenciales
+Gerenciales=General
+General=Detalle
+Detalle=Diario
+Diario=Pendientes
+Pendientes=Comparativo
+Comparativo=Cumplimiento
+Cumplimiento=ImportacionSerieLote
+ImportacionSerieLote=ImportacionEstadoCuenta
+ImportacionEstadoCuenta=(Fin)

@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=MovTurno
+Archivo=MovTurno
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Turnos
+Singular=Turno
+LlavePrimaria=Turno
+SQL=SELECT<BR>  Turno,<BR>  HoraD,<BR>  HoraA<BR><BR>FROM<BR>  MovTurno
+
+[Turno]
+Clave=Turno
+Nombre=Turno
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[HoraD]
+Clave=HoraD
+Nombre=Desde
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+
+[HoraA]
+Clave=HoraA
+Nombre=Hasta
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+
+[Tabla.ListaCampos]
+(Inicio)=Turno
+Turno=HoraD
+HoraD=HoraA
+HoraA=(Fin)

@@ -1,0 +1,122 @@
+[Tabla]
+Icono=0
+Clave=OpcionPrecio
+Archivo=OpcionPrecio
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Precios
+Singular=Precio
+ListaRelaciones=Art
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+ControlSucursal=S
+CampoSucursal=Sucursal
+
+SQL=(Lista)
+[Opcion]
+Clave=Opcion
+Nombre=Opción
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+Requerido=S
+AyudaOpcionesArticulo=Info.Articulo
+TipoDatos=Texto
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo Específico
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+ConRefrescar=S
+ListaRefrescar=Moneda
+ValorPorOmision=Info.Articulo
+TipoDatos=Texto
+
+[Precio]
+Clave=Precio
+Nombre=Importe (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Config.ContMoneda
+ValorRefrescar=Vacio(OpcionPrecio:Art.MonedaPrecio, Config.ContMoneda)
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=% (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.####
+AyudaEnCaptura=Calculadora
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Opcion
+Opcion=Articulo
+Articulo=Precio
+Precio=Porcentaje
+Porcentaje=Moneda
+Moneda=Sucursal
+Sucursal=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  Opcion,
+  Opcion,=  Articulo,
+  Articulo,=  Precio,
+  Precio,=  Moneda,
+  Moneda,=  Sucursal,
+  Sucursal,=  Porcentaje
+  Porcentaje=FROM
+FROM=  OpcionPrecio
+  OpcionPrecio=(Fin)

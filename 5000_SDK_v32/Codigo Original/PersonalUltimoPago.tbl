@@ -1,0 +1,56 @@
+[Tabla]
+Icono=0
+Clave=PersonalUltimoPago
+Archivo=PersonalUltimoPago
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Ultimo Pago
+Singular=Ultimo Pago
+LlavePrimaria=Personal<BR>Empresa<BR>Mov
+CampoMov=Mov
+SQL=SELECT<BR>  Personal,<BR>  Mov,<BR>  UltimoPago,<BR>  Empresa<BR><BR>FROM<BR>  PersonalUltimoPago
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[UltimoPago]
+Clave=UltimoPago
+Nombre=Ultimo Pago
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[Tabla.ListaCampos]
+(Inicio)=Personal
+Personal=Mov
+Mov=Empresa
+Empresa=UltimoPago
+UltimoPago=(Fin)

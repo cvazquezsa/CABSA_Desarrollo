@@ -1,0 +1,350 @@
+
+[Reporte]
+Clave=FormaPagoComparaMES
+Nombre=Formas de Pago Intelisis-MES
+Icono=0
+Tipo=Reporte
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+VistaEspecial=S
+
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=548
+PosicionInicialAncho=797
+[Vista]
+Icono=0
+Clave=FormaPagoComparaMES
+VistaIndependiente=S
+
+ListaCampos=(Lista)
+SQL=spFormaPagoComparaMes <T>{Empresa}<T>
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=FormaPagoComparaMES
+Activo=S
+Visible=S
+
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Excel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=FormaPagoComparaMES
+Activo=S
+Visible=S
+
+
+
+
+[Codigo]
+Clave=Codigo
+Nombre=Codigo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Codigo
+
+[FormaPago]
+Clave=FormaPago
+Nombre=FormaPago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=FormaPago
+
+[Vista.ListaCampos]
+(Inicio)=FormaPago
+FormaPago=Codigo
+Codigo=(Fin)
+
+
+
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Detalle<BR>Pie
+
+VentanaIzquierda=1358
+VentanaArriba=-8
+VentanaAltura=1040
+VentanaAncho=1296
+PanelArriba=120
+PanelBotones=80
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[Linea2]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+
+[Linea3]
+Clave=Detalle
+Objetos=2
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[Linea4]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=27
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ReporteNombre
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=9
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=32
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Forma de Pago Intelisis<T>
+
+[B2]
+Celda=B2
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Forma de Pago MES<T>
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=32
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FormaPago
+
+[B3]
+Celda=B3
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=5
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Codigo
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=10
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=9
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

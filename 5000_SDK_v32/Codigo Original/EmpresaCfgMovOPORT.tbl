@@ -1,0 +1,86 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovOPORT
+Archivo=EmpresaCfgMovOPORT
+Modulos=(Todos)
+TipoTabla=Configuracion
+
+ListaCampos=(Lista)
+Nombre=EmpresaCfgMovOPORT
+Singular=EmpresaCfgMovOPORT
+LlavePrimaria=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+
+
+
+
+
+
+
+
+[OPORTOportunidad]
+Clave=OPORTOportunidad
+Nombre=Oportunidad
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=OPORT
+[OPORTGenerador]
+Clave=OPORTGenerador
+Nombre=Generador Op
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=OPORT
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=OPORTOportunidad
+OPORTOportunidad=OPORTGenerador
+OPORTGenerador=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=OPORTOportunidad,
+OPORTOportunidad,=OPORTGenerador
+OPORTGenerador=FROM EmpresaCfgMovOPORT
+FROM EmpresaCfgMovOPORT=(Fin)

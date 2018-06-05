@@ -1,0 +1,6091 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMov
+Archivo=EmpresaCfgMov
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Movimientos por Omisión
+Singular=Movimientos por Omisión
+LlavePrimaria=Empresa
+CampoEmpresa=Empresa
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+TipoDatos=Texto
+
+[InvAjuste]
+Clave=InvAjuste
+Nombre=Ajuste
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesUnicamente=
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvReciboPrestamo]
+Clave=InvReciboPrestamo
+Nombre=Recibo Prestamo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvCambioPresentacion]
+Clave=InvCambioPresentacion
+Nombre=Cambio Presentacion
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[VentaPedido]
+Clave=VentaPedido
+Nombre=Pedido
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaFactura]
+Clave=VentaFactura
+Nombre=Factura
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaDev]
+Clave=VentaDev
+Nombre=Devolución
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaConsignacion]
+Clave=VentaConsignacion
+Nombre=Venta Consignación
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaDevConsignacion]
+Clave=VentaDevConsignacion
+Nombre=Devolución Consignación
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesLlave=Auto
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CompraRequisicion]
+Clave=CompraRequisicion
+Nombre=Requisición
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraCotizacion]
+Clave=CompraCotizacion
+Nombre=Cotización
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraOrden]
+Clave=CompraOrden
+Nombre=Orden Compra
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemTabla=MovTipo_COMS_O
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraEntrada]
+Clave=CompraEntrada
+Nombre=Entrada Compra
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraDev]
+Clave=CompraDev
+Nombre=Devolución
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraConsignacion]
+Clave=CompraConsignacion
+Nombre=Compra Consignación
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraDevConsignacion]
+Clave=CompraDevConsignacion
+Nombre=Devolución Consignación
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CxcFactura]
+Clave=CxcFactura
+Nombre=Factura
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcNCredito]
+Clave=CxcNCredito
+Nombre=Nota Crédito
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcCobro]
+Clave=CxcCobro
+Nombre=Cobro
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcCobroDirecto]
+Clave=CxcCobroDirecto
+Nombre=Cobro Genera (Tesorería)
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo<T>,<T>DIN<T>)
+TipoDatos=Texto
+
+[CxcAplicacionNCredito]
+Clave=CxcAplicacionNCredito
+Nombre=Aplicación Crédito
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpFactura]
+Clave=CxpFactura
+Nombre=Factura
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpNCredito]
+Clave=CxpNCredito
+Nombre=Nota Crédito
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpPago]
+Clave=CxpPago
+Nombre=Pago
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpPagoDirecto]
+Clave=CxpPagoDirecto
+Nombre=Pago Genera (Tesorería)
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo<T>,<T>DIN<T>)
+TipoDatos=Texto
+
+[CxpAplicacionNCredito]
+Clave=CxpAplicacionNCredito
+Nombre=Aplicación Crédito
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[BancoDeposito]
+Clave=BancoDeposito
+Nombre=Depósito
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoDepositoElectronico]
+Clave=BancoDepositoElectronico
+Nombre=Depósito Electronico
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoCheque]
+Clave=BancoCheque
+Nombre=Cheque
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoChequeElectronico]
+Clave=BancoChequeElectronico
+Nombre=Cheque Electronico
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoDepositoEnFalso]
+Clave=BancoDepositoEnFalso
+Nombre=Depósito en Falso
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoChequeDevuelto]
+Clave=BancoChequeDevuelto
+Nombre=Cheque Devuelto
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoIngreso]
+Clave=BancoIngreso
+Nombre=Ingreso
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoEgreso]
+Clave=BancoEgreso
+Nombre=Egreso
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CajaIngreso]
+Clave=CajaIngreso
+Nombre=Ingreso Caja
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CajaEgreso]
+Clave=CajaEgreso
+Nombre=Egreso Caja
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[Gasto]
+Clave=Gasto
+Nombre=Gasto
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesLlave=Auto
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoAnticipo]
+Clave=GastoAnticipo
+Nombre=Anticipo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoDevolucionAnticipo]
+Clave=GastoDevolucionAnticipo
+Nombre=Devolución Anticipo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoSolicitud]
+Clave=GastoSolicitud
+Nombre=Solicitud
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CxcAjusteEfectivo]
+Clave=CxcAjusteEfectivo
+Nombre=Ajuste Redondeo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[VentaFacturaNota]
+Clave=VentaFacturaNota
+Nombre=Factura (Procesar Notas)
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=
+OpcionesLlave=Auto
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaSalidaGarantia]
+Clave=VentaSalidaGarantia
+Nombre=Salida Garantía
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcNCreditoProntoPago]
+Clave=CxcNCreditoProntoPago
+Nombre=Pronto pago
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpNCreditoProntoPago]
+Clave=CxpNCreditoProntoPago
+Nombre=Nota Crédito Pronto pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcNCargo]
+Clave=CxcNCargo
+Nombre=Nota Cargo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpNCargo]
+Clave=CxpNCargo
+Nombre=Nota Cargo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcDocumento]
+Clave=CxcDocumento
+Nombre=Documento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDocumento]
+Clave=CxpDocumento
+Nombre=Documento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ContCierre]
+Clave=ContCierre
+Nombre=Cierre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONT
+TipoDatos=Texto
+
+[VentaRemision]
+Clave=VentaRemision
+Nombre=Remisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaDevRemision]
+Clave=VentaDevRemision
+Nombre=Devolución Remisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[EmbarqueLiquidacion]
+Clave=EmbarqueLiquidacion
+Nombre=Liquidación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=EMB
+TipoDatos=Texto
+
+[EmbarqueDesembarque]
+Clave=EmbarqueDesembarque
+Nombre=Desembarque
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=EMB
+TipoDatos=Texto
+
+[CxpNomina]
+Clave=CxpNomina
+Nombre=Pago Nomina
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcCargoDiverso]
+Clave=CxcCargoDiverso
+Nombre=Cargo Diverso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcCreditoDiverso]
+Clave=CxcCreditoDiverso
+Nombre=Crédito Diverso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpCargoDiverso]
+Clave=CxpCargoDiverso
+Nombre=Cargo Diverso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpCreditoDiverso]
+Clave=CxpCreditoDiverso
+Nombre=Crédito Diverso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaCotizacion]
+Clave=VentaCotizacion
+Nombre=Cotización
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AsisteAsistencia]
+Clave=AsisteAsistencia
+Nombre=Asistencia
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=ASIS
+TipoDatos=Texto
+
+[AsisteCorte]
+Clave=AsisteCorte
+Nombre=Corte
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ASIS
+TipoDatos=Texto
+
+[InvSalidaDiversa]
+Clave=InvSalidaDiversa
+Nombre=Salida Diversa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvPrestamo]
+Clave=InvPrestamo
+Nombre=Prestamo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvTransferencia]
+Clave=InvTransferencia
+Nombre=Transferencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvTransferenciaConsig]
+Clave=InvTransferenciaConsig
+Nombre=Transferencia Consignación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CompraIntercambio]
+Clave=CompraIntercambio
+Nombre=Intercambio Garantía
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraDevGarantia]
+Clave=CompraDevGarantia
+Nombre=Devolución Garantía
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[AgentPago]
+Clave=AgentPago
+Nombre=Pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[AgentPagoNomina]
+Clave=AgentPagoNomina
+Nombre=Pago Nómina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[AgentComision]
+Clave=AgentComision
+Nombre=Comisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[AgentDestajo]
+Clave=AgentDestajo
+Nombre=Destajo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[AgentDevolucion]
+Clave=AgentDevolucion
+Nombre=Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[CompraEntradaGastos]
+Clave=CompraEntradaGastos
+Nombre=Entrada con Gastos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CxpGastoDiverso]
+Clave=CxpGastoDiverso
+Nombre=Gasto Diverso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcCobroPosfechado]
+Clave=CxcCobroPosfechado
+Nombre=Cobro Posfechado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpPagoPosfechado]
+Clave=CxpPagoPosfechado
+Nombre=Pago Posfechado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcAplicacionCobro]
+Clave=CxcAplicacionCobro
+Nombre=Aplicación Cobro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAplicacionPago]
+Clave=CxpAplicacionPago
+Nombre=Aplicación Pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaEntregaGarantia]
+Clave=VentaEntregaGarantia
+Nombre=Entrega Garantía
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcDevolucionEfectivo]
+Clave=CxcDevolucionEfectivo
+Nombre=Devolución Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDevolucionEfectivo]
+Clave=CxpDevolucionEfectivo
+Nombre=Devolución Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcDevolucionCredito]
+Clave=CxcDevolucionCredito
+Nombre=Devolución Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDevolucionCredito]
+Clave=CxpDevolucionCredito
+Nombre=Devolución Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaDevCxc]
+Clave=VentaDevCxc
+Nombre=Devolución (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CompraDevCxp]
+Clave=CompraDevCxp
+Nombre=Devolución (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraBonificacionCxp]
+Clave=CompraBonificacionCxp
+Nombre=Bonificación (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraBonificacion]
+Clave=CompraBonificacion
+Nombre=Bonificación Compra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[ProdProceso]
+Clave=ProdProceso
+Nombre=Orden Trabajo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdEntradaProduccion]
+Clave=ProdEntradaProduccion
+Nombre=Entrada Producción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdOrdenProduccion]
+Clave=ProdOrdenProduccion
+Nombre=Orden Producción
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemTabla=MovTipo_PROD_O
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdAsignacion]
+Clave=ProdAsignacion
+Nombre=Asignación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdDevolucion]
+Clave=ProdDevolucion
+Nombre=Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdAvanceProduccion]
+Clave=ProdAvanceProduccion
+Nombre=Avance Producción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdOrdenTrabajo]
+Clave=ProdOrdenTrabajo
+Nombre=Orden Trabajo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdRequisicion]
+Clave=ProdRequisicion
+Nombre=Requisición
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdSolicitud]
+Clave=ProdSolicitud
+Nombre=Solicitud
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdAvance]
+Clave=ProdAvance
+Nombre=Avance
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdConsumo]
+Clave=ProdConsumo
+Nombre=Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdSolicitudMaterial]
+Clave=ProdSolicitudMaterial
+Nombre=Solicitud Material (Inv)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[ProdSalidaMaterial]
+Clave=ProdSalidaMaterial
+Nombre=Salida Material
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdDevolucionMaterial]
+Clave=ProdDevolucionMaterial
+Nombre=Devolución Material
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdAsignacionMaterial]
+Clave=ProdAsignacionMaterial
+Nombre=Asignación Material
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdConsumoMaterial]
+Clave=ProdConsumoMaterial
+Nombre=Consumo Material (Inv)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[ProdRetroceso]
+Clave=ProdRetroceso
+Nombre=Retroceso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdDevProduccion]
+Clave=ProdDevProduccion
+Nombre=Devolución Producción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdAvanceCxp]
+Clave=ProdAvanceCxp
+Nombre=Avance (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ProdRetrocesoCxp]
+Clave=ProdRetrocesoCxp
+Nombre=Retroceso (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[EmbarqueCxp]
+Clave=EmbarqueCxp
+Nombre=Embarque (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ProdPlanMaestro]
+Clave=ProdPlanMaestro
+Nombre=Plan Maestro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[ProdRequisicionPlan]
+Clave=ProdRequisicionPlan
+Nombre=Requisición Plan
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[CompraRequisicionPlan]
+Clave=CompraRequisicionPlan
+Nombre=Requisición Plan
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[CxpAjusteEfectivo]
+Clave=CxpAjusteEfectivo
+Nombre=Ajuste Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaCancelacionFactura]
+Clave=VentaCancelacionFactura
+Nombre=Cancelación Factura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcCancelacionFactura]
+Clave=CxcCancelacionFactura
+Nombre=Cancelación Factura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[BancoSolicitudDeposito]
+Clave=BancoSolicitudDeposito
+Nombre=Solicitud Depósito
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoSolicitudCheque]
+Clave=BancoSolicitudCheque
+Nombre=Solicitud Cheque
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[ProdOrdenTransferencia]
+Clave=ProdOrdenTransferencia
+Nombre=Orden Transferencia (Inv)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[VentaPerdida]
+Clave=VentaPerdida
+Nombre=Venta Perdida
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[GastoComprobante]
+Clave=GastoComprobante
+Nombre=Comprobante
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[AgentBonificacion]
+Clave=AgentBonificacion
+Nombre=Bonificación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[BancoCargoBancario]
+Clave=BancoCargoBancario
+Nombre=Cargo Bancario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[BancoAbonoBancario]
+Clave=BancoAbonoBancario
+Nombre=Abono Bancario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxpRetencion]
+Clave=CxpRetencion
+Nombre=Retención
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[InvSalidaTraspaso]
+Clave=InvSalidaTraspaso
+Nombre=Salida Traspaso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvReciboTraspaso]
+Clave=InvReciboTraspaso
+Nombre=Recibo Traspaso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvTransito]
+Clave=InvTransito
+Nombre=Transito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvTransitoFaltante]
+Clave=InvTransitoFaltante
+Nombre=Transito Faltante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CajaFaltanteCaja]
+Clave=CajaFaltanteCaja
+Nombre=Faltante Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[AgentFaltanteCaja]
+Clave=AgentFaltanteCaja
+Nombre=Faltante Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[InvOrdenTransferencia]
+Clave=InvOrdenTransferencia
+Nombre=Orden Transferencia
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemTabla=MovTipo_INV_OT
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvOrdenTraspaso]
+Clave=InvOrdenTraspaso
+Nombre=Orden Traspaso
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemTabla=MovTipo_INV_OI
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=12
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcAplicacionAnticipo]
+Clave=CxcAplicacionAnticipo
+Nombre=Aplicación Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpAplicacionAnticipo]
+Clave=CxpAplicacionAnticipo
+Nombre=Aplicación Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcDevolucionAnticipo]
+Clave=CxcDevolucionAnticipo
+Nombre=Devolución Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDevolucionAnticipo]
+Clave=CxpDevolucionAnticipo
+Nombre=Devolución Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcReasignacionAnticipo]
+Clave=CxcReasignacionAnticipo
+Nombre=Reasignación Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpReasignacionAnticipo]
+Clave=CxpReasignacionAnticipo
+Nombre=Reasignación Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcAnticipo]
+Clave=CxcAnticipo
+Nombre=Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAnticipo]
+Clave=CxpAnticipo
+Nombre=Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcVentaVales]
+Clave=CxcVentaVales
+Nombre=Venta Vales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcAplicacionVales]
+Clave=CxcAplicacionVales
+Nombre=Aplicación Vales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcDevolucionVales]
+Clave=CxcDevolucionVales
+Nombre=Devolución Vales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[VentaNota]
+Clave=VentaNota
+Nombre=Nota (Venta Mostrador)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcObsequioVales]
+Clave=CxcObsequioVales
+Nombre=Obsequio Vales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcContrarecibo]
+Clave=CxcContrarecibo
+Nombre=Contra Recibo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcNCargoRecargos]
+Clave=CxcNCargoRecargos
+Nombre=Recargos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpNCargoRecargos]
+Clave=CxpNCargoRecargos
+Nombre=Recargos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[InvTransitoSobrante]
+Clave=InvTransitoSobrante
+Nombre=Transito Sobrante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[BancoTransferencia]
+Clave=BancoTransferencia
+Nombre=Transferencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxcAjusteRedondeo]
+Clave=CxcAjusteRedondeo
+Nombre=Ajuste Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAjusteRedondeo]
+Clave=CxpAjusteRedondeo
+Nombre=Ajuste Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraEntradaImportacion]
+Clave=CompraEntradaImportacion
+Nombre=Entrada Importación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[VentaSolicitudDevolucion]
+Clave=VentaSolicitudDevolucion
+Nombre=Solicitud Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[EmbarqueGastoTarifas]
+Clave=EmbarqueGastoTarifas
+Nombre=Tarifas Embarque (Gastos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[RHAltas]
+Clave=RHAltas
+Nombre=Altas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=RH
+TipoDatos=Texto
+
+[RHModificaciones]
+Clave=RHModificaciones
+Nombre=Modificaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=RH
+TipoDatos=Texto
+
+[RHBajas]
+Clave=RHBajas
+Nombre=Bajas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=RH
+TipoDatos=Texto
+
+[NomAumentoVacaciones]
+Clave=NomAumentoVacaciones
+Nombre=Aumento Vacaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[NomVacacionesTomadas]
+Clave=NomVacacionesTomadas
+Nombre=Vacaciones Tomadas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[CxcAnticipoSaldo]
+Clave=CxcAnticipoSaldo
+Nombre=Anticipo Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAnticipoSaldo]
+Clave=CxpAnticipoSaldo
+Nombre=Anticipo Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcAplicacion]
+Clave=CxcAplicacion
+Nombre=Aplicación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcDevolucion]
+Clave=CxcDevolucion
+Nombre=Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAplicacion]
+Clave=CxpAplicacion
+Nombre=Aplicación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpDevolucion]
+Clave=CxpDevolucion
+Nombre=Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcDevolucionSaldo]
+Clave=CxcDevolucionSaldo
+Nombre=Devolución Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDevolucionSaldo]
+Clave=CxpDevolucionSaldo
+Nombre=Devolución Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpCreditoProveedor]
+Clave=CxpCreditoProveedor
+Nombre=Crédito Proveedor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpCargoProveedor]
+Clave=CxpCargoProveedor
+Nombre=Cargo Proveedor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpRecargos]
+Clave=CxpRecargos
+Nombre=Recargos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpProntoPago]
+Clave=CxpProntoPago
+Nombre=Pronto pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcDocumentoAnticipo]
+Clave=CxcDocumentoAnticipo
+Nombre=Documento Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDocumentoAnticipo]
+Clave=CxpDocumentoAnticipo
+Nombre=Documento Anticipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[GastoProrrateado]
+Clave=GastoProrrateado
+Nombre=Gasto Prorrateado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[ComprobanteProrrateado]
+Clave=ComprobanteProrrateado
+Nombre=Comprobante Prorrateado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CxpContraRecibo]
+Clave=CxpContraRecibo
+Nombre=Contra Recibo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ProdCancelacionOrden]
+Clave=ProdCancelacionOrden
+Nombre=Cancelación Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROD
+TipoDatos=Texto
+
+[CxpPagare]
+Clave=CxpPagare
+Nombre=Pagaré
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpAforo]
+Clave=CxpAforo
+Nombre=Aforo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpFactoraje]
+Clave=CxpFactoraje
+Nombre=Factoraje
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[GastoDev]
+Clave=GastoDev
+Nombre=Devolución Gasto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoDevProrrateada]
+Clave=GastoDevProrrateada
+Nombre=Dev. Prorrateada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CxpDevRetencion]
+Clave=CxpDevRetencion
+Nombre=Devolución Retención
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpGastoDev]
+Clave=CxpGastoDev
+Nombre=Devolución Gasto (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpGastoDevProrrateada]
+Clave=CxpGastoDevProrrateada
+Nombre=Dev. Prorrateada (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaNotaDev]
+Clave=VentaNotaDev
+Nombre=Nota Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaOrdenSurtido]
+Clave=VentaOrdenSurtido
+Nombre=Orden Surtido
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcAjuste]
+Clave=CxcAjuste
+Nombre=Ajuste
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAjuste]
+Clave=CxpAjuste
+Nombre=Ajuste
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraLocal]
+Clave=CompraLocal
+Nombre=Compra Local
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[ProdOrdenConsumo]
+Clave=ProdOrdenConsumo
+Nombre=Orden Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcConversionCredito]
+Clave=CxcConversionCredito
+Nombre=Conversión Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcConversionCargo]
+Clave=CxcConversionCargo
+Nombre=Conversión Cargo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpConversionCredito]
+Clave=CxpConversionCredito
+Nombre=Conversión Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpConversionCargo]
+Clave=CxpConversionCargo
+Nombre=Conversión Cargo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[NomCancelacionParcial]
+Clave=NomCancelacionParcial
+Nombre=Cancelación Parcial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[CxpCancelacionNomina]
+Clave=CxpCancelacionNomina
+Nombre=Cancelación Nómina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraPerdida]
+Clave=CompraPerdida
+Nombre=Compra Perdida
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CompraRechazada]
+Clave=CompraRechazada
+Nombre=Compra Rechazada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CxcAnticipoFactura]
+Clave=CxcAnticipoFactura
+Nombre=Anticipo Factura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAnticipoFactura]
+Clave=CxpAnticipoFactura
+Nombre=Anticipo Factura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpImportacion]
+Clave=CxpImportacion
+Nombre=Importación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[AutoRecaudacion]
+Clave=AutoRecaudacion
+Nombre=Recaudación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AutoPapeleta]
+Clave=AutoPapeleta
+Nombre=Papeleta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AutoMantenimiento]
+Clave=AutoMantenimiento
+Nombre=Mantenimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AutoGasto]
+Clave=AutoGasto
+Nombre=Movimiento Gastos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[AutoNomina]
+Clave=AutoNomina
+Nombre=Movimiento Nómina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[CxcAplicacionSaldo]
+Clave=CxcAplicacionSaldo
+Nombre=Aplicación Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[GastoSinComprobante]
+Clave=GastoSinComprobante
+Nombre=Sin Comprobante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CxpCartaCredito]
+Clave=CxpCartaCredito
+Nombre=Carta Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcForwardVenta]
+Clave=CxcForwardVenta
+Nombre=Forward Venta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcForwardPorCobrar]
+Clave=CxcForwardPorCobrar
+Nombre=Forward por Cobrar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpForwardCompra]
+Clave=CxpForwardCompra
+Nombre=Forward Compra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpForwardPorPagar]
+Clave=CxpForwardPorPagar
+Nombre=Forward por Pagar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcFacturaSeguro]
+Clave=CxcFacturaSeguro
+Nombre=Factura Seguro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[VentaNotaConsumo]
+Clave=VentaNotaConsumo
+Nombre=Nota Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaReservacion]
+Clave=VentaReservacion
+Nombre=Reservación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaIngreso]
+Clave=VentaIngreso
+Nombre=Ingreso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CompraLicitacion]
+Clave=CompraLicitacion
+Nombre=Licitación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[InvReciboPrevio]
+Clave=InvReciboPrevio
+Nombre=Recibo Previo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[AutoMantenimientoPreventivo]
+Clave=AutoMantenimientoPreventivo
+Nombre=Mantenimiento Preventivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[GastoCajaChica]
+Clave=GastoCajaChica
+Nombre=Caja Chica
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoDisminucionPresupuesto]
+Clave=GastoDisminucionPresupuesto
+Nombre=Disminución Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[InvValeSalida]
+Clave=InvValeSalida
+Nombre=Vale Salida
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvValeDevolucion]
+Clave=InvValeDevolucion
+Nombre=Vale Devolución
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[PCPrecios]
+Clave=PCPrecios
+Nombre=Precios
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PC
+TipoDatos=Texto
+
+[PCCostos]
+Clave=PCCostos
+Nombre=Costos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PC
+TipoDatos=Texto
+
+[PCBoletin]
+Clave=PCBoletin
+Nombre=Boletín
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PC
+TipoDatos=Texto
+
+[GastoDepreciacion]
+Clave=GastoDepreciacion
+Nombre=Depreciación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CajaCorteCaja]
+Clave=CajaCorteCaja
+Nombre=Corte Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxcEndoso]
+Clave=CxcEndoso
+Nombre=Endoso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpEndoso]
+Clave=CxpEndoso
+Nombre=Endoso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[NomIncapacidades]
+Clave=NomIncapacidades
+Nombre=Incapacidades
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[InvDevTransito]
+Clave=InvDevTransito
+Nombre=Devolución Transito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[NomFaltas]
+Clave=NomFaltas
+Nombre=Faltas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[NomRetardos]
+Clave=NomRetardos
+Nombre=Retardos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[NomHorasExtras]
+Clave=NomHorasExtras
+Nombre=Horas Extras
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[InvReevaluacion]
+Clave=InvReevaluacion
+Nombre=Reevaluación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CajaSobranteCaja]
+Clave=CajaSobranteCaja
+Nombre=Sobrante Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[AgentCobro]
+Clave=AgentCobro
+Nombre=Cobro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[GastoAnticipoSinComprobar]
+Clave=GastoAnticipoSinComprobar
+Nombre=Anticipo sin Comprobar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CajaApertura]
+Clave=CajaApertura
+Nombre=Apertura Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CajaRecoleccion]
+Clave=CajaRecoleccion
+Nombre=Recolección Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[ServicioPropuesta]
+Clave=ServicioPropuesta
+Nombre=Propuesta Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[ServicioCotizacion]
+Clave=ServicioCotizacion
+Nombre=Cotizacion Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[ServicioCita]
+Clave=ServicioCita
+Nombre=Cita Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[Servicio]
+Clave=Servicio
+Nombre=Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[ServicioExterno]
+Clave=ServicioExterno
+Nombre=Servicio Externo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcReevaluacion]
+Clave=CxcReevaluacion
+Nombre=Reevaluación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpReevaluacion]
+Clave=CxpReevaluacion
+Nombre=Reevaluación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CajaTransferencia]
+Clave=CajaTransferencia
+Nombre=Transferencia Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CajaFondoInicial]
+Clave=CajaFondoInicial
+Nombre=Fondo Inicial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CRCorteCaja]
+Clave=CRCorteCaja
+Nombre=Corte Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CR
+TipoDatos=Texto
+
+[CRCorteCajaCentral]
+Clave=CRCorteCajaCentral
+Nombre=Corte Caja Central
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CR
+TipoDatos=Texto
+
+[CxcFaltanteCaja]
+Clave=CxcFaltanteCaja
+Nombre=Faltante Caja
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[AutoCancelacionRecaudacion]
+Clave=AutoCancelacionRecaudacion
+Nombre=Cancelación Recaudación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AgentPagoGastos]
+Clave=AgentPagoGastos
+Nombre=Pago (Gastos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoOtrosIngresos]
+Clave=GastoOtrosIngresos
+Nombre=Otros Ingresos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[DineroReevaluacion]
+Clave=DineroReevaluacion
+Nombre=Reevaluación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[InvSolicitud]
+Clave=InvSolicitud
+Nombre=Solicitud
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[GastoDevComprobante]
+Clave=GastoDevComprobante
+Nombre=Devolución Comprobante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[BancoCargoBancarioIVA]
+Clave=BancoCargoBancarioIVA
+Nombre=Cargo Bancario IVA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CompraControlCalidad]
+Clave=CompraControlCalidad
+Nombre=Control Calidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+TipoDatos=Texto
+
+[CxcNomina]
+Clave=CxcNomina
+Nombre=Cobro Nómina
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcCancelacionNomina]
+Clave=CxcCancelacionNomina
+Nombre=Cancelación Nómina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[GastoSolicitudRechazada]
+Clave=GastoSolicitudRechazada
+Nombre=Solicitud Rechazada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[VentaPedidoAuto]
+Clave=VentaPedidoAuto
+Nombre=Pedido Automático
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[VentaConsumo]
+Clave=VentaConsumo
+Nombre=Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcNeteo]
+Clave=CxcNeteo
+Nombre=Neteo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpNeteo]
+Clave=CxpNeteo
+Nombre=Neteo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcEndosoAFavor]
+Clave=CxcEndosoAFavor
+Nombre=Endoso a Favor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpEndosoAFavor]
+Clave=CxpEndosoAFavor
+Nombre=Endoso a Favor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaNotaResumen]
+Clave=VentaNotaResumen
+Nombre=Nota Resumén
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[GastoTCredito]
+Clave=GastoTCredito
+Nombre=Gasto T/Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[ContDiario]
+Clave=ContDiario
+Nombre=Diario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONT
+TipoDatos=Texto
+
+[InvPrimerConteo]
+Clave=InvPrimerConteo
+Nombre=Primer Conteo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvSegundoConteo]
+Clave=InvSegundoConteo
+Nombre=Segundo Conteo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvTercerConteo]
+Clave=InvTercerConteo
+Nombre=Tercer Conteo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcReevaluacionCredito]
+Clave=CxcReevaluacionCredito
+Nombre=Reevaluación Crédito
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpReevaluacionCredito]
+Clave=CxpReevaluacionCredito
+Nombre=Reevaluación Crédito Proveedor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[DineroRedondeo]
+Clave=DineroRedondeo
+Nombre=Redondeo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxcAjusteSaldo]
+Clave=CxcAjusteSaldo
+Nombre=Ajuste Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAjusteSaldo]
+Clave=CxpAjusteSaldo
+Nombre=Ajuste Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[VentaContrato]
+Clave=VentaContrato
+Nombre=Contrato
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[DineroInversion]
+Clave=DineroInversion
+Nombre=Inversión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[DineroRetiroInversion]
+Clave=DineroRetiroInversion
+Nombre=Retiro Inversión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxcInteresesDevengados]
+Clave=CxcInteresesDevengados
+Nombre=Intereses Devengados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpInteresesDevengados]
+Clave=CxpInteresesDevengados
+Nombre=Intereses Devengados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcCargoIntereses]
+Clave=CxcCargoIntereses
+Nombre=Cargo Intereses
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAbonoIntereses]
+Clave=CxpAbonoIntereses
+Nombre=Abono Intereses
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[AgentBono]
+Clave=AgentBono
+Nombre=Bono
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[VentaFacturaGasto]
+Clave=VentaFacturaGasto
+Nombre=Factura Gasto (Gastos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoPresupuesto]
+Clave=GastoPresupuesto
+Nombre=Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[VentaPresupuesto]
+Clave=VentaPresupuesto
+Nombre=Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CxcIntereses]
+Clave=CxcIntereses
+Nombre=Intereses
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpIntereses]
+Clave=CxpIntereses
+Nombre=Intereses
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcCapital]
+Clave=CxcCapital
+Nombre=Amortización Capital
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcIntentoCobro]
+Clave=CxcIntentoCobro
+Nombre=Intento Cobro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpCapital]
+Clave=CxpCapital
+Nombre=Amortización Capital
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcAmortizacion]
+Clave=CxcAmortizacion
+Nombre=Amortización
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpAmortizacion]
+Clave=CxpAmortizacion
+Nombre=Amortización
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[InvSolicitudCancelada]
+Clave=InvSolicitudCancelada
+Nombre=Solicitud Cancelada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcInteresesVencidos]
+Clave=CxcInteresesVencidos
+Nombre=Intereses Vencidos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ContEliminacion]
+Clave=ContEliminacion
+Nombre=Eliminación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONT
+TipoDatos=Texto
+
+[InvFisico]
+Clave=InvFisico
+Nombre=Inventario Físico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcNCreditoVoucher]
+Clave=CxcNCreditoVoucher
+Nombre=Nota Crédito (Voucher)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcNCargoVoucher]
+Clave=CxcNCargoVoucher
+Nombre=Nota Cargo (Voucher)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CRNota]
+Clave=CRNota
+Nombre=Nota
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CRFactura]
+Clave=CRFactura
+Nombre=Factura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[CRRemision]
+Clave=CRRemision
+Nombre=Remisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AgentAjusteInv]
+Clave=AgentAjusteInv
+Nombre=Ajuste Inventario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[ACReinversionCxc]
+Clave=ACReinversionCxc
+Nombre=Reinversión (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACReinversionCxp]
+Clave=ACReinversionCxp
+Nombre=Reinversión (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[RHIncremento]
+Clave=RHIncremento
+Nombre=Incremento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=RH
+TipoDatos=Texto
+
+[ACMHIntereses]
+Clave=ACMHIntereses
+Nombre=Intereses (Ministración Hipotecaria)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACMHInteresesBonificacion]
+Clave=ACMHInteresesBonificacion
+Nombre=Bonificación Intereses (Ministración Hipotecaria)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACMHInteresesDocumento]
+Clave=ACMHInteresesDocumento
+Nombre=Documento (Ministración Hipotecaria)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[PCCancelacionPrecios]
+Clave=PCCancelacionPrecios
+Nombre=Cancelación Precios
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PC
+TipoDatos=Texto
+
+[GastoProvision]
+Clave=GastoProvision
+Nombre=Provisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[AFDepreciacion]
+Clave=AFDepreciacion
+Nombre=Depreciación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AF
+TipoDatos=Texto
+
+[AFRevaluacion]
+Clave=AFRevaluacion
+Nombre=Revaluación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AF
+TipoDatos=Texto
+
+[VentaDevolucionFaltante]
+Clave=VentaDevolucionFaltante
+Nombre=Devolución Faltante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[AgentDevolucionFaltante]
+Clave=AgentDevolucionFaltante
+Nombre=Devolución Faltante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=AGENT
+TipoDatos=Texto
+
+[InvAjusteSaldosMenores]
+Clave=InvAjusteSaldosMenores
+Nombre=Ajuste Saldos Menores
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[CxcArrendamiento]
+Clave=CxcArrendamiento
+Nombre=Arrendamiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcAplicacionNomina]
+Clave=CxcAplicacionNomina
+Nombre=Aplicación Nómina (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACAjusteValorResidual]
+Clave=ACAjusteValorResidual
+Nombre=Ajuste Valor Residual
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACAjusteImpuestoAd]
+Clave=ACAjusteImpuestoAd
+Nombre=Ajuste Impuesto Adicional
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CRPrestamoCxc]
+Clave=CRPrestamoCxc
+Nombre=Prestamo (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[BancoAbonoBancarioIVA]
+Clave=BancoAbonoBancarioIVA
+Nombre=Abono Bancario IVA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[ACBajaParcial]
+Clave=ACBajaParcial
+Nombre=Baja Parcial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+
+
+
+
+
+
+[InvEstadisticaAjusteMerma]
+Clave=InvEstadisticaAjusteMerma
+Nombre=Estadística Ajuste Merma
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[BancoChequeTraspaso]
+Clave=BancoChequeTraspaso
+Nombre=Cheque (Traspasos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CxpGastoAnticipo]
+Clave=CxpGastoAnticipo
+Nombre=Gasto Anticipo (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpGastoDevAnticipo]
+Clave=CxpGastoDevAnticipo
+Nombre=Gasto Devolución Anticipo (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcAplicacionNCargo]
+Clave=CxcAplicacionNCargo
+Nombre=Aplicación Nota Cargo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ActAvance]
+Clave=ActAvance
+Nombre=Avance
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ActConclusion]
+Clave=ActConclusion
+Nombre=Conclusión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ActCancelacion]
+Clave=ActCancelacion
+Nombre=Cancelación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ActModificacion]
+Clave=ActModificacion
+Nombre=Modificación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ActActividad]
+Clave=ActActividad
+Nombre=Actividad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ActAtraso]
+Clave=ActAtraso
+Nombre=Atraso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ACT
+TipoDatos=Texto
+
+[ACDisposicionCxp]
+Clave=ACDisposicionCxp
+Nombre=Cuenta por Pagar en Disposición
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+CondicionDespliege=Config.ACAcreedorEnDisposiciones
+TipoDatos=Texto
+
+[BancoDepositoAnticipado]
+Clave=BancoDepositoAnticipado
+Nombre=Deposito Anticipado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[GastoCargoBancario]
+Clave=GastoCargoBancario
+Nombre=Cargo Bancario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[GastoAbonoBancario]
+Clave=GastoAbonoBancario
+Nombre=Abono Bancario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[CreditoDocumentoCxc]
+Clave=CreditoDocumentoCxc
+Nombre=Documento Factoraje (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CreditoDocumentoCxp]
+Clave=CreditoDocumentoCxp
+Nombre=Documento Factoraje (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CreditoPrestamoCxc]
+Clave=CreditoPrestamoCxc
+Nombre=Prestamo Factoraje (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CreditoPrestamoCxp]
+Clave=CreditoPrestamoCxp
+Nombre=Prestamo Factoraje (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CreditoComisiones]
+Clave=CreditoComisiones
+Nombre=Comisiones (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxcAplicacionTarjetas]
+Clave=CxcAplicacionTarjetas
+Nombre=CxcAplicacionTarjetas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[BancoIntereses]
+Clave=BancoIntereses
+Nombre=Intereses Ganados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[DineroReevaluacionTitulo]
+Clave=DineroReevaluacionTitulo
+Nombre=Reevaluación Título
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CreditoDisposicion]
+Clave=CreditoDisposicion
+Nombre=Disposición (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CreditoFondeo]
+Clave=CreditoFondeo
+Nombre=Fondeo (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CreditoBackToBack]
+Clave=CreditoBackToBack
+Nombre=Back To Back (Cxc)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CreditoDepositoAnticipado]
+Clave=CreditoDepositoAnticipado
+Nombre=Deposito Anticipado (Tesoreria)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+TipoDatos=Texto
+
+[CreditoFondeoAnticipado]
+Clave=CreditoFondeoAnticipado
+Nombre=Fondeo Anticipado (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ProyProyecto]
+Clave=ProyProyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=PROY
+TipoDatos=Texto
+
+[ProyMitigacion]
+Clave=ProyMitigacion
+Nombre=Mitigación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Mitigacion<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROY
+TipoDatos=Texto
+
+[InvEntradaDiversa]
+Clave=InvEntradaDiversa
+Nombre=Entrada Diversa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[ContPresupuesto]
+Clave=ContPresupuesto
+Nombre=Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONT
+TipoDatos=Texto
+
+[CxcRenta]
+Clave=CxcRenta
+Nombre=CxcRenta
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[CxpImpuestosPorPagar]
+Clave=CxpImpuestosPorPagar
+Nombre=Impuestos por Pagar (Cxp)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxpImpuestosFavor]
+Clave=CxpImpuestosFavor
+Nombre=Impuestos a Favor (Cxp)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[FiscalComplementaria]
+Clave=FiscalComplementaria
+Nombre=Complementaria
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalEmisionAcumulable]
+Clave=FiscalEmisionAcumulable
+Nombre=Emisión Acumulable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalEndosoAcumulable]
+Clave=FiscalEndosoAcumulable
+Nombre=Endoso Acumulable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalFlujoAcumulable]
+Clave=FiscalFlujoAcumulable
+Nombre=Flujo Acumulable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalEmisionDeducible]
+Clave=FiscalEmisionDeducible
+Nombre=Emisión Deducible
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalEndosoDeducible]
+Clave=FiscalEndosoDeducible
+Nombre=Endoso Deducible
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalFlujoDeducible]
+Clave=FiscalFlujoDeducible
+Nombre=Flujo Deducible
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[FiscalDeclaracion]
+Clave=FiscalDeclaracion
+Nombre=Declaración
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=FIS
+TipoDatos=Texto
+
+[ACGasto]
+Clave=ACGasto
+Nombre=Gasto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[InvOrdenEntarimado]
+Clave=InvOrdenEntarimado
+Nombre=Orden Entarimado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvEntarimado]
+Clave=InvEntarimado
+Nombre=Entarimado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+
+
+[GastoConsumo]
+Clave=GastoConsumo
+Nombre=Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[InvSolicitudRechazada]
+Clave=InvSolicitudRechazada
+Nombre=Solicitud Rechazada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[InvConsumo]
+Clave=InvConsumo
+Nombre=Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+TipoDatos=Texto
+
+[GastoCargoBancarioIVA]
+Clave=GastoCargoBancarioIVA
+Nombre=Cargo Bancario IVA
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=GAS
+
+TipoDatos=Texto
+[GastoAbonoBancarioIVA]
+Clave=GastoAbonoBancarioIVA
+Nombre=Abono Bancario IVA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+Mayusculas=S
+
+TipoDatos=Texto
+[VentaOportunidad]
+Clave=VentaOportunidad
+Nombre=Oportunidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+
+TipoDatos=Texto
+[BancoCargoNoIdentificado]
+Clave=BancoCargoNoIdentificado
+Nombre=Cargo No Identificado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=DIN
+
+
+
+TipoDatos=Texto
+
+
+
+
+[CPOperacion]
+Clave=CPOperacion
+Nombre=Operación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CP
+
+
+
+
+[CPAsignacion]
+Clave=CPAsignacion
+Nombre=Asignación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CP
+
+
+
+
+[MAFSolicitudInspeccion]
+Clave=MAFSolicitudInspeccion
+Nombre=MAFSolicitudInspeccion
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+CondicionDespliege=General.MAF
+[GESTarea]
+Clave=GESTarea
+Nombre=Tarea
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GES
+
+CondicionDespliege=General.GES
+
+
+
+
+
+[CPReservadoFlujo]
+Clave=CPReservadoFlujo
+Nombre=Reservado Flujo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CP
+
+
+
+
+
+
+
+
+
+
+
+
+
+[SAUXServicio]
+Clave=SAUXServicio
+Nombre=Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=SAUX
+OpcionesLlave=Opción
+[SAUXSolicitudServicio]
+Clave=SAUXSolicitudServicio
+Nombre=Solicitud Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=SAUX
+[InvConsumoMaterial]
+Clave=InvConsumoMaterial
+Nombre=Consumo Material Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=INV
+
+
+
+
+
+
+
+
+
+[InvDesentarimado]
+Clave=InvDesentarimado
+Nombre=Desentarimado
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=INV
+
+
+
+
+
+[InvEntradaProducto]
+Clave=InvEntradaProducto
+Nombre=Entrada Producto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesValidar=S
+OpcionesModulo=INV
+
+
+
+
+
+[PlanPreliminar]
+Clave=PlanPreliminar
+Nombre=Plan Preliminar
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=PROY
+OpcionesUnicamente=S
+OpcionesValidar=S
+
+
+
+
+
+[PropuestaEconomica]
+Clave=PropuestaEconomica
+Nombre=Propuesta Económica
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=VTAS
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=InvAjuste
+InvAjuste=InvReciboPrestamo
+InvReciboPrestamo=InvCambioPresentacion
+InvCambioPresentacion=InvSalidaDiversa
+InvSalidaDiversa=InvPrestamo
+InvPrestamo=InvOrdenTransferencia
+InvOrdenTransferencia=InvTransferencia
+InvTransferencia=InvTransferenciaConsig
+InvTransferenciaConsig=InvOrdenTraspaso
+InvOrdenTraspaso=InvSalidaTraspaso
+InvSalidaTraspaso=InvReciboTraspaso
+InvReciboTraspaso=InvTransito
+InvTransito=InvTransitoFaltante
+InvTransitoFaltante=InvTransitoSobrante
+InvTransitoSobrante=VentaCotizacion
+VentaCotizacion=VentaPedido
+VentaPedido=VentaFactura
+VentaFactura=VentaRemision
+VentaRemision=VentaDevRemision
+VentaDevRemision=VentaSalidaGarantia
+VentaSalidaGarantia=VentaEntregaGarantia
+VentaEntregaGarantia=VentaDev
+VentaDev=VentaDevCxc
+VentaDevCxc=VentaConsignacion
+VentaConsignacion=VentaDevConsignacion
+VentaDevConsignacion=VentaFacturaNota
+VentaFacturaNota=VentaCancelacionFactura
+VentaCancelacionFactura=VentaPerdida
+VentaPerdida=CompraRequisicion
+CompraRequisicion=CompraRequisicionPlan
+CompraRequisicionPlan=CompraCotizacion
+CompraCotizacion=CompraOrden
+CompraOrden=CompraEntrada
+CompraEntrada=CompraEntradaGastos
+CompraEntradaGastos=CompraDev
+CompraDev=CompraDevCxp
+CompraDevCxp=CompraBonificacion
+CompraBonificacion=CompraBonificacionCxp
+CompraBonificacionCxp=CompraConsignacion
+CompraConsignacion=CompraDevConsignacion
+CompraDevConsignacion=CompraIntercambio
+CompraIntercambio=CompraDevGarantia
+CompraDevGarantia=CxcFactura
+CxcFactura=CxcNCargo
+CxcNCargo=CxcDocumento
+CxcDocumento=CxcNCredito
+CxcNCredito=CxcNCreditoProntoPago
+CxcNCreditoProntoPago=CxcAnticipo
+CxcAnticipo=CxcAnticipoSaldo
+CxcAnticipoSaldo=CxcCobro
+CxcCobro=CxcCobroDirecto
+CxcCobroDirecto=CxcAplicacionNCredito
+CxcAplicacionNCredito=CxpAplicacionAnticipo
+CxpAplicacionAnticipo=CxcAjusteEfectivo
+CxcAjusteEfectivo=CxcCargoDiverso
+CxcCargoDiverso=CxcCreditoDiverso
+CxcCreditoDiverso=CxcDevolucionEfectivo
+CxcDevolucionEfectivo=CxcDevolucionCredito
+CxcDevolucionCredito=CxcDevolucionAnticipo
+CxcDevolucionAnticipo=CxcReasignacionAnticipo
+CxcReasignacionAnticipo=CxcCancelacionFactura
+CxcCancelacionFactura=CxcAplicacion
+CxcAplicacion=CxcDevolucion
+CxcDevolucion=CxcDevolucionSaldo
+CxcDevolucionSaldo=CxpFactura
+CxpFactura=CxpNCargo
+CxpNCargo=CxpDocumento
+CxpDocumento=CxpNomina
+CxpNomina=CxpNCredito
+CxpNCredito=CxpNCreditoProntoPago
+CxpNCreditoProntoPago=CxpAnticipo
+CxpAnticipo=CxpAnticipoSaldo
+CxpAnticipoSaldo=CxpPago
+CxpPago=CxpPagoDirecto
+CxpPagoDirecto=CxpAplicacionNCredito
+CxpAplicacionNCredito=CxcAplicacionAnticipo
+CxcAplicacionAnticipo=CxpCargoDiverso
+CxpCargoDiverso=CxpCreditoDiverso
+CxpCreditoDiverso=CxpGastoDiverso
+CxpGastoDiverso=CxpDevolucionEfectivo
+CxpDevolucionEfectivo=CxpDevolucionCredito
+CxpDevolucionCredito=CxpDevolucionAnticipo
+CxpDevolucionAnticipo=CxpReasignacionAnticipo
+CxpReasignacionAnticipo=CxpAjusteEfectivo
+CxpAjusteEfectivo=CxpRetencion
+CxpRetencion=CxpDevolucion
+CxpDevolucion=CxpDevolucionSaldo
+CxpDevolucionSaldo=CxpAplicacion
+CxpAplicacion=BancoDeposito
+BancoDeposito=BancoDepositoElectronico
+BancoDepositoElectronico=BancoCheque
+BancoCheque=BancoChequeElectronico
+BancoChequeElectronico=BancoDepositoEnFalso
+BancoDepositoEnFalso=BancoChequeDevuelto
+BancoChequeDevuelto=BancoIngreso
+BancoIngreso=BancoEgreso
+BancoEgreso=BancoSolicitudDeposito
+BancoSolicitudDeposito=BancoSolicitudCheque
+BancoSolicitudCheque=BancoCargoBancario
+BancoCargoBancario=BancoAbonoBancario
+BancoAbonoBancario=CajaIngreso
+CajaIngreso=CajaEgreso
+CajaEgreso=CajaFaltanteCaja
+CajaFaltanteCaja=CajaCorteCaja
+CajaCorteCaja=GastoSolicitud
+GastoSolicitud=GastoAnticipo
+GastoAnticipo=GastoComprobante
+GastoComprobante=GastoDevolucionAnticipo
+GastoDevolucionAnticipo=Gasto
+Gasto=EmbarqueLiquidacion
+EmbarqueLiquidacion=EmbarqueDesembarque
+EmbarqueDesembarque=EmbarqueCxp
+EmbarqueCxp=ContCierre
+ContCierre=AsisteAsistencia
+AsisteAsistencia=AsisteCorte
+AsisteCorte=AgentComision
+AgentComision=AgentDestajo
+AgentDestajo=AgentDevolucion
+AgentDevolucion=AgentBonificacion
+AgentBonificacion=AgentPago
+AgentPago=AgentPagoNomina
+AgentPagoNomina=AgentPagoGastos
+AgentPagoGastos=CxcCobroPosfechado
+CxcCobroPosfechado=CxpPagoPosfechado
+CxpPagoPosfechado=CxcAplicacionCobro
+CxcAplicacionCobro=CxpAplicacionPago
+CxpAplicacionPago=ProdOrdenProduccion
+ProdOrdenProduccion=ProdPlanMaestro
+ProdPlanMaestro=ProdRequisicionPlan
+ProdRequisicionPlan=ProdRequisicion
+ProdRequisicion=ProdOrdenTrabajo
+ProdOrdenTrabajo=ProdProceso
+ProdProceso=ProdSolicitud
+ProdSolicitud=ProdAsignacion
+ProdAsignacion=ProdDevolucion
+ProdDevolucion=ProdEntradaProduccion
+ProdEntradaProduccion=ProdAvanceProduccion
+ProdAvanceProduccion=ProdAvance
+ProdAvance=ProdAvanceCxp
+ProdAvanceCxp=ProdConsumo
+ProdConsumo=ProdOrdenTransferencia
+ProdOrdenTransferencia=ProdSolicitudMaterial
+ProdSolicitudMaterial=ProdSalidaMaterial
+ProdSalidaMaterial=ProdDevolucionMaterial
+ProdDevolucionMaterial=ProdAsignacionMaterial
+ProdAsignacionMaterial=ProdConsumoMaterial
+ProdConsumoMaterial=ProdRetroceso
+ProdRetroceso=ProdRetrocesoCxp
+ProdRetrocesoCxp=ProdDevProduccion
+ProdDevProduccion=AgentFaltanteCaja
+AgentFaltanteCaja=CxcVentaVales
+CxcVentaVales=CxcObsequioVales
+CxcObsequioVales=CxcAplicacionVales
+CxcAplicacionVales=CxcDevolucionVales
+CxcDevolucionVales=VentaNota
+VentaNota=CxcContrarecibo
+CxcContrarecibo=CxcNCargoRecargos
+CxcNCargoRecargos=CxpNCargoRecargos
+CxpNCargoRecargos=BancoTransferencia
+BancoTransferencia=CxcAjusteRedondeo
+CxcAjusteRedondeo=CxpAjusteRedondeo
+CxpAjusteRedondeo=CompraEntradaImportacion
+CompraEntradaImportacion=VentaSolicitudDevolucion
+VentaSolicitudDevolucion=EmbarqueGastoTarifas
+EmbarqueGastoTarifas=RHAltas
+RHAltas=RHModificaciones
+RHModificaciones=RHBajas
+RHBajas=NomAumentoVacaciones
+NomAumentoVacaciones=NomVacacionesTomadas
+NomVacacionesTomadas=CxpCreditoProveedor
+CxpCreditoProveedor=CxpCargoProveedor
+CxpCargoProveedor=CxpRecargos
+CxpRecargos=CxpProntoPago
+CxpProntoPago=CxcDocumentoAnticipo
+CxcDocumentoAnticipo=CxpDocumentoAnticipo
+CxpDocumentoAnticipo=GastoProrrateado
+GastoProrrateado=ComprobanteProrrateado
+ComprobanteProrrateado=CxpContraRecibo
+CxpContraRecibo=ProdCancelacionOrden
+ProdCancelacionOrden=CxpPagare
+CxpPagare=CxpAforo
+CxpAforo=CxpFactoraje
+CxpFactoraje=GastoDev
+GastoDev=GastoDevProrrateada
+GastoDevProrrateada=CxpDevRetencion
+CxpDevRetencion=CxpGastoDev
+CxpGastoDev=CxpGastoDevProrrateada
+CxpGastoDevProrrateada=VentaNotaDev
+VentaNotaDev=VentaOrdenSurtido
+VentaOrdenSurtido=CxcAjuste
+CxcAjuste=CxpAjuste
+CxpAjuste=CompraLocal
+CompraLocal=ProdOrdenConsumo
+ProdOrdenConsumo=CxcConversionCredito
+CxcConversionCredito=CxcConversionCargo
+CxcConversionCargo=CxpConversionCredito
+CxpConversionCredito=CxpConversionCargo
+CxpConversionCargo=NomCancelacionParcial
+NomCancelacionParcial=CxpCancelacionNomina
+CxpCancelacionNomina=CompraPerdida
+CompraPerdida=CompraRechazada
+CompraRechazada=CxcAnticipoFactura
+CxcAnticipoFactura=CxpAnticipoFactura
+CxpAnticipoFactura=CxpImportacion
+CxpImportacion=AutoRecaudacion
+AutoRecaudacion=AutoPapeleta
+AutoPapeleta=AutoMantenimiento
+AutoMantenimiento=AutoGasto
+AutoGasto=AutoNomina
+AutoNomina=AutoMantenimientoPreventivo
+AutoMantenimientoPreventivo=CxcAplicacionSaldo
+CxcAplicacionSaldo=GastoSinComprobante
+GastoSinComprobante=CxpCartaCredito
+CxpCartaCredito=CxcForwardVenta
+CxcForwardVenta=CxcForwardPorCobrar
+CxcForwardPorCobrar=CxpForwardCompra
+CxpForwardCompra=CxpForwardPorPagar
+CxpForwardPorPagar=CxcFacturaSeguro
+CxcFacturaSeguro=VentaNotaConsumo
+VentaNotaConsumo=VentaReservacion
+VentaReservacion=VentaIngreso
+VentaIngreso=CompraLicitacion
+CompraLicitacion=InvReciboPrevio
+InvReciboPrevio=GastoCajaChica
+GastoCajaChica=GastoDisminucionPresupuesto
+GastoDisminucionPresupuesto=InvValeSalida
+InvValeSalida=InvValeDevolucion
+InvValeDevolucion=PCPrecios
+PCPrecios=PCCostos
+PCCostos=PCBoletin
+PCBoletin=GastoDepreciacion
+GastoDepreciacion=CxcEndoso
+CxcEndoso=CxpEndoso
+CxpEndoso=NomIncapacidades
+NomIncapacidades=InvDevTransito
+InvDevTransito=NomFaltas
+NomFaltas=NomRetardos
+NomRetardos=NomHorasExtras
+NomHorasExtras=InvReevaluacion
+InvReevaluacion=CajaSobranteCaja
+CajaSobranteCaja=AgentCobro
+AgentCobro=GastoAnticipoSinComprobar
+GastoAnticipoSinComprobar=CajaApertura
+CajaApertura=CajaRecoleccion
+CajaRecoleccion=ServicioPropuesta
+ServicioPropuesta=ServicioCotizacion
+ServicioCotizacion=ServicioCita
+ServicioCita=Servicio
+Servicio=ServicioExterno
+ServicioExterno=CxcReevaluacion
+CxcReevaluacion=CxpReevaluacion
+CxpReevaluacion=CajaTransferencia
+CajaTransferencia=CajaFondoInicial
+CajaFondoInicial=CRCorteCaja
+CRCorteCaja=CRCorteCajaCentral
+CRCorteCajaCentral=CxcFaltanteCaja
+CxcFaltanteCaja=AutoCancelacionRecaudacion
+AutoCancelacionRecaudacion=GastoOtrosIngresos
+GastoOtrosIngresos=DineroReevaluacion
+DineroReevaluacion=InvSolicitud
+InvSolicitud=GastoDevComprobante
+GastoDevComprobante=BancoCargoBancarioIVA
+BancoCargoBancarioIVA=CompraControlCalidad
+CompraControlCalidad=CxcNomina
+CxcNomina=CxcCancelacionNomina
+CxcCancelacionNomina=GastoSolicitudRechazada
+GastoSolicitudRechazada=VentaPedidoAuto
+VentaPedidoAuto=VentaConsumo
+VentaConsumo=CxcNeteo
+CxcNeteo=CxpNeteo
+CxpNeteo=CxcEndosoAFavor
+CxcEndosoAFavor=CxpEndosoAFavor
+CxpEndosoAFavor=VentaNotaResumen
+VentaNotaResumen=GastoTCredito
+GastoTCredito=ContDiario
+ContDiario=InvPrimerConteo
+InvPrimerConteo=InvSegundoConteo
+InvSegundoConteo=InvTercerConteo
+InvTercerConteo=CxcReevaluacionCredito
+CxcReevaluacionCredito=CxpReevaluacionCredito
+CxpReevaluacionCredito=DineroRedondeo
+DineroRedondeo=CxcAjusteSaldo
+CxcAjusteSaldo=CxpAjusteSaldo
+CxpAjusteSaldo=VentaContrato
+VentaContrato=DineroInversion
+DineroInversion=DineroRetiroInversion
+DineroRetiroInversion=CxcInteresesDevengados
+CxcInteresesDevengados=CxpInteresesDevengados
+CxpInteresesDevengados=CxcCargoIntereses
+CxcCargoIntereses=CxpAbonoIntereses
+CxpAbonoIntereses=AgentBono
+AgentBono=VentaFacturaGasto
+VentaFacturaGasto=GastoPresupuesto
+GastoPresupuesto=VentaPresupuesto
+VentaPresupuesto=CxcIntereses
+CxcIntereses=CxcCapital
+CxcCapital=CxcIntentoCobro
+CxcIntentoCobro=CxpIntereses
+CxpIntereses=CxpCapital
+CxpCapital=CxcAmortizacion
+CxcAmortizacion=CxpAmortizacion
+CxpAmortizacion=InvSolicitudCancelada
+InvSolicitudCancelada=CxcInteresesVencidos
+CxcInteresesVencidos=ContEliminacion
+ContEliminacion=InvFisico
+InvFisico=CxcNCreditoVoucher
+CxcNCreditoVoucher=CxcNCargoVoucher
+CxcNCargoVoucher=CRNota
+CRNota=CRFactura
+CRFactura=CRRemision
+CRRemision=AgentAjusteInv
+AgentAjusteInv=ACReinversionCxc
+ACReinversionCxc=ACReinversionCxp
+ACReinversionCxp=RHIncremento
+RHIncremento=ACMHIntereses
+ACMHIntereses=ACMHInteresesBonificacion
+ACMHInteresesBonificacion=ACMHInteresesDocumento
+ACMHInteresesDocumento=PCCancelacionPrecios
+PCCancelacionPrecios=GastoProvision
+GastoProvision=AFDepreciacion
+AFDepreciacion=AFRevaluacion
+AFRevaluacion=VentaDevolucionFaltante
+VentaDevolucionFaltante=AgentDevolucionFaltante
+AgentDevolucionFaltante=InvAjusteSaldosMenores
+InvAjusteSaldosMenores=CxcArrendamiento
+CxcArrendamiento=CxcAplicacionNomina
+CxcAplicacionNomina=ACAjusteValorResidual
+ACAjusteValorResidual=ACAjusteImpuestoAd
+ACAjusteImpuestoAd=CRPrestamoCxc
+CRPrestamoCxc=BancoAbonoBancarioIVA
+BancoAbonoBancarioIVA=ACBajaParcial
+ACBajaParcial=InvEstadisticaAjusteMerma
+InvEstadisticaAjusteMerma=BancoChequeTraspaso
+BancoChequeTraspaso=CxpGastoAnticipo
+CxpGastoAnticipo=CxpGastoDevAnticipo
+CxpGastoDevAnticipo=CxcAplicacionNCargo
+CxcAplicacionNCargo=ActActividad
+ActActividad=ActAvance
+ActAvance=ActConclusion
+ActConclusion=ActCancelacion
+ActCancelacion=ActModificacion
+ActModificacion=ActAtraso
+ActAtraso=ACDisposicionCxp
+ACDisposicionCxp=BancoDepositoAnticipado
+BancoDepositoAnticipado=GastoCargoBancario
+GastoCargoBancario=GastoAbonoBancario
+GastoAbonoBancario=CreditoDocumentoCxc
+CreditoDocumentoCxc=CreditoDocumentoCxp
+CreditoDocumentoCxp=CreditoPrestamoCxc
+CreditoPrestamoCxc=CreditoPrestamoCxp
+CreditoPrestamoCxp=CreditoComisiones
+CreditoComisiones=CxcAplicacionTarjetas
+CxcAplicacionTarjetas=BancoIntereses
+BancoIntereses=DineroReevaluacionTitulo
+DineroReevaluacionTitulo=CreditoDisposicion
+CreditoDisposicion=CreditoFondeo
+CreditoFondeo=CreditoBackToBack
+CreditoBackToBack=CreditoDepositoAnticipado
+CreditoDepositoAnticipado=CreditoFondeoAnticipado
+CreditoFondeoAnticipado=ProyProyecto
+ProyProyecto=ProyMitigacion
+ProyMitigacion=InvEntradaDiversa
+InvEntradaDiversa=ContPresupuesto
+ContPresupuesto=CxcRenta
+CxcRenta=FiscalDeclaracion
+FiscalDeclaracion=FiscalComplementaria
+FiscalComplementaria=CxpImpuestosPorPagar
+CxpImpuestosPorPagar=CxpImpuestosFavor
+CxpImpuestosFavor=FiscalEmisionAcumulable
+FiscalEmisionAcumulable=FiscalEndosoAcumulable
+FiscalEndosoAcumulable=FiscalFlujoAcumulable
+FiscalFlujoAcumulable=FiscalEmisionDeducible
+FiscalEmisionDeducible=FiscalEndosoDeducible
+FiscalEndosoDeducible=FiscalFlujoDeducible
+FiscalFlujoDeducible=ACGasto
+ACGasto=InvOrdenEntarimado
+InvOrdenEntarimado=InvEntarimado
+InvEntarimado=InvDesentarimado
+InvDesentarimado=GastoConsumo
+GastoConsumo=InvSolicitudRechazada
+InvSolicitudRechazada=InvConsumo
+InvConsumo=GastoCargoBancarioIVA
+GastoCargoBancarioIVA=GastoAbonoBancarioIVA
+GastoAbonoBancarioIVA=VentaOportunidad
+VentaOportunidad=BancoCargoNoIdentificado
+BancoCargoNoIdentificado=CPAsignacion
+CPAsignacion=CPOperacion
+CPOperacion=MAFSolicitudInspeccion
+MAFSolicitudInspeccion=GESTarea
+GESTarea=CPReservadoFlujo
+CPReservadoFlujo=SAUXServicio
+SAUXServicio=SAUXSolicitudServicio
+SAUXSolicitudServicio=InvConsumoMaterial
+InvConsumoMaterial=InvEntradaProducto
+InvEntradaProducto=PlanPreliminar
+PlanPreliminar=PropuestaEconomica
+PropuestaEconomica=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=InvAjuste,
+InvAjuste,=InvReevaluacion,
+InvReevaluacion,=InvReciboPrestamo,
+InvReciboPrestamo,=InvCambioPresentacion,
+InvCambioPresentacion,=InvSalidaDiversa,
+InvSalidaDiversa,=InvPrestamo,
+InvPrestamo,=InvOrdenTransferencia,
+InvOrdenTransferencia,=InvTransferencia,
+InvTransferencia,=InvTransferenciaConsig,
+InvTransferenciaConsig,=InvOrdenTraspaso,
+InvOrdenTraspaso,=InvSalidaTraspaso,
+InvSalidaTraspaso,=InvDevTransito,
+InvDevTransito,=InvReciboTraspaso,
+InvReciboTraspaso,=InvTransito,
+InvTransito,=InvTransitoFaltante,
+InvTransitoFaltante,=InvTransitoSobrante,
+InvTransitoSobrante,=VentaNota,
+VentaNota,=VentaNotaResumen,
+VentaNotaResumen,=VentaCotizacion,
+VentaCotizacion,=VentaPedido,
+VentaPedido,=VentaFactura,
+VentaFactura,=VentaSalidaGarantia,
+VentaSalidaGarantia,=VentaEntregaGarantia,
+VentaEntregaGarantia,=VentaDev,
+VentaDev,=VentaDevCxc,
+VentaDevCxc,=VentaConsignacion,
+VentaConsignacion,=VentaDevConsignacion,
+VentaDevConsignacion,=VentaFacturaNota,
+VentaFacturaNota,=VentaRemision,
+VentaRemision,=VentaDevRemision,
+VentaDevRemision,=VentaCancelacionFactura,
+VentaCancelacionFactura,=VentaPerdida,
+VentaPerdida,=CompraRequisicion,
+CompraRequisicion,=CompraCotizacion,
+CompraCotizacion,=CompraOrden,
+CompraOrden,=CompraControlCalidad,
+CompraControlCalidad,=CompraEntrada,
+CompraEntrada,=CompraLocal,
+CompraLocal,=CompraEntradaGastos,
+CompraEntradaGastos,=CompraDev,
+CompraDev,=CompraDevCxp,
+CompraDevCxp,=CompraBonificacion,
+CompraBonificacion,=CompraBonificacionCxp,
+CompraBonificacionCxp,=CompraConsignacion,
+CompraConsignacion,=CompraDevConsignacion,
+CompraDevConsignacion,=CompraIntercambio,
+CompraIntercambio,=CompraDevGarantia,
+CompraDevGarantia,=CxcFactura,
+CxcFactura,=CxcNCargo,
+CxcNCargo,=CxcDocumento,
+CxcDocumento,=CxcContraRecibo,
+CxcContraRecibo,=CxcNCredito,
+CxcNCredito,=CxcNCreditoVoucher,
+CxcNCreditoVoucher,=CxcNCargoVoucher,
+CxcNCargoVoucher,=CxcNCreditoProntoPago,
+CxcNCreditoProntoPago,=CxcAnticipo,
+CxcAnticipo,=CxcCobro,
+CxcCobro,=CxcCobroPosfechado,
+CxcCobroPosfechado,=CxcCobroDirecto,
+CxcCobroDirecto,=CxcAplicacionNCredito,
+CxcAplicacionNCredito,=CxcAplicacionCobro,
+CxcAplicacionCobro,=CxcAplicacionAnticipo,
+CxcAplicacionAnticipo,=CxcAjusteEfectivo,
+CxcAjusteEfectivo,=CxcCargoDiverso,
+CxcCargoDiverso,=CxcCreditoDiverso,
+CxcCreditoDiverso,=CxcDevolucionEfectivo,
+CxcDevolucionEfectivo,=CxcDevolucionCredito,
+CxcDevolucionCredito,=CxcDevolucionAnticipo,
+CxcDevolucionAnticipo,=CxcReasignacionAnticipo,
+CxcReasignacionAnticipo,=CxcCancelacionFactura,
+CxcCancelacionFactura,=CxcVentaVales,
+CxcVentaVales,=CxcAplicacionVales,
+CxcAplicacionVales,=CxcDevolucionVales,
+CxcDevolucionVales,=CxpFactura,
+CxpFactura,=CxpNCargo,
+CxpNCargo,=CxpDocumento,
+CxpDocumento,=CxpNomina,
+CxpNomina,=CxpCancelacionNomina,
+CxpCancelacionNomina,=CxpNCredito,
+CxpNCredito,=CxpNCreditoProntoPago,
+CxpNCreditoProntoPago,=CxpCargoDiverso,
+CxpCargoDiverso,=CxpCreditoDiverso,
+CxpCreditoDiverso,=CxpAnticipo,
+CxpAnticipo,=CxpPago,
+CxpPago,=CxpPagoPosfechado,
+CxpPagoPosfechado,=CxpPagoDirecto,
+CxpPagoDirecto,=CxpAplicacionNCredito,
+CxpAplicacionNCredito,=CxpAplicacionPago,
+CxpAplicacionPago,=CxpAplicacionAnticipo,
+CxpAplicacionAnticipo,=CxpGastoDiverso,
+CxpGastoDiverso,=CxpDevolucionEfectivo,
+CxpDevolucionEfectivo,=CxpDevolucionCredito,
+CxpDevolucionCredito,=CxpDevolucionAnticipo,
+CxpDevolucionAnticipo,=CxpAjusteEfectivo,
+CxpAjusteEfectivo,=CxpRetencion,
+CxpRetencion,=CxpReasignacionAnticipo,
+CxpReasignacionAnticipo,=CxcNomina,
+CxcNomina,=CxcCancelacionNomina,
+CxcCancelacionNomina,=BancoIngreso,
+BancoIngreso,=BancoEgreso,
+BancoEgreso,=BancoDeposito,
+BancoDeposito,=BancoDepositoElectronico,
+BancoDepositoElectronico,=BancoCheque,
+BancoCheque,=BancoChequeTraspaso,
+BancoChequeTraspaso,=BancoChequeElectronico,
+BancoChequeElectronico,=BancoDepositoEnFalso,
+BancoDepositoEnFalso,=BancoChequeDevuelto,
+BancoChequeDevuelto,=BancoCargoBancario,
+BancoCargoBancario,=BancoCargoBancarioIVA,
+BancoCargoBancarioIVA,=BancoAbonoBancario,
+BancoAbonoBancario,=BancoAbonoBancarioIVA,
+BancoAbonoBancarioIVA,=CajaIngreso,
+CajaIngreso,=CajaEgreso,
+CajaEgreso,=CajaFaltanteCaja,
+CajaFaltanteCaja,=CajaSobranteCaja,
+CajaSobranteCaja,=CajaCorteCaja,
+CajaCorteCaja,=CajaApertura,
+CajaApertura,=CajaRecoleccion,
+CajaRecoleccion,=CajaFondoInicial,
+CajaFondoInicial,=CajaTransferencia,
+CajaTransferencia,=Gasto,
+Gasto,=GastoTCredito,
+GastoTCredito,=GastoComprobante,
+GastoComprobante,=GastoDevComprobante,
+GastoDevComprobante,=GastoSinComprobante,
+GastoSinComprobante,=GastoAnticipoSinComprobar,
+GastoAnticipoSinComprobar,=GastoCajaChica,
+GastoCajaChica,=GastoSolicitud,
+GastoSolicitud,=GastoAnticipo,
+GastoAnticipo,=GastoDevolucionAnticipo,
+GastoDevolucionAnticipo,=EmbarqueLiquidacion,
+EmbarqueLiquidacion,=EmbarqueDesembarque,
+EmbarqueDesembarque,=EmbarqueCxp,
+EmbarqueCxp,=ContCierre,
+ContCierre,=ContDiario,
+ContDiario,=ContEliminacion,
+ContEliminacion,=AsisteAsistencia,
+AsisteAsistencia,=AsisteCorte,
+AsisteCorte,=AgentComision,
+AgentComision,=AgentBono,
+AgentBono,=AgentDestajo,
+AgentDestajo,=AgentDevolucion,
+AgentDevolucion,=AgentBonificacion,
+AgentBonificacion,=AgentFaltanteCaja,
+AgentFaltanteCaja,=AgentAjusteInv,
+AgentAjusteInv,=AgentPago,
+AgentPago,=AgentPagoNomina,
+AgentPagoNomina,=AgentPagoGastos,
+AgentPagoGastos,=AgentCobro,
+AgentCobro,=ProdOrdenProduccion,
+ProdOrdenProduccion,=ProdRequisicion,
+ProdRequisicion,=ProdOrdenTrabajo,
+ProdOrdenTrabajo,=ProdSolicitud,
+ProdSolicitud,=ProdProceso,
+ProdProceso,=ProdAsignacion,
+ProdAsignacion,=ProdDevolucion,
+ProdDevolucion,=ProdConsumo,
+ProdConsumo,=ProdAvanceProduccion,
+ProdAvanceProduccion,=ProdAvance,
+ProdAvance,=ProdAvanceCxp,
+ProdAvanceCxp,=ProdEntradaProduccion,
+ProdEntradaProduccion,=ProdSolicitudMaterial,
+ProdSolicitudMaterial,=ProdSalidaMaterial,
+ProdSalidaMaterial,=ProdDevolucionMaterial,
+ProdDevolucionMaterial,=ProdAsignacionMaterial,
+ProdAsignacionMaterial,=ProdOrdenConsumo,
+ProdOrdenConsumo,=ProdConsumoMaterial,
+ProdConsumoMaterial,=ProdRetroceso,
+ProdRetroceso,=ProdRetrocesoCxp,
+ProdRetrocesoCxp,=ProdDevProduccion,
+ProdDevProduccion,=ProdOrdenTransferencia,
+ProdOrdenTransferencia,=ProdPlanMaestro,
+ProdPlanMaestro,=ProdRequisicionPlan,
+ProdRequisicionPlan,=CompraRequisicionPlan,
+CompraRequisicionPlan,=BancoSolicitudDeposito,
+BancoSolicitudDeposito,=BancoSolicitudCheque,
+BancoSolicitudCheque,=CxcNCargoRecargos,
+CxcNCargoRecargos,=CxpNCargoRecargos,
+CxpNCargoRecargos,=BancoTransferencia,
+BancoTransferencia,=CxcAjusteRedondeo,
+CxcAjusteRedondeo,=CxpAjusteRedondeo,
+CxpAjusteRedondeo,=CompraEntradaImportacion,
+CompraEntradaImportacion,=VentaSolicitudDevolucion,
+VentaSolicitudDevolucion,=EmbarqueGastoTarifas,
+EmbarqueGastoTarifas,=RHAltas,
+RHAltas,=RHModificaciones,
+RHModificaciones,=RHBajas,
+RHBajas,=NomAumentoVacaciones,
+NomAumentoVacaciones,=NomVacacionesTomadas,
+NomVacacionesTomadas,=NomCancelacionParcial,
+NomCancelacionParcial,=NomIncapacidades,
+NomIncapacidades,=NomFaltas,
+NomFaltas,=NomRetardos,
+NomRetardos,=NomHorasExtras,
+NomHorasExtras,=CxcAnticipoSaldo,
+CxcAnticipoSaldo,=CxcAnticipoFactura,
+CxcAnticipoFactura,=CxpAnticipoSaldo,
+CxpAnticipoSaldo,=CxpAnticipoFactura,
+CxpAnticipoFactura,=CxcDevolucionSaldo,
+CxcDevolucionSaldo,=CxpDevolucionSaldo,
+CxpDevolucionSaldo,=CxcAplicacion,
+CxcAplicacion,=CxpAplicacion,
+CxpAplicacion,=CxcDevolucion,
+CxcDevolucion,=CxpDevolucion,
+CxpDevolucion,=CxpCreditoProveedor,
+CxpCreditoProveedor,=CxpCargoProveedor,
+CxpCargoProveedor,=CxpRecargos,
+CxpRecargos,=CxpProntoPago,
+CxpProntoPago,=CxcDocumentoAnticipo,
+CxcDocumentoAnticipo,=CxpDocumentoAnticipo,
+CxpDocumentoAnticipo,=GastoProrrateado,
+GastoProrrateado,=ComprobanteProrrateado,
+ComprobanteProrrateado,=CxpContraRecibo,
+CxpContraRecibo,=ProdCancelacionOrden,
+ProdCancelacionOrden,=CxpPagare,
+CxpPagare,=CxpAforo,
+CxpAforo,=CxpFactoraje,
+CxpFactoraje,=CxpCartaCredito,
+CxpCartaCredito,=GastoDev,
+GastoDev,=GastoDevProrrateada,
+GastoDevProrrateada,=CxpGastoDev,
+CxpGastoDev,=CxpGastoDevProrrateada,
+CxpGastoDevProrrateada,=CxpDevRetencion,
+CxpDevRetencion,=VentaNotaDev,
+VentaNotaDev,=VentaOrdenSurtido,
+VentaOrdenSurtido,=CxcAjuste,
+CxcAjuste,=CxpAjuste,
+CxpAjuste,=CxcConversionCredito,
+CxcConversionCredito,=CxcConversionCargo,
+CxcConversionCargo,=CxpConversionCredito,
+CxpConversionCredito,=CxpConversionCargo,
+CxpConversionCargo,=CompraPerdida,
+CompraPerdida,=CompraRechazada,
+CompraRechazada,=CxpImportacion,
+CxpImportacion,=AutoPapeleta,
+AutoPapeleta,=AutoRecaudacion,
+AutoRecaudacion,=AutoCancelacionRecaudacion,
+AutoCancelacionRecaudacion,=AutoMantenimiento,
+AutoMantenimiento,=AutoGasto,
+AutoGasto,=AutoNomina,
+AutoNomina,=AutoMantenimientoPreventivo,
+AutoMantenimientoPreventivo,=CxcAplicacionSaldo,
+CxcAplicacionSaldo,=CxcForwardVenta,
+CxcForwardVenta,=CxcForwardPorCobrar,
+CxcForwardPorCobrar,=CxpForwardCompra,
+CxpForwardCompra,=CxpForwardPorPagar,
+CxpForwardPorPagar,=CxcFacturaSeguro,
+CxcFacturaSeguro,=VentaReservacion,
+VentaReservacion,=VentaIngreso,
+VentaIngreso,=VentaNotaConsumo,
+VentaNotaConsumo,=CompraLicitacion,
+CompraLicitacion,=InvReciboPrevio,
+InvReciboPrevio,=GastoDisminucionPresupuesto,
+GastoDisminucionPresupuesto,=InvValeSalida,
+InvValeSalida,=InvValeDevolucion,
+InvValeDevolucion,=PCPrecios,
+PCPrecios,=PCCostos,
+PCCostos,=PCBoletin,
+PCBoletin,=GastoDepreciacion,
+GastoDepreciacion,=CxcEndoso,
+CxcEndoso,=CxpEndoso,
+CxpEndoso,=CxcEndosoAFavor,
+CxcEndosoAFavor,=CxpEndosoAFavor,
+CxpEndosoAFavor,=CRCorteCaja,
+CRCorteCaja,=CRCorteCajaCentral,
+CRCorteCajaCentral,=CRNota,
+CRNota,=CRFactura,
+CRFactura,=CRRemision,
+CRRemision,=ServicioPropuesta,
+ServicioPropuesta,=ServicioCotizacion,
+ServicioCotizacion,=ServicioCita,
+ServicioCita,=Servicio,
+Servicio,=ServicioExterno,
+ServicioExterno,=CxcReevaluacion,
+CxcReevaluacion,=CxpReevaluacion,
+CxpReevaluacion,=CxcReevaluacionCredito,
+CxcReevaluacionCredito,=CxpReevaluacionCredito,
+CxpReevaluacionCredito,=DineroReevaluacion,
+DineroReevaluacion,=CxcFaltanteCaja,
+CxcFaltanteCaja,=GastoOtrosIngresos,
+GastoOtrosIngresos,=InvSolicitud,
+InvSolicitud,=InvSolicitudCancelada,
+InvSolicitudCancelada,=GastoSolicitudRechazada,
+GastoSolicitudRechazada,=VentaPedidoAuto,
+VentaPedidoAuto,=VentaConsumo,
+VentaConsumo,=CxcNeteo,
+CxcNeteo,=CxpNeteo,
+CxpNeteo,=InvPrimerConteo,
+InvPrimerConteo,=InvSegundoConteo,
+InvSegundoConteo,=InvTercerConteo,
+InvTercerConteo,=DineroRedondeo,
+DineroRedondeo,=CxcAjusteSaldo,
+CxcAjusteSaldo,=CxpAjusteSaldo,
+CxpAjusteSaldo,=VentaContrato,
+VentaContrato,=DineroInversion,
+DineroInversion,=DineroRetiroInversion,
+DineroRetiroInversion,=CxcInteresesDevengados,
+CxcInteresesDevengados,=CxpInteresesDevengados,
+CxpInteresesDevengados,=CxcCargoIntereses,
+CxcCargoIntereses,=CxpAbonoIntereses,
+CxpAbonoIntereses,=VentaFacturaGasto,
+VentaFacturaGasto,=CxcIntentoCobro,
+CxcIntentoCobro,=GastoPresupuesto,
+GastoPresupuesto,=VentaPresupuesto,
+VentaPresupuesto,=CxcIntereses,
+CxcIntereses,=CxcInteresesVencidos,
+CxcInteresesVencidos,=CxpIntereses,
+CxpIntereses,=CxcCapital,
+CxcCapital,=CxpCapital,
+CxpCapital,=CxcAmortizacion,
+CxcAmortizacion,=CxpAmortizacion,
+CxpAmortizacion,=InvFisico,
+InvFisico,=RHIncremento,
+RHIncremento,=ACReinversionCxc,
+ACReinversionCxc,=ACReinversionCxp,
+ACReinversionCxp,=ACMHIntereses,
+ACMHIntereses,=ACMHInteresesBonificacion,
+ACMHInteresesBonificacion,=ACMHInteresesDocumento,
+ACMHInteresesDocumento,=ACGasto,
+ACGasto,=PCCancelacionPrecios,
+PCCancelacionPrecios,=GastoProvision,
+GastoProvision,=AFDepreciacion,
+AFDepreciacion,=AFRevaluacion,
+AFRevaluacion,=VentaDevolucionFaltante,
+VentaDevolucionFaltante,=AgentDevolucionFaltante,
+AgentDevolucionFaltante,=InvAjusteSaldosMenores,
+InvAjusteSaldosMenores,=CxcRenta,
+CxcRenta,=CxcAplicacionNomina,
+CxcAplicacionNomina,=ACAjusteValorResidual,
+ACAjusteValorResidual,=ACAjusteImpuestoAd,
+ACAjusteImpuestoAd,=CRPrestamoCxc,
+CRPrestamoCxc,=ACBajaParcial,
+ACBajaParcial,=InvEstadisticaAjusteMerma,
+InvEstadisticaAjusteMerma,=CxpGastoAnticipo,
+CxpGastoAnticipo,=CxpGastoDevAnticipo,
+CxpGastoDevAnticipo,=CxcAplicacionNCargo,
+CxcAplicacionNCargo,=ActActividad,
+ActActividad,=ActAvance,
+ActAvance,=ActConclusion,
+ActConclusion,=ActCancelacion,
+ActCancelacion,=ActModificacion,
+ActModificacion,=ActAtraso,
+ActAtraso,=ACDisposicionCxp,
+ACDisposicionCxp,=BancoDepositoAnticipado,
+BancoDepositoAnticipado,=BancoCargoNoIdentificado,
+BancoCargoNoIdentificado,=GastoCargoBancario,
+GastoCargoBancario,=GastoCargoBancarioIVA,
+GastoCargoBancarioIVA,=GastoAbonoBancario,
+GastoAbonoBancario,=GastoAbonoBancarioIVA,
+GastoAbonoBancarioIVA,=CreditoDocumentoCxc,
+CreditoDocumentoCxc,=CreditoDocumentoCxp,
+CreditoDocumentoCxp,=CreditoPrestamoCxc,
+CreditoPrestamoCxc,=CreditoPrestamoCxp,
+CreditoPrestamoCxp,=CreditoComisiones,
+CreditoComisiones,=CreditoDisposicion,
+CreditoDisposicion,=CreditoFondeo,
+CreditoFondeo,=CreditoBackToBack,
+CreditoBackToBack,=CreditoDepositoAnticipado,
+CreditoDepositoAnticipado,=CreditoFondeoAnticipado,
+CreditoFondeoAnticipado,=BancoIntereses,
+BancoIntereses,=ProyProyecto,
+ProyProyecto,=ProyMitigacion,
+ProyMitigacion,=InvEntradaDiversa,
+InvEntradaDiversa,=ContPresupuesto,
+ContPresupuesto,=FiscalEmisionAcumulable,
+FiscalEmisionAcumulable,=FiscalEndosoAcumulable,
+FiscalEndosoAcumulable,=FiscalFlujoAcumulable,
+FiscalFlujoAcumulable,=FiscalEmisionDeducible,
+FiscalEmisionDeducible,=FiscalEndosoDeducible,
+FiscalEndosoDeducible,=FiscalFlujoDeducible,
+FiscalFlujoDeducible,=FiscalDeclaracion,
+FiscalDeclaracion,=FiscalComplementaria,
+FiscalComplementaria,=CxpImpuestosPorPagar,
+CxpImpuestosPorPagar,=CxpImpuestosFavor,
+CxpImpuestosFavor,=InvOrdenEntarimado,
+InvOrdenEntarimado,=InvEntarimado,
+InvEntarimado,=InvDesentarimado,
+InvDesentarimado,=GastoConsumo,
+GastoConsumo,=InvSolicitudRechazada,
+InvSolicitudRechazada,=InvConsumo,
+InvConsumo,=VentaOportunidad,
+VentaOportunidad,=CPAsignacion,
+CPAsignacion,=CPOperacion,
+CPOperacion,=CPReservadoFlujo,
+CPReservadoFlujo,=MAFSolicitudInspeccion,
+MAFSolicitudInspeccion,=GESTarea,
+GESTarea,=CxcAplicacionTarjetas,
+CxcAplicacionTarjetas,=CxcObsequioVales,
+CxcObsequioVales,=CxcArrendamiento,
+CxcArrendamiento,=DineroReevaluacionTitulo,
+DineroReevaluacionTitulo,=SAUXServicio,
+SAUXServicio,=SAUXSolicitudServicio,
+SAUXSolicitudServicio,=InvConsumoMaterial,
+InvConsumoMaterial,=InvEntradaProducto,
+InvEntradaProducto,=PlanPreliminar,
+PlanPreliminar,=PropuestaEconomica
+PropuestaEconomica=FROM EmpresaCfgMov
+FROM EmpresaCfgMov=(Fin)

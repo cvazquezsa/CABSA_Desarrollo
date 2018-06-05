@@ -1,0 +1,57 @@
+[Tabla]
+Icono=0
+Clave=ProdRuta
+Archivo=ProdRuta
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Rutas
+Singular=Ruta
+LlavePrimaria=Ruta
+SQL=SELECT<BR>  Ruta,<BR>  Descripcion,<BR>  Categoria,<BR>  TieneMovimientos<BR><BR>FROM<BR>  ProdRuta
+
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=50
+Tamano=20
+Mayusculas=S
+Requerido=S
+CondicionEdicion=no TieneMovimientos
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ProdRutaCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=Ruta
+Ruta=Descripcion
+Descripcion=Categoria
+Categoria=TieneMovimientos
+TieneMovimientos=(Fin)

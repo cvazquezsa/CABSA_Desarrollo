@@ -1,0 +1,40 @@
+[Tabla]
+Icono=0
+Clave=CampanaTipoCargo
+Archivo=CampanaTipoCargo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Cargos
+Singular=Cargo
+LlavePrimaria=CampanaTipo<BR>Cargo
+SQL=SELECT<BR>  CampanaTipo,<BR>  Cargo<BR><BR>FROM<BR>  CampanaTipoCargo
+
+[CampanaTipo]
+Clave=CampanaTipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tipo
+
+[Cargo]
+Clave=Cargo
+Nombre=Cargo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Cargo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=CargoLista
+AyudaVista=Cargo
+AyudaCampo=Cargo.Cargo
+AyudaMultiple=S
+AyudaMemAvanzada=S
+
+[Tabla.ListaCampos]
+(Inicio)=CampanaTipo
+CampanaTipo=Cargo
+Cargo=(Fin)

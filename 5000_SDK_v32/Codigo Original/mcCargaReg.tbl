@@ -1,0 +1,679 @@
+[Tabla]
+Icono=0
+Clave=mcCargaReg
+Archivo=mcCargaReg
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Saldos
+Singular=Saldo
+LlavePrimaria=GID
+CampoID=RID
+CampoMov=Mov
+CampoMovID=MovID
+CampoEmpresa=Empresa
+CampoSubCuenta=SubCuenta
+CampoProyecto=Proyecto
+CampoSucursal=Sucursal
+
+SQL=(Lista)
+[Mayor]
+Clave=Mayor
+Nombre=Mayor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValorPorOmision=Info.Mayor
+TipoDatos=Texto
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=ExisteEnLista(<T>Sucursal<T>, Info.Dato)
+
+[CentroCostos]
+Clave=CentroCostos
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>CentroCostos<T>, Info.Dato)
+TipoDatos=Texto
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=ExisteEnLista(<T>UEN<T>, Info.Dato)
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Proyecto<T>, Info.Dato)
+TipoDatos=Texto
+
+[Actividad]
+Clave=Actividad
+Nombre=Actividad
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Actividad<T>, Info.Dato)
+TipoDatos=Texto
+
+[RFC]
+Clave=RFC
+Nombre=RFC
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>RFC<T>, Info.Dato)
+TipoDatos=Texto
+
+[CURP]
+Clave=CURP
+Nombre=CURP
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>CURP<T>, Info.Dato)
+TipoDatos=Texto
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Cliente<T>, Info.Dato)
+TipoDatos=Texto
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Proveedor<T>, Info.Dato)
+TipoDatos=Texto
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Personal<T>, Info.Dato)
+TipoDatos=Texto
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Almacen<T>, Info.Dato)
+TipoDatos=Texto
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=Fecha Emisión
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+CondicionDespliege=ExisteEnLista(<T>FechaEmision<T>, Info.Dato)
+FormatoValidacion=dd/mmm/aaaa
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ExisteEnLista(<T>Mov<T>, Info.Dato)
+TipoDatos=Texto
+
+[MovID]
+Clave=MovID
+Nombre=Consecutivo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ExisteEnLista(<T>MovID<T>, Info.Dato)
+TipoDatos=Texto
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Articulo<T>, Info.Dato)
+TipoDatos=Texto
+
+[SerieLote]
+Clave=SerieLote
+Nombre=Serie/Lote
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>SerieLote<T>, Info.Dato)
+TipoDatos=Texto
+
+[CtaDinero]
+Clave=CtaDinero
+Nombre=Cuenta Dinero
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>CtaDinero<T>, Info.Dato)
+TipoDatos=Texto
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Concepto<T>, Info.Dato)
+TipoDatos=Texto
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Referencia<T>, Info.Dato)
+TipoDatos=Texto
+
+[Clase]
+Clave=Clase
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Clase<T>, Info.Dato)
+TipoDatos=Texto
+
+[SubClase]
+Clave=SubClase
+Nombre=Sub Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>SubClase<T>, Info.Dato)
+TipoDatos=Texto
+
+[Causa]
+Clave=Causa
+Nombre=Causa
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Causa<T>, Info.Dato)
+TipoDatos=Texto
+
+[FormaEnvio]
+Clave=FormaEnvio
+Nombre=Forma Envio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>FormaEnvio<T>, Info.Dato)
+TipoDatos=Texto
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>FormaPago<T>, Info.Dato)
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Condicion<T>, Info.Dato)
+TipoDatos=Texto
+
+[Vencimiento]
+Clave=Vencimiento
+Nombre=Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+CondicionDespliege=ExisteEnLista(<T>Vencimiento<T>, Info.Dato)
+
+[Recurso]
+Clave=Recurso
+Nombre=Recurso
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Recurso<T>, Info.Dato)
+TipoDatos=Texto
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Agente<T>, Info.Dato)
+TipoDatos=Texto
+
+[Cajero]
+Clave=Cajero
+Nombre=Cajero
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Cajero<T>, Info.Dato)
+TipoDatos=Texto
+
+[Espacio]
+Clave=Espacio
+Nombre=Espacio
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Espacio<T>, Info.Dato)
+TipoDatos=Texto
+
+[AFArticulo]
+Clave=AFArticulo
+Nombre=Activo Fijo - Articulo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>AFArticulo<T>, Info.Dato)
+TipoDatos=Texto
+
+[AFSerie]
+Clave=AFSerie
+Nombre=Activo Fijo - Serie
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>AFSerie<T>, Info.Dato)
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=ExisteEnLista(<T>Cantidad<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Precio]
+Clave=Precio
+Nombre=Precio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=ExisteEnLista(<T>Precio<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Descuento1]
+Clave=Descuento1
+Nombre=% Descuento Línea
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+CondicionDespliege=ExisteEnLista(<T>Descuento1<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Descuento2]
+Clave=Descuento2
+Nombre=% Descuento Global
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+CondicionDespliege=ExisteEnLista(<T>Descuento2<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Costo]
+Clave=Costo
+Nombre=Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=ExisteEnLista(<T>Costo<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Gastos]
+Clave=Gastos
+Nombre=Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=ExisteEnLista(<T>Gastos<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Impuesto1]
+Clave=Impuesto1
+Nombre=% IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+CondicionDespliege=ExisteEnLista(<T>Impuesto1<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Impuesto2]
+Clave=Impuesto2
+Nombre=% IEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+CondicionDespliege=ExisteEnLista(<T>Impuesto2<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Impuesto3]
+Clave=Impuesto3
+Nombre=% Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+CondicionDespliege=ExisteEnLista(<T>Impuesto3<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=ExisteEnLista(<T>Moneda<T>, Info.Dato)
+TipoDatos=Texto
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+CondicionDespliege=ExisteEnLista(<T>TipoCambio<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Unidad]
+Clave=Unidad
+Nombre=Unidad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ExisteEnLista(<T>Unidad<T>, Info.Dato)
+TipoDatos=Texto
+
+[Factor]
+Clave=Factor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+CondicionDespliege=ExisteEnLista(<T>Factor<T>, Info.Dato)
+AyudaEnCaptura=Calculadora
+
+[Debe]
+Clave=Debe
+Nombre=Debe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=ExisteEnLista(<T>Debe<T>, Info.Medida)
+AyudaEnCaptura=Calculadora
+
+[Haber]
+Clave=Haber
+Nombre=Haber
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=ExisteEnLista(<T>Haber<T>, Info.Medida)
+AyudaEnCaptura=Calculadora
+
+[TipoCambio2]
+Clave=TipoCambio2
+Nombre=Tipo Cambio 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=ExisteEnLista(<T>TipoCambio2<T>, Info.Dato)
+ValorPorOmision=1
+AyudaEnCaptura=Calculadora
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Cuenta<T>, Info.Dato)
+TipoDatos=Texto
+
+[Opcion]
+Clave=Opcion
+Nombre=Opción
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+CondicionDespliege=ExisteEnLista(<T>Opcion<T>, Info.Dato)
+TipoDatos=Texto
+
+[Presupuesto]
+Clave=Presupuesto
+Nombre=Presupuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ExisteEnLista(<T>Presupuesto<T>, Info.Medida)
+
+[Existencia]
+Clave=Existencia
+Nombre=Existencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ExisteEnLista(<T>Existencia<T>, Info.Medida)
+
+[porSurtir]
+Clave=porSurtir
+Nombre=por Surtir
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ExisteEnLista(<T>porSurtir<T>, Info.Medida)
+
+[GID]
+Clave=GID
+Nombre=GID
+Visible=S
+TamanoValidacion=16
+TipoDatos=Bytes
+ValorPorOmision=SQL(<T>SELECT NewID()<T>)
+
+[CargaGID]
+Clave=CargaGID
+Nombre=CargaGID
+Visible=S
+TamanoValidacion=16
+TipoDatos=Bytes
+ValorPorOmision=SQL(<T>SELECT GID FROM mcCarga WHERE RID=:nID<T>, Info.ID)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=GID
+GID=CargaGID
+CargaGID=Mayor
+Mayor=Sucursal
+Sucursal=Cuenta
+Cuenta=CentroCostos
+CentroCostos=UEN
+UEN=Proyecto
+Proyecto=Actividad
+Actividad=RFC
+RFC=CURP
+CURP=Cliente
+Cliente=Proveedor
+Proveedor=Personal
+Personal=Almacen
+Almacen=FechaEmision
+FechaEmision=Mov
+Mov=MovID
+MovID=Articulo
+Articulo=Opcion
+Opcion=SerieLote
+SerieLote=CtaDinero
+CtaDinero=Concepto
+Concepto=Referencia
+Referencia=Clase
+Clase=SubClase
+SubClase=Causa
+Causa=FormaEnvio
+FormaEnvio=FormaPago
+FormaPago=Condicion
+Condicion=Vencimiento
+Vencimiento=Recurso
+Recurso=Agente
+Agente=Cajero
+Cajero=Espacio
+Espacio=AFArticulo
+AFArticulo=AFSerie
+AFSerie=Cantidad
+Cantidad=Precio
+Precio=Descuento1
+Descuento1=Descuento2
+Descuento2=Costo
+Costo=Gastos
+Gastos=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Moneda
+Moneda=TipoCambio
+TipoCambio=TipoCambio2
+TipoCambio2=Unidad
+Unidad=Factor
+Factor=Debe
+Debe=Haber
+Haber=Presupuesto
+Presupuesto=Existencia
+Existencia=porSurtir
+porSurtir=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  GID,
+  GID,=  CargaGID,
+  CargaGID,=  Mayor,
+  Mayor,=  Sucursal,
+  Sucursal,=  Cuenta,
+  Cuenta,=  CentroCostos,
+  CentroCostos,=  UEN,
+  UEN,=  Proyecto,
+  Proyecto,=  Actividad,
+  Actividad,=  RFC,
+  RFC,=  CURP,
+  CURP,=  Cliente,
+  Cliente,=  Proveedor,
+  Proveedor,=  Personal,
+  Personal,=  Almacen,
+  Almacen,=  FechaEmision,
+  FechaEmision,=  Mov,
+  Mov,=  MovID,
+  MovID,=  Articulo,
+  Articulo,=  Opcion,
+  Opcion,=  SerieLote,
+  SerieLote,=  CtaDinero,
+  CtaDinero,=  Concepto,
+  Concepto,=  Referencia,
+  Referencia,=  Clase,
+  Clase,=  SubClase,
+  SubClase,=  Causa,
+  Causa,=  FormaEnvio,
+  FormaEnvio,=  FormaPago,
+  FormaPago,=  Condicion,
+  Condicion,=  Vencimiento,
+  Vencimiento,=  Recurso,
+  Recurso,=  Agente,
+  Agente,=  Cajero,
+  Cajero,=  Espacio,
+  Espacio,=  AFArticulo,
+  AFArticulo,=  AFSerie,
+  AFSerie,=  Cantidad,
+  Cantidad,=  Precio,
+  Precio,=  Descuento1,
+  Descuento1,=  Descuento2,
+  Descuento2,=  Costo,
+  Costo,=  Gastos,
+  Gastos,=  Impuesto1,
+  Impuesto1,=  Impuesto2,
+  Impuesto2,=  Impuesto3,
+  Impuesto3,=  Moneda,
+  Moneda,=  TipoCambio,
+  TipoCambio,=  TipoCambio2,
+  TipoCambio2,=  Unidad,
+  Unidad,=  Factor,
+  Factor,=  Debe,
+  Debe,=  Haber,
+  Haber,=  Presupuesto,
+  Presupuesto,=  Existencia,
+  Existencia,=  porSurtir
+  porSurtir=FROM
+FROM=  mcCargaReg
+  mcCargaReg=(Fin)

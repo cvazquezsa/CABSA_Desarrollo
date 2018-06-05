@@ -1,0 +1,149 @@
+[Dialogo]
+Clave=MenuExpDoc
+Nombre=Explorar Documentación
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=309
+PosicionInicialAncho=228
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=398
+PosicionInicialArriba=229
+VentanaConIcono=S
+
+[Acciones.Prov]
+Nombre=Prov
+Boton=0
+NombreDesplegar=&Proveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>CXP<T>)<BR>Asigna(Info.Descripcion, <T>Proveedores<T>)
+
+[Acciones.Cte]
+Nombre=Cte
+Boton=0
+NombreDesplegar=&Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>CXC<T>)<BR>Asigna(Info.Descripcion, <T>Clientes<T>)
+
+[Acciones.Art]
+Nombre=Art
+Boton=0
+NombreDesplegar=&Articulos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>INV<T>)<BR>Asigna(Info.Descripcion, <T>Artículos<T>)
+
+[Acciones.Alm]
+Nombre=Alm
+Boton=0
+NombreDesplegar=A&lmacenes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>ALM<T>)<BR>Asigna(Info.Descripcion, <T>Almacenes<T>)
+
+[Acciones.Agentes]
+Nombre=Agentes
+Boton=0
+NombreDesplegar=Agen&tes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>AGENT<T>)<BR>Asigna(Info.Descripcion, <T>Agentes<T>)
+
+[Acciones.CtaDinero]
+Nombre=CtaDinero
+Boton=0
+NombreDesplegar=Cuentas de &Dinero
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>DIN<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas de Dinero<T>)
+
+[Acciones.Personal]
+Nombre=Personal
+Boton=0
+NombreDesplegar=P&ersonal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>RH<T>)<BR>Asigna(Info.Descripcion, <T>Personal<T>)
+
+[Acciones.CtaCont]
+Nombre=CtaCont
+Boton=0
+NombreDesplegar=Cuentas Co&ntables
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Rama, <T>CONT<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas Contables<T>)
+
+[Acciones.VIN]
+Nombre=VIN
+Boton=0
+NombreDesplegar=&VIN
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDocRama
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Rama, <T>VIN<T>)<BR>Asigna(Info.Descripcion, <T>VIN<T>)
+VisibleCondicion=Config.VIN
+
+[Dialogo.ListaAcciones]
+(Inicio)=Art
+Art=Cte
+Cte=Prov
+Prov=CtaDinero
+CtaDinero=Alm
+Alm=Agentes
+Agentes=Personal
+Personal=CtaCont
+CtaCont=VIN
+VIN=(Fin)

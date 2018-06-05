@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=AfectarTransferencia
+Nombre=<T>Afectar<T>
+Icono=5
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAltura=137
+PosicionInicialAncho=293
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=365
+PosicionInicialArriba=312
+ListaAcciones=(Lista)
+Mensaje=<T>Desea Recibir la Transferencia <T>&Afectar.MovID
+PosicionInicialAlturaCliente=110
+
+[Acciones.Aceptar]
+Nombre=Aceptar
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+
+[Acciones.Cancelar]
+Nombre=Cancelar
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Aceptar
+Aceptar=Cancelar
+Cancelar=(Fin)

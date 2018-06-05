@@ -1,0 +1,44 @@
+[Tabla]
+Icono=0
+Clave=EmpresaFecha
+Archivo=EmpresaFecha
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Fechas
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  FechaD,<BR>  FechaA<BR><BR>FROM<BR>  EmpresaFecha
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+
+[FechaD]
+Clave=FechaD
+Nombre=De Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dddddd
+AyudaEnCaptura=Calendario sin Hora
+
+[FechaA]
+Clave=FechaA
+Nombre=A Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dddddd
+AyudaEnCaptura=Calendario sin Hora
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=FechaD
+FechaD=FechaA
+FechaA=(Fin)

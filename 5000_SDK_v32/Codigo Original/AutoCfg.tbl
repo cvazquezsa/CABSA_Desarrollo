@@ -1,0 +1,316 @@
+[Tabla]
+Icono=0
+Clave=AutoCfg
+Archivo=AutoCfg
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+ListaRelaciones=Prov
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  SHCP,<BR>  CalcISR,<BR>  TablaISR,<BR>  PorcentajeISR,<BR>  PorcentajeCiegos,<BR>  BoletosSinRecaudar,<BR>  BoletosSinRecaudarMesAnterior,<BR>  TotalIngresos,<BR>  TotalEgresos,<BR>  TotalEstimulos,<BR>  TotalImpuestosRetenidos,<BR>  BaseGravableISR,<BR>  BaseGravableNeta,<BR>  FacilidadesAdministrativas,<BR>  RemanentePorPagarASocios,<BR>  AmortizacionPerdida,<BR>  ISR,<BR>  UtilidadAntesImpuestos,<BR>  ImpuestosRetenidosPorPagar,<BR>  ImpuestoPorPagar<BR><BR>FROM<BR>  AutoCfg
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[SHCP]
+Clave=SHCP
+Nombre=SHCP
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+TipoDatos=Texto
+
+[BoletosSinRecaudar]
+Clave=BoletosSinRecaudar
+Nombre=Boletos Sin Recaudar
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[BoletosSinRecaudarMesAnterior]
+Clave=BoletosSinRecaudarMesAnterior
+Nombre=Boletos Sin Recaudar Mes Anterior
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[TotalIngresos]
+Clave=TotalIngresos
+Nombre=Total Ingresos
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[TotalEgresos]
+Clave=TotalEgresos
+Nombre=Total Egresos
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[BaseGravableISR]
+Clave=BaseGravableISR
+Nombre=Base Gravable ISR
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[BaseGravableNeta]
+Clave=BaseGravableNeta
+Nombre=Base Gravable Neta
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[FacilidadesAdministrativas]
+Clave=FacilidadesAdministrativas
+Nombre=10% Facilidades Administrativas
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[RemanentePorPagarASocios]
+Clave=RemanentePorPagarASocios
+Nombre=Remanente por Pagar a Socios
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[AmortizacionPerdida]
+Clave=AmortizacionPerdida
+Nombre=Amortización Perdida
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[ISR]
+Clave=ISR
+Nombre=ISR
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[UtilidadAntesImpuestos]
+Clave=UtilidadAntesImpuestos
+Nombre=Utilidad Antes Impuestos
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[ImpuestosRetenidosPorPagar]
+Clave=ImpuestosRetenidosPorPagar
+Nombre=Impuestos Retenidos por Pagar
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[ImpuestoPorPagar]
+Clave=ImpuestoPorPagar
+Nombre=Impuesto por Pagar
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=GAS
+TipoDatos=Texto
+
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=SHCP
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+[CalcISR]
+Clave=CalcISR
+Nombre=Cálculo del ISR
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+
+[TablaISR]
+Clave=TablaISR
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaImpuesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionEdicion=CalcISR=<T>Tabla<T>
+
+[PorcentajeISR]
+Clave=PorcentajeISR
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionEdicion=CalcISR=<T>%<T>
+
+[PorcentajeCiegos]
+Clave=PorcentajeCiegos
+Nombre=% Facilidades Administrativas
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[TotalEstimulos]
+Clave=TotalEstimulos
+Nombre=Total Estimulos Fiscales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=GAS
+
+[TotalImpuestosRetenidos]
+Clave=TotalImpuestosRetenidos
+Nombre=Total Impuestos Retenidos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=SHCP
+SHCP=CalcISR
+CalcISR=TablaISR
+TablaISR=PorcentajeISR
+PorcentajeISR=PorcentajeCiegos
+PorcentajeCiegos=BoletosSinRecaudar
+BoletosSinRecaudar=BoletosSinRecaudarMesAnterior
+BoletosSinRecaudarMesAnterior=TotalIngresos
+TotalIngresos=TotalEgresos
+TotalEgresos=TotalEstimulos
+TotalEstimulos=TotalImpuestosRetenidos
+TotalImpuestosRetenidos=BaseGravableISR
+BaseGravableISR=BaseGravableNeta
+BaseGravableNeta=FacilidadesAdministrativas
+FacilidadesAdministrativas=RemanentePorPagarASocios
+RemanentePorPagarASocios=AmortizacionPerdida
+AmortizacionPerdida=ISR
+ISR=UtilidadAntesImpuestos
+UtilidadAntesImpuestos=ImpuestosRetenidosPorPagar
+ImpuestosRetenidosPorPagar=ImpuestoPorPagar
+ImpuestoPorPagar=(Fin)
+
+[CalcISR.ListaRefrescarCondiciones]
+(Inicio)=TablaISR
+TablaISR=PorcentajeISR
+PorcentajeISR=(Fin)
+
+[CalcISR.ListaOpciones]
+(Inicio)=%
+%=Tabla
+Tabla=(Fin)

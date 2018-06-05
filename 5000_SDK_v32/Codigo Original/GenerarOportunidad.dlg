@@ -1,0 +1,111 @@
+[Dialogo]
+Clave=GenerarOportunidad
+Nombre=Oportunidad
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=833
+PosicionInicialArriba=465
+PosicionInicialAltura=213
+PosicionInicialAncho=253
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=234
+
+[Acciones.Pedido]
+Nombre=Pedido
+Boton=0
+NombreDesplegar=Generar &Pedido
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaPedido,Afectar.FormaCaptura)
+
+[Acciones.Factura]
+Nombre=Factura
+Boton=0
+NombreDesplegar=Generar &Factura
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaFactura,Afectar.FormaCaptura)
+
+[Acciones.VentaConsignacion]
+Nombre=VentaConsignacion
+Boton=0
+NombreDesplegar=Generar &Venta a consignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaConsignacion,Afectar.FormaCaptura)
+
+[Acciones.Remision]
+Nombre=Remision
+Boton=0
+NombreDesplegar=Generar &Remisión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaRemision,Afectar.FormaCaptura)
+
+[Acciones.VentaPerdida]
+Nombre=VentaPerdida
+Boton=0
+NombreDesplegar=Generar Venta P&erdida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaPerdida, Afectar.FormaCaptura)
+
+[Acciones.Contrato]
+Nombre=Contrato
+Boton=0
+NombreDesplegar=Generar Contr&ato
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaContrato,Afectar.FormaCaptura)
+
+[Acciones.Cotizacion]
+Nombre=Cotizacion
+Boton=0
+NombreDesplegar=Generar &Cotización
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaCotizacion, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cotizacion
+Cotizacion=Pedido
+Pedido=Factura
+Factura=Remision
+Remision=Contrato
+Contrato=VentaConsignacion
+VentaConsignacion=VentaPerdida
+VentaPerdida=(Fin)

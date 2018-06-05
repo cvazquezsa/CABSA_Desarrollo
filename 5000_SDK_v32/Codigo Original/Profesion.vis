@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=Profesion
+Nombre=Profesiones
+Modulos=(Todos)
+Singular=Profesión
+ListaTablas=Profesion
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=Profesion.Profesion
+TablaPrincipal=Profesion
+SQL=SELECT<BR>  Profesion.Profesion<BR><BR>FROM<BR>  Profesion
+
+[Profesion.Profesion]
+Clave=Profesion.Profesion
+LigaTabla=Profesion
+LigaCampo=Profesion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Profesion

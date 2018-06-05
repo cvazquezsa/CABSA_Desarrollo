@@ -1,0 +1,73 @@
+[Tabla]
+Icono=0
+Clave=MovTipoNomAutoCalendarioEsp
+Archivo=MovTipoNomAutoCalendarioEsp
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Calendario
+Singular=Calendario
+LlavePrimaria=Modulo<BR>Mov<BR>FechaNomina
+ControlMov=S
+CampoMov=Mov
+SQL=SELECT<BR>  Modulo,<BR>  Mov,<BR>  FechaNomina,<BR>  IncidenciaD,<BR>  IncidenciaA,<BR>  Cerrado<BR><BR>FROM<BR>  MovTipoNomAutoCalendarioEsp
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+
+[Mov]
+Clave=Mov
+Nombre=Mov
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Mov
+
+[FechaNomina]
+Clave=FechaNomina
+Nombre=Fecha Nómina
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[IncidenciaD]
+Clave=IncidenciaD
+Nombre=Incidencias Del
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[IncidenciaA]
+Clave=IncidenciaA
+Nombre=Incidencias Al
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Cerrado]
+Clave=Cerrado
+Nombre=Periodo Cerrado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=FechaNomina
+FechaNomina=IncidenciaD
+IncidenciaD=IncidenciaA
+IncidenciaA=Cerrado
+Cerrado=(Fin)

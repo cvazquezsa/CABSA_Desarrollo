@@ -1,0 +1,66 @@
+[Dialogo]
+Clave=MenuRepCxcSincro
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=389
+PosicionInicialArriba=298
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=246
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Antiguedad]
+Nombre=Antiguedad
+Boton=0
+NombreDesplegar=&Antigüedad de Saldos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCxcRefAntiguedad
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxc/Ref/Antiguedad<T>)
+[Acciones.Pronostico]
+Nombre=Pronostico
+Boton=0
+NombreDesplegar=&Pronóstico de Cobranza
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCxcRefPronostico
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxc/Ref/Pronostico<T>)
+[Acciones.EstadoCuentas]
+Nombre=EstadoCuentas
+Boton=0
+NombreDesplegar=&Estado de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCxcRefAux
+Activo=S
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxc/Ref/EstadoCuentas<T>)
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=EstadoCuentas
+EstadoCuentas=Antiguedad
+Antiguedad=Pronostico
+Pronostico=(Fin)

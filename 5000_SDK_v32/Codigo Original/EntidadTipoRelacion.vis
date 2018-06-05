@@ -1,0 +1,49 @@
+
+[Vista]
+Icono=0
+Clave=EntidadTipoRelacion
+Nombre=Tipos Relaciones
+Modulos=(Todos)
+Singular=Tipo Relación
+ListaTablas=EntidadTipoRelacion
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=EntidadTipoRelacion
+
+SQL=SELECT<BR>  EntidadTipoRelacion.ContactoTipo,<BR>  EntidadTipoRelacion.TipoRelacion<BR><BR>FROM<BR>  EntidadTipoRelacion
+[EntidadTipoRelacion.ContactoTipo]
+Clave=EntidadTipoRelacion.ContactoTipo
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+LigaTabla=EntidadTipoRelacion
+LigaCampo=ContactoTipo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ContactoTipo
+
+[EntidadTipoRelacion.TipoRelacion]
+Clave=EntidadTipoRelacion.TipoRelacion
+LigaTabla=EntidadTipoRelacion
+LigaCampo=TipoRelacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TipoRelacion
+
+[Vista.ListaCampos]
+(Inicio)=EntidadTipoRelacion.ContactoTipo
+EntidadTipoRelacion.ContactoTipo=EntidadTipoRelacion.TipoRelacion
+EntidadTipoRelacion.TipoRelacion=(Fin)

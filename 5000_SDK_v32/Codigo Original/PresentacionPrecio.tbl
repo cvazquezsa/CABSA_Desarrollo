@@ -1,0 +1,140 @@
+[Tabla]
+Icono=0
+Clave=PresentacionPrecio
+Archivo=PresentacionPrecio
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Precios
+Singular=Precio
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+CampoSucursal=Sucursal
+ListaRelaciones=Sucursal
+SQL=SELECT<BR>  ID,<BR>  Presentacion,<BR>  Region,<BR>  Sucursal,<BR>  CantidadD,<BR>  CantidadA,<BR>  PrecioNormal,<BR>  PrecioOferta,<BR>  VigenciaD,<BR>  VigenciaA<BR><BR>FROM<BR>  PresentacionPrecio
+
+[Presentacion]
+Clave=Presentacion
+Nombre=Presentacion
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Presentacion
+TipoDatos=Texto
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Region]
+Clave=Region
+Nombre=Región
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=SucursalRegion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Def.Region
+AlCambiar=Asigna(Def.Region, Region)<BR>Asigna(PresentacionPrecio:PresentacionPrecio.Sucursal, Nulo)
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal Especifica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=SucursalRegionLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionUsaTabla=S
+ValidacionTablas=Sucursal
+AyudaBusquedaRapida=Asigna(Info.Region, Region)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Sucursal Incorrecta - Región<T>
+ValorPorOmision=Def.Sucursal
+AlCambiar=Asigna(Def.Sucursal, PresentacionPrecio:PresentacionPrecio.Sucursal)
+ValidacionCondicion=PresentacionPrecio:Sucursal.Region=Region
+
+[CantidadD]
+Clave=CantidadD
+Nombre=Del
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+
+[CantidadA]
+Clave=CantidadA
+Nombre=Al
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+
+[PrecioNormal]
+Clave=PrecioNormal
+Nombre=Precio Normal
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[PrecioOferta]
+Clave=PrecioOferta
+Nombre=Precio Oferta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Relaciones.Sucursal]
+TipoRelacion=Opcional
+LlaveLocal=Sucursal
+Clave=Sucursal
+TablaRemota=Sucursal
+LlaveRemota=Sucursal
+
+[VigenciaD]
+Clave=VigenciaD
+Nombre=Vigente Del
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[VigenciaA]
+Clave=VigenciaA
+Nombre=Vigente Al
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Presentacion
+Presentacion=Region
+Region=Sucursal
+Sucursal=CantidadD
+CantidadD=CantidadA
+CantidadA=PrecioNormal
+PrecioNormal=PrecioOferta
+PrecioOferta=VigenciaD
+VigenciaD=VigenciaA
+VigenciaA=(Fin)

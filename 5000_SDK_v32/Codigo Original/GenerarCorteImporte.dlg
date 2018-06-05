@@ -1,0 +1,36 @@
+[Dialogo]
+Clave=GenerarCorteImporte
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=575
+PosicionInicialArriba=300
+PosicionInicialAltura=117
+PosicionInicialAncho=299
+ListaAcciones=CorteImporte
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=90
+
+
+[Acciones.CorteImporte]
+Nombre=CorteImporte
+Boton=0
+NombreDesplegar=Generar &Corte Importe
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.GenerarMov, SQL(<T>SELECT CorteImporte FROM EmpresaCfgMovCorte WHERE Empresa = :tEmpresa<T>, Empresa))<BR><BR>Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov, <T>Corte<T>)

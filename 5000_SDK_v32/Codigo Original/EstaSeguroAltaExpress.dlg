@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=EstaSeguroAltaExpress
+Nombre=Alta Express
+Icono=5
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=89
+PosicionInicialAncho=271
+PosicionInicialIzquierda=376
+PosicionInicialArriba=322
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+Mensaje=<T>¿ Esta Seguro ?<T>
+
+[Acciones.Si]
+Nombre=Si
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+
+[Acciones.No]
+Nombre=No
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Si
+Si=No
+No=(Fin)

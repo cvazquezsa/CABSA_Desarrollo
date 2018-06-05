@@ -1,0 +1,95 @@
+[Dialogo]
+Clave=GenerarTransito
+Nombre=Orden Transito
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=702
+PosicionInicialArriba=415
+PosicionInicialAltura=165
+PosicionInicialAncho=276
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[Acciones.ReciboTraspaso]
+Nombre=ReciboTraspaso
+Boton=0
+NombreDesplegar=Generar &Recibo Traspaso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvReciboTraspaso)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.TransitoFaltante]
+Nombre=TransitoFaltante
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=S
+NombreDesplegar=Generar &Faltante
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvTransitoFaltante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.TransitoSobrante]
+Nombre=TransitoSobrante
+Boton=0
+NombreDesplegar=Generar &Sobrante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvTransitoSobrante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+Visible=S
+
+[Acciones.ReciboPrevio]
+Nombre=ReciboPrevio
+Boton=0
+NombreDesplegar=Generar Recibo &Previo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvReciboPrevio)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.DevTransito]
+Nombre=DevTransito
+Boton=0
+NombreDesplegar=Generar &Devolución Transito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvDevTransito)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.MovTipo<>INV.DTI
+
+[Dialogo.ListaAcciones]
+(Inicio)=ReciboTraspaso
+ReciboTraspaso=ReciboPrevio
+ReciboPrevio=DevTransito
+DevTransito=TransitoFaltante
+TransitoFaltante=TransitoSobrante
+TransitoSobrante=(Fin)

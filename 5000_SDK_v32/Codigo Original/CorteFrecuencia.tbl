@@ -1,0 +1,31 @@
+
+[Tabla]
+Icono=0
+Clave=CorteFrecuencia
+Nombre=CorteFrecuencia
+Archivo=CorteFrecuencia
+Modulos=CORTE
+Singular=CorteFrecuencia
+
+TipoTabla=General
+ListaCampos=Frecuencia
+
+LlavePrimaria=Frecuencia
+SQL=(Lista)
+[Frecuencia]
+Clave=Frecuencia
+Nombre=Frecuencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Frecuencia
+Frecuencia=FROM CorteFrecuencia
+FROM CorteFrecuencia=(Fin)

@@ -1,0 +1,33 @@
+[Dialogo]
+Clave=GenerarCxpPagoPosfechado
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Pago
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=400
+PosicionInicialArriba=322
+PosicionInicialAltura=117
+PosicionInicialAncho=223
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Pago]
+Nombre=Pago
+Boton=0
+NombreDesplegar=Generar &Pago
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpPago, Afectar.FormaCaptura)

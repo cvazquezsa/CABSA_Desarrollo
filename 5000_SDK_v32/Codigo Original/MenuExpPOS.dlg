@@ -1,0 +1,32 @@
+[Dialogo]
+Clave=MenuExpPOS
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=POSArtSucursal
+PosicionInicialIzquierda=672
+PosicionInicialArriba=366
+PosicionInicialAltura=117
+PosicionInicialAncho=256
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+
+[Acciones.POSArtSucursal]
+Nombre=POSArtSucursal
+Boton=0
+NombreDesplegar=&Artículos Por Sucursal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=POSArtSucursal
+Activo=S
+VisibleCondicion= SQL(<T>SELECT SincronizaArtSuc FROM POSiSync<T>)       

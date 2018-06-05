@@ -1,0 +1,50 @@
+[Tabla]
+Icono=0
+Clave=NominaSubConcepto
+Archivo=NominaSubConcepto
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=SubConceptos
+Singular=SubConcepto
+LlavePrimaria=NominaConcepto<BR>NominaSubConcepto
+ListaRelaciones=NominaConcepto
+SQL=SELECT<BR>  NominaConcepto,<BR>  NominaSubConcepto<BR><BR>FROM<BR>  NominaSubConcepto
+
+[NominaConcepto]
+Clave=NominaConcepto
+Nombre=Concepto Nómina
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.NominaConcepto
+
+[NominaSubConcepto]
+Clave=NominaSubConcepto
+Nombre=Sub Concepto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=NominaConceptoLista
+AyudaVista=NominaConcepto
+AyudaCampo=NominaConcepto.NominaConcepto
+ValidacionUsaTabla=S
+ValidacionTablas=NominaConcepto
+AyudaMultiple=S
+ValidacionConCondiciones=S
+ValidacionCondicion=NominaSubConcepto<>NominaConcepto
+ValidacionMensajeError=<T>No Puede ser el Mismo<T>
+
+[Relaciones.NominaConcepto]
+TipoRelacion=Forzosa
+LlaveLocal=NominaSubConcepto
+Clave=NominaConcepto
+TablaRemota=NominaConcepto
+LlaveRemota=NominaConcepto
+
+[Tabla.ListaCampos]
+(Inicio)=NominaConcepto
+NominaConcepto=NominaSubConcepto
+NominaSubConcepto=(Fin)

@@ -1,0 +1,2097 @@
+[Reporte]
+Clave=CxpPronostico
+Icono=0
+TamanoPagina=1
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=45
+LargoPagina=21.6
+Orientacion=Horizontal
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros=S
+Columnas=1
+PosicionInicialAltura=567
+PosicionInicialAncho=907
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+Nombre=Rep.Titulo
+Vista=CxpPronostico
+OtroOrden=S
+ListaOrden=(Lista)
+Filtros=S
+TieneFiltroAbierto=S
+ImpresoraPixeles=(Auto)
+FormatoSinConexion=S
+FiltroAbierto=CxpInfo.Empresa={Comillas(Empresa)} AND<BR>CxpInfo.Proveedor BETWEEN {Comillas(Info.ProveedorD)} AND {Comillas(Info.ProveedorA)}<BR>{Si(ConDatos(Info.Moneda), <T> AND CxpInfo.Moneda = <T>+Comillas(Info.Moneda), <T><T>)}
+ExpresionesAntes=Si(Info.Moneda=<T>(Todas)<T>, Asigna(Info.Moneda, Nulo))
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Inicio: CxpInfo.Proveedor<BR>Detalle<BR>Fin: CxpInfo.Mov<BR>Fin: CxpInfo.Proveedor<BR>Fin: CxpInfo.Moneda<BR>Pie
+VentanaIzquierda=29
+VentanaArriba=122
+VentanaAltura=524
+VentanaAncho=966
+PanelArriba=180
+PanelBotones=113
+
+[Linea1]
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
+AltoEnCm=0.37
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Objetos=18
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Marco=N
+ExpresionesAntesImprimir=
+Renglones=1
+FondoColor=Blanco
+BordeAbajo=S
+EstiloAbajo=1
+Visible=Info.Desglosar=<T>No<T>
+
+[Linea3]
+Clave=Encabezado
+Objetos=18
+Seccion=Encabezado Página
+Marco=N
+EstiloMarco=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Visible=Info.Desglosar=<T>Si<T>
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+Grupo=
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=20
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=ReporteNombre
+Marco=N
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=59
+FondoColor=Blanco
+CBTipo=UPC A
+
+[Linea4]
+Clave=Inicio: CxpInfo.Proveedor
+Objetos=4
+Seccion=Inicio Grupo
+EstiloMarco=0
+AltoEnCm=0.58
+AVertical=Abajo
+Visible=
+Fuente={Arial, 10, Negro, [Negritas]}
+Marco=N
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+EstiloArriba=0
+Renglones=2
+FondoColor=Blanco
+Grupo=CxpInfo.Proveedor
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+ClaveAccion=CxpPronostico
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=CxpPronostico
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea5]
+Clave=Detalle
+Objetos=18
+Seccion=Detalle
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+EstiloMarco=3
+Visible=Info.Desglosar=<T>Si<T>
+BordeAbajo=N
+EstiloAbajo=3
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+Grupo=
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=3.11
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Info.Ano
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=
+CBTipo=UPC A
+
+[Linea6]
+Clave=Fin: CxpInfo.Mov
+Objetos=18
+Seccion=Fin Grupo
+AltoEnCm=0.5
+Renglones=1
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Arriba
+Grupo=CxpInfo.Mov
+Visible=Info.Desglosar=<T>Si<T>
+BordeAbajo=N
+EstiloAbajo=0
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxpInfo.Proveedor)
+BordeAbajo=S
+EstiloAbajo=1
+BordeArriba=N
+EstiloArriba=0
+CBTipo=UPC A
+
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Tipo Movimiento<T>
+CBTipo=UPC A
+
+[C2]
+Celda=C2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=21
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Total<T>
+CBTipo=UPC A
+
+[D2]
+Celda=D2
+Alineacion=Centrado
+AnchoEnCm=2.11
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxpInfo.Moneda)
+CBTipo=UPC A
+
+[E2]
+Celda=E2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Vencido)
+CBTipo=UPC A
+
+[F2]
+Celda=F2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Ene)
+CBTipo=UPC A
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=10
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=CxpInfo.Proveedor
+BordeAbajo=N
+CBTipo=UPC A
+
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=9.89
+AnchoTexto=53
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Prov.Nombre
+FormatoValidacion=
+BordeAbajo=N
+CBTipo=UPC A
+
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=
+FormatoValidacion=
+BordeAbajo=N
+CBTipo=UPC A
+
+[G2]
+Celda=G2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Feb)
+CBTipo=UPC A
+
+[Linea7]
+Clave=Fin: CxpInfo.Proveedor
+Objetos=17
+Seccion=Fin Grupo
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 9, Negro, [Negritas]}
+AVertical=Arriba
+Grupo=CxpInfo.Proveedor
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+BordeArriba=N
+CBTipo=UPC A
+
+[H2]
+Celda=H2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Mar)
+CBTipo=UPC A
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxpInfo.Mov+<T> <T>+CxpInfo.MovID
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[C5]
+Celda=C5
+Alineacion=Izquierda
+FormatoValidacion=dd/mmm/yyyy
+AnchoEnCm=2.39
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxpInfo.FechaEmision
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[D5]
+Celda=D5
+Alineacion=Izquierda
+FormatoValidacion=dd/mmm/yyyy
+AnchoEnCm=2.11
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxpInfo.Vencimiento
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[E5]
+Celda=E5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Vencido
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[F5]
+Celda=F5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ene
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[G5]
+Celda=G5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Feb
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[Linea8]
+Clave=Fin: CxpInfo.Moneda
+Seccion=Fin Grupo
+AltoEnCm=0.76
+Renglones=2
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+Objetos=17
+Grupo=CxpInfo.Moneda
+Visible=
+EstiloMarco=0
+EstiloAbajo=0
+
+[Linea9]
+Clave=Pie
+Objetos=3
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=
+Visible=
+
+[H5]
+Celda=H5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Mar
+CBTipo=UPC A
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=16
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+BordeArriba=N
+Expresion=
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=21
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(CxpInfo.Saldo)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[D6]
+Celda=D6
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=2.11
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Si(Vacio(Info.Moneda), CxpInfo.Moneda)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[E6]
+Celda=E6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Vencido)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[F6]
+Celda=F6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Ene)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[G6]
+Celda=G6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Feb)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[C7]
+Celda=C7
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=2.1
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Si(Vacio(Info.Moneda), CxpInfo.Moneda)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=20
+AnchoTexto=59
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+CBTipo=UPC A
+
+[B9]
+Celda=B9
+Alineacion=Centrado
+AnchoEnCm=3.11
+AnchoTexto=22
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Info.Moneda
+FormatoValidacion=
+CBTipo=UPC A
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Movimiento<T>
+BordeAbajo=S
+EstiloAbajo=1
+BordeArriba=N
+EstiloArriba=0
+CBTipo=UPC A
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Fecha Emisión<T>
+BordeAbajo=S
+EstiloAbajo=1
+FormatoValidacion=
+BordeArriba=N
+EstiloArriba=0
+CBTipo=UPC A
+
+[H6]
+Celda=H6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Mar)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=21
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(CxpInfo.Saldo)
+BordeAbajo=N
+EstiloAbajo=0
+CBTipo=UPC A
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=<T>Total<T>
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=21
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(CxpInfo.Saldo)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[C8]
+Celda=C8
+Alineacion=Izquierda
+AnchoEnCm=2.1
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Si(Vacio(Info.Moneda), CxpInfo.Moneda)
+EstiloMarco=0
+EstiloAbajo=0
+FormatoValidacion=
+CBTipo=UPC A
+
+[D8]
+Celda=D8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Vencido)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[E8]
+Celda=E8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Ene)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[F8]
+Celda=F8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Feb)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[G8]
+Celda=G8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Mar)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[H8]
+Celda=H8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Abr)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[I8]
+Celda=I8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(May)
+EstiloMarco=0
+EstiloAbajo=0
+CBTipo=UPC A
+
+[C9]
+Celda=C9
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=20
+AnchoTexto=151
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+CBTipo=UPC A
+
+[D7]
+Celda=D7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Vencido)
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+CBTipo=UPC A
+
+[E7]
+Celda=E7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Ene)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[F7]
+Celda=F7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Feb)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[G7]
+Celda=G7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Mar)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[H7]
+Celda=H7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Abr)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[I7]
+Celda=I7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(May)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[J7]
+Celda=J7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Jun)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[K7]
+Celda=K7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Jul)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[L7]
+Celda=L7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Ago)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+CBTipo=UPC A
+
+[I2]
+Celda=I2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Abr)
+CBTipo=UPC A
+
+[I4]
+Celda=I4
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>de <T> + (Config.CxpEne+1) +<T> a <T>+ Config.CxpFeb
+BordeAbajo=S
+EstiloAbajo=1
+
+[J2]
+Celda=J2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(May)
+CBTipo=UPC A
+
+[J4]
+Celda=J4
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>de <T> + (Config.CxpFeb+1) +<T> a <T>+ Config.CxpMar
+
+[K4]
+Celda=K4
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>de <T> + (Config.CxpMar+1) +<T> a <T>+ Config.CxpAbr
+
+[L4]
+Celda=L4
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>más de <T>+ Config.CxpAbr + <T> días<T>
+
+[I5]
+Celda=I5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Abr
+CBTipo=UPC A
+
+[J5]
+Celda=J5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=May
+CBTipo=UPC A
+
+[I6]
+Celda=I6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Abr)
+CBTipo=UPC A
+
+[J6]
+Celda=J6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(May)
+CBTipo=UPC A
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=2.1
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxpInfo.Vencimiento)
+CBTipo=UPC A
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Vencido)
+CBTipo=UPC A
+
+[F3]
+Celda=F3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Ene)
+CBTipo=UPC A
+
+[G3]
+Celda=G3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Feb)
+CBTipo=UPC A
+
+[H3]
+Celda=H3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Mar)
+CBTipo=UPC A
+
+[I3]
+Celda=I3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Abr)
+CBTipo=UPC A
+
+[J3]
+Celda=J3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(May)
+CBTipo=UPC A
+
+[K2]
+Celda=K2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Jun)
+CBTipo=UPC A
+
+[L2]
+Celda=L2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Jul)
+CBTipo=UPC A
+
+[M2]
+Celda=M2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Ago)
+CBTipo=UPC A
+
+[N2]
+Celda=N2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Sep)
+CBTipo=UPC A
+
+[K3]
+Celda=K3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Jun)
+CBTipo=UPC A
+
+[L3]
+Celda=L3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Jul)
+CBTipo=UPC A
+
+[O2]
+Celda=O2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Oct)
+CBTipo=UPC A
+
+[P2]
+Celda=P2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Nov)
+CBTipo=UPC A
+
+[Q2]
+Celda=Q2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Dic)
+CBTipo=UPC A
+
+[R2]
+Celda=R2
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Diferente)
+CBTipo=UPC A
+
+[M3]
+Celda=M3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Ago)
+CBTipo=UPC A
+
+[N3]
+Celda=N3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Sep)
+CBTipo=UPC A
+
+[O3]
+Celda=O3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Oct)
+CBTipo=UPC A
+
+[P3]
+Celda=P3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Nov)
+CBTipo=UPC A
+
+[Q3]
+Celda=Q3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Dic)
+CBTipo=UPC A
+
+[R3]
+Celda=R3
+Alineacion=Centrado
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Diferente)
+CBTipo=UPC A
+
+[D4]
+Celda=D4
+Alineacion=Izquierda
+AnchoEnCm=46
+AnchoTexto=247
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+CBTipo=UPC A
+
+[K5]
+Celda=K5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Jun
+CBTipo=UPC A
+
+[L5]
+Celda=L5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Jul
+CBTipo=UPC A
+
+[M5]
+Celda=M5
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ago
+FormatoValidacion=(Monetario)
+CBTipo=UPC A
+
+[N5]
+Celda=N5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Sep
+CBTipo=UPC A
+
+[O5]
+Celda=O5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Oct
+CBTipo=UPC A
+
+[P5]
+Celda=P5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Nov
+CBTipo=UPC A
+
+[Q5]
+Celda=Q5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Dic
+CBTipo=UPC A
+
+[R5]
+Celda=R5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Diferente
+CBTipo=UPC A
+
+[K6]
+Celda=K6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Jun)
+CBTipo=UPC A
+
+[L6]
+Celda=L6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Jul)
+CBTipo=UPC A
+
+[M6]
+Celda=M6
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Ago)
+FormatoValidacion=(Monetario)
+CBTipo=UPC A
+
+[N6]
+Celda=N6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Sep)
+CBTipo=UPC A
+
+[O6]
+Celda=O6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Oct)
+CBTipo=UPC A
+
+[P6]
+Celda=P6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Nov)
+CBTipo=UPC A
+
+[Q6]
+Celda=Q6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Dic)
+CBTipo=UPC A
+
+[R6]
+Celda=R6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Diferente)
+CBTipo=UPC A
+
+[M7]
+Celda=M7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Sep)
+FormatoValidacion=(Monetario)
+EstiloArriba=1
+CBTipo=UPC A
+
+[N7]
+Celda=N7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Oct)
+EstiloArriba=1
+CBTipo=UPC A
+
+[O7]
+Celda=O7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Nov)
+EstiloArriba=1
+CBTipo=UPC A
+
+[P7]
+Celda=P7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Dic)
+EstiloArriba=1
+CBTipo=UPC A
+
+[Q7]
+Celda=Q7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 9, Negro, [Negritas]}
+Expresion=Suma(Diferente)
+EstiloArriba=1
+CBTipo=UPC A
+
+[J8]
+Celda=J8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Jun)
+CBTipo=UPC A
+
+[K8]
+Celda=K8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Jul)
+CBTipo=UPC A
+
+[L8]
+Celda=L8
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Ago)
+FormatoValidacion=(Monetario)
+CBTipo=UPC A
+
+[M8]
+Celda=M8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Sep)
+CBTipo=UPC A
+
+[N8]
+Celda=N8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Oct)
+CBTipo=UPC A
+
+[O8]
+Celda=O8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Nov)
+CBTipo=UPC A
+
+[P8]
+Celda=P8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Dic)
+CBTipo=UPC A
+
+[Q8]
+Celda=Q8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(Diferente)
+CBTipo=UPC A
+
+[C1]
+Celda=C1
+Alineacion=Derecha
+AnchoEnCm=20
+AnchoTexto=172
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+CBTipo=UPC A
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Reporte.ListaOrden]
+(Inicio)=CxpInfo.Moneda<TAB>(Acendente)
+CxpInfo.Moneda<TAB>(Acendente)=CxpInfo.Proveedor<TAB>(Acendente)
+CxpInfo.Proveedor<TAB>(Acendente)=CxpInfo.Mov<TAB>(Acendente)
+CxpInfo.Mov<TAB>(Acendente)=CxpInfo.Vencimiento<TAB>(Acendente)
+CxpInfo.Vencimiento<TAB>(Acendente)=(Fin)

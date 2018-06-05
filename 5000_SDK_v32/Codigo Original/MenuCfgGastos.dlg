@@ -1,0 +1,76 @@
+[Dialogo]
+Clave=MenuCfgGastos
+Nombre=Gastos
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=787
+PosicionInicialArriba=502
+PosicionInicialAltura=117
+PosicionInicialAncho=345
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Clase]
+Nombre=Clase
+Boton=0
+NombreDesplegar=C&lasificaciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Clase
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>GAS<T>)<BR>Asigna(Info.Descripcion, <T>Gastos<T>)
+
+[Acciones.Actividad]
+Nombre=Actividad
+Boton=0
+NombreDesplegar=&Actividades
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Actividad
+Activo=S
+Visible=S
+
+[Acciones.ContratoTipo]
+Nombre=ContratoTipo
+Boton=0
+NombreDesplegar=Tipos de &Contratos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContratoTipo
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>GAS<T>)<BR>Asigna(Info.Nombre, <T>Gastos<T>)
+Visible=S
+
+[Acciones.GastoIndirecto]
+Nombre=GastoIndirecto
+Boton=0
+NombreDesplegar=&Gastos Indirectos - Entrada Producto (Inventario)
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=EmpresaCfgGastoIndirecto
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Clase
+Clase=Actividad
+Actividad=ContratoTipo
+ContratoTipo=GastoIndirecto
+GastoIndirecto=(Fin)

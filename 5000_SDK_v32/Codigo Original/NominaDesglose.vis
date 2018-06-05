@@ -1,0 +1,271 @@
+[Vista]
+Icono=0
+Clave=NominaDesglose
+Nombre=Nómina
+Modulos=(Todos)
+Singular=Nómina
+ListaCampos=(Lista)
+ListaRelaciones=(Lista)
+ListaCalculados=(Lista)
+VistaIndependiente=S
+SQL=SELECT<BR>  p.Departamento,<BR>  d.Personal,<BR>  SUM(CASE WHEN d.Movimiento = <T>Percepcion<T> THEN d.Importe END) Percepciones,<BR>  SUM(CASE WHEN d.Movimiento = <T>Deduccion<T>  THEN d.Importe END) Deducciones,<BR>  p.ApellidoPaterno,<BR>  p.ApellidoMaterno,<BR>  p.Nombre,<BR>  p.Tipo<BR><BR>FROM<BR>  NominaD d<BR>  JOIN Personal p ON d.Personal=p.Personal<BR><BR>GROUP BY<BR>  p.Departamento, d.Personal, p.Personal, p.ApellidoPaterno, p.ApellidoMaterno, p.Nombre, p.Tipo<BR><BR>ORDER BY<BR>  p.Departamento, d.Personal, p.Personal, p.ApellidoPaterno, p.ApellidoMaterno, p.Nombre, p.Tipo
+
+[NombreCompleto]
+Clave=NombreCompleto
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nombre
+Formula=ApellidoPaterno+<T> <T>+ApellidoMaterno+<T> <T>+Nombre
+
+[Relaciones.NominaD.Nomina]
+Clave=NominaD.Nomina
+TablaRemota=Nomina
+LlaveLocal=NominaD.ID
+LlaveRemota=ID
+TipoRelacion=Forzosa
+
+[Relaciones.NominaD.Personal]
+Clave=NominaD.Personal
+TablaRemota=Personal
+LlaveLocal=NominaD.Personal
+LlaveRemota=Personal
+TipoRelacion=Opcional
+
+[Departamento]
+Clave=Departamento
+Nombre=Departamento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ClaveBDE=Departamento
+TipoDatos=Texto
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+ClaveBDE=Personal
+TipoDatos=Texto
+
+[ApellidoPaterno]
+Clave=ApellidoPaterno
+Nombre=ApellidoPaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+ClaveBDE=ApellidoPaterno
+TipoDatos=Texto
+
+[ApellidoMaterno]
+Clave=ApellidoMaterno
+Nombre=ApellidoMaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+ClaveBDE=ApellidoMaterno
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+ClaveBDE=Nombre
+TipoDatos=Texto
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Tipo
+TipoDatos=Texto
+
+[Percepciones]
+Clave=Percepciones
+Nombre=Percepciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Percepciones
+
+[Deducciones]
+Clave=Deducciones
+Nombre=Deducciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Deducciones
+
+[Neto]
+Clave=Neto
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Neto
+Formula=Redondea(Percepciones-Deducciones, 1)
+
+[D500]
+Clave=D500
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=500
+Formula=DesglosarImporte(Neto, 500)
+
+[D200]
+Clave=D200
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=200
+Formula=DesglosarImporte(Neto, 500, 200)
+
+[D100]
+Clave=D100
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=100
+Formula=DesglosarImporte(Neto, 500, 200, 100)
+
+[D50]
+Clave=D50
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=50
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50)
+
+[D20]
+Clave=D20
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=20
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20)
+
+[D10]
+Clave=D10
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=10
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10)
+
+[D5]
+Clave=D5
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=5
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5)
+
+[D2]
+Clave=D2
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=2
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5, 2)
+
+[D1]
+Clave=D1
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=1
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5, 2, 1)
+
+[D050]
+Clave=D050
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=0.50
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5)
+
+[D020]
+Clave=D020
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=0.20
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2)
+
+[D010]
+Clave=D010
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=0.10
+Formula=DesglosarImporte(Neto, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1)
+
+[Vista.ListaCampos]
+(Inicio)=Departamento
+Departamento=Personal
+Personal=Percepciones
+Percepciones=Deducciones
+Deducciones=ApellidoPaterno
+ApellidoPaterno=ApellidoMaterno
+ApellidoMaterno=Nombre
+Nombre=Tipo
+Tipo=(Fin)
+
+[Vista.ListaRelaciones]
+(Inicio)=NominaD.Nomina
+NominaD.Nomina=NominaD.Personal
+NominaD.Personal=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=NombreCompleto
+NombreCompleto=Neto
+Neto=D500
+D500=D200
+D200=D100
+D100=D50
+D50=D20
+D20=D10
+D10=D5
+D5=D2
+D2=D1
+D1=D050
+D050=D020
+D020=D010
+D010=(Fin)

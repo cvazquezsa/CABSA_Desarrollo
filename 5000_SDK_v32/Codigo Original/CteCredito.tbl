@@ -1,0 +1,157 @@
+[Tabla]
+Icono=0
+Clave=CteCredito
+Archivo=CteCredito
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Limite de Crédito
+Singular=Limite de Crédito
+LlavePrimaria=Empresa<BR>Credito
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Credito,<BR>  ConCredito,<BR>  ConLimiteCredito,<BR>  LimiteCredito,<BR>  ConLimitePedidos,<BR>  LimitePedidos,<BR>  MonedaCredito,<BR>  ConDias,<BR>  Dias,<BR>  ConCondiciones,<BR>  Condiciones<BR><BR>FROM<BR>  CteCredito
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+ValorPorOmision=Empresa
+AyudaMemTabla=Empresa
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ConLimiteCredito]
+Clave=ConLimiteCredito
+Nombre=Límite Saldo
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=ConCredito
+
+[LimiteCredito]
+Clave=LimiteCredito
+Nombre=Importe Máximo en Saldo y Ventas Pendientes
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=ConLimiteCredito
+
+[MonedaCredito]
+Clave=MonedaCredito
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Config.ContMoneda
+AyudaMemTabla=Mon
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Credito]
+Clave=Credito
+Nombre=Nombre Política
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+TipoDatos=Texto
+
+[Condiciones]
+Clave=Condiciones
+Nombre=Lista de Condiciones
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=255
+Tamano=255
+AyudaMemTabla=Condicion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+CondicionDespliege=ConCredito y ConCondiciones
+TipoDatos=Texto
+
+[ConCredito]
+Clave=ConCredito
+Nombre=Crédito
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=
+RefrescarTodoCondiciones=S
+
+[ConDias]
+Clave=ConDias
+Nombre=Días Máximos
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Dias
+CondicionDespliege=ConCredito
+
+[Dias]
+Clave=Dias
+Nombre=Número de Días
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=ConCredito y ConDias
+
+[ConCondiciones]
+Clave=ConCondiciones
+Nombre=Condiciones Especificas
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Condiciones
+CondicionDespliege=ConCredito
+
+[LimitePedidos]
+Clave=LimitePedidos
+Nombre=Importe Máximo en Pedidos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ConLimitePedidos y ConLimiteCredito
+
+[ConLimitePedidos]
+Clave=ConLimitePedidos
+Nombre=Límite Pedidos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ConCredito
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=LimitePedidos
+CondicionEdicion=ConLimiteCredito
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Credito
+Credito=ConCredito
+ConCredito=ConLimiteCredito
+ConLimiteCredito=LimiteCredito
+LimiteCredito=ConLimitePedidos
+ConLimitePedidos=LimitePedidos
+LimitePedidos=MonedaCredito
+MonedaCredito=ConDias
+ConDias=Dias
+Dias=ConCondiciones
+ConCondiciones=Condiciones
+Condiciones=(Fin)
+
+[ConLimiteCredito.ListaRefrescarCondiciones]
+(Inicio)=LimiteCredito
+LimiteCredito=MonedaCredito
+MonedaCredito=ConLimitePedidos
+ConLimitePedidos=LimitePedidos
+LimitePedidos=(Fin)

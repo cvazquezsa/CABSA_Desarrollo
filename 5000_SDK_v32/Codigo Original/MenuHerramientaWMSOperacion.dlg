@@ -1,0 +1,67 @@
+
+[Dialogo]
+Clave=MenuHerramientaWMSOperacion
+Nombre=WMS Operaciòn
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+[Acciones.ProcesarSurtidoTransito]
+Nombre=ProcesarSurtidoTransito
+Boton=0
+NombreDesplegar=&Cierre de Tarima
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarSurtidoTransito
+Activo=S
+Visible=S
+
+[Acciones.WMSMontacargasTarea]
+Nombre=WMSMontacargasTarea
+Boton=0
+NombreDesplegar=&Tareas Acomodador
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=WMSMontacargaTarea
+Activo=S
+Visible=S
+
+
+[Acciones.WMSLoteMovimiento]
+Nombre=WMSLoteMovimiento
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Procesar en Lote (a nivel detalle)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=WMSLoteMovimiento
+Activo=S
+Visible=S
+
+
+[Acciones.ReorganizarSurtido]
+Nombre=ReorganizarSurtido
+Boton=0
+NombreDesplegar=&Reorganizar Surtidos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=HeReorganizaSurtido
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ProcesarSurtidoTransito
+ProcesarSurtidoTransito=WMSMontacargasTarea
+WMSMontacargasTarea=WMSLoteMovimiento
+WMSLoteMovimiento=ReorganizarSurtido
+ReorganizarSurtido=(Fin)

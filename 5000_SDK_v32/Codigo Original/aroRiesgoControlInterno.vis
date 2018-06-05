@@ -1,0 +1,72 @@
+[Vista]
+Icono=0
+Clave=aroRiesgoControlInterno
+Nombre=Controles Internos
+Modulos=(Todos)
+Singular=Control Interno
+ListaTablas=aroRiesgoControlInterno
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=aroRiesgoControlInterno
+SQL=SELECT<BR>  aroRiesgoControlInterno.Riesgo,<BR>  aroRiesgoControlInterno.ControlInterno,<BR>  aroRiesgoControlInterno.Tipo<BR><BR>FROM<BR>  aroRiesgoControlInterno
+
+[aroRiesgoControlInterno.Riesgo]
+Clave=aroRiesgoControlInterno.Riesgo
+Nombre=Riesgo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+LigaTabla=aroRiesgoControlInterno
+LigaCampo=Riesgo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Riesgo
+
+[aroRiesgoControlInterno.ControlInterno]
+Clave=aroRiesgoControlInterno.ControlInterno
+Nombre=Control Interno Aplicado
+Visible=S
+TamanoValidacion=255
+Tamano=255
+LigaTabla=aroRiesgoControlInterno
+LigaCampo=ControlInterno
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ControlInterno
+
+[aroRiesgoControlInterno.Tipo]
+Clave=aroRiesgoControlInterno.Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+LigaTabla=aroRiesgoControlInterno
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Tipo
+
+[Vista.ListaCampos]
+(Inicio)=aroRiesgoControlInterno.Riesgo
+aroRiesgoControlInterno.Riesgo=aroRiesgoControlInterno.ControlInterno
+aroRiesgoControlInterno.ControlInterno=aroRiesgoControlInterno.Tipo
+aroRiesgoControlInterno.Tipo=(Fin)
+
+[aroRiesgoControlInterno.Tipo.ListaOpciones]
+(Inicio)=Automatizado 
+Automatizado =Semi Automatizado
+Semi Automatizado=Manual
+Manual=(Fin)

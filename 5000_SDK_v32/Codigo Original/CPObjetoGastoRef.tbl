@@ -1,0 +1,39 @@
+
+[Tabla]
+Icono=0
+Clave=CPObjetoGastoRef
+Archivo=CPObjetoGasto
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+Nombre=Objetos Gasto
+Singular=Objeto Gasto
+LlavePrimaria=ObjetoGasto
+SQL=SELECT<BR>  ObjetoGasto,<BR>  Nombre<BR><BR>FROM<BR>  CPObjetoGasto
+[ObjetoGasto]
+Clave=ObjetoGasto
+Nombre=ObjetoGasto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ObjetoGasto
+ObjetoGasto=Nombre
+Nombre=(Fin)

@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=MenuExpST
+Nombre=Atención Clientes
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=281
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=371
+PosicionInicialArriba=310
+
+[Acciones.ExplorarSoporte]
+Nombre=ExplorarSoporte
+Boton=0
+NombreDesplegar=&General
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuExpSoporteST
+Activo=S
+Visible=S
+
+[Acciones.ExplorarSoporteClase]
+Nombre=ExplorarSoporteClase
+Boton=0
+NombreDesplegar=por &Clasificación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuExpSoporteClaseST
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ExplorarSoporte
+ExplorarSoporte=ExplorarSoporteClase
+ExplorarSoporteClase=(Fin)

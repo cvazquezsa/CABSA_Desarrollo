@@ -1,0 +1,53 @@
+[Dialogo]
+Clave=GenerarSolicitudDevolucion
+Nombre=Solicitud Devolución
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=501
+PosicionInicialArriba=441
+PosicionInicialAltura=117
+PosicionInicialAncho=278
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.DevVenta]
+Nombre=DevVenta
+Boton=0
+NombreDesplegar=Generar &Devolución Venta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=GenerarPedidoPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaDev)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.DevFaltante]
+Nombre=DevFaltante
+Boton=0
+NombreDesplegar=Generar Devolución &Faltante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaDevolucionFaltante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Dialogo.ListaAcciones]
+(Inicio)=DevVenta
+DevVenta=DevFaltante
+DevFaltante=(Fin)

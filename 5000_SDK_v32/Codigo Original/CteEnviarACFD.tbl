@@ -1,0 +1,216 @@
+[Tabla]
+Icono=0
+Clave=CteEnviarACFD
+Archivo=CteEnviarACFD
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Datos CFD
+Singular=Datos CFD
+LlavePrimaria=(Lista)
+
+SQL=(Lista)
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+
+TipoDatos=Texto
+
+[ReceptorID]
+Clave=ReceptorID
+Nombre=Clave Receptor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+
+[AlmacenarRuta.ListaOpciones]
+(Inicio)=\\Servidor\CFD\<Cliente>
+\\Servidor\CFD\<Cliente>=\\Servidor\CFD\<Ejercicio>
+\\Servidor\CFD\<Ejercicio>=\\Servidor\CFD\<Ejercicio>\<Periodo>
+\\Servidor\CFD\<Ejercicio>\<Periodo>=\\Servidor\CFD\<Ejercicio>\<Periodo>\<Cliente>
+\\Servidor\CFD\<Ejercicio>\<Periodo>\<Cliente>=(Fin)
+
+[Nombre.ListaOpciones]
+(Inicio)=<Movimiento> <Serie><Folio>
+<Movimiento> <Serie><Folio>=<Cliente> <Serie><Folio>
+<Cliente> <Serie><Folio>=<Serie><Folio>
+<Serie><Folio>=(Fin)
+
+
+[ValidarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+
+[EnviarDe.ListaOpciones]
+(Inicio)=(Usuario)
+(Usuario)=(Agente)
+(Agente)=(Fin)
+
+
+
+[CFDFlexEnviarTipo.ListaOpciones]
+(Inicio)=Adicional
+Adicional=Empresa
+Empresa=Ambos
+Ambos=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[EnviarMedio.ListaOpciones]
+(Inicio)=SQL Mail
+SQL Mail=SMTP
+SMTP=FTP
+FTP=(Fin)
+
+
+
+[EnviarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+
+
+
+[AlmacenarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+
+
+
+[TipoAddenda.ListaOpciones]
+(Inicio)=N/A
+N/A=AMECE
+AMECE=AMECE / LIVERPOOL
+AMECE / LIVERPOOL=AMECE / GIGANTE
+AMECE / GIGANTE=AMECE / CM
+AMECE / CM=EDIFACT
+EDIFACT=CHEDRAUI
+CHEDRAUI=INTERFACTURA / HEB
+INTERFACTURA / HEB=INTERFACTURA / ELEKTRA
+INTERFACTURA / ELEKTRA=HOME DEPOT
+HOME DEPOT=SORIANA
+SORIANA=CONSOLIDADO SORIANA
+CONSOLIDADO SORIANA=AMIS
+AMIS=FEMSA
+FEMSA=ASSENSA
+ASSENSA=COPPEL
+COPPEL=(Fin)
+
+
+
+
+
+[Cta]
+Clave=Cta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+
+
+[InfoPago]
+Clave=InfoPago
+Nombre=Info Pago
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=InfoFormaPago
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=5
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+TipoDatos=Texto
+Formula=SQLEnLista(<T>SELECT InfoPago FROM CteCFDInfoPago WHERE Cliente = :tCliente<T>, Info.Cliente)
+[InfoFormaPago]
+Clave=InfoFormaPago
+Nombre=Forma de Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=4
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+TipoDatos=Texto
+
+
+Formula=SQLEnLista(<T>SELECT FormaPago FROM CteCFDInfoPagoD WHERE Cliente = :tCliente AND InfoPago = :tInfoPago<T>, Info.Cliente, InfoPago)
+
+
+
+
+[EnviarA]
+Clave=EnviarA
+Nombre=EnviarA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=EnviarA
+EnviarA=ReceptorID
+ReceptorID=Cta
+Cta=InfoPago
+InfoPago=InfoFormaPago
+InfoFormaPago=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Cliente,
+Cliente,=EnviarA,
+EnviarA,=ReceptorID,
+ReceptorID,=Cta,
+Cta,=InfoPago,
+InfoPago,=InfoFormaPago
+InfoFormaPago=FROM CteEnviarACFD
+FROM CteEnviarACFD=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Cliente
+Cliente=EnviarA
+EnviarA=(Fin)

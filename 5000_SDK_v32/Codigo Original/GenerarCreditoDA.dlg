@@ -1,0 +1,33 @@
+[Dialogo]
+Clave=GenerarCreditoDA
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Fondeo
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=836
+PosicionInicialArriba=541
+PosicionInicialAltura=189
+PosicionInicialAncho=248
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Fondeo]
+Nombre=Fondeo
+Boton=0
+NombreDesplegar=Generar &Fondeo Anticipado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>CREDI<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CreditoFondeoAnticipado, Afectar.FormaCaptura)
+Activo=S
+Visible=S

@@ -1,0 +1,71 @@
+[Dialogo]
+Clave=MenuExpEmbarque
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=389
+PosicionInicialArriba=289
+PosicionInicialAltura=189
+PosicionInicialAncho=245
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Proveedor]
+Nombre=Proveedor
+Boton=0
+NombreDesplegar=Embarques (por &Proveedor)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarEmbarqueProveedor
+Activo=S
+Visible=S
+
+[Acciones.Cliente]
+Nombre=Cliente
+Boton=0
+NombreDesplegar=Embarques (por &Cliente)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarEmbarqueCliente
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Acciones.Vehiculo]
+Nombre=Vehiculo
+Boton=0
+NombreDesplegar=Embarques (por &Vehículo)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarEmbarqueVehiculo
+Activo=S
+Visible=S
+
+[Acciones.Pendientes]
+Nombre=Pendientes
+Boton=0
+NombreDesplegar=&Pendientes por Embarcar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EmbarqueMovPendientes
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pendientes
+Pendientes=Cliente
+Cliente=Proveedor
+Proveedor=Vehiculo
+Vehiculo=(Fin)

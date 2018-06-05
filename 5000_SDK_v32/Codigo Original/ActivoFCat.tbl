@@ -1,0 +1,479 @@
+[Tabla]
+Icono=0
+Clave=ActivoFCat
+Archivo=ActivoFCat
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Categorías
+Singular=Categoría
+LlavePrimaria=Categoria
+ListaRelaciones=(Lista)
+
+SQL=(Lista)
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[VidaUtil]
+Clave=VidaUtil
+Nombre=Vida Util (en meses)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(DepreciacionAnual, 100*12/VidaUtil)
+
+[CategoriaMaestra]
+Clave=CategoriaMaestra
+Nombre=CategoriaMaestra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Icono]
+Clave=Icono
+Nombre=Icono
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[MantenimientoPeriodicidad]
+Clave=MantenimientoPeriodicidad
+Nombre=Periodicidad Mantenimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[InicioDepreciacion]
+Clave=InicioDepreciacion
+Nombre=Inicio Depreciación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[MetodoDepreciacion]
+Clave=MetodoDepreciacion
+Nombre=Método
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Linea Recta<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[Formula]
+Clave=Formula
+Nombre=Fórmula
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+
+TipoDatos=Texto
+[CuentaFiscal]
+Clave=CuentaFiscal
+Nombre=Cuenta Fiscal
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDestino
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.CtaDestino]
+TipoRelacion=Opcional
+LlaveLocal=CuentaFiscal
+Clave=CtaDestino
+TablaRemota=CtaDestino
+LlaveRemota=Cuenta
+
+[Propietario]
+Clave=Propietario
+Nombre=Propietario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Empresa<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DepreciacionAnual]
+Clave=DepreciacionAnual
+Nombre=% Depreciación Anual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(VidaUtil, trunca(100*12/DepreciacionAnual))+Si(Fraccion(100*12/DepreciacionAnual)>0,1,0))
+
+[ValorDesecho]
+Clave=ValorDesecho
+Nombre=Valor Desecho
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[DepreciacionAnualAjustada]
+Clave=DepreciacionAnualAjustada
+Nombre=Depreciacion Anual Ajustada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DepreciacionAnualF]
+Clave=DepreciacionAnualF
+Nombre=% Depreciación Anual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(VidaUtilF, trunca(100*12/DepreciacionAnualF)+Si(Fraccion(100*12/DepreciacionAnualF)>0,1,0))
+
+[VidaUtilF]
+Clave=VidaUtilF
+Nombre=Vida Util (en meses)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(DepreciacionAnualF, 100*12/VidaUtilF)
+
+[InicioDepreciacionF]
+Clave=InicioDepreciacionF
+Nombre=Inicio Depreciación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[MetodoDepreciacionF]
+Clave=MetodoDepreciacionF
+Nombre=Método
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Linea Recta<T>
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[ValorDesechoF]
+Clave=ValorDesechoF
+Nombre=Valor Desecho
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+Monetario=S
+
+[DepreciacionAnualAjustadaF]
+Clave=DepreciacionAnualAjustadaF
+Nombre=Depreciacion Anual Ajustada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DepreciacionAnualF2]
+Clave=DepreciacionAnualF2
+Nombre=% Depreciación Anual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(VidaUtilF2, trunca(100*12/DepreciacionAnualF2)+Si(Fraccion(100*12/DepreciacionAnualF2)>0,1,0))
+
+[VidaUtilF2]
+Clave=VidaUtilF2
+Nombre=Vida Util (en meses)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+AlCambiar=Asigna(DepreciacionAnualF2, 100*12/VidaUtilF2)
+
+[InicioDepreciacionF2]
+Clave=InicioDepreciacionF2
+Nombre=Inicio Depreciación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[MetodoDepreciacionF2]
+Clave=MetodoDepreciacionF2
+Nombre=Método
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Linea Recta<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[ValorDesechoF2]
+Clave=ValorDesechoF2
+Nombre=Valor Desecho
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+Monetario=S
+
+[DepreciacionAnualAjustadaF2]
+Clave=DepreciacionAnualAjustadaF2
+Nombre=Depreciacion Anual Ajustada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PorcentajeDeducible]
+Clave=PorcentajeDeducible
+Nombre=% Deducible
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+
+
+[MantenimientoPeriodicidad.ListaOpciones]
+(Inicio)=Semanal
+Semanal=Quincenal
+Quincenal=Mensual
+Mensual=Bimestral
+Bimestral=Trimestral
+Trimestral=Semestral
+Semestral=Anual
+Anual=(Fin)
+
+[InicioDepreciacion.ListaOpciones]
+(Inicio)=Mes Adquisicion
+Mes Adquisicion=Siguiente Mes
+Siguiente Mes=Siguiente Año
+Siguiente Año=(Fin)
+
+[MetodoDepreciacion.ListaOpciones]
+(Inicio)=Linea Recta
+Linea Recta=Suma Digitos
+Suma Digitos=(Fin)
+
+[Propietario.ListaOpciones]
+(Inicio)=Empresa
+Empresa=Tercero
+Tercero=(Fin)
+
+[InicioDepreciacionF.ListaOpciones]
+(Inicio)=Mes Adquisicion
+Mes Adquisicion=Siguiente Mes
+Siguiente Mes=Siguiente Año
+Siguiente Año=(Fin)
+
+[MetodoDepreciacionF.ListaOpciones]
+(Inicio)=Linea Recta
+Linea Recta=Suma Digitos
+Suma Digitos=(Fin)
+
+[InicioDepreciacionF2.ListaOpciones]
+(Inicio)=Mes Adquisicion
+Mes Adquisicion=Siguiente Mes
+Siguiente Mes=Siguiente Año
+Siguiente Año=(Fin)
+
+[MetodoDepreciacionF2.ListaOpciones]
+(Inicio)=Linea Recta
+Linea Recta=Suma Digitos
+Suma Digitos=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[CuentaDepreciacion]
+Clave=CuentaDepreciacion
+Nombre=Cuenta Depreciación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+
+Mayusculas=S
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Categoria
+Categoria=CategoriaMaestra
+CategoriaMaestra=Icono
+Icono=Propietario
+Propietario=Cuenta
+Cuenta=CuentaFiscal
+CuentaFiscal=MantenimientoPeriodicidad
+MantenimientoPeriodicidad=Formula
+Formula=DepreciacionAnual
+DepreciacionAnual=MetodoDepreciacion
+MetodoDepreciacion=VidaUtil
+VidaUtil=InicioDepreciacion
+InicioDepreciacion=ValorDesecho
+ValorDesecho=DepreciacionAnualAjustada
+DepreciacionAnualAjustada=DepreciacionAnualF
+DepreciacionAnualF=VidaUtilF
+VidaUtilF=InicioDepreciacionF
+InicioDepreciacionF=MetodoDepreciacionF
+MetodoDepreciacionF=ValorDesechoF
+ValorDesechoF=DepreciacionAnualAjustadaF
+DepreciacionAnualAjustadaF=DepreciacionAnualF2
+DepreciacionAnualF2=VidaUtilF2
+VidaUtilF2=InicioDepreciacionF2
+InicioDepreciacionF2=MetodoDepreciacionF2
+MetodoDepreciacionF2=ValorDesechoF2
+ValorDesechoF2=DepreciacionAnualAjustadaF2
+DepreciacionAnualAjustadaF2=PorcentajeDeducible
+PorcentajeDeducible=CuentaDepreciacion
+CuentaDepreciacion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Categoria,
+Categoria,=DepreciacionAnual,
+DepreciacionAnual,=VidaUtil,
+VidaUtil,=CategoriaMaestra,
+CategoriaMaestra,=MantenimientoPeriodicidad,
+MantenimientoPeriodicidad,=Cuenta,
+Cuenta,=CuentaFiscal,
+CuentaFiscal,=Icono,
+Icono,=InicioDepreciacion,
+InicioDepreciacion,=MetodoDepreciacion,
+MetodoDepreciacion,=Formula,
+Formula,=Propietario,
+Propietario,=ValorDesecho,
+ValorDesecho,=DepreciacionAnualAjustada,
+DepreciacionAnualAjustada,=DepreciacionAnualF,
+DepreciacionAnualF,=VidaUtilF,
+VidaUtilF,=InicioDepreciacionF,
+InicioDepreciacionF,=MetodoDepreciacionF,
+MetodoDepreciacionF,=ValorDesechoF,
+ValorDesechoF,=DepreciacionAnualAjustadaF,
+DepreciacionAnualAjustadaF,=DepreciacionAnualF2,
+DepreciacionAnualF2,=VidaUtilF2,
+VidaUtilF2,=InicioDepreciacionF2,
+InicioDepreciacionF2,=MetodoDepreciacionF2,
+MetodoDepreciacionF2,=ValorDesechoF2,
+ValorDesechoF2,=DepreciacionAnualAjustadaF2,
+DepreciacionAnualAjustadaF2,=PorcentajeDeducible,
+PorcentajeDeducible,=CuentaDepreciacion
+CuentaDepreciacion=FROM ActivoFCat
+FROM ActivoFCat=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Cta
+Cta=CtaDestino
+CtaDestino=(Fin)

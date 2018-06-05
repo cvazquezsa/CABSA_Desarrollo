@@ -1,0 +1,35 @@
+
+[Tabla]
+Icono=0
+Clave=DIOTGastoAdicion
+Nombre=DIOTGastoAdicion
+Archivo=DIOTGastoAdicion
+Modulos=(Todos)
+Singular=DIOTGastoAdicion
+
+TipoTabla=General
+ListaCampos=Mov
+
+SQL=(Lista)
+LlavePrimaria=Mov
+ControlMov=S
+CampoMov=Mov
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GAS
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Mov
+Mov=FROM DIOTGastoAdicion
+FROM DIOTGastoAdicion=(Fin)

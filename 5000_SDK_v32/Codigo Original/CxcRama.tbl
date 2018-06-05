@@ -1,0 +1,62 @@
+[Tabla]
+Icono=0
+Clave=CxcRama
+Archivo=CxcRama
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Cuentas por Cobrar
+Singular=Cuenta por Cobrar
+ListaRelaciones=Cxc
+LlavePrimaria=ID
+CampoID=ID
+ControlID=S
+SQL=SELECT<BR>  ID,<BR>  Saldo,<BR>  InteresesOrdinarios,<BR>  InteresesMoratorios<BR><BR>FROM<BR>  CxcRama
+
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Saldo]
+Clave=Saldo
+Nombre=Saldo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Relaciones.Cxc]
+TipoRelacion=Forzosa
+LlaveLocal=ID
+Clave=Cxc
+TablaRemota=Cxc
+LlaveRemota=ID
+
+[InteresesOrdinarios]
+Clave=InteresesOrdinarios
+Nombre=Intereses Devengados
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[InteresesMoratorios]
+Clave=InteresesMoratorios
+Nombre=Intereses Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Saldo
+Saldo=InteresesOrdinarios
+InteresesOrdinarios=InteresesMoratorios
+InteresesMoratorios=(Fin)

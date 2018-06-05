@@ -1,0 +1,1470 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgPV
+Archivo=EmpresaCfgPV
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración Punto de Venta
+Singular=Configuración Punto de Venta
+LlavePrimaria=Empresa
+CampoEmpresa=Empresa
+CampoProyecto=Proyecto
+ListaRelaciones=(Lista)
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[LogoEmpresa]
+Clave=LogoEmpresa
+Nombre=Logo Empresa
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Archivo
+TipoDatos=Texto
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente 
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+Requerido=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+TipoDatos=Texto
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Requerido=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+TipoDatos=Texto
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Proy
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[MostrarImpuestos]
+Clave=MostrarImpuestos
+Nombre=Mostrar Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[MostrarAnuncios]
+Clave=MostrarAnuncios
+Nombre=Mostrar Anuncios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[MostrarFotoArticulo]
+Clave=MostrarFotoArticulo
+Nombre=Mostrar Foto Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NombreAnexoFotoArticulo]
+Clave=NombreAnexoFotoArticulo
+Nombre=Nombre del Anexo (Foto Artículo)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[VerCodigo]
+Clave=VerCodigo
+Nombre=Ver Código en Pantalla
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[TiraContinua]
+Clave=TiraContinua
+Nombre=Tira Continua
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EstirarFoto]
+Clave=EstirarFoto
+Nombre=Estirar Foto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EtiquetaCodigo]
+Clave=EtiquetaCodigo
+Nombre=Etiqueta Código
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaDescripcion]
+Clave=EtiquetaDescripcion
+Nombre=Etiqueta Descripción
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaPrecio]
+Clave=EtiquetaPrecio
+Nombre=Etiqueta Precio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaDescuento]
+Clave=EtiquetaDescuento
+Nombre=Etiqueta Descuento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaSubTotal]
+Clave=EtiquetaSubTotal
+Nombre=Etiqueta Sub Total
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaImpuestos]
+Clave=EtiquetaImpuestos
+Nombre=Etiqueta Impuestos
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaImporteTotal]
+Clave=EtiquetaImporteTotal
+Nombre=Etiqueta Importe Total
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaImporteCobrado]
+Clave=EtiquetaImporteCobrado
+Nombre=Etiqueta Importe Cobrado
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaCambio]
+Clave=EtiquetaCambio
+Nombre=Etiqueta Cambio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaImporte]
+Clave=EtiquetaImporte
+Nombre=Etiqueta Importe
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaFormaPago]
+Clave=EtiquetaFormaPago
+Nombre=Etiqueta Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaReferencia]
+Clave=EtiquetaReferencia
+Nombre=Etiqueta Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra1]
+Clave=EtiquetaExtra1
+Nombre=Etiqueta Extra 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra2]
+Clave=EtiquetaExtra2
+Nombre=Etiqueta Extra 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra3]
+Clave=EtiquetaExtra3
+Nombre=Etiqueta Extra 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra4]
+Clave=EtiquetaExtra4
+Nombre=Etiqueta Extra 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[CampoExtra1]
+Clave=CampoExtra1
+Nombre=Campo Extra 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Art<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra2]
+Clave=CampoExtra2
+Nombre=Campo Extra 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Art<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra3]
+Clave=CampoExtra3
+Nombre=Campo Extra 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Art<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra4]
+Clave=CampoExtra4
+Nombre=Campo Extra 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Art<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[AbrirCajon]
+Clave=AbrirCajon
+Nombre=Abrir Cajón
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=Falso
+
+[CajonPuerto]
+Clave=CajonPuerto
+Nombre=Puerto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=AbrirCajon
+TipoDatos=Texto
+
+[CajonCodigo]
+Clave=CajonCodigo
+Nombre=Código
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ImpresoraModo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AbrirCajon
+TipoDatos=Texto
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+
+[CantidadIndependiente]
+Clave=CantidadIndependiente
+Nombre=Cantidad Independiente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TorretaPuerto]
+Clave=TorretaPuerto
+Nombre=Puerto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TorretaVelocidad]
+Clave=TorretaVelocidad
+Nombre=Velocidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[TorretaCaracteres]
+Clave=TorretaCaracteres
+Nombre=Caracteres por Línea
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[TorretaLineas]
+Clave=TorretaLineas
+Nombre=Líneas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[MultiplesCajeros]
+Clave=MultiplesCajeros
+Nombre=Multiples Cajeros
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AutoBloqueoCaja]
+Clave=AutoBloqueoCaja
+Nombre=Auto Bloquear Caja
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NavegadorInicioAuto]
+Clave=NavegadorInicioAuto
+Nombre=Ir al Inicio al Seleccionar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[STMov1]
+Clave=STMov1
+Nombre=Movimiento 1
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=ST
+TipoDatos=Texto
+
+[STMov2]
+Clave=STMov2
+Nombre=Movimiento 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=ST
+TipoDatos=Texto
+
+[STMov3]
+Clave=STMov3
+Nombre=Movimiento 3
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=ST
+TipoDatos=Texto
+
+[STMov4]
+Clave=STMov4
+Nombre=Movimiento 4
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=ST
+TipoDatos=Texto
+
+[STMov5]
+Clave=STMov5
+Nombre=Movimiento 5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ST
+TipoDatos=Texto
+
+[NavegadorEstiloBoton]
+Clave=NavegadorEstiloBoton
+Nombre=Estilo Botón
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=100
+Tamano=100
+ValorPorOmision=<T>[Descripcion Inteligente]<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[MostrarDisponibleOpciones]
+Clave=MostrarDisponibleOpciones
+Nombre=Mostrar Disponible Opciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PuertoLocal]
+Clave=PuertoLocal
+Nombre=Puerto Local
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[TicketInicio]
+Clave=TicketInicio
+Nombre=Inicio
+Visible=S
+TamanoValidacion=50
+TipoDatos=Memo
+AyudaForma=EmpresaCfgPVCampo
+AyudaVista=EmpresaCfgPVCampo
+AyudaCampo=EmpresaCfgPVCampo.Campo
+AyudaMultiple=S
+
+[TicketDetalle]
+Clave=TicketDetalle
+Nombre=Detalle
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+AyudaMultiple=S
+
+[TicketFin]
+Clave=TicketFin
+Nombre=Fin
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+AyudaForma=EmpresaCfgPVCampo
+AyudaVista=EmpresaCfgPVCampo
+AyudaCampo=EmpresaCfgPVCampo.Campo
+AyudaMultiple=S
+
+[ImpresionSimultanea]
+Clave=ImpresionSimultanea
+Nombre=Impresión Simultánea
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[TicketFormaPago]
+Clave=TicketFormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[TicketCancelado]
+Clave=TicketCancelado
+Nombre=Movimiento Cancelado
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[DefaultUsuario]
+Clave=DefaultUsuario
+Nombre=Valores por Omisión del Usuario
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[BasculaPuerto]
+Clave=BasculaPuerto
+Nombre=Puerto
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[BasculaVelocidad]
+Clave=BasculaVelocidad
+Nombre=Velocidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[BasculaSolicitudPeso]
+Clave=BasculaSolicitudPeso
+Nombre=Solicitud Peso
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[BasculaParidad]
+Clave=BasculaParidad
+Nombre=Paridad
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[BasculaDataBits]
+Clave=BasculaDataBits
+Nombre=Bits Datos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[BasculaStopBits]
+Clave=BasculaStopBits
+Nombre=Bits Parada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[BasculaPausa]
+Clave=BasculaPausa
+Nombre=Pausa (ms)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EscanerPuerto]
+Clave=EscanerPuerto
+Nombre=Puerto
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[EscanerVelocidad]
+Clave=EscanerVelocidad
+Nombre=Velocidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EscanerParidad]
+Clave=EscanerParidad
+Nombre=Paridad
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EscanerDataBits]
+Clave=EscanerDataBits
+Nombre=Bits Datos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EscanerStopBits]
+Clave=EscanerStopBits
+Nombre=Bits Parada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EscanerPausa]
+Clave=EscanerPausa
+Nombre=Pausa (ms)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Torreta]
+Clave=Torreta
+Nombre=Torreta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Escaner]
+Clave=Escaner
+Nombre=Escaner
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Bascula]
+Clave=Bascula
+Nombre=Báscula
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[TorretaParidad]
+Clave=TorretaParidad
+Nombre=Paridad
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TorretaDataBits]
+Clave=TorretaDataBits
+Nombre=Bits Datos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[TorretaStopBits]
+Clave=TorretaStopBits
+Nombre=Bits Parada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[DesglosarImpuestos]
+Clave=DesglosarImpuestos
+Nombre=Desglosar Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[Descuento]
+Clave=Descuento
+Nombre=Descuento
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Descuento
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ListaPreciosEsp]
+Clave=ListaPreciosEsp
+Nombre=Lista Precios
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[GastoClase]
+Clave=GastoClase
+Nombre=Clasificación (Gastos)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+ConRefrescar=S
+ListaRefrescar=GastoSubClase
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,<T>GAS<T>)
+TipoDatos=Texto
+
+[GastoSubClase]
+Clave=GastoSubClase
+Nombre=Subclasificación (Gastos)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=<T><T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,<T>GAS<T>, EmpresaCfgPV:EmpresaCfgPV.GastoClase)
+TipoDatos=Texto
+
+[ImprimirAlFinal]
+Clave=ImprimirAlFinal
+Nombre=Imprimir al Final del Movimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ExpresionAlAfectar]
+Clave=ExpresionAlAfectar
+Nombre=Expresión al Afectar
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[AcumularMismoArticulo]
+Clave=AcumularMismoArticulo
+Nombre=Acumular Mismo Artículo (PV)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=AcumularMismoArtIgnorarOpcion
+
+[CodigoCompuesto]
+Clave=CodigoCompuesto
+Nombre=Códigos Compuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CCMascara]
+Clave=CCMascara
+Nombre=Máscara (A = Articulo, C = Cantidad, P = Precio, I = Importe, 0..9 Numero Fijo, # = Numero Variable)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=CodigoCompuesto
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CodigoUnicamenteArticulos]
+Clave=CodigoUnicamenteArticulos
+Nombre=Buscar Únicamente Artículos (Código)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NotasEstatusBorrador]
+Clave=NotasEstatusBorrador
+Nombre=Notas/Facturas Estatus Borrador
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[MostrarPreciosConImpuesto]
+Clave=MostrarPreciosConImpuesto
+Nombre=Mostrar Precios con Impuesto Incluido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=no Config.VentaPreciosImpuestoIncluido
+
+[ModoDesconectado]
+Clave=ModoDesconectado
+Nombre=Modo Desconectado a Nivel Servidor Sucursal (Requiere TRCL)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ModoDesconectadoEstacion
+CondicionEdicion=no ModoDesconectadoEstacion
+
+[AcumularMismoArtIgnorarOpcion]
+Clave=AcumularMismoArtIgnorarOpcion
+Nombre=Ignorar Opción
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=AcumularMismoArticulo
+ValorPorOmision=Falso
+
+[AgenteRequerido]
+Clave=AgenteRequerido
+Nombre=Agente Requerido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CCDecimales]
+Clave=CCDecimales
+Nombre=Decimales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=CodigoCompuesto
+
+[TicketAbrirCajon]
+Clave=TicketAbrirCajon
+Nombre=Abrir Cajón
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[BloquearCantidadInventario]
+Clave=BloquearCantidadInventario
+Nombre=Bloquear Cantidad Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[MezclarDevolucionesConVentas]
+Clave=MezclarDevolucionesConVentas
+Nombre=Mezclar Devoluciones con Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AceptarDevolucionesSinOrigen]
+Clave=AceptarDevolucionesSinOrigen
+Nombre=Aceptar Devoluciones sin Origen (Ventas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[MovServicios]
+Clave=MovServicios
+Nombre=Movimiento (Cobro de Servicios)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=MovTipoNombresEnLista(<T>VTAS<T>, <T>VTAS.N<T>)
+TipoDatos=Texto
+
+[TicketPiePagina]
+Clave=TicketPiePagina
+Nombre=Pie Página
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[PrecioIndependiente]
+Clave=PrecioIndependiente
+Nombre=Precio Independiente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ConsultarArtDisponible]
+Clave=ConsultarArtDisponible
+Nombre=Consultar Únicamente Artículos Disponibles
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PreFoliarNotas]
+Clave=PreFoliarNotas
+Nombre=Prefoliar Notas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AcumularMismoArticuloIntelisis]
+Clave=AcumularMismoArticuloIntelisis
+Nombre=Acumular Mismo Artículo (Intelisis)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RegistroCaptura]
+Clave=RegistroCaptura
+Nombre=Generar Registro Captura
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ValidarCaducidadLotes]
+Clave=ValidarCaducidadLotes
+Nombre=Validar Caducidad en Lotes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ModoDesconectadoEstacion]
+Clave=ModoDesconectadoEstacion
+Nombre=Modo Desconectado a Nivel Estación Trabajo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no ModoDesconectado
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ModoDesconectado
+
+[SolicitarAutorizacionBuscarArt]
+Clave=SolicitarAutorizacionBuscarArt
+Nombre=SolicitarAutorizacionBuscarArt
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[AcumularMismoArticuloPoliticas]
+Clave=AcumularMismoArticuloPoliticas
+Nombre=Políticas Precios Artículos Concentrados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CapturarCantidadEnter]
+Clave=CapturarCantidadEnter
+Nombre=Capturar Cantidad con Enter
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+
+
+[AbrirCajon.ListaRefrescarCondiciones]
+(Inicio)=CajonPuerto
+CajonPuerto=CajonCodigo
+CajonCodigo=(Fin)
+
+[TorretaPuerto.ListaOpciones]
+(Inicio)=COM1
+COM1=COM2
+COM2=COM3
+COM3=COM4
+COM4=(Fin)
+
+[NavegadorEstiloBoton.ListaOpciones]
+(Inicio)=<Descripcion Inteligente>
+<Descripcion Inteligente>=<Descripcion1>
+<Descripcion1>=<Descripcion1> - <Articulo>
+<Descripcion1> - <Articulo>=<Descripcion1> - <PrecioLista>
+<Descripcion1> - <PrecioLista>=<NombreCorto>
+<NombreCorto>=<NombreCorto> -<Articulo>
+<NombreCorto> -<Articulo>=<NombreCorto> - <PrecioLista>
+<NombreCorto> - <PrecioLista>=<Articulo>
+<Articulo>=<Articulo> - <Descripcion1>
+<Articulo> - <Descripcion1>=<Articulo> - <NombreCorto>
+<Articulo> - <NombreCorto>=<Articulo> - <PrecioLista>
+<Articulo> - <PrecioLista>=(Fin)
+
+[PuertoLocal.ListaOpciones]
+(Inicio)=LPT1
+LPT1=LPT2
+LPT2=LPT3
+LPT3=<otro>
+<otro>=(Fin)
+
+[BasculaPuerto.ListaOpciones]
+(Inicio)=COM1
+COM1=COM2
+COM2=COM3
+COM3=COM4
+COM4=(Fin)
+
+[BasculaParidad.ListaOpciones]
+(Inicio)=None
+None=Even
+Even=Odd
+Odd=(Fin)
+
+[EscanerPuerto.ListaOpciones]
+(Inicio)=COM1
+COM1=COM2
+COM2=COM3
+COM3=COM4
+COM4=(Fin)
+
+[EscanerParidad.ListaOpciones]
+(Inicio)=None
+None=Even
+Even=Odd
+Odd=(Fin)
+
+[TorretaParidad.ListaOpciones]
+(Inicio)=None
+None=Even
+Even=Odd
+Odd=(Fin)
+
+[CodigoCompuesto.ListaRefrescarCondiciones]
+(Inicio)=CCMascara
+CCMascara=CCDecimales
+CCDecimales=(Fin)
+
+[CCMascara.ListaOpciones]
+(Inicio)=02AAAA#IIIII#
+02AAAA#IIIII#=02AAAA#PPPPP#
+02AAAA#PPPPP#=02AAAA#CCCCC#
+02AAAA#CCCCC#=(Fin)
+
+
+
+[AnexoFotoNivelOpcion]
+Clave=AnexoFotoNivelOpcion
+Nombre=Imagen Nivel Opción
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=LogoEmpresa
+LogoEmpresa=Mov
+Mov=MovServicios
+MovServicios=Cliente
+Cliente=Almacen
+Almacen=Agente
+Agente=Moneda
+Moneda=Proyecto
+Proyecto=Concepto
+Concepto=Descuento
+Descuento=ListaPreciosEsp
+ListaPreciosEsp=MostrarPreciosConImpuesto
+MostrarPreciosConImpuesto=MostrarImpuestos
+MostrarImpuestos=DesglosarImpuestos
+DesglosarImpuestos=MostrarAnuncios
+MostrarAnuncios=MostrarFotoArticulo
+MostrarFotoArticulo=NombreAnexoFotoArticulo
+NombreAnexoFotoArticulo=VerCodigo
+VerCodigo=CantidadIndependiente
+CantidadIndependiente=TiraContinua
+TiraContinua=EstirarFoto
+EstirarFoto=EtiquetaCodigo
+EtiquetaCodigo=EtiquetaDescripcion
+EtiquetaDescripcion=EtiquetaPrecio
+EtiquetaPrecio=EtiquetaDescuento
+EtiquetaDescuento=EtiquetaSubTotal
+EtiquetaSubTotal=EtiquetaImpuestos
+EtiquetaImpuestos=EtiquetaImporteTotal
+EtiquetaImporteTotal=EtiquetaImporteCobrado
+EtiquetaImporteCobrado=EtiquetaCambio
+EtiquetaCambio=EtiquetaImporte
+EtiquetaImporte=EtiquetaFormaPago
+EtiquetaFormaPago=EtiquetaReferencia
+EtiquetaReferencia=EtiquetaExtra1
+EtiquetaExtra1=EtiquetaExtra2
+EtiquetaExtra2=EtiquetaExtra3
+EtiquetaExtra3=EtiquetaExtra4
+EtiquetaExtra4=CampoExtra1
+CampoExtra1=CampoExtra2
+CampoExtra2=CampoExtra3
+CampoExtra3=CampoExtra4
+CampoExtra4=AbrirCajon
+AbrirCajon=CajonPuerto
+CajonPuerto=CajonCodigo
+CajonCodigo=FormaPago
+FormaPago=TorretaPuerto
+TorretaPuerto=TorretaVelocidad
+TorretaVelocidad=TorretaParidad
+TorretaParidad=TorretaDataBits
+TorretaDataBits=TorretaStopBits
+TorretaStopBits=TorretaCaracteres
+TorretaCaracteres=TorretaLineas
+TorretaLineas=MultiplesCajeros
+MultiplesCajeros=AutoBloqueoCaja
+AutoBloqueoCaja=NavegadorInicioAuto
+NavegadorInicioAuto=NavegadorEstiloBoton
+NavegadorEstiloBoton=STMov1
+STMov1=STMov2
+STMov2=STMov3
+STMov3=STMov4
+STMov4=STMov5
+STMov5=MostrarDisponibleOpciones
+MostrarDisponibleOpciones=PuertoLocal
+PuertoLocal=ImpresionSimultanea
+ImpresionSimultanea=TicketInicio
+TicketInicio=TicketDetalle
+TicketDetalle=TicketFin
+TicketFin=TicketFormaPago
+TicketFormaPago=TicketPiePagina
+TicketPiePagina=TicketCancelado
+TicketCancelado=TicketAbrirCajon
+TicketAbrirCajon=DefaultUsuario
+DefaultUsuario=BasculaPuerto
+BasculaPuerto=BasculaVelocidad
+BasculaVelocidad=BasculaSolicitudPeso
+BasculaSolicitudPeso=BasculaParidad
+BasculaParidad=BasculaDataBits
+BasculaDataBits=BasculaStopBits
+BasculaStopBits=BasculaPausa
+BasculaPausa=EscanerPuerto
+EscanerPuerto=EscanerVelocidad
+EscanerVelocidad=EscanerParidad
+EscanerParidad=EscanerDataBits
+EscanerDataBits=EscanerStopBits
+EscanerStopBits=EscanerPausa
+EscanerPausa=Torreta
+Torreta=Escaner
+Escaner=Bascula
+Bascula=GastoClase
+GastoClase=GastoSubClase
+GastoSubClase=ImprimirAlFinal
+ImprimirAlFinal=ExpresionAlAfectar
+ExpresionAlAfectar=AcumularMismoArticuloIntelisis
+AcumularMismoArticuloIntelisis=AcumularMismoArticulo
+AcumularMismoArticulo=AcumularMismoArtIgnorarOpcion
+AcumularMismoArtIgnorarOpcion=CodigoCompuesto
+CodigoCompuesto=CCMascara
+CCMascara=CCDecimales
+CCDecimales=CodigoUnicamenteArticulos
+CodigoUnicamenteArticulos=NotasEstatusBorrador
+NotasEstatusBorrador=ModoDesconectado
+ModoDesconectado=ModoDesconectadoEstacion
+ModoDesconectadoEstacion=AgenteRequerido
+AgenteRequerido=BloquearCantidadInventario
+BloquearCantidadInventario=MezclarDevolucionesConVentas
+MezclarDevolucionesConVentas=AceptarDevolucionesSinOrigen
+AceptarDevolucionesSinOrigen=PrecioIndependiente
+PrecioIndependiente=ConsultarArtDisponible
+ConsultarArtDisponible=PreFoliarNotas
+PreFoliarNotas=RegistroCaptura
+RegistroCaptura=ValidarCaducidadLotes
+ValidarCaducidadLotes=SolicitarAutorizacionBuscarArt
+SolicitarAutorizacionBuscarArt=AcumularMismoArticuloPoliticas
+AcumularMismoArticuloPoliticas=CapturarCantidadEnter
+CapturarCantidadEnter=AnexoFotoNivelOpcion
+AnexoFotoNivelOpcion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Empresa,
+  Empresa,=  LogoEmpresa,
+  LogoEmpresa,=  Mov,
+  Mov,=  MovServicios,
+  MovServicios,=  Cliente,
+  Cliente,=  Almacen,
+  Almacen,=  Agente,
+  Agente,=  Moneda,
+  Moneda,=  Proyecto,
+  Proyecto,=  Concepto,
+  Concepto,=  Descuento,
+  Descuento,=  ListaPreciosEsp,
+  ListaPreciosEsp,=  DefaultUsuario,
+  DefaultUsuario,=  MostrarImpuestos,
+  MostrarImpuestos,=  DesglosarImpuestos,
+  DesglosarImpuestos,=  MostrarAnuncios,
+  MostrarAnuncios,=  MostrarFotoArticulo,
+  MostrarFotoArticulo,=  NombreAnexoFotoArticulo,
+  NombreAnexoFotoArticulo,=  VerCodigo,
+  VerCodigo,=  CantidadIndependiente,
+  CantidadIndependiente,=  PrecioIndependiente,
+  PrecioIndependiente,=  ConsultarArtDisponible,
+  ConsultarArtDisponible,=  TiraContinua,
+  TiraContinua,=  EstirarFoto,
+  EstirarFoto,=  EtiquetaCodigo,
+  EtiquetaCodigo,=  EtiquetaDescripcion,
+  EtiquetaDescripcion,=  EtiquetaPrecio,
+  EtiquetaPrecio,=  EtiquetaDescuento,
+  EtiquetaDescuento,=  EtiquetaSubTotal,
+  EtiquetaSubTotal,=  EtiquetaImpuestos,
+  EtiquetaImpuestos,=  EtiquetaImporteTotal,
+  EtiquetaImporteTotal,=  EtiquetaImporteCobrado,
+  EtiquetaImporteCobrado,=  EtiquetaCambio,
+  EtiquetaCambio,=  EtiquetaImporte,
+  EtiquetaImporte,=  EtiquetaFormaPago,
+  EtiquetaFormaPago,=  EtiquetaReferencia,
+  EtiquetaReferencia,=  EtiquetaExtra1,
+  EtiquetaExtra1,=  EtiquetaExtra2,
+  EtiquetaExtra2,=  EtiquetaExtra3,
+  EtiquetaExtra3,=  EtiquetaExtra4,
+  EtiquetaExtra4,=  CampoExtra1,
+  CampoExtra1,=  CampoExtra2,
+  CampoExtra2,=  CampoExtra3,
+  CampoExtra3,=  CampoExtra4,
+  CampoExtra4,=  AbrirCajon,
+  AbrirCajon,=  CajonPuerto,
+  CajonPuerto,=  CajonCodigo,
+  CajonCodigo,=  FormaPago,
+  FormaPago,=  MultiplesCajeros,
+  MultiplesCajeros,=  AutoBloqueoCaja,
+  AutoBloqueoCaja,=  TorretaPuerto,
+  TorretaPuerto,=  TorretaVelocidad,
+  TorretaVelocidad,=  TorretaParidad,
+  TorretaParidad,=  TorretaDataBits,
+  TorretaDataBits,=  TorretaStopBits,
+  TorretaStopBits,=  TorretaCaracteres,
+  TorretaCaracteres,=  TorretaLineas,
+  TorretaLineas,=  NavegadorInicioAuto,
+  NavegadorInicioAuto,=  NavegadorEstiloBoton,
+  NavegadorEstiloBoton,=  STMov1,
+  STMov1,=  STMov2,
+  STMov2,=  STMov3,
+  STMov3,=  STMov4,
+  STMov4,=  STMov5,
+  STMov5,=  MostrarDisponibleOpciones,
+  MostrarDisponibleOpciones,=  ImpresionSimultanea,
+  ImpresionSimultanea,=  PuertoLocal,
+  PuertoLocal,=  TicketInicio,
+  TicketInicio,=  TicketDetalle,
+  TicketDetalle,=  TicketFin,
+  TicketFin,=  TicketFormaPago,
+  TicketFormaPago,=  TicketPiePagina,
+  TicketPiePagina,=  TicketCancelado,
+  TicketCancelado,=  TicketAbrirCajon,
+  TicketAbrirCajon,=  ImprimirAlFinal,
+  ImprimirAlFinal,=  BasculaPuerto,
+  BasculaPuerto,=  BasculaVelocidad,
+  BasculaVelocidad,=  BasculaSolicitudPeso,
+  BasculaSolicitudPeso,=  BasculaParidad,
+  BasculaParidad,=  BasculaDataBits,
+  BasculaDataBits,=  BasculaStopBits,
+  BasculaStopBits,=  BasculaPausa,
+  BasculaPausa,=  EscanerPuerto,
+  EscanerPuerto,=  EscanerVelocidad,
+  EscanerVelocidad,=  EscanerParidad,
+  EscanerParidad,=  EscanerDataBits,
+  EscanerDataBits,=  EscanerStopBits,
+  EscanerStopBits,=  EscanerPausa,
+  EscanerPausa,=  Torreta,
+  Torreta,=  Escaner,
+  Escaner,=  Bascula,
+  Bascula,=  GastoClase,
+  GastoClase,=  GastoSubClase,
+  GastoSubClase,=  ExpresionAlAfectar,
+  ExpresionAlAfectar,=  AcumularMismoArticulo,
+  AcumularMismoArticulo,=  AcumularMismoArticuloIntelisis,
+  AcumularMismoArticuloIntelisis,=  AcumularMismoArticuloPoliticas,
+  AcumularMismoArticuloPoliticas,=  CodigoCompuesto,
+  CodigoCompuesto,=  CCMascara,
+  CCMascara,=  CCDecimales,
+  CCDecimales,=  CodigoUnicamenteArticulos,
+  CodigoUnicamenteArticulos,=  NotasEstatusBorrador,
+  NotasEstatusBorrador,=  MostrarPreciosConImpuesto,
+  MostrarPreciosConImpuesto,=  ModoDesconectado,
+  ModoDesconectado,=  ModoDesconectadoEstacion,
+  ModoDesconectadoEstacion,=  AcumularMismoArtIgnorarOpcion,
+  AcumularMismoArtIgnorarOpcion,=  AgenteRequerido,
+  AgenteRequerido,=  BloquearCantidadInventario,
+  BloquearCantidadInventario,=  MezclarDevolucionesConVentas,
+  MezclarDevolucionesConVentas,=  AceptarDevolucionesSinOrigen,
+  AceptarDevolucionesSinOrigen,=  PreFoliarNotas,
+  PreFoliarNotas,=  RegistroCaptura,
+  RegistroCaptura,=  ValidarCaducidadLotes,
+  ValidarCaducidadLotes,=  SolicitarAutorizacionBuscarArt,
+  SolicitarAutorizacionBuscarArt,=  CapturarCantidadEnter,
+  CapturarCantidadEnter,=  AnexoFotoNivelOpcion
+  AnexoFotoNivelOpcion=FROM
+FROM=  EmpresaCfgPV
+  EmpresaCfgPV=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Cte
+Cte=Agente
+Agente=(Fin)

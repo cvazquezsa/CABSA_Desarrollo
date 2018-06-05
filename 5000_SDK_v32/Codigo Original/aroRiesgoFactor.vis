@@ -1,0 +1,116 @@
+[Vista]
+Icono=0
+Clave=aroRiesgoFactor
+Nombre=Factores Riesgo
+Modulos=(Todos)
+Singular=Factor Riesgo
+ListaTablas=(Lista)
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=aroRiesgoFactor
+ListaRelaciones=aroRiesgoFactor.aroFactor
+ListaCalculados=(Lista)
+SQL=SELECT<BR>  aroRiesgoFactor.Riesgo,<BR>  aroRiesgoFactor.FactorRiesgo,<BR>  aroFactor.Nombre,<BR>  aroFactor.Descripcion,<BR>  aroFactor.Orden<BR><BR>FROM<BR>  aroRiesgoFactor<BR>  JOIN aroFactor ON aroRiesgoFactor.FactorRiesgo=aroFactor.FactorRiesgo
+
+[aroFactor.Nombre]
+Clave=aroFactor.Nombre
+LigaTabla=aroFactor
+LigaCampo=Nombre
+Tamano=100
+ClaveBDE=Nombre
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nivel 3
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+
+[n2]
+Clave=n2
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nivel 2
+Formula=SQL(<T>SELECT Nombre FROM aroFactor WHERE FactorRiesgo=dbo.fnActRama(:tFactorRiesgo)<T>, aroRiesgoFactor.FactorRiesgo)
+
+[n1]
+Clave=n1
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nivel 1
+Formula=SQL(<T>SELECT Nombre FROM aroFactor WHERE FactorRiesgo=dbo.fnActRama(dbo.fnActRama(:tFactorRiesgo))<T>, aroRiesgoFactor.FactorRiesgo)
+
+[aroRiesgoFactor.Riesgo]
+Clave=aroRiesgoFactor.Riesgo
+LigaTabla=aroRiesgoFactor
+LigaCampo=Riesgo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Riesgo
+
+[aroRiesgoFactor.FactorRiesgo]
+Clave=aroRiesgoFactor.FactorRiesgo
+LigaTabla=aroRiesgoFactor
+LigaCampo=FactorRiesgo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=FactorRiesgo
+
+[aroFactor.Descripcion]
+Clave=aroFactor.Descripcion
+LigaTabla=aroFactor
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=255
+ClaveBDE=Descripcion
+
+[aroFactor.Orden]
+Clave=aroFactor.Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=EstructuraEnOrden(FactorRiesgo, 5)
+TipoDatos=Texto
+LigaTabla=aroFactor
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Orden
+
+[Relaciones.aroRiesgoFactor.aroFactor]
+Clave=aroRiesgoFactor.aroFactor
+TablaRemota=aroFactor
+LlaveLocal=aroRiesgoFactor.FactorRiesgo
+LlaveRemota=FactorRiesgo
+TipoRelacion=Forzosa
+
+[Vista.ListaTablas]
+(Inicio)=aroRiesgoFactor
+aroRiesgoFactor=aroFactor
+aroFactor=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=aroRiesgoFactor.Riesgo
+aroRiesgoFactor.Riesgo=aroRiesgoFactor.FactorRiesgo
+aroRiesgoFactor.FactorRiesgo=aroFactor.Nombre
+aroFactor.Nombre=aroFactor.Descripcion
+aroFactor.Descripcion=aroFactor.Orden
+aroFactor.Orden=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=n1
+n1=n2
+n2=(Fin)

@@ -1,0 +1,50 @@
+
+[Vista]
+Icono=0
+Clave=POSCteFacCred
+Nombre=POSCteFacCred
+Modulos=(Todos)
+Singular=POSCteFacCred
+ListaTablas=POSCteFacCred
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=POSCteFacCred.Cliente
+TablaPrincipal=POSCteFacCred
+SQL=(Lista)
+ListaCalculados=Nombre
+[POSCteFacCred.Cliente]
+Clave=POSCteFacCred.Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+AyudaEnCaptura=Vista
+AyudaRefrescar=S
+LigaTabla=POSCteFacCred
+LigaCampo=Cliente
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Cliente
+
+
+[Nombre]
+Clave=Nombre
+TipoDatos=Texto
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nombre
+Formula=SQL(<T>SELECT Nombre FROM Cte WHERE Cliente = :tCliente<T>, POSCteFacCred.Cliente)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSCteFacCred.Cliente
+POSCteFacCred.Cliente=FROM POSCteFacCred
+FROM POSCteFacCred=(Fin)

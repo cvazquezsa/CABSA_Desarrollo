@@ -1,0 +1,54 @@
+[Dialogo]
+Clave=GenerarCompraConsignacion
+Nombre=Compra Consignación
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=381
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=261
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+
+[Acciones.Factura]
+Nombre=Factura
+Boton=0
+NombreDesplegar=Generar &Entrada Compra
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=GenerarPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraEntrada)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.Devolucion]
+Nombre=Devolucion
+Boton=0
+NombreDesplegar=Generar &Devolución
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, ConfigMov.CompraDevConsignacion)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Dialogo.ListaAcciones]
+(Inicio)=Factura
+Factura=Devolucion
+Devolucion=(Fin)

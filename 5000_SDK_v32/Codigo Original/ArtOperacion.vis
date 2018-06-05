@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ArtOperacion
+Nombre=Operaciones
+Modulos=(Todos)
+Singular=Operación
+ListaTablas=ArtOperacion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ArtOperacion.Operacion
+TablaPrincipal=ArtOperacion
+UsarJOIN=S
+SQL=SELECT<BR>  ArtOperacion.Operacion<BR><BR>FROM<BR>  ArtOperacion
+
+[ArtOperacion.Operacion]
+Clave=ArtOperacion.Operacion
+LigaTabla=ArtOperacion
+LigaCampo=Operacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Operacion

@@ -1,0 +1,652 @@
+[Reporte]
+Clave=mis_AnalisisIscas
+Nombre=Análisis ISCAS
+Icono=0
+Vista=Personal
+Tipo=Reporte
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+ListaOrden=Personal.Personal<TAB>(Acendente)
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=742
+PosicionInicialAncho=1032
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=AnalisisIscas
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=&Excel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=AnalisisIscas
+Activo=S
+Visible=S
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Detalle<BR>Final<BR>Pie
+VentanaIzquierda=0
+VentanaArriba=0
+VentanaAltura=776
+VentanaAncho=1032
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=S
+
+[Linea2]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea3]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.39
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea4]
+Clave=Encabezado
+Objetos=6
+Seccion=Encabezado Página
+AltoEnCm=0.8
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[Linea5]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeArriba=S
+Visible=Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Gravable ISR<T>, Info.FechaD, Info.FechaA ) > 0
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9.5
+AnchoTexto=51
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ReporteNombre
+BordeAbajo=S
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=9.5
+AnchoTexto=51
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+BordeAbajo=S
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=19
+ExpresionMultiple=S
+AnchoTexto=102
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Del <T> +  FechaEnTexto( Info.FechaD, <T>dd/mmm/aaaa<T> )  + <T> al <T> +  FechaEnTexto( Info.FechaA, <T>dd/mmm/aaaa<T> )
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Empleado<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Gravable ISR<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[C4]
+Celda=C4
+Alineacion=Derecha
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Crédito al Salario<T><BR><T>en Tabla<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Gravable ISR<T><BR><T>por 4%<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[E4]
+Celda=E4
+Alineacion=Derecha
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Crédito al Salario<T><BR><T>Pagado<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[F4]
+Celda=F4
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ISR<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Personal.Personal
+BordeArriba=S
+
+[Linea6]
+Clave=Final
+Objetos=6
+Seccion=Final
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Gravable ISR<T>, <BR>Info.FechaD, Info.FechaA )
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA )
+ExpresionMultiple=S
+
+[D5]
+Celda=D5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Gravable ISR<T>, <BR>Info.FechaD, Info.FechaA ) * .04
+
+[E5]
+Celda=E5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas(Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ) < 0, ABS(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA)))
+
+[F5]
+Celda=F5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ) > 0, Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ))
+ExpresionMultiple=S
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total<T>
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Gravable ISR<T>, <BR>Info.FechaD, Info.FechaA ))
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ))
+ExpresionMultiple=S
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Gravable ISR<T>, <BR>Info.FechaD, Info.FechaA ) * .04)
+
+[E6]
+Celda=E6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Si(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas(Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ) < 0, ABS(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA))))
+
+[F6]
+Celda=F6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+ExpresionMultiple=S
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Si(Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA ) > 0, Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>ISR menos subsidio tabla<T>, Info.FechaD, Info.FechaA ) - Nomina.ImporteAcumuladoFechas( Personal.Personal, <T>Credito al Salario Tabla<T>, Info.FechaD, Info.FechaA )))
+
+[Linea7]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=9.39
+AnchoTexto=50
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+AnchoEnCm=9.5
+AnchoTexto=51
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

@@ -1,0 +1,229 @@
+[Dialogo]
+Clave=GenerarCxcCobro
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=822
+PosicionInicialArriba=453
+PosicionInicialAltura=189
+PosicionInicialAncho=275
+VentanaConIcono=S
+PosicionInicialAlturaCliente=258
+
+[Acciones.Cobro]
+Nombre=Cobro
+Boton=0
+NombreDesplegar=Generar &Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcCobro, Afectar.FormaCaptura)
+
+[Acciones.NCredito]
+Nombre=NCredito
+Boton=0
+NombreDesplegar=Generar &Nota Crédito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcNCredito, Afectar.FormaCaptura)
+
+[Acciones.Posfechado]
+Nombre=Posfechado
+Boton=0
+NombreDesplegar=Generar Cobro &Posfechado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcCobroPosfechado, Afectar.FormaCaptura)
+VisibleCondicion=Config.CxcPosfechados
+
+[Acciones.ContraRecibo]
+Nombre=ContraRecibo
+Boton=0
+NombreDesplegar=Generar Contra &Recibo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcContraRecibo, Afectar.FormaCaptura)
+VisibleCondicion=Info.MovTipo noen (CXC.D, CXC.DM)
+
+[Acciones.Documento]
+Nombre=Documento
+Boton=0
+NombreDesplegar=Generar &Documento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcDocumento, Afectar.FormaCaptura)
+ActivoCondicion=Info.MovTipo noen (CXC.D, CXC.DM)
+
+[Acciones.FacturaSeguro]
+Nombre=FacturaSeguro
+Boton=0
+NombreDesplegar=Generar Factura &Seguro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcFacturaSeguro, Afectar.FormaCaptura)
+ActivoCondicion=General.CteDatosAseguradora
+
+[Acciones.Otros1]
+Nombre=Otros1
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros2]
+Nombre=Otros2
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros3]
+Nombre=Otros3
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros4]
+Nombre=Otros4
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros5]
+Nombre=Otros5
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros6]
+Nombre=Otros6
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros7]
+Nombre=Otros7
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros8]
+Nombre=Otros8
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros9]
+Nombre=Otros9
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.FacturaFord]
+Nombre=FacturaFord
+Boton=0
+NombreDesplegar=Generar Factura &Ford (Garantías)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, General.FordMovCxcFactura, Afectar.FormaCaptura)
+VisibleCondicion=General.Ford
+
+[Acciones.Endoso]
+Nombre=Endoso
+Boton=0
+NombreDesplegar=Generar &Endoso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcEndoso, Afectar.FormaCaptura)
+
+[Acciones.IntentoCobro]
+Nombre=IntentoCobro
+Boton=0
+NombreDesplegar=Generar &Intento Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcIntentoCobro, Afectar.FormaCaptura)
+
+[Acciones.AplicacionNCargo]
+Nombre=AplicacionNCargo
+Boton=0
+NombreDesplegar=Ap&licación N/Cargp
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcAplicacionNCargo, Afectar.FormaCaptura)
+
+[Acciones.NCargo]
+Nombre=NCargo
+Boton=0
+NombreDesplegar=Generar Nota C&argo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcNCargo, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cobro
+Cobro=Posfechado
+Posfechado=IntentoCobro
+IntentoCobro=ContraRecibo
+ContraRecibo=Documento
+Documento=NCredito
+NCredito=NCargo
+NCargo=Endoso
+Endoso=FacturaSeguro
+FacturaSeguro=FacturaFord
+FacturaFord=AplicacionNCargo
+AplicacionNCargo=Otros1
+Otros1=Otros2
+Otros2=Otros3
+Otros3=Otros4
+Otros4=Otros5
+Otros5=Otros6
+Otros6=Otros7
+Otros7=Otros8
+Otros8=Otros9
+Otros9=(Fin)

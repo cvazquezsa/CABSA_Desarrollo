@@ -1,0 +1,36 @@
+
+[Dialogo]
+Clave=MenuHerramientaCFDI
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=GenerarCFDI
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+PosicionInicialIzquierda=269
+PosicionInicialArriba=263
+
+
+[Acciones.GenerarCFDI]
+Nombre=GenerarCFDI
+Boton=0
+NombreDesplegar=Generar CFDI
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CFDAnteriorMonitor
+Visible=S
+
+
+
+ActivoCondicion=Empresa.CFD
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarCFDI
+GenerarCFDI=ExplorarCFD
+ExplorarCFD=(Fin)

@@ -1,0 +1,66 @@
+[Dialogo]
+Clave=MenuRepEmbarque
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=587
+PosicionInicialArriba=347
+PosicionInicialAltura=107
+PosicionInicialAncho=245
+ListaAcciones=(Lista)
+
+PosicionInicialAlturaCliente=128
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=&General de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepEmbarqueAnalisisMov
+Activo=S
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Embarque/General<T>)
+
+[Acciones.BitacoraEmbarque]
+Nombre=BitacoraEmbarque
+Boton=0
+NombreDesplegar=Bitácora Embarques (Reporting Services)
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Expresion=<BR>Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  Browser(General.RSReportASPX + <T>%2fBitacoraEmbarques&rs:Command=Render<T>)<BR>Fin
+Activo=S
+VisibleCondicion=SQL(<T>SELECT ISNULL(RS,0) FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa)=Verdadero
+
+
+
+
+[Acciones.ReporteTraslado]
+Nombre=ReporteTraslado
+Boton=0
+NombreDesplegar=Reporte Traslado (Reporting Services)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+
+
+
+
+
+Expresion=Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  Browser(General.RSReportASPX + <T>%2fReporteTrasladoEmbarque&rs:Command=Render<T>)<BR>Fin
+VisibleCondicion=SQL(<T>SELECT ISNULL(RS,0) FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa)=Verdadero
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=General
+General=BitacoraEmbarque
+BitacoraEmbarque=ReporteTraslado
+ReporteTraslado=(Fin)

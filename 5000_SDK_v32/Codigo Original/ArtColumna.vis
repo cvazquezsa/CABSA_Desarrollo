@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ArtColumna
+Nombre=Columnas
+Modulos=INV
+Singular=Columna
+ListaTablas=ArtColumna
+TablaPrincipal=ArtColumna
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ArtColumna.Columna
+UsarJOIN=S
+SQL=SELECT<BR>  ArtColumna.Columna<BR><BR>FROM<BR>  ArtColumna
+
+[ArtColumna.Columna]
+Clave=ArtColumna.Columna
+LigaTabla=ArtColumna
+LigaCampo=Columna
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Columna

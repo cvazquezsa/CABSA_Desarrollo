@@ -1,0 +1,62 @@
+[Dialogo]
+Clave=AfectarPedidoPendiente
+Nombre=Info.TituloDialogo
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=360
+PosicionInicialArriba=301
+PosicionInicialAltura=166
+PosicionInicialAncho=303
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+
+[Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Cantidad &Indicada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+
+[Acciones.Reservado]
+Nombre=Reservado
+Boton=0
+NombreDesplegar=Cantidad &Reservada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Reservado<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Todo el &Pendiente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Indicado
+Indicado=Reservado
+Reservado=Pendiente
+Pendiente=(Fin)

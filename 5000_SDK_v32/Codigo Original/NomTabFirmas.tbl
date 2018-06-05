@@ -1,0 +1,73 @@
+
+[Tabla]
+Icono=0
+Clave=NomTabFirmas
+Nombre=NomTabFirmas
+Archivo=NomTabFirmas
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=(Lista)
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[ElaNombre]
+Clave=ElaNombre
+Nombre=Elaboro Nombre
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[ElaPuesto]
+Clave=ElaPuesto
+Nombre=Elaboro Puesto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[AutNombre]
+Clave=AutNombre
+Nombre=Autorizo Nombre
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[AutPuesto]
+Clave=AutPuesto
+Nombre=Autorizo Puesto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=ElaNombre
+ElaNombre=ElaPuesto
+ElaPuesto=AutNombre
+AutNombre=AutPuesto
+AutPuesto=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=ElaNombre,
+ElaNombre,=ElaPuesto,
+ElaPuesto,=AutNombre,
+AutNombre,=AutPuesto
+AutPuesto=FROM NomTabFirmas
+FROM NomTabFirmas=(Fin)

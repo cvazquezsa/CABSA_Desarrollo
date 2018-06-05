@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=CxcEliminarSaldosMenores
+Nombre=Eliminar Saldos Menores
+Icono=7
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=522
+PosicionInicialArriba=377
+PosicionInicialAltura=138
+PosicionInicialAncho=396
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=
+VentanaConIcono=S
+VentanaEscCerrar=
+VentanaSiempreAlFrente=
+PosicionInicialAlturaCliente=111
+Mensaje=<T>Esta función va a Eliminar los Saldos Menores de Clientes<T>+NuevaLinea+NuevaLinea+<BR><T>¿ Desea Continuar ?<T>
+
+[Acciones.Procesar]
+Nombre=Procesar
+Boton=0
+NombreDesplegar=&Procesar
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ProcesarSQL(<T>spEliminarSaldosMenores :nSucursal, :tEmpresa, :tUsuario, :tModulo<T>, Sucursal, Empresa, Usuario, <T>CXC<T>)
+
+[Acciones.Salir]
+Nombre=Salir
+Boton=0
+NombreDesplegar=&Salir
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Procesar
+Procesar=Salir
+Salir=(Fin)

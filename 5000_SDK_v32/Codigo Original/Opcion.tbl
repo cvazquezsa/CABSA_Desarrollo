@@ -1,0 +1,223 @@
+[Tabla]
+Icono=0
+Clave=Opcion
+Archivo=Opcion
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Opciones
+Singular=Opción
+LlavePrimaria=Opcion
+
+SQL=(Lista)
+[Opcion]
+Clave=Opcion
+Nombre=Letra
+Visible=S
+TamanoValidacion=1
+Tamano=1
+Mayusculas=S
+MascaraEdicion=L
+CondicionEdicion=no TieneMovimientos
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[TieneDetalle]
+Clave=TieneDetalle
+Nombre=Detalles
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[OrdenDetalle]
+Clave=OrdenDetalle
+Nombre=Orden Detalle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionEdicion=TieneDetalle
+CondicionDespliege=TieneDetalle y (TipoDetalle = <T>Numero<T>)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AyudaCaptura]
+Clave=AyudaCaptura
+Nombre=Ayuda Captura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Nombre<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=TieneDetalle y (TipoDetalle = <T>Numero<T>)
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TipoDetalle]
+Clave=TipoDetalle
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Numero<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=TieneDetalle
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Rango]
+Clave=Rango
+Nombre=Rango Horas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=TieneDetalle y (TipoDetalle=<T>Fecha/Hora<T>)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Vista]
+Clave=Vista
+Nombre=Vista
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+CondicionDespliege=TieneDetalle y (TipoDetalle en (<T>Fecha<T>, <T>Fecha/Hora<T>))
+Formula=Caso TipoDetalle<BR>  Es <T>Fecha<T> Entonces Lista(<T>Mes<T>, <T>1 Dia<T>, <T>7 Dias<T>)<BR>  Es <T>Fecha/Hora<T> Entonces Lista(<T>15 Minutos<T>, <T>20 Minutos<T>, <T>30 Minutos<T>, <T>60 Minutos<T>, <T>90 Minutos<T>)<BR>Fin
+
+TipoDatos=Texto
+[Periodos]
+Clave=Periodos
+Nombre=Periodos Visibles
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=TieneDetalle y (TipoDetalle en (<T>Fecha<T>, <T>Fecha/Hora<T>))
+
+[BloquearAnteriores]
+Clave=BloquearAnteriores
+Nombre=Bloquear Fechas Anteriores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=TieneDetalle y (TipoDetalle en (<T>Fecha<T>, <T>Fecha/Hora<T>))
+
+
+[OrdenDetalle.ListaOpciones]
+(Inicio)=No
+No=Alfabetico
+Alfabetico=Numerico
+Numerico=(Fin)
+
+[AyudaCaptura.ListaOpciones]
+(Inicio)=Nombre
+Nombre=Numero - Nombre
+Numero - Nombre=Nombre (Numero)
+Nombre (Numero)=Numero / Validar Nombre
+Numero / Validar Nombre=Buscar
+Buscar=xp
+xp=(Fin)
+
+[TipoDetalle.ListaOpciones]
+(Inicio)=Numero
+Numero=Fecha
+Fecha=Fecha/Hora
+Fecha/Hora=(Fin)
+
+[Rango.ListaOpciones]
+(Inicio)=08:00-20:00
+08:00-20:00=09:00-19:00
+09:00-19:00=06:00-14:00
+06:00-14:00=16:00-20:00
+16:00-20:00=(Fin)
+
+
+
+
+
+[DescripcionCorta]
+Clave=DescripcionCorta
+Nombre=Descripción Corta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Tabla.ListaCampos]
+(Inicio)=Opcion
+Opcion=Descripcion
+Descripcion=TieneDetalle
+TieneDetalle=TipoDetalle
+TipoDetalle=Vista
+Vista=Periodos
+Periodos=BloquearAnteriores
+BloquearAnteriores=Rango
+Rango=OrdenDetalle
+OrdenDetalle=AyudaCaptura
+AyudaCaptura=TieneMovimientos
+TieneMovimientos=DescripcionCorta
+DescripcionCorta=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Opcion,
+Opcion,=Descripcion,
+Descripcion,=TieneDetalle,
+TieneDetalle,=OrdenDetalle,
+OrdenDetalle,=AyudaCaptura,
+AyudaCaptura,=TieneMovimientos,
+TieneMovimientos,=TipoDetalle,
+TipoDetalle,=Rango,
+Rango,=Vista,
+Vista,=Periodos,
+Periodos,=BloquearAnteriores,
+BloquearAnteriores,=DescripcionCorta
+DescripcionCorta=FROM
+FROM=Opcion
+Opcion=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PersonalValuacion
+Nombre=Valuaciones Laborales
+Modulos=(Todos)
+Singular=Valuación Laboral
+ListaTablas=PersonalValuacion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PersonalValuacion.Valuacion
+TablaPrincipal=PersonalValuacion
+UsarJOIN=S
+SQL=SELECT<BR>  PersonalValuacion.Valuacion<BR><BR>FROM<BR>  PersonalValuacion
+
+[PersonalValuacion.Valuacion]
+Clave=PersonalValuacion.Valuacion
+LigaTabla=PersonalValuacion
+LigaCampo=Valuacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Valuacion

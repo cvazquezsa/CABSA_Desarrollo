@@ -1,0 +1,42 @@
+[Dialogo]
+Clave=MenuExpContParalela
+Nombre=Contabilidad
+Icono=18
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=556
+PosicionInicialArriba=300
+PosicionInicialAltura=165
+PosicionInicialAncho=253
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+VentanaEstadoInicial=Normal
+
+
+
+
+
+
+ListaAcciones=Polizas
+[Dialogo.ListaAcciones]
+(Inicio)=ExplorarCentroCostos2
+ExplorarCentroCostos2=ExplorarCentroCostos3
+ExplorarCentroCostos3=(Fin)
+
+[Acciones.Polizas]
+Nombre=Polizas
+Boton=0
+NombreDesplegar=Pólizas Contables
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContParalelaPoliza
+Activo=S
+Visible=S

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ProdRutaCat
+Nombre=Categorias
+Modulos=(Todos)
+Singular=Categoria
+ListaTablas=ProdRutaCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ProdRutaCat.Categoria
+TablaPrincipal=ProdRutaCat
+UsarJOIN=S
+SQL=SELECT<BR>  ProdRutaCat.Categoria<BR><BR>FROM<BR>  ProdRutaCat
+
+[ProdRutaCat.Categoria]
+Clave=ProdRutaCat.Categoria
+LigaTabla=ProdRutaCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

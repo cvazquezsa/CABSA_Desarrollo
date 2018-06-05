@@ -1,0 +1,94 @@
+
+[Vista]
+Icono=0
+Clave=CxcVentaNetaTotal
+Modulos=(Todos)
+TipoTabla=General
+
+VistaIndependiente=S
+ListaCampos=(Lista)
+
+SQL=(Lista)
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Importe
+
+FormatoValidacion=(Monetario)
+[Impuestos]
+Clave=Impuestos
+Nombre=Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Impuestos
+
+FormatoValidacion=(Monetario)
+[Total]
+Clave=Total
+Nombre=Total
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Total
+
+FormatoValidacion=(Monetario)
+[Registros]
+Clave=Registros
+Nombre=Total Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Registros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Importe
+Importe=Impuestos
+Impuestos=Total
+Total=Registros
+Registros=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT='Importe'   <IGUAL> SUM(CxcVentaNeta.Importe),
+'Importe'   <IGUAL> SUM(CxcVentaNeta.Importe),='Impuestos' <IGUAL> SUM(CxcVentaNeta.Impuestos),
+'Impuestos' <IGUAL> SUM(CxcVentaNeta.Impuestos),='Total'     <IGUAL> SUM(CxcVentaNeta.Importe+CxcVentaNeta.Impuestos),
+'Total'     <IGUAL> SUM(CxcVentaNeta.Importe+CxcVentaNeta.Impuestos),='Registros' <IGUAL> COUNT(CxcVentaNeta.Mov)
+'Registros' <IGUAL> COUNT(CxcVentaNeta.Mov)=FROM
+FROM=CxcVentaNeta
+CxcVentaNeta=JOIN Cte ON CxcVentaNeta.Cliente <IGUAL> Cte.Cliente AND CxcVentaNeta.Empresa<IGUAL>'{Empresa}' AND CxcVentaNeta.FechaEmision BETWEEN '{FechaFormatoServidor(Info.FechaD)}' AND '{FechaFormatoServidor(Info.FechaA)}'
+JOIN Cte ON CxcVentaNeta.Cliente <IGUAL> Cte.Cliente AND CxcVentaNeta.Empresa<IGUAL>'{Empresa}' AND CxcVentaNeta.FechaEmision BETWEEN '{FechaFormatoServidor(Info.FechaD)}' AND '{FechaFormatoServidor(Info.FechaA)}'={Info.Filtro}
+{Info.Filtro}=(Fin)

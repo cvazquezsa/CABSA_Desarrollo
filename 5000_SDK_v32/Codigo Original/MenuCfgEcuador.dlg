@@ -1,0 +1,74 @@
+
+[Dialogo]
+Clave=MenuCfgEcuador
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+[Acciones.TipoComprobante]
+Nombre=TipoComprobante
+Boton=0
+NombreDesplegar=&Tipo Comprobante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TipoComprobante
+Activo=S
+Visible=S
+
+[Acciones.SustentoComprobante]
+Nombre=SustentoComprobante
+Boton=0
+NombreDesplegar=&Sustento Comprobante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=formas
+ClaveAccion=SustentoComprobante
+Activo=S
+Visible=S
+
+
+
+
+
+
+[Acciones.TipoRegistro]
+Nombre=TipoRegistro
+Boton=0
+NombreDesplegar=Tipo &Identificacion
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TipoRegistro
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.TipoOperacionGasto]
+Nombre=TipoOperacionGasto
+Boton=0
+NombreDesplegar=Tipo &Operacion Gasto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EcuadorTipoOperacionGasto
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=TipoComprobante
+TipoComprobante=SustentoComprobante
+SustentoComprobante=TipoRegistro
+TipoRegistro=TipoOperacionGasto
+TipoOperacionGasto=(Fin)

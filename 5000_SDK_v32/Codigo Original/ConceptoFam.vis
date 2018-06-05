@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ConceptoFam
+Nombre=Familias
+Modulos=(Todos)
+Singular=Familia
+ListaTablas=ConceptoFam
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ConceptoFam.Familia
+TablaPrincipal=ConceptoFam
+UsarJOIN=S
+SQL=SELECT<BR>  ConceptoFam.Familia<BR><BR>FROM<BR>  ConceptoFam
+
+[ConceptoFam.Familia]
+Clave=ConceptoFam.Familia
+LigaTabla=ConceptoFam
+LigaCampo=Familia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Familia

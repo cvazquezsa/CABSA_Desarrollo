@@ -1,0 +1,25 @@
+[Vista]
+Icono=0
+Clave=FormaPagoGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=FormaPagoGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=FormaPagoGrupo.Grupo
+TablaPrincipal=FormaPagoGrupo
+CamposBusquedaRapida=FormaPagoGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  FormaPagoGrupo.Grupo<BR><BR>FROM<BR>  FormaPagoGrupo
+
+[FormaPagoGrupo.Grupo]
+Clave=FormaPagoGrupo.Grupo
+LigaTabla=FormaPagoGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

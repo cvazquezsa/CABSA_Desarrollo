@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=DocTipo
+Nombre=Tipos Documentación
+Modulos=(Todos)
+Singular=Tipo Documentación
+ListaTablas=DocTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=DocTipo.Tipo
+TablaPrincipal=DocTipo
+UsarJOIN=S
+SQL=SELECT<BR>  DocTipo.Tipo<BR><BR>FROM<BR>  DocTipo
+
+[DocTipo.Tipo]
+Clave=DocTipo.Tipo
+LigaTabla=DocTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

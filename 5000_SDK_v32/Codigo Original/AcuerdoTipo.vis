@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AcuerdoTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=AcuerdoTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AcuerdoTipo.Tipo
+TablaPrincipal=AcuerdoTipo
+UsarJOIN=S
+SQL=SELECT<BR>  AcuerdoTipo.Tipo<BR><BR>FROM<BR>  AcuerdoTipo
+
+[AcuerdoTipo.Tipo]
+Clave=AcuerdoTipo.Tipo
+LigaTabla=AcuerdoTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

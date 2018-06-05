@@ -1,0 +1,243 @@
+[Tabla]
+Icono=0
+Clave=ProyectoRecurso
+Archivo=ProyectoRecurso
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Recursos
+Singular=Recurso
+ListaRelaciones=Recurso
+LlavePrimaria=(Lista)
+CampoID=ID
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+ControlSucursalDestino=S
+CampoSucursalDestino=SucursalDestino
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[Recurso]
+Clave=Recurso
+Nombre=Recurso
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValidacionUsaTabla=S
+ValidacionTablas=Recurso
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=RecursoLista
+AyudaVista=Recurso
+AyudaCampo=Recurso.Recurso
+AyudaMultiple=S
+CondicionEdicion=no TieneMovimientos
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Relaciones.Recurso]
+TipoRelacion=Forzosa
+LlaveLocal=Recurso
+Clave=Recurso
+TablaRemota=Recurso
+LlaveRemota=Recurso
+
+[HorasDia]
+Clave=HorasDia
+Nombre=Horas Día 
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=General.HorasDia
+ValorRefrescar=ProyectoRecurso:Recurso.HorasDia
+
+[PrecioHora]
+Clave=PrecioHora
+Nombre=Precio Hora (Estándar)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+ValorRefrescar=ProyectoRecurso:Recurso.PrecioHora
+
+[CostoHora]
+Clave=CostoHora
+Nombre=Costo Hora (Estándar)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+ValorRefrescar=ProyectoRecurso:Recurso.CostoHora
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ProyectoRol
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorRefrescar=ProyectoRecurso:Recurso.Rol
+AlCambiar=Asigna(ProyectoRecurso:ProyectoRecurso.PrecioHora, SQL(<T>SELECT PrecioHora FROM ProyectoRol WHERE Rol = :tRol<T>, ProyectoRecurso:ProyectoRecurso.Rol))
+
+[Comienzo]
+Clave=Comienzo
+Nombre=Comienzo
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Fin]
+Clave=Fin
+Nombre=Fin
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SucursalDestino]
+Clave=SucursalDestino
+Nombre=SucursalDestino
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=TieneMovimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ComienzoProgramado]
+Clave=ComienzoProgramado
+Nombre=Comienzo Programado
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[FinProgramado]
+Clave=FinProgramado
+Nombre=Fin Programado
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+
+[Recurso.ListaRefrescar]
+(Inicio)=Rol
+Rol=HorasDia
+HorasDia=PrecioHora
+PrecioHora=CostoHora
+CostoHora=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BAJA
+BAJA=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Recurso
+Recurso=Rol
+Rol=HorasDia
+HorasDia=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=PrecioHora
+PrecioHora=CostoHora
+CostoHora=Comienzo
+Comienzo=ComienzoProgramado
+ComienzoProgramado=Fin
+Fin=FinProgramado
+FinProgramado=Estatus
+Estatus=SucursalDestino
+SucursalDestino=TieneMovimientos
+TieneMovimientos=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  Recurso,
+  Recurso,=  Estatus,
+  Estatus,=  TieneMovimientos,
+  TieneMovimientos,=  Comienzo,
+  Comienzo,=  Fin,
+  Fin,=  Rol,
+  Rol,=  HorasDia,
+  HorasDia,=  PrecioHora,
+  PrecioHora,=  CostoHora,
+  CostoHora,=  ComienzoProgramado,
+  ComienzoProgramado,=  FinProgramado,
+  FinProgramado,=  Sucursal,
+  Sucursal,=  SucursalOrigen,
+  SucursalOrigen,=  SucursalDestino
+  SucursalDestino=FROM
+FROM=  ProyectoRecurso
+  ProyectoRecurso=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ID
+ID=Recurso
+Recurso=(Fin)

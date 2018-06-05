@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=Comprador
+Nombre=Compradores
+Modulos=(Todos)
+Singular=Comprador
+ListaTablas=Comprador
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=Comprador.Comprador
+TablaPrincipal=Comprador
+UsarJOIN=S
+SQL=SELECT<BR>  Comprador.Comprador<BR><BR>FROM<BR>  Comprador
+
+[Comprador.Comprador]
+Clave=Comprador.Comprador
+LigaTabla=Comprador
+LigaCampo=Comprador
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Comprador

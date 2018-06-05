@@ -1,0 +1,57 @@
+
+[Vista]
+Icono=0
+Clave=MFAMon
+Nombre=MFAMon
+Modulos=(Todos)
+Singular=MFAMon
+ListaTablas=MFAMon
+TablaPrincipal=MFAMon
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[MFAMon.Moneda]
+Clave=MFAMon.Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+LigaTabla=MFAMon
+LigaCampo=Moneda
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Moneda
+
+[MFAMon.Codigo]
+Clave=MFAMon.Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+LigaTabla=MFAMon
+LigaCampo=Codigo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Codigo
+
+[Vista.ListaCampos]
+(Inicio)=MFAMon.Moneda
+MFAMon.Moneda=MFAMon.Codigo
+MFAMon.Codigo=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=MFAMon.Moneda,
+MFAMon.Moneda,=MFAMon.Codigo
+MFAMon.Codigo=FROM MFAMon
+FROM MFAMon=(Fin)

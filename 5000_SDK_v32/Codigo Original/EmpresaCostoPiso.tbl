@@ -1,0 +1,116 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCostoPiso
+Archivo=EmpresaCostoPiso
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Costo Piso
+Singular=Costo Piso
+LlavePrimaria=Empresa<BR>Fecha
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Fecha,<BR>  Plazo1Tasa,<BR>  Plazo2Tasa,<BR>  Plazo3Tasa,<BR>  Plazo1TasaDolar,<BR>  Plazo2TasaDolar,<BR>  Plazo3TasaDolar,<BR>  Plazo1TasaEuro,<BR>  Plazo2TasaEuro,<BR>  Plazo3TasaEuro<BR><BR>FROM<BR>  EmpresaCostoPiso
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+TipoDatos=Texto
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Plazo1Tasa]
+Clave=Plazo1Tasa
+Nombre=Tasa 1 (Pesos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo2Tasa]
+Clave=Plazo2Tasa
+Nombre=Tasa 2 (Pesos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo3Tasa]
+Clave=Plazo3Tasa
+Nombre=Tasa 3 (Pesos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo1TasaDolar]
+Clave=Plazo1TasaDolar
+Nombre=Tasa 1 (Dolares)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo2TasaDolar]
+Clave=Plazo2TasaDolar
+Nombre=Tasa 2 (Dolares)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo3TasaDolar]
+Clave=Plazo3TasaDolar
+Nombre=Tasa 3 (Dolares)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo1TasaEuro]
+Clave=Plazo1TasaEuro
+Nombre=Tasa 1 (Euros)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo2TasaEuro]
+Clave=Plazo2TasaEuro
+Nombre=Tasa 2 (Euros)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Plazo3TasaEuro]
+Clave=Plazo3TasaEuro
+Nombre=Tasa 3 (Euros)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Fecha
+Fecha=Plazo1Tasa
+Plazo1Tasa=Plazo2Tasa
+Plazo2Tasa=Plazo3Tasa
+Plazo3Tasa=Plazo1TasaDolar
+Plazo1TasaDolar=Plazo2TasaDolar
+Plazo2TasaDolar=Plazo3TasaDolar
+Plazo3TasaDolar=Plazo1TasaEuro
+Plazo1TasaEuro=Plazo2TasaEuro
+Plazo2TasaEuro=Plazo3TasaEuro
+Plazo3TasaEuro=(Fin)

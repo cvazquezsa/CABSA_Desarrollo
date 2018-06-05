@@ -1,0 +1,576 @@
+[Tabla]
+Icono=0
+Clave=Espacio
+Archivo=Espacio
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Espacio
+Singular=Espacios
+LlavePrimaria=Espacio
+ControlEstatus=S
+CampoEstatus=Estatus
+ControlTipo=S
+CampoTipo=Tipo
+EstatusDefault=ALTA
+ControlNivelAcceso=S
+CampoNivelAcceso=NivelAcceso
+CampoEmpresa=Empresa
+ControlSituacion=S
+CampoSituacion=Situacion
+ControlSituacionFecha=S
+CampoSituacionFecha=SituacionFecha
+CampoSituacionUsuario=SituacionUsuario
+ControlSituacionUsuario=S
+CampoSituacionNota=SituacionNota
+ControlSituacionNota=S
+
+SQL=SELECT<BR>  Espacio,<BR>  Nombre,<BR>  Servicio,<BR>  Rol,<BR>  Marca,<BR>  Tipo,<BR>  Modelo,<BR>  Placas,<BR>  Legal,<BR>  Motor,<BR>  Chasis,<BR>  TarjetaCirculacion,<BR>  TarjetaCasetas,<BR>  Estatus,<BR>  Alta,<BR>  Baja,<BR>  UltimoMantenimiento,<BR>  UltimoMantenimientoKms,<BR>  Observaciones,<BR>  TieneMovimientos,<BR>  NivelAcceso,<BR>  Empresa,<BR>  Situacion,<BR>  SituacionFecha,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  Descripcion1,<BR>  Descripcion2,<BR>  Descripcion3,<BR>  Descripcion4,<BR>  Descripcion5,<BR>  Descripcion6,<BR>  Descripcion7,<BR>  Descripcion8,<BR>  Descripcion9,<BR>  Descripcion10,<BR>  Mantenimiento,<BR>  KmsAnteriores,<BR>  KmsActuales,<BR>  Antiguedad,<BR>  NumeroEconomico,<BR>  Almacen,<BR>  AlmacenAlterno,<BR>  SaldoAFavor,<BR>  Metros,<BR>  OcupacionMaxima<BR><BR>FROM<BR>  Espacio
+[Espacio]
+Clave=Espacio
+Nombre=Espacio
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+
+TipoDatos=Texto
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[Servicio]
+Clave=Servicio
+Nombre=Servicio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AutoServicio
+AyudaMemRenglones=20
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AutoRol
+AyudaMemRenglones=20
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Marca]
+Clave=Marca
+Nombre=Marca
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Fabricante
+AyudaMemRenglones=20
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=EspacioTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Modelo]
+Clave=Modelo
+Nombre=Modelo
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Placas]
+Clave=Placas
+Nombre=Placas
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Legal]
+Clave=Legal
+Nombre=Número Autobús Legal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Motor]
+Clave=Motor
+Nombre=Número Motor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Chasis]
+Clave=Chasis
+Nombre=Número Chasis
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[TarjetaCirculacion]
+Clave=TarjetaCirculacion
+Nombre=Tarjeta Circulación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[TarjetaCasetas]
+Clave=TarjetaCasetas
+Nombre=Tarjeta Casetas
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Alta]
+Clave=Alta
+Nombre=Fecha Alta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[Baja]
+Clave=Baja
+Nombre=Fecha Baja
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[UltimoMantenimiento]
+Clave=UltimoMantenimiento
+Nombre=Ultimo Mantenimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=General.NivelAcceso
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=NivelAcceso
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Empresa
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Empresa
+TipoDatos=Texto
+
+[UltimoMantenimientoKms]
+Clave=UltimoMantenimientoKms
+Nombre=Km. Ultimo Mantenimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Descripcion1]
+Clave=Descripcion1
+Nombre=Descripción 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion1 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion2]
+Clave=Descripcion2
+Nombre=Descripción 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion2 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion3]
+Clave=Descripcion3
+Nombre=Descripción 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion3 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion4]
+Clave=Descripcion4
+Nombre=Descripción 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion4 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion5]
+Clave=Descripcion5
+Nombre=Descripción 5
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion5 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion6]
+Clave=Descripcion6
+Nombre=Descripción 6
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion6 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion7]
+Clave=Descripcion7
+Nombre=Descripción 7
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion7 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion8]
+Clave=Descripcion8
+Nombre=Descripción 8
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion8 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion9]
+Clave=Descripcion9
+Nombre=Descripción 9
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion9 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Descripcion10]
+Clave=Descripcion10
+Nombre=Descripción 10
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Descripcion10 FROM Espacio<T>)
+TipoDatos=Texto
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=&Fecha seguimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+AyudaEnCaptura=Calendario
+
+[Mantenimiento]
+Clave=Mantenimiento
+Nombre=Mantenimiento Preventivo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AutoMant
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[KmsAnteriores]
+Clave=KmsAnteriores
+Nombre=Kilómetros Anteriores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+FormatoValidacion=#,
+
+[KmsActuales]
+Clave=KmsActuales
+Nombre=Kilómetros Actuales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+FormatoValidacion=#,
+
+[Antiguedad]
+Clave=Antiguedad
+Nombre=Fecha Antigüedad
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[NumeroEconomico]
+Clave=NumeroEconomico
+Nombre=Número Económico
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén (Base)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[AlmacenAlterno]
+Clave=AlmacenAlterno
+Nombre=Almacén (Alterno)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[SaldoAFavor]
+Clave=SaldoAFavor
+Nombre=Saldo Perdida Régimen Salida
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[SituacionUsuario]
+Clave=SituacionUsuario
+Nombre=Usuario seguimiento
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[SituacionNota]
+Clave=SituacionNota
+Nombre=Nota
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Metros]
+Clave=Metros
+Nombre=Metros Cuadrados
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoEdicion=#,.##
+AyudaEnCaptura=Calculadora
+
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+
+[OcupacionMaxima]
+Clave=OcupacionMaxima
+Nombre=Ocupación Máxima
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Espacio
+Espacio=Nombre
+Nombre=Servicio
+Servicio=Rol
+Rol=Marca
+Marca=Tipo
+Tipo=Modelo
+Modelo=Placas
+Placas=Legal
+Legal=Motor
+Motor=Chasis
+Chasis=TarjetaCirculacion
+TarjetaCirculacion=TarjetaCasetas
+TarjetaCasetas=Estatus
+Estatus=Alta
+Alta=Baja
+Baja=UltimoMantenimiento
+UltimoMantenimiento=Observaciones
+Observaciones=TieneMovimientos
+TieneMovimientos=NivelAcceso
+NivelAcceso=Empresa
+Empresa=UltimoMantenimientoKms
+UltimoMantenimientoKms=Descripcion1
+Descripcion1=Descripcion2
+Descripcion2=Descripcion3
+Descripcion3=Descripcion4
+Descripcion4=Descripcion5
+Descripcion5=Descripcion6
+Descripcion6=Descripcion7
+Descripcion7=Descripcion8
+Descripcion8=Descripcion9
+Descripcion9=Descripcion10
+Descripcion10=Situacion
+Situacion=SituacionFecha
+SituacionFecha=SituacionUsuario
+SituacionUsuario=SituacionNota
+SituacionNota=Mantenimiento
+Mantenimiento=KmsAnteriores
+KmsAnteriores=KmsActuales
+KmsActuales=Antiguedad
+Antiguedad=NumeroEconomico
+NumeroEconomico=Almacen
+Almacen=AlmacenAlterno
+AlmacenAlterno=SaldoAFavor
+SaldoAFavor=Metros
+Metros=OcupacionMaxima
+OcupacionMaxima=(Fin)

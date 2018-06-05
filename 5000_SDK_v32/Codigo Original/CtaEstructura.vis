@@ -1,0 +1,36 @@
+[Vista]
+Icono=0
+Clave=CtaEstructura
+Nombre=Cuentas de Estructura
+Modulos=(Todos)
+Singular=Cuenta de Estructura
+ListaTablas=CtaEstructura
+ListaCampos=(Lista)
+TablaPrincipal=CtaEstructura
+UsarJOIN=S
+SQL=SELECT<BR>  CtaEstructura.Cuenta,<BR>  CtaEstructura.Descripcion<BR><BR>FROM<BR>  CtaEstructura
+
+[CtaEstructura.Cuenta]
+Clave=CtaEstructura.Cuenta
+LigaTabla=CtaEstructura
+LigaCampo=Cuenta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Cuenta
+
+[CtaEstructura.Descripcion]
+Clave=CtaEstructura.Descripcion
+LigaTabla=CtaEstructura
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion
+
+[Vista.ListaCampos]
+(Inicio)=CtaEstructura.Cuenta
+CtaEstructura.Cuenta=CtaEstructura.Descripcion
+CtaEstructura.Descripcion=(Fin)

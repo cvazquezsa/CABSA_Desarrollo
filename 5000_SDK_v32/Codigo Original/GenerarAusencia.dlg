@@ -1,0 +1,32 @@
+[Dialogo]
+Clave=GenerarAusencia
+Nombre=<T>Ausencias<T>
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+ListaAcciones=GenerarAsistencia
+PosicionInicialAltura=117
+PosicionInicialAncho=254
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=385
+PosicionInicialArriba=325
+VentanaConIcono=S
+
+[Acciones.GenerarAsistencia]
+Nombre=GenerarAsistencia
+Boton=0
+NombreDesplegar=&Generar la Asistencia
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ASIS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.AsisteAsistencia, Afectar.FormaCaptura)

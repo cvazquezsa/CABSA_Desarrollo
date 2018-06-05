@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=AlmGrupo
+Nombre=Grupos
+Modulos=INV
+Singular=Categoría
+ListaTablas=AlmGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=AlmGrupo.Grupo
+TablaPrincipal=AlmGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  AlmGrupo.Grupo<BR><BR>FROM<BR>  AlmGrupo
+
+[AlmGrupo.Grupo]
+Clave=AlmGrupo.Grupo
+LigaTabla=AlmGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

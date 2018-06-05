@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=MenuHerramientaGasto
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=243
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=838
+PosicionInicialArriba=525
+
+[Acciones.SugerirProvision]
+Nombre=SugerirProvision
+Boton=0
+NombreDesplegar=Sugerir Pro&visiones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=SugerirProvision
+Activo=S
+Visible=S
+
+[Acciones.SugerirPresupuesto]
+Nombre=SugerirPresupuesto
+Boton=0
+NombreDesplegar=Generar &Presupuesto del Periodo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=GastoPresupuestoAuto
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=SugerirProvision
+SugerirProvision=SugerirPresupuesto
+SugerirPresupuesto=(Fin)

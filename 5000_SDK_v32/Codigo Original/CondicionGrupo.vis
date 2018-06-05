@@ -1,0 +1,25 @@
+[Vista]
+Icono=0
+Clave=CondicionGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=CondicionGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CondicionGrupo.Grupo
+TablaPrincipal=CondicionGrupo
+CamposBusquedaRapida=CondicionGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  CondicionGrupo.Grupo<BR><BR>FROM<BR>  CondicionGrupo
+
+[CondicionGrupo.Grupo]
+Clave=CondicionGrupo.Grupo
+LigaTabla=CondicionGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

@@ -1,0 +1,34 @@
+[Tabla]
+Icono=0
+Clave=OportunidadEtapa
+Archivo=OportunidadEtapa
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Etapas
+Singular=Etapa
+LlavePrimaria=Avance<BR>Etapa
+SQL=SELECT<BR>  Etapa,<BR>  Avance<BR><BR>FROM<BR>  OportunidadEtapa
+
+[Etapa]
+Clave=Etapa
+Nombre=Etapa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Avance]
+Clave=Avance
+Nombre=% Avance
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Etapa
+Etapa=Avance
+Avance=(Fin)

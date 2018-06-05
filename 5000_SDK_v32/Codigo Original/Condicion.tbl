@@ -1,0 +1,965 @@
+[Tabla]
+Icono=0
+Clave=Condicion
+Archivo=Condicion
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Condiciones
+Singular=Condición
+LlavePrimaria=Condicion
+ControlNivelAcceso=S
+CampoNivelAcceso=NivelAcceso
+
+SQL=(Lista)
+[Condicion]
+Clave=Condicion
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Requerido=S
+TipoDatos=Texto
+
+[DiasProntoPago]
+Clave=DiasProntoPago
+Nombre=Días Pronto Pago
+TipoDatos=Numérico
+TamanoValidacion=10
+CondicionDespliege=ProntoPago
+
+[DescuentoProntoPago]
+Clave=DescuentoProntoPago
+Nombre=% Descuento Pronto Pago
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=ProntoPago 
+
+[DiasVencimiento]
+Clave=DiasVencimiento
+Nombre=Días Vencimiento
+TipoDatos=Numérico
+TamanoValidacion=10
+CondicionDespliege=(no PorMeses) y (no porSemanas)
+CondicionEdicion=TipoCondicion=<T>Credito<T>
+AyudaEnCaptura=Calculadora
+
+[TipoInteres]
+Clave=TipoInteres
+Nombre=Tipo Interes
+Tamano=10
+TamanoValidacion=50
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Lista de Opciones
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=GenerarIntereses
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Interes]
+Clave=Interes
+Nombre=Tasa Interés
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Calculadora
+
+[TipoDias]
+Clave=TipoDias
+Nombre=Tipo Días
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Habiles<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=(no PorMeses) y (no porSemanas)
+CondicionEdicion=TipoCondicion=<T>Credito<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DiasHabiles]
+Clave=DiasHabiles
+Nombre=Días Hábiles
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Lun-Vie<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=(no PorMeses) y (no porSemanas) y (TipoDias=<T>Habiles<T>)
+CondicionEdicion=TipoCondicion=<T>Credito<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TipoDiasProntoPago]
+Clave=TipoDiasProntoPago
+Nombre=Tipo Días
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Habiles<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=ProntoPago
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DiasHabilesProntoPago]
+Clave=DiasHabilesProntoPago
+Nombre=Días Hábiles
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=ProntoPago y (TipoDiasProntoPago=<T>Habiles<T>)
+ValorPorOmision=<T>Lun-Vie<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ProntoPago]
+Clave=ProntoPago
+Nombre=Pronto Pago Fijo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[PorMeses]
+Clave=PorMeses
+Nombre=por Meses
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=no porSemanas
+
+[Meses]
+Clave=Meses
+Nombre=Meses
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=PorMeses y (no porSemanas)
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=1
+
+ValorRefrescar=1
+[DA]
+Clave=DA
+Nombre=Documentación Automática
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[DANumeroDocumentos]
+Clave=DANumeroDocumentos
+Nombre=Número Documentos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[DAInteres]
+Clave=DAInteres
+Nombre=% Interes
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[DAInteresImpuesto]
+Clave=DAInteresImpuesto
+Nombre=% IVA Intereses
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[DAInteresConcepto]
+Clave=DAInteresConcepto
+Nombre=Concepto (Intereses)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXC
+OpcionesUnicamente=S
+TipoDatos=Texto
+
+[DAPeriodo]
+Clave=DAPeriodo
+Nombre=Periodo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DAImpPrimerDoc]
+Clave=DAImpPrimerDoc
+Nombre=Cargar Impuestos/Intereses en el Primer Documento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RecorrerVencimiento]
+Clave=RecorrerVencimiento
+Nombre=Recorrer Vencimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=RecorrerDiaSemana
+
+[RecorrerDiaSemana]
+Clave=RecorrerDiaSemana
+Nombre=Día Semana
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Semana
+CondicionDespliege=RecorrerVencimiento
+TipoDatos=Texto
+
+[Anticipado]
+Clave=Anticipado
+Nombre=Control Anticipos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=(Lista)
+
+[AnticipadoPeriodo]
+Clave=AnticipadoPeriodo
+Nombre=Periodo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=ControlAnticipos=<T>Plazos<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AnticipadoNumero]
+Clave=AnticipadoNumero
+Nombre=Número Anticipos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=ControlAnticipos=<T>Plazos<T>
+
+[ControlAnticipos]
+Clave=ControlAnticipos
+Nombre=Control Anticipos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Corte]
+Clave=Corte
+Nombre=Día Corte
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CorteDia
+
+[CorteDia]
+Clave=CorteDia
+Nombre=Día
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Corte
+
+[AutoViajes]
+Clave=AutoViajes
+Nombre=Número Viajes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=General.Autotransportes
+
+[AutoCobroDef]
+Clave=AutoCobroDef
+Nombre=Importe Cobro (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CondicionGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Termino]
+Clave=Termino
+Nombre=Termino
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[PagoMensual]
+Clave=PagoMensual
+Nombre=Pago Mensual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[TipoPago]
+Clave=TipoPago
+Nombre=Tipo Pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TipoVenta]
+Clave=TipoVenta
+Nombre=Tipo Venta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=NivelAcceso
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+ConRefrescar=S
+[FechaProntoPago]
+Clave=FechaProntoPago
+Nombre=Base
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Emision<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AutoCobroPorcentajeDef]
+Clave=AutoCobroPorcentajeDef
+Nombre=% Cobro (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[TipoCondicion]
+Clave=TipoCondicion
+Nombre=Tipo Condición
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Credito<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AlCambiar=Si(TipoCondicion=<T>Contado<T>, Asigna(DiasVencimiento, Nulo))
+TipoDatos=Texto
+
+ListaOpciones=(Lista)
+[InteresMoratorioBaseTabla]
+Clave=InteresMoratorioBaseTabla
+Nombre=Intereses Moratorios en Base a Tabla
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AutoFin]
+Clave=AutoFin
+Nombre=Autofinanciamiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[AutoFinPedidoTipo]
+Clave=AutoFinPedidoTipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=AutoFin
+ValorPorOmision=<T>%<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AutoFinPedidoComision]
+Clave=AutoFinPedidoComision
+Nombre=Comisión Pedido
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=AutoFin
+
+[AutoFinFacturaTipo]
+Clave=AutoFinFacturaTipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=AutoFin
+ValorPorOmision=<T>%<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AutoFinFacturaComision]
+Clave=AutoFinFacturaComision
+Nombre=Comisión Factura
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=AutoFin
+
+[Neteo]
+Clave=Neteo
+Nombre=Neteo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tasa]
+Clave=Tasa
+Nombre=Tasa
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Tasa
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[InteresesDevengados]
+Clave=InteresesDevengados
+Nombre=Intereses Devengados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[DATipoInteres]
+Clave=DATipoInteres
+Nombre=Cálculo Interes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Global<T><T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FacturaCobroIntegradoParcial]
+Clave=FacturaCobroIntegradoParcial
+Nombre=Cobro Integrado Parcial en Facturas Contado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Config.FacturaCobroIntegrado y Config.FacturaCobroIntegradoParcial
+ValorPorOmision=Falso
+
+[PorSemanas]
+Clave=PorSemanas
+Nombre=por Semanas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=no PorMeses
+
+[Semanas]
+Clave=Semanas
+Nombre=Semanas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=no PorMeses y porSemanas
+
+[DADiaEspecifico]
+Clave=DADiaEspecifico
+Nombre=Día Especifico (Vencimiento)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=16
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[CFD_formaDePago]
+Clave=CFD_formaDePago
+Nombre=Forma de Pago
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATFormaPago WHERE Descripcion = :tDesc<T>, CFD_formaDePago) > 0
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATFormaPago<T>)
+
+[CFD_metodoDePago]
+Clave=CFD_metodoDePago
+Nombre=Método de Pago
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DiferirFechaAcumulacion
+ConRefrescar=S
+ListaRefrescar=DiferirFechaAcumulacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATMetodoPago WHERE Clave = :tClave<T>, CFD_metodoDePago) > 0
+Formula=SQLEnLista(<T>SELECT Clave FROM SATMetodoPago<T>)
+
+[TipoInteres.ListaOpciones]
+(Inicio)=Diario
+Diario=Mensual
+Mensual=Anual
+Anual=(Fin)
+
+[TipoDias.ListaOpciones]
+(Inicio)=Habiles
+Habiles=Naturales
+Naturales=(Fin)
+
+[DiasHabiles.ListaOpciones]
+(Inicio)=Lun-Vie
+Lun-Vie=Lun-Sab
+Lun-Sab=Todos
+Todos=(Fin)
+
+[TipoDiasProntoPago.ListaOpciones]
+(Inicio)=Habiles
+Habiles=Naturales
+Naturales=(Fin)
+
+[DiasHabilesProntoPago.ListaOpciones]
+(Inicio)=Lun-Vie
+Lun-Vie=Lun-Sab
+Lun-Sab=Todos
+Todos=(Fin)
+
+[PorMeses.ListaRefrescarCondiciones]
+(Inicio)=DiasVencimiento
+DiasVencimiento=TipoDias
+TipoDias=DiasHabiles
+DiasHabiles=Meses
+Meses=PorSemanas
+PorSemanas=Semanas
+Semanas=(Fin)
+
+[DAPeriodo.ListaOpciones]
+(Inicio)=Semanal
+Semanal=Quincenal
+Quincenal=Mensual
+Mensual=Bimestral
+Bimestral=Trimestral
+Trimestral=Semestral
+Semestral=Anual
+Anual=<dias>
+<dias>=(Fin)
+
+[Anticipado.ListaRefrescarCondiciones]
+(Inicio)=AnticipadoNumero
+AnticipadoNumero=AnticipadoPeriodo
+AnticipadoPeriodo=(Fin)
+
+[AnticipadoPeriodo.ListaOpciones]
+(Inicio)=Semanal
+Semanal=Quincenal
+Quincenal=Mensual
+Mensual=Bimestral
+Bimestral=Trimestral
+Trimestral=Semestral
+Semestral=Anual
+Anual=<dias>
+<dias>=(Fin)
+
+[ControlAnticipos.ListaRefrescarCondiciones]
+(Inicio)=AnticipadoNumero
+AnticipadoNumero=AnticipadoPeriodo
+AnticipadoPeriodo=(Fin)
+
+[ControlAnticipos.ListaOpciones]
+(Inicio)=No
+No=Abierto
+Abierto=Plazos
+Plazos=Fecha Requerida
+Fecha Requerida=Cobrar Pedido
+Cobrar Pedido=(Fin)
+
+[TipoPago.ListaOpciones]
+(Inicio)=arren
+arren=financ
+financ=conta
+conta=(Fin)
+
+[TipoVenta.ListaOpciones]
+(Inicio)=flotmenor
+flotmenor=varrend
+varrend=vmenudeo
+vmenudeo=(Fin)
+
+[FechaProntoPago.ListaOpciones]
+(Inicio)=Emision
+Emision=Vencimiento
+Vencimiento=(Fin)
+
+
+[AutoFin.ListaRefrescarCondiciones]
+(Inicio)=AutoFinPedidoComision
+AutoFinPedidoComision=AutoFinPedidoTipo
+AutoFinPedidoTipo=AutoFinFacturaComision
+AutoFinFacturaComision=AutoFinFacturaTipo
+AutoFinFacturaTipo=(Fin)
+
+[AutoFinPedidoTipo.ListaOpciones]
+(Inicio)=%
+%=$
+$=(Fin)
+
+[AutoFinFacturaTipo.ListaOpciones]
+(Inicio)=%
+%=$
+$=(Fin)
+
+[DATipoInteres.ListaOpciones]
+(Inicio)=Global
+Global=Saldos Insolutos
+Saldos Insolutos=(Fin)
+
+[PorSemanas.ListaRefrescarCondiciones]
+(Inicio)=DiasVencimiento
+DiasVencimiento=TipoDias
+TipoDias=DiasHabiles
+DiasHabiles=PorMeses
+PorMeses=Meses
+Meses=Semanas
+Semanas=(Fin)
+
+[DADiaEspecifico.ListaOpciones]
+(Inicio)=1
+1=2
+2=3
+3=4
+4=5
+5=6
+6=7
+7=8
+8=9
+9=10
+10=11
+11=12
+12=13
+13=14
+14=15
+15=16
+16=17
+17=18
+18=19
+19=20
+20=21
+21=22
+22=23
+23=24
+24=25
+25=26
+26=27
+27=28
+28=29
+29=30
+30=31
+31=(Fin)
+
+
+
+
+[TipoCondicion.ListaOpciones]
+(Inicio)=Credito
+Credito=Contado
+Contado=(Fin)
+
+
+
+[Tabla.LlavePrimaria]
+(Inicio)=Orden
+Orden=Condicion
+Condicion=(Fin)
+
+
+
+[DiferirFechaAcumulacion]
+Clave=DiferirFechaAcumulacion
+Nombre=Diferir Fecha Acumulación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ValorRefrescar=Falso
+CondicionEdicion=CFD_metodoDePago <> <T>Pago en una sola exhibición<T>
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Condicion
+Condicion=TipoCondicion
+TipoCondicion=DiasVencimiento
+DiasVencimiento=TipoDias
+TipoDias=DiasHabiles
+DiasHabiles=ProntoPago
+ProntoPago=DiasProntoPago
+DiasProntoPago=DescuentoProntoPago
+DescuentoProntoPago=FechaProntoPago
+FechaProntoPago=TipoDiasProntoPago
+TipoDiasProntoPago=DiasHabilesProntoPago
+DiasHabilesProntoPago=Interes
+Interes=TipoInteres
+TipoInteres=PorMeses
+PorMeses=Meses
+Meses=PorSemanas
+PorSemanas=Semanas
+Semanas=Orden
+Orden=DA
+DA=DANumeroDocumentos
+DANumeroDocumentos=DAInteres
+DAInteres=DATipoInteres
+DATipoInteres=DAInteresImpuesto
+DAInteresImpuesto=DAInteresConcepto
+DAInteresConcepto=DAPeriodo
+DAPeriodo=DAImpPrimerDoc
+DAImpPrimerDoc=RecorrerVencimiento
+RecorrerVencimiento=RecorrerDiaSemana
+RecorrerDiaSemana=Anticipado
+Anticipado=ControlAnticipos
+ControlAnticipos=AnticipadoNumero
+AnticipadoNumero=AnticipadoPeriodo
+AnticipadoPeriodo=Corte
+Corte=CorteDia
+CorteDia=AutoViajes
+AutoViajes=AutoCobroDef
+AutoCobroDef=AutoCobroPorcentajeDef
+AutoCobroPorcentajeDef=Grupo
+Grupo=Termino
+Termino=PagoMensual
+PagoMensual=TipoPago
+TipoPago=TipoVenta
+TipoVenta=NivelAcceso
+NivelAcceso=InteresMoratorioBaseTabla
+InteresMoratorioBaseTabla=AutoFin
+AutoFin=AutoFinPedidoComision
+AutoFinPedidoComision=AutoFinPedidoTipo
+AutoFinPedidoTipo=AutoFinFacturaComision
+AutoFinFacturaComision=AutoFinFacturaTipo
+AutoFinFacturaTipo=Neteo
+Neteo=InteresesDevengados
+InteresesDevengados=Tasa
+Tasa=FacturaCobroIntegradoParcial
+FacturaCobroIntegradoParcial=DADiaEspecifico
+DADiaEspecifico=CFD_formaDePago
+CFD_formaDePago=CFD_metodoDePago
+CFD_metodoDePago=DiferirFechaAcumulacion
+DiferirFechaAcumulacion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Condicion,
+Condicion,=DiasVencimiento,
+DiasVencimiento,=TipoCondicion,
+TipoCondicion,=TipoDias,
+TipoDias,=DiasHabiles,
+DiasHabiles,=DiasProntoPago,
+DiasProntoPago,=DescuentoProntoPago,
+DescuentoProntoPago,=FechaProntoPago,
+FechaProntoPago,=TipoDiasProntoPago,
+TipoDiasProntoPago,=DiasHabilesProntoPago,
+DiasHabilesProntoPago,=ProntoPago,
+ProntoPago,=TipoInteres,
+TipoInteres,=Interes,
+Interes,=PorMeses,
+PorMeses,=Meses,
+Meses,=Orden,
+Orden,=RecorrerVencimiento,
+RecorrerVencimiento,=RecorrerDiaSemana,
+RecorrerDiaSemana,=InteresesDevengados,
+InteresesDevengados,=Tasa,
+Tasa,=DA,
+DA,=DANumeroDocumentos,
+DANumeroDocumentos,=DATipoInteres,
+DATipoInteres,=DAInteres,
+DAInteres,=DAInteresImpuesto,
+DAInteresImpuesto,=DAInteresConcepto,
+DAInteresConcepto,=DAPeriodo,
+DAPeriodo,=DAImpPrimerDoc,
+DAImpPrimerDoc,=ControlAnticipos,
+ControlAnticipos,=Anticipado,
+Anticipado,=AnticipadoNumero,
+AnticipadoNumero,=AnticipadoPeriodo,
+AnticipadoPeriodo,=Corte,
+Corte,=CorteDia,
+CorteDia,=AutoViajes,
+AutoViajes,=AutoCobroDef,
+AutoCobroDef,=AutoCobroPorcentajeDef,
+AutoCobroPorcentajeDef,=Grupo,
+Grupo,=TipoVenta,
+TipoVenta,=Termino,
+Termino,=PagoMensual,
+PagoMensual,=TipoPago,
+TipoPago,=NivelAcceso,
+NivelAcceso,=InteresMoratorioBaseTabla,
+InteresMoratorioBaseTabla,=AutoFin,
+AutoFin,=AutoFinPedidoTipo,
+AutoFinPedidoTipo,=AutoFinPedidoComision,
+AutoFinPedidoComision,=AutoFinFacturaTipo,
+AutoFinFacturaTipo,=AutoFinFacturaComision,
+AutoFinFacturaComision,=Neteo,
+Neteo,=FacturaCobroIntegradoParcial,
+FacturaCobroIntegradoParcial,=PorSemanas,
+PorSemanas,=Semanas,
+Semanas,=DADiaEspecifico,
+DADiaEspecifico,=CFD_formaDePago,
+CFD_formaDePago,=CFD_metodoDePago,
+CFD_metodoDePago,=DiferirFechaAcumulacion
+DiferirFechaAcumulacion=FROM
+FROM=Condicion
+Condicion=(Fin)

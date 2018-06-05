@@ -1,0 +1,32 @@
+
+[Vista]
+Icono=0
+Clave=PerfilMES
+Nombre=PerfilMES
+Modulos=(Todos)
+ListaTablas=PerfilMES
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=PerfilMES.PerfilMES
+TablaPrincipal=PerfilMES
+SQL=(Lista)
+[PerfilMES.PerfilMES]
+Clave=PerfilMES.PerfilMES
+Nombre=Perfil MES
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=PerfilMES
+LigaCampo=PerfilMES
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=PerfilMES
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=PerfilMES.PerfilMES
+PerfilMES.PerfilMES=FROM PerfilMES
+FROM PerfilMES=(Fin)

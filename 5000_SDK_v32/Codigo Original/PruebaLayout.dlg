@@ -1,0 +1,28 @@
+[Dialogo]
+Clave=PruebaLayout
+Nombre=Mensaje
+Icono=0
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+ListaAcciones=Convertir
+PosicionInicialIzquierda=408
+PosicionInicialArriba=337
+PosicionInicialAlturaCliente=58
+PosicionInicialAncho=207
+AccionesCentro=S
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+
+[Acciones.Convertir]
+Nombre=Convertir
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=Convertir
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Nombre, BuscarArchivo(<T>C:\Users\jheffes\Desktop\MUNDO JOVEN\Interfaz SABRE\PNRs\<T>, <T>PRNs<T>, <T>FIL<T>, <T>PRNs<T>, <T>PRN<T>))<BR>Si<BR>  Info.Nombre<><T><T><BR>Entonces<BR>  VerComentario(Info.Nombre+<T> en XML<T>,LayoutEnXML(Archivo.Leer(Info.Nombre ), <T>SABRE<T>))<BR>Fin

@@ -1,0 +1,113 @@
+[Dialogo]
+Clave=MenuRepGerencialesCompras
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=165
+PosicionInicialAncho=256
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=303
+PosicionInicialArriba=338
+
+PosicionInicialAlturaCliente=138
+[Acciones.CompraProvCat]
+Nombre=CompraProvCat
+Boton=0
+NombreDesplegar=por &Categoría de Proveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+
+Expresion=<BR>  Forma(<T>RepCompraProvCat<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Gerenciales/CompraProvCat<T>)
+[Acciones.RepCompraNeta]
+Nombre=RepCompraNeta
+Boton=0
+NombreDesplegar=por &Movimiento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=expresion
+Activo=S
+
+Expresion=<BR>  Forma(<T>RepCompraNeta<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Gerenciales/RepCompraNeta<T>)
+[Acciones.CompraArtCat]
+Nombre=CompraArtCat
+Boton=0
+NombreDesplegar=por Categoría de Artículos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=<BR>  Forma(<T>RepCompraArtCat<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Compras/Gerenciales/CompraArtCat<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=RepCompraNeta
+RepCompraNeta=CompraProvCat
+CompraProvCat=CompraArtCat
+CompraArtCat=(Fin)

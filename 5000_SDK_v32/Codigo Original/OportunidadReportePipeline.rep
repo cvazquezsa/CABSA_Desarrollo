@@ -1,0 +1,104 @@
+
+[Reporte]
+Clave=OportunidadReportePipeline
+Nombre=Pipeline de Oportunidades por Actividad
+Icono=0
+VistaEspecial=S
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+
+BarraHerramientas=S
+ListaAcciones=Expresion
+PosicionInicialAlturaCliente=423
+PosicionInicialAncho=710
+Submenu=Oportunidades
+[Vista]
+Icono=0
+Clave=OportunidadReporteOpEstatus
+VistaIndependiente=S
+
+ListaCampos=COLUMN1
+SQL=SELECT <T><T>
+[COLUMN1]
+Clave=COLUMN1
+Nombre=COLUMN1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+ClaveBDE=COLUMN1
+
+[Acciones.Expresion]
+Nombre=Expresion
+Boton=106
+NombreEnBoton=S
+NombreDesplegar=Report Server
+EnBarraHerramientas=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+Expresion=Browser(General.RSReportASPX + <T>%2fOportunidadReportePipeline&rs:Command=Render<T>)
+[Formato]
+ListaLineas=Título
+
+VentanaIzquierda=363
+VentanaArriba=154
+VentanaAltura=420
+VentanaAncho=640
+PanelArriba=120
+PanelBotones=80
+
+
+
+[Linea1]
+Clave=Título
+Objetos=1
+Seccion=Título
+AltoEnCm=1.08
+Renglones=3
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=19
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Para ver el Reporte de click en el boton: Report Server<T>

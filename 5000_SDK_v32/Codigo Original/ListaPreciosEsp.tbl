@@ -1,0 +1,47 @@
+[Tabla]
+Icono=0
+Clave=ListaPreciosEsp
+Archivo=ListaPreciosEsp
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Lista Precios Especificos
+Singular=Lista Precios
+LlavePrimaria=Orden
+CampoNivelAcceso=NivelAcceso
+SQL=SELECT<BR>  Lista,<BR>  NivelAcceso,<BR>  Orden<BR><BR>FROM<BR>  ListaPreciosEsp
+
+[Lista]
+Clave=Lista
+Nombre=Lista
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=NivelAcceso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.ListaCampos]
+(Inicio)=Lista
+Lista=Orden
+Orden=NivelAcceso
+NivelAcceso=(Fin)

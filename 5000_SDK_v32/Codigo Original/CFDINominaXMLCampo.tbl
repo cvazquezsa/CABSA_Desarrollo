@@ -1,0 +1,74 @@
+
+[Tabla]
+Icono=0
+Clave=CFDINominaXMLCampo
+Nombre=CFDINominaXMLCampo
+Archivo=CFDINominaXMLCampo
+Modulos=(Todos)
+Singular=CFDINominaXMLCampo
+TipoTabla=General
+
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+SQL=(Lista)
+[Version]
+Clave=Version
+Nombre=Version
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Info.Anuncio
+[CampoXML]
+Clave=CampoXML
+Nombre=Campo XML
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[CampoVista]
+Clave=CampoVista
+Nombre=Campo Origen Datos
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+
+
+Formula=SQLENLISTA(<T>SELECT Name FROM sys.columns WHERE object_name(object_id) = :tVista AND Name NOT IN(:tID, :tRenglon) ORDER BY Name<T>, Info.Vista, <T>ID<T>, <T>Renglon<T>)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Version
+Version=CampoXML
+CampoXML=CampoVista
+CampoVista=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Version,
+Version,=CampoXML,
+CampoXML,=CampoVista
+CampoVista=FROM CFDINominaXMLCampo
+FROM CFDINominaXMLCampo=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Version
+Version=CampoXML
+CampoXML=(Fin)

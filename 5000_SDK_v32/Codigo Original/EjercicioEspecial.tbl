@@ -1,0 +1,82 @@
+[Tabla]
+Icono=0
+Clave=EjercicioEspecial
+Archivo=EjercicioEspecial
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Ejercicios Especiales
+Singular=Ejercicio Especial
+LlavePrimaria=Empresa<BR>Modulo<BR>FechaD<BR>FechaA
+CampoPeriodo=Periodo
+CampoEjercicio=Ejercicio
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  FechaD,<BR>  FechaA,<BR>  Periodo,<BR>  Ejercicio<BR><BR>FROM<BR>  EjercicioEspecial
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Módulos
+OpcionesRenglones=8
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[FechaD]
+Clave=FechaD
+Nombre=De la Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ConRefrescar=S
+ListaRefrescar=FechaA
+
+[FechaA]
+Clave=FechaA
+Nombre=A la Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ValorRefrescar=Si(Vacio(FechaA), FechaD, FechaA)
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=FechaD
+FechaD=FechaA
+FechaA=Periodo
+Periodo=Ejercicio
+Ejercicio=(Fin)

@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=MenuHerramientasAuto
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+PosicionInicialIzquierda=388
+PosicionInicialArriba=310
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=247
+ListaAcciones=(Lista)
+
+[Acciones.ActualizarResultados]
+Nombre=ActualizarResultados
+Boton=0
+NombreDesplegar=&Actualizar Resultados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=EspacioResultado
+Activo=S
+Visible=S
+
+[Acciones.Cerrar Periodo]
+Nombre=Cerrar Periodo
+Boton=0
+NombreDesplegar=&Cerrar Periodo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=EspacioResultadoCerrar
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ActualizarResultados
+ActualizarResultados=Cerrar Periodo
+Cerrar Periodo=(Fin)

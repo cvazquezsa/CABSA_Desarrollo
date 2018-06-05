@@ -1,0 +1,37 @@
+[Tabla]
+Icono=0
+Clave=heExamenCurso
+Archivo=heExamenCurso
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=Curso<BR>Descripcion<BR>Estatus
+LlavePrimaria=Curso
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+SQL=SELECT<BR>  Curso,<BR>  Descripcion,<BR>  Estatus<BR><BR>FROM<BR>  heExamenCurso
+[Curso]
+Clave=Curso
+Nombre=Curso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>ALTA<T>
+ListaOpciones=ALTA<BR>BAJA

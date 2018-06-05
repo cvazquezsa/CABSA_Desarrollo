@@ -1,0 +1,67 @@
+[Vista]
+Icono=0
+Clave=MovTipoListaRComs
+Nombre=Tipos de Movimientos
+Modulos=(Todos)
+Singular=Tipo de Movimiento
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+LlavePrimaria=Tipo de Movimiento
+CamposBusquedaRapida=Tipo de Movimiento
+
+SQL=(Lista)
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Clave
+
+[SubClave]
+Clave=SubClave
+Nombre=SubClave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=SubClave
+
+[Tipo de Movimiento]
+Clave=Tipo de Movimiento
+Nombre=Tipo de Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo de Movimiento
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Clave
+Clave=SubClave
+SubClave=Tipo de Movimiento
+Tipo de Movimiento=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT Mov 'Tipo de Movimiento', Clave, SubClave FROM MovTipo
+SELECT Mov 'Tipo de Movimiento', Clave, SubClave FROM MovTipo=WHERE Clave IN ('COMS.F', 'COMS.EG', 'COMS.O', 'COMS.D', 'COMS.CC', 'COMS.DC', 'COMS.CA', 'COMS.GX', 'COMS.B', 'COMS.CP', 'COMS.FL', 'COMS.EI')
+WHERE Clave IN ('COMS.F', 'COMS.EG', 'COMS.O', 'COMS.D', 'COMS.CC', 'COMS.DC', 'COMS.CA', 'COMS.GX', 'COMS.B', 'COMS.CP', 'COMS.FL', 'COMS.EI')=ORDER BY Mov
+ORDER BY Mov=(Fin)

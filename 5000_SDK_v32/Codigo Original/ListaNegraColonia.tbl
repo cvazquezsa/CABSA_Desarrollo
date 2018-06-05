@@ -1,0 +1,22 @@
+[Tabla]
+Icono=0
+Clave=ListaNegraColonia
+Archivo=ListaNegraColonia
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=Colonia
+Nombre=Lista Negra
+Singular=Lista Negra
+SQL=SELECT<BR>  Colonia<BR><BR>FROM<BR>  ListaNegraColonia
+LlavePrimaria=Colonia
+
+[Colonia]
+Clave=Colonia
+Nombre=Colonia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.Colonia

@@ -1,0 +1,62 @@
+[Tabla]
+Icono=0
+Clave=CfgAnexarMov
+Archivo=CfgAnexarMov
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Anexar Movimientos
+Singular=Movimiento
+LlavePrimaria=Modulo<BR>Mov<BR>MovDestino
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Modulo,<BR>  Mov,<BR>  MovDestino,<BR>  Orden<BR><BR>FROM<BR>  CfgAnexarMov
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento Origen
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(Info.Modulo)
+
+[MovDestino]
+Clave=MovDestino
+Nombre=Movimiento Destino
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(Info.Modulo)
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=MovDestino
+MovDestino=Orden
+Orden=(Fin)

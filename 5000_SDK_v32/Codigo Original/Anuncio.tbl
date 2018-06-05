@@ -1,0 +1,75 @@
+[Tabla]
+Icono=0
+Clave=Anuncio
+Archivo=Anuncio
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Anuncios
+Singular=Anuncio
+ListaRelaciones=Prov
+LlavePrimaria=Anuncio
+SQL=SELECT<BR>  Anuncio,<BR>  Archivo,<BR>  Proveedor,<BR>  FechaD,<BR>  FechaA<BR><BR>FROM<BR>  Anuncio
+
+[Anuncio]
+Clave=Anuncio
+Nombre=Anuncio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Archivo]
+Clave=Archivo
+Nombre=Archivo
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Buscar Archivo
+TipoDatos=Texto
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+TipoDatos=Texto
+
+[FechaD]
+Clave=FechaD
+Nombre=De Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[FechaA]
+Clave=FechaA
+Nombre=A Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=Proveedor
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+[Tabla.ListaCampos]
+(Inicio)=Anuncio
+Anuncio=Archivo
+Archivo=Proveedor
+Proveedor=FechaD
+FechaD=FechaA
+FechaA=(Fin)

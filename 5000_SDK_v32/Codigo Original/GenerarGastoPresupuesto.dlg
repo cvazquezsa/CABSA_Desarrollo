@@ -1,0 +1,73 @@
+[Dialogo]
+Clave=GenerarGastoPresupuesto
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=834
+PosicionInicialArriba=501
+PosicionInicialAltura=189
+PosicionInicialAncho=251
+VentanaConIcono=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Anticipo]
+Nombre=Anticipo
+Boton=0
+NombreDesplegar=Generar A&nticipo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.GastoAnticipo, Afectar.FormaCaptura)
+
+[Acciones.Gasto]
+Nombre=Gasto
+Boton=0
+NombreDesplegar=Generar &Gasto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=GenerarGasto
+
+[Acciones.Solicitud]
+Nombre=Solicitud
+Boton=0
+NombreDesplegar=Generar &Solicitud
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.GastoSolicitud, Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[Acciones.Comprobante]
+Nombre=Comprobante
+Boton=0
+NombreDesplegar=Generar &Comprobante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=GenerarComprobante
+
+[Dialogo.ListaAcciones]
+(Inicio)=Solicitud
+Solicitud=Anticipo
+Anticipo=Gasto
+Gasto=Comprobante
+Comprobante=(Fin)

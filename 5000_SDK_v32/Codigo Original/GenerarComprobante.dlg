@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=GenerarComprobante
+Nombre=<T>Generar Comprobante<T>
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=413
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=197
+
+[Acciones.Directo]
+Nombre=Directo
+Boton=0
+NombreDesplegar=&Directo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.GastoComprobante, Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[Acciones.Prorrateado]
+Nombre=Prorrateado
+Boton=0
+NombreDesplegar=&Prorrateado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ComprobanteProrrateado, Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Directo
+Directo=Prorrateado
+Prorrateado=(Fin)

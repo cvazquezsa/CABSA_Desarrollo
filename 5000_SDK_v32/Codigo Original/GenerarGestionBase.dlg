@@ -1,0 +1,75 @@
+[Dialogo]
+Clave=GenerarGestionBase
+Nombre=Info.TituloDialogo
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=819
+PosicionInicialArriba=501
+PosicionInicialAltura=165
+PosicionInicialAncho=281
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Tareas &Pendientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>PENDIENTE<T>)
+
+[Acciones.Seleccion]
+Nombre=Seleccion
+Boton=0
+NombreDesplegar=Tareas &Seleccionadas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>SELECCION<T>)
+
+[Acciones.Concluido]
+Nombre=Concluido
+Boton=0
+NombreDesplegar=Tareas &Concluidas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Base, <T>CONCLUIDO<T>)
+Activo=S
+Visible=S
+
+[Acciones.Todo]
+Nombre=Todo
+Boton=0
+NombreDesplegar=&Todas las Tareas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>TODO<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pendiente
+Pendiente=Concluido
+Concluido=Seleccion
+Seleccion=Todo
+Todo=(Fin)

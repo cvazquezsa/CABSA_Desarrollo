@@ -1,0 +1,32 @@
+[Tabla]
+Icono=0
+Clave=CalificacionCartera
+Archivo=CalificacionCartera
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Calificación Cartera
+Singular=Calificación Cartera
+LlavePrimaria=Calificacion
+SQL=SELECT<BR>  Calificacion,<BR>  Reserva<BR><BR>FROM<BR>  CalificacionCartera
+
+[Calificacion]
+Clave=Calificacion
+Nombre=Calificacion
+Visible=S
+TamanoValidacion=2
+Tamano=2
+Mayusculas=S
+
+[Reserva]
+Clave=Reserva
+Nombre=% Reserva
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Calificacion
+Calificacion=Reserva
+Reserva=(Fin)

@@ -1,0 +1,63 @@
+[Dialogo]
+Clave=GenerarInvBase
+Nombre=Info.TituloDialogo
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=499
+PosicionInicialArriba=429
+PosicionInicialAltura=165
+PosicionInicialAncho=281
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=138
+
+[Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Cantidad &Indicada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.Base, <T>Seleccion<T>)
+
+[Acciones.Reservado]
+Nombre=Reservado
+Boton=0
+NombreDesplegar=Cantidad &Reservada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.Base, <T>Reservado<T>)
+
+[Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Todo el &Pendiente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.Base, <T>Pendiente<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Indicado
+Indicado=Reservado
+Reservado=Pendiente
+Pendiente=(Fin)

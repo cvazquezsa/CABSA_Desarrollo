@@ -1,0 +1,33 @@
+[Dialogo]
+Clave=GenerarCxcCobroPosfechado
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Cobro
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=402
+PosicionInicialArriba=322
+PosicionInicialAltura=117
+PosicionInicialAncho=219
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Cobro]
+Nombre=Cobro
+Boton=0
+NombreDesplegar=Generar &Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcCobro, Afectar.FormaCaptura)

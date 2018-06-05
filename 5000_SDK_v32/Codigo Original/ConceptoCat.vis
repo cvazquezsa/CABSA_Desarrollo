@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ConceptoCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=ConceptoCat
+TablaPrincipal=ConceptoCat
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ConceptoCat.Categoria
+UsarJOIN=S
+SQL=SELECT<BR>  ConceptoCat.Categoria<BR><BR>FROM<BR>  ConceptoCat
+
+[ConceptoCat.Categoria]
+Clave=ConceptoCat.Categoria
+LigaTabla=ConceptoCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

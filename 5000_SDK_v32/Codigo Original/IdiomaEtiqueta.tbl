@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=IdiomaEtiqueta
+Archivo=IdiomaEtiqueta
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Etiquetas
+Singular=Etiqueta
+LlavePrimaria=Idioma<BR>Etiqueta
+SQL=SELECT<BR>  Idioma,<BR>  Etiqueta,<BR>  Nombre<BR><BR>FROM<BR>  IdiomaEtiqueta
+
+[Etiqueta]
+Clave=Etiqueta
+Nombre=Etiqueta
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Idioma]
+Clave=Idioma
+Nombre=Idioma
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Idioma
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Info.Idioma
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Idioma
+Idioma=Etiqueta
+Etiqueta=Nombre
+Nombre=(Fin)

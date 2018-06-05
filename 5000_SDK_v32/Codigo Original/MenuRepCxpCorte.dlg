@@ -1,0 +1,30 @@
+[Dialogo]
+Clave=MenuRepCxpCorte
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Normal
+PosicionInicialAltura=117
+PosicionInicialAncho=305
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=359
+PosicionInicialArriba=325
+
+[Acciones.Normal]
+Nombre=Normal
+Boton=0
+NombreDesplegar=Antigüedad de Saldos (&Normal)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCxpAntiguedadCorte
+Activo=S
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxp/Cortes/Normal<T>)

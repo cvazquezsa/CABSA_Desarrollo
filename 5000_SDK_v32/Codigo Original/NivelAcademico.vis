@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=NivelAcademico
+Modulos=(Todos)
+Nombre=Niveles Académicos
+Singular=Nivel Académico
+ListaTablas=NivelAcademico
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=NivelAcademico.NivelAcademico
+TablaPrincipal=NivelAcademico
+UsarJOIN=S
+SQL=SELECT<BR>  NivelAcademico.NivelAcademico<BR><BR>FROM<BR>  NivelAcademico
+
+[NivelAcademico.NivelAcademico]
+Clave=NivelAcademico.NivelAcademico
+LigaTabla=NivelAcademico
+LigaCampo=NivelAcademico
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=NivelAcademico

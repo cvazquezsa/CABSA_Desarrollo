@@ -1,0 +1,47 @@
+
+[Tabla]
+Icono=0
+Clave=NOINominaEspecial
+Nombre=NOINominaEspecial
+Archivo=NOINominaEspecial
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Estacion
+ControlMov=S
+CampoMov=Mov
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[Mov]
+Clave=Mov
+Nombre=Mov Nomina Especial
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLIsta(<T>SELECT DISTINCT Mov FROM MovTipo WHERE Clave = :tClave AND Modulo = :tModulo<T>,<T>NOM.NE<T>,<T>NOM<T>)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Mov
+Mov=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=Mov
+Mov=FROM NOINominaEspecial
+FROM NOINominaEspecial=(Fin)

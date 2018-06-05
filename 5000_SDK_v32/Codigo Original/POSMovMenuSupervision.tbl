@@ -1,0 +1,326 @@
+
+[Tabla]
+Icono=0
+Clave=POSMovMenuSupervision
+Nombre=POSMovMenuSupervision
+Archivo=POSMovMenuSupervision
+Modulos=(Todos)
+Singular=POSMovMenuSupervision
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+[AperturaCaja]
+Clave=AperturaCaja
+Nombre=Apertura Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.AC<T>)
+[AumentoCaja]
+Clave=AumentoCaja
+Nombre=Aumento Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+ValidacionUsaTabla=S
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.AP<T>)
+[CorteParcialCaja]
+Clave=CorteParcialCaja
+Nombre=Corte Parcial Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CPC<T>)
+[CorteCaja]
+Clave=CorteCaja
+Nombre=Corte Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CC<T>)
+[CancelacionACaja]
+Clave=CancelacionACaja
+Nombre=Cancelación A. Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CAC<T>)
+[CancelacionCCaja]
+Clave=CancelacionCCaja
+Nombre=Cancelacion C. Caja
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CCC<T>)
+[Egreso]
+Clave=Egreso
+Nombre=Egreso
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.EC<T>)
+[Ingreso]
+Clave=Ingreso
+Nombre=Ingreso
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+
+
+
+
+
+
+
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.IC<T>)
+
+
+
+
+
+
+
+
+[AperturaCajaM]
+Clave=AperturaCajaM
+Nombre=Apertura Caja Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=Pos.MultiMoneda
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.ACM<T>)
+[AumentoCajaM]
+Clave=AumentoCajaM
+Nombre=Aumento Caja Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=1=2
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.APM<T>)
+[CorteParcialCajaM]
+Clave=CorteParcialCajaM
+Nombre=Corte Parcial Caja Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=Pos.MultiMoneda
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CPCM<T>)
+[CorteCajaM]
+Clave=CorteCajaM
+Nombre=Corte Caja M
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=Pos.MultiMoneda
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CCM<T>)
+[CancelacionACajaM]
+Clave=CancelacionACajaM
+Nombre=Cancelacion Apertura Caja Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CACM<T>)
+[CancelacionCCajaM]
+Clave=CancelacionCCajaM
+Nombre=Cancelacion Corte Caja Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.CCCM<T>)
+[EgresoM]
+Clave=EgresoM
+Nombre=Egreso Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=1=2
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.ECM<T>)
+[IngresoM]
+Clave=IngresoM
+Nombre=Ingreso Multi
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+
+
+
+
+
+CondicionDespliege=1=2
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.ICM<T>)
+[Recoleccion]
+Clave=Recoleccion
+Nombre=Recoleccion
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND ConsecutivoModulo = :tConsecutivoModulo AND Clave = :tClave<T>, <T>POS<T>, <T>DIN<T>, <T>POS.TCM<T>)
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=AperturaCaja
+AperturaCaja=AumentoCaja
+AumentoCaja=CorteParcialCaja
+CorteParcialCaja=CorteCaja
+CorteCaja=CancelacionACaja
+CancelacionACaja=CancelacionCCaja
+CancelacionCCaja=Egreso
+Egreso=Ingreso
+Ingreso=AperturaCajaM
+AperturaCajaM=AumentoCajaM
+AumentoCajaM=CorteParcialCajaM
+CorteParcialCajaM=CorteCajaM
+CorteCajaM=CancelacionACajaM
+CancelacionACajaM=CancelacionCCajaM
+CancelacionCCajaM=EgresoM
+EgresoM=IngresoM
+IngresoM=Recoleccion
+Recoleccion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=AperturaCaja,
+AperturaCaja,=AumentoCaja,
+AumentoCaja,=CorteParcialCaja,
+CorteParcialCaja,=CorteCaja,
+CorteCaja,=CancelacionACaja,
+CancelacionACaja,=CancelacionCCaja,
+CancelacionCCaja,=Egreso,
+Egreso,=Ingreso,
+Ingreso,=AperturaCajaM,
+AperturaCajaM,=AumentoCajaM,
+AumentoCajaM,=CorteParcialCajaM,
+CorteParcialCajaM,=CorteCajaM,
+CorteCajaM,=CancelacionACajaM,
+CancelacionACajaM,=CancelacionCCajaM,
+CancelacionCCajaM,=EgresoM,
+EgresoM,=IngresoM,
+IngresoM,=Recoleccion
+Recoleccion=FROM POSMovMenuSupervision
+FROM POSMovMenuSupervision=(Fin)

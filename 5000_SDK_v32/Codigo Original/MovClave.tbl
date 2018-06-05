@@ -1,0 +1,180 @@
+[Tabla]
+Icono=0
+Clave=MovClave
+Archivo=MovClave
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Claves de Afectación
+Singular=Clave de Afectación
+LlavePrimaria=Clave<BR>Modulo
+CampoID=ID
+SQL=SELECT<BR>  Modulo,<BR>  Clave,<BR>  NombreOmision,<BR>  Descripcion,<BR>  Grupo,<BR>  Factor,<BR>  Folio,<BR>  ContMov,<BR>  EstatusContabilizar,<BR>  AfectarPresupuesto,<BR>  SubClaveDe<BR><BR>FROM<BR>  MovClave
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NombreOmision]
+Clave=NombreOmision
+Nombre=Nombre (por Omisión)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Factor]
+Clave=Factor
+Nombre=Factor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Folio]
+Clave=Folio
+Nombre=Folio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+UnicamenteLectura=S
+
+[ContMov]
+Clave=ContMov
+Nombre=Tipo Póliza
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+ConRefrescar=S
+ListaRefrescar=AfectarPresupuesto
+Formula=ListaMovimientos(<T>CONT<T>)
+TipoDatos=Texto
+
+[EstatusContabilizar]
+Clave=EstatusContabilizar
+Nombre=Estatus Contabilizar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>CONCLUIDO<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[AfectarPresupuesto]
+Clave=AfectarPresupuesto
+Nombre=Afectar Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=30
+Tamano=30
+CondicionDespliege=Config.ContMovPresupuesto y (Info.Modulo en (<T>VTAS<T>, <T>COMS<T>, <T>CXC<T>, <T>CXP<T>, <T>GAS<T>))
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorRefrescar=Si(MovTipo(<T>CONT<T>, ContMov) = CONT.PR, <T>Asignar<T>, <T>No<T>)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SubClaveDe]
+Clave=SubClaveDe
+Nombre=Sub Clave de
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+
+[Tabla.ListaCampos]
+(Inicio)=Clave
+Clave=Modulo
+Modulo=NombreOmision
+NombreOmision=Descripcion
+Descripcion=Grupo
+Grupo=Factor
+Factor=Folio
+Folio=ContMov
+ContMov=EstatusContabilizar
+EstatusContabilizar=AfectarPresupuesto
+AfectarPresupuesto=SubClaveDe
+SubClaveDe=(Fin)
+
+[EstatusContabilizar.ListaOpciones]
+(Inicio)=PENDIENTE
+PENDIENTE=VIGENTE
+VIGENTE=PROCESAR
+PROCESAR=CONCLUIDO
+CONCLUIDO=CONCILIADO
+CONCILIADO=(Fin)
+
+[AfectarPresupuesto.ListaOpciones]
+(Inicio)=No
+No=Asignar
+Asignar=Desasignar
+Desasignar=Reservar
+Reservar=Desreservar
+Desreservar=Comprometer Directo
+Comprometer Directo=Descomprometer Directo
+Descomprometer Directo=Comprometer Reservado
+Comprometer Reservado=Descomprometer Reservado
+Descomprometer Reservado=Devengar Directo
+Devengar Directo=Desdevengar Directo
+Desdevengar Directo=Devengar Reservado
+Devengar Reservado=Desdevengar Reservado
+Desdevengar Reservado=Devengar Comprometido
+Devengar Comprometido=Desdevengar Comprometido
+Desdevengar Comprometido=Ejercer Directo
+Ejercer Directo=Desejercer Directo
+Desejercer Directo=Ejercer Reservado
+Ejercer Reservado=Desejercer Reservado
+Desejercer Reservado=Ejercer Comprometido
+Ejercer Comprometido=Desejercer Comprometido
+Desejercer Comprometido=Ejercer Devengado
+Ejercer Devengado=Desejercer Devengado
+Desejercer Devengado=(Fin)

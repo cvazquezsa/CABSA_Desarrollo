@@ -1,0 +1,38 @@
+
+[Vista]
+Icono=0
+Clave=MFARepCxpFisicasFiscalRegimen
+Nombre=MFARepCxpFisicasFiscalRegimen
+Modulos=(Todos)
+Singular=MFARepCxpFisicasFiscalRegimen
+ListaTablas=MFARepCxpFisicasFiscalRegimen
+TablaPrincipal=MFARepCxpFisicasFiscalRegimen
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=MFARepCxpFisicasFiscalRegimen.FiscalRegimen
+SQL=(Lista)
+[MFARepCxpFisicasFiscalRegimen.FiscalRegimen]
+Clave=MFARepCxpFisicasFiscalRegimen.FiscalRegimen
+Nombre=Régimen Fiscal
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+TipoDatos=Texto
+AyudaMemTabla=FiscalRegimen
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+LigaTabla=MFARepCxpFisicasFiscalRegimen
+LigaCampo=FiscalRegimen
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FiscalRegimen
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=MFARepCxpFisicasFiscalRegimen.FiscalRegimen
+MFARepCxpFisicasFiscalRegimen.FiscalRegimen=FROM MFARepCxpFisicasFiscalRegimen
+FROM MFARepCxpFisicasFiscalRegimen=(Fin)

@@ -1,0 +1,216 @@
+
+[Tabla]
+Icono=0
+Clave=ActivoFTipoServicio
+Nombre=ActivoFTipoServicio
+Archivo=ActivoFTipoServicio
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+ControlTipo=S
+CampoTipo=Tipo
+LlavePrimaria=(Lista)
+SQL=SELECT<BR>  Tipo,<BR>  Servicio,<BR>  Descripcion,<BR>  Unico,<BR>  Inspeccion,<BR>  InspeccionUnidad,<BR>  InspeccionUsuarioEsp,<BR>  ServicioTallerEsp,<BR>  ServicioUsuarioEsp,<BR>  ServicioMovEsp,<BR>  ServicioConceptoEsp,<BR>  ServicioClienteEsp<BR><BR>FROM<BR>  ActivoFTipoServicio
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Tipo
+[Servicio]
+Clave=Servicio
+Nombre=Servicio
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ServicioTipoLIsta
+AyudaVista=ServicioTipo
+AyudaCampo=ServicioTipo.Tipo
+AyudaMemTabla=ServicioTipo
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[Unico]
+Clave=Unico
+Nombre=Unico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+[Inspeccion]
+Clave=Inspeccion
+Nombre=Frecuencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorMinimo=0
+[InspeccionUnidad]
+Clave=InspeccionUnidad
+Nombre=Unidad Frecuencia
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+AyudaMemTabla=Unidad
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+[InspeccionUsuarioEsp]
+Clave=InspeccionUsuarioEsp
+Nombre=Usuario Inspeccion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Usuario
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+[ServicioTallerEsp]
+Clave=ServicioTallerEsp
+Nombre=Taller
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+[ServicioUsuarioEsp]
+Clave=ServicioUsuarioEsp
+Nombre=Usuario Servicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Usuario
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+[ServicioMovEsp]
+Clave=ServicioMovEsp
+Nombre=Movimiento Servicio
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLENLISTA(<T>SELECT Mov FROM MovTipo WHERE SubClave = :tSubClave AND Modulo = :tModulo<T>,<T>MAF.S<T>,<T>VTAS<T>)
+[ServicioConceptoEsp]
+Clave=ServicioConceptoEsp
+Nombre=Concepto Servicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=VTAS
+[ServicioClienteEsp]
+Clave=ServicioClienteEsp
+Nombre=Cliente Servicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+
+
+
+
+
+
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+AyudaRefrescar=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[InspeccionUnidad.ListaOpciones]
+(Inicio)=Horas
+Horas=Dias
+Dias=Semanas
+Semanas=Meses
+Meses=Años
+Años=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Servicio
+Servicio=Descripcion
+Descripcion=Unico
+Unico=Inspeccion
+Inspeccion=InspeccionUnidad
+InspeccionUnidad=InspeccionUsuarioEsp
+InspeccionUsuarioEsp=ServicioTallerEsp
+ServicioTallerEsp=ServicioUsuarioEsp
+ServicioUsuarioEsp=ServicioMovEsp
+ServicioMovEsp=ServicioConceptoEsp
+ServicioConceptoEsp=ServicioClienteEsp
+ServicioClienteEsp=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Tipo
+Tipo=Servicio
+Servicio=(Fin)

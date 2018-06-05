@@ -1,0 +1,135 @@
+[Reporte]
+Clave=ArtCatalogo
+Nombre=Catálogo
+Icono=0
+Vista=Art
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+PosicionInicialAltura=744
+PosicionInicialAncho=684
+BarraHerramientas=S
+PreliminarColores=S
+ListaAcciones=Cerrar
+
+[Formato]
+ListaLineas=Detalle<BR>Detalle
+VentanaIzquierda=192
+VentanaArriba=174
+VentanaAltura=420
+VentanaAncho=640
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Detalle
+Objetos=2
+Seccion=Detalle
+AltoEnCm=1.16
+Renglones=3
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Abajo
+
+[Linea2]
+Clave=Detalle
+Objetos=1
+Seccion=Detalle
+AltoEnCm=4.21
+Renglones=11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Art.Articulo
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B1]
+Celda=B1
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=38
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Art.Descripcion1
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=8.39
+AnchoTexto=45
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+EsImagen=S
+TipoImagen=Recortada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=AnexoCta(<T>INV<T>, Art.Articulo, <T>Imagen<T>)
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S

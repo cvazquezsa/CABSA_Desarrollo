@@ -1,0 +1,850 @@
+[Tabla]
+Icono=0
+Clave=Contrato
+Archivo=Contrato
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Contratos
+Singular=Contratos
+LlavePrimaria=ID
+ControlID=S
+ControlMov=S
+ControlMovID=S
+ControlEstatus=S
+ControlCambios=S
+ControlUsuarios=S
+ControlEmpresas=S
+CampoID=ID
+CampoMov=Mov
+CampoMovID=MovID
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+EstatusDefault=SINAFECTAR
+ListaRelaciones=(Lista)
+ControlSituacion=S
+CampoSituacion=Situacion
+ControlSituacionFecha=S
+CampoSituacionFecha=SituacionFecha
+ControlContratos=S
+CampoContrato=Contrato
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalDestino=S
+CampoSucursalDestino=SucursalDestino
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+CampoSituacionUsuario=SituacionUsuario
+ControlSituacionUsuario=S
+CampoSituacionNota=SituacionNota
+ControlSituacionNota=S
+ListaCampos002=<CONTINUA>R>Indicador1<BR>Indicador2<BR>Indicador3<BR>FechaRevision<BR>ActividadActual<BR>Descripcion
+
+ControlProyectos=S
+CampoProyecto=Proyecto
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+TipoDatos=AutoInc
+TamanoValidacion=10
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Tamano=5
+TamanoValidacion=5
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=&Movimiento
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=20
+Tamano=20
+TamanoValidacion=20
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Movimientos Forma
+OpcionesUnicamente=S
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ConRefrescar=S
+ListaRefrescar=ContactoTipo<BR>Concepto
+Requerido=S
+CondicionEdicion=Estatus=EstatusSinAfectar
+RefrescarTotales=S
+ValidacionUsaTabla=S
+ValidacionTablas=MovTipo
+
+TipoDatos=Texto
+[MovID]
+Clave=MovID
+Nombre=Consecutivo
+TamanoValidacion=10
+CondicionEdicion=(ConfigModulo(<T>PACTO<T>, <T>EditarConsec<T>)=<T>Si<T>) y (Estatus=EstatusSinAfectar) y Usuario.ModificarConsecutivos
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=&Fecha Emisión
+AyudaEnCaptura=Calendario sin Hora
+TipoDatos=FechaHora
+TamanoValidacion=15
+FormatoValidacion=dd/mmm/aaaa
+ValorPorOmision=FechaTrabajo
+Requerido=S
+CondicionEdicion=no Usuario.BloquearFechaEmision
+ConRefrescar=S
+ListaRefrescar=FechaInicio
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=Ultimo Cambio
+TipoDatos=FechaHora
+TamanoValidacion=15
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaMemEnBlanco=S
+AyudaRefrescar=S
+CondicionEdicion=(Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarConceptos
+Formula=ListaConceptos(<T>PACTO<T>, Mov)
+ValorRefrescar=ConceptoOmision(<T>PACTO<T>, Mov)
+TipoDatos=Texto
+
+
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Tamano=10
+TamanoValidacion=10
+TipoDatos=Texto
+
+[Autorizacion]
+Clave=Autorizacion
+Nombre=Autorización
+Tamano=10
+TamanoValidacion=10
+TipoDatos=Texto
+
+[Observaciones]
+Clave=Observaciones
+Nombre=&Observaciones
+AyudaEnCaptura=Vista
+Tamano=100
+TamanoValidacion=100
+AyudaForma=ObservacionLista
+AyudaVista=Observacion
+AyudaCampo=Observacion.Observacion
+AyudaBusquedaRapida=Asigna(Info.Modulo, <T>PACTO<T>) Asigna(Info.Descripcion, <T>Contratos<T>)
+ConAyudaBusquedaRapida=S
+CondicionEdicion=(Estatus=EstatusSinAfectar) o Usuario.ModificarConceptos
+AyudaRefrescar=S
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Tamano=15
+TamanoValidacion=15
+TipoDatos=Texto
+
+[FechaConclusion]
+Clave=FechaConclusion
+Nombre=Fecha Conclusión
+TipoDatos=FechaHora
+TamanoValidacion=15
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+[DocFuente]
+Clave=DocFuente
+Nombre=DocFuente
+TipoDatos=Numérico
+Tamano=0
+TamanoValidacion=20
+
+[FechaCancelacion]
+Clave=FechaCancelacion
+Nombre=FechaCancelacion
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+
+[Relaciones.Mon]
+TipoRelacion=Forzosa
+LlaveLocal=Moneda
+Clave=Mon
+TablaRemota=Mon
+LlaveRemota=Moneda
+
+[OrigenTipo]
+Clave=OrigenTipo
+Nombre=Tipo Origen
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Origen]
+Clave=Origen
+Nombre=Origen
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[OrigenID]
+Clave=OrigenID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaRegistro]
+Clave=FechaRegistro
+Nombre=Fecha Registro
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+
+
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionEdicion=(Estatus=EstatusSinAfectar) o ((Estatus=EstatusPendiente) y Usuario.ModificarReferencias)
+TipoDatos=Texto
+
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Usuario.UEN
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+
+[Relaciones.UEN]
+TipoRelacion=Opcional
+LlaveLocal=UEN
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+[SituacionUsuario]
+Clave=SituacionUsuario
+Nombre=Usuario seguimiento
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+[SituacionNota]
+Clave=SituacionNota
+Nombre=Nota
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+[Prioridad]
+Clave=Prioridad
+Nombre=Prioridad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Normal<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=Alta<BR>Normal<BR>Baja
+TipoDatos=Texto
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+Mayusculas=S
+TipoDatos=Texto
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+Mayusculas=S
+TipoDatos=Texto
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=PersonalLista
+AyudaVista=Personal
+AyudaCampo=Personal.Personal
+ValidacionUsaTabla=S
+ValidacionTablas=Personal
+Mayusculas=S
+TipoDatos=Texto
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+Mayusculas=S
+TipoDatos=Texto
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=Proveedor
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+[Relaciones.Personal]
+TipoRelacion=Opcional
+LlaveLocal=Personal
+Clave=Personal
+TablaRemota=Personal
+LlaveRemota=Personal
+[Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+[Relaciones.MovTipo]
+TipoRelacion=Opcional
+LlaveLocal={Comillas(<T>PACTO<T>)}<BR>Mov
+Clave=MovTipo
+TablaRemota=MovTipo
+LlaveRemota=Modulo<BR>Mov
+[Prospecto]
+Clave=Prospecto
+Nombre=Prospecto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProspectoLista
+AyudaVista=ProspectoA
+AyudaCampo=Prospecto.Prospecto
+ValidacionUsaTabla=S
+ValidacionTablas=Prospecto
+TipoDatos=Texto
+[Relaciones.Prospecto]
+TipoRelacion=Opcional
+LlaveLocal=Prospecto
+Clave=Prospecto
+TablaRemota=Prospecto
+LlaveRemota=Prospecto
+[Desde]
+Clave=Desde
+Nombre=&Desde
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+Requerido=S
+ValorPorOmision=Hoy
+ValorRefrescar=Hoy
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+[SucursalDestino]
+Clave=SucursalDestino
+Nombre=SucursalDestino
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+[Hasta]
+Clave=Hasta
+Nombre=&Hasta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=Mon
+ValorPorOmision=Usuario.DefMoneda
+CondicionEdicion=no Usuario.BloquearMoneda
+AlCambiar=Asigna(TipoCambio, Caso ConfigModulo(<T>PACTO<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Contrato:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Contrato:Mon.TipoCambioCompra<BR>Sino<BR>  Contrato:Mon.TipoCambio<BR>Fin)
+TipoDatos=Texto
+ConRefrescar=S
+ListaRefrescar=TipoCambio
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=Caso ConfigModulo(<T>PACTO<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Contrato:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Contrato:Mon.TipoCambioCompra<BR>Sino<BR>  Contrato:Mon.TipoCambio<BR>Fin
+CondicionEdicion=no Usuario.BloquearMoneda
+
+
+
+
+
+[ContactoTipo]
+Clave=ContactoTipo
+Nombre=Tipo Cuenta
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+
+
+TipoDatos=Texto
+ValorRefrescar=SI General.VIC = Verdadero ENTONCES<BR>  Caso  SQL(<T>SELECT SubClave FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMovimiento<T>, <T>PACTO<T>, Mov)<BR>    Es <T>VIC.CV<T> Entonces <T>Cliente<T><BR>    Es <T>VIC.CR<T> Entonces <T>Cliente<T><BR>    Es <T>VIC.ARR<T> Entonces <T>Proveedor<T><BR>    Es <T>VIC.CM<T> Entonces <T>Proveedor<T><BR>    Es <T>VIC.MA<T> Entonces <T>Proveedor<T><BR>    Es <T>VIC.INV<T> Entonces <T>Cliente<T><BR>    Es <T>VIC.CS<T> Entonces <T>Inversionista<T><BR>    Es <T>VIC.O<T> Entonces <T>Proveedor<T><BR>  Sino<BR>   ContactoTipo<BR>  Fin<BR>SINO<BR>  ContactoTipo<BR>FIN
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SI General.VIC = Verdadero ENTONCES<BR>  Caso  SQL(<T>SELECT SubClave FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMovimiento<T>, <T>PACTO<T>, Mov)<BR>    Es <T>VIC.CV<T> Entonces Lista(<T>Cliente<T>)<BR>    Es <T>VIC.CR<T> Entonces Lista(<T>Cliente<T>)<BR>    Es <T>VIC.ARR<T> Entonces Lista(<T>Proveedor<T>)<BR>    Es <T>VIC.CM<T> Entonces Lista(<T>Proveedor<T>)<BR>    Es <T>VIC.MA<T> Entonces Lista(<T>Proveedor<T>)<BR>    Es <T>VIC.INV<T> Entonces Lista(<T>Cliente<T>)<BR>    Es <T>VIC.CS<T> Entonces Lista(<T>Inversionista<T>)<BR>    Es <T>VIC.O<T> Entonces Lista(<T>Proveedor<T>)<BR>  Sino<BR>    Lista(<T>Prospecto<T>,<T>Cliente<T>,<T>Proveedor<T>,<T>Personal<T>,<T>Agente<T>,<T>Contrato<T>,<T>Riesgo<T>)<BR>  Fin<BR>SINO<BR>  Lista(<T>Prospecto<T>,<T>Cliente<T>,<T>Proveedor<T>,<T>Personal<T>,<T>Agente<T>,<T>Contrato<T>,<T>Riesgo<T>)<BR>FIN
+[ContratoRama]
+Clave=ContratoRama
+Nombre=Contrato Maestro
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Contrato
+TipoDatos=Texto
+[Relaciones.ProyReestructurar]
+TipoRelacion=Opcional
+LlaveLocal=ContratoReestructurar
+Clave=ProyReestructurar
+TablaRemota=ProyReestructurar
+LlaveRemota=Contrato
+
+[Comentarios]
+Clave=Comentarios
+Nombre=Comentarios
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[Relaciones.aroRiesgo]
+TipoRelacion=Opcional
+LlaveLocal=Riesgo
+Clave=aroRiesgo
+TablaRemota=aroRiesgo
+LlaveRemota=Riesgo
+
+
+
+
+
+
+
+
+
+[Titulo]
+Clave=Titulo
+Nombre=Titulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+[Documento]
+Clave=Documento
+Nombre=Documento
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+AdvMemoEstilo=RTF
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+AyudaEnCaptura=Vista
+Tamano=50
+TamanoValidacion=50
+ValorPorOmision=Si(ConDatos(Filtro.Proyecto), Filtro.Proyecto, Usuario.DefProyecto)
+AyudaMemTabla=Proy
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+CondicionEdicion=Vacio(Filtro.Proyecto) y (no Usuario.BloquearProyecto) y ((Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarProyUENActCC)
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Proyecto
+AyudaMemAvanzada=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Proyecto FROM Proy WHERE Proyecto=:tProy AND Estatus=:tEstatus<T>, Proyecto, EstatusAlta)=Proyecto
+
+TipoDatos=Texto
+[Relaciones.Proy]
+TipoRelacion=Opcional
+LlaveLocal=Proyecto
+Clave=Proy
+TablaRemota=Proy
+LlaveRemota=Proyecto
+
+[RamaID]
+Clave=RamaID
+Nombre=RamaID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[IDOrigen]
+Clave=IDOrigen
+Nombre=IDOrigen
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+UnicamenteLectura=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Contrato]
+Clave=Contrato
+Nombre=Contrato
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+
+
+[FechaEscrituracion]
+Clave=FechaEscrituracion
+Nombre=Fecha Escrituracion
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+[FechaInicio]
+Clave=FechaInicio
+Nombre=Fecha Inicio
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+ColorFondoEsp=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+[Inversionista]
+Clave=Inversionista
+Nombre=Inversionista
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Empresa
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[ContactoTipo.ListaOpciones]
+(Inicio)=Prospecto
+Prospecto=Cliente
+Cliente=Proveedor
+Proveedor=Personal
+Personal=Agente
+Agente=Contrato
+Contrato=Riesgo
+Riesgo=(Fin)
+
+
+
+
+
+[Importe.ListaRefrescar]
+(Inicio)=IVAImporte
+IVAImporte=ImporteTotal
+ImporteTotal=(Fin)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Empresa
+Empresa=Mov
+Mov=MovID
+MovID=FechaEmision
+FechaEmision=UltimoCambio
+UltimoCambio=Concepto
+Concepto=Proyecto
+Proyecto=Usuario
+Usuario=Autorizacion
+Autorizacion=DocFuente
+DocFuente=Observaciones
+Observaciones=Estatus
+Estatus=Referencia
+Referencia=Moneda
+Moneda=TipoCambio
+TipoCambio=Situacion
+Situacion=SituacionFecha
+SituacionFecha=SituacionUsuario
+SituacionUsuario=SituacionNota
+SituacionNota=OrigenTipo
+OrigenTipo=Origen
+Origen=OrigenID
+OrigenID=Ejercicio
+Ejercicio=Periodo
+Periodo=FechaRegistro
+FechaRegistro=FechaConclusion
+FechaConclusion=FechaCancelacion
+FechaCancelacion=Sucursal
+Sucursal=UEN
+UEN=Prioridad
+Prioridad=ContactoTipo
+ContactoTipo=Prospecto
+Prospecto=Cliente
+Cliente=Proveedor
+Proveedor=Personal
+Personal=Agente
+Agente=SucursalOrigen
+SucursalOrigen=SucursalDestino
+SucursalDestino=Desde
+Desde=Hasta
+Hasta=ContratoRama
+ContratoRama=Comentarios
+Comentarios=Titulo
+Titulo=Documento
+Documento=RamaID
+RamaID=IDOrigen
+IDOrigen=Contrato
+Contrato=FechaEscrituracion
+FechaEscrituracion=FechaInicio
+FechaInicio=Inversionista
+Inversionista=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  Empresa,
+  Empresa,=  Mov,
+  Mov,=  MovID,
+  MovID,=  FechaEmision,
+  FechaEmision,=  UltimoCambio,
+  UltimoCambio,=  ContactoTipo,
+  ContactoTipo,=  Prospecto,
+  Prospecto,=  Cliente,
+  Cliente,=  Proveedor,
+  Proveedor,=  Personal,
+  Personal,=  Agente,
+  Agente,=  ContratoRama,
+  ContratoRama,=  UEN,
+  UEN,=  Concepto,
+  Concepto,=  Proyecto,
+  Proyecto,=  Usuario,
+  Usuario,=  Autorizacion,
+  Autorizacion,=  DocFuente,
+  DocFuente,=  Observaciones,
+  Observaciones,=  Referencia,
+  Referencia,=  Estatus,
+  Estatus,=  Situacion,
+  Situacion,=  SituacionFecha,
+  SituacionFecha,=  SituacionUsuario,
+  SituacionUsuario,=  SituacionNota,
+  SituacionNota,=  Moneda,
+  Moneda,=  TipoCambio,
+  TipoCambio,=  RamaID,
+  RamaID,=  IDOrigen,
+  IDOrigen,=  OrigenTipo,
+  OrigenTipo,=  Origen,
+  Origen,=  OrigenID,
+  OrigenID,=  Ejercicio,
+  Ejercicio,=  Periodo,
+  Periodo,=  FechaRegistro,
+  FechaRegistro,=  FechaConclusion,
+  FechaConclusion,=  FechaCancelacion,
+  FechaCancelacion,=  Desde,
+  Desde,=  Hasta,
+  Hasta,=  Sucursal,
+  Sucursal,=  Prioridad,
+  Prioridad,=  Comentarios,
+  Comentarios,=  Documento,
+  Documento,=  Titulo,
+  Titulo,=  Contrato,
+  Contrato,=  FechaEscrituracion,
+  FechaEscrituracion,=  FechaInicio,
+  FechaInicio,=  Inversionista,
+  Inversionista,=  Importe,
+  Importe,=  IVAImporte,
+  IVAImporte,=  ImporteTotal,
+  ImporteTotal,=  SucursalOrigen,
+  SucursalOrigen,=  SucursalDestino
+  SucursalDestino=FROM
+FROM=  Contrato
+  Contrato=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=UEN
+UEN=Proy
+Proy=MovTipo
+MovTipo=Mon
+Mon=Prospecto
+Prospecto=Cte
+Cte=Prov
+Prov=Personal
+Personal=Agente
+Agente=(Fin)

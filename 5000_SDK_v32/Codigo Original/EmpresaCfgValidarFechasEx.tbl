@@ -1,0 +1,50 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgValidarFechasEx
+Archivo=EmpresaCfgValidarFechasEx
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Excepciones Validación
+Singular=Excepciones Validación
+LlavePrimaria=Empresa<BR>Modulo<BR>Mov
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov<BR><BR>FROM<BR>  EmpresaCfgValidarFechasEx
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+Formula=ListaMovimientos( Info.Modulo )
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=Mov
+Mov=(Fin)

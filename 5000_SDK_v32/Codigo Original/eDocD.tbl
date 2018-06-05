@@ -1,0 +1,184 @@
+
+[Tabla]
+Icono=0
+Clave=eDocD
+Nombre=eDocD
+Archivo=eDocD
+Modulos=(Todos)
+Singular=eDocD
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlID=S
+CampoID=RID
+SQL=(Lista)
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Info.Modulo
+[eDoc]
+Clave=eDoc
+Nombre=eDoc
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Descripcion
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=Si Temp.Numerico4 = 0 Entonces<BR>  Asigna(Temp.Numerico4,SQL(<T>SELECT ISNULL(MAX(Orden),0) FROM eDocD WHERE Modulo = :tModulo AND eDoc = :teDoc<T>,Info.Modulo, Info.Descripcion))<BR>Fin<BR>Asigna(Temp.Numerico4,Temp.Numerico4+1)<BR>Temp.Numerico4
+[Seccion]
+Clave=Seccion
+Nombre=Seccion
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLENLISTA(<T>EXEC speDocSeccionXML :tModulo, :tDoc<T>,Info.Modulo,Info.Descripcion)
+[SubSeccionDe]
+Clave=SubSeccionDe
+Nombre=SubSeccion De
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista( <T>SELECT Seccion FROM eDocD WHERE eDoc = :teDoc AND Orden < :nOrden<T>, eDoc, Orden)
+[Vista]
+Clave=Vista
+Nombre=Origen de Datos
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Vista FROM eDocModuloVista WHERE Modulo = :tModulo<T>,Info.Modulo)
+
+[Cierre]
+Clave=Cierre
+Nombre=Sección de Cierre
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ValorPorOmision=Falso
+[TablaSt]
+Clave=TablaSt
+Nombre=Tabla de Conversión
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+
+
+
+
+
+
+
+
+Formula=SQLENLISTA(<T>SELECT TablaSt FROM TablaSt<T>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=eDoc
+eDoc=RID
+RID=Orden
+Orden=Seccion
+Seccion=SubSeccionDe
+SubSeccionDe=Vista
+Vista=Cierre
+Cierre=TablaSt
+TablaSt=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Modulo,
+Modulo,=eDoc,
+eDoc,=RID,
+RID,=Orden,
+Orden,=Seccion,
+Seccion,=SubSeccionDe,
+SubSeccionDe,=Vista,
+Vista,=Cierre,
+Cierre,=TablaSt
+TablaSt=FROM eDocD
+FROM eDocD=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Modulo
+Modulo=eDoc
+eDoc=RID
+RID=(Fin)

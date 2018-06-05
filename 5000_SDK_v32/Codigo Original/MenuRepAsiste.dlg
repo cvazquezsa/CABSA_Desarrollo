@@ -1,0 +1,53 @@
+[Dialogo]
+Clave=MenuRepAsiste
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=596
+PosicionInicialArriba=379
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=248
+
+ListaAcciones=(Lista)
+[Acciones.Kardex]
+Nombre=Kardex
+Boton=0
+NombreDesplegar=Kardex Personal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=reppersonalkardex
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Asistencias/Kardex<T>)
+[Acciones.Inasistencia]
+Nombre=Inasistencia
+Boton=0
+NombreDesplegar=&Inasistencia Personal
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=RepAsisteNoReportaAsistencia
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Asistencias/Inasistencia<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Kardex
+Kardex=Inasistencia
+Inasistencia=(Fin)

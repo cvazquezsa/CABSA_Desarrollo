@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=RepGrupo
+Nombre=Grupos
+Singular=Grupo
+ListaTablas=RepGrupo
+TablaPrincipal=RepGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=RepGrupo.Grupo
+CamposBusquedaRapida=RepGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  RepGrupo.Grupo<BR><BR>FROM<BR>  RepGrupo
+
+[RepGrupo.Grupo]
+Clave=RepGrupo.Grupo
+LigaTabla=RepGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

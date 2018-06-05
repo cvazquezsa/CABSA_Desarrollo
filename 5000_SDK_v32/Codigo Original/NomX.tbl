@@ -1,0 +1,278 @@
+[Tabla]
+Icono=0
+Clave=NomX
+Archivo=NomX
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+LlavePrimaria=ID
+ControlID=S
+ControlEstatus=S
+CampoID=ID
+CampoEstatus=Estatus
+CampoEmpresa=Empresa
+Nombre=Generador de la Nómina
+Singular=Generador de la Nómina
+EstatusDefault=ACTIVA
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=100
+Tamano=100
+Requerido=S
+TipoDatos=Texto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=7
+Tamano=7
+ValorPorOmision=<T>(Todas)<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Empresa
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Usuario.DefMoneda
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NomMov]
+Clave=NomMov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Lista de Opciones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+Requerido=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=NOM
+TipoDatos=Texto
+
+[NomConcepto]
+Clave=NomConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+TipoDatos=Texto
+
+[NomProyecto]
+Clave=NomProyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+TipoDatos=Texto
+
+[NomObservaciones]
+Clave=NomObservaciones
+Nombre=Observaciones
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Finiquito]
+Clave=Finiquito
+Nombre=Liquidación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AceptaBajas]
+Clave=AceptaBajas
+Nombre=Aceptar Bajas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[GastoClase]
+Clave=GastoClase
+Nombre=Clasificación (Gasto)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescar=S
+ListaRefrescar=GastoSubClase
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=GastoSubClase
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,<T>GAS<T>)
+TipoDatos=Texto
+
+[GastoSubClase]
+Clave=GastoSubClase
+Nombre=Subclasificación (Gasto)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=<T><T>
+CondicionEdicion=ConDatos(GastoClase)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,<T>GAS<T>, NomX:NomX.GastoClase)
+TipoDatos=Texto
+
+[FiltrarUltimoDiaPagado]
+Clave=FiltrarUltimoDiaPagado
+Nombre=Filtrar por Ultimo Día Pagado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+[Estatus.ListaOpciones]
+(Inicio)=ACTIVA
+ACTIVA=INACTIVA
+INACTIVA=(Fin)
+
+
+
+
+
+[TipoNominaG4]
+Clave=TipoNominaG4
+Nombre=Tipo Nomina G4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+
+OpcionesPredefinidas=Ninguna
+
+
+
+
+
+
+
+
+
+
+
+
+
+ListaOpciones=(Lista)
+
+
+[TipoNominaG4.ListaOpciones]
+(Inicio)=Nomina Normal
+Nomina Normal=Nomina Finiquito
+Nomina Finiquito=Nomina Liquidacion
+Nomina Liquidacion=Nomina PTU
+Nomina PTU=Nomina Asimilables
+Nomina Asimilables=Nomina Aguinaldo
+Nomina Aguinaldo=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Nombre
+Nombre=Empresa
+Empresa=Moneda
+Moneda=NomMov
+NomMov=NomConcepto
+NomConcepto=NomProyecto
+NomProyecto=NomObservaciones
+NomObservaciones=Condicion
+Condicion=Estatus
+Estatus=Finiquito
+Finiquito=AceptaBajas
+AceptaBajas=GastoClase
+GastoClase=GastoSubClase
+GastoSubClase=FiltrarUltimoDiaPagado
+FiltrarUltimoDiaPagado=TipoNominaG4
+TipoNominaG4=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=Nombre,
+Nombre,=Empresa,
+Empresa,=Moneda,
+Moneda,=NomMov,
+NomMov,=NomConcepto,
+NomConcepto,=NomProyecto,
+NomProyecto,=NomObservaciones,
+NomObservaciones,=Condicion,
+Condicion,=Estatus,
+Estatus,=Finiquito,
+Finiquito,=AceptaBajas,
+AceptaBajas,=GastoClase,
+GastoClase,=GastoSubClase,
+GastoSubClase,=FiltrarUltimoDiaPagado,
+FiltrarUltimoDiaPagado,=TipoNominaG4
+TipoNominaG4=FROM NomX
+FROM NomX=(Fin)

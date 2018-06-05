@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=EmpresaZona
+Nombre=Zonas
+Modulos=(Todos)
+Singular=Zona
+ListaTablas=EmpresaZona
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=EmpresaZona.Zona
+TablaPrincipal=EmpresaZona
+UsarJOIN=S
+SQL=SELECT<BR>  EmpresaZona.Zona<BR><BR>FROM<BR>  EmpresaZona
+
+[EmpresaZona.Zona]
+Clave=EmpresaZona.Zona
+LigaTabla=EmpresaZona
+LigaCampo=Zona
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Zona

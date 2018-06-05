@@ -1,0 +1,326 @@
+[Vista]
+Icono=0
+Clave=OfertaH
+Nombre=Asistente
+Modulos=(Todos)
+Singular=Asistente
+ListaTablas=(Lista)
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=OfertaH
+ListaRelaciones=OfertaH.Art
+ListaCalculados=(Lista)
+SQL=SELECT<BR>  OfertaH.Estacion,<BR>  OfertaH.ID,<BR>  OfertaH.Articulo,<BR>  OfertaH.Monto1,<BR>  OfertaH.Monto2,<BR>  OfertaH.Monto3,<BR>  OfertaH.Monto4,<BR>  OfertaH.Monto5,<BR>  OfertaH.Monto6,<BR>  OfertaH.Monto7,<BR>  OfertaH.Monto8,<BR>  OfertaH.Monto9,<BR>  OfertaH.Monto10,<BR>  OfertaH.PrecioLista,<BR>  OfertaH.CostoBase,<BR>  Art.Descripcion1<BR><BR>FROM<BR>  OfertaH<BR>  JOIN Art ON OfertaH.Articulo=Art.Articulo
+
+[OfertaH.Estacion]
+Clave=OfertaH.Estacion
+LigaTabla=OfertaH
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Estacion
+
+[OfertaH.ID]
+Clave=OfertaH.ID
+LigaTabla=OfertaH
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=ID
+
+[OfertaH.Articulo]
+Clave=OfertaH.Articulo
+LigaTabla=OfertaH
+LigaCampo=Articulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Articulo
+
+[OfertaH.Monto1]
+Clave=OfertaH.Monto1
+LigaTabla=OfertaH
+LigaCampo=Monto1
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto1
+
+[OfertaH.Monto2]
+Clave=OfertaH.Monto2
+LigaTabla=OfertaH
+LigaCampo=Monto2
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto2
+
+[OfertaH.Monto3]
+Clave=OfertaH.Monto3
+LigaTabla=OfertaH
+LigaCampo=Monto3
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto3
+
+[OfertaH.Monto4]
+Clave=OfertaH.Monto4
+LigaTabla=OfertaH
+LigaCampo=Monto4
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto4
+
+[OfertaH.Monto5]
+Clave=OfertaH.Monto5
+LigaTabla=OfertaH
+LigaCampo=Monto5
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto5
+
+[OfertaH.Monto6]
+Clave=OfertaH.Monto6
+LigaTabla=OfertaH
+LigaCampo=Monto6
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto6
+
+[OfertaH.Monto7]
+Clave=OfertaH.Monto7
+LigaTabla=OfertaH
+LigaCampo=Monto7
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto7
+
+[OfertaH.Monto8]
+Clave=OfertaH.Monto8
+LigaTabla=OfertaH
+LigaCampo=Monto8
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto8
+
+[OfertaH.Monto9]
+Clave=OfertaH.Monto9
+LigaTabla=OfertaH
+LigaCampo=Monto9
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto9
+
+[OfertaH.Monto10]
+Clave=OfertaH.Monto10
+LigaTabla=OfertaH
+LigaCampo=Monto10
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Monto10
+
+[OfertaH.PrecioLista]
+Clave=OfertaH.PrecioLista
+LigaTabla=OfertaH
+LigaCampo=PrecioLista
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=PrecioLista
+
+[OfertaH.CostoBase]
+Clave=OfertaH.CostoBase
+LigaTabla=OfertaH
+LigaCampo=CostoBase
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=CostoBase
+
+[Art.Descripcion1]
+Clave=Art.Descripcion1
+LigaTabla=Art
+LigaCampo=Descripcion1
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion1
+
+[Relaciones.OfertaH.Art]
+Clave=OfertaH.Art
+TablaRemota=Art
+LlaveLocal=OfertaH.Articulo
+LlaveRemota=Articulo
+TipoRelacion=Forzosa
+
+[MargenPrecioLista]
+Clave=MargenPrecioLista
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen Precio Lista
+Formula=ImporteMargen(OfertaH.PrecioLista, OfertaH.CostoBase)
+
+[Margen1]
+Clave=Margen1
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>0)
+Formula=ImporteMargen(OfertaH.Monto1, OfertaH.CostoBase)
+
+[Margen2]
+Clave=Margen2
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>1)
+Formula=ImporteMargen(OfertaH.Monto2, OfertaH.CostoBase)
+
+[Margen3]
+Clave=Margen3
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>2)
+Formula=ImporteMargen(OfertaH.Monto3, OfertaH.CostoBase)
+
+[Margen4]
+Clave=Margen4
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>3)
+Formula=ImporteMargen(OfertaH.Monto4, OfertaH.CostoBase)
+
+[Margen5]
+Clave=Margen5
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>4)
+Formula=ImporteMargen(OfertaH.Monto5, OfertaH.CostoBase)
+
+[Margen6]
+Clave=Margen6
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>5)
+Formula=ImporteMargen(OfertaH.Monto6, OfertaH.CostoBase)
+
+[Margen7]
+Clave=Margen7
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>6)
+Formula=ImporteMargen(OfertaH.Monto7, OfertaH.CostoBase)
+
+[Margen8]
+Clave=Margen8
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>7)
+Formula=ImporteMargen(OfertaH.Monto8, OfertaH.CostoBase)
+
+[Margen9]
+Clave=Margen9
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>8) 
+Formula=ImporteMargen(OfertaH.Monto9, OfertaH.CostoBase)
+
+[Margen10]
+Clave=Margen10
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+FormatoValidacion=0.##
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=% Margen
+CondicionDespliege=(Info.Usar=<T>Precio<T>) y (Info.Cantidad>9)
+Formula=ImporteMargen(OfertaH.Monto10, OfertaH.CostoBase)
+
+[Vista.ListaTablas]
+(Inicio)=OfertaH
+OfertaH=Art
+Art=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=OfertaH.Estacion
+OfertaH.Estacion=OfertaH.ID
+OfertaH.ID=OfertaH.Articulo
+OfertaH.Articulo=OfertaH.Monto1
+OfertaH.Monto1=OfertaH.Monto2
+OfertaH.Monto2=OfertaH.Monto3
+OfertaH.Monto3=OfertaH.Monto4
+OfertaH.Monto4=OfertaH.Monto5
+OfertaH.Monto5=OfertaH.Monto6
+OfertaH.Monto6=OfertaH.Monto7
+OfertaH.Monto7=OfertaH.Monto8
+OfertaH.Monto8=OfertaH.Monto9
+OfertaH.Monto9=OfertaH.Monto10
+OfertaH.Monto10=OfertaH.PrecioLista
+OfertaH.PrecioLista=OfertaH.CostoBase
+OfertaH.CostoBase=Art.Descripcion1
+Art.Descripcion1=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=MargenPrecioLista
+MargenPrecioLista=Margen1
+Margen1=Margen2
+Margen2=Margen3
+Margen3=Margen4
+Margen4=Margen5
+Margen5=Margen6
+Margen6=Margen7
+Margen7=Margen8
+Margen8=Margen9
+Margen9=Margen10
+Margen10=(Fin)

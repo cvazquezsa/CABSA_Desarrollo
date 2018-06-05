@@ -1,0 +1,205 @@
+
+[Tabla]
+Icono=0
+Clave=eDocInRuta
+Nombre=eDocInRuta
+Archivo=eDocInRuta
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlMov=S
+CampoMov=Mov
+SQL=(Lista)
+[eDocIn]
+Clave=eDocIn
+Nombre=eDocIn
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Descripcion
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[XSD]
+Clave=XSD
+Nombre=XSD
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT CLave FROM eDocXSD WHERE Modulo = :tModulo<T>,Modulo)
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Módulos
+ConRefrescar=S
+ListaRefrescar=(Lista)
+[Mov]
+Clave=Mov
+Nombre=Mov
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLIsta(<T>SELECT DISTINCT Mov FROM MovTipo WHERE Modulo = :tModulo<T>,Modulo)
+[Afectar]
+Clave=Afectar
+Nombre=Afectar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+[VigenciaDe]
+Clave=VigenciaDe
+Nombre=Vigencia De
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+AyudaEnCaptura=Calendario sin Hora
+[VigenciaA]
+Clave=VigenciaA
+Nombre=Vigencia A
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[AntesAfectar]
+Clave=AntesAfectar
+Nombre=Acción Antes Afectar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+
+OpcionesLlave=Número del Renglón
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+
+
+
+
+
+
+AyudaMemEnBlanco=S
+OpcionesUnicamente=S
+
+OpcionesValidar=S
+
+
+
+
+ValorRefrescar=SI(Modulo=<T>GAS<T>,<T>ReCalcular Gasto<T>,Nulo)
+ListaOpciones=(Lista)
+
+
+
+[Modulo.ListaRefrescar]
+(Inicio)=Mov
+Mov=XSD
+XSD=AntesAfectar
+AntesAfectar=(Fin)
+
+[AntesAfectar.ListaOpciones]
+(Inicio)=ReCalcular Gasto
+ReCalcular Gasto=Stored Procedure
+Stored Procedure=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=eDocIn
+eDocIn=Ruta
+Ruta=Descripcion
+Descripcion=XSD
+XSD=Modulo
+Modulo=Mov
+Mov=Afectar
+Afectar=VigenciaDe
+VigenciaDe=VigenciaA
+VigenciaA=AntesAfectar
+AntesAfectar=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=eDocIn,
+eDocIn,=Ruta,
+Ruta,=Descripcion,
+Descripcion,=XSD,
+XSD,=Modulo,
+Modulo,=Mov,
+Mov,=Afectar,
+Afectar,=VigenciaDe,
+VigenciaDe,=VigenciaA,
+VigenciaA,=AntesAfectar
+AntesAfectar=FROM eDocInRuta
+FROM eDocInRuta=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=eDocIn
+eDocIn=Ruta
+Ruta=(Fin)

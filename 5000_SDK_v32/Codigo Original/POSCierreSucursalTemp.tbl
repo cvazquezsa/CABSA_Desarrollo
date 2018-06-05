@@ -1,0 +1,81 @@
+
+[Tabla]
+Icono=0
+Clave=POSCierreSucursalTemp
+Nombre=POSCierreSucursalTemp
+Archivo=POSCierreSucursalTemp
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Estacion
+ControlMov=S
+CampoMov=Mov
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[Fecha]
+Clave=Fecha
+Nombre=Fecha Cierre
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+AyudaEnCaptura=Calendario sin Hora
+ValidacionConCondiciones=S
+Requerido=S
+ValidacionMensajeError=<T>La fecha debe ser mayor a <T>+hoy
+ValidacionCondicion=Fecha> Hoy
+[Mov]
+Clave=Mov
+Nombre=Movimiento Generar
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+
+Requerido=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Mov FROM MovTipo WHERE Clave IN(:tClave1,:tClave2)<T>,<T>POS.CC<T>,<T>POS.CCM<T>)
+
+
+
+
+[CtaDineroDestino]
+Clave=CtaDineroDestino
+Nombre=Cuenta Dinero Destino
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+Requerido=S
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Fecha
+Fecha=Mov
+Mov=CtaDineroDestino
+CtaDineroDestino=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=Fecha,
+Fecha,=Mov,
+Mov,=CtaDineroDestino
+CtaDineroDestino=FROM POSCierreSucursalTemp
+FROM POSCierreSucursalTemp=(Fin)

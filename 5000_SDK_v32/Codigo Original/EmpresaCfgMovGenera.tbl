@@ -1,0 +1,93 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovGenera
+Archivo=EmpresaCfgMovGenera
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Movimientos a Generar
+Singular=Movimientos a Generar
+LlavePrimaria=Empresa<BR>Modulo<BR>Mov
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov,<BR>  GeneraModulo,<BR>  GeneraMov,<BR>  ArrastrarMovID<BR><BR>FROM<BR>  EmpresaCfgMovGenera
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+OpcionesLlave=Auto
+OpcionesPredefinidas=Módulos
+OpcionesUnicamente=S
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(EmpresaCfgMovGenera:EmpresaCfgMovGenera.Modulo)
+TipoDatos=Texto
+
+[GeneraModulo]
+Clave=GeneraModulo
+Nombre=Generar Módulo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+OpcionesLlave=Auto
+OpcionesPredefinidas=Módulos
+OpcionesUnicamente=S
+TipoDatos=Texto
+
+[GeneraMov]
+Clave=GeneraMov
+Nombre=Genera Movimiento
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(EmpresaCfgMovGenera:EmpresaCfgMovGenera.GeneraModulo)
+TipoDatos=Texto
+
+[ArrastrarMovID]
+Clave=ArrastrarMovID
+Nombre=Arrastrar Consecutivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=Mov
+Mov=GeneraModulo
+GeneraModulo=GeneraMov
+GeneraMov=ArrastrarMovID
+ArrastrarMovID=(Fin)

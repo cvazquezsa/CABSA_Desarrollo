@@ -1,0 +1,71 @@
+[Dialogo]
+Clave=MenuHerramientaContReg
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=152
+PosicionInicialAncho=358
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=781
+PosicionInicialArriba=507
+
+[Acciones.MovimientoAnteriores]
+Nombre=MovimientoAnteriores
+Boton=0
+NombreDesplegar=&1.- Generar Registro Contable - Movimientos Anteriores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si<BR>  Confirmacion(<T>¿ Esta Seguro que Desea Generar el Registro Contable - Movimientos Anteriores ?<T>, BotonSi, BotonNo)=BotonSi<BR>Entonces<BR>  ProcesarSQL(<T>spContRegAnterior :tEmpresa<T>, Empresa) <BR>Fin
+
+[Acciones.ContSinOrigen]
+Nombre=ContSinOrigen
+Boton=0
+NombreDesplegar=&2.- Editar - Pólizas sin Origen
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContSinOrigen
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Cuenta, Nulo)<BR>Asigna(Info.Descripcion, Nulo)
+
+[Acciones.PolizasSinOrigen]
+Nombre=PolizasSinOrigen
+Boton=0
+NombreDesplegar=&3.- Generar Registro Contable - Pólizas sin Origen
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si<BR>  Confirmacion(<T>¿ Esta Seguro que Desea Generar el Registro Contable - Pólizas sin Origen ?<T>, BotonSi, BotonNo)=BotonSi<BR>Entonces<BR>  ProcesarSQL(<T>spContRegSinOrigen :tEmpresa<T>, Empresa) <BR>Fin
+
+[Acciones.ContRegDif]
+Nombre=ContRegDif
+Boton=0
+NombreDesplegar=&4.- Auditor Diferencias
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContRegDif
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=MovimientoAnteriores
+MovimientoAnteriores=ContSinOrigen
+ContSinOrigen=PolizasSinOrigen
+PolizasSinOrigen=ContRegDif
+ContRegDif=(Fin)

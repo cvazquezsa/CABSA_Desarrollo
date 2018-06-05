@@ -1,0 +1,58 @@
+[Dialogo]
+Clave=CompraSugerirBase
+Nombre=Sugerir en Base
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=408
+PosicionInicialArriba=325
+PosicionInicialAltura=117
+PosicionInicialAncho=207
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+
+[Acciones.Pendientes]
+Nombre=Pendientes
+Boton=0
+NombreDesplegar=Pendientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Base, <T>PENDIENTE<T>)
+Activo=S
+Visible=S
+
+[Acciones.Estadisticas]
+Nombre=Estadisticas
+Boton=0
+NombreDesplegar=&Estadísticas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Asigna(Info.Base, <T>ESTADISTICA<T>)
+
+[Acciones.PtoOrden]
+Nombre=PtoOrden
+Boton=0
+NombreDesplegar=&Punto de Orden
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Asigna(Info.Base, <T>PTOORDEN<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pendientes
+Pendientes=PtoOrden
+PtoOrden=Estadisticas
+Estadisticas=(Fin)

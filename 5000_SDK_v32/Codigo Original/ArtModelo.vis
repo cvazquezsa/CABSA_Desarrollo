@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ArtModelo
+Nombre=Modelos
+Modulos=INV
+Singular=Modelo
+ListaTablas=ArtModelo
+TablaPrincipal=ArtModelo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ArtModelo.Modelo
+UsarJOIN=S
+SQL=SELECT<BR>  ArtModelo.Modelo<BR><BR>FROM<BR>  ArtModelo
+
+[ArtModelo.Modelo]
+Clave=ArtModelo.Modelo
+LigaTabla=ArtModelo
+LigaCampo=Modelo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Modelo

@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=MenuExpDinero
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=237
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=521
+PosicionInicialArriba=441
+PosicionInicialAlturaCliente=114
+
+[Acciones.ExplorarSaldos]
+Nombre=ExplorarSaldos
+Boton=0
+NombreDesplegar=&Saldos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(General.Cambios, Forma(<T>ExplorarCambioDinero<T>), Forma(<T>ExplorarDinero<T>))
+
+[Acciones.Modulo]
+Nombre=Modulo
+Boton=0
+NombreDesplegar=&Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarDineroModulo
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ExplorarSaldos
+ExplorarSaldos=Modulo
+Modulo=(Fin)

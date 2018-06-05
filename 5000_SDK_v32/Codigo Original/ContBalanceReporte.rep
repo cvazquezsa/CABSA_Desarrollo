@@ -1,0 +1,778 @@
+[Reporte]
+Clave=ContBalanceReporte
+Nombre=Rep.Titulo
+Icono=0
+Vista=VerContBalance
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FuentePorOmision={Arial, 10, Negro, []}
+Ascii=S
+Impresora=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Parametros=S
+Columnas=1
+PosicionInicialAltura=602
+PosicionInicialAncho=698
+PreliminarSinRetroceder=S
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Tipo=Reporte
+PosicionInicialAlturaCliente=575
+
+ExpresionesAntes=Si(Info.CentroCostos=<T>(Todos)<T>, Asigna(Info.CentroCostos, <T><T>))<BR>Asigna(Rep.SumaGrupo1, 0)<BR>Asigna(Rep.SumaGrupo2, 0)<BR>Asigna(Rep.SumaGrupo3, 0)
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Título<BR>Título<BR>Título<BR>Detalle<BR>Final
+VentanaIzquierda=231
+VentanaArriba=94
+VentanaAltura=539
+VentanaAncho=933
+PanelArriba=175
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+BordeAbajo=N
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+Grupo=
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 12, Negro, [Negritas]}
+EstiloMarco=0
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+EstiloArriba=0
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Centrado
+AnchoEnCm=18.21
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Si<BR>  Info.ReExpresar<BR>Entonces<BR>  <T>Re-expresión de <T> + Rep.Titulo<BR>Sino<BR>  Rep.Titulo<BR>Fin
+BordeAbajo=N
+EstiloAbajo=3
+AnchoTexto=98
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+ExpresionMultiple=N
+CBAncho=12
+[Linea3]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+EstiloMarco=0
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+BordeArriba=N
+BordeAbajo=N
+EstiloArriba=0
+Renglones=1
+FondoColor=Blanco
+Visible=ConDatos(Info.CentroCostos)
+
+[Linea4]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+EstiloMarco=0
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Renglones=1
+FondoColor=Blanco
+Visible=Rep.Sucursal<>Nulo
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=18.21
+EstiloMarco=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Expresion=<T>(<T>+Info.CentroCostos+<T>)<T>
+BordeArriba=N
+BordeAbajo=N
+EstiloArriba=0
+AnchoTexto=98
+FondoColor=Blanco
+ExpresionMultiple=N
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBAncho=12
+[A4]
+Celda=A4
+Alineacion=Centrado
+AnchoEnCm=18.2
+EstiloMarco=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+BordeArriba=N
+EstiloArriba=0
+Expresion=SQL(<T>SELECT Nombre FROM Sucursal WHERE Sucursal=:n<T>, Rep.Sucursal)
+AnchoTexto=98
+FondoColor=Blanco
+ExpresionMultiple=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBAncho=12
+[Linea5]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+BordeArriba=N
+EstiloArriba=0
+Renglones=1
+BordeAbajo=N
+FondoColor=Blanco
+
+[A5]
+Celda=A5
+Alineacion=Centrado
+AnchoEnCm=18.21
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Si<BR>  Info.ReExpresar<BR>Entonces<BR>  Info.ReExpresarMon<BR>Sino<BR>  Info.ContMoneda<BR>Fin
+BordeArriba=N
+EstiloArriba=0
+AnchoTexto=98
+BordeAbajo=N
+FondoColor=Blanco
+ExpresionMultiple=N
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+CBAncho=12
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+
+ClaveAccion=ContBalanceReporte
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=ContBalance
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea6]
+Clave=Título
+Objetos=1
+Seccion=Título
+BordeArriba=N
+EstiloArriba=0
+AltoEnCm=1.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+Renglones=4
+EstiloMarco=0
+FondoColor=Blanco
+BordeAbajo=N
+
+[A6]
+Celda=A6
+Alineacion=Centrado
+AnchoEnCm=18.21
+BordeArriba=N
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(ConDatos(Info.Controladora), SQL(<T>Select Direccion From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Direccion)<BR><T>C.P. <T>+Si(ConDatos(Info.Controladora), SQL(<T>Select CodigoPostal From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.CodigoPostal)+<T> <T>+Si(ConDatos(Info.Controladora), SQL(<T>Select Colonia From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Colonia)<BR>Si(ConDatos(Info.Controladora), SQL(<T>Select Poblacion From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Poblacion)+<T> <T>+Si(ConDatos(Info.Controladora), SQL(<T>Select Estado From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Estado)+<T> <T>+Si(ConDatos(Info.Controladora), SQL(<T>Select Pais From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Pais)<BR><T>RFC <T>+Si(ConDatos(Info.Controladora), SQL(<T>Select RFC From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.RFC)
+AnchoTexto=98
+EstiloMarco=0
+FondoColor=Blanco
+BordeAbajo=N
+ExpresionMultiple=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBAncho=12
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=18.21
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Si(ConDatos(Info.Controladora), SQL(<T>Select Nombre From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Nombre)
+AnchoTexto=98
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+CBAncho=12
+[Linea7]
+Clave=Título
+Objetos=1
+Seccion=Título
+AltoEnCm=0.8
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+EstiloMarco=0
+BordeArriba=N
+BordeAbajo=N
+EstiloArriba=0
+
+[Linea8]
+Clave=Título
+Objetos=3
+Seccion=Título
+AltoEnCm=0.61
+Renglones=2
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+EstiloMarco=0
+BordeAbajo=S
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloMarco=0
+Expresion=<T>Ejercicio <T>+Info.Ejercicio<BR><T>a <T>+ PeriodoNombre(Info.PeriodoA, <T>CONT<T>)
+BordeAbajo=N
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+CBAncho=12
+[A8]
+Celda=A8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Expresion=
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeAbajo=S
+
+CBAncho=12
+[B8]
+Celda=B8
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Expresion=<T>Activo<T>
+FormatoValidacion=
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeAbajo=S
+
+CBAncho=12
+[C8]
+Celda=C8
+Alineacion=Centrado
+AnchoEnCm=7.5
+AnchoTexto=40
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+FormatoValidacion=
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Pasivo y Capital<T>
+BordeAbajo=S
+
+CBAncho=12
+[Linea9]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+EstiloMarco=3
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloMarco=3
+Expresion=Si(ConDatos(Cuenta1),<T>    <T>)+Descripcion1+<BR>Si(ConDatos(Cuenta2),<T>    <T>)+Descripcion2
+
+CBAncho=12
+[B9]
+Celda=B9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Saldo1/Info.ReExpresarTipoCambio<BR>Sino<BR> Saldo1<BR>Fin
+EstiloMarco=3
+
+CBAncho=12
+[C9]
+Celda=C9
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=(Monetario)
+EstiloMarco=3
+Expresion=Asigna(Rep.SumaGrupo1, Rep.SumaGrupo1 + Saldo1)<BR>Si<BR>  Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Si<BR>    EsFinRama1<BR>  Entonces<BR>    Asigna(Temp.Monetario, Rep.SumaGrupo1/Info.ReExpresarTipoCambio)<BR>    Asigna(Rep.SumaGrupo1, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Sino<BR>  Si<BR>    EsFinRama1                                                               <BR>  Entonces<BR>    Asigna(Temp.Monetario, Rep.SumaGrupo1)<BR>    Asigna(Rep.SumaGrupo1, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Fin
+
+CBAncho=12
+[D9]
+Celda=D9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR> Si(EsAcreedora2, -Saldo2/Info.ReExpresarTipoCambio,<BR>Saldo2/Info.ReExpresarTipoCambio)<BR>Sino<BR> Si(EsAcreedora2, -Saldo2, Saldo2)<BR>Fin
+EstiloMarco=3
+
+CBAncho=12
+[Linea10]
+Clave=Final
+Objetos=4
+Seccion=Final
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Arriba
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=15
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaGrupo2, Rep.SumaGrupo2 + Saldo2)<BR>Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Si<BR>    EsFinRama2<BR>  Entonces<BR>    Asigna(Temp.Monetario, -Rep.SumaGrupo2/Info.ReExpresarTipoCambio)<BR>    Asigna(Rep.SumaGrupo2, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Sino<BR>  Si<BR>    EsFinRama2<BR>  Entonces<BR>    Asigna(Temp.Monetario, -Rep.SumaGrupo2)<BR>    Asigna(Rep.SumaGrupo2, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Fin
+
+CBAncho=12
+[F9]
+Celda=F9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=15
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaGrupo3, Rep.SumaGrupo3 + Saldo2)<BR>Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Si<BR>    EsFinLado2<BR>  Entonces<BR>    Asigna(Temp.Monetario, -Rep.SumaGrupo3/Info.ReExpresarTipoCambio)<BR>    Asigna(Rep.SumaGrupo3, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Sino<BR>  Si<BR>    EsFinLado2<BR>  Entonces<BR>    Asigna(Temp.Monetario, -Rep.SumaGrupo3)<BR>    Asigna(Rep.SumaGrupo3, 0)<BR>    Temp.Monetario<BR>  Fin<BR>Fin
+
+CBAncho=12
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBAncho=12
+Expresion=Si<BR>  Info.ReExpresar<BR>Entonces<BR>  <T>Re-expresión Tipo de Cambio: <T> + MonetarioEnTexto(<BR>Info.ReExpresarTipoCambio<BR>)<BR>Sino<BR>  <T><T>    <BR>Fin
+ExpresionMultiple=N
+[B10]
+Celda=B10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Suma(Saldo1/Info.ReExpresarTipoCambio)<BR>Sino<BR> Suma(Saldo1)<BR>Fin
+
+CBAncho=12
+[C10]
+Celda=C10
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBAncho=12
+[D10]
+Celda=D10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR> Info.ReExpresar=<T>Si<T><BR>Entonces<BR>  Suma(-Saldo2/Info.ReExpresarTipoCambio)<BR>Sino<BR> Suma(-Saldo2)<BR>Fin
+
+
+
+
+
+CBAncho=12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

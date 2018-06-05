@@ -1,0 +1,35 @@
+
+[Vista]
+Icono=0
+Clave=POSVFAFormaPago
+Nombre=POSVFAFormaPago
+Modulos=(Todos)
+ListaTablas=POSVFAFormaPago
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=POSVFAFormaPago.FormaPago
+TablaPrincipal=POSVFAFormaPago
+SQL=(Lista)
+[POSVFAFormaPago.FormaPago]
+Clave=POSVFAFormaPago.FormaPago
+Nombre=FormaPago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT DISTINCT FormaPago FROM FormaPago<T>)
+LigaTabla=POSVFAFormaPago
+LigaCampo=FormaPago
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FormaPago
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSVFAFormaPago.FormaPago
+POSVFAFormaPago.FormaPago=FROM POSVFAFormaPago
+FROM POSVFAFormaPago=(Fin)

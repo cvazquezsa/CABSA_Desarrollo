@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ArtTemporada
+Nombre=Temporadas
+Modulos=INV
+Singular=Temporada
+ListaTablas=ArtTemporada
+TablaPrincipal=ArtTemporada
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ArtTemporada.Temporada
+UsarJOIN=S
+SQL=SELECT<BR>  ArtTemporada.Temporada<BR><BR>FROM<BR>  ArtTemporada
+
+[ArtTemporada.Temporada]
+Clave=ArtTemporada.Temporada
+LigaTabla=ArtTemporada
+LigaCampo=Temporada
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Temporada

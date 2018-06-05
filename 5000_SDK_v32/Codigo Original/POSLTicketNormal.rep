@@ -1,0 +1,1480 @@
+
+[Reporte]
+Clave=POSLTicketNormal
+Nombre=Ticket
+Icono=0
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+Vista=POSLT
+BarraHerramientas=S
+OtroOrden=S
+Filtros=S
+TieneFiltroAbierto=S
+ListaOrden=POSL.ID<TAB>(Acendente)
+PosicionInicialAlturaCliente=535
+PosicionInicialAncho=852
+
+Parametros1=
+Parametros2=
+Parametros3=
+ListaAcciones=Imprimir
+Impresora=S
+FiltroAbierto=POSL.ID = <T>{Info.IDTextoAnterior}<T>
+ExpresionesAntes=Asigna(Rep.Suma,0)<BR>Asigna(Rep.Suma1,0)<BR>Asigna(Rep.Suma2,0)<BR>Asigna(Rep.Suma3,0)<BR>Asigna(Rep.Suma4,SQL(<T>SELECT Precio FROM POSLVenta WHERE ID = :tID AND Articulo = :tArt<T>, Info.IDTexto, <T>REDONDEO<T>))
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Inicio: POSL.ID<BR>Detalle<BR>Detalle<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID<BR>Fin: POSL.ID
+
+VentanaIzquierda=0
+VentanaArriba=0
+VentanaAltura=754
+VentanaAncho=1366
+PanelArriba=120
+PanelBotones=80
+
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea2]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea3]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea4]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea5]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea6]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea7]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Direccion
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A4]
+Celda=A4
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Col. <T> + Empresa.Colonia
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A5]
+Celda=A5
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Delegacion + <T>, <T> + Empresa.Estado
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A6]
+Celda=A6
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>RFC: <T> + Empresa.RFC
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea8]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea9]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea10]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea11]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea12]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A7]
+Celda=A7
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Teléfonos: <T> + Empresa.Telefonos
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=2.976
+AnchoTexto=16
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A9]
+Celda=A9
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Datos Sucursal:<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A10]
+Celda=A10
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Sucursal.Nombre
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea13]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea14]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea15]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=5
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea16]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=3
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A11]
+Celda=A11
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Col. <T> + Sucursal.Colonia
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A12]
+Celda=A12
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Sucursal.Delegacion + <T>, <T> + Sucursal.Estado
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A13]
+Celda=A13
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Teléfonos: <T> + Sucursal.Telefonos
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>______________________________________________________________________________<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+ExpresionMultiple=S
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=2.976
+AnchoTexto=16
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Fecha Emisión: <T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B15]
+Celda=B15
+Alineacion=Izquierda
+FormatoValidacion=dd/mmm/aaaa
+AnchoEnCm=2.418
+AnchoTexto=13
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSL.FechaEmision
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C15]
+Celda=C15
+Alineacion=Izquierda
+AnchoEnCm=0.744
+AnchoTexto=4
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[D15]
+Celda=D15
+Alineacion=Izquierda
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Movimiento: <T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[E15]
+Celda=E15
+Alineacion=Izquierda
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSL.Mov + <T> <T> + POSL.MovID
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=1.674
+AnchoTexto=9
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B16]
+Celda=B16
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=6.324
+AnchoTexto=34
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Hora de Registro del Movimiento: <T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea17]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea18]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea19]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea20]
+Clave=Inicio: POSL.ID
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=3
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[C16]
+Celda=C16
+Alineacion=Izquierda
+FormatoValidacion=hh:nn am/pm
+AnchoEnCm=1.488
+AnchoTexto=8
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSL.FechaRegistro
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=2.976
+AnchoTexto=16
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A18]
+Celda=A18
+Alineacion=Centrado
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cliente: <T> + Cte.Nombre
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A20]
+Celda=A20
+Alineacion=Centrado
+AnchoEnCm=4.464
+AnchoTexto=24
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cajero: <T> + POSL.Cajero
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B20]
+Celda=B20
+Alineacion=Izquierda
+AnchoEnCm=2.418
+AnchoTexto=13
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C20]
+Celda=C20
+Alineacion=Centrado
+AnchoEnCm=4.464
+AnchoTexto=24
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Agente: <T> + POSL.Agente
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea21]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea22]
+Clave=Inicio: POSL.ID
+Objetos=5
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea23]
+Clave=Inicio: POSL.ID
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea24]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.372
+Renglones=1
+
+Visible=POSLVenta.Articulo <> <T>REDONDEO<T>
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A21]
+Celda=A21
+Alineacion=Izquierda
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>______________________________________________________________________________<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+ExpresionMultiple=S
+[A22]
+Celda=A22
+Alineacion=Centrado
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cantidad<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B22]
+Celda=B22
+Alineacion=Centrado
+AnchoEnCm=2.418
+AnchoTexto=13
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Artículo<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C22]
+Celda=C22
+Alineacion=Derecha
+AnchoEnCm=2.232
+AnchoTexto=12
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Precio<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[D22]
+Celda=D22
+Alineacion=Derecha
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descuento<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[E22]
+Celda=E22
+Alineacion=Derecha
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Importe<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A23]
+Celda=A23
+Alineacion=Izquierda
+AnchoEnCm=11.346
+AnchoTexto=61
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>______________________________________________________________________________<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+ExpresionMultiple=S
+[A24]
+Celda=A24
+Alineacion=Centrado
+FormatoValidacion=#,.##
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.Cantidad - POSLVenta.CantidadObsequio
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B24]
+Celda=B24
+Alineacion=Izquierda
+AnchoEnCm=2.418
+AnchoTexto=13
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.Articulo
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C24]
+Celda=C24
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.232
+AnchoTexto=12
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.Precio
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[D24]
+Celda=D24
+Alineacion=Derecha
+FormatoValidacion=0.00%
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.DescuentoLinea
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[E24]
+Celda=E24
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma1, ((POSLVenta.Cantidad - POSLVenta.CantidadObsequio)*<BR>POSLVenta.Precio) -<BR>(((POSLVenta.Cantidad - POSLVenta.CantidadObsequio)* POSLVenta.Precio) *<BR>(POSLVenta.DescuentoLinea /100)))<BR>Asigna(Rep.Suma2, Rep.Suma2 + Rep.Suma1)<BR>Rep.Suma1
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=46
+NombreEnBoton=S
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=POSLTicketNormal
+Activo=S
+Visible=S
+ListaParametros1=POSL.ID
+ListaParametros=S
+
+[Linea25]
+Clave=Detalle
+Objetos=3
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.372
+Renglones=1
+
+Visible=POSLVenta.CantidadObsequio >= 1
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A25]
+Celda=A25
+Alineacion=Izquierda
+AnchoEnCm=2.976
+AnchoTexto=16
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=<T>Obsequio <T>
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B25]
+Celda=B25
+Alineacion=Izquierda
+AnchoEnCm=3.348
+AnchoTexto=18
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.Articulo
+
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea26]
+Clave=Fin: POSL.ID
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=3
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea27]
+Clave=Fin: POSL.ID
+Objetos=3
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea28]
+Clave=Fin: POSL.ID
+Objetos=3
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A26]
+Celda=A26
+Alineacion=Izquierda
+AnchoEnCm=6.696
+AnchoTexto=36
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B26]
+Celda=B26
+Alineacion=Derecha
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Sub-Total<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C26]
+Celda=C26
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Rep.Suma2
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A28]
+Celda=A28
+Alineacion=Izquierda
+AnchoEnCm=6.696
+AnchoTexto=36
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B28]
+Celda=B28
+Alineacion=Derecha
+AnchoEnCm=2.604
+TextoConFlujo=N
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Impuestos<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea29]
+Clave=Fin: POSL.ID
+Objetos=3
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea30]
+Clave=Fin: POSL.ID
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+Objetos=3
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[Linea31]
+Clave=Fin: POSL.ID
+Objetos=0
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=0.372
+Renglones=1
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A27]
+Celda=A27
+Alineacion=Izquierda
+AnchoEnCm=6.696
+AnchoTexto=36
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B27]
+Celda=B27
+Alineacion=Derecha
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descuentos<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C27]
+Celda=C27
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Rep.Suma2 * (POSL.DescuentoGlobal/100))
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C28]
+Celda=C28
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Rep.Suma3
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A29]
+Celda=A29
+Alineacion=Izquierda
+AnchoEnCm=6.696
+AnchoTexto=36
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B29]
+Celda=B29
+Alineacion=Derecha
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Redondeo<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C29]
+Celda=C29
+Alineacion=Derecha
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Rep.Suma4
+
+FormatoValidacion=(Monetario)
+
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[F24]
+Celda=F24
+Alineacion=Izquierda
+AnchoEnCm=1.116
+AnchoTexto=6
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma3, Rep.Suma3 + (Rep.Suma1 - (Rep.Suma1 * <BR>(POSL.DescuentoGlobal/100))* (POSLVenta.Impuesto1/100)))
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C25]
+Celda=C25
+Alineacion=Derecha
+AnchoEnCm=1.674
+AnchoTexto=9
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=POSLVenta.CantidadObsequio
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[Linea32]
+Clave=Fin: POSL.ID
+Objetos=2
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=1.116
+Renglones=3
+
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, []}
+AVertical=Arriba
+[A30]
+Celda=A30
+Alineacion=Izquierda
+AnchoEnCm=6.696
+AnchoTexto=36
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B30]
+Celda=B30
+Alineacion=Derecha
+AnchoEnCm=2.604
+AnchoTexto=14
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total<T>
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[C30]
+Celda=C30
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.046
+AnchoTexto=11
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=((Rep.Suma2 - (Rep.Suma2 * (POSL.DescuentoGlobal/100)))) + Rep.Suma3 )+ <BR>Rep.Suma4
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[A32]
+Celda=A32
+Alineacion=Izquierda
+AnchoEnCm=5.58
+AnchoTexto=30
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+[B32]
+Celda=B32
+Alineacion=Izquierda
+AnchoEnCm=5.952
+TextoConFlujo=S
+AnchoTexto=32
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQLenLista(<T>SELECT CONVERT(char(20), FormaPago) +<T> & {Comillas(<T>$<T>)} & <T>+        <BR>                                             <BR>CONVERT(char(10) , CONVERT(money, Importe), 108)<BR>    FROM POSLCobro <BR>   WHERE ID = :tID<T>, POSL.ID)
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+
+[Linea33]
+Clave=Fin: POSL.ID
+Objetos=2
+Seccion=Fin Grupo
+Grupo=POSL.ID
+AltoEnCm=2
+Renglones=5
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A33]
+Celda=A33
+Alineacion=Izquierda
+AnchoEnCm=0.61
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsCodigoBarras=N
+CBAncho=12
+CBMostrarCodigo=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBDigitoVerificador=S
+
+[B33]
+Celda=B33
+Alineacion=Izquierda
+AnchoEnCm=10.61
+AnchoTexto=57
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsCodigoBarras=S
+CBAncho=12
+CBMostrarCodigo=S
+CBTipo=Code 39
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT dbo.fnPOSCBGenerar (ID) FROM POSL WHERE ID <BR>=:tid<T>,POSL.ID)
+

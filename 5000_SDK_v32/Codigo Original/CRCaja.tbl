@@ -1,0 +1,241 @@
+[Tabla]
+Icono=0
+Clave=CRCaja
+Archivo=CRCaja
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Caja
+Singular=Caja
+ListaRelaciones=(Lista)
+LlavePrimaria=ID<BR>Renglon
+CampoID=ID
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+SQL=SELECT<BR>  ID,<BR>  Renglon,<BR>  Movimiento,<BR>  CtaDinero,<BR>  FormaPago,<BR>  Referencia,<BR>  Importe,<BR>  Sucursal,<BR>  SucursalOrigen,<BR>  Moneda,<BR>  TipoCambio,<BR>  FechaEmision,<BR>  Concepto<BR><BR>FROM<BR>  CRCaja
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Renglon]
+Clave=Renglon
+Nombre=Renglón
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Movimiento]
+Clave=Movimiento
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=15
+OpcionesUnicamente=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CtaDinero
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CtaDinero]
+Clave=CtaDinero
+Nombre=Caja/Banco
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDineroDestino
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Vacio(SQL(<T>SELECT DefCtaDinero FROM FormaPago WHERE FormaPago=:tFP<T>, FormaPago), CtaDinero)
+CondicionEdicion=Movimiento<><T>Gasto<T>
+TipoDatos=Texto
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=20
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Vacio(Usuario.DefFormaPago, Config.FormaPagoOmision)
+CondicionEdicion=no Usuario.BloquearFormaPago
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+[Relaciones.CtaDineroDestino]
+TipoRelacion=Opcional
+LlaveLocal=CtaDinero
+Clave=CtaDineroDestino
+TablaRemota=CtaDineroDestino
+LlaveRemota=CtaDinero
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=CR:CR.Moneda
+ConRefrescar=S
+ListaRefrescar=TipoCambio
+ValidacionUsaTabla=S
+ValidacionTablas=Mon
+ValorRefrescar=Vacio(CRCaja:CtaDineroDestino.Moneda, CR:CR.Moneda)
+TipoDatos=Texto
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=CR:CR.TipoCambio
+ValorRefrescar=Vacio(CRCaja:Mon.TipoCambio, CR:CR.TipoCambio)
+
+[Relaciones.Mon]
+TipoRelacion=Opcional
+LlaveLocal=Moneda
+Clave=Mon
+TablaRemota=Mon
+LlaveRemota=Moneda
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=Fecha Banco
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ValorPorOmision=CR:CR.FechaEmision
+CondicionDespliege=MovTipo(<T>CR<T>, CR:CR.Mov) <> CR.C
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Si<BR>  Movimiento en (<T>Anticipo Gasto<T>, <T>Gasto<T>, <T>Dev. Anticipo Gasto<T>)<BR>Entonces<BR>  SQLEnLista(<T>SELECT Concepto FROM Concepto WHERE Modulo=:tModulo AND CR = 1<T>, <T>GAS<T>)<BR>Sino<BR>  SQLEnLista(<T>SELECT Concepto FROM EmpresaConceptoValidar WHERE Empresa=:tEmpresa AND Modulo=:tModulo AND Mov=:tMov AND CR = 1<T>, Empresa, <T>DIN<T>, Movimiento)<BR>Fin
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Renglon
+Renglon=Movimiento
+Movimiento=CtaDinero
+CtaDinero=FormaPago
+FormaPago=Referencia
+Referencia=Importe
+Importe=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=Moneda
+Moneda=TipoCambio
+TipoCambio=FechaEmision
+FechaEmision=Concepto
+Concepto=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=CtaDineroDestino
+CtaDineroDestino=Mon
+Mon=(Fin)
+
+[Movimiento.ListaOpciones]
+(Inicio)=Fondo Inicial
+Fondo Inicial=Recoleccion
+Recoleccion=Deposito
+Deposito=Solicitud Deposito
+Solicitud Deposito=Sobrante
+Sobrante=Faltante
+Faltante=Venta Credito
+Venta Credito=Cobro Credito
+Cobro Credito=Anticipo Gasto
+Anticipo Gasto=Gasto
+Gasto=Dev. Anticipo Gasto
+Dev. Anticipo Gasto=Prestamo
+Prestamo=Devolucion Prestamo
+Devolucion Prestamo=Aplicacion Credito
+Aplicacion Credito=Redondeo
+Redondeo=Ingreso Anticipo
+Ingreso Anticipo=Egreso Anticipo
+Egreso Anticipo=Venta Anticipo
+Venta Anticipo=(Fin)
+
+[CtaDinero.ListaRefrescar]
+(Inicio)=Moneda
+Moneda=TipoCambio
+TipoCambio=(Fin)
+
+[FormaPago.ListaRefrescar]
+(Inicio)=Referencia
+Referencia=CtaDinero
+CtaDinero=Moneda
+Moneda=TipoCambio
+TipoCambio=(Fin)

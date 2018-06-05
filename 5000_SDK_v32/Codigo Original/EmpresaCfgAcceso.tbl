@@ -1,0 +1,380 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgAcceso
+Archivo=EmpresaCfgAcceso
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración Acceso
+Singular=Configuración Acceso
+LlavePrimaria=Empresa
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  LogoEmpresa,<BR>  MostrarMensajes,<BR>  MostrarLeyendaCumpleanos,<BR>  NombreAnexoFotoEmpleado,<BR>  LeyendaCumpleanos,<BR>  VerCodigo,<BR>  EstirarFoto,<BR>  ColorEstatusBaja,<BR>  ColorFuenteEstatusBaja,<BR>  ColorEntrada,<BR>  ColorSalida,<BR>  ColorAlterno,<BR>  EtiquetaCodigo,<BR>  EtiquetaNombre,<BR>  EtiquetaCampoPrincipal,<BR>  EtiquetaCampoSecundario,<BR>  EtiquetaExtra1,<BR>  EtiquetaExtra2,<BR>  EtiquetaExtra3,<BR>  EtiquetaExtra4,<BR>  CampoPrincipal,<BR>  CampoSecundario,<BR>  CampoExtra1,<BR>  CampoExtra2,<BR>  CampoExtra3,<BR>  CampoExtra4,<BR>  TiempoEspera,<BR>  InterfaseMonitor,<BR>  InterfaseTipo,<BR>  InterfaseRuta,<BR>  InterfaseHardware,<BR>  RegistroMovSucursal,<BR>  HoraCambioJornada<BR><BR>FROM<BR>  EmpresaCfgAcceso
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[LogoEmpresa]
+Clave=LogoEmpresa
+Nombre=Logo Empresa
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Archivo
+TipoDatos=Texto
+
+[MostrarMensajes]
+Clave=MostrarMensajes
+Nombre=Mostrar Mensajes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[MostrarLeyendaCumpleanos]
+Clave=MostrarLeyendaCumpleanos
+Nombre=Mostrar Leyenda Cumpleaños
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[NombreAnexoFotoEmpleado]
+Clave=NombreAnexoFotoEmpleado
+Nombre=Nombre del Anexo (Foto Personal)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[LeyendaCumpleanos]
+Clave=LeyendaCumpleanos
+Nombre=Leyenda Cumpleaños
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[VerCodigo]
+Clave=VerCodigo
+Nombre=Ver Código en Pantalla
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EstirarFoto]
+Clave=EstirarFoto
+Nombre=Estirar la Foto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ColorEstatusBaja]
+Clave=ColorEstatusBaja
+Nombre=Color Estatus Baja
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[ColorFuenteEstatusBaja]
+Clave=ColorFuenteEstatusBaja
+Nombre=Color Fuente Estatus Baja
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[ColorEntrada]
+Clave=ColorEntrada
+Nombre=Color Entrada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[ColorSalida]
+Clave=ColorSalida
+Nombre=Color Salida
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[ColorAlterno]
+Clave=ColorAlterno
+Nombre=Color Alterno
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[EtiquetaCodigo]
+Clave=EtiquetaCodigo
+Nombre=Etiqueta Código
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaNombre]
+Clave=EtiquetaNombre
+Nombre=Etiqueta Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaCampoPrincipal]
+Clave=EtiquetaCampoPrincipal
+Nombre=Etiqueta Campo Principal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaCampoSecundario]
+Clave=EtiquetaCampoSecundario
+Nombre=Etiqueta Campo Secundario
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra1]
+Clave=EtiquetaExtra1
+Nombre=Etiqueta Extra 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra2]
+Clave=EtiquetaExtra2
+Nombre=Etiqueta Extra 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra3]
+Clave=EtiquetaExtra3
+Nombre=Etiqueta Extra 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EtiquetaExtra4]
+Clave=EtiquetaExtra4
+Nombre=Etiqueta Extra 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[CampoPrincipal]
+Clave=CampoPrincipal
+Nombre=Campo Principal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoSecundario]
+Clave=CampoSecundario
+Nombre=Campo Secundario
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra1]
+Clave=CampoExtra1
+Nombre=Campo Extra 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra2]
+Clave=CampoExtra2
+Nombre=Campo Extra 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra3]
+Clave=CampoExtra3
+Nombre=Campo Extra 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[CampoExtra4]
+Clave=CampoExtra4
+Nombre=Campo Extra 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Column_Name FROM information_schema.columns WHERE Table_Name = :tTabla AND Column_Name NOT LIKE :tLogico<T>, <T>Personal<T>, <T>Logico%<T>)
+TipoDatos=Texto
+
+[TiempoEspera]
+Clave=TiempoEspera
+Nombre=Tiempo Espera (segundos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=10
+
+[InterfaseMonitor]
+Clave=InterfaseMonitor
+Nombre=Monitor
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[InterfaseTipo]
+Clave=InterfaseTipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=InterfaseMonitor
+ListaOpciones=Archivo
+TipoDatos=Texto
+
+[InterfaseRuta]
+Clave=InterfaseRuta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Directorio
+CondicionDespliege=InterfaseMonitor
+TipoDatos=Texto
+
+[InterfaseHardware]
+Clave=InterfaseHardware
+Nombre=Hardware
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=InterfaseMonitor
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[RegistroMovSucursal]
+Clave=RegistroMovSucursal
+Nombre=Movimiento por Sucursal (Registro Asistencia)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[HoraCambioJornada]
+Clave=HoraCambioJornada
+Nombre=Hora Cambio Jornada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+MascaraEdicion=00:00;2
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=LogoEmpresa
+LogoEmpresa=MostrarMensajes
+MostrarMensajes=MostrarLeyendaCumpleanos
+MostrarLeyendaCumpleanos=NombreAnexoFotoEmpleado
+NombreAnexoFotoEmpleado=LeyendaCumpleanos
+LeyendaCumpleanos=VerCodigo
+VerCodigo=EstirarFoto
+EstirarFoto=ColorEstatusBaja
+ColorEstatusBaja=ColorFuenteEstatusBaja
+ColorFuenteEstatusBaja=ColorEntrada
+ColorEntrada=ColorSalida
+ColorSalida=ColorAlterno
+ColorAlterno=EtiquetaCodigo
+EtiquetaCodigo=EtiquetaNombre
+EtiquetaNombre=EtiquetaCampoPrincipal
+EtiquetaCampoPrincipal=EtiquetaCampoSecundario
+EtiquetaCampoSecundario=EtiquetaExtra1
+EtiquetaExtra1=EtiquetaExtra2
+EtiquetaExtra2=EtiquetaExtra3
+EtiquetaExtra3=EtiquetaExtra4
+EtiquetaExtra4=CampoPrincipal
+CampoPrincipal=CampoSecundario
+CampoSecundario=CampoExtra1
+CampoExtra1=CampoExtra2
+CampoExtra2=CampoExtra3
+CampoExtra3=CampoExtra4
+CampoExtra4=TiempoEspera
+TiempoEspera=InterfaseMonitor
+InterfaseMonitor=InterfaseTipo
+InterfaseTipo=InterfaseRuta
+InterfaseRuta=InterfaseHardware
+InterfaseHardware=RegistroMovSucursal
+RegistroMovSucursal=HoraCambioJornada
+HoraCambioJornada=(Fin)
+
+[InterfaseMonitor.ListaRefrescarCondiciones]
+(Inicio)=InterfaseTipo
+InterfaseTipo=InterfaseRuta
+InterfaseRuta=InterfaseHardware
+InterfaseHardware=(Fin)
+
+[InterfaseHardware.ListaOpciones]
+(Inicio)=Hand Punch
+Hand Punch=(Fin)

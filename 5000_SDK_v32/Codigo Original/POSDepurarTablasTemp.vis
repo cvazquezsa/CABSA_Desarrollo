@@ -1,0 +1,54 @@
+
+[Vista]
+Icono=0
+Clave=POSDepurarTablasTemp
+Nombre=POSDepurarTablasTemp
+Modulos=(Todos)
+ListaTablas=POSDepurarTablasTemp
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=POSDepurarTablasTemp
+SQL=(Lista)
+[POSDepurarTablasTemp.Estacion]
+Clave=POSDepurarTablasTemp.Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+LigaTabla=POSDepurarTablasTemp
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estacion
+
+[POSDepurarTablasTemp.Fecha]
+Clave=POSDepurarTablasTemp.Fecha
+Nombre=Hasta la Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mm/aa
+ValidacionConCondiciones=S
+ValidacionCondicion=Asigna(Info.Fecha,SQL(<T>SELECT ISNULL(DiasDepuracion,1) FROM POSCfg WHERE Empresa = :tEmpresa<T>,Empresa))<BR>POSDepurarTablasTemp.Fecha<(POSDepurarTablasTemp.Fecha-Info.Fecha)
+ValidacionMensajeError=<T>La Fecha tiene que ser menor a <T>+Info.Fecha
+LigaTabla=POSDepurarTablasTemp
+LigaCampo=Fecha
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Fecha
+
+[Vista.ListaCampos]
+(Inicio)=POSDepurarTablasTemp.Estacion
+POSDepurarTablasTemp.Estacion=POSDepurarTablasTemp.Fecha
+POSDepurarTablasTemp.Fecha=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSDepurarTablasTemp.Estacion,
+POSDepurarTablasTemp.Estacion,=POSDepurarTablasTemp.Fecha
+POSDepurarTablasTemp.Fecha=FROM POSDepurarTablasTemp
+FROM POSDepurarTablasTemp=(Fin)

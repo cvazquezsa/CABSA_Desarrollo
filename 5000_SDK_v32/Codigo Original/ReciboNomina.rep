@@ -1,0 +1,8177 @@
+[Reporte]
+Clave=ReciboNomina
+Nombre=Recibo Nomina
+Icono=0
+Tipo=Reporte
+SubmenuPreliminar=S
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+Filtros=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=1
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+MargenArriba=0
+MargenAbajo=0
+MargenIzquierdo=0
+MargenDerecho=0
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+Columnas=1
+Vista=NominaT
+Submenu=Nómina
+ConFormaPrevia=S
+FormaPrevia=Especificar106
+VistaEspecial=S
+ListaOrden=(Lista)
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=732
+PosicionInicialAncho=1036
+PreliminarColores=S
+Impresora=S
+Orientacion=Vertical
+TieneFiltroAbierto=S
+ContarPaginas=S
+ExpresionesAntes=Si(Info.Departamento=<T>(Todos)<T>, Asigna(Info.Departamento, Nulo))<BR>Si(Info.Puesto=<T>(Todos)<T>, Asigna(Info.Puesto, Nulo))<BR>Si(Info.PersonalCat=<T>(Todos)<T>, Asigna(Info.PersonalCat, Nulo))<BR>Si(Info.PersonalGrupo=<T>(Todos)<T>, Asigna(Info.PersonalGrupo, Nulo))
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Inicio: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden
+VentanaIzquierda=29
+VentanaArriba=78
+VentanaAltura=744
+VentanaAncho=1382
+PanelArriba=143
+PanelBotones=80
+[Linea1]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=1
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Grupo=
+Visible=
+ExpresionesAntesImprimir=
+BordeAbajo=N
+[Linea2]
+Clave=Inicio: Orden
+Objetos=2
+Seccion=Inicio Grupo
+AltoEnCm=2
+Renglones=5
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+Grupo=Orden
+BordeAbajo=S
+Marco=N
+[Linea3]
+Clave=Inicio: Orden
+Objetos=6
+Seccion=Inicio Grupo
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Grupo=Orden
+Marco=S
+[Vista]
+Icono=0
+Clave=ReciboNomina
+VistaIndependiente=S
+Nombre=ReciboNomina
+ListaCampos=(Lista)
+Modulos=NOM
+ListaCampos002=<CONTINUA>ConceptoDeduccion5<BR>CantidadDeduccion5<BR>Importededuccion5<BR>ConceptoPercepcion6<BR>CantidadPercepcion6<BR>ImportePercepcion6<BR>ConceptoDeduccion6<BR>CantidadDeduccion6<BR>Importededuccion6<BR>ConceptoPercepcion7<BR>CantidadPercepcion7<BR>ImportePercepcion7<BR>ConceptoDeduccion7<BR>CantidadDeduccion7<BR>Importededuccion7<BR>ConceptoPercepcion8<BR>CantidadPercepcion8<BR>ImportePercepcion8<BR>ConceptoDeduccion8<BR>CantidadDeduccion8<BR>Importededuccion8<BR>ConceptoPercepcion9<BR>CantidadPercepcion9<BR>ImportePercepcion9<BR>ConceptoDeduccion9<BR>CantidadDeduccion9<BR>Importededuccion9<BR>ConceptoPercepcion10<BR>CantidadPercepcion10<BR>ImportePercepcion10<BR>ConceptoDeduccion10<BR>CantidadDeduccion10<BR>Importededuccion10<BR>ConceptoPercepcion11<BR>CantidadPercepcion11<BR>ImportePercepcio<CONTINUA>
+ListaCampos003=<CONTINUA>n11<BR>ConceptoDeduccion11<BR>CantidadDeduccion11<BR>Importededuccion11<BR>ConceptoPercepcion12<BR>CantidadPercepcion12<BR>ImportePercepcion12<BR>ConceptoDeduccion12<BR>CantidadDeduccion12<BR>Importededuccion12<BR>Orden<BR>NominaID<BR>Registro3<BR>ConceptoPercepcion13<BR>CantidadPercepcion13<BR>ImportePercepcion13<BR>ConceptoDeduccion13<BR>CantidadDeduccion13<BR>Importededuccion13<BR>ConceptoPercepcion14<BR>CantidadPercepcion14<BR>ImportePercepcion14<BR>ConceptoDeduccion14<BR>CantidadDeduccion14<BR>Importededuccion14<BR>ConceptoPercepcion15<BR>CantidadPercepcion15<BR>ImportePercepcion15<BR>ConceptoDeduccion15<BR>CantidadDeduccion15<BR>Importededuccion15
+ListaCalculados=(Lista)
+TipoTabla=General
+CampoID=NominaID
+SQL=(Lista)
+[FechaA]
+Clave=FechaA
+Nombre=FechaA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=FechaA
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Personal
+[EmpresaNombre]
+Clave=EmpresaNombre
+Nombre=EmpresaNombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=EmpresaNombre
+[Direccion]
+Clave=Direccion
+Nombre=Direccion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Direccion
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+[ApellidoPaterno]
+Clave=ApellidoPaterno
+Nombre=ApellidoPaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=ApellidoPaterno
+[ApellidoMaterno]
+Clave=ApellidoMaterno
+Nombre=ApellidoMaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=ApellidoMaterno
+[Departamento]
+Clave=Departamento
+Nombre=Departamento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Departamento
+[Categoria]
+Clave=Categoria
+Nombre=Categoria
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria
+[Puesto]
+Clave=Puesto
+Nombre=Puesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Puesto
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+[FechaAlta]
+Clave=FechaAlta
+Nombre=FechaAlta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=FechaAlta
+[Registro2]
+Clave=Registro2
+Nombre=Registro2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Registro2
+[SueldoDiario]
+Clave=SueldoDiario
+Nombre=SueldoDiario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SueldoDiario
+Tamano=0
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreEnBoton=S
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=ReciboNomina
+Activo=S
+Visible=S
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreEnBoton=S
+NombreDesplegar=&Excel
+EnBarraHerramientas=S
+EnMenu=S
+Activo=S
+Visible=S
+TipoAccion=Reportes Excel
+ClaveAccion=ReciboNomina
+[Linea4]
+Clave=Inicio: Orden
+Objetos=6
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeArriba=N
+BordeAbajo=N
+EstiloAbajo=0
+Marco=S
+[Linea5]
+Clave=Inicio: Orden
+Objetos=6
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=2
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeArriba=N
+BordeAbajo=N
+EstiloAbajo=0
+EstiloMarco=0
+Marco=S
+[Linea6]
+Clave=Inicio: Orden
+Objetos=6
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=N
+EstiloAbajo=8
+EstiloMarco=0
+BordeArriba=N
+Visible=
+ImprimirAlFinal=N
+Marco=S
+[Linea7]
+Clave=Inicio: Orden
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.39
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+EstiloMarco=0
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+Visible=
+ImprimirAlFinal=N
+[FechaD]
+Clave=FechaD
+Nombre=FechaD
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=FechaD
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=1.6
+AnchoTexto=8
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>No. Trab.<T>
+Marco=S
+FondoEstilo=1
+[B3]
+Celda=B3
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=38
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Personal+<T>  <T>+ApellidoPaterno+ <T> <T> +ApellidoMaterno+ <T> <T>+Nombre
+Marco=N
+ExpresionMultiple=S
+BordeArriba=S
+BordeAbajo=S
+BordeIzquierdo=N
+BordeDerecho=S
+[C3]
+Celda=C3
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=9
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>N.S.S.<T>
+Marco=S
+FondoEstilo=1
+ExpresionMultiple=S
+BordeArriba=N
+BordeAbajo=N
+BordeDerecho=N
+[D3]
+Celda=D3
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Registro3
+Marco=S
+ExpresionMultiple=N
+FondoEstilo=0
+[E3]
+Celda=E3
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=14
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<BR><T>Dias Pagados :<T>
+Marco=S
+FondoEstilo=1
+[F3]
+Celda=F3
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT d.cantidad FROM Nominad d, nomina a, Personal p WHERE<BR>d.personal=p.personal and a.id=d.id and<BR>d.Personal = :tPersonal and d.concepto=:tdias and<BR>d.id=:nid<T>,Personal,<T>Sueldo<T>,NominaID)
+Marco=S
+FondoEstilo=0
+FormatoValidacion=0.00
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=3.71
+ExpresionMultiple=N
+AnchoTexto=20
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si( Empresa.Empresa = Empresa.Empresa,   sql(<T>SELECT Direccion from AnexoCta where cuenta=:temp and Nombre=:tnom<T>, Empresa.Empresa,<T>LogoEmpresa<T>),<T><T>)
+Marco=N
+FondoEstilo=0
+
+
+
+
+
+BordeAbajo=S
+EsImagen=S
+[Linea8]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=1.6
+AnchoTexto=13
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>C.U.R.P.:<T>
+EstiloAbajo=0
+BordeArriba=N
+BordeAbajo=N
+Marco=S
+FondoEstilo=1
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=35
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=sql(<T>select Registro from personal where personal=:tpersonal<T>,personal)
+EstiloAbajo=0
+BordeArriba=N
+BordeAbajo=N
+
+FormatoValidacion=
+Marco=S
+[Linea9]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion1)
+BordeIzquierdo=S
+[B8]
+Celda=B8
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion1)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion1,NominaID)<BR>Fin
+[C8]
+Celda=C8
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion1)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion1, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D8]
+Celda=D8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+ExpresionMultiple=N
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+[E8]
+Celda=E8
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion1)
+[Consecutivo]
+Clave=Consecutivo
+Nombre=Consecutivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Consecutivo
+
+[C5]
+Celda=C5
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=9
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Puesto: <T>
+EstiloAbajo=0
+BordeArriba=N
+BordeAbajo=N
+Marco=S
+FondoEstilo=1
+[D5]
+Celda=D5
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=41
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloAbajo=0
+BordeArriba=N
+BordeAbajo=N
+Expresion=Puesto
+Marco=S
+FondoEstilo=0
+FormatoValidacion=
+
+[G5]
+Celda=G5
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>24/11/2009<T>
+BordeArriba=N
+BordeAbajo=N
+EstiloAbajo=8
+[Linea10]
+Clave=Inicio: Orden
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=7
+[Linea11]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+AltoEnCm=0.36
+Renglones=1
+Visible=
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=Orden
+[Linea12]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[Linea13]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[Linea14]
+Clave=Inicio: Orden
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=7
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion4)
+BordeIzquierdo=S
+[B11]
+Celda=B11
+Alineacion=Derecha
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=7
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion4)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion4,NominaID)<BR>Fin
+[C11]
+Celda=C11
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=3.21
+AnchoTexto=17
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion4)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion4, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[D11]
+Celda=D11
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E11]
+Celda=E11
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion4)
+[F11]
+Celda=F11
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion4)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion4,NominaID)<BR>Fin
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion5)
+BordeIzquierdo=S
+[B12]
+Celda=B12
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion5)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion5,NominaID)<BR>Fin
+[C12]
+Celda=C12
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion5)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion5, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D12]
+Celda=D12
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+ExpresionMultiple=N
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+[E12]
+Celda=E12
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion5)
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion6)
+BordeIzquierdo=S
+[B13]
+Celda=B13
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion6)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion6,NominaID)<BR>Fin
+[C13]
+Celda=C13
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion6)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion6, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D13]
+Celda=D13
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+ExpresionMultiple=N
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+[E13]
+Celda=E13
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion6)
+[Linea15]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[Linea16]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[Linea17]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+AltoEnCm=0.36
+Renglones=1
+Visible=
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=Orden
+[Linea18]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=9
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Periodo:<T>
+Marco=S
+FondoEstilo=1
+EstiloAbajo=8
+[B6]
+Celda=B6
+Alineacion=Centrado
+AnchoEnCm=7
+AnchoTexto=46
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Del<T>+<T>  <T>+FechaDMA(FechaD)+<T>  <T>+<T>Al<T>+<T>  <T>+FechaDMA(FechaA)
+Marco=S
+FondoEstilo=0
+FormatoValidacion=
+EstiloAbajo=8
+[A7]
+Celda=A7
+Alineacion=Centrado
+AnchoEnCm=8.89
+AnchoTexto=48
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>PERCEPCIONES
+BordeIzquierdo=N
+Marco=S
+FondoEstilo=1
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=9.21
+AnchoTexto=50
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>DEDUCCIONES<T>
+Marco=S
+FondoEstilo=1
+
+
+
+
+[F8]
+Celda=F8
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion1)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion1,NominaID)<BR>Fin
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion2)
+BordeIzquierdo=S
+[B9]
+Celda=B9
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion2)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion2,NominaID)<BR>Fin
+[C9]
+Celda=C9
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion2)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion2, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D9]
+Celda=D9
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E9]
+Celda=E9
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion2)
+[F9]
+Celda=F9
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion2)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID  and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion2,NominaID)<BR>Fin
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion3)
+BordeIzquierdo=S
+[B10]
+Celda=B10
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion3)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion3,NominaID)<BR>Fin
+[C10]
+Celda=C10
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion3)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion3, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D10]
+Celda=D10
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E10]
+Celda=E10
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion3)
+[F10]
+Celda=F10
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion3)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID  and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion3,NominaID)<BR>Fin
+[F12]
+Celda=F12
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion5)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion5,NominaID)<BR>Fin
+[F13]
+Celda=F13
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion6)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion6,NominaID)<BR>Fin
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion7)
+BordeIzquierdo=S
+[B14]
+Celda=B14
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion7)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion7,NominaID)<BR>Fin
+[C14]
+Celda=C14
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion7)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion7, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D14]
+Celda=D14
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E14]
+Celda=E14
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion7)
+[F14]
+Celda=F14
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion7)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion7,NominaID)<BR>Fin
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion8)
+BordeIzquierdo=S
+[B15]
+Celda=B15
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion8)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion8,NominaID)<BR>Fin
+[C15]
+Celda=C15
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion8)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion8, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D15]
+Celda=D15
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E15]
+Celda=E15
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion8)
+[F15]
+Celda=F15
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion8)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion8,NominaID)<BR>Fin
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion9)
+BordeIzquierdo=S
+[B16]
+Celda=B16
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion9)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion9,NominaID)<BR>Fin
+[C16]
+Celda=C16
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion9)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion9, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D16]
+Celda=D16
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E16]
+Celda=E16
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion9)
+[F16]
+Celda=F16
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion9)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion9,NominaID)<BR>Fin
+[ConceptoPercepcion1]
+Clave=ConceptoPercepcion1
+Nombre=ConceptoPercepcion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion1
+[CantidadPercepcion1]
+Clave=CantidadPercepcion1
+Nombre=CantidadPercepcion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion1
+[ImportePercepcion1]
+Clave=ImportePercepcion1
+Nombre=ImportePercepcion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion1
+[ConceptoDeduccion1]
+Clave=ConceptoDeduccion1
+Nombre=ConceptoDeduccion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion1
+[CantidadDeduccion1]
+Clave=CantidadDeduccion1
+Nombre=CantidadDeduccion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion1
+[Importededuccion1]
+Clave=Importededuccion1
+Nombre=Importededuccion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion1
+[ConceptoPercepcion2]
+Clave=ConceptoPercepcion2
+Nombre=ConceptoPercepcion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion2
+[CantidadPercepcion2]
+Clave=CantidadPercepcion2
+Nombre=CantidadPercepcion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion2
+[ImportePercepcion2]
+Clave=ImportePercepcion2
+Nombre=ImportePercepcion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion2
+[ConceptoDeduccion2]
+Clave=ConceptoDeduccion2
+Nombre=ConceptoDeduccion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion2
+[CantidadDeduccion2]
+Clave=CantidadDeduccion2
+Nombre=CantidadDeduccion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion2
+[Importededuccion2]
+Clave=Importededuccion2
+Nombre=Importededuccion2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion2
+[ConceptoPercepcion3]
+Clave=ConceptoPercepcion3
+Nombre=ConceptoPercepcion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion3
+[CantidadPercepcion3]
+Clave=CantidadPercepcion3
+Nombre=CantidadPercepcion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion3
+[ImportePercepcion3]
+Clave=ImportePercepcion3
+Nombre=ImportePercepcion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion3
+[ConceptoDeduccion3]
+Clave=ConceptoDeduccion3
+Nombre=ConceptoDeduccion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion3
+[CantidadDeduccion3]
+Clave=CantidadDeduccion3
+Nombre=CantidadDeduccion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion3
+[Importededuccion3]
+Clave=Importededuccion3
+Nombre=Importededuccion3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion3
+[ConceptoPercepcion4]
+Clave=ConceptoPercepcion4
+Nombre=ConceptoPercepcion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion4
+[CantidadPercepcion4]
+Clave=CantidadPercepcion4
+Nombre=CantidadPercepcion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion4
+[ImportePercepcion4]
+Clave=ImportePercepcion4
+Nombre=ImportePercepcion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion4
+[ConceptoDeduccion4]
+Clave=ConceptoDeduccion4
+Nombre=ConceptoDeduccion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion4
+[CantidadDeduccion4]
+Clave=CantidadDeduccion4
+Nombre=CantidadDeduccion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion4
+[Importededuccion4]
+Clave=Importededuccion4
+Nombre=Importededuccion4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion4
+[ConceptoPercepcion5]
+Clave=ConceptoPercepcion5
+Nombre=ConceptoPercepcion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion5
+[CantidadPercepcion5]
+Clave=CantidadPercepcion5
+Nombre=CantidadPercepcion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion5
+[ImportePercepcion5]
+Clave=ImportePercepcion5
+Nombre=ImportePercepcion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion5
+[ConceptoDeduccion5]
+Clave=ConceptoDeduccion5
+Nombre=ConceptoDeduccion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion5
+[CantidadDeduccion5]
+Clave=CantidadDeduccion5
+Nombre=CantidadDeduccion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion5
+[Importededuccion5]
+Clave=Importededuccion5
+Nombre=Importededuccion5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion5
+[ConceptoPercepcion6]
+Clave=ConceptoPercepcion6
+Nombre=ConceptoPercepcion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion6
+[CantidadPercepcion6]
+Clave=CantidadPercepcion6
+Nombre=CantidadPercepcion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion6
+[ImportePercepcion6]
+Clave=ImportePercepcion6
+Nombre=ImportePercepcion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion6
+[ConceptoDeduccion6]
+Clave=ConceptoDeduccion6
+Nombre=ConceptoDeduccion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion6
+[CantidadDeduccion6]
+Clave=CantidadDeduccion6
+Nombre=CantidadDeduccion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion6
+[Importededuccion6]
+Clave=Importededuccion6
+Nombre=Importededuccion6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion6
+[ConceptoPercepcion7]
+Clave=ConceptoPercepcion7
+Nombre=ConceptoPercepcion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion7
+[CantidadPercepcion7]
+Clave=CantidadPercepcion7
+Nombre=CantidadPercepcion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion7
+[ImportePercepcion7]
+Clave=ImportePercepcion7
+Nombre=ImportePercepcion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion7
+[ConceptoDeduccion7]
+Clave=ConceptoDeduccion7
+Nombre=ConceptoDeduccion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion7
+[CantidadDeduccion7]
+Clave=CantidadDeduccion7
+Nombre=CantidadDeduccion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion7
+[Importededuccion7]
+Clave=Importededuccion7
+Nombre=Importededuccion7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion7
+[ConceptoPercepcion8]
+Clave=ConceptoPercepcion8
+Nombre=ConceptoPercepcion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion8
+[CantidadPercepcion8]
+Clave=CantidadPercepcion8
+Nombre=CantidadPercepcion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion8
+[ImportePercepcion8]
+Clave=ImportePercepcion8
+Nombre=ImportePercepcion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion8
+[ConceptoDeduccion8]
+Clave=ConceptoDeduccion8
+Nombre=ConceptoDeduccion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion8
+[CantidadDeduccion8]
+Clave=CantidadDeduccion8
+Nombre=CantidadDeduccion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion8
+[Importededuccion8]
+Clave=Importededuccion8
+Nombre=Importededuccion8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion8
+[ConceptoPercepcion9]
+Clave=ConceptoPercepcion9
+Nombre=ConceptoPercepcion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion9
+[CantidadPercepcion9]
+Clave=CantidadPercepcion9
+Nombre=CantidadPercepcion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion9
+[ImportePercepcion9]
+Clave=ImportePercepcion9
+Nombre=ImportePercepcion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion9
+[ConceptoDeduccion9]
+Clave=ConceptoDeduccion9
+Nombre=ConceptoDeduccion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion9
+[CantidadDeduccion9]
+Clave=CantidadDeduccion9
+Nombre=CantidadDeduccion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion9
+[Importededuccion9]
+Clave=Importededuccion9
+Nombre=Importededuccion9
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion9
+[ConceptoPercepcion10]
+Clave=ConceptoPercepcion10
+Nombre=ConceptoPercepcion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion10
+[CantidadPercepcion10]
+Clave=CantidadPercepcion10
+Nombre=CantidadPercepcion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion10
+[ImportePercepcion10]
+Clave=ImportePercepcion10
+Nombre=ImportePercepcion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion10
+[ConceptoDeduccion10]
+Clave=ConceptoDeduccion10
+Nombre=ConceptoDeduccion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion10
+[CantidadDeduccion10]
+Clave=CantidadDeduccion10
+Nombre=CantidadDeduccion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion10
+[Importededuccion10]
+Clave=Importededuccion10
+Nombre=Importededuccion10
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion10
+[ConceptoPercepcion11]
+Clave=ConceptoPercepcion11
+Nombre=ConceptoPercepcion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion11
+[CantidadPercepcion11]
+Clave=CantidadPercepcion11
+Nombre=CantidadPercepcion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion11
+[ImportePercepcion11]
+Clave=ImportePercepcion11
+Nombre=ImportePercepcion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion11
+[ConceptoDeduccion11]
+Clave=ConceptoDeduccion11
+Nombre=ConceptoDeduccion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion11
+[CantidadDeduccion11]
+Clave=CantidadDeduccion11
+Nombre=CantidadDeduccion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion11
+[Importededuccion11]
+Clave=Importededuccion11
+Nombre=Importededuccion11
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion11
+[ConceptoPercepcion12]
+Clave=ConceptoPercepcion12
+Nombre=ConceptoPercepcion12
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=ConceptoPercepcion12
+TipoDatos=Texto
+[CantidadPercepcion12]
+Clave=CantidadPercepcion12
+Nombre=CantidadPercepcion12
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion12
+[ImportePercepcion12]
+Clave=ImportePercepcion12
+Nombre=ImportePercepcion12
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion12
+[ConceptoDeduccion12]
+Clave=ConceptoDeduccion12
+Nombre=ConceptoDeduccion12
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion12
+[CantidadDeduccion12]
+Clave=CantidadDeduccion12
+Nombre=CantidadDeduccion12
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion12
+[Importededuccion12]
+Clave=Importededuccion12
+Nombre=Importededuccion12
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion12
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Orden
+[NominaID]
+Clave=NominaID
+Nombre=NominaID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=NominaID
+[Linea19]
+Clave=Inicio: Orden
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=7
+Visible=
+[Linea20]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+[Linea21]
+Clave=Inicio: Orden
+Objetos=7
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[G8]
+Celda=G8
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion1)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion1, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G9]
+Celda=G9
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion2)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion2, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G10]
+Celda=G10
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion3)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion3, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G11]
+Celda=G11
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion4)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion4, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G12]
+Celda=G12
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion5)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion5, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G13]
+Celda=G13
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion6)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion6, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G14]
+Celda=G14
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion7)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion7, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[G15]
+Celda=G15
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion8)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion8, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[G16]
+Celda=G16
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion9)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion9, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion10)
+BordeIzquierdo=S
+[B17]
+Celda=B17
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=Si NumEnTexto(ImportePercepcion10)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID  and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion10,NominaID)<BR>Fin
+[C17]
+Celda=C17
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion10)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion10, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[D17]
+Celda=D17
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=
+[E17]
+Celda=E17
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=Mayusculas(ConceptoDeduccion10)
+[A18]
+Celda=A18
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion11)
+BordeIzquierdo=S
+[B18]
+Celda=B18
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=Si NumEnTexto(ImportePercepcion11)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion11,NominaID)<BR>Fin
+[C18]
+Celda=C18
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion11)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion11, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[D18]
+Celda=D18
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=
+[E18]
+Celda=E18
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=Mayusculas(ConceptoDeduccion11)
+[F20]
+Celda=F20
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion13)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion13,NominaID)<BR>Fin
+[G20]
+Celda=G20
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion13)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion13, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[F21]
+Celda=F21
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion14)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion14,NominaID)<BR>Fin
+[G21]
+Celda=G21
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion14)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion14, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[B22]
+Celda=B22
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion15)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion15,NominaID)<BR>Fin
+BordeArriba=N
+Marco=N
+FondoEstilo=0
+[C22]
+Celda=C22
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeArriba=N
+Expresion=Si NumEnTexto(ImportePercepcion15)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion15, <T>#,###,###.00<T> ) Fin
+Marco=N
+FondoEstilo=0
+BordeDerecho=S
+[D22]
+Celda=D22
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+ExpresionMultiple=N
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+BordeArriba=N
+Marco=N
+FondoEstilo=0
+
+[A23]
+Celda=A23
+Alineacion=Izquierda
+AnchoEnCm=5.29
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=N
+Expresion=<T>Total Percepciones<T>
+Marco=S
+BordeArriba=N
+FondoEstilo=1
+[B23]
+Celda=B23
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3.61
+ExpresionMultiple=N
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ImportePercepcion1<BR>+ImportePercepcion2<BR>+ImportePercepcion3<BR>+ImportePercepcion4<BR>+ImportePercepcion5<BR>+ImportePercepcion6<BR>+ImportePercepcion7<BR>+ImportePercepcion8<BR>+ImportePercepcion9<BR>+ImportePercepcion10<BR>+ImportePercepcion11<BR>+ImportePercepcion12<BR>+ImportePercepcion13<BR>+ImportePercepcion14<BR>+ImportePercepcion15
+Marco=S
+BordeArriba=N
+FondoEstilo=1
+[C23]
+Celda=C23
+Alineacion=Izquierda
+AnchoEnCm=5.71
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total Deducciones<T>
+Marco=S
+BordeArriba=N
+FondoEstilo=1
+[D23]
+Celda=D23
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3.5
+ExpresionMultiple=N
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Importededuccion1<BR>+Importededuccion2<BR>+Importededuccion3<BR>+Importededuccion4<BR>+Importededuccion5<BR>+Importededuccion6<BR>+Importededuccion7<BR>+Importededuccion8<BR>+Importededuccion9<BR>+Importededuccion10<BR>+Importededuccion11<BR>+Importededuccion12<BR>+Importededuccion13<BR>+Importededuccion14<BR>+Importededuccion15
+
+Marco=S
+BordeArriba=N
+FondoEstilo=1
+[Linea22]
+Clave=Inicio: Orden
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=7
+BordeArriba=N
+FondoEstilo=0
+[F17]
+Celda=F17
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion10)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID  and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion10,NominaID)<BR>Fin
+[G17]
+Celda=G17
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion10)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion10, <T>#,###,###.00<T> ) Fin
+FormatoValidacion=
+BordeDerecho=S
+[A19]
+Celda=A19
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion12)
+BordeArriba=N
+BordeIzquierdo=S
+[B19]
+Celda=B19
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion12)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion12,NominaID)<BR>Fin
+BordeArriba=N
+[C19]
+Celda=C19
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion12)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion12, <T>#,###,###.00<T> ) Fin
+BordeArriba=N
+BordeDerecho=S
+[D19]
+Celda=D19
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+BordeArriba=N
+[E19]
+Celda=E19
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=Mayusculas(ConceptoDeduccion12)
+[Registro3]
+Clave=Registro3
+Nombre=Registro3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Registro3
+[A20]
+Celda=A20
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion13)
+ExpresionMultiple=N
+Expresion002=<CONTINUA>><T>Becarios<T> Entonces <T>Acum. Fondo Ahorro Compañia: <T> + SQL(<T>Select isnull(Importe,0) from Nominad Where ID= :nID and Personal = :tPersonal and Concepto = :tCpto and Movimiento = :tMov<T>, NominaID, Personal,<T>Acumulado Fondo Ahorro Compañia<T>, <T>Estadistica<T> ) SINO <T><T> fin
+BordeIzquierdo=S
+[B20]
+Celda=B20
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion13)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion13,NominaID)<BR>Fin
+ExpresionMultiple=N
+FormatoValidacion=
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=1.6
+AnchoTexto=13
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>R.F.C. <T>
+Marco=S
+FondoEstilo=1
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=35
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Registro2
+ExpresionMultiple=N
+Marco=S
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=9
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Depto:<T>
+Marco=S
+FondoEstilo=1
+[D4]
+Celda=D4
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=20
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(Departamento)
+
+Marco=S
+[Linea23]
+Clave=Inicio: Orden
+Objetos=4
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Plata
+Fuente={Arial, 9, Negro, []}
+AVertical=Centrado
+BordeArriba=N
+FondoEstilo=1
+Marco=S
+[F18]
+Celda=F18
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion11)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion11,NominaID)<BR>Fin
+[G18]
+Celda=G18
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion11)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion11, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[C20]
+Celda=C20
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion13)=<T>0<T> Entonces <T><T>  Sino NumEnTexto(<BR>ImportePercepcion13, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[D20]
+Celda=D20
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=0.5
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+[E20]
+Celda=E20
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion13)
+[A21]
+Celda=A21
+Alineacion=Izquierda
+AnchoEnCm=4.5
+ExpresionMultiple=N
+AnchoTexto=28
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion14)
+Expresion002=<CONTINUA>><T>Becarios<T> Entonces <T>Acum. Fondo Ahorro Compañia: <T> + SQL(<T>Select isnull(Importe,0) from Nominad Where ID= :nID and Personal = :tPersonal and Concepto = :tCpto and Movimiento = :tMov<T>, NominaID, Personal,<T>Acumulado Fondo Ahorro Compañia<T>, <T>Estadistica<T> ) SINO <T><T> fin
+BordeIzquierdo=S
+[B21]
+Celda=B21
+Alineacion=Derecha
+AnchoEnCm=1.18
+ExpresionMultiple=N
+AnchoTexto=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion14)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion14,NominaID)<BR>Fin
+[C21]
+Celda=C21
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion14)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion14, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[D21]
+Celda=D21
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=
+[Linea24]
+Clave=Inicio: Orden
+Objetos=3
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=S
+Marco=S
+[Linea25]
+Clave=Inicio: Orden
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=2.11
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=2
+BordeAbajo=N
+[Linea26]
+Clave=Fin: Orden
+Objetos=0
+Seccion=Inicio Grupo
+Grupo=Orden
+AltoEnCm=1
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=N
+[F19]
+Celda=F19
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion12)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and and np.ID=d.ID <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion12,NominaID)<BR>Fin
+[G19]
+Celda=G19
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion12)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion12, <T>#,###,###.00<T> ) Fin
+BordeDerecho=S
+[E21]
+Celda=E21
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion14)
+[A22]
+Celda=A22
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=28
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion15)
+Marco=N
+FondoEstilo=0
+BordeIzquierdo=S
+[A24]
+Celda=A24
+Alineacion=Izquierda
+AnchoEnCm=8.9
+ExpresionMultiple=N
+AnchoTexto=48
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+Expresion002=<CONTINUA>><T>Becarios<T> Entonces <T>Acum. Fondo Ahorro Compañia: <T> + SQL(<T>Select isnull(Importe,0) from Nominad Where ID= :nID and Personal = :tPersonal and Concepto = :tCpto and Movimiento = :tMov<T>, NominaID, Personal,<T>Acumulado Fondo Ahorro Compañia<T>, <T>Estadistica<T> ) SINO <T><T> fin
+BordeIzquierdo=N
+BordeAbajo=N
+[B24]
+Celda=B24
+Alineacion=Izquierda
+AnchoEnCm=5.71
+ExpresionMultiple=N
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Black, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Neto Pagado<T>
+FormatoValidacion=
+BordeAbajo=S
+Marco=S
+FondoEstilo=1
+[C24]
+Celda=C24
+Alineacion=Derecha
+AnchoEnCm=3.5
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=((ImportePercepcion1<BR>+ImportePercepcion2<BR>+ImportePercepcion3<BR>+ImportePercepcion4<BR>+ImportePercepcion5<BR>+ImportePercepcion6<BR>+ImportePercepcion7<BR>+ImportePercepcion8<BR>+ImportePercepcion9<BR>+ImportePercepcion10<BR>+ImportePercepcion11<BR>+ImportePercepcion12<BR>+ImportePercepcion13<BR>+ImportePercepcion14<BR>+ImportePercepcion15)<BR>-<BR>(ImporteDeduccion1<BR>+ImporteDeduccion2<BR>+ImporteDeduccion3<BR>+ImporteDeduccion4<BR>+ImporteDeduccion5<BR>+ImporteDeduccion6<BR>+ImporteDeduccion7<BR>+ImporteDeduccion8<BR>+ImporteDeduccion9<BR>+ImporteDeduccion10<BR>+ImporteDeduccion11<BR>+ImporteDeduccion12<BR>+ImporteDeduccion13<BR>+ImporteDeduccion14<BR>+ImporteDeduccion15))+ImporteVales
+Marco=S
+FondoEstilo=1
+FormatoValidacion=(Monetario)
+BordeAbajo=S
+
+[ConceptoPercepcion13]
+Clave=ConceptoPercepcion13
+Nombre=ConceptoPercepcion13
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=ConceptoPercepcion13
+TipoDatos=Texto
+[CantidadPercepcion13]
+Clave=CantidadPercepcion13
+Nombre=CantidadPercepcion13
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion13
+[ImportePercepcion13]
+Clave=ImportePercepcion13
+Nombre=ImportePercepcion13
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion13
+[ConceptoDeduccion13]
+Clave=ConceptoDeduccion13
+Nombre=ConceptoDeduccion13
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion13
+[CantidadDeduccion13]
+Clave=CantidadDeduccion13
+Nombre=CantidadDeduccion13
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion13
+[Importededuccion13]
+Clave=Importededuccion13
+Nombre=Importededuccion13
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion13
+[ConceptoPercepcion14]
+Clave=ConceptoPercepcion14
+Nombre=ConceptoPercepcion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion14
+[CantidadPercepcion14]
+Clave=CantidadPercepcion14
+Nombre=CantidadPercepcion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion14
+[ImportePercepcion14]
+Clave=ImportePercepcion14
+Nombre=ImportePercepcion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion14
+[ConceptoDeduccion14]
+Clave=ConceptoDeduccion14
+Nombre=ConceptoDeduccion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion14
+[CantidadDeduccion14]
+Clave=CantidadDeduccion14
+Nombre=CantidadDeduccion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion14
+[Importededuccion14]
+Clave=Importededuccion14
+Nombre=Importededuccion14
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion14
+[ConceptoPercepcion15]
+Clave=ConceptoPercepcion15
+Nombre=ConceptoPercepcion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoPercepcion15
+[CantidadPercepcion15]
+Clave=CantidadPercepcion15
+Nombre=CantidadPercepcion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadPercepcion15
+[ImportePercepcion15]
+Clave=ImportePercepcion15
+Nombre=ImportePercepcion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImportePercepcion15
+[ConceptoDeduccion15]
+Clave=ConceptoDeduccion15
+Nombre=ConceptoDeduccion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=ConceptoDeduccion15
+[CantidadDeduccion15]
+Clave=CantidadDeduccion15
+Nombre=CantidadDeduccion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CantidadDeduccion15
+[Importededuccion15]
+Clave=Importededuccion15
+Nombre=Importededuccion15
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Importededuccion15
+[DiasTrabajados]
+Clave=DiasTrabajados
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=D
+Cantidad=S
+FormatoValidacion=0.00
+Formula=SQL(<T>SELECT d.cantidad FROM Nominad d WHERE d.Personal = :tPersonal and d.concepto=:tdias<T>, Personal,<T>Sueldo<T> )
+[ImporteVales]
+Clave=ImporteVales
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=ImporteVales
+Formula=SQL(<T>Select d.importe from nominad d, nomina a , personal p where a.id=d.id and d.personal=p.personal and a.id=:nid and d.concepto=:tc<BR>and a.estatus=:te and p.estatus=:tpers and p.personal=:JAMES  <T>,NominaID,<T>Vales Despensa Exento<T>,<T>Concluido<T>,<T>Alta<T>,Personal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[CURP]
+Clave=CURP
+TipoDatos=Texto
+TipoCampo=Calculado
+TamanoValidacion=20
+Alineacion=por Omisión
+Nombre=CURP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tamano=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[H5]
+Celda=H5
+Alineacion=Centrado
+AnchoEnCm=18.3
+AnchoTexto=98
+EstiloAbajo=8
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=
+[I5]
+Celda=I5
+Alineacion=Centrado
+AnchoEnCm=9.21
+AnchoTexto=50
+EstiloAbajo=8
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[G4]
+Celda=G4
+Alineacion=Izquierda
+AnchoEnCm=1.89
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FechaAlta
+
+
+
+
+
+
+
+
+
+
+[H2]
+Celda=H2
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+ExpresionMultiple=N
+
+
+[I2]
+Celda=I2
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FechaAlta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A25]
+Celda=A25
+Alineacion=Izquierda
+AnchoEnCm=12.39
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 6, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T><T><BR><T>El empleado manifiesta que con el pago amparado con este documento, le han sido cubiertos sus salarios ordinarios correspondi_<T><BR><T>entes al periodo que se indica en el mismo asi como en su caso los extraordinarios, por lo que le otorga a esta empresa a esta<T><BR><T>fecha el mas amplio finiquito liberatorio de obligaciones por estos conceptos. Asi mismo expresamente manifiesta que salvo se <T><BR><T>señale lo contrario en este recibo unicamente ha laborado su jornada ordinaria de trabajo en el periodo que se indica y que no <T><BR><T>ha prestado sus servicios en periodo extraordinario, asi mismo reconoce los conceptos de deduccion que en el mismo se establecen,<T><BR><T>firmando al calce para la autentificacion de lo expuesto tanto en el anverso como en el reverso de este documento.<T>
+
+[B25]
+Celda=B25
+Alineacion=Centrado
+AnchoEnCm=5.71
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T><T><BR><T><T><BR><T><T><BR><T>_______________________________________<T><BR>        <T>FIRMA DEL TRABAJADOR<T>
+
+
+
+
+[Linea27]
+Clave=Fin: Orden
+Objetos=2
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=2
+Renglones=1
+BordeAbajo=S
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea28]
+Clave=Fin: Orden
+Objetos=6
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeAbajo=N
+[Linea29]
+Clave=Fin: Orden
+Objetos=6
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeAbajo=N
+[Linea30]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=6
+[Linea31]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=6
+[Linea32]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.39
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 9, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=2
+[Linea33]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea34]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea35]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+BorqueIzquierdo=S
+[Linea36]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+BorqueIzquierdo=N
+[Linea37]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+BorqueIzquierdo=N
+[Linea38]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea39]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea40]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea41]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea42]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea43]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea44]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea45]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.36
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea46]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea47]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=7
+[Linea48]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=5
+[Linea49]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.39
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=3
+[Linea50]
+Clave=Fin: Orden
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=2.11
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=2
+
+
+[A29]
+Celda=A29
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>R.F.C. <T>
+
+
+
+
+
+FondoEstilo=1
+
+
+Marco=S
+BordeAbajo=N
+EsImagen=N
+[B29]
+Celda=B29
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=16
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Registro2
+
+ExpresionMultiple=N
+BordeAbajo=N
+
+
+
+
+[A30]
+Celda=A30
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=16
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>C.U.R.P.:<T>
+
+Marco=S
+[B30]
+Celda=B30
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=sql(<T>select Registro from personal where personal=:tpersonal<T>,personal)
+
+
+
+Marco=S
+
+
+[C30]
+Celda=C30
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Puesto: <T>
+
+ExpresionMultiple=N
+[D30]
+Celda=D30
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Puesto
+
+FondoEstilo=0
+[A31]
+Celda=A31
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Periodo:<T>
+
+[B31]
+Celda=B31
+Alineacion=Centrado
+AnchoEnCm=7
+AnchoTexto=38
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Del<T>+<T>  <T>+FechaDMA(FechaD)+<T>  <T>+<T>Al<T>+<T>  <T>+FechaDMA(FechaA)
+
+Marco=S
+FormatoValidacion=
+[C31]
+Celda=C31
+Alineacion=Izquierda
+AnchoEnCm=1.5
+ExpresionMultiple=N
+AnchoTexto=5
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>SDI:<T>
+
+Marco=S
+[D31]
+Celda=D31
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=14
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT np.SDIEstaNomina FROM NominaPersonal np,Nomina n,Nominad <BR>d<BR>WHERE d.personal=np.personal and n.id=d.id and np.Personal=:tPersonal and <BR>np.id=:nid<T>,Personal,NominaID)
+
+Marco=N
+
+
+FondoEstilo=0
+FormatoValidacion=(Monetario)
+[A32]
+Celda=A32
+Alineacion=Centrado
+AnchoEnCm=8.89
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>PERCEPCIONES
+
+Marco=S
+FondoEstilo=1
+[B32]
+Celda=B32
+Alineacion=Centrado
+AnchoEnCm=9.21
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>DEDUCCIONES<T>
+
+
+
+
+
+Marco=S
+FondoEstilo=1
+FormatoValidacion=
+[A33]
+Celda=A33
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion1)
+
+Marco=N
+FondoEstilo=0
+[B33]
+Celda=B33
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Marco=N
+FondoEstilo=0
+Expresion=Si NumEnTexto(ImportePercepcion1)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion1,NominaID)<BR>Fin
+
+
+
+
+
+FormatoValidacion=
+[A34]
+Celda=A34
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion2)
+
+Marco=N
+FondoEstilo=0
+[B34]
+Celda=B34
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Marco=N
+FondoEstilo=0
+Expresion=Si NumEnTexto(ImportePercepcion2)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion2,NominaID)<BR>Fin
+
+
+
+
+
+[A35]
+Celda=A35
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion3)
+
+[B35]
+Celda=B35
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+BordeIzquierdo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion3)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion3,NominaID)<BR>Fin
+[C35]
+Celda=C35
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeIzquierdo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion3)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion3, <T>#,###,###.00<T> ) Fin
+
+BordeDerecho=N
+[D35]
+Celda=D35
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E35]
+Celda=E35
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion3)
+
+[F35]
+Celda=F35
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+BordeIzquierdo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion3)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion3,NominaID)<BR>Fin
+[G35]
+Celda=G35
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion3)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion3, <T>#,###,###.00<T> ) Fin
+
+[A36]
+Celda=A36
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion4)
+
+[B36]
+Celda=B36
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion4)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion4,NominaID)<BR>Fin
+[C36]
+Celda=C36
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion4)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion4, <T>#,###,###.00<T> ) Fin
+
+[D36]
+Celda=D36
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=N
+[E36]
+Celda=E36
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion4)
+
+[F36]
+Celda=F36
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion4)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion4,NominaID)<BR>Fin
+[G36]
+Celda=G36
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion4)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion4, <T>#,###,###.00<T> ) Fin
+
+[A37]
+Celda=A37
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion5)
+
+BordeIzquierdo=S
+[B37]
+Celda=B37
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion5)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion5,NominaID)<BR>Fin
+[C37]
+Celda=C37
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion5)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion5, <T>#,###,###.00<T> ) Fin
+
+BordeDerecho=S
+[D37]
+Celda=D37
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=N
+[E37]
+Celda=E37
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion5)
+
+[F37]
+Celda=F37
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion5)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion5,NominaID)<BR>Fin
+[G37]
+Celda=G37
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion5)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion5, <T>#,###,###.00<T> ) Fin
+
+[A38]
+Celda=A38
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion6)
+
+[B38]
+Celda=B38
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion6)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion6,NominaID)<BR>Fin
+[C38]
+Celda=C38
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion6)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion6, <T>#,###,###.00<T> ) Fin
+
+[D38]
+Celda=D38
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E38]
+Celda=E38
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion6)
+[F38]
+Celda=F38
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion6)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion6,NominaID)<BR>Fin
+[G38]
+Celda=G38
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion6)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion6, <T>#,###,###.00<T> ) Fin
+[A39]
+Celda=A39
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion7)
+
+[B39]
+Celda=B39
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion7)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion7,NominaID)<BR>Fin
+[C39]
+Celda=C39
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion7)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion7, <T>#,###,###.00<T> ) Fin
+
+[D39]
+Celda=D39
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E39]
+Celda=E39
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion7)
+[F39]
+Celda=F39
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion7)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion7,NominaID)<BR>Fin
+[G39]
+Celda=G39
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion7)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion7, <T>#,###,###.00<T> ) Fin
+[A40]
+Celda=A40
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion8)
+
+[B40]
+Celda=B40
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion8)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion8,NominaID)<BR>Fin
+[C40]
+Celda=C40
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion8)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion8, <T>#,###,###.00<T> ) Fin
+
+[D40]
+Celda=D40
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E40]
+Celda=E40
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion8)
+[F40]
+Celda=F40
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion8)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion8,NominaID)<BR>Fin
+[G40]
+Celda=G40
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion8)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion8, <T>#,###,###.00<T> ) Fin
+[A41]
+Celda=A41
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion9)
+
+[B41]
+Celda=B41
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion9)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion9,NominaID)<BR>Fin
+[C41]
+Celda=C41
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion9)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion9, <T>#,###,###.00<T> ) Fin
+
+[D41]
+Celda=D41
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E41]
+Celda=E41
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion9)
+[F41]
+Celda=F41
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion9)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion9,NominaID)<BR>Fin
+[G41]
+Celda=G41
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion9)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion9, <T>#,###,###.00<T> ) Fin
+[A42]
+Celda=A42
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion10)
+
+[B42]
+Celda=B42
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion10)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion10,NominaID)<BR>Fin
+[C42]
+Celda=C42
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion10)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion10, <T>#,###,###.00<T> ) Fin
+
+[D42]
+Celda=D42
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E42]
+Celda=E42
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion10)
+[F42]
+Celda=F42
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion10)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion10,NominaID)<BR>Fin
+[G42]
+Celda=G42
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion10)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion10, <T>#,###,###.00<T> ) Fin
+[A43]
+Celda=A43
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion11)
+
+[B43]
+Celda=B43
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion11)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion11,NominaID)<BR>Fin
+[C43]
+Celda=C43
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion11)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion11, <T>#,###,###.00<T> ) Fin
+
+[D43]
+Celda=D43
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E43]
+Celda=E43
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion11)
+[F43]
+Celda=F43
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion11)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion11,NominaID)<BR>Fin
+[G43]
+Celda=G43
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion11)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion11, <T>#,###,###.00<T> ) Fin
+[A44]
+Celda=A44
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion12)
+
+[B44]
+Celda=B44
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion12)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion12,NominaID)<BR>Fin
+[C44]
+Celda=C44
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion12)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion12, <T>#,###,###.00<T> ) Fin
+
+[D44]
+Celda=D44
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E44]
+Celda=E44
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion12)
+[F44]
+Celda=F44
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion12)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion12,NominaID)<BR>Fin
+[G44]
+Celda=G44
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion12)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion12, <T>#,###,###.00<T> ) Fin
+[A45]
+Celda=A45
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion13)
+
+[B45]
+Celda=B45
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion13)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion13,NominaID)<BR>Fin
+[C45]
+Celda=C45
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion13)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion13, <T>#,###,###.00<T> ) Fin
+
+[D45]
+Celda=D45
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E45]
+Celda=E45
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion13)
+[F45]
+Celda=F45
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion13)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion13,NominaID)<BR>Fin
+[G45]
+Celda=G45
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion13)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion13, <T>#,###,###.00<T> ) Fin
+[A46]
+Celda=A46
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion14)
+
+[B46]
+Celda=B46
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion14)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion14,NominaID)<BR>Fin
+[C46]
+Celda=C46
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion14)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion14, <T>#,###,###.00<T> ) Fin
+
+[D46]
+Celda=D46
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E46]
+Celda=E46
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion14)
+[F46]
+Celda=F46
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion14)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion14,NominaID)<BR>Fin
+[G46]
+Celda=G46
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion14)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion14, <T>#,###,###.00<T> ) Fin
+[A47]
+Celda=A47
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+BordeIzquierdo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoPercepcion15)
+
+[B47]
+Celda=B47
+Alineacion=Derecha
+AnchoEnCm=1.18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(ImportePercepcion15)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoPercepcion15,NominaID)<BR>Fin
+[C47]
+Celda=C47
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion15)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion15, <T>#,###,###.00<T> ) Fin
+
+[D47]
+Celda=D47
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E47]
+Celda=E47
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Mayusculas(ConceptoDeduccion15)
+[F47]
+Celda=F47
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion15)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion15,NominaID)<BR>Fin
+[G47]
+Celda=G47
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeDerecho=S
+Expresion=Si NumEnTexto(Importededuccion15)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion15, <T>#,###,###.00<T> ) Fin
+[A48]
+Celda=A48
+Alineacion=Izquierda
+AnchoEnCm=5.29
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Marco=S
+FondoEstilo=1
+Expresion=<T>Total Percepciones<T>
+BordeIzquierdo=N
+[A49]
+Celda=A49
+Alineacion=Izquierda
+AnchoEnCm=8.89
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BordeIzquierdo=N
+Expresion=
+Marco=N
+FondoEstilo=0
+[B48]
+Celda=B48
+Alineacion=Derecha
+AnchoEnCm=3.61
+AnchoTexto=16
+BordeDerecho=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ImportePercepcion1<BR>+ImportePercepcion2<BR>+ImportePercepcion3<BR>+ImportePercepcion4<BR>+ImportePercepcion5<BR>+ImportePercepcion6<BR>+ImportePercepcion7<BR>+ImportePercepcion8<BR>+ImportePercepcion9<BR>+ImportePercepcion10<BR>+ImportePercepcion11<BR>+ImportePercepcion12<BR>+ImportePercepcion13<BR>+ImportePercepcion14<BR>+ImportePercepcion15
+
+Marco=S
+FormatoValidacion=(Monetario)
+[C48]
+Celda=C48
+Alineacion=Izquierda
+AnchoEnCm=0
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total Deducciones<T>
+
+BordeDerecho=N
+[D48]
+Celda=D48
+Alineacion=Izquierda
+AnchoEnCm=5.71
+AnchoTexto=16
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total Deducciones<T>
+
+Marco=S
+[E48]
+Celda=E48
+Alineacion=Derecha
+AnchoEnCm=3.5
+AnchoTexto=16
+BordeDerecho=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Importededuccion1<BR>+Importededuccion2<BR>+Importededuccion3<BR>+Importededuccion4<BR>+Importededuccion5<BR>+Importededuccion6<BR>+Importededuccion7<BR>+Importededuccion8<BR>+Importededuccion9<BR>+Importededuccion10<BR>+Importededuccion11<BR>+Importededuccion12<BR>+Importededuccion13<BR>+Importededuccion14<BR>+Importededuccion15
+
+Marco=S
+FormatoValidacion=(Monetario)
+[B49]
+Celda=B49
+Alineacion=Izquierda
+AnchoEnCm=5.71
+AnchoTexto=16
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Black, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+
+
+FormatoValidacion=
+Expresion=<T>Neto Pagado<T>
+
+
+Marco=S
+BordeDerecho=N
+FondoEstilo=1
+[A50]
+Celda=A50
+Alineacion=Izquierda
+AnchoEnCm=12.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 6, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T><T><BR><T>El empleado manifiesta que con el pago amparado con este documento, le han sido cubiertos sus salarios ordinarios correspondi_<T><BR><T>entes al periodo que se indica en el mismo asi como en su caso los extraordinarios, por lo que le otorga a esta empresa a esta<T><BR><T>fecha el mas amplio finiquito liberatorio de obligaciones por estos conceptos. Asi mismo expresamente manifiesta que salvo se <T><BR><T>señale lo contrario en este recibo unicamente ha laborado su jornada ordinaria de trabajo en el periodo que se indica y que no <T><BR><T>ha prestado sus servicios en periodo extraordinario, asi mismo reconoce los conceptos de deduccion que en el mismo se establecen,<T><BR><T>firmando al calce para la autentificacion de lo expuesto tanto en el anverso como en el reverso de este documento.<T>
+
+Marco=N
+FondoEstilo=0
+ExpresionMultiple=S
+[B50]
+Celda=B50
+Alineacion=Centrado
+AnchoEnCm=5.71
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T><T><BR><T><T><BR><T><T><BR><T>_______________________________________<T><BR>        <T>FIRMA DEL TRABAJADOR<T>
+
+FormatoValidacion=
+Marco=N
+BordeDerecho=N
+FondoEstilo=0
+ExpresionMultiple=S
+
+
+
+
+
+[C49]
+Celda=C49
+Alineacion=Derecha
+AnchoEnCm=3.5
+AnchoTexto=16
+BordeDerecho=N
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=((ImportePercepcion1<BR>+ImportePercepcion2<BR>+ImportePercepcion3<BR>+ImportePercepcion4<BR>+ImportePercepcion5<BR>+ImportePercepcion6<BR>+ImportePercepcion7<BR>+ImportePercepcion8<BR>+ImportePercepcion9<BR>+ImportePercepcion10<BR>+ImportePercepcion11<BR>+ImportePercepcion12<BR>+ImportePercepcion13<BR>+ImportePercepcion14<BR>+ImportePercepcion15)<BR>-<BR>(ImporteDeduccion1<BR>+ImporteDeduccion2<BR>+ImporteDeduccion3<BR>+ImporteDeduccion4<BR>+ImporteDeduccion5<BR>+ImporteDeduccion6<BR>+ImporteDeduccion7<BR>+ImporteDeduccion8<BR>+ImporteDeduccion9<BR>+ImporteDeduccion10<BR>+ImporteDeduccion11<BR>+ImporteDeduccion12<BR>+ImporteDeduccion13<BR>+ImporteDeduccion14<BR>+ImporteDeduccion15))+ImporteVales
+FormatoValidacion=(Monetario)
+Marco=S
+FondoEstilo=1
+
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=14.39
+ExpresionMultiple=S
+AnchoTexto=77
+Marco=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=EmpresaNombre<BR><T>R.F.C.:<T>+<T> <T>+SQL(<T>Select e.rfc from empresa e where e.empresa=:tempresa<T>,Empresa)<BR>SQL(<T>Select e.Direccion from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+<T>No. Ext.<T>+<T> <T>+SQL(<T>Select e.Direccionnumero from empresa e left outer join nomina n on n.empresa=e.empresa where e.empresa=:tempresa<T>,Empresa)+<T> <T>+<T>No. Int.<T>+<T> <T>+SQL(<T>Select e.DireccionNumeroInt from empresa e left outer join nomina n on n.empresa=e.empresa where e.empresa=:tempresa<T>,Empresa)<BR>SQL(<T>Select e.Colonia from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.CodigoPostal from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.Estado from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.Pais from empresa e where e.empresa=:tempresa<T>,Empresa)
+
+BordeAbajo=S
+
+
+
+
+
+
+
+
+
+
+
+
+[A28]
+Celda=A28
+Alineacion=Derecha
+AnchoEnCm=1.61
+AnchoTexto=16
+BordeAbajo=N
+FondoColor=Plata
+AVertical=Centrado
+EsImagen=N
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>No. Trab.<T>
+
+Marco=S
+FondoEstilo=1
+[B28]
+Celda=B28
+Alineacion=Izquierda
+AnchoEnCm=7
+ExpresionMultiple=N
+AnchoTexto=16
+BordeAbajo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Personal+<T> <T>+ApellidoPaterno+ <T> <T> +ApellidoMaterno+ <T> <T>+Nombre
+
+Marco=S
+[C29]
+Celda=C29
+Alineacion=Izquierda
+AnchoEnCm=1.5
+ExpresionMultiple=N
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Depto:<T>
+
+[D29]
+Celda=D29
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(Departamento)
+
+FondoEstilo=0
+[E29]
+Celda=E29
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Fecha Ingreso:<T>
+
+[F29]
+Celda=F29
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=16
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT FechaAntiguedad FROM Personal WHERE Personal = :tPersonal<T>, <BR>Personal )
+
+
+
+[C34]
+Celda=C34
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion2)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion2, <T>#,###,###.00<T> ) Fin
+
+[D34]
+Celda=D34
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E34]
+Celda=E34
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion2)
+
+[F34]
+Celda=F34
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion2)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion2,NominaID)<BR>Fin
+[G34]
+Celda=G34
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion2)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion2, <T>#,###,###.00<T> ) Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[E4]
+Celda=E4
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=12
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Fecha Ingreso:<T>
+
+[F4]
+Celda=F4
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=12
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT FechaAntiguedad FROM Personal WHERE Personal = :tPersonal<T>, <BR>Personal )
+
+[C6]
+Celda=C6
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=8
+Marco=S
+EstiloAbajo=8
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>SDI:<T>
+
+[D6]
+Celda=D6
+Alineacion=Centrado
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloAbajo=8
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT np.SDIEstaNomina FROM NominaPersonal np,Nomina n,Nominad <BR>d<BR>WHERE d.personal=np.personal and n.id=d.id and np.Personal=:tPersonal and <BR>np.id=:nid<T>,Personal,NominaID)
+
+[E6]
+Celda=E6
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=13
+Marco=S
+EstiloAbajo=8
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Sueldo Diario:<T>
+
+[F6]
+Celda=F6
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=12
+Marco=S
+EstiloAbajo=8
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT np.SueldoDiario FROM NominaPersonal np,Nomina n,Nominad d <BR>WHERE d.personal=np.personal and n.id=d.id and np.Personal=:tPersonal and <BR>np.id=:nid<T>,Personal,NominaID)
+
+FormatoValidacion=(Monetario)
+[E22]
+Celda=E22
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion15)
+
+[F22]
+Celda=F22
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion15)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion15,NominaID)<BR>Fin
+
+[G22]
+Celda=G22
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion15)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion15, <T>#,###,###.00<T> ) Fin
+
+[A27]
+Celda=A27
+Alineacion=Izquierda
+AnchoEnCm=3.71
+AnchoTexto=27
+BordeAbajo=S
+FondoColor=Blanco
+AVertical=Centrado
+EsImagen=S
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si( Empresa.Empresa = Empresa.Empresa,   sql(<T>SELECT Direccion from AnexoCta where cuenta=:temp and Nombre=:tnom<T>, Empresa.Empresa,<T>LogoEmpresa<T>),<T><T>)
+
+[B27]
+Celda=B27
+Alineacion=Centrado
+AnchoEnCm=14.39
+ExpresionMultiple=S
+AnchoTexto=16
+BordeAbajo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=EmpresaNombre<BR><T>R.F.C.:<T>+<T> <T>+SQL(<T>Select e.rfc from empresa e where e.empresa=:tempresa<T>,Empresa)<BR>SQL(<T>Select e.Direccion from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+<T>No. Ext.<T>+<T> <T>+SQL(<T>Select e.Direccionnumero from empresa e left outer join nomina n on n.empresa=e.empresa where e.empresa=:tempresa<T>,Empresa)+<T> <T>+<T>No. Int.<T>+<T> <T>+SQL(<T>Select e.DireccionNumeroInt from empresa e left outer join nomina n on n.empresa=e.empresa where e.empresa=:tempresa<T>,Empresa)<BR>SQL(<T>Select e.Colonia from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.CodigoPostal from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.Estado from empresa e where e.empresa=:tempresa<T>,Empresa)+<T> <T>+SQL(<T>Select e.Pais from empresa e where e.empresa=:tempresa<T>,Empresa)
+
+[C28]
+Celda=C28
+Alineacion=Izquierda
+AnchoEnCm=1.5
+ExpresionMultiple=S
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>N.S.S.<T>
+
+[D28]
+Celda=D28
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=20
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Registro3
+
+[E28]
+Celda=E28
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<BR><T>Dias Pagados :<T>
+
+[F28]
+Celda=F28
+Alineacion=Centrado
+FormatoValidacion=0.00
+AnchoEnCm=2.21
+AnchoTexto=7
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT d.cantidad FROM Nominad d, nomina a, Personal p WHERE<BR>d.personal=p.personal and a.id=d.id and<BR>d.Personal = :tPersonal and d.concepto=:tdias and<BR>d.id=:nid<T>,Personal,<T>Sueldo<T>,NominaID)
+
+[E31]
+Celda=E31
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=16
+Marco=S
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Sueldo Diario: <T>
+
+[F31]
+Celda=F31
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=16
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL( <T>SELECT np.SueldoDiario FROM NominaPersonal np,Nomina n,Nominad d <BR>WHERE d.personal=np.personal and n.id=d.id and np.Personal=:tPersonal and <BR>np.id=:nid<T>,Personal,NominaID)
+
+FormatoValidacion=(Monetario)
+[C33]
+Celda=C33
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(ImportePercepcion1)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>ImportePercepcion1, <T>#,###,###.00<T> ) Fin
+
+[D33]
+Celda=D33
+Alineacion=Derecha
+AnchoEnCm=0.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E33]
+Celda=E33
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Mayusculas(ConceptoDeduccion1)
+
+[F33]
+Celda=F33
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Si NumEnTexto(Importededuccion1)=<T>0<T> Entonces <T><T>  Sino<BR>SQL( <T>SELECT d.Cantidad FROM Nominad d,Nomina n,Nominapersonal np<BR>WHERE d.personal=np.personal and n.id=d.id and np.ID=d.ID and <BR>np.Personal=:tPersonal and <BR>d.concepto=:tConcepto and<BR>np.id=:nid<T>,Personal,ConceptoDeduccion1,NominaID)<BR>Fin
+[G33]
+Celda=G33
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=16
+BordeDerecho=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si NumEnTexto(Importededuccion1)=<T>0<T> Entonces <T><T>  Sino NumEnTexto( <BR>Importededuccion1, <T>#,###,###.00<T> ) Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[E5]
+Celda=E5
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=16
+Marco=S
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Registro Patronal:<T>
+
+FondoEstilo=1
+[F5]
+Celda=F5
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=12
+Marco=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Valor FROM PersonalPropValor WHERE Propiedad=:t and <BR>Rama=:t2 and Cuenta=:t3<T>,<T>Registro Patronal<T>,<T>PER<T>,Personal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[E30]
+Celda=E30
+Alineacion=Izquierda
+AnchoEnCm=2.79
+AnchoTexto=16
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Registro Patronal<T>
+
+Marco=S
+[F30]
+Celda=F30
+Alineacion=Centrado
+AnchoEnCm=2.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Valor FROM PersonalPropValor WHERE Propiedad=:t and <BR>Rama=:t2 and Cuenta=:t3<T>,<T>Registro Patronal<T>,<T>PER<T>,Personal)
+
+
+
+Marco=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=FechaA
+FechaA=Personal
+Personal=EmpresaNombre
+EmpresaNombre=Direccion
+Direccion=Nombre
+Nombre=ApellidoPaterno
+ApellidoPaterno=ApellidoMaterno
+ApellidoMaterno=Departamento
+Departamento=Categoria
+Categoria=Puesto
+Puesto=Grupo
+Grupo=FechaAlta
+FechaAlta=Registro2
+Registro2=SueldoDiario
+SueldoDiario=FechaD
+FechaD=ConceptoPercepcion1
+ConceptoPercepcion1=CantidadPercepcion1
+CantidadPercepcion1=ImportePercepcion1
+ImportePercepcion1=ConceptoDeduccion1
+ConceptoDeduccion1=CantidadDeduccion1
+CantidadDeduccion1=Importededuccion1
+Importededuccion1=ConceptoPercepcion2
+ConceptoPercepcion2=CantidadPercepcion2
+CantidadPercepcion2=ImportePercepcion2
+ImportePercepcion2=ConceptoDeduccion2
+ConceptoDeduccion2=CantidadDeduccion2
+CantidadDeduccion2=Importededuccion2
+Importededuccion2=ConceptoPercepcion3
+ConceptoPercepcion3=CantidadPercepcion3
+CantidadPercepcion3=ImportePercepcion3
+ImportePercepcion3=ConceptoDeduccion3
+ConceptoDeduccion3=CantidadDeduccion3
+CantidadDeduccion3=Importededuccion3
+Importededuccion3=ConceptoPercepcion4
+ConceptoPercepcion4=CantidadPercepcion4
+CantidadPercepcion4=ImportePercepcion4
+ImportePercepcion4=ConceptoDeduccion4
+ConceptoDeduccion4=CantidadDeduccion4
+CantidadDeduccion4=Importededuccion4
+Importededuccion4=ConceptoPercepcion5
+ConceptoPercepcion5=CantidadPercepcion5
+CantidadPercepcion5=ImportePercepcion5
+ImportePercepcion5=ConceptoDeduccion5
+ConceptoDeduccion5=CantidadDeduccion5
+CantidadDeduccion5=Importededuccion5
+Importededuccion5=ConceptoPercepcion6
+ConceptoPercepcion6=CantidadPercepcion6
+CantidadPercepcion6=ImportePercepcion6
+ImportePercepcion6=ConceptoDeduccion6
+ConceptoDeduccion6=CantidadDeduccion6
+CantidadDeduccion6=Importededuccion6
+Importededuccion6=ConceptoPercepcion7
+ConceptoPercepcion7=CantidadPercepcion7
+CantidadPercepcion7=ImportePercepcion7
+ImportePercepcion7=ConceptoDeduccion7
+ConceptoDeduccion7=CantidadDeduccion7
+CantidadDeduccion7=Importededuccion7
+Importededuccion7=ConceptoPercepcion8
+ConceptoPercepcion8=CantidadPercepcion8
+CantidadPercepcion8=ImportePercepcion8
+ImportePercepcion8=ConceptoDeduccion8
+ConceptoDeduccion8=CantidadDeduccion8
+CantidadDeduccion8=Importededuccion8
+Importededuccion8=ConceptoPercepcion9
+ConceptoPercepcion9=CantidadPercepcion9
+CantidadPercepcion9=ImportePercepcion9
+ImportePercepcion9=ConceptoDeduccion9
+ConceptoDeduccion9=CantidadDeduccion9
+CantidadDeduccion9=Importededuccion9
+Importededuccion9=ConceptoPercepcion10
+ConceptoPercepcion10=CantidadPercepcion10
+CantidadPercepcion10=ImportePercepcion10
+ImportePercepcion10=ConceptoDeduccion10
+ConceptoDeduccion10=CantidadDeduccion10
+CantidadDeduccion10=Importededuccion10
+Importededuccion10=ConceptoPercepcion11
+ConceptoPercepcion11=CantidadPercepcion11
+CantidadPercepcion11=ImportePercepcion11
+ImportePercepcion11=ConceptoDeduccion11
+ConceptoDeduccion11=CantidadDeduccion11
+CantidadDeduccion11=Importededuccion11
+Importededuccion11=ConceptoPercepcion12
+ConceptoPercepcion12=CantidadPercepcion12
+CantidadPercepcion12=ImportePercepcion12
+ImportePercepcion12=ConceptoDeduccion12
+ConceptoDeduccion12=CantidadDeduccion12
+CantidadDeduccion12=Importededuccion12
+Importededuccion12=Orden
+Orden=NominaID
+NominaID=Registro3
+Registro3=ConceptoPercepcion13
+ConceptoPercepcion13=CantidadPercepcion13
+CantidadPercepcion13=ImportePercepcion13
+ImportePercepcion13=ConceptoDeduccion13
+ConceptoDeduccion13=CantidadDeduccion13
+CantidadDeduccion13=Importededuccion13
+Importededuccion13=ConceptoPercepcion14
+ConceptoPercepcion14=CantidadPercepcion14
+CantidadPercepcion14=ImportePercepcion14
+ImportePercepcion14=ConceptoDeduccion14
+ConceptoDeduccion14=CantidadDeduccion14
+CantidadDeduccion14=Importededuccion14
+Importededuccion14=ConceptoPercepcion15
+ConceptoPercepcion15=CantidadPercepcion15
+CantidadPercepcion15=ImportePercepcion15
+ImportePercepcion15=ConceptoDeduccion15
+ConceptoDeduccion15=CantidadDeduccion15
+CantidadDeduccion15=Importededuccion15
+Importededuccion15=(Fin)
+
+[Vista.SQL]
+(Inicio)=SpReciboNomina '{Empresa}' , '{Info.Mov}', '{Info.MovID}',
+SpReciboNomina '{Empresa}' , '{Info.Mov}', '{Info.MovID}',='{Rep.PersonaEspecifica}', '{Info.Departamento}',
+'{Rep.PersonaEspecifica}', '{Info.Departamento}',='{Info.Puesto}', '{Info.PersonalCat}',
+'{Info.Puesto}', '{Info.PersonalCat}',='{Info.PersonalGrupo}',  '{Info.Ejercicio}'
+'{Info.PersonalGrupo}',  '{Info.Ejercicio}'=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=DiasTrabajados
+DiasTrabajados=ImporteVales
+ImporteVales=CURP
+CURP=(Fin)
+
+
+
+[Reporte.ListaOrden]
+(Inicio)=Personal	(Acendente)
+Personal	(Acendente)=Orden	(Acendente)
+Orden	(Acendente)=(Fin)
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

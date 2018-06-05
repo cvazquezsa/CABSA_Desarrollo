@@ -1,0 +1,61 @@
+[Tabla]
+Icono=0
+Clave=ProvCredito
+Archivo=ProvCredito
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Crédito
+Singular=Crédito
+LlavePrimaria=Proveedor<BR>Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Proveedor,<BR>  Empresa,<BR>  LineaCredito,<BR>  Moneda<BR><BR>FROM<BR>  ProvCredito
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Proveedor
+TipoDatos=Texto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=5
+Tamano=5
+AyudaMemTabla=Empresa
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Empresa
+Requerido=S
+TipoDatos=Texto
+
+[LineaCredito]
+Clave=LineaCredito
+Nombre=Línea Crédito
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Usuario.DefMoneda
+AyudaMemTabla=Mon
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Proveedor
+Proveedor=Empresa
+Empresa=LineaCredito
+LineaCredito=Moneda
+Moneda=(Fin)

@@ -1,0 +1,46 @@
+
+[Vista]
+Icono=0
+Clave=CPObjetoGasto
+Nombre=Objeto Gasto
+Modulos=(Todos)
+Singular=Objeto Gasto
+ListaTablas=CPObjetoGasto
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=CPObjetoGasto
+SQL=SELECT<BR>  CPObjetoGasto.ObjetoGasto,<BR>  CPObjetoGasto.Nombre<BR><BR>FROM<BR>  CPObjetoGasto
+[CPObjetoGasto.ObjetoGasto]
+Clave=CPObjetoGasto.ObjetoGasto
+Nombre=Clave
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+Mayusculas=S
+LigaTabla=CPObjetoGasto
+LigaCampo=ObjetoGasto
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ObjetoGasto
+
+[CPObjetoGasto.Nombre]
+Clave=CPObjetoGasto.Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+LigaTabla=CPObjetoGasto
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Nombre
+
+[Vista.ListaCampos]
+(Inicio)=CPObjetoGasto.ObjetoGasto
+CPObjetoGasto.ObjetoGasto=CPObjetoGasto.Nombre
+CPObjetoGasto.Nombre=(Fin)

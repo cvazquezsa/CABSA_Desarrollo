@@ -1,0 +1,117 @@
+
+[Dialogo]
+Clave=GenerarGestion
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=210
+PosicionInicialAncho=286
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+PosicionInicialIzquierda=577
+PosicionInicialArriba=240
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaExclusivaOpcion=0
+[Acciones.Avance]
+Nombre=Avance
+Boton=0
+NombreDesplegar=Generar Avance
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+Antes=S
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Avance<T>)
+[Acciones.Sub Tarea]
+Nombre=Sub Tarea
+Boton=0
+NombreDesplegar=Generar Sub Tarea
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+Antes=S
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Tarea<T>)
+[Acciones.Reunion]
+Nombre=Reunion
+Boton=0
+NombreDesplegar=Generar Reunión
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+Antes=S
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Reunion<T>)
+[Acciones.Terminación]
+Nombre=Terminación
+Boton=0
+NombreDesplegar=Generar Terminación
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+Antes=S
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Terminacion<T>)
+[Acciones.Pregunta]
+Nombre=Pregunta
+Boton=0
+NombreDesplegar=Generar Pregunta
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+Antes=S
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Pregunta<T>)
+
+
+[Acciones.Solicitud Tarea]
+Nombre=Solicitud Tarea
+Boton=0
+NombreDesplegar=Generar Solicitud Tarea
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>GES<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Info.MovGenerar, <T>Gestion<T>)
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.MovGenerar, <T>Solicitud Tarea<T>)
+Visible=S
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Avance
+Avance=Sub Tarea
+Sub Tarea=Reunion
+Reunion=Terminación
+Terminación=Pregunta
+Pregunta=Solicitud Tarea
+Solicitud Tarea=(Fin)

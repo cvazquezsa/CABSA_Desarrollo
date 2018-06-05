@@ -1,0 +1,60 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovCxc
+Nombre=EmpresaCfgMovCxc
+Archivo=EmpresaCfgMovCxc
+Modulos=(Todos)
+Singular=EmpresaCfgMovCxc
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+
+
+
+
+[CxcDescuentoInflacion]
+Clave=CxcDescuentoInflacion
+Nombre=Descuento Inflación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesValidar=S
+OpcionesModulo=CXC
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=CxcDescuentoInflacion
+CxcDescuentoInflacion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=CXCDescuentoInflacion
+CXCDescuentoInflacion=FROM EmpresaCfgMovCxc
+FROM EmpresaCfgMovCxc=(Fin)

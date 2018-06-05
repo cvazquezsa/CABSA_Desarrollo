@@ -1,0 +1,107 @@
+
+[Tabla]
+Icono=0
+Clave=DIOTIVARubroCondicion
+Nombre=DIOTIVARubroCondicion
+Archivo=DIOTIVARubroCondicion
+Modulos=(Todos)
+Singular=DIOTIVARubroCondicion
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=RID
+ControlID=S
+CampoID=RID
+SQL=(Lista)
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Rubro]
+Clave=Rubro
+Nombre=Rubro
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=Info.ID
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+[Operador]
+Clave=Operador
+Nombre=Operador
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+
+
+
+
+[Operador.ListaOpciones]
+(Inicio)=Distinto que
+Distinto que=En
+En=Igual a
+Igual a=No En
+No En=(Fin)
+
+
+
+[Concepto.ListaOpciones]
+(Inicio)=Es Excento
+Es Excento=Es Importacion
+Es Importacion=Modulo
+Modulo=Tasa
+Tasa=Tipo Documento
+Tipo Documento=Tipo Tercero
+Tipo Tercero=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=RID
+RID=Rubro
+Rubro=Concepto
+Concepto=Operador
+Operador=Valor
+Valor=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=RID,
+RID,=Rubro,
+Rubro,=Concepto,
+Concepto,=Operador,
+Operador,=Valor
+Valor=FROM DIOTIVARubroCondicion
+FROM DIOTIVARubroCondicion=(Fin)

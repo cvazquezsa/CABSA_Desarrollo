@@ -1,0 +1,119 @@
+[Tabla]
+Icono=0
+Clave=MensajeInstitucion
+Archivo=MensajeInstitucion
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Mensajes
+Singular=Mensaje
+LlavePrimaria=Institucion<BR>Mensaje
+SQL=SELECT<BR>  Institucion,<BR>  Mensaje,<BR>  Descripcion,<BR>  ConciliarMismaFecha,<BR>  TipoMovimiento,<BR>  ConceptoGasto,<BR>  PermiteAbonoNoIdentificado,<BR>  Clasificacion<BR><BR>FROM<BR>  MensajeInstitucion
+
+[Institucion]
+Clave=Institucion
+Nombre=Institución
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Cuenta
+TipoDatos=Texto
+
+[Mensaje]
+Clave=Mensaje
+Nombre=Código
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[ConciliarMismaFecha]
+Clave=ConciliarMismaFecha
+Nombre=Conciliar Misma Fecha
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[TipoMovimiento]
+Clave=TipoMovimiento
+Nombre=Tipo Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ConceptoGasto]
+Clave=ConceptoGasto
+Nombre=Concepto Gastos
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ConceptoGASLista
+AyudaVista=Concepto
+AyudaCampo=Concepto.Concepto
+TipoDatos=Texto
+
+[PermiteAbonoNoIdentificado]
+Clave=PermiteAbonoNoIdentificado
+Nombre=Permite Depósitos No Identificados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Clasificacion]
+Clave=Clasificacion
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=20
+Tamano=50
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=MensajeInstitucionClase
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Institucion
+Institucion=Mensaje
+Mensaje=Descripcion
+Descripcion=ConciliarMismaFecha
+ConciliarMismaFecha=TipoMovimiento
+TipoMovimiento=ConceptoGasto
+ConceptoGasto=PermiteAbonoNoIdentificado
+PermiteAbonoNoIdentificado=Clasificacion
+Clasificacion=(Fin)
+
+[TipoMovimiento.ListaOpciones]
+(Inicio)=Tesoreria
+Tesoreria=Gasto
+Gasto=Gasto IVA
+Gasto IVA=(Fin)

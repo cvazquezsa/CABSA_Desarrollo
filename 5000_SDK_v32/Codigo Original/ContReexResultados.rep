@@ -1,0 +1,3242 @@
+[Reporte]
+Clave=ContReexResultados
+Icono=0
+Tipo=Reporte
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=1
+AnchoPagina=39
+LargoPagina=24
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=Horizontal
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+Nombre=Actualización de Resultado del Ejercicio
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+ListaOrden=(Lista)
+ListaAcciones=(Lista)
+PosicionInicialAltura=580
+PosicionInicialAncho=1032
+FormatoSinConexion=S
+PreliminarSinRetroceder=S
+PosicionInicialAlturaCliente=708
+VistaEspecial=S
+Parametros1=
+Parametros2=
+Parametros3=
+Parametros4=
+ExpresionesAntes=Si(Info.CentroCostos=<T>(TODOS)<T>, Asigna(Info.CentroCostos, Nulo))<BR>Asigna(Rep.Suma, 0)<BR>Asigna(Rep.Suma1, 0)<BR>Asigna(Rep.Suma2, 0)<BR>Asigna(Rep.Suma3, 0)<BR>Asigna(Rep.Suma4, 0)<BR>Asigna(Rep.SumaAbonos, 0)<BR>Asigna(Rep.SumaCargos, 0)<BR>Asigna(Rep.SumaGrupo1, 0)<BR>Asigna(Rep.SumaGrupo2, 0)<BR>Asigna(Rep.SumaGrupo3, 0)<BR>Asigna(Rep.SumaInicio, 0)<BR>Asigna(Rep.Saldo, 0)<BR>Asigna(Rep.SumaFinal, 0)<BR>Asigna(Info.Importe, SQL(<T>SELECT Importe FROM TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, Config.ContTablaINPC, Info.Ejercicio))<BR><BR>Asigna(Info.Impuesto1,0)<BR>Asigna(Info.Impuesto2,0)<BR>Asigna(Rep.Grupo1,0)<BR>Asigna(Info.Porcentaje,0)<BR>Asigna(Info.PorcentajeImpuesto,0)<BR>Asigna(Info.Precio,0)<BR>Asigna(Info.Saldo,0)<BR>Asigna(Info.SaldoFinal,0)<BR>Asigna(Info.SaldoInicial,0)<BR>Asigna(Info.TipoCambio,0)<BR>Asigna(Rep.Abonos,0)<BR>Asigna(Rep.Cargos,0)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+F4
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=ContReexResultados
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+Activo=S
+Visible=S
+TipoAccion=Reportes Excel
+ClaveAccion=ContReexResultados
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Título<BR>Título<BR>Inicio: Rama<BR>Detalle<BR>Detalle<BR>Fin: Rama<BR>Fin: Rama<BR>Fin: Clase<BR>Fin: Clase<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Fin: Orden<BR>Pie
+VentanaIzquierda=0
+VentanaArriba=13
+VentanaAltura=742
+VentanaAncho=1032
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Centrado
+AnchoEnCm=37
+AnchoTexto=199
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=ReporteNombre
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea2]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 12, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea3]
+Clave=Título
+Objetos=1
+Seccion=Título
+AltoEnCm=1.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Visible=
+
+[Linea4]
+Clave=Título
+Objetos=14
+Seccion=Título
+AltoEnCm=0.8
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeArriba=S
+EstiloArriba=1
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=37
+AnchoTexto=199
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Si(ConDatos(Info.Controladora), SQL(<T>Select Nombre From Empresa Where Empresa =:tEmp<T>,Empresa.Controladora), Empresa.Nombre)
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=37
+AnchoTexto=371
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Direccion<BR>Empresa.CodigoPostal+<T> <T>+Empresa.Colonia+<T> <T>+ Empresa.Poblacion+<T> <T>+Empresa.Estado+<T> <T>+Empresa.Pais<BR>Empresa.RFC 
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=4
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=<T>Ejercicio <T>+Info.Ejercicio
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeArriba=S
+EstiloArriba=1
+
+[Linea5]
+Clave=Inicio: Rama
+Objetos=1
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeArriba=N
+EstiloArriba=0
+Grupo=Rama
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=97
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=RamaDesc 
+ExpresionMultiple=N
+BordeArriba=N
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea6]
+Clave=Detalle
+Objetos=14
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeArriba=N
+EstiloArriba=0
+Visible=Orden=1
+EstiloMarco=3
+
+[Linea7]
+Clave=Detalle
+Objetos=14
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=
+Visible=Orden=2
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=97
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Descripcion
+ExpresionMultiple=N
+BordeArriba=N
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloMarco=3
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Descripcion
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea8]
+Clave=Fin: Rama
+Objetos=14
+Seccion=Fin Grupo
+Grupo=Rama
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeArriba=S
+EstiloArriba=0
+EstiloMarco=0
+Visible=Orden=1
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloArriba=0
+BordeArriba=N
+EstiloMarco=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlEne), Suma(SaldoAlEne))
+BordeArriba=S
+EstiloArriba=0
+EstiloMarco=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea9]
+Clave=Fin: Rama
+Objetos=14
+Seccion=Fin Grupo
+Grupo=Rama
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeArriba=S
+EstiloArriba=0
+Visible=Orden=2
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+EstiloArriba=0
+BordeArriba=N
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B9]
+Celda=B9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(RamaEsAcreedora, Suma(-SaldoAlEne), <BR>Suma(SaldoAlEne)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C9]
+Celda=C9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlFeb), <BR>Suma(SaldoAlFeb)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D9]
+Celda=D9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlMar), <BR>Suma(SaldoAlMar)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlAbr), <BR>Suma(SaldoAlAbr)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F9]
+Celda=F9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlMay), <BR>Suma(SaldoAlMay)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[G9]
+Celda=G9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlJun), <BR>Suma(SaldoAlJun)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[H9]
+Celda=H9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlJul), <BR>Suma(SaldoAlJul)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[I9]
+Celda=I9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlAgo), <BR>Suma(SaldoAlAgo)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[J9]
+Celda=J9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlSep), <BR>Suma(SaldoAlSep)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[K9]
+Celda=K9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlOct), <BR>Suma(SaldoAlOct)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[L9]
+Celda=L9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlNov), <BR>Suma(SaldoAlNov)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[M9]
+Celda=M9
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+FormatoValidacion=(Monetario)
+Expresion=(Si(EsAcreedora, Suma(-SaldoAlDic), <BR>Suma(SaldoAlDic)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[N9]
+Celda=N9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=((Si(EsAcreedora, Suma(-SaldoAlEne), <BR>Suma(SaldoAlEne)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlFeb), <BR>Suma(SaldoAlFeb)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlMar), <BR>Suma(SaldoAlMar)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlAbr), <BR>Suma(SaldoAlAbr)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlMay), <BR>Suma(SaldoAlMay)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlJun), <BR>Suma(SaldoAlJun)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlJul), <BR>Suma(SaldoAlJul)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlAgo), <BR>Suma(SaldoAlAgo)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlSep), <BR>Suma(SaldoAlSep)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlOct), <BR>Suma(SaldoAlOct)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlNov), <BR>Suma(SaldoAlNov)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, Suma(-SaldoAlDic), <BR>Suma(SaldoAlDic)))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))
+BordeArriba=S
+EstiloArriba=0
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Vista]
+Icono=0
+Clave=ContReexResultados
+Nombre=ContReexResultados
+VistaIndependiente=S
+ListaCampos=(Lista)
+SQL=spVerContReexResultados <T>{Empresa}<T>, <BR>                         {Info.Ejercicio}, <BR>                        NULL
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=ID
+
+[Clase]
+Clave=Clase
+Nombre=Clase
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Clase
+
+[SubClase]
+Clave=SubClase
+Nombre=SubClase
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=SubClase
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Rama
+
+[RamaDesc]
+Clave=RamaDesc
+Nombre=RamaDesc
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=RamaDesc
+
+[RamaEsAcreedora]
+Clave=RamaEsAcreedora
+Nombre=RamaEsAcreedora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=RamaEsAcreedora
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Cuenta
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=EsAcreedora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcreedora
+
+[Saldo]
+Clave=Saldo
+Nombre=Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Saldo
+
+[SaldoAlEne]
+Clave=SaldoAlEne
+Nombre=SaldoAlEne
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlEne
+
+[SaldoAlFeb]
+Clave=SaldoAlFeb
+Nombre=SaldoAlFeb
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlFeb
+
+[SaldoAlMar]
+Clave=SaldoAlMar
+Nombre=SaldoAlMar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlMar
+
+[SaldoAlAbr]
+Clave=SaldoAlAbr
+Nombre=SaldoAlAbr
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlAbr
+
+[SaldoAlMay]
+Clave=SaldoAlMay
+Nombre=SaldoAlMay
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlMay
+
+[SaldoAlJun]
+Clave=SaldoAlJun
+Nombre=SaldoAlJun
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlJun
+
+[SaldoAlJul]
+Clave=SaldoAlJul
+Nombre=SaldoAlJul
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlJul
+
+[SaldoAlAgo]
+Clave=SaldoAlAgo
+Nombre=SaldoAlAgo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlAgo
+
+[SaldoAlSep]
+Clave=SaldoAlSep
+Nombre=SaldoAlSep
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlSep
+
+[SaldoAlOct]
+Clave=SaldoAlOct
+Nombre=SaldoAlOct
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlOct
+
+[SaldoAlNov]
+Clave=SaldoAlNov
+Nombre=SaldoAlNov
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlNov
+
+[SaldoAlDic]
+Clave=SaldoAlDic
+Nombre=SaldoAlDic
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlDic
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlEne, SaldoAlEne))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlFeb, SaldoAlFeb))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[D7]
+Celda=D7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlMar, SaldoAlMar))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[E7]
+Celda=E7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlAbr, SaldoAlAbr))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[F7]
+Celda=F7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlMay, SaldoAlMay))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[G7]
+Celda=G7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlJun, SaldoAlJun))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[H7]
+Celda=H7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlJul, SaldoAlJul))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[I7]
+Celda=I7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlAgo, SaldoAlAgo))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[J7]
+Celda=J7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlSep, SaldoAlSep))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[K7]
+Celda=K7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlOct, SaldoAlOct))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[L7]
+Celda=L7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlNov, SaldoAlNov))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[M7]
+Celda=M7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(Si(EsAcreedora, -SaldoAlDic, SaldoAlDic))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))
+
+[N7]
+Celda=N7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=((Si(EsAcreedora, -SaldoAlEne, SaldoAlEne))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlFeb, SaldoAlFeb))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlMar, SaldoAlMar))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlAbr, SaldoAlAbr))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+ <BR>((Si(EsAcreedora, -SaldoAlMay, SaldoAlMay))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+ <BR>((Si(EsAcreedora, -SaldoAlJun, SaldoAlJun))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlJul, SaldoAlJul))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+ <BR>((Si(EsAcreedora, -SaldoAlAgo, SaldoAlAgo))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlSep, SaldoAlSep))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlOct, SaldoAlOct))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlNov, SaldoAlNov))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))<BR>+<BR>((Si(EsAcreedora, -SaldoAlDic, SaldoAlDic))*(Info.Importe/SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))
+
+[Linea10]
+Clave=Fin: Clase
+Objetos=14
+Seccion=Fin Grupo
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Grupo=Clase
+ExpresionesAntesImprimir=
+Visible=Orden=1
+BordeArriba=S
+EstiloArriba=1
+
+[A10]
+Celda=A10
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Clase
+BordeArriba=S
+EstiloArriba=1
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[Linea11]
+Clave=Fin: Clase
+Objetos=14
+Seccion=Fin Grupo
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Grupo=Clase
+Visible=Orden=2
+BordeArriba=S
+EstiloArriba=1
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Clase
+BordeArriba=S
+EstiloArriba=1
+
+[B11]
+Celda=B11
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.Impuesto1, (Info.Impuesto1 - <BR>(Suma(SaldoAlEne)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.Impuesto1
+FormatoValidacion=(Monetario)
+BordeArriba=S
+EstiloArriba=1
+
+[Linea12]
+Clave=Fin: Orden
+Objetos=1
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.8
+Renglones=1
+Visible=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeArriba=N
+EstiloArriba=0
+ExpresionesAntesImprimir=Asigna(Rep.Suma, 0)<BR>Asigna(Rep.Suma1, 0)<BR>Asigna(Rep.Suma2, 0)<BR>Asigna(Rep.Suma3, 0)<BR>Asigna(Rep.Suma4, 0)<BR>Asigna(Rep.SumaAbonos, 0)<BR>Asigna(Rep.SumaCargos, 0)<BR>Asigna(Rep.SumaGrupo1, 0)<BR>Asigna(Rep.SumaGrupo2, 0)<BR>Asigna(Rep.SumaGrupo3, 0)<BR>Asigna(Rep.SumaInicio, 0)<BR>Asigna(Rep.Saldo, 0)<BR>Asigna(Rep.SumaFinal, 0)<BR><BR>Asigna(Info.Impuesto1,0)<BR>Asigna(Info.Impuesto2,0)<BR>Asigna(Rep.Grupo1,0)<BR>Asigna(Info.Porcentaje,0)<BR>Asigna(Info.PorcentajeImpuesto,0)<BR>Asigna(Info.Precio,0)<BR>Asigna(Info.Saldo,0)<BR>Asigna(Info.SaldoFinal,0)<BR>Asigna(Info.SaldoInicial,0)<BR>Asigna(Info.TipoCambio,0)<BR>Asigna(Rep.Abonos,0)<BR>Asigna(Rep.Cargos,0)
+
+[Linea13]
+Clave=Fin: Orden
+Objetos=13
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.4
+Renglones=1
+ExpresionesAntesImprimir=
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Cursiva]}
+AVertical=Centrado
+Visible=Orden=1
+
+[Linea14]
+Clave=Fin: Orden
+Objetos=13
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Cursiva]}
+AVertical=Centrado
+Grupo=Orden
+Visible=Orden=1
+
+[B10]
+Celda=B10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma, Rep.Suma - Suma(SaldoAlEne)) <BR>Rep.Suma
+BordeArriba=S
+EstiloArriba=1
+
+[C11]
+Celda=C11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.Impuesto2, (Info.Impuesto2 - <BR>(Suma(SaldoAlFeb)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.Impuesto2
+
+[D11]
+Celda=D11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Grupo1, (Rep.Grupo1 - <BR>(Suma(SaldoAlMar)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio))))) Rep.Grupo1
+
+[E11]
+Celda=E11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.Porcentaje, (Info.Porcentaje - <BR>(Suma(SaldoAlAbr)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.Porcentaje
+
+[F11]
+Celda=F11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.PorcentajeImpuesto, (Info.PorcentajeImpuesto - <BR>(Suma(SaldoAlMay)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.PorcentajeImpuesto
+
+[G11]
+Celda=G11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.Precio, (Info.Precio - <BR>(Suma(SaldoAlJun)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.Precio
+
+[H11]
+Celda=H11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.Saldo, (Info.Saldo - <BR>(Suma(SaldoAlJul)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.Saldo
+
+[I11]
+Celda=I11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.SaldoFinal, (Info.SaldoFinal - <BR>(Suma(SaldoAlAgo)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.SaldoFinal
+
+[J11]
+Celda=J11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.SaldoInicial, (Info.SaldoInicial - <BR>(Suma(SaldoAlSep)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.SaldoInicial
+
+[K11]
+Celda=K11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Info.TipoCambio, (Info.TipoCambio - <BR>(Suma(SaldoAlOct)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Info.TipoCambio
+
+[L11]
+Celda=L11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Abonos, (Rep.Abonos - <BR>(Suma(SaldoAlNov)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Rep.Abonos
+
+[M11]
+Celda=M11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Cargos, (Rep.Cargos - <BR>(Suma(SaldoAlDic)*(Info.Importe/SQL(<T>SELECT Importe FROM TablaAnualD <BR>WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)))))Rep.Cargos
+
+[N11]
+Celda=N11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Impuesto1 + Info.Impuesto2 + Rep.Grupo1 + Info.Porcentaje + <BR>Info.PorcentajeImpuesto + Info.Precio + Info.Saldo + Info.SaldoFinal + <BR>Info.SaldoInicial + Info.TipoCambio + Rep.Abonos + Rep.Cargos
+
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeArriba=N
+EstiloArriba=0
+Expresion=
+
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Índice<T>
+
+[A14]
+Celda=A14
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Factor<T>
+
+[B14]
+Celda=B14
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+FormatoValidacion=#.000000
+
+[C8]
+Celda=C8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlFeb), Suma(SaldoAlFeb))
+BordeArriba=S
+
+[C10]
+Celda=C10
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma1, Rep.Suma1 - Suma(SaldoAlFeb)) <BR>Rep.Suma1
+FormatoValidacion=(Monetario)
+EstiloArriba=1
+
+[D8]
+Celda=D8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlMar), Suma(SaldoAlMar))
+BordeArriba=S
+
+[E8]
+Celda=E8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlAbr), Suma(SaldoAlAbr))
+BordeArriba=S
+
+[F8]
+Celda=F8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlMay), Suma(SaldoAlMay))
+BordeArriba=S
+
+[D10]
+Celda=D10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma2, Rep.Suma2 - Suma(SaldoAlMar)) <BR>Rep.Suma2
+EstiloArriba=1
+
+[E10]
+Celda=E10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma3, Rep.Suma3 - Suma(SaldoAlAbr)) <BR>Rep.Suma3
+EstiloArriba=1
+
+[F10]
+Celda=F10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma4, Rep.Suma4 - Suma(SaldoAlMay)) <BR>Rep.Suma4
+EstiloArriba=1
+
+[G8]
+Celda=G8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlJun), Suma(SaldoAlJun))
+BordeArriba=S
+
+[H8]
+Celda=H8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlJul), Suma(SaldoAlJul))
+BordeArriba=S
+
+[G10]
+Celda=G10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaAbonos, Rep.SumaAbonos - Suma(SaldoAlJun)) <BR>Rep.SumaAbonos
+EstiloArriba=1
+
+[H10]
+Celda=H10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaCargos, Rep.SumaCargos - Suma(SaldoAlJul)) <BR>Rep.SumaCargos
+EstiloArriba=1
+
+[I8]
+Celda=I8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlAgo), Suma(SaldoAlAgo))
+BordeArriba=S
+
+[J8]
+Celda=J8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlSep), Suma(SaldoAlSep))
+BordeArriba=S
+
+[K8]
+Celda=K8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlOct), Suma(SaldoAlOct))
+BordeArriba=S
+
+[L8]
+Celda=L8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlNov), Suma(SaldoAlNov))
+BordeArriba=S
+
+[M8]
+Celda=M8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlDic), Suma(SaldoAlDic))
+BordeArriba=S
+
+[N8]
+Celda=N8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+BordeArriba=S
+
+[I10]
+Celda=I10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaGrupo1, Rep.SumaGrupo1 - Suma(SaldoAlAgo)) <BR>Rep.SumaGrupo1
+EstiloArriba=1
+
+[J10]
+Celda=J10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaGrupo2, Rep.SumaGrupo2 - Suma(SaldoAlSep)) <BR>Rep.SumaGrupo2
+EstiloArriba=1
+
+[K10]
+Celda=K10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaGrupo3, Rep.SumaGrupo3 - Suma(SaldoAlOct)) <BR>Rep.SumaGrupo3
+EstiloArriba=1
+
+[L10]
+Celda=L10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaInicio, Rep.SumaInicio - Suma(SaldoAlNov)) <BR>Rep.SumaInicio
+EstiloArriba=1
+
+[M10]
+Celda=M10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Saldo, Rep.Saldo - Suma(SaldoAlDic)) <BR>Rep.Saldo
+EstiloArriba=1
+
+[N10]
+Celda=N10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaFinal, Rep.SumaFinal - Suma(Saldo))Rep.SumaFinal
+EstiloArriba=1
+
+[Linea15]
+Clave=Fin: Orden
+Objetos=1
+Seccion=Fin Grupo
+Grupo=Orden
+AltoEnCm=0.8
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Visible=Orden=1
+
+[Linea16]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=
+Visible=
+BordeArriba=S
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[A16]
+Celda=A16
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=18
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+BordeArriba=S
+
+[B4]
+Celda=B4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Enero<T>
+
+[C4]
+Celda=C4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Febrero<T>
+
+[D4]
+Celda=D4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Marzo<T>
+
+[E4]
+Celda=E4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Abril<T>
+
+[F4]
+Celda=F4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Mayo<T>
+
+[G4]
+Celda=G4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Junio<T>
+
+[H4]
+Celda=H4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Julio<T>
+
+[I4]
+Celda=I4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Agosto<T>
+
+[J4]
+Celda=J4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Septiembre<T>
+
+[K4]
+Celda=K4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Octubre<T>
+
+[L4]
+Celda=L4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Noviembre<T>
+
+[M4]
+Celda=M4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Diciembre<T>
+
+[N4]
+Celda=N4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total<T>
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlEne, SaldoAlEne)
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlFeb, SaldoAlFeb)
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlMar, SaldoAlMar)
+
+[E6]
+Celda=E6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlAbr, SaldoAlAbr)
+
+[F6]
+Celda=F6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlMay, SaldoAlMay)
+
+[G6]
+Celda=G6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlJun, SaldoAlJun)
+
+[H6]
+Celda=H6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlJul, SaldoAlJul)
+
+[I6]
+Celda=I6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlAgo, SaldoAlAgo)
+
+[J6]
+Celda=J6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlSep, SaldoAlSep)
+
+[K6]
+Celda=K6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlOct, SaldoAlOct)
+
+[L6]
+Celda=L6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlNov, SaldoAlNov)
+
+[M6]
+Celda=M6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlDic, SaldoAlDic)
+
+[N6]
+Celda=N6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=13
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -Saldo, Saldo)
+
+[B13]
+Celda=B13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 1 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[C13]
+Celda=C13
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[D13]
+Celda=D13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[E13]
+Celda=E13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[F13]
+Celda=F13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[G13]
+Celda=G13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[H13]
+Celda=H13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[I13]
+Celda=I13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[J13]
+Celda=J13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[K13]
+Celda=K13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[L13]
+Celda=L13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[M13]
+Celda=M13
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[C14]
+Celda=C14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 2 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[D14]
+Celda=D14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 3 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[E14]
+Celda=E14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 4 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[F14]
+Celda=F14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 5 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[G14]
+Celda=G14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 6 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[H14]
+Celda=H14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 7 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[I14]
+Celda=I14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 8 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[J14]
+Celda=J14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 9 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[K14]
+Celda=K14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 10 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[L14]
+Celda=L14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 11 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[M14]
+Celda=M14
+Alineacion=Derecha
+FormatoValidacion=#.000000
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Importe / SQL(<T>SELECT Importe <BR>FROM <BR>TablaAnualD WHERE TablaAnual = :tT AND Periodo = 12 AND Ejercicio = :tE<T>, <BR>Config.ContTablaINPC, Info.Ejercicio)
+
+[B16]
+Celda=B16
+Alineacion=Derecha
+AnchoEnCm=19
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+BordeArriba=S
+
+[Reporte.ListaOrden]
+(Inicio)=Orden<TAB>(Acendente)
+Orden<TAB>(Acendente)=Clase<TAB>(Acendente)
+Clase<TAB>(Acendente)=Rama<TAB>(Acendente)
+Rama<TAB>(Acendente)=(Fin)
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=Orden
+Orden=ID
+ID=Clase
+Clase=SubClase
+SubClase=Rama
+Rama=RamaDesc
+RamaDesc=RamaEsAcreedora
+RamaEsAcreedora=Cuenta
+Cuenta=Descripcion
+Descripcion=EsAcreedora
+EsAcreedora=Saldo
+Saldo=SaldoAlEne
+SaldoAlEne=SaldoAlFeb
+SaldoAlFeb=SaldoAlMar
+SaldoAlMar=SaldoAlAbr
+SaldoAlAbr=SaldoAlMay
+SaldoAlMay=SaldoAlJun
+SaldoAlJun=SaldoAlJul
+SaldoAlJul=SaldoAlAgo
+SaldoAlAgo=SaldoAlSep
+SaldoAlSep=SaldoAlOct
+SaldoAlOct=SaldoAlNov
+SaldoAlNov=SaldoAlDic
+SaldoAlDic=(Fin)

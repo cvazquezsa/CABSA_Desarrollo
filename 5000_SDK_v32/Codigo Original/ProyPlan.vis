@@ -1,0 +1,26 @@
+[Vista]
+Icono=0
+Clave=ProyPlan
+Nombre=Plantilla
+Modulos=(Todos)
+Singular=Plantillas
+ListaTablas=ProyPlan
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=ProyPlan.Plantilla
+TablaPrincipal=ProyPlan
+SQL=SELECT<BR>  ProyPlan.Plantilla<BR><BR>FROM<BR>  ProyPlan
+
+[ProyPlan.Plantilla]
+Clave=ProyPlan.Plantilla
+Nombre=Plantilla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=ProyPlan
+LigaCampo=Plantilla
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Plantilla

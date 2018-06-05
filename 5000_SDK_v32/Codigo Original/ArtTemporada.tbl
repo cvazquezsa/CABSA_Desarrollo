@@ -1,0 +1,25 @@
+[Tabla]
+Icono=0
+Clave=ArtTemporada
+Archivo=ArtTemporada
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Temporada
+Nombre=Temporadas
+Singular=Temporadas
+LlavePrimaria=Temporada
+CampoSugerido=Temporada
+SQL=SELECT<BR>  Temporada<BR><BR>FROM<BR>  ArtTemporada
+
+[Temporada]
+Clave=Temporada
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Requerido=S
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AgenteGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=AgenteGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AgenteGrupo.Grupo
+TablaPrincipal=AgenteGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  AgenteGrupo.Grupo<BR><BR>FROM<BR>  AgenteGrupo
+
+[AgenteGrupo.Grupo]
+Clave=AgenteGrupo.Grupo
+LigaTabla=AgenteGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

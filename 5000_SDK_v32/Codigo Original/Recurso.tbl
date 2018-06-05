@@ -1,0 +1,388 @@
+[Tabla]
+Icono=0
+Clave=Recurso
+Archivo=Recurso
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Recursos
+Singular=Recurso
+LlavePrimaria=Recurso
+ControlEstatus=S
+CampoEstatus=Estatus
+CampoUsuario=Usuario
+CampoGrupo=Grupo
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+ControlSugerido=S
+CampoSugerido=Recurso
+
+SQL=(Lista)
+[Recurso]
+Clave=Recurso
+Nombre=Recurso
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionEdicion=no TieneMovimientos
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=PersonalLista
+AyudaVista=Personal
+AyudaCampo=Personal.Personal
+ValidacionUsaTabla=S
+ValidacionTablas=Personal
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:PersonalNombre))
+TipoDatos=Texto
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:Agente.Nombre))
+TipoDatos=Texto
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=UsuarioLista
+AyudaVista=UsuarioA
+AyudaCampo=Usuario.Usuario
+ValidacionUsaTabla=S
+ValidacionTablas=Usuario
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:Usuario.Nombre))
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=RecursoGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.Personal]
+TipoRelacion=Opcional
+LlaveLocal=Personal
+Clave=Personal
+TablaRemota=Personal
+LlaveRemota=Personal
+
+[Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+
+[Relaciones.Usuario]
+TipoRelacion=Opcional
+LlaveLocal=Usuario
+Clave=Usuario
+TablaRemota=Usuario
+LlaveRemota=Usuario
+
+[eMail]
+Clave=eMail
+Nombre=Correo Electrónico
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[NombreExchange]
+Clave=NombreExchange
+Nombre=Nombre (en Exchange)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Prospecto]
+Clave=Prospecto
+Nombre=Prospecto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProspectoLista
+AyudaVista=ProspectoA
+AyudaCampo=Prospecto.Prospecto
+ValidacionUsaTabla=S
+ValidacionTablas=Prospecto
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:Prospecto.NombreCompleto))
+TipoDatos=Texto
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:Cte.Nombre))
+TipoDatos=Texto
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+AlCambiar=Si(Vacio(Nombre), Asigna(Nombre, Recurso:Prov.Nombre))
+TipoDatos=Texto
+
+[Relaciones.Prospecto]
+TipoRelacion=Opcional
+LlaveLocal=Prospecto
+Clave=Prospecto
+TablaRemota=Prospecto
+LlaveRemota=Prospecto
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=Proveedor
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+[AFArticulo]
+Clave=AFArticulo
+Nombre=Activo Fijo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=ActivoFArt
+AyudaVista=ActivoFArt
+AyudaCampo=Articulo
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+TipoDatos=Texto
+
+[AFSerie]
+Clave=AFSerie
+Nombre=Serie
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ActivoFLista
+AyudaVista=ActivoFLista
+AyudaCampo=ActivoF.Serie
+AyudaBusquedaRapida=Asigna(Info.Articulo, AFArticulo)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=ActivoF
+TipoDatos=Texto
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=AFArticulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Relaciones.ActivoF]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=ActivoF
+TablaRemota=ActivoF
+LlaveRemota=(Lista)
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ProyectoRol
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AlCambiar=Asigna(Recurso:Recurso.PrecioHora, SQL(<T>SELECT PrecioHora FROM ProyectoRol WHERE Rol = :tRol<T>, Recurso:Recurso.Rol))
+
+[HorasDia]
+Clave=HorasDia
+Nombre=Horas Día
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[PrecioHora]
+Clave=PrecioHora
+Nombre=Precio Hora (Estándar)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[CostoHora]
+Clave=CostoHora
+Nombre=Costo Hora (Estándar)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[Relaciones.ActivoF.LlaveLocal]
+(Inicio)={Comillas(Empresa)}
+{Comillas(Empresa)}=AFArticulo
+AFArticulo=AFSerie
+AFSerie=(Fin)
+
+[Relaciones.ActivoF.LlaveRemota]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=Serie
+Serie=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Recurso
+Recurso=Nombre
+Nombre=eMail
+eMail=Usuario
+Usuario=Personal
+Personal=Prospecto
+Prospecto=Cliente
+Cliente=Proveedor
+Proveedor=Agente
+Agente=Estatus
+Estatus=TieneMovimientos
+TieneMovimientos=Grupo
+Grupo=NombreExchange
+NombreExchange=AFArticulo
+AFArticulo=AFSerie
+AFSerie=Rol
+Rol=HorasDia
+HorasDia=PrecioHora
+PrecioHora=CostoHora
+CostoHora=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Recurso,
+  Recurso,=  Nombre,
+  Nombre,=  eMail,
+  eMail,=  Personal,
+  Personal,=  Agente,
+  Agente,=  Usuario,
+  Usuario,=  Estatus,
+  Estatus,=  TieneMovimientos,
+  TieneMovimientos,=  Grupo,
+  Grupo,=  NombreExchange,
+  NombreExchange,=  Prospecto,
+  Prospecto,=  Cliente,
+  Cliente,=  Proveedor,
+  Proveedor,=  AFArticulo,
+  AFArticulo,=  AFSerie,
+  AFSerie,=  Rol,
+  Rol,=  HorasDia,
+  HorasDia,=  PrecioHora,
+  PrecioHora,=  CostoHora
+  CostoHora=FROM
+FROM=  Recurso
+  Recurso=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Personal
+Personal=Agente
+Agente=Usuario
+Usuario=Prospecto
+Prospecto=Cte
+Cte=Prov
+Prov=Art
+Art=ActivoF
+ActivoF=(Fin)

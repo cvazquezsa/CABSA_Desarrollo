@@ -1,0 +1,385 @@
+[Vista]
+Icono=0
+Clave=heExamenPersonal
+Modulos=(Todos)
+ListaTablas=heExamenPersonal<BR>heExamen<BR>Personal
+TablaPrincipal=heExamenPersonal
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=heExamenPersonal.IDExamen<BR>heExamenPersonal.Personal<BR>heExamenPersonal.PassWord<BR>heExamenPersonal.Curso<BR>heExamenPersonal.NPregunta<BR>heExamenPersonal.Fecha<BR>heExamenPersonal.Estatus<BR>heExamenPersonal.R1<BR>heExamenPersonal.R1A<BR>heExamenPersonal.R2<BR>heExamenPersonal.R3<BR>heExamenPersonal.R4<BR>heExamenPersonal.R5<BR>heExamen.Curso<BR>heExamen.NPregunta<BR>heExamen.Pregunta<BR>heExamen.Tipo<BR>heExamen.Nivel<BR>heExamen.Respuesta1<BR>heExamen.CRespuesta1<BR>heExamen.Respuesta2<BR>heExamen.CRespuesta2<BR>heExamen.Respuesta3<BR>heExamen.CRespuesta3<BR>heExamen.Respuesta4<BR>heExamen.CRespuesta4<BR>heExamen.Respuesta5<BR>heExamen.CRespuesta5<BR>heExamen.Ponderacion<BR>heExamen.Tiempo<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nomb<CONTINUA>
+ListaRelaciones=heExamenPersonal.heExamen<BR>heExamenPersonal.Personal
+ListaCampos002=<CONTINUA>re
+SQL=SELECT<BR>  heExamenPersonal.IDExamen,<BR>  heExamenPersonal.Personal,<BR>  heExamenPersonal.PassWord,<BR>  heExamenPersonal.Curso,<BR>  heExamenPersonal.NPregunta,<BR>  heExamenPersonal.Fecha,<BR>  heExamenPersonal.Estatus,<BR>  heExamenPersonal.R1,<BR>  heExamenPersonal.R1A,<BR>  heExamenPersonal.R2,<BR>  heExamenPersonal.R3,<BR>  heExamenPersonal.R4,<BR>  heExamenPersonal.R5,<BR>  heExamen.Curso,<BR>  heExamen.NPregunta,<BR>  heExamen.Pregunta,<BR>  heExamen.Tipo,<BR>  heExamen.Nivel,<BR>  heExamen.Respuesta1,<BR>  heExamen.CRespuesta1,<BR>  heExamen.Respuesta2,<BR>  heExamen.CRespuesta2,<BR>  heExamen.Respuesta3,<BR>  heExamen.CRespuesta3,<BR>  heExamen.Respuesta4,<BR>  heExamen.CRespuesta4,<BR>  heExamen.Respuesta5,<BR>  heExamen.CRespuesta5,<BR>  heExamen.Ponderacion,<BR>  heExamen.T<CONTINUA>
+SQL002=<CONTINUA>iempo,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre<BR><BR>FROM<BR>  heExamenPersonal<BR>  JOIN heExamen ON heExamenPersonal.Curso=heExamen.Curso AND heExamenPersonal.NPregunta=heExamen.NPregunta<BR>  JOIN Personal ON heExamenPersonal.Personal=Personal.Personal
+[heExamenPersonal.R1]
+Clave=heExamenPersonal.R1
+LigaTabla=heExamenPersonal
+LigaCampo=R1
+TipoDatos=Lógico
+ClaveBDE=R1
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>CERRADA<T> Y ConDatos(heExamen.Respuesta1)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Correcta
+ValorPorOmision=0
+TipoCampo=Tabla
+[heExamenPersonal.R1A]
+Clave=heExamenPersonal.R1A
+LigaTabla=heExamenPersonal
+LigaCampo=R1A
+TipoDatos=Memo
+ClaveBDE=R1A
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>ABIERTA<T>
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Respuesta
+TipoCampo=Tabla
+[heExamenPersonal.R2]
+Clave=heExamenPersonal.R2
+LigaTabla=heExamenPersonal
+LigaCampo=R2
+TipoDatos=Lógico
+ClaveBDE=R2
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>CERRADA<T> Y ConDatos(heExamen.Respuesta2)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Correcta
+ValorPorOmision=0
+TipoCampo=Tabla
+[heExamenPersonal.R3]
+Clave=heExamenPersonal.R3
+LigaTabla=heExamenPersonal
+LigaCampo=R3
+TipoDatos=Lógico
+ClaveBDE=R3
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>CERRADA<T> Y ConDatos(heExamen.Respuesta3)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Correcta
+ValorPorOmision=0
+TipoCampo=Tabla
+[heExamenPersonal.R4]
+Clave=heExamenPersonal.R4
+LigaTabla=heExamenPersonal
+LigaCampo=R4
+TipoDatos=Lógico
+ClaveBDE=R4
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>CERRADA<T> Y ConDatos(heExamen.Respuesta4)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Correcta
+ValorPorOmision=0
+TipoCampo=Tabla
+[heExamenPersonal.R5]
+Clave=heExamenPersonal.R5
+LigaTabla=heExamenPersonal
+LigaCampo=R5
+TipoDatos=Lógico
+ClaveBDE=R5
+TamanoValidacion=10
+CondicionDespliege=heExamen.Tipo=<T>CERRADA<T> Y ConDatos(heExamen.Respuesta5)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Nombre=Correcta
+ValorPorOmision=0
+TipoCampo=Tabla
+[heExamen.Respuesta1]
+Clave=heExamen.Respuesta1
+LigaTabla=heExamen
+LigaCampo=Respuesta1
+Tamano=255
+ClaveBDE=Respuesta1
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Respuesta 1
+CondicionDespliege=heExamen.Tipo<><T>ABIERTA<T> Y ConDatos(heExamen.Respuesta1)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+[heExamen.Respuesta2]
+Clave=heExamen.Respuesta2
+LigaTabla=heExamen
+LigaCampo=Respuesta2
+Tamano=255
+ClaveBDE=Respuesta2
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Respuesta 2
+CondicionDespliege=heExamen.Tipo<><T>ABIERTA<T> Y ConDatos(heExamen.Respuesta2)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+[heExamen.Respuesta3]
+Clave=heExamen.Respuesta3
+LigaTabla=heExamen
+LigaCampo=Respuesta3
+Tamano=255
+ClaveBDE=Respuesta3
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Respuesta 3
+CondicionDespliege=heExamen.Tipo<><T>ABIERTA<T> Y ConDatos(heExamen.Respuesta3)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+[heExamen.Respuesta4]
+Clave=heExamen.Respuesta4
+LigaTabla=heExamen
+LigaCampo=Respuesta4
+Tamano=255
+ClaveBDE=Respuesta4
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Respuesta 4
+CondicionDespliege=heExamen.Tipo<><T>ABIERTA<T> Y ConDatos(heExamen.Respuesta4)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+[heExamen.Respuesta5]
+Clave=heExamen.Respuesta5
+LigaTabla=heExamen
+LigaCampo=Respuesta5
+Tamano=255
+ClaveBDE=Respuesta5
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Respuesta 5
+CondicionDespliege=heExamen.Tipo<><T>ABIERTA<T> Y ConDatos(heExamen.Respuesta5)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+TipoDatos=Texto
+[heExamen.Ponderacion]
+Clave=heExamen.Ponderacion
+Nombre=Ponderacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorMinimo=1
+ValorMaximo=100
+LigaTabla=heExamen
+LigaCampo=Ponderacion
+ClaveBDE=Ponderacion
+Alineacion=por Omisión
+CondicionDespliege=ConDatos(heExamen.Ponderacion)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+[heExamen.Tiempo]
+Clave=heExamen.Tiempo
+LigaTabla=heExamen
+LigaCampo=Tiempo
+TipoDatos=Numérico
+ClaveBDE=Tiempo
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Segundos
+CondicionDespliege=ConDatos(heExamen.Tiempo)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoCampo=Tabla
+[heExamenPersonal.IDExamen]
+Clave=heExamenPersonal.IDExamen
+LigaTabla=heExamenPersonal
+LigaCampo=IDExamen
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=IDExamen
+[heExamenPersonal.Personal]
+Clave=heExamenPersonal.Personal
+LigaTabla=heExamenPersonal
+LigaCampo=Personal
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Personal
+[heExamenPersonal.PassWord]
+Clave=heExamenPersonal.PassWord
+Nombre=Contraseña
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Contrasena=S
+LigaTabla=heExamenPersonal
+LigaCampo=PassWord
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=PassWord
+[heExamenPersonal.Curso]
+Clave=heExamenPersonal.Curso
+LigaTabla=heExamenPersonal
+LigaCampo=Curso
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Curso
+[heExamenPersonal.NPregunta]
+Clave=heExamenPersonal.NPregunta
+LigaTabla=heExamenPersonal
+LigaCampo=NPregunta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=NPregunta
+[heExamenPersonal.Fecha]
+Clave=heExamenPersonal.Fecha
+LigaTabla=heExamenPersonal
+LigaCampo=Fecha
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Fecha
+[heExamenPersonal.Estatus]
+Clave=heExamenPersonal.Estatus
+LigaTabla=heExamenPersonal
+LigaCampo=Estatus
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Estatus
+[heExamen.Curso]
+Clave=heExamen.Curso
+LigaTabla=heExamen
+LigaCampo=Curso
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Curso_1
+[heExamen.NPregunta]
+Clave=heExamen.NPregunta
+LigaTabla=heExamen
+LigaCampo=NPregunta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=NPregunta_1
+[heExamen.Pregunta]
+Clave=heExamen.Pregunta
+LigaTabla=heExamen
+LigaCampo=Pregunta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Memo
+ClaveBDE=Pregunta
+[heExamen.Tipo]
+Clave=heExamen.Tipo
+LigaTabla=heExamen
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Tipo
+[heExamen.Nivel]
+Clave=heExamen.Nivel
+LigaTabla=heExamen
+LigaCampo=Nivel
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Nivel
+[heExamen.CRespuesta1]
+Clave=heExamen.CRespuesta1
+LigaTabla=heExamen
+LigaCampo=CRespuesta1
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CRespuesta1
+[heExamen.CRespuesta2]
+Clave=heExamen.CRespuesta2
+LigaTabla=heExamen
+LigaCampo=CRespuesta2
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CRespuesta2
+[heExamen.CRespuesta3]
+Clave=heExamen.CRespuesta3
+LigaTabla=heExamen
+LigaCampo=CRespuesta3
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CRespuesta3
+[heExamen.CRespuesta4]
+Clave=heExamen.CRespuesta4
+LigaTabla=heExamen
+LigaCampo=CRespuesta4
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CRespuesta4
+[heExamen.CRespuesta5]
+Clave=heExamen.CRespuesta5
+LigaTabla=heExamen
+LigaCampo=CRespuesta5
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CRespuesta5
+[Personal.Personal]
+Clave=Personal.Personal
+LigaTabla=Personal
+LigaCampo=Personal
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Personal_1
+[Personal.ApellidoPaterno]
+Clave=Personal.ApellidoPaterno
+LigaTabla=Personal
+LigaCampo=ApellidoPaterno
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=ApellidoPaterno
+[Personal.ApellidoMaterno]
+Clave=Personal.ApellidoMaterno
+LigaTabla=Personal
+LigaCampo=ApellidoMaterno
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=ApellidoMaterno
+[Personal.Nombre]
+Clave=Personal.Nombre
+LigaTabla=Personal
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Nombre
+[Relaciones.heExamenPersonal.heExamen]
+Clave=heExamenPersonal.heExamen
+TablaRemota=heExamen
+LlaveLocal=heExamenPersonal.Curso<BR>heExamenPersonal.NPregunta
+LlaveRemota=Curso<BR>NPregunta
+TipoRelacion=Forzosa
+[Relaciones.heExamenPersonal.Personal]
+Clave=heExamenPersonal.Personal
+TablaRemota=Personal
+LlaveLocal=heExamenPersonal.Personal
+LlaveRemota=Personal
+TipoRelacion=Forzosa

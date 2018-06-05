@@ -1,0 +1,31 @@
+
+[Vista]
+Icono=0
+Clave=ObjetoSR
+Nombre=ObjetoSR
+Modulos=(Todos)
+Singular=ObjetoSR
+ListaTablas=ObjetoSR
+TablaPrincipal=ObjetoSR
+
+ListaCampos=ObjetoSR.Objeto
+UsoCapturas=S
+UsoReportes=S
+
+
+SQL=(Lista)
+[ObjetoSR.Objeto]
+Clave=ObjetoSR.Objeto
+LigaTabla=ObjetoSR
+LigaCampo=Objeto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Objeto
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=ObjetoSR.Objeto
+ObjetoSR.Objeto=FROM ObjetoSR ObjetoSR
+FROM ObjetoSR ObjetoSR=(Fin)

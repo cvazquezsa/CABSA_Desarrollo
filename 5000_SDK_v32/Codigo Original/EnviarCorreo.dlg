@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=EnviarCorreo
+Nombre=<T>Enviar Correo (en Lotes)<T>
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=517
+PosicionInicialArriba=441
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=245
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.SQLMail]
+Nombre=SQLMail
+Boton=0
+NombreDesplegar=&SQL Mail
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=EnviarCorreoSQLMail
+Activo=S
+Visible=S
+
+[Acciones.LanzarProyecto]
+Nombre=LanzarProyecto
+Boton=0
+NombreDesplegar=&Lanzar Proyecto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=LanzarProyecto
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=LanzarProyecto
+LanzarProyecto=SQLMail
+SQLMail=(Fin)

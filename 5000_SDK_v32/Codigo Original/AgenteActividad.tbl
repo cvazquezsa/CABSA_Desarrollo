@@ -1,0 +1,40 @@
+[Tabla]
+Icono=0
+Clave=AgenteActividad
+Archivo=AgenteActividad
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Actividades
+Singular=Actividad
+SQL=SELECT<BR>  Agente,<BR>  Actividad<BR><BR>FROM<BR>  AgenteActividad
+LlavePrimaria=Agente<BR>Actividad
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Agente
+
+[Actividad]
+Clave=Actividad
+Nombre=Actividad
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ActividadLista
+AyudaVista=Actividad
+AyudaCampo=Actividad.Actividad
+AyudaMultiple=S
+AyudaMemTabla=Actividad
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Agente
+Agente=Actividad
+Actividad=(Fin)

@@ -1,0 +1,66 @@
+[Dialogo]
+Clave=MenuRepContLibroMayor
+Nombre=Menú
+Icono=18
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=422
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=179
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=&General
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContBalanzaMayor
+Activo=S
+Antes=S
+
+AntesExpresiones=Asigna(Rep.Titulo, <T>Libro Mayor General<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/LibroMayor/General<T>)
+[Acciones.Detalle]
+Nombre=Detalle
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+NombreDesplegar=&Detalle
+TipoAccion=Formas
+ClaveAccion=RepContAcumMayor
+Antes=S
+
+
+
+
+
+
+
+
+
+
+
+AntesExpresiones=Asigna(Rep.Titulo, <T>Libro Mayor - Detalle<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/LibroMayor/Detalle<T>)
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=General
+General=Detalle
+Detalle=(Fin)

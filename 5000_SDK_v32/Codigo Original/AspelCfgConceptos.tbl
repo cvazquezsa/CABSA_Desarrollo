@@ -1,0 +1,62 @@
+[Tabla]
+Icono=0
+Clave=AspelCfgConceptos
+Archivo=AspelCfgConceptos
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=Modulo<BR>Tipo<BR>NumConcepto<BR>MovimientoIntelisisCxC<BR>MovimientoIntelisisCxP
+Nombre=AspelCfgConceptos
+LlavePrimaria=Modulo<BR>Tipo<BR>NumConcepto
+ControlTipo=S
+CampoTipo=Tipo
+SQL=SELECT<BR>  Modulo,<BR>  Tipo,<BR>  NumConcepto,<BR>  MovimientoIntelisisCxC,<BR>  MovimientoIntelisisCxP<BR><BR>FROM<BR>  AspelCfgConceptos
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=1
+Tamano=1
+ValorPorOmision=Info.Tipo
+TipoDatos=Texto
+[NumConcepto]
+Clave=NumConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=3
+TipoDatos=Texto
+Tamano=3
+[MovimientoIntelisisCxC]
+Clave=MovimientoIntelisisCxC
+Nombre=Movimiento Intelisis
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesValidar=S
+OpcionesModulo=CXC
+[MovimientoIntelisisCxP]
+Clave=MovimientoIntelisisCxP
+Nombre=Movimiento Intelisis
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesValidar=S
+OpcionesModulo=CXP

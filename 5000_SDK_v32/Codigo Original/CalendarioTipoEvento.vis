@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=CalendarioTipoEvento
+Nombre=Tipos Eventos
+Modulos=(Todos)
+Singular=Tipo Evento
+ListaTablas=CalendarioTipoEvento
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=CalendarioTipoEvento.TipoEvento
+TablaPrincipal=CalendarioTipoEvento
+UsarJOIN=S
+SQL=SELECT<BR>  CalendarioTipoEvento.TipoEvento<BR><BR>FROM<BR>  CalendarioTipoEvento
+
+[CalendarioTipoEvento.TipoEvento]
+Clave=CalendarioTipoEvento.TipoEvento
+LigaTabla=CalendarioTipoEvento
+LigaCampo=TipoEvento
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TipoEvento

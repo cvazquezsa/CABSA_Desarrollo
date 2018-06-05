@@ -1,0 +1,37 @@
+[Tabla]
+Icono=0
+Clave=ArtLoteFijo
+Archivo=ArtLoteFijo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Lotes Fijos
+Singular=Lote
+LlavePrimaria=Articulo<BR>Lote
+SQL=SELECT<BR>  Articulo,<BR>  Lote<BR><BR>FROM<BR>  ArtLoteFijo
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Articulo
+TipoDatos=Texto
+
+[Lote]
+Clave=Lote
+Nombre=Lote
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemTabla=LoteFijo
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=Lote
+Lote=(Fin)

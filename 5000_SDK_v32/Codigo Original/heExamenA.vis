@@ -1,0 +1,73 @@
+
+[Vista]
+Icono=0
+Clave=heExamenA
+Nombre=heExamenA
+Modulos=(Todos)
+ListaTablas=heExamen
+TablaPrincipal=heExamen
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=heExamen.Curso<BR>heExamen.NPregunta<BR>heExamen.Estatus
+SQL=SELECT<BR>  heExamen.Curso,<BR>  heExamen.NPregunta,<BR>  heExamen.Estatus<BR><BR>FROM<BR>  heExamen
+[heExamen.Curso]
+Clave=heExamen.Curso
+Nombre=Curso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=3
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=heExamenCurso
+ConRefrescar=S
+ListaRefrescar=NPregunta
+Requerido=N
+AlCambiar=Asigna(Info.Mensaje,heExamen.Curso)
+ValorPorOmision=Info.Mensaje
+Formula=SQLEnLista(<T>SELECT Curso FROM heExamenCurso WHERE Estatus= :tEstatus<T>,<T>ALTA<T>)
+LigaTabla=heExamen
+LigaCampo=Curso
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Curso
+
+[heExamen.NPregunta]
+Clave=heExamen.NPregunta
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=SQL(<T>SELECT ISNULL(MAX(NPregunta),0)+1 FROM heExamen E JOIN heExamenCurso C ON C.Curso=E.Curso WHERE E.Curso= :tCurso AND C.Estatus= :tEstatus<T>,Info.Mensaje,<T>ALTA<T>)
+BloqueaEdicion=S
+ValorRefrescar=SQL(<T>SELECT ISNULL(MAX(NPregunta),0)+1 FROM heExamen E JOIN heExamenCurso C ON C.Curso=E.Curso WHERE E.Curso= :tCurso AND C.Estatus= :tEstatus<T>,Info.Mensaje,<T>ALTA<T>)
+Requerido=N
+LigaTabla=heExamen
+LigaCampo=NPregunta
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=NPregunta
+
+[heExamen.Estatus]
+Clave=heExamen.Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>ALTA<T>
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=ALTA<BR>BAJA
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+LigaTabla=heExamen
+LigaCampo=Estatus
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estatus

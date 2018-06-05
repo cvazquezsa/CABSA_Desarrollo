@@ -1,0 +1,49 @@
+[Dialogo]
+Clave=MenuCfgCxp
+Nombre=Cuentas por Pagar
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=533
+PosicionInicialArriba=438
+PosicionInicialAltura=117
+PosicionInicialAncho=249
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Ajustes]
+Nombre=Ajustes
+Boton=0
+NombreDesplegar=&Ajustes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CxpAjuste
+Activo=S
+Visible=S
+
+[Acciones.CfgAplicaOrden]
+Nombre=CfgAplicaOrden
+Boton=0
+NombreDesplegar=&Orden Aplicación Sugerida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CfgAplicaOrden
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>CXP<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Ajustes
+Ajustes=CfgAplicaOrden
+CfgAplicaOrden=(Fin)

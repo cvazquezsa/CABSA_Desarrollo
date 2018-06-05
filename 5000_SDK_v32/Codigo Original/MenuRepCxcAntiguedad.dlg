@@ -1,0 +1,71 @@
+[Dialogo]
+Clave=MenuRepCxcAntiguedad
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=141
+PosicionInicialAncho=217
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=292
+PosicionInicialArriba=350
+PosicionInicialAlturaCliente=114
+
+[Acciones.Normal]
+Nombre=Normal
+Boton=0
+NombreDesplegar=&Normal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+
+Expresion=<BR>  Forma(<T>RepCxcAntiguedad<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxc/Antiguedad/Normal<T>)
+[Acciones.Posfechados]
+Nombre=Posfechados
+Boton=0
+NombreDesplegar=con &Posfechados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCxcAntiguedadPos
+Activo=S
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Cxc/Antiguedad/Posfechados<T>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Normal
+Normal=Posfechados
+Posfechados=(Fin)

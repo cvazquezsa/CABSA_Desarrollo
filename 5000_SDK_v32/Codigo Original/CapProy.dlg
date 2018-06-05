@@ -1,0 +1,66 @@
+[Dialogo]
+Clave=CapProy
+Nombre=Capitalizar Proyecto
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=831
+PosicionInicialArriba=525
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=257
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.AF]
+Nombre=AF
+Boton=0
+NombreDesplegar=Entrada &Activo Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+Expresion=Si<BR>  Forma(<T>EspecificarMovProy<T>)<BR>Entonces<BR>  ProcesarSQL(<T>spProyGenerarMovInv :tProyecto, :tGenerarMov, :tMov, :tAlmacen, :tArticulo, :tSerieLote, :tEmpresa, :nSucursal, :tUsuario, :fFecha<T>, Info.Proyecto, <T>AF<T>, Info.Mov, Info.Almacen, Info.Articulo, Info.SerieLote, Empresa, Sucursal, Usuario, FechaTrabajo)<BR>Fin
+[Acciones.INV]
+Nombre=INV
+Boton=0
+NombreDesplegar=Entrada &Inventario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+Expresion=Si<BR>  Forma(<T>EspecificarMovProy<T>)<BR>Entonces<BR>  ProcesarSQL(<T>spProyGenerarMovInv :tProyecto, :tGenerarMov, :tMov, :tAlmacen, :tArticulo, :tSerieLote, :tEmpresa, :nSucursal, :tUsuario, :fFecha<T>, Info.Proyecto, <T>INV<T>, Info.Mov, Info.Almacen, Info.Articulo, Info.SerieLote, Empresa, Sucursal, Usuario, FechaTrabajo)<BR>Fin
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=AF
+AF=INV
+INV=(Fin)

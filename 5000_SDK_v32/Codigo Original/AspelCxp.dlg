@@ -1,0 +1,59 @@
+
+[Dialogo]
+Clave=AspelCxp
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=500
+[Acciones.Cxpedocta]
+Nombre=Cxpedocta
+Boton=0
+NombreDesplegar=Estado de cuenta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=formas
+ClaveAccion=RepcxpestadoCuenta
+Activo=S
+Visible=S
+
+[Acciones.CxpAntig]
+Nombre=CxpAntig
+Boton=0
+NombreDesplegar=Antiguedad de Saldos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=formas
+ClaveAccion=Repcxpantiguedad
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.Pronostico]
+Nombre=Pronostico
+Boton=0
+NombreDesplegar=Pronóstico de pagos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=repcxcpronostico
+Activo=S
+Visible=S
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cxpedocta
+Cxpedocta=CxpAntig
+CxpAntig=Pronostico
+Pronostico=(Fin)

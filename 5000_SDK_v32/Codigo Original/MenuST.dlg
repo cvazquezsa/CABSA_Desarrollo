@@ -1,0 +1,94 @@
+[Dialogo]
+Clave=MenuST
+Nombre=Atención Clientes
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=186
+PosicionInicialAncho=283
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=370
+PosicionInicialArriba=274
+VentanaConIcono=S
+
+[Acciones.HD]
+Nombre=HD
+Boton=0
+NombreDesplegar=&Help Desk
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Soporte
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.SubModuloST, <T>HD<T>)<BR>Asigna(Info.STNombre, <T>Help Desk<T>)
+Visible=S
+
+[Acciones.PST]
+Nombre=PST
+Boton=0
+NombreDesplegar=&P.S.T.
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Soporte
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.SubModuloST, <T>PST<T>)<BR>Asigna(Info.STNombre, <T>P.S.T.<T>)
+
+[Acciones.D]
+Nombre=D
+Boton=0
+NombreDesplegar=&Desarrollo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Soporte
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.SubModuloST, <T>D<T>)<BR>Asigna(Info.STNombre, <T>Desarrollo<T>)
+
+[Acciones.C]
+Nombre=C
+Boton=0
+NombreDesplegar=&Consultoría
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Soporte
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.SubModuloST, <T>C<T>)<BR>Asigna(Info.STNombre, <T>Consultoría<T>)
+
+[Acciones.MC]
+Nombre=MC
+Boton=0
+NombreDesplegar=&Mejora Contínua
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Soporte
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.SubModuloST, <T>MC<T>)<BR>Asigna(Info.STNombre, <T>Mejora Contínua<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=HD
+HD=PST
+PST=D
+D=C
+C=MC
+MC=(Fin)

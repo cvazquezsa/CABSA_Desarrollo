@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=NominaValidarFecha
+Nombre=Movimientos
+Modulos=(Todos)
+Singular=Movimiento
+ListaTablas=NominaValidarFecha
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=NominaValidarFecha.Mov
+TablaPrincipal=NominaValidarFecha
+UsarJOIN=S
+SQL=SELECT<BR>  NominaValidarFecha.Mov<BR><BR>FROM<BR>  NominaValidarFecha
+
+[NominaValidarFecha.Mov]
+Clave=NominaValidarFecha.Mov
+LigaTabla=NominaValidarFecha
+LigaCampo=Mov
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Mov

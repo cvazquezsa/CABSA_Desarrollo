@@ -1,0 +1,51 @@
+[Dialogo]
+Clave=MenuRepContCI
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=395
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=233
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=Asigna(Rep.Titulo, <T>Componente Inflacionario<T>)
+
+[Acciones.SPD]
+Nombre=SPD
+Boton=0
+NombreDesplegar=Saldo Promedio &Diario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContSPD
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Rep.Opcion, 3)
+
+[Acciones.SMM]
+Nombre=SMM
+Boton=0
+NombreDesplegar=Saldo &Medio Mensual
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContSPD
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Rep.Opcion, 4)
+
+[Dialogo.ListaAcciones]
+(Inicio)=SPD
+SPD=SMM
+SMM=(Fin)

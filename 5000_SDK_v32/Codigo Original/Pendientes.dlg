@@ -1,0 +1,23 @@
+[Dialogo]
+Clave=Pendientes
+Nombre=ConsultaOrdenCompra
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Requsicion
+
+[Acciones.Requsicion]
+Nombre=Requsicion
+Boton=0
+NombreDesplegar=&Requsiones pendientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Proveedor, Nulo)
+Activo=S
+Visible=S

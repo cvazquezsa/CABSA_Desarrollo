@@ -1,0 +1,52 @@
+
+[Dialogo]
+Clave=GenerarPCPPresupuesto
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=GenerarConclusion
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+PosicionInicialIzquierda=387
+PosicionInicialArriba=286
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=250
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+VentanaConIcono=S
+
+[Acciones.GenerarConclusion]
+Nombre=GenerarConclusion
+Boton=0
+NombreDesplegar=Generar &Concluir Presupuesto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPConcluirPresupuesto FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=EstructuraAprobada
+EstructuraAprobada=GenerarConclusion
+GenerarConclusion=(Fin)

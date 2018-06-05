@@ -1,0 +1,25 @@
+[Tabla]
+Icono=0
+Clave=AnexoCat
+Archivo=AnexoCat
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=Categoria
+Nombre=Categorías
+Singular=Categoría
+LlavePrimaria=Categoria
+
+SQL=(Lista)
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Categoria
+  Categoria=FROM
+FROM=  AnexoCat
+  AnexoCat=(Fin)

@@ -1,0 +1,33 @@
+[Dialogo]
+Clave=GenerarRHIncremento
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Modificaciones
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=521
+PosicionInicialArriba=453
+PosicionInicialAltura=141
+PosicionInicialAncho=238
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Modificaciones]
+Nombre=Modificaciones
+Boton=0
+NombreDesplegar=Generar &Modificaciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.RHModificaciones, Afectar.FormaCaptura)
+Activo=S
+Visible=S

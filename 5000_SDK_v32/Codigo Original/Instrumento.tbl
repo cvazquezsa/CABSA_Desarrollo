@@ -1,0 +1,231 @@
+[Tabla]
+Icono=0
+Clave=Instrumento
+Archivo=Instrumento
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Instrumentos
+Singular=Instrumento
+LlavePrimaria=Instrumento
+ListaRelaciones=Mon
+SQL=SELECT<BR>  Instrumento,<BR>  Descripcion,<BR>  Moneda,<BR>  Uso,<BR>  CtaDineroVenta,<BR>  CtaDineroCompra,<BR>  FormaPagoVenta,<BR>  FormaPagoCompra,<BR>  RequiereBeneficiario,<BR>  UnidadMinima,<BR>  FormulaCobertura,<BR>  Tipo,<BR>  MargenCompra,<BR>  MargenVenta,<BR>  Cobertura,<BR>  Mostrar,<BR>  Ventanilla<BR><BR>FROM<BR>  Instrumento
+
+[Instrumento]
+Clave=Instrumento
+Nombre=Clave
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+Requerido=S
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+TamanoValidacion=30
+Tamano=50
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Divisa
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=Mon
+TipoDatos=Texto
+
+[RequiereBeneficiario]
+Clave=RequiereBeneficiario
+Nombre=Requiere Beneficiario
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[UnidadMinima]
+Clave=UnidadMinima
+Nombre=Unidad Mínima
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=0.01
+
+[CtaDineroVenta]
+Clave=CtaDineroVenta
+Nombre=Cuenta Bancaria (venta/pago)
+AyudaEnCaptura=Expresion
+TamanoValidacion=10
+Tamano=10
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT CtaDinero FROM CtaDinero WHERE Moneda = :tMoneda<T>,Instrumento:Instrumento.Moneda)
+TipoDatos=Texto
+
+[CtaDineroCompra]
+Clave=CtaDineroCompra
+Nombre=Cuenta Bancaria (compra/cobro)
+AyudaEnCaptura=Expresion
+TamanoValidacion=10
+Tamano=10
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT CtaDinero FROM CtaDinero WHERE Moneda = :tMoneda<T>,Instrumento:Instrumento.Moneda)
+TipoDatos=Texto
+
+[FormaPagoVenta]
+Clave=FormaPagoVenta
+Nombre=Forma Pago (venta/pago)
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[FormaPagoCompra]
+Clave=FormaPagoCompra
+Nombre=Forma Pago (compra/cobro)
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Uso]
+Clave=Uso
+Nombre=Uso
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[FormulaCobertura]
+Clave=FormulaCobertura
+Nombre=Formula Cobertura
+Visible=S
+TamanoValidacion=100
+AyudaExpresionesVista=CambioD
+TipoDatos=Memo
+AyudaEnCaptura=Editor Expresiones
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[MargenCompra]
+Clave=MargenCompra
+Nombre=Margen Compra
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Cobertura
+
+[MargenVenta]
+Clave=MargenVenta
+Nombre=Margen Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Cobertura
+
+[Cobertura]
+Clave=Cobertura
+Nombre=Cobertura
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=Verdadero
+
+[Relaciones.Mon]
+TipoRelacion=Opcional
+LlaveLocal=Moneda
+Clave=Mon
+TablaRemota=Mon
+LlaveRemota=Moneda
+
+[Mostrar]
+Clave=Mostrar
+Nombre=Mostrar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Ventanilla]
+Clave=Ventanilla
+Nombre=Ventanilla
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=Instrumento
+Instrumento=Descripcion
+Descripcion=Moneda
+Moneda=Uso
+Uso=CtaDineroVenta
+CtaDineroVenta=CtaDineroCompra
+CtaDineroCompra=FormaPagoVenta
+FormaPagoVenta=FormaPagoCompra
+FormaPagoCompra=RequiereBeneficiario
+RequiereBeneficiario=UnidadMinima
+UnidadMinima=FormulaCobertura
+FormulaCobertura=Tipo
+Tipo=Cobertura
+Cobertura=MargenCompra
+MargenCompra=MargenVenta
+MargenVenta=Mostrar
+Mostrar=Ventanilla
+Ventanilla=(Fin)
+
+[Uso.ListaOpciones]
+(Inicio)=(Todo)
+(Todo)=Venta
+Venta=Compra
+Compra=Cobro
+Cobro=Pago
+Pago=Compra/Venta
+Compra/Venta=Cobro/Pago
+Cobro/Pago=Inversion
+Inversion=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Monetario
+Monetario=Remesa
+Remesa=Transferencia
+Transferencia=(Fin)
+
+[Cobertura.ListaRefrescarCondiciones]
+(Inicio)=MargenCompra
+MargenCompra=MargenVenta
+MargenVenta=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=FormaEntrega
+Nombre=Formas Entrega
+Modulos=(Todos)
+Singular=Forma Entrega
+ListaTablas=FormaEntrega
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=FormaEntrega.FormaEntrega
+TablaPrincipal=FormaEntrega
+UsarJOIN=S
+SQL=SELECT<BR>  FormaEntrega.FormaEntrega<BR><BR>FROM<BR>  FormaEntrega
+
+[FormaEntrega.FormaEntrega]
+Clave=FormaEntrega.FormaEntrega
+LigaTabla=FormaEntrega
+LigaCampo=FormaEntrega
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=FormaEntrega

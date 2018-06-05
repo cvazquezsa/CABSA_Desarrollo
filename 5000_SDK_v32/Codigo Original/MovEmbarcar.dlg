@@ -1,0 +1,57 @@
+[Dialogo]
+Clave=MovEmbarcar
+Nombre=Embarcar Manualmente
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=530
+PosicionInicialArriba=441
+PosicionInicialAltura=141
+PosicionInicialAncho=219
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Embarcar]
+Nombre=Embarcar
+Boton=0
+NombreDesplegar=&Embarcar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+ConfirmarAntes=S
+DialogoMensaje=MovEmbarcarConfirmar
+Antes=S
+Expresion=ProcesarSQL(<T>spEmbarqueManual :tEmpresa, :tModulo, :nID, :tMov, :tMovID, :tEstatus, 0<T>, Empresa, Info.Modulo, Info.ID, Info.Mov, Info.MovID, Info.Estatus)
+AntesExpresiones=Asigna(Info.Descripcion, <T>Embarcar<T>)
+
+[Acciones.Desembarcar]
+Nombre=Desembarcar
+Boton=0
+NombreDesplegar=&Cancelar Embarque
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+ConfirmarAntes=S
+DialogoMensaje=MovEmbarcarConfirmar
+Antes=S
+Expresion=ProcesarSQL(<T>spEmbarqueManual :tEmpresa, :tModulo, :nID, :tMov, :tMovID, :tEstatus, 1<T>, Empresa, Info.Modulo, Info.ID, Info.Mov, Info.MovID, Info.Estatus)
+AntesExpresiones=Asigna(Info.Descripcion, <T>Cancelar Embarque<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Embarcar
+Embarcar=Desembarcar
+Desembarcar=(Fin)

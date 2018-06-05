@@ -1,0 +1,36 @@
+[Tabla]
+Icono=0
+Clave=FormaPagoTipoD
+Archivo=FormaPagoTipoD
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Detalle
+Singular=Detalle
+SQL=SELECT<BR>  Tipo,<BR>  FormaPago<BR><BR>FROM<BR>  FormaPagoTipoD
+LlavePrimaria=Tipo<BR>FormaPago
+CampoTipo=Tipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tipo
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=FormaPago
+FormaPago=(Fin)

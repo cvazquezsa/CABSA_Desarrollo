@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CteGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=CteGrupo
+TablaPrincipal=CteGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CteGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  CteGrupo.Grupo<BR><BR>FROM<BR>  CteGrupo
+
+[CteGrupo.Grupo]
+Clave=CteGrupo.Grupo
+LigaTabla=CteGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

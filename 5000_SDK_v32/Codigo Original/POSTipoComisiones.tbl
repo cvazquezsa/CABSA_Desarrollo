@@ -1,0 +1,54 @@
+
+[Tabla]
+Icono=0
+Clave=POSTipoComisiones
+Archivo=POSTipoComisiones
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=POSTipoComisiones
+Singular=POSTipoComisiones
+
+LlavePrimaria=IdTipoComision
+ControlID=S
+CampoID=IdTipoComision
+SQL=(Lista)
+[IdTipoComision]
+Clave=IdTipoComision
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[TipoComision]
+Clave=TipoComision
+Nombre=Tipo de comisión
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+
+
+
+
+
+
+
+Formula=SQLEnLista(<T>SELECT TipoComision FROM POSTipoComisiones<T>)
+
+
+[Tabla.ListaCampos]
+(Inicio)=IdTipoComision
+IdTipoComision=TipoComision
+TipoComision=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=IdTipoComision,
+IdTipoComision,=TipoComision
+TipoComision=FROM POSTipoComisiones
+FROM POSTipoComisiones=(Fin)

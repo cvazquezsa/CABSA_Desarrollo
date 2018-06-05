@@ -1,0 +1,112 @@
+[Tabla]
+Icono=0
+Clave=PrecioCalc
+Archivo=PrecioCalc
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Precios Calculados
+Singular=Precios Calculados
+LlavePrimaria=ListaPrecios
+SQL=SELECT<BR>  ListaPrecios,<BR>  Base,<BR>  Usar,<BR>  Porcentaje,<BR>  Redondear,<BR>  Activa,<BR>  Orden<BR><BR>FROM<BR>  PrecioCalc
+
+[ListaPrecios]
+Clave=ListaPrecios
+Nombre=Lista Precios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PrecioTodos
+AyudaMemRenglones=15
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+
+[Base]
+Clave=Base
+Nombre=Base
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PrecioBase
+AyudaMemRenglones=15
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+
+[Usar]
+Clave=Usar
+Nombre=Usar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+Requerido=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=% (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0.00
+
+[Redondear]
+Clave=Redondear
+Nombre=Redondear
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0.00
+ValorPorOmision=1.0
+CondicionDespliege=Usar<><T>xpPrecioCalc<T>
+
+[Activa]
+Clave=Activa
+Nombre=Activa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=ListaPrecios
+ListaPrecios=Base
+Base=Usar
+Usar=Porcentaje
+Porcentaje=Redondear
+Redondear=Activa
+Activa=Orden
+Orden=(Fin)
+
+[Usar.ListaRefrescarCondiciones]
+(Inicio)=Base
+Base=Redondear
+Redondear=(Fin)
+
+[Usar.ListaOpciones]
+(Inicio)=Porcentaje
+Porcentaje=Margen
+Margen=Margen Articulo
+Margen Articulo=Margen Minimo
+Margen Minimo=Margen Lista
+Margen Lista=xpPrecioCalc
+xpPrecioCalc=(Fin)

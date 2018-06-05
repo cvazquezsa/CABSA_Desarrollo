@@ -1,0 +1,63 @@
+
+[Dialogo]
+Clave=MenuCfgAPP
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=55
+PosicionInicialArriba=19
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+
+[Acciones.Direccion]
+Nombre=Direccion
+Boton=0
+NombreDesplegar=Dirección Mac
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MACAddressAPP
+Activo=S
+Visible=S
+
+[Acciones.ConceptoGAS]
+Nombre=ConceptoGAS
+Boton=0
+NombreDesplegar=Conceptos &Gastos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ConceptoAPP
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>GAS<T>)
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Direccion
+Direccion=ConceptoGAS
+ConceptoGAS=(Fin)

@@ -1,0 +1,45 @@
+[Tabla]
+Icono=0
+Clave=EventoTipo
+Archivo=EventoTipo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos Eventos
+Singular=Tipo Evento
+LlavePrimaria=Orden
+CampoTipo=Tipo
+SQL=SELECT<BR>  Tipo,<BR>  Icono,<BR>  Orden<BR><BR>FROM<BR>  EventoTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Icono]
+Clave=Icono
+Nombre=Icono
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+EsIcono=S
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Icono
+Icono=Orden
+Orden=(Fin)

@@ -1,0 +1,96 @@
+[Tabla]
+Icono=0
+Clave=PlantillaProyecto
+Archivo=PlantillaProyecto
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Plantillas
+Singular=Plantilla
+LlavePrimaria=Plantilla
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+
+SQL=(Lista)
+[Plantilla]
+Clave=Plantilla
+Nombre=Plantilla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Riesgo]
+Clave=Riesgo
+Nombre=Riesgo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[Version]
+Clave=Version
+Nombre=Versión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Plantilla
+Plantilla=Descripcion
+Descripcion=Estatus
+Estatus=TieneMovimientos
+TieneMovimientos=Riesgo
+Riesgo=Version
+Version=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Plantilla,
+  Plantilla,=  Descripcion,
+  Descripcion,=  Estatus,
+  Estatus,=  TieneMovimientos,
+  TieneMovimientos,=  Riesgo,
+  Riesgo,=  Version
+  Version=FROM
+FROM=  PlantillaProyecto
+  PlantillaProyecto=(Fin)

@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=MenuCuotaCxp
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=828
+PosicionInicialArriba=513
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=263
+VentanaEstadoInicial=Normal
+VentanaConIcono=S
+ExpresionesAlMostrar=Asigna(Info.Empresa, Empresa)
+
+[Acciones.GenerarCuotas]
+Nombre=GenerarCuotas
+Boton=0
+NombreDesplegar=&Generar Cuotas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Modulo,<T>CXP<T>)<BR>Forma(<T>EspecificarEjercicioPeriodo<T>)<BR>Informacion(SQL(<T>spCuotaCxGenerar :tEmpresa, :tModulo, :nEjercicio, :nPeriodo<T>,Empresa,Info.Modulo,Info.Ejercicio,Info.Periodo))
+
+[Acciones.MantCuotas]
+Nombre=MantCuotas
+Boton=0
+NombreDesplegar=&Mantenimiento Cuotas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Modulo,<T>CXP<T>)<BR>Forma( <T>CuotaCxp<T> )
+
+[Acciones.ReporteCuotas]
+Nombre=ReporteCuotas
+Boton=0
+NombreDesplegar=&Reporte Cuotas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ReportePantalla(<T>CuotaCxp<T>,<T>CXP<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarCuotas
+GenerarCuotas=MantCuotas
+MantCuotas=ReporteCuotas
+ReporteCuotas=(Fin)

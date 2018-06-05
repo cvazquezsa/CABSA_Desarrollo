@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=CancelarLote
+Nombre=<T>Cancelación en Lote<T>
+Icono=7
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=125
+PosicionInicialAncho=419
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=302
+PosicionInicialArriba=321
+Mensaje=<T>¿ Esta Seguro que Desea Cancelar los Movimientos Seleccionados ?<T>
+
+[Acciones.Cancelar]
+Nombre=Cancelar
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Acciones.Aceptar]
+Nombre=Aceptar
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Aceptar
+Aceptar=Cancelar
+Cancelar=(Fin)

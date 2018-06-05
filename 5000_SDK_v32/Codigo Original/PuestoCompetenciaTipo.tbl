@@ -1,0 +1,71 @@
+[Tabla]
+Icono=0
+Clave=PuestoCompetenciaTipo
+Archivo=PuestoCompetenciaTipo
+Modulos=(Todos)
+TipoTabla=Cuentas
+
+ListaCampos=(Lista)
+Nombre=Tipos Competencias
+Singular=Tipo Competencia
+LlavePrimaria=(Lista)
+ControlTipo=S
+CampoTipo=Tipo
+SQL=SELECT<BR>  Puesto,<BR>  Tipo,<BR>  Peso<BR><BR>FROM<BR>  PuestoCompetenciaTipo
+[Puesto]
+Clave=Puesto
+Nombre=Puesto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+ValorPorOmision=Info.Puesto
+
+[Peso]
+Clave=Peso
+Nombre=% Peso
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+AyudaEnCaptura=Calculadora
+
+
+
+
+
+
+
+
+
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CompetenciaTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Puesto
+Puesto=Tipo
+Tipo=Peso
+Peso=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Puesto
+Puesto=Tipo
+Tipo=(Fin)

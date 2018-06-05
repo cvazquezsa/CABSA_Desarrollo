@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=PropCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=PropCat
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=PropCat.Categoria
+TablaPrincipal=PropCat
+UsarJOIN=S
+SQL=SELECT<BR>  PropCat.Categoria<BR><BR>FROM<BR>  PropCat
+
+[PropCat.Categoria]
+Clave=PropCat.Categoria
+LigaTabla=PropCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

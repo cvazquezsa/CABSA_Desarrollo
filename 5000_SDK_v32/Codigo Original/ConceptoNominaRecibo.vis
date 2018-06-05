@@ -1,0 +1,22 @@
+[Vista]
+Icono=0
+Clave=ConceptoNominaRecibo
+Nombre=Conceptos
+Modulos=(Todos)
+Singular=Concepto
+ListaTablas=ConceptoNominaRecibo
+UsoReportes=S
+ListaCampos=ConceptoNominaRecibo.Concepto
+TablaPrincipal=ConceptoNominaRecibo
+UsarJOIN=S
+SQL=SELECT<BR>  ConceptoNominaRecibo.Concepto<BR><BR>FROM<BR>  ConceptoNominaRecibo
+
+[ConceptoNominaRecibo.Concepto]
+Clave=ConceptoNominaRecibo.Concepto
+LigaTabla=ConceptoNominaRecibo
+LigaCampo=Concepto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Concepto

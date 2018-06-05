@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=CompraProrrateoManual
+Archivo=CompraProrrateoManual
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tabla Prorrateo
+Singular=Tabla Prorrateo
+LlavePrimaria=Estacion<BR>Grupo
+SQL=SELECT<BR>  Estacion,<BR>  Grupo,<BR>  Cantidad<BR><BR>FROM<BR>  CompraProrrateoManual
+
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=20
+ValorPorOmision=EstacionTrabajo
+TipoDatos=Numérico
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo Sucursal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=SucursalGrupo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad por Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+Cantidad=S
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Grupo
+Grupo=Cantidad
+Cantidad=(Fin)

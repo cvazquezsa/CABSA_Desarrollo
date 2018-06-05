@@ -1,0 +1,194 @@
+[Tabla]
+Icono=0
+Clave=InstitucionFinConcepto
+Archivo=InstitucionFinConcepto
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Conceptos
+Singular=Concepto
+LlavePrimaria=(Lista)
+ListaRelaciones=Acreedor
+
+SQL=SELECT<BR>  Institucion,<BR>  ConceptoBanco,<BR>  TipoMovimiento,<BR>  ConceptoGasto,<BR>  Acreedor,<BR>  PermiteAbonoNoIdentificado,<BR>  ObligacionFiscal,<BR>  Tasa,<BR>  TipoImporte,<BR>  ObligacionFiscal2,<BR>  PermiteCargoNoIdentificado<BR><BR>FROM<BR>  InstitucionFinConcepto
+[Institucion]
+Clave=Institucion
+Nombre=Institucion
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Cuenta
+TipoDatos=Texto
+
+[ConceptoBanco]
+Clave=ConceptoBanco
+Nombre=Concepto Banco
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=20
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT Descripcion FROM MensajeInstitucion WHERE Institucion=:tCuenta<T>, Info.Cuenta)
+TipoDatos=Texto
+
+[TipoMovimiento]
+Clave=TipoMovimiento
+Nombre=Tipo Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+
+ListaOpciones=(Lista)
+[ConceptoGasto]
+Clave=ConceptoGasto
+Nombre=Concepto Gasto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ConceptoGASLista
+AyudaVista=Concepto
+AyudaCampo=Concepto.Concepto
+TipoDatos=Texto
+
+[PermiteAbonoNoIdentificado]
+Clave=PermiteAbonoNoIdentificado
+Nombre=Permite Depósitos No Identificados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+AlCambiar=1
+ConRefrescar=S
+ListaRefrescar=PermiteCargoNoIdentificado
+ValorRefrescar=0
+
+[Acreedor]
+Clave=Acreedor
+Nombre=Acreedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Acreedor
+TipoDatos=Texto
+
+[Relaciones.Acreedor]
+TipoRelacion=Opcional
+LlaveLocal=Acreedor
+Clave=Acreedor
+TablaRemota=Acreedor
+LlaveRemota=Proveedor
+
+[ObligacionFiscal]
+Clave=ObligacionFiscal
+Nombre=Obligación Fiscal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ObligacionFiscal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tasa]
+Clave=Tasa
+Nombre=Tasa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[TipoImporte]
+Clave=TipoImporte
+Nombre=Tipo Importe
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[ObligacionFiscal2]
+Clave=ObligacionFiscal2
+Nombre=Obligación Fiscal 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ObligacionFiscal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+
+[TipoImporte.ListaOpciones]
+(Inicio)=Base
+Base=- Base
+- Base=Obligacion Fiscal
+Obligacion Fiscal=- Obligacion Fiscal
+- Obligacion Fiscal=(Fin)
+
+
+[TipoMovimiento.ListaOpciones]
+(Inicio)=Tesoreria
+Tesoreria=Gasto
+Gasto=Gasto IVA
+Gasto IVA=Impuesto
+Impuesto=N/A
+N/A=(Fin)
+
+[PermiteCargoNoIdentificado]
+Clave=PermiteCargoNoIdentificado
+Nombre=Permite Cargo No Identificado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+OpcionesUnicamente=S
+AlCambiar=1
+ValorPorOmision=Falso
+ConRefrescar=S
+ListaRefrescar=PermiteAbonoNoIdentificado
+ValorRefrescar=0
+
+[Tabla.ListaCampos]
+(Inicio)=Institucion
+Institucion=ConceptoBanco
+ConceptoBanco=TipoMovimiento
+TipoMovimiento=ConceptoGasto
+ConceptoGasto=PermiteAbonoNoIdentificado
+PermiteAbonoNoIdentificado=Acreedor
+Acreedor=ObligacionFiscal
+ObligacionFiscal=ObligacionFiscal2
+ObligacionFiscal2=Tasa
+Tasa=TipoImporte
+TipoImporte=PermiteCargoNoIdentificado
+PermiteCargoNoIdentificado=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Institucion
+Institucion=ConceptoBanco
+ConceptoBanco=(Fin)

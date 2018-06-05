@@ -1,0 +1,200 @@
+
+[Tabla]
+Icono=0
+Clave=eCommerceMetodoEnvioCfg
+Nombre=eCommerceMetodoEnvioCfg
+Archivo=eCommerceMetodoEnvioCfg
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ACTIVO
+SQL=(Lista)
+[SucursaleCommerce]
+Clave=SucursaleCommerce
+Nombre=SucursaleCommerce
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+ValorPorOmision=Info.Clave
+[MetodoEnvio]
+Clave=MetodoEnvio
+Nombre=Método de Envío
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+Requerido=S
+RefrescarTodo=S
+RefrescarTodoCondiciones=S
+OpcionesUnicamente=S
+OpcionesValidar=S
+ListaOpciones=(Lista)
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+Requerido=S
+ValorRefrescar=Si(MetodoEnvio=<T>shipping_percentage<T>,Asigna(Info.Nombre,<T>Porcentaje Global<T>))<BR>Si(MetodoEnvio=<T>shipping_peritem<T>,Asigna(Info.Nombre,<T>Precio Por Articulo<T>))<BR>Si(MetodoEnvio=<T>shipping_flatrate<T>,Asigna(Info.Nombre,<T>Precio Por Pedido<T>))<BR>Si(MetodoEnvio=<T>shipping_byweight<T>,Asigna(Info.Nombre,<T>Precio Fuera de Rango<T>))<BR>Si(MetodoEnvio=<T>shipping_bytotal<T>,Asigna(Info.Nombre,<T>Precio Importe de Rango<T>))
+
+
+[Precio1]
+Clave=Precio1
+Nombre=Porcentaje Global
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+FormatoValidacion=0.00
+CondicionDespliege=MetodoEnvio=<T>Porcentaje de Total<T>
+AyudaEnCaptura=Calculadora
+[Precio2]
+Clave=Precio2
+Nombre=Precio Por Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+Monetario=S
+CondicionDespliege=MetodoEnvio=<T>Por articulo<T>
+AyudaEnCaptura=Calculadora
+[Precio3]
+Clave=Precio3
+Nombre=Precio Por Pedido
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+Monetario=S
+CondicionDespliege=MetodoEnvio=<T>Monto Fijo<T>
+AyudaEnCaptura=Calculadora
+[Precio4]
+Clave=Precio4
+Nombre=Precio Peso Fuera de Rango
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+CondicionDespliege=MetodoEnvio=<T>Por Peso<T>
+Monetario=S
+AyudaEnCaptura=Calculadora
+[Precio5]
+Clave=Precio5
+Nombre=Precio Importe Fuera de Rango
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=MetodoEnvio=<T>Por Total de Pedido<T>
+AyudaEnCaptura=Calculadora
+
+
+
+
+
+
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[MetodoEnvio.ListaOpciones]
+(Inicio)=Por Peso
+Por Peso=Por Total de Pedido
+Por Total de Pedido=Porcentaje de Total
+Porcentaje de Total=Monto Fijo
+Monto Fijo=Por articulo
+Por articulo=(Fin)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=SucursaleCommerce
+SucursaleCommerce=MetodoEnvio
+MetodoEnvio=Nombre
+Nombre=Precio1
+Precio1=Precio2
+Precio2=Precio3
+Precio3=Precio4
+Precio4=Precio5
+Precio5=Estatus
+Estatus=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=SucursaleCommerce,
+SucursaleCommerce,=MetodoEnvio,
+MetodoEnvio,=Nombre,
+Nombre,=Precio1,
+Precio1,=Precio2,
+Precio2,=Precio3,
+Precio3,=Precio4,
+Precio4,=Precio5,
+Precio5,=Estatus
+Estatus=FROM eCommerceMetodoEnvioCfg
+FROM eCommerceMetodoEnvioCfg=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=SucursaleCommerce
+SucursaleCommerce=MetodoEnvio
+MetodoEnvio=Nombre
+Nombre=(Fin)

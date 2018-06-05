@@ -1,0 +1,86 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgPVEtiqueta
+Archivo=EmpresaCfgPVEtiqueta
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Etiquetas
+Singular=Etiqueta
+LlavePrimaria=Modulo<BR>Mov<BR>Etiqueta
+ControlMov=S
+CampoMov=Mov
+SQL=SELECT<BR>  Modulo,<BR>  Mov,<BR>  Etiqueta,<BR>  Titulo<BR><BR>FROM<BR>  EmpresaCfgPVEtiqueta
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Módulos
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+
+[Etiqueta]
+Clave=Etiqueta
+Nombre=Etiqueta
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=20
+ListaOpciones=(Lista)
+
+[Titulo]
+Clave=Titulo
+Nombre=Titulo
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=Etiqueta
+Etiqueta=Titulo
+Titulo=(Fin)
+
+[Etiqueta.ListaOpciones]
+(Inicio)=Articulo
+Articulo=Cliente
+Cliente=Agente
+Agente=Almacen
+Almacen=Cajero
+Cajero=Caja
+Caja=Empresa
+Empresa=Usuario
+Usuario=Sucursal
+Sucursal=Fecha
+Fecha=Ultimo Movimiento
+Ultimo Movimiento=Movimiento Generado
+Movimiento Generado=Sub Total
+Sub Total=Impuestos
+Impuestos=Impuesto 1
+Impuesto 1=Impuesto 2
+Impuesto 2=Impuesto 3
+Impuesto 3=Importe Total
+Importe Total=Titulo
+Titulo=Comentarios
+Comentarios=(Fin)

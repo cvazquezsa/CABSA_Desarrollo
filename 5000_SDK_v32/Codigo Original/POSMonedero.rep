@@ -1,0 +1,335 @@
+
+[Reporte]
+Clave=POSMonedero
+Nombre=Monedero
+Icono=0
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=7
+AnchoPagina=111.8
+LargoPagina=86.4
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+
+Vista=POSL
+BarraHerramientas=S
+OtroOrden=S
+Filtros=S
+TieneFiltroAbierto=S
+PosicionInicialAlturaCliente=423
+PosicionInicialAncho=630
+ListaOrden=Monedero<TAB>(Acendente)
+VistaEspecial=S
+PreliminarColores=S
+ListaAcciones=Imprimir
+Impresora=S
+Orientacion=Horizontal
+FiltroAbierto=Monedero = <T>{Info.POSMonedero}<T>
+[Formato]
+VentanaIzquierda=0
+VentanaArriba=0
+VentanaAltura=744
+VentanaAncho=1382
+PanelArriba=120
+PanelBotones=80
+ListaLineas=Encabezado<BR>Encabezado<BR>Inicio: Monedero<BR>Inicio: Monedero<BR>Inicio: Monedero<BR>Fin: Monedero
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.2
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=1
+[Linea2]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=1.66
+Renglones=4
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=35
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=S
+EstiloIzquierdo=3
+EsImagen=S
+Expresion=Logo.bmp
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=4.5
+AnchoTexto=24
+BordeArriba=N
+BordeAbajo=N
+BordeDerecho=S
+EstiloArriba=0
+EstiloAbajo=0
+EstiloDerecho=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=N
+EstiloIzquierdo=3
+EsImagen=N
+Expresion=Empresa.Nombre
+[Linea3]
+Clave=Inicio: Monedero
+Objetos=1
+Seccion=Inicio Grupo
+AltoEnCm=0.5
+Renglones=2
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=Monedero
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=8.5
+AnchoTexto=58
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 14, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=S
+BordeDerecho=S
+EstiloIzquierdo=3
+EstiloDerecho=3
+Expresion=<T>Monedero Electronico<T>
+
+[Vista]
+Icono=0
+Clave=POSMonedero
+VistaIndependiente=S
+
+ListaCampos=(Lista)
+SQL=SELECT * FROM POSLDIMonedero
+[Monedero]
+Clave=Monedero
+Nombre=Monedero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=36
+TipoDatos=Texto
+Tamano=36
+ClaveBDE=Monedero
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Cliente
+
+[Vista.ListaCampos]
+(Inicio)=Monedero
+Monedero=Cliente
+Cliente=(Fin)
+
+[Linea4]
+Clave=Inicio: Monedero
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=Monedero
+AltoEnCm=2.5
+Renglones=5
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=8.5
+AnchoTexto=46
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=20
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+CBTipo=Code 39
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=S
+BordeDerecho=S
+EstiloIzquierdo=3
+EstiloDerecho=3
+EsCodigoBarras=S
+CBGuardiaCaracteres=S
+Expresion=Monedero
+
+[Linea5]
+Clave=Inicio: Monedero
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=Monedero
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A5]
+Celda=A5
+Alineacion=Centrado
+AnchoEnCm=8.5
+AnchoTexto=51
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeIzquierdo=S
+BordeDerecho=S
+EstiloIzquierdo=3
+EstiloDerecho=3
+Expresion=Monedero
+
+[Linea6]
+Clave=Fin: Monedero
+Objetos=1
+Seccion=Fin Grupo
+Grupo=Monedero
+AltoEnCm=0.2
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=8.5
+AnchoTexto=58
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeArriba=S
+EstiloArriba=3
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=46
+NombreEnBoton=S
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=POSMonedero
+Activo=S
+Visible=S
+
+
+
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=8.5
+AnchoTexto=58
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeArriba=S
+BordeIzquierdo=S
+BordeDerecho=S
+EstiloArriba=3
+EstiloAbajo=3
+EstiloIzquierdo=3
+EstiloDerecho=3
+
+

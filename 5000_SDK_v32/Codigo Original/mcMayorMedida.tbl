@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=mcMayorMedida
+Archivo=mcMayorMedida
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Medidas
+Singular=Medida
+LlavePrimaria=Mayor<BR>Medida
+SQL=SELECT<BR>  Mayor,<BR>  Medida<BR><BR>FROM<BR>  mcMayorMedida
+
+[Mayor]
+Clave=Mayor
+Nombre=Mayor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Mayor
+
+[Medida]
+Clave=Medida
+Nombre=Medida
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT Campo FROM mcCampo WHERE Tipo=:tTipo ORDER BY Orden<T>, <T>Medida<T>)
+
+[Tabla.ListaCampos]
+(Inicio)=Mayor
+Mayor=Medida
+Medida=(Fin)

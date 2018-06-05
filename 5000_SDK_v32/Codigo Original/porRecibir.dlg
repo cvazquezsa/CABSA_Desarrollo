@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=porRecibir
+Nombre=por Recibir
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=407
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=209
+
+[Acciones.Compras]
+Nombre=Compras
+Boton=0
+NombreDesplegar=C&ompras
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ArtCompraPendiente
+Activo=S
+Visible=S
+
+[Acciones.Produccion]
+Nombre=Produccion
+Boton=0
+NombreDesplegar=&Producción
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ArtProdPendiente
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Compras
+Compras=Produccion
+Produccion=(Fin)

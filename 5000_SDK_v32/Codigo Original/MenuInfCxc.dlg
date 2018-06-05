@@ -1,0 +1,63 @@
+
+[Dialogo]
+Clave=MenuInfCxc
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=500
+[Acciones.EstadoCuenta]
+Nombre=EstadoCuenta
+Boton=0
+NombreDesplegar=Es&tado de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeCxcEstadoCuenta<T>)
+Activo=S
+Visible=S
+
+[Acciones.Antiguedad]
+Nombre=Antiguedad
+Boton=0
+NombreDesplegar=A&ntigüedad de Saldos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuInfCxcAntiguedad
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.EstadoCuentaSimple]
+Nombre=EstadoCuentaSimple
+Boton=0
+NombreDesplegar=Estado de Cuentas (&Simple)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=InformeCxCEstadoCuentaSimple
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=EstadoCuenta
+EstadoCuenta=EstadoCuentaSimple
+EstadoCuentaSimple=Antiguedad
+Antiguedad=(Fin)

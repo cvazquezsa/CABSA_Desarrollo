@@ -1,0 +1,53 @@
+[Tabla]
+Icono=0
+Clave=CfgRegistro
+Archivo=CfgRegistro
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=CfgRegistro
+SQL=SELECT<BR>  CfgRegistro,<BR>  Nombre,<BR>  FechaCancelaciones<BR><BR>FROM<BR>  CfgRegistro
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[CfgRegistro]
+Clave=CfgRegistro
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaCancelaciones]
+Clave=FechaCancelaciones
+Nombre=Fecha Cancelaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Fecha Emision<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[Tabla.ListaCampos]
+(Inicio)=CfgRegistro
+CfgRegistro=Nombre
+Nombre=FechaCancelaciones
+FechaCancelaciones=(Fin)
+
+[FechaCancelaciones.ListaOpciones]
+(Inicio)=Fecha Emision
+Fecha Emision=Fecha Cancelacion
+Fecha Cancelacion=(Fin)

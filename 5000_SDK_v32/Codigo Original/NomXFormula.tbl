@@ -1,0 +1,117 @@
+[Tabla]
+Icono=0
+Clave=NomXFormula
+Archivo=NomXFormula
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Formulas
+Singular=Formula
+LlavePrimaria=ID<BR>Formula
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  Formula,<BR>  Orden,<BR>  Expresion,<BR>  Comentarios,<BR>  Tipo,<BR>  Calculo,<BR>  FormulaCerrada<BR><BR>FROM<BR>  NomXFormula
+
+[Expresion]
+Clave=Expresion
+Nombre=E&xpresión
+Visible=S
+TamanoValidacion=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=PersonalT
+AyudaNominaValores=S
+TipoDatos=Memo
+CondicionEdicion=no FormulaCerrada
+
+[Formula]
+Clave=Formula
+Nombre=No&mbre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionEdicion=no FormulaCerrada
+
+[Comentarios]
+Clave=Comentarios
+Nombre=Com&entarios
+Visible=S
+TamanoValidacion=100
+Tamano=100
+CondicionEdicion=no FormulaCerrada
+VerificarOrtografia=S
+
+[Tipo]
+Clave=Tipo
+Nombre=&Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Formula<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=no FormulaCerrada
+ListaOpciones=(Lista)
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Calculo]
+Clave=Calculo
+Nombre=Cálc&ulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Tipo=<T>Formula<T>
+ValorPorOmision=<T>Previo<T>
+CondicionEdicion=no FormulaCerrada
+ListaOpciones=(Lista)
+
+[FormulaCerrada]
+Clave=FormulaCerrada
+Nombre=Formula Cerrada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Formula
+Formula=Tipo
+Tipo=Calculo
+Calculo=Expresion
+Expresion=Comentarios
+Comentarios=Orden
+Orden=FormulaCerrada
+FormulaCerrada=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Acumulador
+Acumulador=Formula
+Formula=(Fin)
+
+[Calculo.ListaOpciones]
+(Inicio)=Previo
+Previo=Final
+Final=(Fin)

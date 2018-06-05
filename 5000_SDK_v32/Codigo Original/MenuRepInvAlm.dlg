@@ -1,0 +1,80 @@
+[Dialogo]
+Clave=MenuRepInvAlm
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=686
+PosicionInicialArriba=347
+PosicionInicialAltura=141
+PosicionInicialAncho=224
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=138
+
+[Acciones.Articulo]
+Nombre=Articulo
+Boton=0
+NombreDesplegar=Nivel &Artículo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarInvAlm
+Activo=S
+Visible=S
+
+[Acciones.Subcuenta]
+Nombre=Subcuenta
+Boton=0
+NombreDesplegar=Nivel &Subcuenta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+Expresion=Si<BR>  Config.CosteoNivelSubCuenta<BR>Entonces<BR>  Forma(<T>ExplorarInvAlmSubCosto<T>)<BR>Sino<BR>  Forma(<T>ExplorarInvAlmSub<T>)<BR>Fin
+[Acciones.SubcuentaOpcion]
+Nombre=SubcuentaOpcion
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+
+
+
+NombreDesplegar=Nivel &Subcuenta (Opciones)
+TipoAccion=Expresion
+
+
+
+
+
+
+
+
+Expresion=Si<BR>  Config.CosteoNivelSubCuenta<BR>Entonces<BR>  Forma(<T>ExplorarInvAlmSubCostoOpcion<T>)<BR>Sino<BR>  Forma(<T>ExplorarInvAlmSubOpcion<T>)<BR>Fin
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Articulo
+Articulo=Subcuenta
+Subcuenta=SubcuentaOpcion
+SubcuentaOpcion=(Fin)

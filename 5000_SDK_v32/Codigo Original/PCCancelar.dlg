@@ -1,0 +1,51 @@
+[Dialogo]
+Clave=PCCancelar
+Nombre=<T>Cancelar<T>
+Icono=45
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=501
+PosicionInicialArriba=441
+PosicionInicialAltura=165
+PosicionInicialAncho=278
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Todo]
+Nombre=Todo
+Boton=0
+NombreDesplegar=&Cancelar Movimiento
+EnMenu=S
+EnBarraAcciones=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+TipoAccion=Expresion
+Activo=S
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>)
+VisibleCondicion=Info.Estatus<>EstatusConcluido
+
+[Acciones.CancelacionPrecios]
+Nombre=CancelacionPrecios
+Boton=0
+NombreDesplegar=&Generar <T>Cancelación Precios<T>
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ProcesarSQL(<T>spPCCancelarPrecios :tEmpresa, :nSucursal, :tUsuario, :fFecha, :tCancelarMov, :nID, :tMov, :tMovID<T>, Empresa, Sucursal, Usuario, FechaTrabajo, ConfigMov.PCCancelacionPrecios, Afectar.ID, Afectar.Mov, Afectar.MovID)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Todo
+Todo=CancelacionPrecios
+CancelacionPrecios=(Fin)

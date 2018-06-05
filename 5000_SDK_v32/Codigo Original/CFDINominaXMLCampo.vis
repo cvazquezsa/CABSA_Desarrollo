@@ -1,0 +1,73 @@
+
+[Vista]
+Icono=0
+Clave=CFDINominaXMLCampo
+Nombre=CFDINominaXMLCampo
+Modulos=(Todos)
+Singular=CFDINominaXMLCampo
+ListaTablas=CFDINominaXMLCampo
+TablaPrincipal=CFDINominaXMLCampo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[CFDINominaXMLCampo.Version]
+Clave=CFDINominaXMLCampo.Version
+Nombre=Version
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+ValorPorOmision=Info.Anuncio
+LigaTabla=CFDINominaXMLCampo
+LigaCampo=Version
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Version
+
+[CFDINominaXMLCampo.CampoXML]
+Clave=CFDINominaXMLCampo.CampoXML
+Nombre=Campo XML
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+LigaTabla=CFDINominaXMLCampo
+LigaCampo=CampoXML
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CampoXML
+
+[CFDINominaXMLCampo.CampoVista]
+Clave=CFDINominaXMLCampo.CampoVista
+Nombre=Campo Origen Datos
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Name FROM sys.columns WHERE object_name(object_id) = :tVista ORDER BY Name<T>, Info.Vista)
+LigaTabla=CFDINominaXMLCampo
+LigaCampo=CampoVista
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CampoVista
+
+[Vista.ListaCampos]
+(Inicio)=CFDINominaXMLCampo.Version
+CFDINominaXMLCampo.Version=CFDINominaXMLCampo.CampoXML
+CFDINominaXMLCampo.CampoXML=CFDINominaXMLCampo.CampoVista
+CFDINominaXMLCampo.CampoVista=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=CFDINominaXMLCampo.Version,
+CFDINominaXMLCampo.Version,=CFDINominaXMLCampo.CampoXML,
+CFDINominaXMLCampo.CampoXML,=CFDINominaXMLCampo.CampoVista
+CFDINominaXMLCampo.CampoVista=FROM CFDINominaXMLCampo
+FROM CFDINominaXMLCampo=(Fin)

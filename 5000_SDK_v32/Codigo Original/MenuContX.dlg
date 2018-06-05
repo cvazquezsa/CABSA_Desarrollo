@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=MenuContX
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=165
+PosicionInicialAncho=256
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=384
+PosicionInicialArriba=298
+PosicionInicialAlturaCliente=138
+
+[Acciones.GenerarPolizas]
+Nombre=GenerarPolizas
+Boton=0
+NombreDesplegar=&Generador de Pólizas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContX
+Activo=S
+Visible=S
+
+[Acciones.ListaCuentas]
+Nombre=ListaCuentas
+Boton=0
+NombreDesplegar=&Lista de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCta
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Acciones.TipoCuenta]
+Nombre=TipoCuenta
+Boton=0
+NombreDesplegar=&Tipos de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TipoCuenta
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarPolizas
+GenerarPolizas=ListaCuentas
+ListaCuentas=TipoCuenta
+TipoCuenta=(Fin)

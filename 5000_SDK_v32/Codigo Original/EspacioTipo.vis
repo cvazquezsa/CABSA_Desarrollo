@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=EspacioTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=EspacioTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=EspacioTipo.Tipo
+TablaPrincipal=EspacioTipo
+UsarJOIN=S
+SQL=SELECT<BR>  EspacioTipo.Tipo<BR><BR>FROM<BR>  EspacioTipo
+
+[EspacioTipo.Tipo]
+Clave=EspacioTipo.Tipo
+LigaTabla=EspacioTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

@@ -1,0 +1,19 @@
+[Vista]
+Icono=0
+Clave=GastoConcepto
+Nombre=Conceptos
+Modulos=(Todos)
+Singular=Concepto
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=Concepto
+SQL=spVerConceptoClase <T>GAS<T>, {Comillas(Info.Clase)}, {Comillas(Info.SubClase)}, {Comillas(Usuario)}, {Comillas(Usuario.GrupoTrabajo)}, {Comillas(Info.Acreedor)}, {Comillas(Config.GastoAyudaConceptos)}
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ClaveBDE=Concepto
+TipoDatos=Texto

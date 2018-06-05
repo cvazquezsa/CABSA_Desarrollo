@@ -1,0 +1,27 @@
+
+[Vista]
+Icono=0
+Clave=MesLanzamientoLista
+Nombre=MesLanzamientoLista
+Modulos=(Todos)
+
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=Lanzamiento
+
+SQL=(Lista)
+[Lanzamiento]
+Clave=Lanzamiento
+Nombre=Lanzamiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Lanzamiento
+
+[Vista.SQL]
+(Inicio)=SELECT pcm.Lanzamiento
+SELECT pcm.Lanzamiento=FROM PrevisionesConsumoMES pcm
+FROM PrevisionesConsumoMES pcm=GROUP BY Lanzamiento
+GROUP BY Lanzamiento=(Fin)

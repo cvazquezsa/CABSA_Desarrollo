@@ -1,0 +1,80 @@
+[Tabla]
+Icono=0
+Clave=CfgModuloCentralAccion
+Archivo=CfgModuloCentralAccion
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Acciones
+Singular=Acción
+LlavePrimaria=Accion
+SQL=SELECT<BR>  Accion,<BR>  Cache,<BR>  Cola<BR><BR>FROM<BR>  CfgModuloCentralAccion
+
+[Accion]
+Clave=Accion
+Nombre=Acción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Cache]
+Clave=Cache
+Nombre=Caché
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ValorPorOmision=<T>No<T>
+ListaOpciones=(Lista)
+
+[Cola]
+Clave=Cola
+Nombre=Cola
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=Accion
+Accion=Cache
+Cache=Cola
+Cola=(Fin)
+
+[Accion.ListaOpciones]
+(Inicio)=Consulta
+Consulta=Movimiento
+Movimiento=AlmacenarDatos
+AlmacenarDatos=ActualizarDatos
+ActualizarDatos=ReemplazarDatos
+ReemplazarDatos=ProcesarCarga
+ProcesarCarga=(Fin)
+
+[Cache.ListaOpciones]
+(Inicio)=No
+No=Desconectado
+Desconectado=por Omision
+por Omision=(Fin)
+
+[Cola.ListaOpciones]
+(Inicio)=No
+No=Desconectado
+Desconectado=por Omision
+por Omision=(Fin)

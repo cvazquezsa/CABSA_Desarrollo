@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=FITipoFinanciamiento
+Nombre=Tipos Financiamientos
+Modulos=(Todos)
+Singular=Tipo Financiamiento
+ListaTablas=FITipoFinanciamiento
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=FITipoFinanciamiento.TipoFinanciamiento
+TablaPrincipal=FITipoFinanciamiento
+UsarJOIN=S
+SQL=SELECT<BR>  FITipoFinanciamiento.TipoFinanciamiento<BR><BR>FROM<BR>  FITipoFinanciamiento
+
+[FITipoFinanciamiento.TipoFinanciamiento]
+Clave=FITipoFinanciamiento.TipoFinanciamiento
+LigaTabla=FITipoFinanciamiento
+LigaCampo=TipoFinanciamiento
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TipoFinanciamiento

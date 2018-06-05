@@ -1,0 +1,341 @@
+[Vista]
+Icono=0
+Clave=AspelCfgProveedores
+Nombre=AspelCfgProveedores
+Modulos=(Todos)
+Singular=AspelCfgProveedores
+ListaTablas=AspelCfgProveedores
+TablaPrincipal=AspelCfgProveedores
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+SQL=SELECT<BR>  AspelCfgProveedores.Mayor,<BR>  AspelCfgProveedores.Descripcion,<BR>  AspelCfgProveedores.Rama,<BR>  AspelCfgProveedores.EsAcreedora,<BR>  AspelCfgProveedores.EsAcumulativa,<BR>  AspelCfgProveedores.Modulo,<BR>  AspelCfgProveedores.Agrupador,<BR>  AspelCfgProveedores.MovDebeContable,<BR>  AspelCfgProveedores.MovHaberContable,<BR>  AspelCfgProveedores.MovDebeNoContable,<BR>  AspelCfgProveedores.MovHaberNoContable,<BR>  AspelCfgProveedores.FactorDebeNoContable,<BR>  AspelCfgProveedores.FactorHaberNoContable,<BR>  AspelCfgProveedores.ClaveDebeNoContable,<BR>  AspelCfgProveedores.ClaveHaberNoContable,<BR>  AspelCfgProveedores.EstatusContable,<BR>  AspelCfgProveedores.EstatusNoContable,<BR>  AspelCfgProveedores.AfectaContabilidad<BR><BR>FROM<BR>  AspelCfgModuloMayor AspelCfgProveedores
+
+[AspelCfgProveedores.Mayor]
+Clave=AspelCfgProveedores.Mayor
+Nombre=Mayor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=Mayor
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Mayor
+
+[AspelCfgProveedores.Descripcion]
+Clave=AspelCfgProveedores.Descripcion
+Nombre=Descripcion
+Visible=S
+TamanoValidacion=100
+Tamano=100
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Descripcion
+
+[AspelCfgProveedores.Rama]
+Clave=AspelCfgProveedores.Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=Rama
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Rama
+
+[AspelCfgProveedores.EsAcreedora]
+Clave=AspelCfgProveedores.EsAcreedora
+Nombre=EsAcreedora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=EsAcreedora
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EsAcreedora
+
+[AspelCfgProveedores.EsAcumulativa]
+Clave=AspelCfgProveedores.EsAcumulativa
+Nombre=EsAcumulativa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=EsAcumulativa
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EsAcumulativa
+
+[AspelCfgProveedores.Modulo]
+Clave=AspelCfgProveedores.Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+UnicamenteLectura=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Modulo
+
+[AspelCfgProveedores.Agrupador]
+Clave=AspelCfgProveedores.Agrupador
+Nombre=Agrupar movimientos por
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR><BR>Caso  AspelCfgProveedores.Descripcion<BR>  Es <T>Ventas<T>       Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Compras<T>      Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Clientes<T>     Entonces Lista(<T><T>)<BR>  Es <T>Inventarios<T>  Entonces Lista(<T><T>)<BR>  Es <T>Proveedores<T>  Entonces Lista(<T><T>)<BR>Fin
+LigaTabla=AspelCfgProveedores
+LigaCampo=Agrupador
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Agrupador
+
+[AspelCfgProveedores.MovDebeContable]
+Clave=AspelCfgProveedores.MovDebeContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,AspelCfgProveedores.Modulo)
+LigaTabla=AspelCfgProveedores
+LigaCampo=MovDebeContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovDebeContable
+
+[AspelCfgProveedores.MovHaberContable]
+Clave=AspelCfgProveedores.MovHaberContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,AspelCfgProveedores.Modulo)
+LigaTabla=AspelCfgProveedores
+LigaCampo=MovHaberContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovHaberContable
+
+[AspelCfgProveedores.MovDebeNoContable]
+Clave=AspelCfgProveedores.MovDebeNoContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+LigaTabla=AspelCfgProveedores
+LigaCampo=MovDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovDebeNoContable
+
+[AspelCfgProveedores.MovHaberNoContable]
+Clave=AspelCfgProveedores.MovHaberNoContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+LigaTabla=AspelCfgProveedores
+LigaCampo=MovHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovHaberNoContable
+
+[AspelCfgProveedores.FactorDebeNoContable]
+Clave=AspelCfgProveedores.FactorDebeNoContable
+Nombre=Factor Debe
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+LigaTabla=AspelCfgProveedores
+LigaCampo=FactorDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FactorDebeNoContable
+
+[AspelCfgProveedores.FactorHaberNoContable]
+Clave=AspelCfgProveedores.FactorHaberNoContable
+Nombre=Factor Haber
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+LigaTabla=AspelCfgProveedores
+LigaCampo=FactorHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FactorHaberNoContable
+
+[AspelCfgProveedores.ClaveDebeNoContable]
+Clave=AspelCfgProveedores.ClaveDebeNoContable
+Nombre=Clave Afectación Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,AspelCfgProveedores.Modulo)
+LigaTabla=AspelCfgProveedores
+LigaCampo=ClaveDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ClaveDebeNoContable
+
+[AspelCfgProveedores.ClaveHaberNoContable]
+Clave=AspelCfgProveedores.ClaveHaberNoContable
+Nombre=Clave Afectacion Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,AspelCfgProveedores.Modulo)
+LigaTabla=AspelCfgProveedores
+LigaCampo=ClaveHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ClaveHaberNoContable
+
+[AspelCfgProveedores.EstatusContable]
+Clave=AspelCfgProveedores.EstatusContable
+Nombre=Estatus inicial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Estatus
+CondicionDespliege=AfectaContabilidad
+LigaTabla=AspelCfgProveedores
+LigaCampo=EstatusContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=EstatusContable
+
+[AspelCfgProveedores.EstatusNoContable]
+Clave=AspelCfgProveedores.EstatusNoContable
+Nombre=Estatus Inicial
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Estatus
+OpcionesRenglones=8
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=No AfectaContabilidad
+LigaTabla=AspelCfgProveedores
+LigaCampo=EstatusNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=EstatusNoContable
+
+[AspelCfgProveedores.AfectaContabilidad]
+Clave=AspelCfgProveedores.AfectaContabilidad
+Nombre=Contabilizar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+LigaTabla=AspelCfgProveedores
+LigaCampo=AfectaContabilidad
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=AfectaContabilidad
+
+[Vista.ListaCampos]
+(Inicio)=AspelCfgProveedores.Mayor
+AspelCfgProveedores.Mayor=AspelCfgProveedores.Descripcion
+AspelCfgProveedores.Descripcion=AspelCfgProveedores.Rama
+AspelCfgProveedores.Rama=AspelCfgProveedores.EsAcreedora
+AspelCfgProveedores.EsAcreedora=AspelCfgProveedores.EsAcumulativa
+AspelCfgProveedores.EsAcumulativa=AspelCfgProveedores.Modulo
+AspelCfgProveedores.Modulo=AspelCfgProveedores.Agrupador
+AspelCfgProveedores.Agrupador=AspelCfgProveedores.MovDebeContable
+AspelCfgProveedores.MovDebeContable=AspelCfgProveedores.MovHaberContable
+AspelCfgProveedores.MovHaberContable=AspelCfgProveedores.MovDebeNoContable
+AspelCfgProveedores.MovDebeNoContable=AspelCfgProveedores.MovHaberNoContable
+AspelCfgProveedores.MovHaberNoContable=AspelCfgProveedores.FactorDebeNoContable
+AspelCfgProveedores.FactorDebeNoContable=AspelCfgProveedores.FactorHaberNoContable
+AspelCfgProveedores.FactorHaberNoContable=AspelCfgProveedores.ClaveDebeNoContable
+AspelCfgProveedores.ClaveDebeNoContable=AspelCfgProveedores.ClaveHaberNoContable
+AspelCfgProveedores.ClaveHaberNoContable=AspelCfgProveedores.EstatusContable
+AspelCfgProveedores.EstatusContable=AspelCfgProveedores.EstatusNoContable
+AspelCfgProveedores.EstatusNoContable=AspelCfgProveedores.AfectaContabilidad
+AspelCfgProveedores.AfectaContabilidad=(Fin)
+
+[AspelCfgProveedores.FactorDebeNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)
+
+[AspelCfgProveedores.FactorHaberNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)

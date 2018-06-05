@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ArtVersion
+Nombre=Versiones
+Modulos=INV
+Singular=Versión
+ListaTablas=ArtVersion
+TablaPrincipal=ArtVersion
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ArtVersion.Version
+UsarJOIN=S
+SQL=SELECT<BR>  ArtVersion.Version<BR><BR>FROM<BR>  ArtVersion
+
+[ArtVersion.Version]
+Clave=ArtVersion.Version
+LigaTabla=ArtVersion
+LigaCampo=Version
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Version

@@ -1,0 +1,106 @@
+
+
+[Tabla]
+Icono=0
+Clave=CFDIRetSATRetencion
+Nombre=CFDIRetSATRetencion
+Archivo=CFDIRetSATRetencion
+Modulos=(Todos)
+Singular=CFDIRetSATRetencion
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Clave
+SQL=(Lista)
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=2
+TipoDatos=Texto
+Tamano=2
+
+[Retencion]
+Clave=Retencion
+Nombre=Retención
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+
+
+
+
+
+
+
+
+[Complemento]
+Clave=Complemento
+Nombre=Complemento
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Complemento FROM CFDIRetencionCompXMLPlantilla ORDER BY Complemento<T>)
+
+
+
+
+
+[RetmontoTotGrav]
+Clave=RetmontoTotGrav
+Nombre=% Monto Total Gravado
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+AyudaEnCaptura=Calculadora
+ValidacionConCondiciones=S
+ValidacionMensajeError=<BR>El porcentaje del Monto Total de Gravamen <BR>más el porcentaje del Monto Total Excento <BR>no debe exceder a 100.
+ValidacionCondicion=RetmontoTotGrav + RetmontoTotExent <= 100
+[RetmontoTotExent]
+Clave=RetmontoTotExent
+Nombre=% Monto Total Exento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+
+
+
+
+ValidacionConCondiciones=S
+
+
+
+
+ValidacionCondicion=RetmontoTotGrav + RetmontoTotExent <= 100
+ValidacionMensajeError=<BR>El porcentaje del Monto Total de Gravamen<BR>más el porcentaje del Monto Total Excento<BR>no debe exceder a 100.
+
+
+[Tabla.ListaCampos]
+(Inicio)=Clave
+Clave=Retencion
+Retencion=Complemento
+Complemento=RetmontoTotGrav
+RetmontoTotGrav=RetmontoTotExent
+RetmontoTotExent=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Clave,
+Clave,=Retencion,
+Retencion,=Complemento,
+Complemento,=RetmontoTotGrav,
+RetmontoTotGrav,=RetmontoTotExent
+RetmontoTotExent=FROM CFDIRetSATRetencion
+FROM CFDIRetSATRetencion=(Fin)

@@ -1,0 +1,560 @@
+[Reporte]
+Clave=ASIS
+Nombre=Movimientos a Asistencias
+Icono=6
+Vista=AsisteT
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros1=Asiste.ID
+Parametros2==
+Parametros3=N
+Parametros=S
+Columnas=1
+OtroOrden=S
+ListaOrden=Asiste.ID<TAB>(Acendente)
+PosicionInicialAltura=501
+PosicionInicialAncho=802
+PosicionInicialIzquierda=45
+PosicionInicialArriba=75
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Menus=S
+Orientacion=por Omision
+Ascii=S
+Impresora=S
+ImpresoraMatriz=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+ImpresoraPixeles=(Auto)
+PosicionInicialAlturaCliente=474
+
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: Asiste.ID<BR>Inicio: Asiste.ID<BR>Inicio: Asiste.ID<BR>Inicio: Asiste.ID<BR>Inicio: Asiste.ID<BR>Detalle<BR>Pie
+VentanaIzquierda=71
+VentanaArriba=62
+VentanaAltura=644
+VentanaAncho=881
+PanelArriba=160
+PanelBotones=113
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Arriba
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+Grupo=
+Marco=N
+EstiloMarco=0
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: Asiste.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=0
+Grupo=Asiste.ID
+Marco=N
+BordeArriba=N
+BorqueIzquierdo=N
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea3]
+Clave=Inicio: Asiste.ID
+Seccion=Inicio Grupo
+Marco=S
+EstiloMarco=1
+AltoEnCm=0.63
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Cursiva]}
+Objetos=5
+Grupo=Asiste.ID
+BordeArriba=N
+BorqueIzquierdo=N
+FondoEstilo=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Inicio: Asiste.ID
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=Asiste.ID
+Marco=N
+EstiloMarco=0
+FondoEstilo=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea5]
+Clave=Inicio: Asiste.ID
+Objetos=2
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=3
+AltoEnCm=0.79
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=Asiste.ID
+BordeAbajo=N
+FondoEstilo=0
+Visible=
+BordeArriba=N
+EstiloAbajo=0
+Renglones=2
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Recursos Humanos<T>
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeIzquierdo=N
+BordeDerecho=N
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeDerecho=N
+FormatoValidacion=
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea6]
+Clave=Inicio: Asiste.ID
+Objetos=3
+Seccion=Inicio Grupo
+Grupo=Asiste.ID
+AltoEnCm=0.39
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+BordeAbajo=N
+EstiloMarco=0
+Marco=N
+FondoEstilo=0
+Visible=
+EstiloAbajo=0
+BordeArriba=N
+EstiloArriba=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea7]
+Clave=Detalle
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=3
+Marco=N
+EstiloMarco=3
+Visible=
+BordeAbajo=N
+EstiloAbajo=3
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea8]
+Clave=Pie
+Seccion=Pie Página
+Grupo=
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+EstiloMarco=0
+Visible=
+BordeArriba=S
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+EstiloArriba=3
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=ASIS
+ListaParametros1=Asiste.ID
+ListaParametros=S
+Visible=S
+Activo=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+EnMenu=S
+EspacioPrevio=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=ASIS
+ListaParametros1=Asiste.ID
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreDesplegar=&Cerrar
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Visible=S
+Activo=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+EspacioPrevio=
+NombreEnBoton=S
+EnBarraHerramientas=S
+
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=2.6
+BordeAbajo=N
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre( Asiste.Referencia ) & <T>:<T><BR>CampoNombre( Asiste.Observaciones ) & <T>:<T>
+ExpresionMultiple=S
+EstiloAbajo=0
+AnchoTexto=14
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=9.79
+BordeAbajo=N
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Asiste.Referencia<BR>Asiste.Observaciones
+ExpresionMultiple=S
+EstiloAbajo=0
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=5.5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 11, Negro, [Negritas + Cursiva]}
+Expresion=Asiste.Mov & <T>  <T> & Asiste.MovID
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=2.5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=EstatusNombreSingular(Asiste.Estatus)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=Asiste.Proyecto
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=3.61
+Marco=S
+EstiloMarco=1
+FormatoValidacion=d mmmm yyyy
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=Asiste.FechaEmision
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A6]
+Celda=A6
+Alineacion=Centrado
+AnchoEnCm=2.61
+AnchoTexto=14
+BordeAbajo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=CampoNombre(AsisteD.Personal)
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+ExpresionMultiple=N
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+ExpresionMultiple=N
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B6]
+Celda=B6
+Alineacion=Centrado
+AnchoEnCm=6.8
+AnchoTexto=37
+BordeAbajo=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=CampoNombre(NombreCompleto)
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=2.61
+AnchoTexto=14
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=AsisteD.Personal
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B7]
+Celda=B7
+Alineacion=Izquierda
+AnchoEnCm=6.8
+AnchoTexto=37
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=NombreCompleto
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C7]
+Celda=C7
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=AsisteD.HoraRegistro
+
+[C6]
+Celda=C6
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>HORA<T>
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

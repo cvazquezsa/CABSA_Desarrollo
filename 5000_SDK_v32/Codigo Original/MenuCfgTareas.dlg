@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=MenuCfgTareas
+Nombre=Tareas
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=217
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=531
+PosicionInicialArriba=417
+
+[Acciones.TareaTipo]
+Nombre=TareaTipo
+Boton=0
+NombreDesplegar=&Tipos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TareaTipo
+Activo=S
+Visible=S
+
+[Acciones.TareaDef]
+Nombre=TareaDef
+Boton=0
+NombreDesplegar=por &Omisión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TareaDef
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=TareaTipo
+TareaTipo=TareaDef
+TareaDef=(Fin)

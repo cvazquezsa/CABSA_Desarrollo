@@ -1,0 +1,120 @@
+[Tabla]
+Icono=0
+Clave=LanzarProyecto
+Archivo=LanzarProyecto
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Lanzar Proyecto
+Singular=Lanzar Proyecto
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+ListaRelaciones=UEN
+SQL=SELECT<BR>  ID,<BR>  Fecha,<BR>  Mov,<BR>  Proyecto,<BR>  UEN,<BR>  Grupo,<BR>  Asunto<BR><BR>FROM<BR>  LanzarProyecto
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+ValorPorOmision=Hoy
+AyudaEnCaptura=Calendario sin Hora
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo Contacto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>(Todos)<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=<T>(Todos)<T>+NuevaLinea+SQLEnLista(<T>SELECT Grupo FROM CteCtoGrupo<T>)
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=ST
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Proyecto
+AyudaMemTabla=Proy
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Proyecto FROM Proy WHERE Proyecto=:tProy AND Estatus=:tEstatus<T>, Proyecto, EstatusAlta)=Proyecto
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+
+[Relaciones.UEN]
+TipoRelacion=Opcional
+LlaveLocal=UEN
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+
+[Asunto]
+Clave=Asunto
+Nombre=Asunto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Fecha
+Fecha=Grupo
+Grupo=Mov
+Mov=Proyecto
+Proyecto=UEN
+UEN=Asunto
+Asunto=(Fin)

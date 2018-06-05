@@ -1,0 +1,27 @@
+
+[Tabla]
+Icono=0
+Clave=ObjetoSR
+Nombre=ObjetoSR
+Archivo=ObjetoSR
+Modulos=(Todos)
+Singular=ObjetoSR
+
+TipoTabla=General
+ListaCampos=Objeto
+
+SQL=(Lista)
+LlavePrimaria=Objeto
+[Objeto]
+Clave=Objeto
+Nombre=Objeto SR
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Objeto
+Objeto=FROM ObjetoSR
+FROM ObjetoSR=(Fin)

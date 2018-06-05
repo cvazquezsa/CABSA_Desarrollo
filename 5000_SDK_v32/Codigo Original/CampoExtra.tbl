@@ -1,0 +1,198 @@
+[Tabla]
+Icono=0
+Clave=CampoExtra
+Archivo=CampoExtra
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Campos Extras
+Singular=Campo Extra
+LlavePrimaria=CampoExtra
+SQL=SELECT<BR>  CampoExtra,<BR>  Prefijo,<BR>  Base,<BR>  Sufijo,<BR>  Nombre,<BR>  AyudaTipo,<BR>  AyudaReferencia,<BR>  AyudaExpresion,<BR>  ValidacionTipo,<BR>  ValidacionTabla,<BR>  ValidacionCampo,<BR>  ValidacionReferencia,<BR>  ValidacionExpresion,<BR>  Mascara<BR><BR>FROM<BR>  CampoExtra
+
+[CampoExtra]
+Clave=CampoExtra
+Nombre=Clave
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=Prefijo+Base+Sufijo
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=Base
+
+[AyudaTipo]
+Clave=AyudaTipo
+Nombre=Ayuda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AyudaReferencia]
+Clave=AyudaReferencia
+Nombre=Forma Referencia 
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=AyudaTipo en (<T>Expresion<T>, <T>Expresion Opcional<T>, <T>Forma<T>)
+
+[ValidacionTipo]
+Clave=ValidacionTipo
+Nombre=Validación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[Mascara]
+Clave=Mascara
+Nombre=Máscara
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[Prefijo]
+Clave=Prefijo
+Nombre=Prefijo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+ConRefrescar=S
+ListaRefrescar=CampoExtra
+Formula=SQLEnLista(<T>SELECT DISTINCT Prefijo FROM CampoExtra<T>)
+TipoDatos=Texto
+
+[Base]
+Clave=Base
+Nombre=Base
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+[Sufijo]
+Clave=Sufijo
+Nombre=Sufijo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+ConRefrescar=S
+ListaRefrescar=CampoExtra
+Formula=SQLEnLista(<T>SELECT DISTINCT Sufijo FROM CampoExtra<T>)
+TipoDatos=Texto
+
+[AyudaExpresion]
+Clave=AyudaExpresion
+Nombre=Expresión
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesForma=Info.Referencia
+
+[ValidacionReferencia]
+Clave=ValidacionReferencia
+Nombre=Forma Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ValidacionTipo = <T>Expresion<T>
+
+[ValidacionCampo]
+Clave=ValidacionCampo
+Nombre=Campo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ValidacionTipo = <T>Tabla<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Campo FROM SysCampo WHERE Tabla=:tTabla ORDER BY ColID<T>, ValidacionTabla)
+
+[ValidacionExpresion]
+Clave=ValidacionExpresion
+Nombre=Expresión
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesForma=Info.Referencia
+
+[ValidacionTabla]
+Clave=ValidacionTabla
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=ValidacionTipo = <T>Tabla<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT name FROM sysobjects WHERE type = :tTipo order by name<T>, <T>U<T>)
+
+[Tabla.ListaCampos]
+(Inicio)=CampoExtra
+CampoExtra=Nombre
+Nombre=Prefijo
+Prefijo=Base
+Base=Sufijo
+Sufijo=AyudaTipo
+AyudaTipo=AyudaReferencia
+AyudaReferencia=AyudaExpresion
+AyudaExpresion=Mascara
+Mascara=ValidacionTipo
+ValidacionTipo=ValidacionReferencia
+ValidacionReferencia=ValidacionTabla
+ValidacionTabla=ValidacionCampo
+ValidacionCampo=ValidacionExpresion
+ValidacionExpresion=(Fin)
+
+[AyudaTipo.ListaOpciones]
+(Inicio)=Lista
+Lista=Lista Opcional
+Lista Opcional=Forma
+Forma=Expresion
+Expresion=Expresion Opcional
+Expresion Opcional=(Fin)
+
+[ValidacionTipo.ListaOpciones]
+(Inicio)=Tabla
+Tabla=Expresion
+Expresion=(Fin)
+
+[Base.ListaRefrescar]
+(Inicio)=CampoExtra
+CampoExtra=Nombre
+Nombre=(Fin)

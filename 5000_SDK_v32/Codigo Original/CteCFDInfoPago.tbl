@@ -1,0 +1,56 @@
+
+[Tabla]
+Icono=0
+Clave=CteCFDInfoPago
+Nombre=CteCFDInfoPago
+Archivo=CteCFDInfoPago
+Modulos=(Todos)
+Singular=CteCFDInfoPago
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+SQL=(Lista)
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+ValorPorOmision=Info.Cliente
+[InfoPago]
+Clave=InfoPago
+Nombre=Información Pago
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaMemTabla=FordZona
+AyudaMemRenglones=4
+AyudaMemOpc=Validar captura en la lista
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=InfoPago
+InfoPago=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Cliente,
+Cliente,=InfoPago
+InfoPago=FROM CteCFDInfoPago
+FROM CteCFDInfoPago=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Cliente
+Cliente=InfoPago
+InfoPago=(Fin)

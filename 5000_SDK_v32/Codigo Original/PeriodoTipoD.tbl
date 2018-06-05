@@ -1,0 +1,63 @@
+[Tabla]
+Icono=0
+Clave=PeriodoTipoD
+Archivo=PeriodoTipoD
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tipos Periodos
+Singular=Tipo Periodo
+LlavePrimaria=PeriodoTipo<BR>Ejercicio<BR>Periodo
+CampoPeriodo=Periodo
+CampoEjercicio=Ejercicio
+SQL=SELECT<BR>  PeriodoTipo,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaInicio,<BR>  FechaFinal<BR><BR>FROM<BR>  PeriodoTipoD
+
+[PeriodoTipo]
+Clave=PeriodoTipo
+Nombre=PeriodoTipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.PeriodoTipo
+TipoDatos=Texto
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.Ejercicio
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaInicio]
+Clave=FechaInicio
+Nombre=Fecha Inicio
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[FechaFinal]
+Clave=FechaFinal
+Nombre=Fecha Final
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Tabla.ListaCampos]
+(Inicio)=PeriodoTipo
+PeriodoTipo=Ejercicio
+Ejercicio=Periodo
+Periodo=FechaInicio
+FechaInicio=FechaFinal
+FechaFinal=(Fin)

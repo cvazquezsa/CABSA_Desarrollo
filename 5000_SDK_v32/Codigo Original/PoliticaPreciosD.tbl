@@ -1,0 +1,42 @@
+[Tabla]
+Icono=0
+Clave=PoliticaPreciosD
+Archivo=PoliticaPreciosD
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Politicas de Precios
+Singular=Politica de Precios
+LlavePrimaria=ID<BR>Cantidad
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  Cantidad,<BR>  Monto<BR><BR>FROM<BR>  PoliticaPreciosD
+
+[ID]
+Clave=ID
+Nombre=ID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Monto]
+Clave=Monto
+Nombre=Monto
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Cantidad
+Cantidad=Monto
+Monto=(Fin)

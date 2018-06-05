@@ -1,0 +1,165 @@
+[Tabla]
+Icono=0
+Clave=PersonalEntradaH
+Archivo=PersonalEntradaH
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Hora Entrada
+Singular=Hora Entrada
+LlavePrimaria=Personal
+ListaRelaciones=Personal
+CampoSucursal=Sucursal
+SQL=SELECT<BR>  Personal,<BR>  Sucursal,<BR>  Domingo,<BR>  Lunes,<BR>  Martes,<BR>  Miercoles,<BR>  Jueves,<BR>  Viernes,<BR>  Sabado<BR><BR>FROM<BR>  PersonalEntradaH
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Domingo]
+Clave=Domingo
+Nombre=Domingo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionCondicion=FechaHoraCorrecta(Domingo)
+
+[Lunes]
+Clave=Lunes
+Nombre=Lunes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Lunes), Domingo, Lunes)
+ValidacionCondicion=FechaHoraCorrecta(Lunes)
+
+[Martes]
+Clave=Martes
+Nombre=Martes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Martes), Domingo, Martes)
+ValidacionCondicion=FechaHoraCorrecta(Martes)
+
+[Miercoles]
+Clave=Miercoles
+Nombre=Miércoles
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Miercoles), Domingo, Miercoles)
+ValidacionCondicion=FechaHoraCorrecta(Miercoles)
+
+[Jueves]
+Clave=Jueves
+Nombre=Jueves
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Jueves), Domingo, Jueves)
+ValidacionCondicion=FechaHoraCorrecta(Jueves)
+
+[Viernes]
+Clave=Viernes
+Nombre=Viernes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Viernes), Domingo, Viernes)
+ValidacionCondicion=FechaHoraCorrecta(Viernes)
+
+[Sabado]
+Clave=Sabado
+Nombre=Sábado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecta<T>
+ValorRefrescar=Si(Vacio(Sabado), Domingo, Sabado)
+ValidacionCondicion=FechaHoraCorrecta(Sabado)
+
+[Relaciones.Personal]
+TipoRelacion=Forzosa
+LlaveLocal=Personal
+Clave=Personal
+TablaRemota=Personal
+LlaveRemota=Personal
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Personal
+Personal=Sucursal
+Sucursal=Domingo
+Domingo=Lunes
+Lunes=Martes
+Martes=Miercoles
+Miercoles=Jueves
+Jueves=Viernes
+Viernes=Sabado
+Sabado=(Fin)
+
+[Domingo.ListaRefrescar]
+(Inicio)=Lunes
+Lunes=Martes
+Martes=Miercoles
+Miercoles=Jueves
+Jueves=Viernes
+Viernes=Sabado
+Sabado=(Fin)

@@ -1,0 +1,54 @@
+[Dialogo]
+Clave=MenuRepNomMovsProc
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=393
+PosicionInicialArriba=310
+PosicionInicialAltura=148
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+
+[Acciones.Movs]
+Nombre=Movs
+Boton=0
+NombreDesplegar=&Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=mis_NomMovProcesarMov
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Nomina/MovsProcesar/Movs<T>)
+[Acciones.Pers]
+Nombre=Pers
+Boton=0
+NombreDesplegar=Personal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=mis_NomMovProcesarPers
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Nomina/MovsProcesar/Pers<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Movs
+Movs=Pers
+Pers=(Fin)

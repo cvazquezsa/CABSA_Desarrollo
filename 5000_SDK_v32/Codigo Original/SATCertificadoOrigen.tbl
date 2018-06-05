@@ -1,0 +1,63 @@
+
+[Tabla]
+Icono=0
+Clave=SATCertificadoOrigen
+Archivo=SATCertificadoOrigen
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=TratadoAcuerdo
+SQL=(Lista)
+[TratadoAcuerdo]
+Clave=TratadoAcuerdo
+Nombre=Tratado / Acuerdo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[TipoCertificado]
+Clave=TipoCertificado
+Nombre=Tipo de Certificado
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[NumCertificado]
+Clave=NumCertificado
+Nombre=Número de Certificado
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[NumeroExportadorConfiable]
+Clave=NumeroExportadorConfiable
+Nombre=Número de Exportador Confiable
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=TratadoAcuerdo
+TratadoAcuerdo=TipoCertificado
+TipoCertificado=NumCertificado
+NumCertificado=NumeroExportadorConfiable
+NumeroExportadorConfiable=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TratadoAcuerdo,
+TratadoAcuerdo,=TipoCertificado,
+TipoCertificado,=NumCertificado,
+NumCertificado,=NumeroExportadorConfiable
+NumeroExportadorConfiable=FROM SATCertificadoOrigen
+FROM SATCertificadoOrigen=(Fin)

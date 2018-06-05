@@ -1,0 +1,67 @@
+[Tabla]
+Icono=0
+Clave=ArtPrecioHist
+Archivo=ArtPrecioHist
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Histórico de Precios
+Singular=Precio
+LlavePrimaria=Articulo<BR>Numero<BR>Fecha
+ListaRelaciones=Art
+SQL=SELECT<BR>  Articulo,<BR>  Numero,<BR>  Fecha,<BR>  PrecioAnterior,<BR>  PrecioActual<BR><BR>FROM<BR>  ArtPrecioHist
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Numero]
+Clave=Numero
+Nombre=Lista Precios
+Visible=S
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa h:nn
+
+[PrecioAnterior]
+Clave=PrecioAnterior
+Nombre=Precio Anterior
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioActual]
+Clave=PrecioActual
+Nombre=Precio Actual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Relaciones.Art]
+TipoRelacion=Forzosa
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=Numero
+Numero=Fecha
+Fecha=PrecioAnterior
+PrecioAnterior=PrecioActual
+PrecioActual=(Fin)

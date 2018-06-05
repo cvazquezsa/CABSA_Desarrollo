@@ -1,0 +1,339 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovWMS
+Nombre=EmpresaCfgMovWMS
+Archivo=EmpresaCfgMovWMS
+Modulos=(Todos)
+Singular=EmpresaCfgMovWMS
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Info.Empresa
+[TMAOrdenAcomodo]
+Clave=TMAOrdenAcomodo
+Nombre=Orden Acomodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=TMA
+ValorPorOmision=<T>Orden de Acomodo<T>
+[TMAAcomodo]
+Clave=TMAAcomodo
+Nombre=Acomodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Acomodo<T>
+[TMASolicitudReacomodo]
+Clave=TMASolicitudReacomodo
+Nombre=Solicitud Reacomodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Solicitud Reacomodo<T>
+[TMAOrdenReacomodo]
+Clave=TMAOrdenReacomodo
+Nombre=Orden Reacomodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Orden de Reacomodo<T>
+[TMAReacomodo]
+Clave=TMAReacomodo
+Nombre=Reacomodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Reacomodo<T>
+[TMAOrdenSurtido]
+Clave=TMAOrdenSurtido
+Nombre=Orden Surtido
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Orden de Surtido<T>
+[TMASurtidoTransito]
+Clave=TMASurtidoTransito
+Nombre=Surtido Transito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Surtido Transito<T>
+[TMAOrdenSurtidoPCK]
+Clave=TMAOrdenSurtidoPCK
+Nombre=Orden Surtido PCK
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Orden de Surtido PCK<T>
+[TMASurtidoTransitoPCK]
+Clave=TMASurtidoTransitoPCK
+Nombre=Surtido Transito PCK
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesModulo=TMA
+OpcionesLlave=Opción
+ValorPorOmision=<T>Surtido Transito PCK<T>
+[TMASurtido]
+Clave=TMASurtido
+Nombre=Surtido
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesModulo=TMA
+ValorPorOmision=<T>Surtido<T>
+[TMASurtidoPerdido]
+Clave=TMASurtidoPerdido
+Nombre=Surtido Perdido
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesModulo=TMA
+ValorPorOmision=<T>Surtido Perdido<T>
+
+
+
+
+
+
+[TMASolicitudAcomodo]
+Clave=TMASolicitudAcomodo
+Nombre=Solicitud Acomodo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ValorPorOmision=<T>Solicitud Acomodo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=TMA
+
+
+
+
+
+
+
+[InvEntarimado]
+Clave=InvEntarimado
+Nombre=InvEntarimado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[InvDesentarimado]
+Clave=InvDesentarimado
+Nombre=InvDesentarimado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[TMAOrdenPCKTarima]
+Clave=TMAOrdenPCKTarima
+Nombre=Orden PCK Tarima
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=TMA
+[TMAPCKTarimaTransito]
+Clave=TMAPCKTarimaTransito
+Nombre=PCK Tarima Transito
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=TMA
+[TMAPCKTarima]
+Clave=TMAPCKTarima
+Nombre=PCK Tarima
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=TMA
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=TMASolicitudAcomodo
+TMASolicitudAcomodo=TMAOrdenAcomodo
+TMAOrdenAcomodo=TMAAcomodo
+TMAAcomodo=TMASolicitudReacomodo
+TMASolicitudReacomodo=TMAOrdenReacomodo
+TMAOrdenReacomodo=TMAReacomodo
+TMAReacomodo=TMAOrdenSurtido
+TMAOrdenSurtido=TMASurtidoTransito
+TMASurtidoTransito=TMAOrdenSurtidoPCK
+TMAOrdenSurtidoPCK=TMASurtidoTransitoPCK
+TMASurtidoTransitoPCK=TMASurtido
+TMASurtido=TMASurtidoPerdido
+TMASurtidoPerdido=InvEntarimado
+InvEntarimado=InvDesentarimado
+InvDesentarimado=TMAOrdenPCKTarima
+TMAOrdenPCKTarima=TMAPCKTarimaTransito
+TMAPCKTarimaTransito=TMAPCKTarima
+TMAPCKTarima=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=TMASolicitudAcomodo,
+TMASolicitudAcomodo,=TMAOrdenAcomodo,
+TMAOrdenAcomodo,=TMAAcomodo,
+TMAAcomodo,=TMASolicitudReacomodo,
+TMASolicitudReacomodo,=TMAOrdenReacomodo,
+TMAOrdenReacomodo,=TMAReacomodo,
+TMAReacomodo,=TMAOrdenSurtido,
+TMAOrdenSurtido,=TMASurtidoTransito,
+TMASurtidoTransito,=TMAOrdenSurtidoPCK,
+TMAOrdenSurtidoPCK,=TMASurtidoTransitoPCK,
+TMASurtidoTransitoPCK,=TMASurtido,
+TMASurtido,=TMASurtidoPerdido
+TMASurtidoPerdido=TMASurtidoPerdido,
+TMASurtidoPerdido,=InvEntarimado,
+InvEntarimado,=InvDesentarimado,
+InvDesentarimado,=TMAOrdenPCKTarima,
+TMAOrdenPCKTarima,=TMAPCKTarimaTransito,
+TMAPCKTarimaTransito,=TMAPCKTarima
+TMAPCKTarima=FROM EmpresaCfgMovWMS
+FROM EmpresaCfgMovWMS=(Fin)

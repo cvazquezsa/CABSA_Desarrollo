@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=AspelCfg
+Nombre=AspelCfg
+Archivo=AspelCfg
+Modulos=(Todos)
+Singular=AspelCfg
+TipoTabla=General
+ListaCampos=(Lista)
+LlavePrimaria=Descripcion
+SQL=SELECT<BR>  Valor,<BR>  Descripcion<BR><BR>FROM<BR>  AspelCfg
+
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+AyudaMemOpc=Consulta opcional
+Formula=Caso  Descripcion<BR>  Es <T>Sucursal<T> Entonces SQLENLISTA(<T>SELECT Sucursal FROM Sucursal<T>)<BR>  Es <T>Empresa<T>  Entonces SQLENLISTA(<T>SELECT Empresa FROM Empresa<T>)<BR>  Es <T>Observaciones<T>  Entonces  Lista(<T><T>)<BR>  Es <T>Moneda<T>   Entonces SQLENLISTA(<T>SELECT Moneda FROM Mon ORDER BY Orden<T>)<BR>  Es <T>Usuario<T>  Entonces SQLENLISTA(<T>SELECT Usuario FROM Usuario<T>)<BR>Fin
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Campo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+UnicamenteLectura=S
+
+[Tabla.ListaCampos]
+(Inicio)=Valor
+Valor=Descripcion
+Descripcion=(Fin)

@@ -1,0 +1,75 @@
+
+[Tabla]
+Icono=0
+Clave=NOITipoEmpleado
+Nombre=NOITipoEmpleado
+Archivo=NOITipoEmpleado
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=TipoEmpleadoNOI
+ControlTipo=S
+CampoTipo=Tipo
+SQL=(Lista)
+[TipoEmpleadoNOI]
+Clave=TipoEmpleadoNOI
+Nombre=Tipo Empleado NOI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ConRefrescar=S
+ListaRefrescar=ClaveNOI
+ListaOpciones=(Lista)
+[ClaveNOI]
+Clave=ClaveNOI
+Nombre=ClaveNOI
+Visible=S
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+
+ValorRefrescar=Caso  TipoEmpleadoNOI<BR>  Es <T>Sindicalizado<T> Entonces <T>S<T><BR>  Es <T>Confianza<T> Entonces <T>C<T><BR>Fin
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalTipo
+[TipoEmpleadoNOI.ListaOpciones]
+(Inicio)=Sindicalizado
+Sindicalizado=Confianza
+Confianza=(Fin)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=TipoEmpleadoNOI
+TipoEmpleadoNOI=ClaveNOI
+ClaveNOI=Tipo
+Tipo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TipoEmpleadoNOI,
+TipoEmpleadoNOI,=ClaveNOI,
+ClaveNOI,=Tipo
+Tipo=FROM NOITipoEmpleado
+FROM NOITipoEmpleado=(Fin)

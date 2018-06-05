@@ -1,0 +1,52 @@
+
+[Tabla]
+Icono=0
+Clave=POSDepurarTablasTemp
+Nombre=POSDepurarTablasTemp
+Archivo=POSDepurarTablasTemp
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Estacion
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[Fecha]
+Clave=Fecha
+Nombre=Hasta la Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mm/aa
+
+
+
+AyudaEnCaptura=Calendario sin Hora
+
+
+
+
+ValorMaximo=Asigna(Temp.Num,SQL(<T>SELECT ISNULL(DiasDepuracion,1)*-1 FROM POSCfg WHERE Empresa = :tEmpresa<T>,Empresa))<BR>Asigna(Info.Fecha, FechaFormatoServidor(Hoy))<BR>Asigna(Info.Fecha,SQL(<T>SELECT DATEADD (day,:nDias,:fFecha )<T>,Info.Fecha,Temp.Num))<BR>Info.Fecha
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Fecha
+Fecha=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=Fecha
+Fecha=FROM POSDepurarTablasTemp
+FROM POSDepurarTablasTemp=(Fin)

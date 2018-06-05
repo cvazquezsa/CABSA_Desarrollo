@@ -1,0 +1,95 @@
+[Dialogo]
+Clave=MenuRepAgent
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=371
+PosicionInicialArriba=274
+PosicionInicialAltura=220
+PosicionInicialAncho=282
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Acumulados]
+Nombre=Acumulados
+Boton=0
+NombreDesplegar=&Acumulados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepAgentAcum
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Agent/Acumulados<T>)
+[Acciones.Aux]
+Nombre=Aux
+Boton=0
+NombreDesplegar=Au&xiliares
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepAgentAux
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Agent/Aux<T>)
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=&General de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+TipoAccion=Formas
+ClaveAccion=mis_RepAgentAnalisisMov
+EspacioPrevio=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Agent/General<T>)
+[Acciones.Diario]
+Nombre=Diario
+Boton=0
+NombreDesplegar=&Diario de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepAgentAnalisisMovDiario
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Agent/Diario<T>)
+[Acciones.Comisiones]
+Nombre=Comisiones
+Boton=0
+NombreDesplegar=C&omisiones Agentes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepComisionesAgenteVenta
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Agent/Comisiones<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Acumulados
+Acumulados=Aux
+Aux=General
+General=Diario
+Diario=Comisiones
+Comisiones=(Fin)

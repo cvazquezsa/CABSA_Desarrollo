@@ -1,0 +1,59 @@
+[Dialogo]
+Clave=MenuCfgModuloCentral
+Nombre=Configuración - Modulo Central
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=841
+PosicionInicialArriba=513
+
+[Acciones.Mayor]
+Nombre=Mayor
+Boton=0
+NombreDesplegar=&Cuentas de Mayor
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mcMayor
+Activo=S
+Visible=S
+
+[Acciones.Modulos]
+Nombre=Modulos
+Boton=0
+NombreDesplegar=&Módulos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mcModulo
+Activo=S
+Visible=S
+
+[Acciones.Carga]
+Nombre=Carga
+Boton=0
+NombreDesplegar=Carga en &Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mcCarga
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Mayor
+Mayor=Modulos
+Modulos=Carga
+Carga=(Fin)

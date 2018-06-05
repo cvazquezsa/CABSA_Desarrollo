@@ -1,0 +1,34 @@
+[Tabla]
+Icono=0
+Clave=ActividadEconomicaCNBV
+Archivo=ActividadEconomicaCNBV
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Actividad Economica
+Singular=Actividad Economica
+LlavePrimaria=ActividadEconomicaCNBV
+SQL=SELECT<BR>  ActividadEconomicaCNBV,<BR>  Nombre<BR><BR>FROM<BR>  ActividadEconomicaCNBV
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[ActividadEconomicaCNBV]
+Clave=ActividadEconomicaCNBV
+Nombre=Actividad Económica
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+
+[Tabla.ListaCampos]
+(Inicio)=ActividadEconomicaCNBV
+ActividadEconomicaCNBV=Nombre
+Nombre=(Fin)

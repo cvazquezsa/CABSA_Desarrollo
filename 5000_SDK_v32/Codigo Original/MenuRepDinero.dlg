@@ -1,0 +1,172 @@
+[Dialogo]
+Clave=MenuRepDinero
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=244
+PosicionInicialAncho=291
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=559
+PosicionInicialArriba=227
+
+PosicionInicialAlturaCliente=234
+[Acciones.Acum]
+Nombre=Acum
+Boton=0
+NombreDesplegar=&Acumulados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepDineroAcum
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/Acum<T>)
+[Acciones.Conciliar]
+Nombre=Conciliar
+Boton=0
+NombreDesplegar=Movimientos por &Conciliar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepCtaDineroConciliar
+Activo=S
+Antes=S
+
+AntesExpresiones=Asigna(Info.Rama, <T>DIN<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/Conciliar<T>)
+[Acciones.Mov]
+Nombre=Mov
+Boton=0
+NombreDesplegar=&Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepDineroMov
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/Mov<T>)
+[Acciones.Aux]
+Nombre=Aux
+Boton=0
+NombreDesplegar=Au&xiliares
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepDineroAux
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/Aux<T>)
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=&General de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=mis_RepDineroAnalisisMov
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/General<T>)
+[Acciones.Diario]
+Nombre=Diario
+Boton=0
+NombreDesplegar=&Diario de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepDineroAnalisisMovDiario
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Dinero/Diario<T>)
+
+
+
+
+
+[Acciones.InformeCorteCaja]
+Nombre=InformeCorteCaja
+Boton=0
+NombreDesplegar=Corte de Caja
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=InformeCorteCaja
+Activo=S
+
+
+
+
+
+
+
+
+
+
+[Acciones.FlujoEfectivo]
+Nombre=FlujoEfectivo
+Boton=0
+NombreDesplegar=Flujo de Efectivo (Reporting Services)
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  Browser(General.RSReportASPX + <T>%2fFlujoEfectivo&rs:Command=Render<T>)<BR>Fin
+VisibleCondicion=SQL(<T>SELECT ISNULL(RS,0) FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa)=Verdadero
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Conciliar
+Conciliar=Acum
+Acum=Aux
+Aux=Mov
+Mov=General
+General=Diario
+Diario=InformeCorteCaja
+InformeCorteCaja=FlujoEfectivo
+FlujoEfectivo=(Fin)

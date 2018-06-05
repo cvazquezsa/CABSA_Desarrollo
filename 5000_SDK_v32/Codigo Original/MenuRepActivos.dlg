@@ -1,0 +1,31 @@
+[Dialogo]
+Clave=MenuRepActivos
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=622
+PosicionInicialArriba=391
+PosicionInicialAltura=117
+PosicionInicialAncho=246
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+
+ListaAcciones=ComprasAF
+[Acciones.ComprasAF]
+Nombre=ComprasAF
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+NombreDesplegar=Adquisiciones Activos Fijos
+TipoAccion=Formas
+ClaveAccion=RepMovActivosFijos
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>ActivoFijo/ComprasAF<T>)

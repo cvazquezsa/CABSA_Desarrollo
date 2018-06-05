@@ -1,0 +1,47 @@
+[Vista]
+Icono=0
+Clave=EventoTipo
+Nombre=Tipos Eventos
+Modulos=(Todos)
+Singular=Tipo Evento
+ListaTablas=EventoTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=EventoTipo
+UsarJOIN=S
+SQL=SELECT<BR>  EventoTipo.Tipo,<BR>  EventoTipo.Icono,<BR>  EventoTipo.Orden<BR><BR>FROM<BR>  EventoTipo
+
+[EventoTipo.Tipo]
+Clave=EventoTipo.Tipo
+LigaTabla=EventoTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo
+
+[EventoTipo.Icono]
+Clave=EventoTipo.Icono
+LigaTabla=EventoTipo
+LigaCampo=Icono
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Icono
+
+[EventoTipo.Orden]
+Clave=EventoTipo.Orden
+LigaTabla=EventoTipo
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[Vista.ListaCampos]
+(Inicio)=EventoTipo.Tipo
+EventoTipo.Tipo=EventoTipo.Icono
+EventoTipo.Icono=EventoTipo.Orden
+EventoTipo.Orden=(Fin)

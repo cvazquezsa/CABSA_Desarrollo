@@ -1,0 +1,185 @@
+[Tabla]
+Icono=0
+Clave=PersonalProp
+Archivo=PersonalProp
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Propiedades
+Singular=Propiedad
+LlavePrimaria=Propiedad
+SQL=SELECT<BR>  Propiedad,<BR>  Orden,<BR>  Categoria,<BR>  NivelEmpresa,<BR>  NivelSucursal,<BR>  NivelCategoria,<BR>  NivelPuesto,<BR>  NivelPersonal,<BR>  porOmision,<BR>  Mascara,<BR>  LongitudMaxima,<BR>  TipoDatos,<BR>  Nombre,<BR>  Descripcion<BR><BR>FROM<BR>  PersonalProp
+
+[Orden]
+Clave=Orden
+Nombre=O&rden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Categoria]
+Clave=Categoria
+Nombre=Ca&tegoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalPropCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NivelEmpresa]
+Clave=NivelEmpresa
+Nombre=Nivel &Empresa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[NivelCategoria]
+Clave=NivelCategoria
+Nombre=Nivel &Categoría
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[NivelPersonal]
+Clave=NivelPersonal
+Nombre=Nivel &Persona
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[Propiedad]
+Clave=Propiedad
+Nombre=Clave
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=Nombre
+
+[porOmision]
+Clave=porOmision
+Nombre=Valor por omisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[NivelSucursal]
+Clave=NivelSucursal
+Nombre=Nivel &Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[NivelPuesto]
+Clave=NivelPuesto
+Nombre=Nivel P&uesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[Mascara]
+Clave=Mascara
+Nombre=Máscara
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[LongitudMaxima]
+Clave=LongitudMaxima
+Nombre=Longitud Máxima
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=50
+ValorMinimo=1
+ValorMaximo=50
+
+[TipoDatos]
+Clave=TipoDatos
+Nombre=Tipo Datos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Texto<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=Propiedad
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+[Tabla.ListaCampos]
+(Inicio)=Propiedad
+Propiedad=Orden
+Orden=Categoria
+Categoria=NivelEmpresa
+NivelEmpresa=NivelSucursal
+NivelSucursal=NivelPuesto
+NivelPuesto=NivelCategoria
+NivelCategoria=NivelPersonal
+NivelPersonal=porOmision
+porOmision=Mascara
+Mascara=LongitudMaxima
+LongitudMaxima=TipoDatos
+TipoDatos=Nombre
+Nombre=Descripcion
+Descripcion=(Fin)
+
+[TipoDatos.ListaOpciones]
+(Inicio)=Texto
+Texto=Numerico
+Numerico=(Fin)

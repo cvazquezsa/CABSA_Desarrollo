@@ -1,0 +1,62 @@
+[Dialogo]
+Clave=GenerarGastoBase
+Nombre=Info.TituloDialogo
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=819
+PosicionInicialArriba=513
+PosicionInicialAltura=165
+PosicionInicialAncho=281
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=138
+VentanaEstadoInicial=Normal
+
+[Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Cantidad &Pendiente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>PENDIENTE<T>)
+
+[Acciones.Reservado]
+Nombre=Reservado
+Boton=0
+NombreDesplegar=Cantidad &Reservada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>RESERVADO<T>)
+
+[Acciones.Disponible]
+Nombre=Disponible
+Boton=0
+NombreDesplegar=Cantidad &Disponible
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Base, <T>DISPONIBLE<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pendiente
+Pendiente=Reservado
+Reservado=Disponible
+Disponible=(Fin)

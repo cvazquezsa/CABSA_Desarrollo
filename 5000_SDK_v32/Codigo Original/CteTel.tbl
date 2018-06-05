@@ -1,0 +1,108 @@
+[Tabla]
+Icono=0
+Clave=CteTel
+Archivo=CteTel
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Teléfonos del Cliente
+Singular=Teléfono
+LlavePrimaria=Cliente<BR>Telefono
+SQL=SELECT<BR>  Cliente,<BR>  Telefono,<BR>  Tipo,<BR>  Extencion,<BR>  Lada,<BR>  PedirTono,<BR>  DePreferencia<BR><BR>FROM<BR>  CteTel
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+TipoDatos=Texto
+
+[Telefono]
+Clave=Telefono
+Nombre=Teléfono
+Visible=S
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Extencion]
+Clave=Extencion
+Nombre=Extención
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Lada]
+Clave=Lada
+Nombre=Lada
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[PedirTono]
+Clave=PedirTono
+Nombre=Pedir Tono
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DePreferencia]
+Clave=DePreferencia
+Nombre=de Preferencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=Telefono
+Telefono=Tipo
+Tipo=Extencion
+Extencion=Lada
+Lada=PedirTono
+PedirTono=DePreferencia
+DePreferencia=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Trabajo 
+Trabajo =Trabajo 2
+Trabajo 2=Fax Trabajo
+Fax Trabajo=Asistente 
+Asistente =Organizacion
+Organizacion=Movil
+Movil=Particular
+Particular=Particular 2
+Particular 2=Fax Particular
+Fax Particular=Radio
+Radio=Otro 
+Otro =Otro Fax
+Otro Fax=Localizador
+Localizador=Automovil
+Automovil=Telex
+Telex=Teletipo
+Teletipo=(Fin)

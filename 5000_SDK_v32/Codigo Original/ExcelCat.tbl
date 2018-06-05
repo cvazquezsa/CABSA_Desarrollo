@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=ExcelCat
+Archivo=ExcelCat
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Categorías
+Singular=Categoría
+LlavePrimaria=Categoria
+SQL=SELECT<BR>  Categoria,<BR>  Posicion<BR><BR>FROM<BR>  ExcelCat
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoria
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Posicion]
+Clave=Posicion
+Nombre=Posición Inicial
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Categoria
+Categoria=Posicion
+Posicion=(Fin)

@@ -1,0 +1,82 @@
+[Dialogo]
+Clave=MenuExpCont
+Nombre=Contabilidad
+Icono=18
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=593
+PosicionInicialArriba=390
+PosicionInicialAltura=165
+PosicionInicialAncho=253
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=90
+VentanaEstadoInicial=Normal
+
+[Acciones.Explorar]
+Nombre=Explorar
+Boton=0
+NombreDesplegar=&Contabilidad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarCont
+Activo=S
+Visible=S
+
+[Acciones.ExplorarCentroCostos]
+Nombre=ExplorarCentroCostos
+Boton=0
+NombreDesplegar=Centros de C&ostos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Si(Config.CentroCostosRamas, Forma(<T>ExplorarCentroCostosRama<T>), Forma(<T>ExplorarCentroCostos<T>))
+VisibleCondicion=Config.ContCentrosCostos
+
+[Acciones.DWH]
+Nombre=DWH
+Boton=0
+NombreDesplegar=&Integración Contable
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DWHExplorar
+
+[Acciones.ExplorarCentroCostos2]
+Nombre=ExplorarCentroCostos2
+Boton=0
+NombreDesplegar=Centros de Costos &2
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Si(Config.CentroCostosRamas, Forma(<T>ExplorarCentroCostos2Rama<T>), Forma(<T>ExplorarCentroCostos2<T>))
+VisibleCondicion=Config.ContCentrosCostos y (Config.CentroCostos2Venta o Config.CentroCostos2Gasto o Config.CentroCostos2Compra)
+
+[Acciones.ExplorarCentroCostos3]
+Nombre=ExplorarCentroCostos3
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+NombreDesplegar=Centros de Costos &3
+TipoAccion=Expresion
+Expresion=Si(Config.CentroCostosRamas, Forma(<T>ExplorarCentroCostos3Rama<T>), Forma(<T>ExplorarCentroCostos3<T>))
+VisibleCondicion=Config.ContCentrosCostos y (Config.CentroCostos3Venta o Config.CentroCostos3Gasto o Config.CentroCostos3Compra)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Explorar
+Explorar=ExplorarCentroCostos
+ExplorarCentroCostos=DWH
+DWH=ExplorarCentroCostos2
+ExplorarCentroCostos2=ExplorarCentroCostos3
+ExplorarCentroCostos3=(Fin)

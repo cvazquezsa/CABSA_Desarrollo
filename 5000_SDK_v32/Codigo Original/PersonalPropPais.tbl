@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=PersonalPropPais
+Archivo=PersonalPropPais
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Paises
+Singular=País
+LlavePrimaria=Propiedad<BR>Pais
+SQL=SELECT<BR>  Propiedad,<BR>  Pais<BR><BR>FROM<BR>  PersonalPropPais
+
+[Propiedad]
+Clave=Propiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Propiedad
+
+[Pais]
+Clave=Pais
+Nombre=Pais
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Paises
+
+[Tabla.ListaCampos]
+(Inicio)=Propiedad
+Propiedad=Pais
+Pais=(Fin)

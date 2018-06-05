@@ -1,0 +1,249 @@
+[Dialogo]
+Clave=MenuRepFiscal
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=354
+PosicionInicialAncho=324
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=521
+PosicionInicialArriba=168
+
+[Acciones.RepContReexAF]
+Nombre=RepContReexAF
+Boton=0
+NombreDesplegar=Actualización de Activo Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexAF
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexAF<T>)
+[Acciones.RepContReexAFDepreciacion]
+Nombre=RepContReexAFDepreciacion
+Boton=0
+NombreDesplegar=Actualización de la Depreciación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexAFDepreciacion
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexAFDepreciacion<T>)
+[Acciones.RepContReexCapital]
+Nombre=RepContReexCapital
+Boton=0
+NombreDesplegar=Actualización del Capital Social
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexCapital
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexCapital<T>)
+[Acciones.RepContReexMonetarios]
+Nombre=RepContReexMonetarios
+Boton=0
+NombreDesplegar=Actualización de Activos Monetarios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexMonetarios
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexMonetarios<T>)
+[Acciones.RepContReexResultados]
+Nombre=RepContReexResultados
+Boton=0
+NombreDesplegar=Actualización de Resultado del Ejercicio
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexResultados
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexResultados<T>)
+[Acciones.RepContReexVentaAF]
+Nombre=RepContReexVentaAF
+Boton=0
+NombreDesplegar=Actualización de Venta del Activo Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContReexVentaAF
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepContReexVentaAF<T>)
+[Acciones.RepFiscalVentaTasa]
+Nombre=RepFiscalVentaTasa
+Boton=0
+NombreDesplegar=Ventas por Tasa
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepFiscalVentaTasa
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepFiscalVentaTasa<T>)
+[Acciones.RepFiscalVentaCte]
+Nombre=RepFiscalVentaCte
+Boton=0
+NombreDesplegar=Principales Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepFiscalVentaCte
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepFiscalVentaCte<T>)
+[Acciones.RepFiscalCompraProv]
+Nombre=RepFiscalCompraProv
+Boton=0
+NombreDesplegar=Principales Proveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepFiscalCompraProv
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepFiscalCompraProv<T>)
+[Acciones.RepFiscalIVAAcreditable]
+Nombre=RepFiscalIVAAcreditable
+Boton=0
+NombreDesplegar=&IVA Acreditable
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=IvaDeclarado
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/RepFiscalIVAAcreditable<T>)
+[Acciones.FiscalIncentivoInv2007]
+Nombre=FiscalIncentivoInv2007
+Boton=0
+NombreDesplegar=Incentivo Fiscal - Inventario 200&7
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=FiscalIncentivoInv2007
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Fiscales/FiscalIncentivoInv2007<T>)
+
+
+
+
+
+[Acciones.MenuRepGuatemala]
+Nombre=MenuRepGuatemala
+Boton=0
+NombreDesplegar=&Guatemala
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepGuatemala
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=Empresa.EsGuatemala
+
+
+
+
+
+
+
+[Acciones.MenuRepFiscalEcuador]
+Nombre=MenuRepFiscalEcuador
+Boton=0
+NombreDesplegar=&Ecuador
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=dialogos
+ClaveAccion=MenuRepFiscalEcuador
+Activo=S
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=Empresa.EsEcuador
+
+
+[Acciones.MenuRepFiscalObligacion]
+Nombre=MenuRepFiscalObligacion
+Boton=0
+NombreDesplegar=Obligaciones Fiscales
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepFiscalObligacion
+Activo=S
+Visible=S
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=RepContReexAF
+RepContReexAF=RepContReexAFDepreciacion
+RepContReexAFDepreciacion=RepContReexCapital
+RepContReexCapital=RepContReexMonetarios
+RepContReexMonetarios=RepContReexResultados
+RepContReexResultados=RepContReexVentaAF
+RepContReexVentaAF=RepFiscalVentaTasa
+RepFiscalVentaTasa=RepFiscalVentaCte
+RepFiscalVentaCte=RepFiscalCompraProv
+RepFiscalCompraProv=RepFiscalIVAAcreditable
+RepFiscalIVAAcreditable=FiscalIncentivoInv2007
+FiscalIncentivoInv2007=MenuRepGuatemala
+MenuRepGuatemala=MenuRepFiscalEcuador
+MenuRepFiscalEcuador=MenuRepFiscalObligacion
+MenuRepFiscalObligacion=(Fin)

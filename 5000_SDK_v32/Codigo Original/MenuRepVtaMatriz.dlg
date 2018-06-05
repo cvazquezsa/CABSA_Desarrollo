@@ -1,0 +1,82 @@
+[Dialogo]
+Clave=MenuRepVtaMatriz
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=404
+PosicionInicialArriba=238
+PosicionInicialAltura=292
+PosicionInicialAncho=216
+ListaAcciones=(Lista)
+
+[Acciones.MatrizVenta]
+Nombre=MatrizVenta
+Boton=0
+NombreDesplegar=&Unidades Cliente - Artículo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepMatrizVenta
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Matriz/MatrizVenta<T>)
+[Acciones.MatrizVentaArticulo]
+Nombre=MatrizVentaArticulo
+Boton=0
+NombreDesplegar=U&nidades Artículo - Cliente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepMatrizVentaArticulo
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Matriz/MatrizVentaArticulo<T>)
+[Acciones.MatrizVentaImp]
+Nombre=MatrizVentaImp
+Boton=0
+NombreDesplegar=&Importes Cliente - Artículo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepMatrizVentaImp
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Matriz/MatrizVentaImp<T>)
+[Acciones.MatrizVentaImpArticulo]
+Nombre=MatrizVentaImpArticulo
+Boton=0
+NombreDesplegar=I&mportes Artículo - Cliente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepMatrizVentaImpArticulo
+Activo=S
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Matriz/MatrizVentaImpArticulo<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=MatrizVenta
+MatrizVenta=MatrizVentaArticulo
+MatrizVentaArticulo=MatrizVentaImp
+MatrizVentaImp=MatrizVentaImpArticulo
+MatrizVentaImpArticulo=(Fin)

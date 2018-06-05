@@ -1,0 +1,196 @@
+[Dialogo]
+Clave=MenuHerramientasVenta
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=165
+PosicionInicialAncho=328
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=796
+PosicionInicialArriba=477
+VentanaConIcono=S
+PosicionInicialAlturaCliente=210
+
+[Acciones.ProcesarVenta]
+Nombre=ProcesarVenta
+Boton=0
+NombreDesplegar=Procesar en &Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVenta
+Activo=S
+Visible=S
+
+[Acciones.ProcesarVentaD]
+Nombre=ProcesarVentaD
+Boton=0
+NombreDesplegar=Procesar en Lote (a Nivel &Detalle)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaD
+Activo=S
+Visible=S
+
+[Acciones.ISAN]
+Nombre=ISAN
+Boton=0
+NombreDesplegar=Recalcular Precios e &ISAN
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+EspacioPrevio=S
+ClaveAccion=CalcularISAN
+VisibleCondicion=Config.VIN
+
+[Acciones.ProcesarVentaEspacios]
+Nombre=ProcesarVentaEspacios
+Boton=0
+NombreDesplegar=Procesar &Espacios (en Lote)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaEspacios
+Activo=S
+VisibleCondicion=General.Espacios
+
+[Acciones.ImportarVentas]
+Nombre=ImportarVentas
+Boton=0
+NombreDesplegar=&Importar Ventas...
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Importar - Ventas<T><BR><T>ImportarAutoVenta<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>xpImportarAutoVenta<T><BR>EstacionTrabajo & <T>, <T> & Comillas(Empresa) & <T>, <T> & Comillas(Usuario) &  <T>, <T> & Sucursal
+ListaParametros=S
+ActivoCondicion=General.Autotransportes
+VisibleCondicion=General.Autotransportes
+
+[Acciones.VentaDesreservarOrdenes]
+Nombre=VentaDesreservarOrdenes
+Boton=0
+NombreDesplegar=&Desreservar Ordenes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(Forma(<T>EspecificarAlmacen<T>), Dialogo(<T>VentaDesreservarOrdenes<T>))
+Antes=S
+AntesExpresiones=Asigna(Info.Almacen, <T>(TODOS)<T>)
+
+[Acciones.PedidoAuto]
+Nombre=PedidoAuto
+Boton=0
+NombreDesplegar=Pedidos &Automáticos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=PedidoAuto
+Activo=S
+Visible=S
+
+[Acciones.ReasignarAgente]
+Nombre=ReasignarAgente
+Boton=0
+NombreDesplegar=&Reasignar Agente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ReasignarAgente
+Activo=S
+Visible=S
+
+[Acciones.RecostearMovimientos]
+Nombre=RecostearMovimientos
+Boton=0
+NombreDesplegar=Recostear Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RecostearMovimientosVenta
+
+[Acciones.ArtFamQuiebre]
+Nombre=ArtFamQuiebre
+Boton=0
+NombreDesplegar=Generar &Presupuesto de Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ArtFamQuiebre
+
+[Acciones.FEAReporteMensual]
+Nombre=FEAReporteMensual
+Boton=0
+NombreDesplegar=Reporte Mensual (FEA)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Asigna(Info.Ejercicio, Año(Hoy))<BR>Asigna(Info.Periodo, Mes(Hoy))<BR>Si<BR>  Forma(<T>EspecificarEjercicioPeriodo<T>)<BR>Entonces<BR>  GuardarLista(FEA.ReporteMensual(General.FEAWebService, General.FEACertificado, Usuario.FEACertificado, Usuario.FEALlave, Empresa.RFC, Info.Periodo, Info.Ejercicio), <T><T>, <T>FEA_<T>+Info.Ejercicio+<T>_<T>+Info.Periodo)<BR>Fin
+
+[Acciones.FEAGenerar]
+Nombre=FEAGenerar
+Boton=0
+NombreDesplegar=Generar Facturas Electrónicas (FEA) Pendientes
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Activo=S
+Expresion=FEA.Generar(General.FEAWebService, General.FEACertificado, Usuario.FEACertificado, Usuario.FEALlave)
+
+[Acciones.PresupuestoAuto]
+Nombre=PresupuestoAuto
+Boton=0
+NombreDesplegar=Generar &Presupuesto del Periodo
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=VentaPresupuestoAuto
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.VentaLote]
+Nombre=VentaLote
+Boton=0
+NombreDesplegar=Generar &Ventas en Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VentaLotes
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ProcesarVenta
+ProcesarVenta=ProcesarVentaD
+ProcesarVentaD=ProcesarVentaEspacios
+ProcesarVentaEspacios=VentaDesreservarOrdenes
+VentaDesreservarOrdenes=PedidoAuto
+PedidoAuto=ReasignarAgente
+ReasignarAgente=ISAN
+ISAN=ImportarVentas
+ImportarVentas=RecostearMovimientos
+RecostearMovimientos=ArtFamQuiebre
+ArtFamQuiebre=FEAGenerar
+FEAGenerar=FEAReporteMensual
+FEAReporteMensual=PresupuestoAuto
+PresupuestoAuto=VentaLote
+VentaLote=(Fin)

@@ -1,0 +1,28 @@
+
+[Tabla]
+Icono=0
+Clave=POSAccion
+Nombre=POSAccion
+Archivo=POSAccion
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=Accion
+
+SQL=(Lista)
+LlavePrimaria=Accion
+[Accion]
+Clave=Accion
+Nombre=Accion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Accion
+Accion=FROM POSAccion
+FROM POSAccion=(Fin)

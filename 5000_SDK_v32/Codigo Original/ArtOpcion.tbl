@@ -1,0 +1,160 @@
+[Tabla]
+Icono=0
+Clave=ArtOpcion
+Archivo=ArtOpcion
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Opciones
+Singular=Opción
+ListaRelaciones=Opcion
+LlavePrimaria=Articulo<BR>Opcion
+SQL=SELECT<BR>  Articulo,<BR>  Opcion,<BR>  Orden,<BR>  ListaEspecifica,<BR>  Requerido,<BR>  ValorOmision,<BR>  Asistente,<BR>  TieneMovimientos<BR><BR>FROM<BR>  ArtOpcion
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Articulo
+TipoDatos=Texto
+
+[Opcion]
+Clave=Opcion
+Nombre=Opción
+Visible=S
+TamanoValidacion=1
+Tamano=1
+Mayusculas=S
+MascaraEdicion=L
+ValidacionUsaTabla=S
+ValidacionTablas=Opcion
+ConRefrescar=S
+ListaRefrescar=(Lista)
+Requerido=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Opcion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionEdicion=(no Info.TieneMovimientos o (no Config.BloquearOpcionesArtConMovs))
+TipoDatos=Texto
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[ListaEspecifica]
+Clave=ListaEspecifica
+Nombre=Lista Opciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+RefrescarTodo=S
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=ArtOpcion:Opcion.TieneDetalle
+Formula=<T>(Todas)<T>+NuevaLinea+<T>(Especial)<T>+NuevaLinea+<BR>SQLEnLista(<T>SELECT Lista FROM OpcionLista WHERE Opcion=:tOpc<T>, ArtOpcion:ArtOpcion.Opcion)
+TipoDatos=Texto
+
+[Requerido]
+Clave=Requerido
+Nombre=Requerido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ValorRefrescar=ArtOpcion:Opcion.TieneDetalle
+CondicionEdicion=ArtOpcion:Opcion.TieneDetalle
+Requerido=S
+
+[ValorOmision]
+Clave=ValorOmision
+Nombre=por Omisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Expresion
+AyudaForma=OpcionDLista
+AyudaVista=OpcionD
+AyudaCampo=OpcionD.Numero
+AyudaBusquedaRapida=Asigna(Info.Opcion, Opcion)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=Si<BR>  ArtOpcion:Opcion.TieneDetalle<BR>Entonces<BR>  Si <BR>    ConDatos(ArtOpcion:ArtOpcion.ListaEspecifica)<BR>  Entonces<BR>    SQLEnLista(<T>SELECT Numero FROM OpcionListaD WHERE Opcion=:tOpc AND Lista=:tLista<T>, ArtOpcion:ArtOpcion.Opcion, ArtOpcion:ArtOpcion.ListaEspecifica)<BR>  Sino<BR>    SQLEnLista(<T>SELECT Numero FROM OpcionD WHERE Opcion=:tOpc<T>, ArtOpcion:ArtOpcion.Opcion)<BR>  Fin<BR>Sino<BR>  Lista(0,1)<BR>Fin
+
+[Relaciones.Opcion]
+TipoRelacion=Forzosa
+LlaveLocal=Opcion
+Clave=Opcion
+TablaRemota=Opcion
+LlaveRemota=Opcion
+
+[Asistente]
+Clave=Asistente
+Nombre=Asistente Captura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Lista<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorRefrescar=Si(ArtOpcion:Opcion.TieneDetalle, Asistente, <T>Lista<T>)
+CondicionEdicion=ArtOpcion:Opcion.TieneDetalle
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=Opcion
+Opcion=Orden
+Orden=ListaEspecifica
+ListaEspecifica=Requerido
+Requerido=ValorOmision
+ValorOmision=Asistente
+Asistente=TieneMovimientos
+TieneMovimientos=(Fin)
+
+[Opcion.ListaRefrescar]
+(Inicio)=Requerido
+Requerido=Asistente
+Asistente=(Fin)
+
+[Opcion.ListaRefrescarCondiciones]
+(Inicio)=ListaEspecifica
+ListaEspecifica=Requerido
+Requerido=Asistente
+Asistente=(Fin)
+
+[Asistente.ListaOpciones]
+(Inicio)=Lista
+Lista=Renglon
+Renglon=Columna
+Columna=(Fin)

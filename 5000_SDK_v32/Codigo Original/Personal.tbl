@@ -1,0 +1,2911 @@
+[Tabla]
+Icono=0
+Clave=Personal
+Archivo=Personal
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Personal
+Singular=Personal
+LlavePrimaria=Personal
+ControlEstatus=S
+ControlCambios=S
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+CampoGrupo=Grupo
+EstatusDefault=ASPIRANTE
+ListaRelaciones=(Lista)
+CampoSugerido=Personal
+ControlSituacion=S
+CampoSituacion=Situacion
+ControlSituacionFecha=S
+CampoSituacionFecha=SituacionFecha
+ControlSucursal=S
+CampoSucursal=SucursalTrabajo
+ControlNivelAcceso=S
+CampoNivelAcceso=NivelAcceso
+ControlSugerido=S
+ControlAccesoEspecifico=S
+TablaAccesoEspecifico=PersonalAcceso
+CampoSituacionUsuario=SituacionUsuario
+ControlSituacionUsuario=S
+CampoSituacionNota=SituacionNota
+ControlSituacionNota=S
+ControlEmpresas=S
+CampoEmpresa=Empresa
+
+SQL=(Lista)
+[Personal]
+Clave=Personal
+Nombre=Clave
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionEdicion=no TieneMovimientos
+MascaraEdicion=Config.PersonalFormato
+TipoDatos=Texto
+
+[ApellidoPaterno]
+Clave=ApellidoPaterno
+Nombre=Apellido Paterno
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[ApellidoMaterno]
+Clave=ApellidoMaterno
+Nombre=Apellido Materno
+Visible=S
+TamanoValidacion=30
+Tamano=30
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre(s)
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=20
+Tamano=50
+AyudaMemTabla=PersonalCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+ValidacionUsaTabla=S
+ValidacionTablas=PersonalCat
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaForma=PersonalCatLista
+AyudaVista=PersonalCat
+AyudaCampo=PersonalCat.Categoria
+AyudaMemAvanzada=S
+TipoDatos=Texto
+
+[Departamento]
+Clave=Departamento
+Nombre=Departamento
+Visible=S
+TamanoValidacion=30
+Tamano=50
+AyudaMemTabla=Departamento
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+ValidacionUsaTabla=S
+ValidacionTablas=Departamento
+ListaRefrescar=ZonaEconomica
+AlCambiar=Asigna(Temp.Num, SQL(<T>SELECT Sucursal FROM Departamento WHERE Departamento=:tDepto<T>, Personal:Personal.Departamento))<BR>Si<BR>  ConDatos(Temp.Num)<BR>Entonces<BR>  Asigna(Personal:Personal.SucursalTrabajo, Temp.Num)<BR>  Asigna(Personal:Personal.ZonaEconomica, SQL(<T>SELECT ZonaEconomica FROM Sucursal WHERE Sucursal=:nSuc<T>, Temp.Num))<BR>Fin
+AyudaForma=DepartamentoLista
+AyudaVista=Departamento
+AyudaCampo=Departamento.Departamento
+AyudaMemAvanzada=S
+TipoDatos=Texto
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=PersonalGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Validaciones Memoria
+ValidacionUsaTabla=S
+ValidacionTablas=PersonalGrupo
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+AyudaForma=PersonalGrupoLista
+AyudaVista=PersonalGrupo
+AyudaCampo=PersonalGrupo.Grupo
+AyudaMemAvanzada=S
+TipoDatos=Texto
+
+[TipoContrato]
+Clave=TipoContrato
+Nombre=Tipo Contrato
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=NominaContratoTipo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+AyudaEnCaptura=Validaciones Memoria
+TipoDatos=Texto
+
+[Puesto]
+Clave=Puesto
+Nombre=Puesto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=Puesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+ValidacionUsaTabla=S
+ValidacionTablas=Puesto
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaForma=PuestoLista
+AyudaVista=Puesto
+AyudaCampo=Puesto.Puesto
+AyudaMemAvanzada=S
+TipoDatos=Texto
+
+[PeriodoTipo]
+Clave=PeriodoTipo
+Nombre=Tipo Periodo
+Visible=S
+TamanoValidacion=10
+Tamano=20
+AyudaMemTabla=PeriodoTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+TipoDatos=Texto
+
+[Jornada]
+Clave=Jornada
+Nombre=Jornada
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaMemTabla=Jornada
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+TipoDatos=Texto
+
+[Direccion]
+Clave=Direccion
+Nombre=Dirección
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Colonia]
+Clave=Colonia
+Nombre=Colonia
+Visible=S
+TamanoValidacion=30
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Colonia, Colonia)
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATColonia.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+TipoDatos=Texto
+
+AyudaEnCaptura=Vista
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATColonia WHERE Descripcion=:tDesc<T>, Colonia) > 0, 1=1)
+[Poblacion]
+Clave=Poblacion
+Nombre=Población
+Visible=S
+TamanoValidacion=30
+Tamano=100
+TipoDatos=Texto
+ValorRefrescar=Si(Info.Copiar,  Asigna(Info.Copiar, Falso) Info.Localidad, Poblacion)
+AyudaEnCaptura=Vista
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATLocalidad.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+
+
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATLocalidad WHERE Descripcion=:tDesc<T>, Poblacion) > 0, 1=1)
+[Estado]
+Clave=Estado
+Nombre=Estado
+Tamano=30
+TamanoValidacion=30
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.Descripcion
+AyudaBusquedaRapida=Asigna(Info.Pais, SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion =:tPais<T>, Pais))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+TipoDatos=Texto
+ValidacionCondicion=Si(SQL(<T>SELECT 1 FROM SATEstado e JOIN SATPais p ON e.ClavePais = p.ClavePais WHERE p.Descripcion = :tPais<T>, Pais) = 1, SQL(<T>SELECT 1 FROM SATEstado WHERE Descripcion=:tDesc<T>, Estado) > 0, 1=1)
+AyudaRefrescar=S
+
+[Pais]
+Clave=Pais
+Nombre=País
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Pais, Pais)
+TipoDatos=Texto
+
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATPais WHERE Descripcion=:tDesc<T>, Pais) > 0
+Formula=SQLEnLista(<T>SELECT Descripcion FROM SATPais ORDER BY Descripcion<T>)
+[CodigoPostal]
+Clave=CodigoPostal
+Nombre=Código Postal
+Visible=S
+TamanoValidacion=15
+Tamano=15
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.CodigoPostal, CodigoPostal)
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATCatCP.ClaveCP
+AyudaBusquedaRapida=Asigna(Info.CodigoPostal, Nulo)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+TipoDatos=Texto
+
+AyudaEnCaptura=Vista
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATCatCP WHERE ClaveCP=:tCodigoPostal<T>, CodigoPostal) > 0, 1=1)
+[Telefono]
+Clave=Telefono
+Nombre=Teléfono
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[FechaNacimiento]
+Clave=FechaNacimiento
+Nombre=Fecha Nacimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+[Nacionalidad]
+Clave=Nacionalidad
+Nombre=Nacionalidad
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Nacionalidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[Sexo]
+Clave=Sexo
+Nombre=Sexo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=8
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+ConRefrescar=S
+ListaRefrescar=Registro
+
+[EstadoCivil]
+Clave=EstadoCivil
+Nombre=Estado Civil
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Si(Personal:Personal.Sexo=<T>Femenino<T>, Lista(<T>Soltera<T>, <T>Casada<T>, <T>Divorciada<T>, <T>Viuda<T>, <T>Union Libre<T>),  Lista(<T>Soltero<T>, <T>Casado<T>, <T>Divorciado<T>, <T>Viudo<T>, <T>Union Libre<T>))
+TipoDatos=Texto
+
+[Beneficiario]
+Clave=Beneficiario
+Nombre=Beneficiario
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco]
+Clave=Parentesco
+Nombre=Parentesco
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CtaDinero]
+Clave=CtaDinero
+Nombre=Cuenta Pago
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDineroDestino
+Mayusculas=S
+TipoDatos=Texto
+
+[PersonalCuenta]
+Clave=PersonalCuenta
+Nombre=Cuenta Personal
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=Ultimo Cambio
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dddddd (hh:nn am/pm)
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+
+[eMail]
+Clave=eMail
+Nombre=Correo electrónico
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[TipoSueldo]
+Clave=TipoSueldo
+Nombre=Tipo Sueldo
+Visible=S
+TamanoValidacion=20
+Tamano=10
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=SDI
+ValorPorOmision=<T>Fijo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FechaAlta]
+Clave=FechaAlta
+Nombre=Fecha Alta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[FechaBaja]
+Clave=FechaBaja
+Nombre=Fecha Baja
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[UltimaModificacion]
+Clave=UltimaModificacion
+Nombre=Ultima Modificación
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Validaciones Memoria
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+TipoDatos=Texto
+
+[Relaciones.Jornada]
+TipoRelacion=Opcional
+LlaveLocal=Jornada
+Clave=Jornada
+TablaRemota=Jornada
+LlaveRemota=Jornada
+
+[Relaciones.PeriodoTipo]
+TipoRelacion=Opcional
+LlaveLocal=PeriodoTipo
+Clave=PeriodoTipo
+TablaRemota=PeriodoTipo
+LlaveRemota=PeriodoTipo
+
+[Relaciones.ZonaEconomica]
+TipoRelacion=Opcional
+LlaveLocal=ZonaEconomica
+Clave=ZonaEconomica
+TablaRemota=ZonaEconomica
+LlaveRemota=Zona
+
+[Afore]
+Clave=Afore
+Nombre=Afore
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+TipoDatos=Texto
+
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=Afore
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+[Relaciones.FormaPago]
+TipoRelacion=Opcional
+LlaveLocal=FormaPago
+Clave=FormaPago
+TablaRemota=FormaPago
+LlaveRemota=FormaPago
+
+[ReportaA]
+Clave=ReportaA
+Nombre=Reporta a
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=PersonalLista
+AyudaVista=Personal
+AyudaCampo=Personal.Personal
+AyudaIgnoraChequeos=S
+ValidacionUsaTabla=S
+ValidacionTablas=PersonalLista
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+Mayusculas=S
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+MascaraEdicion=Config.PersonalFormato
+ValidacionCondicion=ReportaA <> Personal
+TipoDatos=Texto
+
+[PersonalSucursal]
+Clave=PersonalSucursal
+Nombre=Banco/Sucursal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=Sucursal
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+AyudaMemTabla=BancoSucursal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[Pasaporte]
+Clave=Pasaporte
+Nombre=Pasaporte
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+TipoDatos=Texto
+
+[Valuacion]
+Clave=Valuacion
+Nombre=Valuación Laboral
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalValuacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Cartilla]
+Clave=Cartilla
+Nombre=Cartilla
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+TipoDatos=Texto
+
+[Permiso]
+Clave=Permiso
+Nombre=Permiso
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+TipoDatos=Texto
+
+[NivelAcademico]
+Clave=NivelAcademico
+Nombre=Nivel Académico
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=NivelAcademico
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[AspiraCategoria]
+Clave=AspiraCategoria
+Nombre=Categoría aspira
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[AspiraDepartamento]
+Clave=AspiraDepartamento
+Nombre=Departamento aspira
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Departamento
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[AspiraGrupo]
+Clave=AspiraGrupo
+Nombre=Grupo aspira
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[AspiraPuesto]
+Clave=AspiraPuesto
+Nombre=Puesto aspira
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Puesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.PersonalLista]
+TipoRelacion=Opcional
+LlaveLocal=ReportaA
+Clave=PersonalLista
+TablaRemota=PersonalLista
+LlaveRemota=Personal
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Empleado<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+TipoDatos=Texto
+
+[UltimoPago]
+Clave=UltimoPago
+Nombre=Ultimo día pagado
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[ZonaEconomica]
+Clave=ZonaEconomica
+Nombre=Zona Económica
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ZonaEconomica
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescar=S
+ListaRefrescar=(Lista)
+Requerido=S
+ValorRefrescar=Personal:Sucursal.ZonaEconomica
+TipoDatos=Texto
+
+[Relaciones.CtaDineroDestino]
+TipoRelacion=Opcional
+LlaveLocal=CtaDinero
+Clave=CtaDineroDestino
+TablaRemota=CtaDineroDestino
+LlaveRemota=CtaDinero
+
+[Hijos]
+Clave=Hijos
+Nombre=Hijos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Registro]
+Clave=Registro
+Nombre=CURP
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+ValorRefrescar=Si((ConDatos(FechaNacimiento) y ConDatos(Sexo) y ConDatos(LugarNacimiento)), SQL(<T>spRegistroSugerir :tCual, :tRegistro, :tNombre, :tPaterno, :tMaterno, :fNacimiento, :tSexo, :tLugarNacimiento<T>, <T>CURP<T>, Registro, Nombre, ApellidoPaterno, ApellidoMaterno, FechaNacimiento,Sexo, LugarNacimiento))
+TipoDatos=Texto
+ValidacionCondicion=SQL(<T>spRegistroOk :tCual, :tRegistro, :tEmpresa<T>, <T>CURP<T>, Registro, Empresa)
+
+[FechaAntiguedad]
+Clave=FechaAntiguedad
+Nombre=Fecha Antigüedad
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[Registro2]
+Clave=Registro2
+Nombre=RFC
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+ValorRefrescar=Si(ConDatos(FechaNacimiento), SQL(<T>spRegistroSugerir :tCual, :tRegistro, :tNombre, :tPaterno, :tMaterno, :fNacimiento<T>, <T>RFC<T>, Registro2, Nombre, ApellidoPaterno, ApellidoMaterno, FechaNacimiento))
+ValidacionCondicion=SQL(<T>spRegistroOk :tCual, :tRegistro, :tEmpresa<T>, <T>RFC<T>, Registro2, Empresa)
+TipoDatos=Texto
+
+[Registro3]
+Clave=Registro3
+Nombre=Registro IMSS
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+ValorRefrescar=Si(ConDatos(FechaNacimiento), SQL(<T>spRegistroSugerir :tCual, :tRegistro, :tNombre, :tPaterno, :tMaterno, :fNacimiento<T>, <T>IMSS<T>, Registro3, Nombre, ApellidoPaterno, ApellidoMaterno, FechaNacimiento))
+ValidacionCondicion=SQL(<T>spRegistroOk :tCual, :tRegistro, :tEmpresa<T>, <T>IMSS<T>, Registro3, Empresa)
+TipoDatos=Texto
+
+[VencimientoContrato]
+Clave=VencimientoContrato
+Nombre=Vencimiento Contrato
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=Fecha seguimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+AyudaEnCaptura=Calendario
+
+[EstaPresente]
+Clave=EstaPresente
+Nombre=Esta Presente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Registro4]
+Clave=Registro4
+Nombre=Registro Afore
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+ValorRefrescar=Si(ConDatos(FechaNacimiento), SQL(<T>spRegistroSugerir :tCual, :tRegistro, :tNombre, :tPaterno, :tMaterno, :fNacimiento<T>, <T>AFORE<T>, Registro4, Nombre, ApellidoPaterno, ApellidoMaterno, FechaNacimiento))
+ValidacionCondicion=SQL(<T>spRegistroOk :tCual, :tRegistro, :tEmpresa<T>, <T>AFORE<T>, Registro4, Empresa)
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Relaciones.Sucursal]
+TipoRelacion=Opcional
+LlaveLocal=SucursalTrabajo
+Clave=Sucursal
+TablaRemota=Sucursal
+LlaveRemota=Sucursal
+
+[SucursalTrabajo]
+Clave=SucursalTrabajo
+Nombre=Sucursal Trabajo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionUsaTabla=S
+ValidacionTablas=Sucursal
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+ValorPorOmision=Sucursal
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+[SueldoDiario]
+Clave=SueldoDiario
+Nombre=Sueldo Diario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+ValorRefrescar=Asigna(Temp.Monetario, SQL(<T>SELECT SueldoDef FROM PuestoSucursal WHERE Puesto=:tPuesto AND Sucursal=:nSucursal<T>, Puesto, SucursalTrabajo))<BR>Si<BR>  ConDatos(Temp.Monetario)<BR>Entonces<BR>  Temp.Monetario<BR>Sino<BR>  Si<BR>    ConDatos(Personal:Puesto.SueldoDef)<BR>  Entonces<BR>    Personal:Puesto.SueldoDef<BR>  Sino<BR>    Si<BR>      (Estatus en (EstatusAspirante, EstatusCandidato)) y ConDatos(MinimoProfesional)<BR>    Entonces<BR>      Caso ZonaEconomica<BR>        Es <T>B<T> Entonces Personal:MinimosProfesionales.ZonaB<BR>        Es <T>C<T> Entonces Personal:MinimosProfesionales.ZonaC<BR>      Sino<BR>        Personal:MinimosProfesionales.ZonaA<BR>      Fin<BR>    Sino<BR>      SueldoDiario<BR>    Fin<BR>  Fin<BR>Fin
+ConRefrescar=S
+ListaRefrescar=SDI
+
+AyudaEnCaptura=Calculadora
+[SDI]
+Clave=SDI
+Nombre=SDI
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+AyudaEnCaptura=Calculadora
+ValorRefrescar=Asigna(Temp.Flotante, SQL(<T>spVerSDI :tEmpresa, :nSuc, :tCat, :tPuesto, :tPersonal, :nAnos, :nSD, :tTipo, @ZonaEconomica=:tZona<T>, Empresa, SucursalTrabajo, Categoria, Puesto, Personal, Personal:AnosCumplidos, SueldoDiario, TipoSueldo, ZonaEconomica))<BR>Si(Config.AutoCANAPAT, Asigna(SueldoDiario, Temp.Flotante))<BR>Temp.Flotante
+
+[SDIBimestral]
+Clave=SDIBimestral
+Nombre=SDI Bimestral
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Dependientes]
+Clave=Dependientes
+Nombre=Dependientes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[LugarNacimiento]
+Clave=LugarNacimiento
+Nombre=Lugar Nacimiento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PaisEstadoMexico
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+ConRefrescar=S
+ListaRefrescar=Registro
+
+[Delegacion]
+Clave=Delegacion
+Nombre=Delegación
+Visible=S
+TamanoValidacion=30
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Delegacion, Delegacion)
+AyudaForma=SATDireccionFiscal
+AyudaVista=SATDireccionFiscal
+AyudaCampo=SATMunicipio.Descripcion
+AyudaBusquedaRapida=Si(ConDatos(CodigoPostal), Asigna(Info.CodigoPostal, CodigoPostal), Asigna(Info.CodigoPostal, Nulo))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+TipoDatos=Texto
+
+AyudaEnCaptura=Vista
+ValidacionCondicion=Si(SQL(<T>SELECT ClavePais FROM SATPais WHERE Descripcion=:tPais<T>, Pais) = <T>MEX<T>, SQL(<T>SELECT 1 FROM SATMunicipio WHERE Descripcion=:tDesc<T>, Delegacion) > 0, 1=1)
+[AspiraSueldo]
+Clave=AspiraSueldo
+Nombre=Sueldo aspira
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Calculadora
+TipoDatos=Texto
+
+[AspiraFecha]
+Clave=AspiraFecha
+Nombre=Fecha aspira
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[ConceptoBaja]
+Clave=ConceptoBaja
+Nombre=Concepto Baja
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+TipoDatos=Texto
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemTabla=NivelAcceso
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=General.NivelAcceso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+Formula=Si(General.NivelAccesoEsp, SQLEnLista(<T>SELECT Nivel FROM NivelAccesoEsp ORDER BY Orden<T>), SQLEnLista(<T>SELECT Nivel FROM NivelAcceso ORDER BY Orden<T>))
+TipoDatos=Texto
+
+[Padre]
+Clave=Padre
+Nombre=Nombre Padre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Madre]
+Clave=Madre
+Nombre=Nombre Madre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[UnidadMedica]
+Clave=UnidadMedica
+Nombre=Unidad Medica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CentroCostos]
+Clave=CentroCostos
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostosLista
+AyudaVista=CentroCostosLista
+AyudaCampo=CentroCostosLista.CentroCostos
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+TipoDatos=Texto
+
+[Relaciones.CentroCostos]
+TipoRelacion=Opcional
+LlaveLocal=CentroCostos
+Clave=CentroCostos
+TablaRemota=CentroCostos
+LlaveRemota=CentroCostos
+
+[MinimoProfesional]
+Clave=MinimoProfesional
+Nombre=Oficio Mínimo Profesional
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=MinimosProfesionalesLista
+AyudaVista=MinimosProfesionales
+AyudaCampo=MinimosProfesionales.Numero
+ValidacionUsaTabla=S
+ValidacionTablas=MinimosProfesionales
+ConRefrescar=S
+ListaRefrescar=SueldoDiario
+
+[Relaciones.MinimosProfesionales]
+TipoRelacion=Opcional
+LlaveLocal=MinimoProfesional
+Clave=MinimosProfesionales
+TablaRemota=MinimosProfesionales
+LlaveRemota=Numero
+
+[Sindicato]
+Clave=Sindicato
+Nombre=Sindicato
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Sindicato
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[SDIAnterior]
+Clave=SDIAnterior
+Nombre=SDI Anterior
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Vehiculo]
+Clave=Vehiculo
+Nombre=Vehiculo
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=VehiculoLista
+AyudaVista=Vehiculo
+AyudaCampo=Vehiculo.Vehiculo
+ValidacionUsaTabla=S
+ValidacionTablas=Vehiculo
+AyudaIgnoraChequeos=S
+TipoDatos=Texto
+
+[Relaciones.Vehiculo]
+TipoRelacion=Opcional
+LlaveLocal=Vehiculo
+Clave=Vehiculo
+TablaRemota=Vehiculo
+LlaveRemota=Vehiculo
+
+[TablaCobranzaBono]
+Clave=TablaCobranzaBono
+Nombre=Tabla Bono (Directa)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaComisionEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TablaCobranzaCascada]
+Clave=TablaCobranzaCascada
+Nombre=Tabla Comisión (en Cascada)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaComisionEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TablaCobranzaBonoCascada]
+Clave=TablaCobranzaBonoCascada
+Nombre=Tabla Bono (en Cascada)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaComisionEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TablaCobranza]
+Clave=TablaCobranza
+Nombre=Tabla Comisión (Directa)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemTabla=TablaComisionEsp
+TipoDatos=Texto
+
+[TablaVentaCascada]
+Clave=TablaVentaCascada
+Nombre=Tabla Ventas (en Cascada)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaComisionEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario2]
+Clave=Beneficiario2
+Nombre=Beneficiario 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco2]
+Clave=Parentesco2
+Nombre=Parentesco 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Porcentaje2]
+Clave=Porcentaje2
+Nombre=% 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario3]
+Clave=Beneficiario3
+Nombre=Beneficiario 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco3]
+Clave=Parentesco3
+Nombre=Parentesco 3
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Porcentaje3]
+Clave=Porcentaje3
+Nombre=% 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Relaciones.Puesto]
+TipoRelacion=Opcional
+LlaveLocal=Puesto
+Clave=Puesto
+TablaRemota=Puesto
+LlaveRemota=Puesto
+
+[Relaciones.Departamento]
+TipoRelacion=Opcional
+LlaveLocal=Departamento
+Clave=Departamento
+TablaRemota=Departamento
+LlaveRemota=Departamento
+
+[Relaciones.PersonalCat]
+TipoRelacion=Opcional
+LlaveLocal=Categoria
+Clave=PersonalCat
+TablaRemota=PersonalCat
+LlaveRemota=Categoria
+
+[Relaciones.PersonalGrupo]
+TipoRelacion=Opcional
+LlaveLocal=Grupo
+Clave=PersonalGrupo
+TablaRemota=PersonalGrupo
+LlaveRemota=Grupo
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+
+[Actividad]
+Clave=Actividad
+Nombre=Actividad
+Visible=S
+TamanoValidacion=50
+Tamano=100
+AyudaEnCaptura=Vista
+AyudaMemTabla=Actividad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=ProyectoDListaPersonal
+AyudaVista=ProyectoDEnFirme
+AyudaCampo=ProyectoDEnFirme.Actividad
+AyudaBusquedaRapida=Asigna(Info.Proyecto, Proyecto)<BR>Asigna(Info.Personal, Personal)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=ProyectoDEnFirme
+AyudaIgnoraChequeos=S
+TipoDatos=Texto
+
+[Relaciones.UEN]
+TipoRelacion=Opcional
+LlaveLocal=UEN
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+
+[Beneficiario4]
+Clave=Beneficiario4
+Nombre=Beneficiario 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco4]
+Clave=Parentesco4
+Nombre=Parentesco 4
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Porcentaje4]
+Clave=Porcentaje4
+Nombre=% 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario5]
+Clave=Beneficiario5
+Nombre=Beneficiario 5
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco5]
+Clave=Parentesco5
+Nombre=Parentesco 5
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Porcentaje5]
+Clave=Porcentaje5
+Nombre=% 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario6]
+Clave=Beneficiario6
+Nombre=Beneficiario 6
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco6]
+Clave=Parentesco6
+Nombre=Parentesco 6
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Porcentaje6]
+Clave=Porcentaje6
+Nombre=% 6
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario7]
+Clave=Beneficiario7
+Nombre=Beneficiario 7
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco7]
+Clave=Parentesco7
+Nombre=Parentesco 7
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Porcentaje7]
+Clave=Porcentaje7
+Nombre=% 7
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Beneficiario8]
+Clave=Beneficiario8
+Nombre=Beneficiario 8
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Parentesco8]
+Clave=Parentesco8
+Nombre=Parentesco 8
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Porcentaje8]
+Clave=Porcentaje8
+Nombre=% 8
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Area]
+Clave=Area
+Nombre=Area
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Area
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Fuente]
+Clave=Fuente
+Nombre=Fuente
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Fuente
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Reclutador]
+Clave=Reclutador
+Nombre=Reclutador
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=PersonalLista
+AyudaVista=Personal
+AyudaCampo=Personal.Personal
+ValidacionUsaTabla=S
+ValidacionTablas=PersonalDestino
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+MascaraEdicion=Config.PersonalFormato
+ValidacionCondicion=Reclutador <> Personal
+TipoDatos=Texto
+
+[Relaciones.PersonalDestino]
+TipoRelacion=Opcional
+LlaveLocal=Reclutador
+Clave=PersonalDestino
+TablaRemota=PersonalDestino
+LlaveRemota=Personal
+
+[RecomendadoPor]
+Clave=RecomendadoPor
+Nombre=Recomendado por
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=PersonalLista
+AyudaVista=Personal
+AyudaCampo=Personal.Personal
+ValidacionUsaTabla=S
+ValidacionTablas=PersonalOrigen
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+MascaraEdicion=Config.PersonalFormato
+ValidacionCondicion=RecomendadoPor <> Personal
+TipoDatos=Texto
+
+[Relaciones.PersonalOrigen]
+TipoRelacion=Opcional
+LlaveLocal=RecomendadoPor
+Clave=PersonalOrigen
+TablaRemota=PersonalOrigen
+LlaveRemota=Personal
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta Contable
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+CondicionDespliege=Config.ContCtaPersonal
+TipoDatos=Texto
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[MovNomina]
+Clave=MovNomina
+Nombre=Nómina por Omsión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemTabla=MovTipo_NOM_NNE
+TipoDatos=Texto
+
+[Contrasena]
+Clave=Contrasena
+Nombre=Contraseña (Internet)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[CuentaRetencion]
+Clave=CuentaRetencion
+Nombre=Cuenta Retenciones
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Config.ContCtaPersonal
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+TipoDatos=Texto
+
+[Relaciones.CtaRetencion]
+TipoRelacion=Opcional
+LlaveLocal=CuentaRetencion
+Clave=CtaRetencion
+TablaRemota=CtaRetencion
+LlaveRemota=Cuenta
+
+[Configuracion]
+Clave=Configuracion
+Nombre=Configuración
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CfgPersonal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.CfgPersonal]
+TipoRelacion=Opcional
+LlaveLocal=Configuracion
+Clave=CfgPersonal
+TablaRemota=CfgPersonal
+LlaveRemota=Configuracion
+
+[Relaciones.PersonalCfg]
+TipoRelacion=Opcional
+LlaveLocal=Personal
+Clave=PersonalCfg
+TablaRemota=PersonalCfg
+LlaveRemota=Personal
+
+[BeneficiarioNacimiento]
+Clave=BeneficiarioNacimiento
+Nombre=Fecha Nacimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario2Nacimiento]
+Clave=Beneficiario2Nacimiento
+Nombre=Fecha Nacimiento 2
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario3Nacimiento]
+Clave=Beneficiario3Nacimiento
+Nombre=Fecha Nacimiento 3
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario4Nacimiento]
+Clave=Beneficiario4Nacimiento
+Nombre=Fecha Nacimiento 4
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario5Nacimiento]
+Clave=Beneficiario5Nacimiento
+Nombre=Fecha Nacimiento 5
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario6Nacimiento]
+Clave=Beneficiario6Nacimiento
+Nombre=Fecha Nacimiento 6
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario7Nacimiento]
+Clave=Beneficiario7Nacimiento
+Nombre=Fecha Nacimiento 7
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Beneficiario8Nacimiento]
+Clave=Beneficiario8Nacimiento
+Nombre=Fecha Nacimiento 8
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[ReferenciaDireccion]
+Clave=ReferenciaDireccion
+Nombre=Dirección
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[ReferenciaTelefono]
+Clave=ReferenciaTelefono
+Nombre=Teléfono
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Referencia2]
+Clave=Referencia2
+Nombre=Referencia 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Referencia2Direccion]
+Clave=Referencia2Direccion
+Nombre=Dirección 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Referencia2Telefono]
+Clave=Referencia2Telefono
+Nombre=Teléfono 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Referencia3]
+Clave=Referencia3
+Nombre=Referencia 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Referencia3Direccion]
+Clave=Referencia3Direccion
+Nombre=Dirección 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Referencia3Telefono]
+Clave=Referencia3Telefono
+Nombre=Teléfono 3
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Licencia]
+Clave=Licencia
+Nombre=Licencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[LicenciaVencimiento]
+Clave=LicenciaVencimiento
+Nombre=Vencimiento Licencia
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+TipoDatos=Texto
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[eMailAuto]
+Clave=eMailAuto
+Nombre=Avisos Automáticos (e-mail)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Relaciones.CtaSituacion]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=CtaSituacion
+TablaRemota=CtaSituacion
+LlaveRemota=(Lista)
+
+[Incremento]
+Clave=Incremento
+Nombre=% Incremento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.####
+
+[EsSocio]
+Clave=EsSocio
+Nombre=Es Socio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DiasPeriodo]
+Clave=DiasPeriodo
+Nombre=Días Periodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Dias Periodo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[IndemnizacionPct]
+Clave=IndemnizacionPct
+Nombre=% Indemnización
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Proyecto
+AyudaMemTabla=Proy
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Proyecto FROM Proy WHERE Proyecto=:tProy AND Estatus=:tEstatus<T>, Proyecto, EstatusAlta)=Proyecto
+TipoDatos=Texto
+
+[SituacionUsuario]
+Clave=SituacionUsuario
+Nombre=Usuario seguimiento
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[SituacionNota]
+Clave=SituacionNota
+Nombre=Nota
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Plaza]
+Clave=Plaza
+Nombre=Plaza
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=PlazaLista
+AyudaVista=Plaza
+AyudaCampo=Plaza.Plaza
+ValidacionUsaTabla=S
+ValidacionTablas=Plaza
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+AyudaIgnoraChequeos=S
+TipoDatos=Texto
+
+[Relaciones.Plaza]
+TipoRelacion=Opcional
+LlaveLocal=Plaza
+Clave=Plaza
+TablaRemota=Plaza
+LlaveRemota=Plaza
+
+[SueldoDiarioComplemento]
+Clave=SueldoDiarioComplemento
+Nombre=Sueldo Diario (Complemento)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Config.NomComplemento
+CondicionEdicion=Estatus en (EstatusAspirante, EstatusCandidato)
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=EmpresaLista
+AyudaVista=Empresa
+AyudaCampo=Empresa.Empresa
+ValidacionUsaTabla=S
+ValidacionTablas=Empresa
+CondicionEdicion=no TieneMovimientos
+TipoDatos=Texto
+
+[Relaciones.Empresa]
+TipoRelacion=Opcional
+LlaveLocal=Empresa
+Clave=Empresa
+TablaRemota=Empresa
+LlaveRemota=Empresa
+
+[Relaciones.ProyectoDEnFirme]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=ProyectoDEnFirme
+TablaRemota=ProyectoDEnFirme
+LlaveRemota=(Lista)
+
+[SueldoMensual]
+Clave=SueldoMensual
+Nombre=SueldoMensual
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[ISRFijoPeriodo]
+Clave=ISRFijoPeriodo
+Nombre=ISRFijoPeriodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[RataHora]
+Clave=RataHora
+Nombre=RataHora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[DeclaraRenta]
+Clave=DeclaraRenta
+Nombre=DeclaraRenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[DireccionNumero]
+Clave=DireccionNumero
+Nombre=Número Exterior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[DireccionNumeroInt]
+Clave=DireccionNumeroInt
+Nombre=Número Interior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[EsRecurso]
+Clave=EsRecurso
+Nombre=Es Recurso
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EsAgente]
+Clave=EsAgente
+Nombre=Es Agente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EsUsuarioWeb]
+Clave=EsUsuarioWeb
+Nombre=Es UsuarioWeb
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Confidencial]
+Clave=Confidencial
+Nombre=Confidencial
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[FechaInicioContrato]
+Clave=FechaInicioContrato
+Nombre=Fecha Inicio Contrato
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[DuracionContrato]
+Clave=DuracionContrato
+Nombre=Duración Contrato
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[ApellidoPaterno.ListaRefrescar]
+(Inicio)=Registro
+Registro=Registro2
+Registro2=Registro3
+Registro3=Registro4
+Registro4=(Fin)
+
+[ApellidoMaterno.ListaRefrescar]
+(Inicio)=Registro
+Registro=Registro2
+Registro2=Registro3
+Registro3=Registro4
+Registro4=(Fin)
+
+[Nombre.ListaRefrescar]
+(Inicio)=Registro
+Registro=Registro2
+Registro2=Registro3
+Registro3=Registro4
+Registro4=(Fin)
+
+[Categoria.ListaRefrescar]
+(Inicio)=SueldoDiario
+SueldoDiario=SDI
+SDI=(Fin)
+
+[Puesto.ListaRefrescar]
+(Inicio)=SueldoDiario
+SueldoDiario=SDI
+SDI=(Fin)
+
+
+
+[FechaNacimiento.ListaRefrescar]
+(Inicio)=Registro
+Registro=Registro2
+Registro2=Registro3
+Registro3=Registro4
+Registro4=(Fin)
+
+[Sexo.ListaOpciones]
+(Inicio)=Masculino
+Masculino=Femenino
+Femenino=(Fin)
+
+[Parentesco.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[TipoSueldo.ListaOpciones]
+(Inicio)=Fijo
+Fijo=Variable
+Variable=Mixto
+Mixto=(Fin)
+
+
+[ZonaEconomica.ListaRefrescar]
+(Inicio)=SueldoDiario
+SueldoDiario=SDI
+SDI=(Fin)
+
+[SucursalTrabajo.ListaRefrescar]
+(Inicio)=ZonaEconomica
+ZonaEconomica=SueldoDiario
+SueldoDiario=SDI
+SDI=(Fin)
+
+
+
+
+
+[Parentesco2.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco3.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco4.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco5.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco6.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco7.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[Parentesco8.ListaOpciones]
+(Inicio)=Conyuge
+Conyuge=Hijo
+Hijo=Hija
+Hija=Padre
+Padre=Madre
+Madre=Hermano
+Hermano=Hermana
+Hermana=Abuelo
+Abuelo=Abuela
+Abuela=Nieto
+Nieto=Nieta
+Nieta=Tio
+Tio=Tia
+Tia=Sobrino
+Sobrino=Sobrina
+Sobrina=(Fin)
+
+[DiasPeriodo.ListaOpciones]
+(Inicio)=Dias Periodo
+Dias Periodo=Dias Naturales
+Dias Naturales=Dias Jornada
+Dias Jornada=(Fin)
+
+[Relaciones.ProyectoDEnFirme.LlaveLocal]
+(Inicio)=Proyecto
+Proyecto=Actividad
+Actividad=(Fin)
+
+[Relaciones.ProyectoDEnFirme.LlaveRemota]
+(Inicio)=Proyecto
+Proyecto=Actividad
+Actividad=(Fin)
+
+[MapaLatitud]
+Clave=MapaLatitud
+Nombre=MapaLatitud
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[MapaLongitud]
+Clave=MapaLongitud
+Nombre=MapaLongitud
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[MapaPrecision]
+Clave=MapaPrecision
+Nombre=MapaPrecision
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EntreCalles]
+Clave=EntreCalles
+Nombre=Entre las Calles
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Plano]
+Clave=Plano
+Nombre=Plano
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[ActividadMedicion]
+Clave=ActividadMedicion
+Nombre=Medicion de Actividades
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Asistencia<T>
+
+ListaOpciones=(Lista)
+[Relaciones.CtaSituacion.LlaveLocal]
+(Inicio)={Comillas('RH')}
+{Comillas('RH')}=Situacion
+Situacion=(Fin)
+
+[Relaciones.CtaSituacion.LlaveRemota]
+(Inicio)=Rama
+Rama=Situacion
+Situacion=(Fin)
+
+[ContactoTipo]
+Clave=ContactoTipo
+Nombre=Contacto Tipo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+UnicamenteLectura=S
+
+
+
+
+[ReferenciaIntelisisService]
+Clave=ReferenciaIntelisisService
+Nombre=Referencia Intelisis Service
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Caso SQL(<T>SELECT PlantaSucEmpresa FROM Version<T>)<BR>  Es <T>Empresa<T> Entonces SQLEnLista(<T>SELECT DISTINCT ReferenciaIntelisisService FROM Empresa<T>)<BR>  Es <T>Sucursal<T>Entonces SQLEnLista(<T>SELECT DISTINCT ReferenciaIntelisisService FROM Sucursal<T>)<BR>Fin<BR>
+
+
+
+
+
+
+
+
+
+[ActividadMedicion.ListaOpciones]
+(Inicio)=Ninguno
+Ninguno=Registro de Actividades
+Registro de Actividades=Asistencia
+Asistencia=(Fin)
+
+
+
+
+
+
+
+
+
+
+[NominaProrrateo]
+Clave=NominaProrrateo
+Nombre=Prorrateo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+
+
+
+
+Formula=SQLEnLista(<T>SELECT Prorrateo FROM NominaProrrateo<T>)
+
+
+[MES]
+Clave=MES
+Nombre=Es MES
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+[Colonia.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=(Fin)
+
+[Delegacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=(Fin)
+
+
+[Estado.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Pais
+Pais=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=(Fin)
+
+[Pais.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Estado
+Estado=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=(Fin)
+
+
+
+[CodigoPostal.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Estado
+Estado=Pais
+Pais=Poblacion
+Poblacion=(Fin)
+
+[Poblacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=Delegacion
+Delegacion=Estado
+Estado=Pais
+Pais=CodigoPostal
+CodigoPostal=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[MapaUbicacion]
+Clave=MapaUbicacion
+Nombre=Ubicación
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaMapaLongitud=MapaLongitud
+AyudaMapaLatitud=MapaLatitud
+AyudaMapaZoom=20
+AyudaMapaUbicacionDef=MapaUbicacion
+AyudaEnCaptura=Mapa
+
+[Tabla.ListaCampos]
+(Inicio)=Personal
+Personal=ApellidoPaterno
+ApellidoPaterno=ApellidoMaterno
+ApellidoMaterno=Nombre
+Nombre=Tipo
+Tipo=Direccion
+Direccion=DireccionNumero
+DireccionNumero=DireccionNumeroInt
+DireccionNumeroInt=Colonia
+Colonia=Delegacion
+Delegacion=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=CodigoPostal
+CodigoPostal=Telefono
+Telefono=eMail
+eMail=FormaPago
+FormaPago=CtaDinero
+CtaDinero=PersonalCuenta
+PersonalCuenta=PersonalSucursal
+PersonalSucursal=Afore
+Afore=FechaNacimiento
+FechaNacimiento=Hijos
+Hijos=Dependientes
+Dependientes=Nacionalidad
+Nacionalidad=Permiso
+Permiso=Pasaporte
+Pasaporte=Cartilla
+Cartilla=NivelAcademico
+NivelAcademico=Sexo
+Sexo=EstadoCivil
+EstadoCivil=Beneficiario
+Beneficiario=Parentesco
+Parentesco=Valuacion
+Valuacion=ReportaA
+ReportaA=ZonaEconomica
+ZonaEconomica=MinimoProfesional
+MinimoProfesional=TipoSueldo
+TipoSueldo=SueldoDiario
+SueldoDiario=SueldoDiarioComplemento
+SueldoDiarioComplemento=SDI
+SDI=SDIBimestral
+SDIBimestral=Departamento
+Departamento=TipoContrato
+TipoContrato=Grupo
+Grupo=Puesto
+Puesto=PeriodoTipo
+PeriodoTipo=Jornada
+Jornada=Categoria
+Categoria=Moneda
+Moneda=Registro
+Registro=Registro2
+Registro2=Registro3
+Registro3=Registro4
+Registro4=FechaAlta
+FechaAlta=FechaAntiguedad
+FechaAntiguedad=FechaBaja
+FechaBaja=ConceptoBaja
+ConceptoBaja=UltimaModificacion
+UltimaModificacion=VencimientoContrato
+VencimientoContrato=AspiraSueldo
+AspiraSueldo=AspiraDepartamento
+AspiraDepartamento=AspiraGrupo
+AspiraGrupo=AspiraPuesto
+AspiraPuesto=AspiraCategoria
+AspiraCategoria=AspiraFecha
+AspiraFecha=Estatus
+Estatus=UltimoPago
+UltimoPago=UltimoCambio
+UltimoCambio=Situacion
+Situacion=SituacionFecha
+SituacionFecha=SituacionUsuario
+SituacionUsuario=SituacionNota
+SituacionNota=EstaPresente
+EstaPresente=TieneMovimientos
+TieneMovimientos=SucursalTrabajo
+SucursalTrabajo=LugarNacimiento
+LugarNacimiento=NivelAcceso
+NivelAcceso=Padre
+Padre=Madre
+Madre=UnidadMedica
+UnidadMedica=CentroCostos
+CentroCostos=Sindicato
+Sindicato=SDIAnterior
+SDIAnterior=Vehiculo
+Vehiculo=TablaCobranza
+TablaCobranza=TablaCobranzaBono
+TablaCobranzaBono=TablaCobranzaCascada
+TablaCobranzaCascada=TablaCobranzaBonoCascada
+TablaCobranzaBonoCascada=TablaVentaCascada
+TablaVentaCascada=Porcentaje
+Porcentaje=Beneficiario2
+Beneficiario2=Parentesco2
+Parentesco2=Porcentaje2
+Porcentaje2=Beneficiario3
+Beneficiario3=Parentesco3
+Parentesco3=Porcentaje3
+Porcentaje3=Beneficiario4
+Beneficiario4=Parentesco4
+Parentesco4=Porcentaje4
+Porcentaje4=Beneficiario5
+Beneficiario5=Parentesco5
+Parentesco5=Porcentaje5
+Porcentaje5=Beneficiario6
+Beneficiario6=Parentesco6
+Parentesco6=Porcentaje6
+Porcentaje6=Beneficiario7
+Beneficiario7=Parentesco7
+Parentesco7=Porcentaje7
+Porcentaje7=Beneficiario8
+Beneficiario8=Parentesco8
+Parentesco8=Porcentaje8
+Porcentaje8=UEN
+UEN=Area
+Area=Fuente
+Fuente=Reclutador
+Reclutador=RecomendadoPor
+RecomendadoPor=Cuenta
+Cuenta=CuentaRetencion
+CuentaRetencion=MovNomina
+MovNomina=Contrasena
+Contrasena=Configuracion
+Configuracion=BeneficiarioNacimiento
+BeneficiarioNacimiento=Beneficiario2Nacimiento
+Beneficiario2Nacimiento=Beneficiario3Nacimiento
+Beneficiario3Nacimiento=Beneficiario4Nacimiento
+Beneficiario4Nacimiento=Beneficiario5Nacimiento
+Beneficiario5Nacimiento=Beneficiario6Nacimiento
+Beneficiario6Nacimiento=Beneficiario7Nacimiento
+Beneficiario7Nacimiento=Beneficiario8Nacimiento
+Beneficiario8Nacimiento=Referencia
+Referencia=ReferenciaDireccion
+ReferenciaDireccion=ReferenciaTelefono
+ReferenciaTelefono=Referencia2
+Referencia2=Referencia2Direccion
+Referencia2Direccion=Referencia2Telefono
+Referencia2Telefono=Referencia3
+Referencia3=Referencia3Direccion
+Referencia3Direccion=Referencia3Telefono
+Referencia3Telefono=Licencia
+Licencia=LicenciaVencimiento
+LicenciaVencimiento=Cliente
+Cliente=eMailAuto
+eMailAuto=Incremento
+Incremento=EsSocio
+EsSocio=DiasPeriodo
+DiasPeriodo=IndemnizacionPct
+IndemnizacionPct=Proyecto
+Proyecto=Actividad
+Actividad=Plaza
+Plaza=Empresa
+Empresa=SueldoMensual
+SueldoMensual=ISRFijoPeriodo
+ISRFijoPeriodo=RataHora
+RataHora=DeclaraRenta
+DeclaraRenta=EsRecurso
+EsRecurso=EsAgente
+EsAgente=EsUsuarioWeb
+EsUsuarioWeb=Confidencial
+Confidencial=FechaInicioContrato
+FechaInicioContrato=ReferenciaIntelisisService
+ReferenciaIntelisisService=DuracionContrato
+DuracionContrato=EntreCalles
+EntreCalles=Plano
+Plano=Observaciones
+Observaciones=MapaLatitud
+MapaLatitud=MapaLongitud
+MapaLongitud=MapaPrecision
+MapaPrecision=MapaUbicacion
+MapaUbicacion=ActividadMedicion
+ActividadMedicion=ContactoTipo
+ContactoTipo=NominaProrrateo
+NominaProrrateo=MES
+MES=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Personal,
+Personal,=ApellidoPaterno,
+ApellidoPaterno,=ApellidoMaterno,
+ApellidoMaterno,=Nombre,
+Nombre,=Tipo,
+Tipo,=Direccion,
+Direccion,=DireccionNumero,
+DireccionNumero,=DireccionNumeroInt,
+DireccionNumeroInt,=Colonia,
+Colonia,=Delegacion,
+Delegacion,=Poblacion,
+Poblacion,=Estado,
+Estado,=Pais,
+Pais,=CodigoPostal,
+CodigoPostal,=Telefono,
+Telefono,=eMail,
+eMail,=eMailAuto,
+eMailAuto,=ZonaEconomica,
+ZonaEconomica,=Registro,
+Registro,=Registro2,
+Registro2,=Registro3,
+Registro3,=Registro4,
+Registro4,=FormaPago,
+FormaPago,=CtaDinero,
+CtaDinero,=Afore,
+Afore,=PersonalSucursal,
+PersonalSucursal,=PersonalCuenta,
+PersonalCuenta,=FechaNacimiento,
+FechaNacimiento,=LugarNacimiento,
+LugarNacimiento,=Nacionalidad,
+Nacionalidad,=Pasaporte,
+Pasaporte,=Cartilla,
+Cartilla,=Permiso,
+Permiso,=NivelAcademico,
+NivelAcademico,=Sexo,
+Sexo,=EstadoCivil,
+EstadoCivil,=Hijos,
+Hijos,=Dependientes,
+Dependientes,=Beneficiario,
+Beneficiario,=BeneficiarioNacimiento,
+BeneficiarioNacimiento,=Parentesco,
+Parentesco,=Porcentaje,
+Porcentaje,=Beneficiario2,
+Beneficiario2,=Beneficiario2Nacimiento,
+Beneficiario2Nacimiento,=Parentesco2,
+Parentesco2,=Porcentaje2,
+Porcentaje2,=Beneficiario3,
+Beneficiario3,=Beneficiario3Nacimiento,
+Beneficiario3Nacimiento,=Parentesco3,
+Parentesco3,=Porcentaje3,
+Porcentaje3,=Beneficiario4,
+Beneficiario4,=Beneficiario4Nacimiento,
+Beneficiario4Nacimiento,=Parentesco4,
+Parentesco4,=Porcentaje4,
+Porcentaje4,=Beneficiario5,
+Beneficiario5,=Beneficiario5Nacimiento,
+Beneficiario5Nacimiento,=Parentesco5,
+Parentesco5,=Porcentaje5,
+Porcentaje5,=Beneficiario6,
+Beneficiario6,=Beneficiario6Nacimiento,
+Beneficiario6Nacimiento,=Parentesco6,
+Parentesco6,=Porcentaje6,
+Porcentaje6,=Beneficiario7,
+Beneficiario7,=Beneficiario7Nacimiento,
+Beneficiario7Nacimiento,=Parentesco7,
+Parentesco7,=Porcentaje7,
+Porcentaje7,=Beneficiario8,
+Beneficiario8,=Beneficiario8Nacimiento,
+Beneficiario8Nacimiento,=Parentesco8,
+Parentesco8,=Porcentaje8,
+Porcentaje8,=Valuacion,
+Valuacion,=Padre,
+Padre,=Madre,
+Madre,=UnidadMedica,
+UnidadMedica,=CentroCostos,
+CentroCostos,=ReportaA,
+ReportaA,=AspiraSueldo,
+AspiraSueldo,=AspiraCategoria,
+AspiraCategoria,=AspiraDepartamento,
+AspiraDepartamento,=AspiraGrupo,
+AspiraGrupo,=AspiraPuesto,
+AspiraPuesto,=AspiraFecha,
+AspiraFecha,=Categoria,
+Categoria,=Departamento,
+Departamento,=Grupo,
+Grupo,=Puesto,
+Puesto,=TipoContrato,
+TipoContrato,=PeriodoTipo,
+PeriodoTipo,=Jornada,
+Jornada,=TipoSueldo,
+TipoSueldo,=Moneda,
+Moneda,=DiasPeriodo,
+DiasPeriodo,=SueldoDiario,
+SueldoDiario,=SDI,
+SDI,=SDIBimestral,
+SDIBimestral,=SDIAnterior,
+SDIAnterior,=SueldoDiarioComplemento,
+SueldoDiarioComplemento,=FechaAlta,
+FechaAlta,=FechaBaja,
+FechaBaja,=ConceptoBaja,
+ConceptoBaja,=FechaAntiguedad,
+FechaAntiguedad,=UltimaModificacion,
+UltimaModificacion,=UltimoPago,
+UltimoPago,=VencimientoContrato,
+VencimientoContrato,=Estatus,
+Estatus,=UltimoCambio,
+UltimoCambio,=Situacion,
+Situacion,=SituacionFecha,
+SituacionFecha,=SituacionUsuario,
+SituacionUsuario,=SituacionNota,
+SituacionNota,=EstaPresente,
+EstaPresente,=TieneMovimientos,
+TieneMovimientos,=SucursalTrabajo,
+SucursalTrabajo,=NivelAcceso,
+NivelAcceso,=MinimoProfesional,
+MinimoProfesional,=Sindicato,
+Sindicato,=Vehiculo,
+Vehiculo,=TablaCobranza,
+TablaCobranza,=TablaCobranzaBono,
+TablaCobranzaBono,=TablaCobranzaCascada,
+TablaCobranzaCascada,=TablaCobranzaBonoCascada,
+TablaCobranzaBonoCascada,=TablaVentaCascada,
+TablaVentaCascada,=UEN,
+UEN,=Actividad,
+Actividad,=Area,
+Area,=Fuente,
+Fuente,=Reclutador,
+Reclutador,=RecomendadoPor,
+RecomendadoPor,=Cuenta,
+Cuenta,=CuentaRetencion,
+CuentaRetencion,=MovNomina,
+MovNomina,=Contrasena,
+Contrasena,=Configuracion,
+Configuracion,=Referencia,
+Referencia,=ReferenciaDireccion,
+ReferenciaDireccion,=ReferenciaTelefono,
+ReferenciaTelefono,=Referencia2,
+Referencia2,=Referencia2Direccion,
+Referencia2Direccion,=Referencia2Telefono,
+Referencia2Telefono,=Referencia3,
+Referencia3,=Referencia3Direccion,
+Referencia3Direccion,=Referencia3Telefono,
+Referencia3Telefono,=Licencia,
+Licencia,=LicenciaVencimiento,
+LicenciaVencimiento,=Cliente,
+Cliente,=Incremento,
+Incremento,=EsSocio,
+EsSocio,=IndemnizacionPct,
+IndemnizacionPct,=Proyecto,
+Proyecto,=Plaza,
+Plaza,=Empresa,
+Empresa,=SueldoMensual,
+SueldoMensual,=ISRFijoPeriodo,
+ISRFijoPeriodo,=RataHora,
+RataHora,=DeclaraRenta,
+DeclaraRenta,=EsRecurso,
+EsRecurso,=EsAgente,
+EsAgente,=EsUsuarioWeb,
+EsUsuarioWeb,=EntreCalles,
+EntreCalles,=Plano,
+Plano,=ReferenciaIntelisisService,
+ReferenciaIntelisisService,=Observaciones,
+Observaciones,=MapaLatitud,
+MapaLatitud,=MapaLongitud,
+MapaLongitud,=MapaPrecision,
+MapaPrecision,=MapaUbicacion,
+MapaUbicacion,=FechaInicioContrato,
+FechaInicioContrato,=DuracionContrato,
+DuracionContrato,=Confidencial,
+Confidencial,=ActividadMedicion,
+ActividadMedicion,=Personal as ContactoTipo,
+Personal as ContactoTipo,=NominaProrrateo,
+NominaProrrateo,=MES
+MES=FROM
+FROM=Personal
+Personal=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=CtaSituacion
+CtaSituacion=CtaDineroDestino
+CtaDineroDestino=Jornada
+Jornada=PeriodoTipo
+PeriodoTipo=ZonaEconomica
+ZonaEconomica=Prov
+Prov=FormaPago
+FormaPago=PersonalLista
+PersonalLista=Sucursal
+Sucursal=CentroCostos
+CentroCostos=MinimosProfesionales
+MinimosProfesionales=Vehiculo
+Vehiculo=Departamento
+Departamento=Puesto
+Puesto=PersonalCat
+PersonalCat=PersonalGrupo
+PersonalGrupo=UEN
+UEN=PersonalDestino
+PersonalDestino=PersonalOrigen
+PersonalOrigen=Cta
+Cta=CtaRetencion
+CtaRetencion=CfgPersonal
+CfgPersonal=PersonalCfg
+PersonalCfg=Cte
+Cte=Plaza
+Plaza=ProyectoDEnFirme
+ProyectoDEnFirme=Empresa
+Empresa=(Fin)

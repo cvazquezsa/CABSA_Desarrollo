@@ -1,0 +1,939 @@
+[Reporte]
+Clave=FIS
+Nombre=Movimientos del Modulo Fiscal
+Icono=6
+Vista=FiscalT
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=27.9
+LargoPagina=21.6
+Parametros1=Fiscal.ID
+Parametros2==
+Parametros3=N
+Parametros=S
+Columnas=1
+OtroOrden=S
+ListaOrden=Fiscal.ID<TAB>(Acendente)
+PosicionInicialAltura=425
+PosicionInicialAncho=1053
+PosicionInicialIzquierda=45
+PosicionInicialArriba=75
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Menus=S
+Ascii=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Modo=0
+PosicionSeparador=100
+Tipo=Reporte
+FuentePorOmision={MS Sans Serif, 8, Negro, []}
+ImpresoraPixeles=(Auto)
+PosicionInicialAlturaCliente=571
+Orientacion=Horizontal
+
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: Fiscal.ID<BR>Inicio: Fiscal.ID<BR>Inicio: Fiscal.ID<BR>Inicio: Fiscal.ID<BR>Titulo Detalle<BR>Detalle<BR>Fin: Fiscal.ID<BR>Pie
+VentanaIzquierda=62
+VentanaArriba=132
+VentanaAltura=483
+VentanaAncho=1270
+PanelArriba=171
+PanelBotones=113
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Arriba
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+Grupo=
+Marco=N
+EstiloMarco=0
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: Fiscal.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=0
+Grupo=Fiscal.ID
+Marco=N
+BordeArriba=N
+BorqueIzquierdo=N
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea3]
+Clave=Inicio: Fiscal.ID
+Seccion=Inicio Grupo
+Marco=S
+EstiloMarco=1
+AltoEnCm=0.63
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Cursiva]}
+Objetos=5
+Grupo=Fiscal.ID
+BordeArriba=N
+BorqueIzquierdo=N
+FondoEstilo=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Inicio: Fiscal.ID
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=Fiscal.ID
+Marco=N
+EstiloMarco=0
+FondoEstilo=0
+BordeAbajo=N
+Visible=
+Renglones=1
+FondoColor=Blanco
+
+[Linea5]
+Clave=Inicio: Fiscal.ID
+Objetos=2
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=3
+AltoEnCm=1.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=Fiscal.ID
+BordeAbajo=N
+FondoEstilo=0
+Visible=
+BordeArriba=N
+EstiloAbajo=0
+Renglones=4
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=12.9
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Fiscal<T>
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeIzquierdo=N
+BordeDerecho=N
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=69
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=13
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeDerecho=N
+FormatoValidacion=
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=70
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=FIS
+ListaParametros1=Fiscal.ID
+ListaParametros=S
+Visible=S
+Activo=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+EnMenu=S
+EspacioPrevio=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=FIS
+ListaParametros1=Fiscal.ID
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreDesplegar=&Cerrar
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Visible=S
+Activo=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+EspacioPrevio=
+NombreEnBoton=S
+EnBarraHerramientas=S
+
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=2.71
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre( Fiscal.Referencia ) & <T>:<T><BR>CampoNombre( Fiscal.Concepto )  & <T>:<T><BR>CampoNombre( Fiscal.Observaciones ) & <T>:<T>
+BordeAbajo=N
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=10
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Fiscal.Referencia<BR>Fiscal.Concepto<BR>Fiscal.Observaciones
+BordeAbajo=N
+FormatoValidacion=
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea6]
+Clave=Titulo Detalle
+Seccion=Inicio Grupo
+Grupo=Fiscal.ID
+AltoEnCm=0.5
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Objetos=8
+Visible=
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea7]
+Clave=Detalle
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=8
+Visible=
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea8]
+Clave=Fin: Fiscal.ID
+Seccion=Fin Grupo
+Grupo=Fiscal.ID
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+Marco=N
+EstiloMarco=0
+Objetos=4
+BordeArriba=S
+EstiloArriba=0
+Visible=MovTipoEn( <T>FIS<T>, Fiscal.Mov, (<T>FIS.C<T>, <T>FIS.D<T>) )
+BordeAbajo=N
+Renglones=1
+FondoColor=Blanco
+
+[Linea11]
+Clave=Fin: Fiscal.ID
+Seccion=Fin Grupo
+Grupo=Fiscal.ID
+AltoEnCm=0.47
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+
+[E7]
+Celda=E7
+Alineacion=Derecha
+AnchoEnCm=1
+FormatoValidacion=#.##
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=FiscalD.Tasa
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F7]
+Celda=F7
+Alineacion=Derecha
+AnchoEnCm=2
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=FiscalD.Deducible
+FormatoValidacion=#.##
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C10]
+Celda=C10
+Alineacion=Derecha
+AnchoEnCm=2.7
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=FiscalD.Importe
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=5.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 11, Negro, [Negritas + Cursiva]}
+Expresion=Fiscal.Mov & <T>  <T> & Fiscal.MovID
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=2.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=EstatusNombreSingular(Fiscal.Estatus)
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=4
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre( FiscalD.ObligacionFiscal)
+EstiloMarco=0
+ExpresionMultiple=N
+AnchoTexto=21
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+AnchoEnCm=2.5
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=<T>Forma Pago:<T>
+
+[D5]
+Celda=D5
+Alineacion=Izquierda
+AnchoEnCm=4.3
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=Fiscal.FormaPago
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=11.29
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=Fiscal.Proyecto
+AnchoTexto=61
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=Fiscal.Moneda+Si(Fiscal.TipoCambio<>1,<T>: <T>&Fiscal.TipoCambio)
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=3.61
+Marco=S
+EstiloMarco=1
+FormatoValidacion=d mmmm yyyy
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=Fiscal.FechaEmision
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=10
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+Expresion=
+AnchoTexto=54
+FondoColor=Blanco
+FormatoValidacion=
+BordeArriba=S
+EstiloArriba=0
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( FiscalD.Importe)
+FormatoValidacion=(Monetario)
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(FiscalD.OtrosImpuestos)
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=21
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FiscalD.ObligacionFiscal
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FiscalD.Importe
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FiscalD.OtrosImpuestos
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(FiscalD.Base)
+
+[D7]
+Celda=D7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FiscalD.Base
+
+[E6]
+Celda=E6
+Alineacion=Derecha
+AnchoEnCm=1
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( FiscalD.Tasa)
+
+[F6]
+Celda=F6
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(FiscalD.Deducible)
+
+[G6]
+Celda=G6
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(OrigenNombre)
+
+[G7]
+Celda=G7
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OrigenNombre
+
+[Linea9]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[H6]
+Celda=H6
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(FiscalD.Neto)
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=12.89
+AnchoTexto=69
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B9]
+Celda=B9
+Alineacion=Derecha
+AnchoEnCm=12.89
+AnchoTexto=69
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[H7]
+Celda=H7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=FiscalD.Neto
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(FiscalD.Base)
+
+[C8]
+Celda=C8
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=32
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D8]
+Celda=D8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=5
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(FiscalD.Neto)
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

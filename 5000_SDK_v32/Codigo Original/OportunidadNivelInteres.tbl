@@ -1,0 +1,48 @@
+
+[Tabla]
+Icono=0
+Clave=OportunidadNivelInteres
+Nombre=OportunidadNivelInteres
+Archivo=OportunidadNivelInteres
+Modulos=(Todos)
+Singular=OportunidadNivelInteres
+TipoTabla=Maestros
+
+ListaCampos=NivelInteres
+LlavePrimaria=NivelInteres
+SQL=(Lista)
+[NivelInteres]
+Clave=NivelInteres
+Nombre=Nivel de Interés
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+ValidacionConCondiciones=S
+ValidacionCondicion=(NivelInteres<>Nulo) o (NivelInteres=<T><T>)
+[Tabla.ListaCampos]
+(Inicio)=NivelInteres
+NivelInteres=NivelInteresMaestro
+NivelInteresMaestro=Icono
+Icono=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=NivelInteres
+NivelInteres=FROM OportunidadNivelInteres
+FROM OportunidadNivelInteres=(Fin)

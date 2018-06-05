@@ -1,0 +1,72 @@
+[Tabla]
+Icono=0
+Clave=PersonalCat
+Archivo=PersonalCat
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Categorías
+Singular=Categoría
+LlavePrimaria=Categoria
+SQL=SELECT<BR>  Categoria,<BR>  SueldoMaximo,<BR>  SueldoMinimo,<BR>  Descripcion,<BR>  SueldoMedio,<BR>  FactorCANAPAT<BR><BR>FROM<BR>  PersonalCat
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=20
+Tamano=50
+TipoDatos=Texto
+
+[SueldoMaximo]
+Clave=SueldoMaximo
+Nombre=Sueldo Diario Máximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[SueldoMinimo]
+Clave=SueldoMinimo
+Nombre=Sueldo Diario Mínimo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[SueldoMedio]
+Clave=SueldoMedio
+Nombre=Sueldo Medio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[FactorCANAPAT]
+Clave=FactorCANAPAT
+Nombre=Factor CANAPAT
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=General.Autotransportes y Config.AutoCANAPAT
+
+[Tabla.ListaCampos]
+(Inicio)=Categoria
+Categoria=Descripcion
+Descripcion=SueldoMaximo
+SueldoMaximo=SueldoMinimo
+SueldoMinimo=SueldoMedio
+SueldoMedio=FactorCANAPAT
+FactorCANAPAT=(Fin)

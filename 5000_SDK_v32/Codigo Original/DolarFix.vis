@@ -1,0 +1,36 @@
+[Vista]
+Icono=0
+Clave=DolarFix
+Nombre=Dolar Fix
+Modulos=(Todos)
+Singular=Dolar Fix
+ListaTablas=DolarFix
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=DolarFix
+UsarJOIN=S
+SQL=SELECT<BR>  DolarFix.Fecha,<BR>  DolarFix.TipoCambio<BR><BR>FROM<BR>  DolarFix
+
+[DolarFix.Fecha]
+Clave=DolarFix.Fecha
+LigaTabla=DolarFix
+LigaCampo=Fecha
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Fecha
+
+[DolarFix.TipoCambio]
+Clave=DolarFix.TipoCambio
+LigaTabla=DolarFix
+LigaCampo=TipoCambio
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=TipoCambio
+
+[Vista.ListaCampos]
+(Inicio)=DolarFix.Fecha
+DolarFix.Fecha=DolarFix.TipoCambio
+DolarFix.TipoCambio=(Fin)

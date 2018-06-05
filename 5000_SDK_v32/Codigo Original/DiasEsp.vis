@@ -1,0 +1,26 @@
+[Vista]
+Icono=0
+Clave=DiasEsp
+Nombre=Días Específicos
+Modulos=(Todos)
+Singular=Día Específico
+ListaTablas=DiasEsp
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=DiasEsp.DiasEsp
+TablaPrincipal=DiasEsp
+SQL=SELECT<BR>  DiasEsp.DiasEsp<BR><BR>FROM<BR>  DiasEsp
+
+[DiasEsp.DiasEsp]
+Clave=DiasEsp.DiasEsp
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=DiasEsp
+LigaCampo=DiasEsp
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=DiasEsp

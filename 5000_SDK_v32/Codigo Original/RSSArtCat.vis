@@ -1,0 +1,26 @@
+[Vista]
+Icono=0
+Clave=RSSArtCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=RSSArtCat
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=RSSArtCat.Categoria
+TablaPrincipal=RSSArtCat
+SQL=SELECT<BR>  RSSArtCat.Categoria<BR><BR>FROM<BR>  RSSArtCat
+
+[RSSArtCat.Categoria]
+Clave=RSSArtCat.Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=RSSArtCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Categoria

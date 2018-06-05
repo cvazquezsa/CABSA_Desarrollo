@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=CteCapacidadPago
+Archivo=CteCapacidadPago
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Capacidad Pago
+Singular=Capacidad Pago
+LlavePrimaria=Cliente<BR>Concepto
+SQL=SELECT<BR>  Cliente,<BR>  Concepto,<BR>  Ingreso,<BR>  Egreso<BR><BR>FROM<BR>  CteCapacidadPago
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>SELECT DISTINCT Concepto FROM CteCapacidadPago<T>)
+
+[Ingreso]
+Clave=Ingreso
+Nombre=Ingreso
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Egreso]
+Clave=Egreso
+Nombre=Egreso
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=Concepto
+Concepto=Ingreso
+Ingreso=Egreso
+Egreso=(Fin)

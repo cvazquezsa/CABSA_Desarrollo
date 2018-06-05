@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AutoMant
+Nombre=Mantenimiento
+Modulos=(Todos)
+Singular=Mantenimiento
+ListaTablas=AutoMant
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AutoMant.Mantenimiento
+TablaPrincipal=AutoMant
+UsarJOIN=S
+SQL=SELECT<BR>  AutoMant.Mantenimiento<BR><BR>FROM<BR>  AutoMant
+
+[AutoMant.Mantenimiento]
+Clave=AutoMant.Mantenimiento
+LigaTabla=AutoMant
+LigaCampo=Mantenimiento
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Mantenimiento

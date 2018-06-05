@@ -1,0 +1,104 @@
+[Tabla]
+Icono=0
+Clave=CtaSituacion
+Archivo=CtaSituacion
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Situaciones
+Singular=Situación
+LlavePrimaria=(Lista)
+CampoSituacion=Situacion
+
+SQL=SELECT<BR>  Rama,<BR>  Situacion,<BR>  Icono,<BR>  Color,<BR>  CampanaMov,<BR>  CampanaMovID<BR><BR>FROM<BR>  CtaSituacion
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Rama
+TipoDatos=Texto
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si((CampanaMov <> NULO) Y (CampanaMovID <> NULO),Si(SQL(<T>IF EXISTS(SELECT * FROM CampanaCfgSituacion ccs JOIN Campana c ON ccs.ID = c.ID WHERE ccs.Situacion = :tSituacion AND c.Mov = :tMov AND c.MovID = :tMovID) SELECT 1 ELSE SELECT 0<T>,Situacion,CampanaMov,CampanaMovID)=1,VERDADERO,FALSO),VERDADERO)
+Formula=SQLENLISTA(<T>SELECT ccs.Situacion FROM CampanaCfgSituacion ccs JOIN Campana c ON ccs.ID = c.ID WHERE c.Mov = :tMov AND c.MovID = :tMovID<T>,CampanaMov,CampanaMovID)
+[Icono]
+Clave=Icono
+Nombre=Icono
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+EsIcono=S
+ValorPorOmision=0
+
+[Color]
+Clave=Color
+Nombre=Color
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Color
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+
+
+TipoDatos=Texto
+
+
+[CampanaMov]
+Clave=CampanaMov
+Nombre=Campaña
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+CondicionDespliege=((Info.Rama = <T>CXC<T>) Y (Info.Descripcion = <T>Clientes<T>)) O ((Info.Rama = <T>CXP<T>) Y (Info.Descripcion = <T>Proveedores<T>)) O ((Info.Rama = <T>CMP<T>) Y (Info.Descripcion = <T>Prospectos<T>)) O ((Info.Rama = <T>RH<T>) Y (Info.Descripcion = <T>Personal<T>))
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CMP
+[CampanaMovID]
+Clave=CampanaMovID
+Nombre=Consecutivo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=((Info.Rama = <T>CXC<T>) Y (Info.Descripcion = <T>Clientes<T>)) O ((Info.Rama = <T>CXP<T>) Y (Info.Descripcion = <T>Proveedores<T>)) O ((Info.Rama = <T>CMP<T>) Y (Info.Descripcion = <T>Prospectos<T>)) O ((Info.Rama = <T>RH<T>) Y (Info.Descripcion = <T>Personal<T>))
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLENLISTA(<T>SELECT MovID FROM Campana WHERE Mov = :tCampanaMov AND Estatus = :tEstatus<T>,CampanaMov,<T>PENDIENTE<T>)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Rama
+Rama=Situacion
+Situacion=Icono
+Icono=Color
+Color=CampanaMov
+CampanaMov=CampanaMovID
+CampanaMovID=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Rama
+Rama=Situacion
+Situacion=(Fin)

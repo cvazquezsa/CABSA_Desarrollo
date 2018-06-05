@@ -1,0 +1,55 @@
+
+[Tabla]
+Icono=0
+Clave=MFAIrTesoreria
+Nombre=MFAIrTesoreria
+Archivo=MFAIrTesoreria
+Modulos=(Todos)
+Singular=MFAIrTesoreria
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Clave
+SQL=(Lista)
+[Movimiento]
+Clave=Movimiento
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+ConRefrescar=S
+ListaRefrescar=Clave
+Requerido=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE modulo = <T>+Comillas(<T>DIN<T>)+<T> ORDER BY Mov<T>)
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+ValorRefrescar=SQL(<T>SELECT Clave FROM MovTipo WHERE Mov = <T>+Comillas(Movimiento)+<T> ORDER BY Mov<T>)
+AyudaEnCaptura=Expresion
+Formula=SQLEnLista(<T>SELECT Clave FROM MovTipo WHERE modulo = <T>+Comillas(<T>DIN<T>)+<T> ORDER BY Mov<T>)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Movimiento
+Movimiento=Clave
+Clave=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Movimiento,
+Movimiento,=Clave
+Clave=FROM MFAIrTesoreria
+FROM MFAIrTesoreria=(Fin)

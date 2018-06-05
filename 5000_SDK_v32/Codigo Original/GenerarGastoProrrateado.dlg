@@ -1,0 +1,73 @@
+[Dialogo]
+Clave=GenerarGastoProrrateado
+Nombre=<T>Gasto Prorrateado<T>
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=514
+PosicionInicialArriba=414
+PosicionInicialAltura=189
+PosicionInicialAncho=251
+VentanaConIcono=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Gasto]
+Nombre=Gasto
+Boton=0
+NombreDesplegar=Generar &Gasto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.GenerarMov, ConfigMov.Gasto)
+
+[Acciones.Solicitud]
+Nombre=Solicitud
+Boton=0
+NombreDesplegar=Generar &Solicitud
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.GenerarMov, ConfigMov.GastoSolicitud)
+
+[Acciones.Comprobante]
+Nombre=Comprobante
+Boton=0
+NombreDesplegar=Generar &Comprobante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Afectar.GenerarMov, ConfigMov.GastoComprobante)
+
+[Acciones.Presupuesto]
+Nombre=Presupuesto
+Boton=0
+NombreDesplegar=Generar &Presupuesto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Afectar.GenerarMov, ConfigMov.GastoPresupuesto)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Gasto
+Gasto=Comprobante
+Comprobante=Solicitud
+Solicitud=Presupuesto
+Presupuesto=(Fin)

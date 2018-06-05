@@ -1,0 +1,51 @@
+
+[Tabla]
+Icono=0
+Clave=POSLDIServicioEstacion
+Nombre=POSLDIServicioEstacion
+Archivo=POSLDIServicioEstacion
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=(Lista)
+LlavePrimaria=EstacionFija
+[EstacionFija]
+Clave=EstacionFija
+Nombre=Estación Fija
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[DireccionIP]
+Clave=DireccionIP
+Nombre=Dirección IP
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+[Puerto]
+Clave=Puerto
+Nombre=Puerto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Tabla.ListaCampos]
+(Inicio)=EstacionFija
+EstacionFija=DireccionIP
+DireccionIP=Puerto
+Puerto=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=EstacionFija,
+EstacionFija,=DireccionIP,
+DireccionIP,=Puerto
+Puerto=FROM POSLDIServicioEstacion
+FROM POSLDIServicioEstacion=(Fin)

@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=ArtFactor
+Nombre=Factor de Costos
+Modulos=INV
+Singular=Factores de Costos
+ListaTablas=ArtFactor
+TablaPrincipal=ArtFactor
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=(Lista)
+UsarJOIN=S
+SQL=SELECT<BR>  ArtFactor.Factor,<BR>  ArtFactor.Importe<BR><BR>FROM<BR>  ArtFactor
+
+[ArtFactor.Factor]
+Clave=ArtFactor.Factor
+LigaTabla=ArtFactor
+LigaCampo=Factor
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Factor
+
+[ArtFactor.Importe]
+Clave=ArtFactor.Importe
+LigaTabla=ArtFactor
+LigaCampo=Importe
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Importe
+
+[Vista.ListaCampos]
+(Inicio)=ArtFactor.Factor
+ArtFactor.Factor=ArtFactor.Importe
+ArtFactor.Importe=(Fin)

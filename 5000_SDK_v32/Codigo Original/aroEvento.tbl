@@ -1,0 +1,72 @@
+[Tabla]
+Icono=0
+Clave=aroEvento
+Archivo=aroEvento
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Eventos
+Singular=Evento
+LlavePrimaria=EventoRiesgo
+Niveles=S
+CampoAcumulativa=EsEstructura
+SQL=SELECT<BR>  EventoRiesgo,<BR>  Nombre,<BR>  Descripcion,<BR>  EsEstructura,<BR>  Orden<BR><BR>FROM<BR>  aroEvento
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=EstructuraEnOrden(EventoRiesgo, 5)
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[EventoRiesgo]
+Clave=EventoRiesgo
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Clave Incorrecta<T>
+ConRefrescar=S
+ListaRefrescar=Orden
+ValidacionCondicion=EstructuraOk(EventoRiesgo, <T><T>, 5)
+TipoDatos=Texto
+
+[EsEstructura]
+Clave=EsEstructura
+Nombre=Estructura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=EventoRiesgo
+EventoRiesgo=Orden
+Orden=Nombre
+Nombre=Descripcion
+Descripcion=EsEstructura
+EsEstructura=(Fin)

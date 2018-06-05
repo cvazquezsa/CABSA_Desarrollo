@@ -1,0 +1,32 @@
+[Tabla]
+Icono=0
+Clave=ImpresoraModo
+Archivo=ImpresoraModo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Modos de Impresión
+Singular=Modo de Impresión
+LlavePrimaria=Modo
+SQL=SELECT<BR>  Modo,<BR>  Secuencia<BR><BR>FROM<BR>  ImpresoraModo
+
+[Modo]
+Clave=Modo
+Nombre=Modo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Secuencia]
+Clave=Secuencia
+Nombre=Secuencia de Escape
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Modo
+Modo=Secuencia
+Secuencia=(Fin)

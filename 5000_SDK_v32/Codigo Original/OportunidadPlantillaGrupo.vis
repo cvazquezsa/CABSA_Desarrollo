@@ -1,0 +1,32 @@
+[Vista]
+Icono=0
+Clave=OportunidadPlantillaGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=OportunidadPlantillaGrupo
+TablaPrincipal=OportunidadPlantillaGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=OportunidadPlantillaGrupo.Grupo
+UsarJOIN=S
+
+
+
+SQL=(Lista)
+[OportunidadPlantillaGrupo.Grupo]
+Clave=OportunidadPlantillaGrupo.Grupo
+LigaTabla=OportunidadPlantillaGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=OportunidadPlantillaGrupo.Grupo
+OportunidadPlantillaGrupo.Grupo=FROM OportunidadPlantillaGrupo
+FROM OportunidadPlantillaGrupo=(Fin)

@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=AspelCfgOpcion
+Nombre=AspelCfgOpcion
+Archivo=AspelCfgOpcion
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+LlavePrimaria=Descripcion
+
+SQL=SELECT<BR>  Valor,<BR>  Descripcion,<BR>  Seccion<BR><BR>FROM<BR>  AspelCfgOpcion
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=250
+Tamano=250
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+
+TipoDatos=Texto
+Formula=Caso  Descripcion<BR>  Es <T>Tipo Base De Datos SAE<T>               Entonces Lista(<T>SQL<T>) //Lista(<T>Paradox<T>,<T>Access<T>,<T>SQL<T>)<BR>  Es <T>Servidor SAE<T>                         Entonces SQLENLISTA(<T>SELECT SrvName FROM master.dbo.sysservers<T>)<BR>  Es <T>Base De Datos SAE<T>                    Entonces SQLENLISTA(<T>SELECT name FROM master.dbo.sysdatabases<T>)<BR>  Es <T>Ruta SAE<T>                             Entonces Lista(<T><T>)<BR>  Es <T>Empresa SAE<T>                          Entonces Lista(<T>1<T>,<T>2<T>,<T>3<T>,<T>4<T>,<T>5<T>,<T>6<T>,<T>7<T>,<T>8<T>,<T>9<T>)<BR>  Es <T>Importar COI<T>                         Entonces Lista(<T>Si<T>,<T>No<T>)<BR>  Es <T>Tipo Base De Datos COI<T>               Entonces Lista(<T>SQL<T>)  //Lista(<T>Paradox<T>,<T>Access<T>,<T>SQL<T>)<BR>  Es <T>Servidor COI<T>                         Entonces SQLENLISTA(<T>SELECT SrvName FROM master.dbo.sysservers<T>)<BR>  Es <T>Base De Datos COI<T>                    Entonces SQLENLISTA(<T>SELECT name FROM master.dbo.sysdatabases<T>)<BR>  Es <T>Ruta COI<T>                             Entonces Lista(<T><T>)<BR>  Es <T>Empresa COI<T>                          Entonces Lista(<T>1<T>,<T>2<T>,<T>3<T>,<T>4<T>,<T>5<T>,<T>6<T>,<T>7<T>,<T>8<T>,<T>9<T>)<BR>  Es <T>Ajuste Automatico Existencias Series<T> Entonces Lista(<T>Si<T>,<T>No<T>)<BR>  Es <T>Base De Datos De Paso<T>                Entonces SQLENLISTA(<T>SELECT name FROM master.dbo.sysdatabases<T>)<BR>  Es <T>Servidor Intelisis<T>                   Entonces SQLENLISTA(<T>SELECT SrvName FROM master.dbo.sysservers<T>)<BR>  Es <T>Base De Datos Intelisis<T>              Entonces SQLENLISTA(<T>SELECT name FROM master.dbo.sysdatabases<T>)<BR>  Es <T>IVA Articulo<T>                         Entonces LISTA(<T>Impuesto 1 SAE<T>,<T>Impuesto 2 SAE<T>,<T>Impuesto 3 SAE<T>,<T>Impuesto 4 SAE<T>,<T>Ninguno<T>)<BR>  Es <T>IEPS Articulo<T>                        Entonces LISTA(<T>Impuesto 1 SAE<T>,<T>Impuesto 2 SAE<T>,<T>Impuesto 3 SAE<T>,<T>Impuesto 4 SAE<T>,<T>Ninguno<T>)<BR>  Es <T>Impuesto 3 Articulo<T>                  Entonces LISTA(<T>Impuesto 1 SAE<T>,<T>Impuesto 2 SAE<T>,<T>Impuesto 3 SAE<T>,<T>Impuesto 4 SAE<T>,<T>Ninguno<T>)<BR>  Es <T>Generar Poliza De Ajuste<T>             Entonces LISTA(<T>Si<T>,<T>No<T>)<BR>  Es <T>AspelRubro Ventas<T>                         Entonces SQLENLISTA(<T>SELECT Valor FROM AspelCargaProp WHERE Campo = :tAspelRubro ORDER BY AspelCargaProp.ValorNumero<T>,<T>Rubro<T>)<BR>  Es <T>AspelRubro Compras<T>                        Entonces SQLENLISTA(<T>SELECT Valor FROM AspelCargaProp WHERE Campo = :tAspelRubro ORDER BY AspelCargaProp.ValorNumero<T>,<T>AspelRubro<T>)<BR>  Es <T>AspelRubro Clientes<T>                       Entonces SQLENLISTA(<T>SELECT Valor FROM AspelCargaProp WHERE Campo = :tAspelRubro ORDER BY AspelCargaProp.ValorNumero<T>,<T>AspelRubro<T>)<BR>  Es <T>AspelRubro Proveedores<T>                    Entonces SQLENLISTA(<T>SELECT Valor FROM AspelCargaProp WHERE Campo = :tAspelRubro ORDER BY AspelCargaProp.ValorNumero<T>,<T>AspelRubro<T>)<BR>  Es <T>AspelRubro Inventarios<T>                    Entonces SQLENLISTA(<T>SELECT Valor FROM AspelCargaProp WHERE Campo = :tAspelRubro ORDER BY AspelCargaProp.ValorNumero<T>,<T>AspelRubro<T>)<BR>  Es <T>Cuenta Ventas<T>                        Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>Cuenta Compras<T>                       Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>Cuenta Clientes<T>                      Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>Cuenta Proveedores<T>                   Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>Cuenta Inventarios<T>                   Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>Cuenta Ajuste<T>                        Entonces SQLENLISTA(<T>SELECT dbo.fnAspelFormateaCuentas(Valor,:tFormato) FROM AspelCargaProp WHERE Campo = :tCuenta AND Rama <> :tRama<T>,Info.Formato,<T>Cuenta<T>,<T>-1<T>)<BR>  Es <T>ODBC<T>                                 Entonces LISTA(<T>Microsoft.Jet.OLEDB.4.0<T>,<T>Microsoft.ACE.OLEDB.12.0<T>)<BR>Sino<BR>  Lista(<T><T>)<BR>Fin
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+TamanoValidacion=50
+Tamano=50
+UnicamenteLectura=S
+TipoDatos=Texto
+
+[Seccion]
+Clave=Seccion
+Nombre=Sección
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Valor
+Valor=Descripcion
+Descripcion=Seccion
+Seccion=(Fin)

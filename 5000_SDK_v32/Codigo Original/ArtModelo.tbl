@@ -1,0 +1,25 @@
+[Tabla]
+Icono=0
+Clave=ArtModelo
+Archivo=ArtModelo
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Modelo
+Nombre=Modelos
+Singular=Modelos
+LlavePrimaria=Modelo
+CampoSugerido=Modelo
+SQL=SELECT<BR>  Modelo<BR><BR>FROM<BR>  ArtModelo
+
+[Modelo]
+Clave=Modelo
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Requerido=S
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

@@ -1,0 +1,47 @@
+
+[Dialogo]
+Clave=MenuCfgMonedero
+Nombre=Menú Monedero
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=80
+PosicionInicialAncho=500
+[Acciones.CfgMonedero]
+Nombre=CfgMonedero
+Boton=0
+NombreDesplegar=Configuración Monedero
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=MonederoCfg
+Activo=S
+
+[Acciones.MonederoFormasCobro]
+Nombre=MonederoFormasCobro
+Boton=0
+NombreDesplegar=Monedero Formas Cobro
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=FormaCobroMon
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=CfgMonedero
+CfgMonedero=MonederoFormasCobro
+MonederoFormasCobro=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PosicionZona
+Nombre=Zonas
+Modulos=(Todos)
+Singular=Zona
+ListaTablas=PosicionZona
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PosicionZona.Zona
+TablaPrincipal=PosicionZona
+UsarJOIN=S
+SQL=SELECT<BR>  PosicionZona.Zona<BR><BR>FROM<BR>  PosicionZona
+
+[PosicionZona.Zona]
+Clave=PosicionZona.Zona
+LigaTabla=PosicionZona
+LigaCampo=Zona
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Zona

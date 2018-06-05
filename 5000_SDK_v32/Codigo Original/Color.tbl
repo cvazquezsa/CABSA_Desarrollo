@@ -1,0 +1,34 @@
+[Tabla]
+Icono=0
+Clave=Color
+Archivo=Color
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Colores
+Singular=Color
+LlavePrimaria=Color
+SQL=SELECT<BR>  Color,<BR>  Numero<BR><BR>FROM<BR>  Color
+
+[Color]
+Clave=Color
+Nombre=Color
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Numero]
+Clave=Numero
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Buscar Color
+
+[Tabla.ListaCampos]
+(Inicio)=Color
+Color=Numero
+Numero=(Fin)

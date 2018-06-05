@@ -1,0 +1,37 @@
+[Tabla]
+Icono=0
+Clave=FormaPagoTipo
+Archivo=FormaPagoTipo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tipos
+Singular=Tipos
+LlavePrimaria=Tipo
+ControlTipo=S
+CampoTipo=Tipo
+SQL=SELECT<BR>  Tipo,<BR>  SobrePrecio<BR><BR>FROM<BR>  FormaPagoTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[SobrePrecio]
+Clave=SobrePrecio
+Nombre=% Sobre Precio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=SobrePrecio
+SobrePrecio=(Fin)

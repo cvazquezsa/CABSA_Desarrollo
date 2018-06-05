@@ -1,0 +1,272 @@
+
+[Tabla]
+Icono=0
+Clave=PlanArtMaxMinCfg
+Nombre=PlanArtMaxMinCfg
+Archivo=PlanArtMaxMinCfg
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+[DiasVenta]
+Clave=DiasVenta
+Nombre=Días de Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=Tipo = <T>DIAS NATURALES<T>
+ValorPorOmision=0
+[Semanas]
+Clave=Semanas
+Nombre=Semanas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=Tipo = <T>SEMANAS CERRADAS<T>
+[PeriodoA]
+Clave=PeriodoA
+Nombre=Periodo A
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=MesesPeriodoA
+CondicionDespliege=Tipo = <T>MESES CERRADOS<T>
+[MesesPeriodoA]
+Clave=MesesPeriodoA
+Nombre=Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=(PeriodoA = Verdadero) y (Tipo = <T>MESES CERRADOS<T>)
+[PeriodoB]
+Clave=PeriodoB
+Nombre=Periodo B
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=MesesPeriodoB
+CondicionDespliege=Tipo = <T>MESES CERRADOS<T>
+[MesesPeriodoB]
+Clave=MesesPeriodoB
+Nombre=Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=(PeriodoB = Verdadero) y (Tipo = <T>MESES CERRADOS<T>)
+[PeriodoC]
+Clave=PeriodoC
+Nombre=Periodo C
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=MesesPeriodoC
+CondicionDespliege=Tipo = <T>MESES CERRADOS<T>
+[MesesPeriodoC]
+Clave=MesesPeriodoC
+Nombre=Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=(PeriodoC = Verdadero) y (Tipo = <T>MESES CERRADOS<T>)
+[DiasInventario]
+Clave=DiasInventario
+Nombre=Dias de Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FactorCrecimiento]
+Clave=FactorCrecimiento
+Nombre=Factor de Crecimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[MovComs]
+Clave=MovComs
+Nombre=Orden Compra
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>Select Mov From MovTipo Where Modulo = :tModulo AND CLAVE = :tClave AND SubClave IS NULL<T>, <T>COMS<T>, <T>COMS.O<T>)
+[MovInv]
+Clave=MovInv
+Nombre=Orden Traspaso
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+
+
+
+
+Formula=SQLEnLista(<T>Select Mov From MovTipo Where Modulo = :tModulo AND Clave IN (:tClave1)<T>, <T>INV<T>,<T>INV.OI<T>)
+[Tipo.ListaRefrescarCondiciones]
+(Inicio)=PeriodoA
+PeriodoA=PeriodoB
+PeriodoB=PeriodoC
+PeriodoC=DiasVenta
+DiasVenta=Semanas
+Semanas=MesesPeriodoA
+MesesPeriodoA=MesesPeriodoB
+MesesPeriodoB=MesesPeriodoC
+MesesPeriodoC=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=DIAS NATURALES
+DIAS NATURALES=SEMANAS CERRADAS
+SEMANAS CERRADAS=MESES CERRADOS
+MESES CERRADOS=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[MovInv2]
+Clave=MovInv2
+Nombre=Orden Transferencia
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+
+
+
+Formula=SQLEnLista(<T>Select Mov From MovTipo Where Modulo = :tModulo AND Clave IN (:tClave1)<T>, <T>INV<T>,<T>INV.OT<T>)
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Tipo
+Tipo=DiasVenta
+DiasVenta=Semanas
+Semanas=PeriodoA
+PeriodoA=MesesPeriodoA
+MesesPeriodoA=PeriodoB
+PeriodoB=MesesPeriodoB
+MesesPeriodoB=PeriodoC
+PeriodoC=MesesPeriodoC
+MesesPeriodoC=DiasInventario
+DiasInventario=FactorCrecimiento
+FactorCrecimiento=MovComs
+MovComs=MovInv
+MovInv=MovInv2
+MovInv2=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=Tipo,
+Tipo,=DiasVenta,
+DiasVenta,=Semanas,
+Semanas,=PeriodoA,
+PeriodoA,=MesesPeriodoA,
+MesesPeriodoA,=PeriodoB,
+PeriodoB,=MesesPeriodoB,
+MesesPeriodoB,=PeriodoC,
+PeriodoC,=MesesPeriodoC,
+MesesPeriodoC,=DiasInventario,
+DiasInventario,=FactorCrecimiento,
+FactorCrecimiento,=MovComs,
+MovComs,=MovInv,
+MovInv,=MovInv2
+MovInv2=FROM PlanArtMaxMinCfg
+FROM PlanArtMaxMinCfg=(Fin)

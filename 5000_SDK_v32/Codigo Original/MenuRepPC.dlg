@@ -1,0 +1,67 @@
+[Dialogo]
+Clave=MenuRepPC
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=355
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.ArtPrecioHist]
+Nombre=ArtPrecioHist
+Boton=0
+NombreDesplegar=&Histórico de Precios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=ArtPrecioHist
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>PC/ArtPrecioHist<T>)
+[Acciones.ComparativoPrecios]
+Nombre=ComparativoPrecios
+Boton=0
+NombreDesplegar=Comparativo &Precios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepComparativoPrecios
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>PC/ComparativoPrecios<T>)
+[Acciones.General]
+Nombre=General
+Boton=0
+NombreDesplegar=&General de Movimientos
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=mis_RepPCAnalisisMov
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>PC/General<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=ComparativoPrecios
+ComparativoPrecios=ArtPrecioHist
+ArtPrecioHist=General
+General=(Fin)

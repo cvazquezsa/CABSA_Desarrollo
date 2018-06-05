@@ -1,0 +1,87 @@
+
+[Tabla]
+Icono=0
+Clave=POSCBFormaPago
+Archivo=CB
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+CampoSubCuenta=SubCuenta
+CampoCuenta=Cuenta
+LlavePrimaria=Codigo
+SQL=(Lista)
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+[TipoCuenta]
+Clave=TipoCuenta
+Nombre=TipoCuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+ValorPorOmision=<T>Forma Pago<T>
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Accion.ListaOpciones]
+(Inicio)=MOVIMIENTO NUEVO
+MOVIMIENTO NUEVO=CANCELAR PARTIDA
+CANCELAR PARTIDA=ELIMINAR MOVIMIENTO
+ELIMINAR MOVIMIENTO=(Fin)
+
+
+
+
+
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma de Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Requerido=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Codigo
+Codigo=TipoCuenta
+TipoCuenta=FormaPago
+FormaPago=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Codigo,
+  Codigo,=  TipoCuenta,
+  TipoCuenta,=  FormaPago
+  FormaPago=FROM
+FROM=  CB
+  CB=(Fin)

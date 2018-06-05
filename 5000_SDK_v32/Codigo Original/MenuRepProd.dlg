@@ -1,0 +1,52 @@
+[Dialogo]
+Clave=MenuRepProd
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=367
+PosicionInicialArriba=334
+PosicionInicialAlturaCliente=66
+PosicionInicialAncho=289
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+
+[Acciones.CostosRuta]
+Nombre=CostosRuta
+Boton=0
+NombreDesplegar=&Costos por Ruta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCostosporRuta
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Produccion/CostosRuta<T>)
+[Acciones.Ordenes]
+Nombre=Ordenes
+Boton=0
+NombreDesplegar=&Ordenes de Producción Pendientes
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+TipoAccion=Formas
+ClaveAccion=mis_RepOrdenesProduccion
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Produccion/Ordenes<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=CostosRuta
+CostosRuta=Ordenes
+Ordenes=(Fin)

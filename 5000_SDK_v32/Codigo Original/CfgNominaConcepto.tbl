@@ -1,0 +1,66 @@
+[Tabla]
+Icono=0
+Clave=CfgNominaConcepto
+Archivo=CfgNominaConcepto
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Configuración Conceptos
+Singular=Configuración Conceptos
+LlavePrimaria=ClaveInterna<BR>Pais
+ListaRelaciones=NominaConcepto
+SQL=SELECT<BR>  ClaveInterna,<BR>  Descripcion,<BR>  NominaConcepto,<BR>  Pais<BR><BR>FROM<BR>  CfgNominaConcepto
+
+[ClaveInterna]
+Clave=ClaveInterna
+Nombre=Clave Interna
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Concepto Requerido
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[NominaConcepto]
+Clave=NominaConcepto
+Nombre=Concepto Nómina
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=NominaConceptoLista
+AyudaVista=NominaConcepto
+AyudaCampo=NominaConcepto.NominaConcepto
+ValidacionUsaTabla=S
+ValidacionTablas=NominaConcepto
+TipoDatos=Texto
+
+[Relaciones.NominaConcepto]
+TipoRelacion=Opcional
+LlaveLocal=NominaConcepto
+Clave=NominaConcepto
+TablaRemota=NominaConcepto
+LlaveRemota=NominaConcepto
+
+[Pais]
+Clave=Pais
+Nombre=Pais
+Visible=S
+TamanoValidacion=30
+Tamano=30
+ValorPorOmision=Empresa.Pais
+ValorRefrescar=Empresa.Pais
+
+[Tabla.ListaCampos]
+(Inicio)=ClaveInterna
+ClaveInterna=Descripcion
+Descripcion=NominaConcepto
+NominaConcepto=Pais
+Pais=(Fin)

@@ -1,0 +1,63 @@
+
+[Dialogo]
+Clave=NomTabCgf
+Nombre=Reporte Nomina Tabular
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=464
+PosicionInicialArriba=260
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=500
+[Acciones.NomTabCfg]
+Nombre=NomTabCfg
+Boton=0
+NombreDesplegar=Nomina Tabular Configuración
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+Activo=S
+Visible=S
+ClaveAccion=NomTabCfg
+
+[Acciones.NomTabFirmas]
+Nombre=NomTabFirmas
+Boton=0
+NombreDesplegar=Nomina Tabular Firmas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NomTabFirmas
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.NomTabArchivo]
+Nombre=NomTabArchivo
+Boton=0
+NombreDesplegar=Configuración de Archivo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NomTabArchivo
+Activo=S
+Visible=S
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=NomTabCfg
+NomTabCfg=NomTabFirmas
+NomTabFirmas=NomTabArchivo
+NomTabArchivo=(Fin)

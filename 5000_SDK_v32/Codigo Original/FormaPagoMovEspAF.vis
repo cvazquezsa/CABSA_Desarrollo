@@ -1,0 +1,105 @@
+
+[Vista]
+Icono=0
+Clave=FormaPagoMovEspAF
+Nombre=FormaPagoMovEspAF
+Modulos=(Todos)
+Singular=FormaPagoMovEspAF
+ListaTablas=FormaPagoMovEsp
+TablaPrincipal=FormaPagoMovEsp
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[FormaPagoMovEsp.FormaPago]
+Clave=FormaPagoMovEsp.FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ValorPorOmision=Info.FormaPago
+LigaTabla=FormaPagoMovEsp
+LigaCampo=FormaPago
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FormaPago
+
+[FormaPagoMovEsp.Modulo]
+Clave=FormaPagoMovEsp.Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=5
+LigaTabla=FormaPagoMovEsp
+LigaCampo=Modulo
+ClaveBDE=Modulo
+
+Alineacion=por Omisión
+ValorPorOmision=<T>AF<T>
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+[FormaPagoMovEsp.Mov]
+Clave=FormaPagoMovEsp.Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=10
+AyudaMemOpc=Validar captura en la lista
+LigaTabla=FormaPagoMovEsp
+LigaCampo=Mov
+ClaveBDE=Mov
+
+Alineacion=por Omisión
+AyudaRefrescar=S
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>EXEC spNotificacionAyudaCaptura :tVacio, :tCampo, :tModulo<T>, <T><T>, <T>Movimiento<T>, <T>AF<T>)
+[FormaPagoMovEsp.ConDesglose]
+Clave=FormaPagoMovEsp.ConDesglose
+Nombre=Con Desglose
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+LigaTabla=FormaPagoMovEsp
+LigaCampo=ConDesglose
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ConDesglose
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=FormaPagoMovEsp.FormaPago
+FormaPagoMovEsp.FormaPago=FormaPagoMovEsp.Modulo
+FormaPagoMovEsp.Modulo=FormaPagoMovEsp.Mov
+FormaPagoMovEsp.Mov=FormaPagoMovEsp.ConDesglose
+FormaPagoMovEsp.ConDesglose=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=FormaPagoMovEsp.FormaPago,
+FormaPagoMovEsp.FormaPago,=FormaPagoMovEsp.Modulo,
+FormaPagoMovEsp.Modulo,=FormaPagoMovEsp.Mov,
+FormaPagoMovEsp.Mov,=FormaPagoMovEsp.ConDesglose
+FormaPagoMovEsp.ConDesglose=FROM FormaPagoMovEsp
+FROM FormaPagoMovEsp=(Fin)

@@ -1,0 +1,47 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgGastoIndirecto
+Archivo=EmpresaCfgGastoIndirecto
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Gastos Indirectos
+Singular=Gastos Indirectos
+LlavePrimaria=Empresa<BR>Concepto
+CampoEmpresa=Empresa
+ControlEmpresas=S
+SQL=SELECT<BR>  Empresa,<BR>  Concepto,<BR>  Porcentaje<BR><BR>FROM<BR>  EmpresaCfgGastoIndirecto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=GAS
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Concepto
+Concepto=Porcentaje
+Porcentaje=(Fin)

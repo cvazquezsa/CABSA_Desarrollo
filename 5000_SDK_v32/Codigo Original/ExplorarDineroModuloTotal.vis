@@ -1,0 +1,84 @@
+
+[Vista]
+Icono=0
+Clave=ExplorarDineroModuloTotal
+Nombre=ExplorarDineroModuloTotal
+Modulos=(Todos)
+
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=(Lista)
+[ImporteTotalNeto]
+Clave=ImporteTotalNeto
+Nombre=Importe Total
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImporteTotalNeto
+
+FormatoValidacion=(Monetario)
+[ImporteTotalNetoMN]
+Clave=ImporteTotalNetoMN
+Nombre=Importe Total (MN)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=ImporteTotalNetoMN
+
+FormatoValidacion=(Monetario)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Registros]
+Clave=Registros
+Nombre=Total Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Registros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=ImporteTotalNeto
+ImporteTotalNeto=ImporteTotalNetoMN
+ImporteTotalNetoMN=Registros
+Registros=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=SUM((Dinero.Importe*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))+(ISNULL(Dinero.Comisiones,0))+(Dinero.Impuestos*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))) AS ImporteTotalNeto,
+SUM((Dinero.Importe*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))+(ISNULL(Dinero.Comisiones,0))+(Dinero.Impuestos*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))) AS ImporteTotalNeto,=SUM((((Dinero.Importe*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))+(ISNULL(Dinero.Comisiones,0))* Dinero.TipoCambio)/ContMoneda.TipoCambio)+(((Dinero.Impuestos*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END)))* Dinero.TipoCambio)/ContMoneda.TipoCambio) AS ImporteTotalNetoMN,
+SUM((((Dinero.Importe*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END))+(ISNULL(Dinero.Comisiones,0))* Dinero.TipoCambio)/ContMoneda.TipoCambio)+(((Dinero.Impuestos*(CASE WHEN MovTipo.Clave IN('VTAS.D','VTAS.DF','VTAS.B','VTAS.DC','VTAS.DCR')THEN -1 ELSE 1 END)))* Dinero.TipoCambio)/ContMoneda.TipoCambio) AS ImporteTotalNetoMN,=COUNT(Dinero.ID) AS Registros
+COUNT(Dinero.ID) AS Registros=FROM Dinero
+FROM Dinero=LEFT OUTER JOIN MovTipo ON {Comillas('DIN')}<IGUAL>MovTipo.Modulo AND Dinero.Mov<IGUAL>MovTipo.Mov
+LEFT OUTER JOIN MovTipo ON {Comillas('DIN')}<IGUAL>MovTipo.Modulo AND Dinero.Mov<IGUAL>MovTipo.Mov=LEFT OUTER JOIN CtaDinero ON Dinero.CtaDinero<IGUAL>CtaDinero.CtaDinero
+LEFT OUTER JOIN CtaDinero ON Dinero.CtaDinero<IGUAL>CtaDinero.CtaDinero=LEFT OUTER JOIN MensajeLista ON Dinero.Mensaje<IGUAL>MensajeLista.Mensaje
+LEFT OUTER JOIN MensajeLista ON Dinero.Mensaje<IGUAL>MensajeLista.Mensaje=JOIN ContMoneda ON Dinero.Empresa<IGUAL>ContMoneda.Empresa {Info.Filtro}
+JOIN ContMoneda ON Dinero.Empresa<IGUAL>ContMoneda.Empresa {Info.Filtro}=(Fin)

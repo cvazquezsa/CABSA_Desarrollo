@@ -1,0 +1,41 @@
+[Tabla]
+Icono=0
+Clave=DiaFestivo
+Archivo=DiaFestivo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Días Festivos
+Singular=Día Festivo
+LlavePrimaria=Fecha
+SQL=SELECT<BR>  Fecha,<BR>  Concepto,<BR>  EsLaborable<BR><BR>FROM<BR>  DiaFestivo
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+AyudaEnCaptura=Calendario sin Hora
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EsLaborable]
+Clave=EsLaborable
+Nombre=Es Laborable
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.ListaCampos]
+(Inicio)=Fecha
+Fecha=Concepto
+Concepto=EsLaborable
+EsLaborable=(Fin)

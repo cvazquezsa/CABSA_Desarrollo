@@ -1,0 +1,97 @@
+[Dialogo]
+Clave=CancelarVentaPendiente
+Nombre=Info.TituloDialogo
+Icono=45
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=821
+PosicionInicialArriba=501
+PosicionInicialAltura=189
+PosicionInicialAncho=278
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Cantidad &Indicada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>)
+VisibleCondicion=Info.MovTipo <> <T>VTAS.SD<T>
+[Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Todo el &Pendiente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+Visible=S
+
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>)
+[Acciones.Todo]
+Nombre=Todo
+Boton=0
+NombreDesplegar=&Movimiento Completo
+EnMenu=S
+EnBarraAcciones=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>)
+
+[Acciones.VentaPerdida]
+Nombre=VentaPerdida
+Boton=0
+NombreDesplegar=Generar Venta &Perdida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+
+
+
+
+
+
+
+
+
+
+
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaPerdida)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.MovTipo <> <T>VTAS.SD<T>
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Todo
+Todo=VentaPerdida
+VentaPerdida=Indicado
+Indicado=Pendiente
+Pendiente=(Fin)

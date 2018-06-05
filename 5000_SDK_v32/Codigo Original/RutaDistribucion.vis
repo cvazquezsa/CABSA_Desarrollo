@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=RutaDistribucion
+Nombre=Rutas Distribución
+Modulos=(Todos)
+Singular=Ruta Distribución
+ListaTablas=RutaDistribucion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=RutaDistribucion.Ruta
+TablaPrincipal=RutaDistribucion
+UsarJOIN=S
+SQL=SELECT<BR>  RutaDistribucion.Ruta<BR><BR>FROM<BR>  RutaDistribucion
+
+[RutaDistribucion.Ruta]
+Clave=RutaDistribucion.Ruta
+LigaTabla=RutaDistribucion
+LigaCampo=Ruta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Ruta

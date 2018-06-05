@@ -1,0 +1,758 @@
+[Tabla]
+Icono=0
+Clave=CteCFD
+Archivo=CteCFD
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Datos CFD
+Singular=Datos CFD
+LlavePrimaria=Cliente
+
+SQL=(Lista)
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+
+TipoDatos=Texto
+[EmisorID]
+Clave=EmisorID
+Nombre=Clave Emisor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[ReceptorID]
+Clave=ReceptorID
+Nombre=Clave Receptor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[ProveedorID]
+Clave=ProveedorID
+Nombre=Clave Proveedor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[TipoAddenda]
+Clave=TipoAddenda
+Nombre=Addenda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+
+TipoDatos=Texto
+CondicionDespliege=Empresa.CFD
+ListaOpciones=(Lista)
+[Version]
+Clave=Version
+Nombre=Versión
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[VersionFecha]
+Clave=VersionFecha
+Nombre=Vigente a partir del
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[VersionAnterior]
+Clave=VersionAnterior
+Nombre=Versión Anterior
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Validar]
+Clave=Validar
+Nombre=Validar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+CondicionDespliege=Empresa.CFD
+[ValidarSchema]
+Clave=ValidarSchema
+Nombre=Schema (*.xsd)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Almacenar]
+Clave=Almacenar
+Nombre=Almacenar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[AlmacenarXML]
+Clave=AlmacenarXML
+Nombre=XML
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AlmacenarPDF]
+Clave=AlmacenarPDF
+Nombre=PDF
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Reporte
+
+[AlmacenarRuta]
+Clave=AlmacenarRuta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+TipoDatos=Texto
+[Nombre]
+Clave=Nombre
+Nombre=Nombre Archivo
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[Enviar]
+Clave=Enviar
+Nombre=Enviar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=Almacenar
+
+[EnviarXML]
+Clave=EnviarXML
+Nombre=XML
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EnviarPDF]
+Clave=EnviarPDF
+Nombre=PDF
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EnviarMedio]
+Clave=EnviarMedio
+Nombre=Medio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+TipoDatos=Texto
+CondicionDespliege=Empresa.CFD
+ListaOpciones=(Lista)
+[ValidarTipo]
+Clave=ValidarTipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Especifico<T>
+CondicionDespliege=Validar
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AlmacenarTipo]
+Clave=AlmacenarTipo
+Nombre=AlmacenarTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ValorPorOmision=<T>Especifico<T>
+CondicionDespliege=Almacenar
+TipoDatos=Texto
+
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=EnviarTipo
+ListaOpciones=(Lista)
+[EnviarTipo]
+Clave=EnviarTipo
+Nombre=EnviarTipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+ValorPorOmision=Caso  Empresa.CFD<BR>  Es VERDADERO Entonces <T>Especifico<T><BR>  Es FALSO     Entonces <T>Cliente<T><BR>Fin
+CondicionDespliege=(Enviar) y (Empresa.CFD o (AlmacenarTipo = <T>Adicional<T>))
+CondicionEdicion=Almacenar
+
+TipoDatos=Texto
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Caso  Empresa.CFD<BR>  Es VERDADERO Entonces Lista(<T>Especifico<T>,<T>Adicional<T>)<BR>  Es FALSO     Entonces Lista(<T>Empresa<T>,<T>Cliente<T>)<BR>Fin
+[Reporte]
+Clave=Reporte
+Nombre=Reporte (Parámetro ID)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+CondicionDespliege=AlmacenarPDF
+Formula=ListaReportes
+
+TipoDatos=Texto
+[EnviarDireccion]
+Clave=EnviarDireccion
+Nombre=Dirección (Servidor)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+TipoDatos=Texto
+[EnviarRuta]
+Clave=EnviarRuta
+Nombre=Ruta (Servidor)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+TipoDatos=Texto
+[EnviarUsuario]
+Clave=EnviarUsuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+ConRefrescar=S
+ListaRefrescar=EnviarContrasena
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Si(EnviarMedio=<T>FTP<T>, <T>anonymous<T>)
+
+TipoDatos=Texto
+[EnviarContrasena]
+Clave=EnviarContrasena
+Nombre=Contraseña
+Visible=S
+TamanoValidacion=100
+Tamano=100
+Contrasena=S
+ValorRefrescar=Si(EnviarUsuario=<T>anonymous<T>, EnviarUsuario)
+
+TipoDatos=Texto
+[EnviarDe]
+Clave=EnviarDe
+Nombre=De (usuario@empresa.com)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[EnviarAsunto]
+Clave=EnviarAsunto
+Nombre=Asunto (usar <Nombre> para desplegar el nombre del archivo)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+TipoDatos=Texto
+[EnviarMensaje]
+Clave=EnviarMensaje
+Nombre=Mensaje (usar <Nombre> para desplegar el nombre del archivo)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[AlmacenarRuta.ListaOpciones]
+(Inicio)=\\Servidor\CFD\<Cliente>
+\\Servidor\CFD\<Cliente>=\\Servidor\CFD\<Ejercicio>
+\\Servidor\CFD\<Ejercicio>=\\Servidor\CFD\<Ejercicio>\<Periodo>
+\\Servidor\CFD\<Ejercicio>\<Periodo>=\\Servidor\CFD\<Ejercicio>\<Periodo>\<Cliente>
+\\Servidor\CFD\<Ejercicio>\<Periodo>\<Cliente>=(Fin)
+
+[Nombre.ListaOpciones]
+(Inicio)=<Movimiento> <Serie><Folio>
+<Movimiento> <Serie><Folio>=<Cliente> <Serie><Folio>
+<Cliente> <Serie><Folio>=<Serie><Folio>
+<Serie><Folio>=(Fin)
+
+
+[ValidarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+
+[EnviarDe.ListaOpciones]
+(Inicio)=(Usuario)
+(Usuario)=(Agente)
+(Agente)=(Fin)
+
+
+[XSL]
+Clave=XSL
+Nombre=XSL
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+
+
+[CFDFlexEnviarTipo.ListaOpciones]
+(Inicio)=Adicional
+Adicional=Empresa
+Empresa=Ambos
+Ambos=(Fin)
+
+
+
+[EnviarMedio.ListaOpciones]
+(Inicio)=SQL Mail
+SQL Mail=SMTP
+SMTP=FTP
+FTP=(Fin)
+
+
+
+[EnviarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+
+[AlmacenarTipo.ListaOpciones]
+(Inicio)=Especifico
+Especifico=Adicional
+Adicional=(Fin)
+
+
+[TipoAddenda.ListaOpciones]
+(Inicio)=N/A
+N/A=AMECE
+AMECE=AMECE / LIVERPOOL
+AMECE / LIVERPOOL=AMECE / GIGANTE
+AMECE / GIGANTE=AMECE / CM
+AMECE / CM=EDIFACT
+EDIFACT=CHEDRAUI
+CHEDRAUI=INTERFACTURA / HEB
+INTERFACTURA / HEB=INTERFACTURA / ELEKTRA
+INTERFACTURA / ELEKTRA=HOME DEPOT
+HOME DEPOT=SORIANA
+SORIANA=CONSOLIDADO SORIANA
+CONSOLIDADO SORIANA=AMIS
+AMIS=FEMSA
+FEMSA=ASSENSA
+ASSENSA=COPPEL
+COPPEL=(Fin)
+
+
+
+[Cta]
+Clave=Cta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+[InfoPago]
+Clave=InfoPago
+Nombre=Info Pago
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=InfoFormaPago
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=5
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT InfoPago FROM CteCFDInfoPago WHERE Cliente = :tCliente<T>, Info.Cliente)
+TipoDatos=Texto
+
+[InfoFormaPago]
+Clave=InfoFormaPago
+Nombre=Forma de Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=4
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT FormaPago FROM CteCFDInfoPagoD WHERE Cliente = :tCliente AND InfoPago = :tInfoPago<T>, Info.Cliente, InfoPago)
+TipoDatos=Texto
+
+[CFDFlexEnviar]
+Clave=CFDFlexEnviar
+Nombre=CFDFlexEnviar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[CFDFlexEnviarTipo]
+Clave=CFDFlexEnviarTipo
+Nombre=CFDFlexEnviarTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[NumRegIdTrib]
+Clave=NumRegIdTrib
+Nombre=Registro ID Tributario
+Visible=S
+TamanoValidacion=40
+TipoDatos=Texto
+Tamano=40
+
+[TipoProceso]
+Clave=TipoProceso
+Nombre=Tipo Proceso
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+ListaOpciones=(Lista)
+[TipoComite]
+Clave=TipoComite
+Nombre=Tipo Comité
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorRefrescar=Nulo
+CondicionDespliege=TipoProceso=<T>Ordinario<T>
+
+ListaOpciones=(Lista)
+[IdContabilidad]
+Clave=IdContabilidad
+Nombre=Id Contabilidad
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+CondicionDespliege=TipoComite<><T>Ejecutivo Estatal<T>
+ValorRefrescar=Nulo
+
+[ClaveEntidad]
+Clave=ClaveEntidad
+Nombre=Clave Entidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=SATEstadoLista
+AyudaVista=SATEstado
+AyudaCampo=SATEstado.ClaveEstado
+AyudaBusquedaRapida=Asigna(Info.Pais, <T>MEX<T>)
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Valor Incorrecto<T>
+CondicionDespliege=TipoComite<><T>Ejecutivo Nacional<T>
+ValorRefrescar=Nulo
+
+
+ValidacionCondicion=SQL(<T>SELECT 1 FROM SATEstado WHERE ClaveEstado=:tClaveEstado<T>, ClaveEntidad) > 0
+[Ambito]
+Clave=Ambito
+Nombre=Ámbito
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=(TipoComite<><T>Ejecutivo Nacional<T>) y (TipoProceso<><T>Ordinario<T>)
+ValorRefrescar=Nulo
+
+
+ListaOpciones=(Lista)
+[EntidadIdContabilidad]
+Clave=EntidadIdContabilidad
+Nombre=Id Contabilidad (Entidad)
+Visible=S
+TamanoValidacion=6
+TipoDatos=Texto
+Tamano=6
+CondicionDespliege=TipoComite<><T>Ejecutivo Nacional<T>
+ValorRefrescar=Nulo
+
+[TipoComplemento]
+Clave=TipoComplemento
+Nombre=Complemento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+ListaOpciones=(Lista)
+
+
+[TipoProceso.ListaRefrescar]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[TipoProceso.ListaRefrescarCondiciones]
+(Inicio)=TipoComite
+TipoComite=Ambito
+Ambito=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=EntidadIdContabilidad
+EntidadIdContabilidad=(Fin)
+
+[TipoProceso.ListaOpciones]
+(Inicio)=Ordinario
+Ordinario=Precampaña
+Precampaña=Campaña
+Campaña=(Fin)
+
+
+[Ambito.ListaOpciones]
+(Inicio)=Federal
+Federal=Local
+Local=(Fin)
+
+[TipoComplemento.ListaOpciones]
+(Inicio)=N/A
+N/A=Comercio Exterior
+Comercio Exterior=INE
+INE=(Fin)
+
+
+
+[TipoComite.ListaRefrescar]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[TipoComite.ListaRefrescarCondiciones]
+(Inicio)=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=IdContabilidad
+IdContabilidad=(Fin)
+
+[TipoComite.ListaOpciones]
+(Inicio)=Directivo Estatal
+Directivo Estatal=Ejecutivo Nacional
+Ejecutivo Nacional=Ejecutivo Estatal
+Ejecutivo Estatal=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=EmisorID
+EmisorID=ReceptorID
+ReceptorID=ProveedorID
+ProveedorID=TipoAddenda
+TipoAddenda=Version
+Version=VersionFecha
+VersionFecha=VersionAnterior
+VersionAnterior=Nombre
+Nombre=Reporte
+Reporte=Validar
+Validar=ValidarTipo
+ValidarTipo=ValidarSchema
+ValidarSchema=Almacenar
+Almacenar=AlmacenarTipo
+AlmacenarTipo=AlmacenarXML
+AlmacenarXML=AlmacenarPDF
+AlmacenarPDF=AlmacenarRuta
+AlmacenarRuta=Enviar
+Enviar=EnviarTipo
+EnviarTipo=EnviarXML
+EnviarXML=EnviarPDF
+EnviarPDF=EnviarMedio
+EnviarMedio=EnviarDireccion
+EnviarDireccion=EnviarRuta
+EnviarRuta=EnviarUsuario
+EnviarUsuario=EnviarContrasena
+EnviarContrasena=EnviarDe
+EnviarDe=EnviarAsunto
+EnviarAsunto=EnviarMensaje
+EnviarMensaje=XSL
+XSL=Cta
+Cta=InfoPago
+InfoPago=InfoFormaPago
+InfoFormaPago=CFDFlexEnviar
+CFDFlexEnviar=CFDFlexEnviarTipo
+CFDFlexEnviarTipo=NumRegIdTrib
+NumRegIdTrib=TipoProceso
+TipoProceso=TipoComite
+TipoComite=IdContabilidad
+IdContabilidad=ClaveEntidad
+ClaveEntidad=Ambito
+Ambito=EntidadIdContabilidad
+EntidadIdContabilidad=TipoComplemento
+TipoComplemento=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Cliente,
+Cliente,=EmisorID,
+EmisorID,=ReceptorID,
+ReceptorID,=ProveedorID,
+ProveedorID,=TipoAddenda,
+TipoAddenda,=Version,
+Version,=VersionFecha,
+VersionFecha,=VersionAnterior,
+VersionAnterior,=XSL,
+XSL,=Nombre,
+Nombre,=Reporte,
+Reporte,=Validar,
+Validar,=ValidarTipo,
+ValidarTipo,=ValidarSchema,
+ValidarSchema,=Almacenar,
+Almacenar,=AlmacenarTipo,
+AlmacenarTipo,=AlmacenarXML,
+AlmacenarXML,=AlmacenarPDF,
+AlmacenarPDF,=AlmacenarRuta,
+AlmacenarRuta,=Enviar,
+Enviar,=EnviarTipo,
+EnviarTipo,=EnviarXML,
+EnviarXML,=EnviarPDF,
+EnviarPDF,=EnviarMedio,
+EnviarMedio,=EnviarDireccion,
+EnviarDireccion,=EnviarRuta,
+EnviarRuta,=EnviarUsuario,
+EnviarUsuario,=EnviarContrasena,
+EnviarContrasena,=EnviarDe,
+EnviarDe,=EnviarAsunto,
+EnviarAsunto,=EnviarMensaje,
+EnviarMensaje,=Cta,
+Cta,=InfoPago,
+InfoPago,=InfoFormaPago,
+InfoFormaPago,=CFDFlexEnviar,
+CFDFlexEnviar,=CFDFlexEnviarTipo,
+CFDFlexEnviarTipo,=NumRegIdTrib,
+NumRegIdTrib,=TipoProceso,
+TipoProceso,=TipoComite,
+TipoComite,=IdContabilidad,
+IdContabilidad,=ClaveEntidad,
+ClaveEntidad,=Ambito,
+Ambito,=EntidadIdContabilidad,
+EntidadIdContabilidad,=TipoComplemento
+TipoComplemento=FROM
+FROM=CteCFD
+CteCFD=(Fin)

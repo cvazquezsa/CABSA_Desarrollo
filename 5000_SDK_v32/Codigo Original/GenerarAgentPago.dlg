@@ -1,0 +1,35 @@
+[Dialogo]
+Clave=GenerarAgentPago
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=532
+PosicionInicialArriba=450
+PosicionInicialAltura=117
+PosicionInicialAncho=215
+ListaAcciones=Pago
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Pago]
+Nombre=Pago
+Boton=0
+NombreDesplegar=Generar &Pago
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.AgentPago, Afectar.FormaCaptura)
+Activo=S
+Visible=S

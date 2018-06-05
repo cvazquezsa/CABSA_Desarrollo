@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=RepCat
+Nombre=Categorías
+Singular=Categoria
+ListaTablas=RepCat
+TablaPrincipal=RepCat
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=RepCat.Categoria
+CamposBusquedaRapida=RepCat.Categoria
+UsarJOIN=S
+SQL=SELECT<BR>  RepCat.Categoria<BR><BR>FROM<BR>  RepCat
+
+[RepCat.Categoria]
+Clave=RepCat.Categoria
+LigaTabla=RepCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

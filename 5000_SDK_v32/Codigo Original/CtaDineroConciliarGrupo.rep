@@ -1,0 +1,790 @@
+[Reporte]
+Clave=CtaDineroConciliarGrupo
+Nombre=Movimientos por Conciliar
+Icono=0
+Vista=VerCtaDineroConciliar
+Modulos=(Todos)
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Ascii=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Parametros=S
+Columnas=1
+Parametros1=
+Parametros2=
+Parametros3=
+PosicionInicialAltura=570
+PosicionInicialAncho=799
+PreliminarSinRetroceder=S
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Modo=0
+FuentePorOmision={MS Sans Serif, 8, Negro, []}
+Impresora=S
+OtroOrden=S
+ListaOrden=(Lista)
+
+[Formato]
+VentanaIzquierda=85
+VentanaArriba=152
+VentanaAltura=464
+VentanaAncho=853
+PanelArriba=120
+PanelBotones=80
+ListaLineas=Encabezado<BR>Inicio: a.Cuenta<BR>Inicio: a.Cuenta<BR>Inicio: a.Cuenta<BR>Inicio: a.Cuenta<BR>Inicio: a.Cuenta<BR>Inicio: a.Cuenta<BR>Inicio: a.Mov<BR>Detalle<BR>Fin: a.Mov<BR>Fin: a.Cuenta<BR>Pie
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+EstiloMarco=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+Grupo=
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+EstiloMarco=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Movimientos por Conciliar<T>
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: a.Cuenta
+Objetos=0
+Seccion=Inicio Grupo
+EstiloMarco=0
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeArriba=N
+EstiloArriba=0
+Grupo=a.Cuenta
+ExpresionesAntesImprimir=
+Marco=N
+Renglones=1
+FondoColor=Blanco
+
+[Linea3]
+Clave=Inicio: a.Cuenta
+Objetos=4
+Seccion=Inicio Grupo
+Grupo=a.Cuenta
+BordeAbajo=N
+EstiloAbajo=0
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+Marco=S
+EstiloMarco=1
+ExpresionesAntesImprimir=Asigna(Rep.SumaCargos, 0)<BR>Asigna(Rep.SumaAbonos, 0)
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Inicio: a.Cuenta
+Objetos=0
+Seccion=Inicio Grupo
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=a.Cuenta
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=4
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=a.Cuenta
+ExpresionMultiple=N
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=7
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Descripcion
+FormatoValidacion=
+ExpresionMultiple=N
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=5
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=NumeroCta
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=3.61
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Moneda
+Marco=S
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=3
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Total<T>
+
+[Linea5]
+Clave=Inicio: a.Cuenta
+Objetos=2
+Seccion=Inicio Grupo
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AltoEnCm=0.79
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=a.Cuenta
+Renglones=1
+FondoColor=Blanco
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=15.61
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Saldo Concilidado:<T><BR><T>Pendiente por Conciliar:<T>
+ExpresionMultiple=S
+AnchoTexto=84
+FondoColor=Blanco
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Saldo-PorConciliar<BR>PorConciliar
+FormatoValidacion=(Monetario)
+ExpresionMultiple=S
+AnchoTexto=15
+FondoColor=Blanco
+
+[C2]
+Celda=C2
+Alineacion=Izquierda
+AnchoEnCm=5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=NumeroCta
+
+[D2]
+Celda=D2
+Alineacion=Izquierda
+AnchoEnCm=3.61
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Moneda
+
+[Linea6]
+Clave=Inicio: a.Cuenta
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=a.Cuenta
+BordeAbajo=N
+EstiloAbajo=0
+AltoEnCm=0.58
+AVertical=Arriba
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+FondoColor=Blanco
+
+[Linea7]
+Clave=Inicio: a.Cuenta
+Objetos=6
+Seccion=Inicio Grupo
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Grupo=a.Cuenta
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+
+[A6]
+Celda=A6
+Alineacion=Derecha
+AnchoEnCm=15.61
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Saldo en Libros:<T>
+AnchoTexto=84
+FondoColor=Blanco
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+AnchoEnCm=3
+BordeAbajo=N
+EstiloAbajo=0
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Saldo
+BordeArriba=S
+FormatoValidacion=(Monetario)
+AnchoTexto=15
+FondoColor=Blanco
+
+[A7]
+Celda=A7
+Alineacion=Centrado
+AnchoEnCm=4
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Movimiento por Conciliar<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=2.61
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Fecha Emisión<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[C7]
+Celda=C7
+Alineacion=Centrado
+AnchoEnCm=3
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Referencia<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=20
+FondoColor=Blanco
+
+[D7]
+Celda=D7
+Alineacion=Centrado
+AnchoEnCm=3
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Depositos<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[E7]
+Celda=E7
+Alineacion=Centrado
+AnchoEnCm=3
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Retiros<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+[Linea8]
+Clave=Inicio: a.Mov
+Objetos=1
+Seccion=Inicio Grupo
+Grupo=a.Mov
+BordeArriba=N
+EstiloArriba=0
+AltoEnCm=0.5
+AVertical=Abajo
+Fuente={MS Sans Serif, 8, Negro, [Negritas + Cursiva]}
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=4
+BordeArriba=N
+EstiloArriba=0
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={MS Sans Serif, 8, Negro, [Negritas + Cursiva]}
+EstiloMarco=0
+FormatoValidacion=
+Expresion=a.Mov
+AnchoTexto=22
+FondoColor=Blanco
+
+[Linea9]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeArriba=S
+EstiloArriba=3
+Grupo=
+Renglones=1
+FondoColor=Blanco
+EstiloMarco=3
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=4
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=a.Mov+<T> <T>+MovID
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=15
+FondoColor=Blanco
+EstiloMarco=3
+
+[B9]
+Celda=B9
+Alineacion=Izquierda
+AnchoEnCm=2.61
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Fecha
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=dd/mmm/aaaa
+AnchoTexto=15
+FondoColor=Blanco
+EstiloMarco=3
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=CtaDineroConciliarGrupo
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=CtaDineroConciliarGrupo
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea10]
+Clave=Fin: a.Mov
+Objetos=4
+Seccion=Fin Grupo
+BordeArriba=N
+EstiloArriba=0
+AltoEnCm=0.6
+AVertical=Arriba
+Fuente={Arial, 8, Negro, [Negritas]}
+Renglones=1
+FondoColor=Blanco
+Grupo=a.Mov
+
+[C9]
+Celda=C9
+Alineacion=Izquierda
+AnchoEnCm=3
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Referencia
+AnchoTexto=48
+FondoColor=Blanco
+EstiloMarco=3
+
+[D9]
+Celda=D9
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Cargo
+AnchoTexto=15
+FondoColor=Blanco
+EstiloMarco=3
+
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=9.6
+BordeArriba=N
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+AnchoTexto=52
+FondoColor=Blanco
+
+[B10]
+Celda=B10
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloArriba=1
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Cargo)
+AnchoTexto=16
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+
+[F7]
+Celda=F7
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=15
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Total<T>
+
+[Linea11]
+Clave=Fin: a.Cuenta
+Objetos=4
+Seccion=Fin Grupo
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Arriba
+Grupo=a.Cuenta
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Abono
+EstiloMarco=3
+
+[C10]
+Celda=C10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Abono)
+
+[D10]
+Celda=D10
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Rep.SumaCargos-Rep.SumaAbonos
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=9.61
+AnchoTexto=52
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=<T>Total por Conciliar<T>
+
+[B11]
+Celda=B11
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Rep.SumaCargos
+FormatoValidacion=(Monetario)
+
+[Linea12]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[F9]
+Celda=F9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Asigna(Rep.SumaCargos, Rep.SumaCargos+Cargo)<BR>Asigna(Rep.SumaAbonos, Rep.SumaAbonos+Abono)<BR>Rep.SumaCargos-Rep.SumaAbonos
+
+[C11]
+Celda=C11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Rep.SumaAbonos
+
+[D11]
+Celda=D11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Rep.SumaCargos-Rep.SumaAbonos
+
+[A12]
+Celda=A12
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B12]
+Celda=B12
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Reporte.ListaOrden]
+(Inicio)=a.Cuenta<TAB>(Acendente)
+a.Cuenta<TAB>(Acendente)=a.Mov<TAB>(Acendente)
+a.Mov<TAB>(Acendente)=Fecha<TAB>(Acendente)
+Fecha<TAB>(Acendente)=ModuloID<TAB>(Acendente)
+ModuloID<TAB>(Acendente)=(Fin)

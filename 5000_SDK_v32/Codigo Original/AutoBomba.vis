@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AutoBomba
+Nombre=Bombas
+Modulos=(Todos)
+Singular=Bomba
+ListaTablas=AutoBomba
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AutoBomba.Bomba
+TablaPrincipal=AutoBomba
+UsarJOIN=S
+SQL=SELECT<BR>  AutoBomba.Bomba<BR><BR>FROM<BR>  AutoBomba
+
+[AutoBomba.Bomba]
+Clave=AutoBomba.Bomba
+LigaTabla=AutoBomba
+LigaCampo=Bomba
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Bomba

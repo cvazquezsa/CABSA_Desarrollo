@@ -1,0 +1,54 @@
+[Dialogo]
+Clave=MenuRepInvAux
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=262
+PosicionInicialArriba=313
+PosicionInicialAltura=138
+PosicionInicialAncho=186
+
+[Acciones.Costos]
+Nombre=Costos
+Boton=0
+NombreDesplegar=&Costos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepInvAux
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Inventarios/Aux/Costos<T>)
+[Acciones.Unidades]
+Nombre=Unidades
+Boton=0
+NombreDesplegar=&Unidades
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepInvAuxU
+Activo=S
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Inventarios/Aux/Unidades<T>)
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Costos
+Costos=Unidades
+Unidades=(Fin)

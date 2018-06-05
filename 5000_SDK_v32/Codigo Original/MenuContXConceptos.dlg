@@ -1,0 +1,122 @@
+[Dialogo]
+Clave=MenuContXConceptos
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=392
+PosicionInicialArriba=256
+PosicionInicialAltura=256
+PosicionInicialAncho=240
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Ventas]
+Nombre=Ventas
+Boton=0
+NombreDesplegar=&Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Descripcion, <T>Ventas<T>)
+
+[Acciones.Cxc]
+Nombre=Cxc
+Boton=0
+NombreDesplegar=Cuentas por &Cobrar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>CXC<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas por Cobrar<T>)
+
+[Acciones.Dinero]
+Nombre=Dinero
+Boton=0
+NombreDesplegar=&Dinero
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>DIN<T>)<BR>Asigna(Info.Descripcion, <T>Tesoreria<T>)
+Visible=S
+
+[Acciones.Inv]
+Nombre=Inv
+Boton=0
+NombreDesplegar=&Inventarios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+Visible=S
+EspacioPrevio=S
+AntesExpresiones=Asigna(Info.Modulo, <T>INV<T>)<BR>Asigna(Info.Descripcion, <T>Inventarios<T>)
+
+[Acciones.Gastos]
+Nombre=Gastos
+Boton=0
+NombreDesplegar=&Gastos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+Visible=S
+EspacioPrevio=S
+AntesExpresiones=Asigna(Info.Modulo, <T>GAS<T>)<BR>Asigna(Info.Descripcion, <T>Gastos<T>)
+
+[Acciones.Cxp]
+Nombre=Cxp
+Boton=0
+NombreDesplegar=Cuentas por &Pagar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>CXP<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas por Pagar<T>)
+
+[Acciones.Compra]
+Nombre=Compra
+Boton=0
+NombreDesplegar=C&ompras
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContXCtaConcepto
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>COMS<T>)<BR>Asigna(Info.Descripcion, <T>Compras<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Ventas
+Ventas=Cxc
+Cxc=Dinero
+Dinero=Inv
+Inv=Gastos
+Gastos=Cxp
+Cxp=Compra
+Compra=(Fin)

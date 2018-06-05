@@ -1,0 +1,32 @@
+
+[Tabla]
+Icono=0
+Clave=POSCteFacCred
+Nombre=POSCteFacCred
+Archivo=POSCteFacCred
+Modulos=(Todos)
+Singular=POSCteFacCred
+TipoTabla=General
+
+ListaCampos=Cliente
+
+SQL=(Lista)
+LlavePrimaria=Cliente
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+AyudaEnCaptura=Vista
+AyudaRefrescar=S
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Cliente
+Cliente=FROM POSCteFacCred
+FROM POSCteFacCred=(Fin)

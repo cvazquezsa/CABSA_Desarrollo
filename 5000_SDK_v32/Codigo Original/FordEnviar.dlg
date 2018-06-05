@@ -1,0 +1,82 @@
+[Dialogo]
+Clave=FordEnviar
+Nombre=Ford
+Icono=82
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=186
+PosicionInicialAncho=254
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=513
+PosicionInicialArriba=402
+ListaAcciones=(Lista)
+
+[Acciones.EnviarBuckets]
+Nombre=EnviarBuckets
+Boton=0
+NombreDesplegar=&Buckets
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Ejercicio, EjercicioTrabajo)<BR>Asigna(Info.Periodo, PeriodoTrabajo)<BR>Si<BR>  Forma(<T>EspecificarEjercicioPeriodo<T>)<BR>Entonces<BR>  GuardarLista(SQLEnLista(<T>spFordBuckets :tEmp, :nEjercicio, :nPeriodo<T>, Empresa, Info.Ejercicio, Info.Periodo), General.FordDirectorioSalida, <T>BUCKETS<T>, <T>XLS<T>, <T>Excel<T>, <T>Excel<T>)<BR>Fin
+
+[Acciones.EnviarInventario]
+Nombre=EnviarInventario
+Boton=0
+NombreDesplegar=&Inventario Unidades (Ford X)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si<BR>  Dialogo(<T>EstaSeguro<T>)<BR>Entonces<BR>  EjecutarSQL(<T>spFordX :tws, :tfun, :tEmp, NULL, NULL, NULL<T>, <T>pins<T>, <T>putInventory<T>, Empresa)<BR>  Informacion(<T>Inventario Enviado<T>, BotonAceptar) <BR>Fin
+
+[Acciones.FordReporteVS250]
+Nombre=FordReporteVS250
+Boton=0
+NombreDesplegar=Reporte &VS250 (Ford X)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=FordReporteVS250
+Activo=S
+Visible=S
+
+[Acciones.EnviarProspectos]
+Nombre=EnviarProspectos
+Boton=0
+NombreDesplegar=&Prospectos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Temp.Texto, BuscarArchivo(General.FordDirectorioSalida, <T>EJ_SICOP<T>+FechaEnTexto( Hoy,<T>mmdd<T>), <T>DAT<T>, <T>Datos<T>, <T>Datos<T>))<BR>Si(ConDatos(Temp.Texto), PlugIn(<T>GuardarLista<T>, <T>spFordEnviarProspectos<T>, Temp.Texto))
+
+[Acciones.EnviarPartes]
+Nombre=EnviarPartes
+Boton=0
+NombreDesplegar=Inventario &Partes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Temp.Texto, BuscarArchivo(General.FordDirectorioSalida, <T>parts_putinventory<T>, <T>TXT<T>, <T>Datos<T>, <T>Datos<T>))<BR>Si(ConDatos(Temp.Texto), PlugIn(<T>GuardarLista<T>, <T>spFordEnviarPartsPutInventory <T>+Comillas(Empresa), Temp.Texto))
+
+[Dialogo.ListaAcciones]
+(Inicio)=EnviarProspectos
+EnviarProspectos=EnviarBuckets
+EnviarBuckets=EnviarPartes
+EnviarPartes=EnviarInventario
+EnviarInventario=FordReporteVS250
+FordReporteVS250=(Fin)

@@ -1,0 +1,32 @@
+[Tabla]
+Icono=0
+Clave=DolarFix
+Archivo=DolarFix
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Dolar Fix
+Singular=Dolar Fix
+SQL=SELECT<BR>  Fecha,<BR>  TipoCambio<BR><BR>FROM<BR>  DolarFix
+LlavePrimaria=Fecha
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Fecha
+Fecha=TipoCambio
+TipoCambio=(Fin)

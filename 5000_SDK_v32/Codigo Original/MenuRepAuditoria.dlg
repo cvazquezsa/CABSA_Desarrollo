@@ -1,0 +1,30 @@
+[Dialogo]
+Clave=MenuRepAuditoria
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=AuditoriaSaldo
+PosicionInicialIzquierda=510
+PosicionInicialArriba=453
+PosicionInicialAlturaCliente=90
+PosicionInicialAncho=259
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.AuditoriaSaldo]
+Nombre=AuditoriaSaldo
+Boton=0
+NombreDesplegar=&Saldos vs Contabilidad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepAuditoriaSaldo
+Activo=S
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Auditoria/AuditoriaSaldo<T>)

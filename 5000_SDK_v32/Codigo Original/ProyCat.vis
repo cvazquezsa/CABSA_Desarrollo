@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ProyCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=ProyCat
+ListaCampos=ProyCat.Categoria
+TablaPrincipal=ProyCat
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+UsarJOIN=S
+SQL=SELECT<BR>  ProyCat.Categoria<BR><BR>FROM<BR>  ProyCat
+
+[ProyCat.Categoria]
+Clave=ProyCat.Categoria
+LigaTabla=ProyCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CtaDineroTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=CtaDineroTipo
+TablaPrincipal=CtaDineroTipo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CtaDineroTipo.Tipo
+UsarJOIN=S
+SQL=SELECT<BR>  CtaDineroTipo.Tipo<BR><BR>FROM<BR>  CtaDineroTipo
+
+[CtaDineroTipo.Tipo]
+Clave=CtaDineroTipo.Tipo
+LigaTabla=CtaDineroTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

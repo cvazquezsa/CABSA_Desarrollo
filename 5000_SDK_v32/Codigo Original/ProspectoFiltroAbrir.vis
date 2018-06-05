@@ -1,0 +1,21 @@
+[Vista]
+Icono=0
+Clave=ProspectoFiltroAbrir
+Nombre=Filtros
+Modulos=(Todos)
+Singular=Filtro
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=Nombre
+SQL=SELECT DISTINCT Nombre FROM GuardarFiltro WHERE Vista=<T>Prospecto<T>
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre

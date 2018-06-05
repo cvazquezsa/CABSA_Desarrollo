@@ -1,0 +1,107 @@
+[Dialogo]
+Clave=FordRecibir
+Nombre=Ford
+Icono=82
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=234
+PosicionInicialAncho=254
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=385
+PosicionInicialArriba=250
+ListaAcciones=(Lista)
+
+[Acciones.RecibirBoletin]
+Nombre=RecibirBoletin
+Boton=0
+NombreDesplegar=&Boletín Refacciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=FordRecibirBoletin
+
+[Acciones.RecibirUnidadesFacturadas]
+Nombre=RecibirUnidadesFacturadas
+Boton=0
+NombreDesplegar=&Unidades Facturadas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>INVCDEALER*<T>, <T>TXT<T>, <T>Datos<T>, <T>Datos<T>), Verdadero), ProcesarSQL(<T>spFordUnidadesFacturadas :tEmp, :tUsr, :nSuc, :nEstacion, :fFecha<T>,  Empresa, Usuario, Sucursal, EstacionTrabajo, FechaTrabajo))
+
+[Acciones.RecibirPromotores]
+Nombre=RecibirPromotores
+Boton=0
+NombreDesplegar=Pro&motores (SICOP)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>EJ*.txt<T>, <T>TXT<T>, <T>Datos<T>, <T>Datos<T>)), ProcesarSQL(<T>spFordPromotores :nEstacion<T>,  EstacionTrabajo))
+
+[Acciones.RecibirProspectos]
+Nombre=RecibirProspectos
+Boton=0
+NombreDesplegar=&Prospectos (SICOP)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>EJ*.csv<T>, <T>CSV<T>, <T>Datos<T>, <T>Datos<T>), Verdadero), ProcesarSQL(<T>spFordProspectos :tEmp, :nEstacion<T>,  Empresa, EstacionTrabajo))
+
+[Acciones.RecibirReclamos]
+Nombre=RecibirReclamos
+Boton=0
+NombreDesplegar=&Reclamos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+EspacioPrevio=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T><T>, <T>F13<T>, <T>F13<T>, <T>F13<T>), Verdadero), ProcesarSQL(<T>spFordReclamos :tEmp, :nEstacion<T>,  Empresa, EstacionTrabajo))
+
+[Acciones.RecibirPagos]
+Nombre=RecibirPagos
+Boton=0
+NombreDesplegar=&Pagos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T><T>, <T>F47<T>, <T>F47<T>, <T>F47<T>), Verdadero), ProcesarSQL(<T>spFordPagos :tEmp, :nEstacion<T>,  Empresa, EstacionTrabajo))
+
+[Acciones.RecibirBoletin2004]
+Nombre=RecibirBoletin2004
+Boton=0
+NombreDesplegar=Boletín Refacciones (200&4)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=S
+ClaveAccion=FordRecibirBoletin2004
+
+[Dialogo.ListaAcciones]
+(Inicio)=RecibirBoletin2004
+RecibirBoletin2004=RecibirBoletin
+RecibirBoletin=RecibirUnidadesFacturadas
+RecibirUnidadesFacturadas=RecibirPromotores
+RecibirPromotores=RecibirProspectos
+RecibirProspectos=RecibirReclamos
+RecibirReclamos=RecibirPagos
+RecibirPagos=(Fin)

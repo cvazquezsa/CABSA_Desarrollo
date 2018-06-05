@@ -1,0 +1,84 @@
+[Tabla]
+Icono=0
+Clave=CteUEN
+Archivo=CteUEN
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=UENs
+Singular=UEN
+ListaRelaciones=UEN
+LlavePrimaria=Cliente<BR>UEN
+SQL=SELECT<BR>  Cliente,<BR>  UEN,<BR>  CreditoLimite,<BR>  Condicion,<BR>  Descuento<BR><BR>FROM<BR>  CteUEN
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+TipoDatos=Texto
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+Requerido=S
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+AyudaMultiple=S
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+
+[CreditoLimite]
+Clave=CreditoLimite
+Nombre=Límite de Crédito
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Relaciones.UEN]
+TipoRelacion=Forzosa
+LlaveLocal=UEN
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Condicion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Descuento]
+Clave=Descuento
+Nombre=Descuento
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Descuento
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=UEN
+UEN=CreditoLimite
+CreditoLimite=Condicion
+Condicion=Descuento
+Descuento=(Fin)

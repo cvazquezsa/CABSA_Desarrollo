@@ -1,0 +1,171 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovContParalela
+Archivo=EmpresaCfgMovContParalela
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[CPCentralizarCuentas]
+Clave=CPCentralizarCuentas
+Nombre=Centralizar Cuentas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+[CPRecibirCuentas]
+Clave=CPRecibirCuentas
+Nombre=Recibir Cuentas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+
+
+
+
+
+
+
+
+
+
+
+[CPGeneradorPaq]
+Clave=CPGeneradorPaq
+Nombre=Generador Paquetes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+[CPPaquete]
+Clave=CPPaquete
+Nombre=Paquete Contable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+[CPRecepcionPaq]
+Clave=CPRecepcionPaq
+Nombre=Recepción Paquete
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+
+
+
+
+
+[CPTransformacion]
+Clave=CPTransformacion
+Nombre=Transformación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+[CPPoliza]
+Clave=CPPoliza
+Nombre=Póliza
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+
+
+
+
+
+[CPCierrePeriodo]
+Clave=CPCierrePeriodo
+Nombre=Cierre Periodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CONTP
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=CPCentralizarCuentas
+CPCentralizarCuentas=CPRecibirCuentas
+CPRecibirCuentas=CPGeneradorPaq
+CPGeneradorPaq=CPPaquete
+CPPaquete=CPRecepcionPaq
+CPRecepcionPaq=CPTransformacion
+CPTransformacion=CPPoliza
+CPPoliza=CPCierrePeriodo
+CPCierrePeriodo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=CPCentralizarCuentas,
+CPCentralizarCuentas,=CPRecibirCuentas,
+CPRecibirCuentas,=CPGeneradorPaq,
+CPGeneradorPaq,=CPPaquete,
+CPPaquete,=CPRecepcionPaq,
+CPRecepcionPaq,=CPTransformacion,
+CPTransformacion,=CPPoliza,
+CPPoliza,=CPCierrePeriodo
+CPCierrePeriodo=FROM EmpresaCfgMovContParalela
+FROM EmpresaCfgMovContParalela=(Fin)

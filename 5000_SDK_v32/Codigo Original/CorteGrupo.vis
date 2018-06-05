@@ -1,0 +1,36 @@
+
+[Vista]
+Icono=0
+Clave=CorteGrupo
+Nombre=CorteGrupo
+Modulos=CORTE
+Singular=CorteGrupo
+ListaTablas=CorteGrupo
+TablaPrincipal=CorteGrupo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=CorteGrupo.Grupo
+SQL=(Lista)
+CamposBusquedaRapida=CorteGrupo.Grupo
+[CorteGrupo.Grupo]
+Clave=CorteGrupo.Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=CorteGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Grupo
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=CorteGrupo.Grupo
+CorteGrupo.Grupo=FROM CorteGrupo
+FROM CorteGrupo=(Fin)

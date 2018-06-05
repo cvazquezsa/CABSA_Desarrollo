@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CtaCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=CtaCat
+TablaPrincipal=CtaCat
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CtaCat.Categoria
+UsarJOIN=S
+SQL=SELECT<BR>  CtaCat.Categoria<BR><BR>FROM<BR>  CtaCat
+
+[CtaCat.Categoria]
+Clave=CtaCat.Categoria
+LigaTabla=CtaCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

@@ -1,0 +1,74 @@
+
+[Vista]
+Icono=0
+Clave=MonTodo
+Nombre=Monedas
+Modulos=(Todos)
+Singular=Moneda
+
+VistaIndependiente=S
+TipoTabla=General
+
+
+ListaCampos=(Lista)
+
+SQL=(Lista)
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Moneda
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+
+
+
+[Tipo de Cambio]
+Clave=Tipo de Cambio
+Nombre=Tipo de Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Tipo de Cambio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Moneda
+Moneda=Orden
+Orden=Tipo de Cambio
+Tipo de Cambio=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT Mon.Moneda Moneda, Mon.Orden Orden, Mon.TipoCambio 'Tipo de Cambio'
+SELECT Mon.Moneda Moneda, Mon.Orden Orden, Mon.TipoCambio 'Tipo de Cambio'=FROM Mon
+FROM Mon=UNION
+UNION=SELECT 'Todo' Moneda, 99 Orden, 1.0 'Tipo de Cambio'
+SELECT 'Todo' Moneda, 99 Orden, 1.0 'Tipo de Cambio'=ORDER BY Orden
+ORDER BY Orden=(Fin)

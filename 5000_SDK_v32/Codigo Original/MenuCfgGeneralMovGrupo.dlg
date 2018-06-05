@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=MenuCfgGeneralMovGrupo
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=107
+PosicionInicialAncho=300
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEstadoInicial=Normal
+PosicionInicialIzquierda=710
+PosicionInicialArriba=525
+
+[Acciones.ABC]
+Nombre=ABC
+Boton=0
+NombreDesplegar=&Activity Base Cost
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ABC
+Activo=S
+Visible=S
+
+[Acciones.POA]
+Nombre=POA
+Boton=0
+NombreDesplegar=&Programa Operativo Anual
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=POA
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ABC
+ABC=POA
+POA=(Fin)

@@ -1,0 +1,50 @@
+
+[Tabla]
+Icono=0
+Clave=NominaG4Vacaciones
+Nombre=NominaG4Vacaciones
+Archivo=NominaG4Vacaciones
+Modulos=(Todos)
+Singular=NominaG4Vacaciones
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=TipoSindicato
+SQL=(Lista)
+[TipoSindicato]
+Clave=TipoSindicato
+Nombre=Tipo
+Visible=S
+TamanoValidacion=25
+TipoDatos=Texto
+Tamano=25
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Sindicato
+AyudaMemRenglones=10
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=TipoSindicato
+TipoSindicato=Descripcion
+Descripcion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TipoSindicato,
+TipoSindicato,=Descripcion
+Descripcion=FROM NominaG4Vacaciones
+FROM NominaG4Vacaciones=(Fin)

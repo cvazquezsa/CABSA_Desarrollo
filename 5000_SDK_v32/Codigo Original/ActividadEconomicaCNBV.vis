@@ -1,0 +1,44 @@
+[Vista]
+Icono=0
+Clave=ActividadEconomicaCNBV
+Nombre=Actividades Económica
+Modulos=(Todos)
+Singular=Actividad Económica
+ListaTablas=ActividadEconomicaCNBV
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ActividadEconomicaCNBV
+CamposBusquedaRapida=(Lista)
+UsarJOIN=S
+SQL=SELECT<BR>  ActividadEconomicaCNBV.ActividadEconomicaCNBV,<BR>  ActividadEconomicaCNBV.Nombre<BR><BR>FROM<BR>  ActividadEconomicaCNBV
+
+[ActividadEconomicaCNBV.ActividadEconomicaCNBV]
+Clave=ActividadEconomicaCNBV.ActividadEconomicaCNBV
+LigaTabla=ActividadEconomicaCNBV
+LigaCampo=ActividadEconomicaCNBV
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=ActividadEconomicaCNBV
+
+[ActividadEconomicaCNBV.Nombre]
+Clave=ActividadEconomicaCNBV.Nombre
+LigaTabla=ActividadEconomicaCNBV
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+
+[Vista.ListaCampos]
+(Inicio)=ActividadEconomicaCNBV.ActividadEconomicaCNBV
+ActividadEconomicaCNBV.ActividadEconomicaCNBV=ActividadEconomicaCNBV.Nombre
+ActividadEconomicaCNBV.Nombre=(Fin)
+
+[Vista.CamposBusquedaRapida]
+(Inicio)=ActividadEconomicaCNBV.ActividadEconomicaCNBV
+ActividadEconomicaCNBV.ActividadEconomicaCNBV=ActividadEconomicaCNBV.Nombre
+ActividadEconomicaCNBV.Nombre=(Fin)

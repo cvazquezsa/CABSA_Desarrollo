@@ -1,0 +1,69 @@
+
+[Vista]
+Icono=0
+Clave=POSHerrCancelacionValeD
+Nombre=POSHerrCancelacionValeD
+Modulos=(Todos)
+ListaTablas=POSHerrCancelacionValeD
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=POSHerrCancelacionValeD
+SQL=(Lista)
+[POSHerrCancelacionValeD.Estacion]
+Clave=POSHerrCancelacionValeD.Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+LigaTabla=POSHerrCancelacionValeD
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estacion
+
+[POSHerrCancelacionValeD.Tipo]
+Clave=POSHerrCancelacionValeD.Tipo
+Nombre=Tipo Monedero
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ValeTipo
+AyudaMemOpc=Validar captura en la lista
+LigaTabla=POSHerrCancelacionValeD
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Tipo
+
+[POSHerrCancelacionValeD.Fecha]
+Clave=POSHerrCancelacionValeD.Fecha
+Nombre=Fecha Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+LigaTabla=POSHerrCancelacionValeD
+LigaCampo=Fecha
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Fecha
+
+[Vista.ListaCampos]
+(Inicio)=POSHerrCancelacionValeD.Estacion
+POSHerrCancelacionValeD.Estacion=POSHerrCancelacionValeD.Tipo
+POSHerrCancelacionValeD.Tipo=POSHerrCancelacionValeD.Fecha
+POSHerrCancelacionValeD.Fecha=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSHerrCancelacionValeD.Estacion,
+POSHerrCancelacionValeD.Estacion,=POSHerrCancelacionValeD.Tipo,
+POSHerrCancelacionValeD.Tipo,=POSHerrCancelacionValeD.Fecha
+POSHerrCancelacionValeD.Fecha=FROM POSHerrCancelacionValeD
+FROM POSHerrCancelacionValeD=(Fin)

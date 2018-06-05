@@ -1,0 +1,44 @@
+[Dialogo]
+Clave=GenerarCP
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=852
+PosicionInicialArriba=526
+PosicionInicialAltura=117
+PosicionInicialAncho=215
+ListaAcciones=Asignacion
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=114
+
+
+
+[Acciones.Asignacion]
+Nombre=Asignacion
+Boton=0
+NombreDesplegar=Generar &Asignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CPAsignacion, Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Asignacion
+Asignacion=Operacion
+Operacion=(Fin)

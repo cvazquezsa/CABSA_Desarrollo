@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=PresupuestoTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=PresupuestoTipo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=PresupuestoTipo.Tipo
+TablaPrincipal=PresupuestoTipo
+UsarJOIN=S
+SQL=SELECT<BR>  PresupuestoTipo.Tipo<BR><BR>FROM<BR>  PresupuestoTipo
+
+[PresupuestoTipo.Tipo]
+Clave=PresupuestoTipo.Tipo
+LigaTabla=PresupuestoTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=MenuExpAgent
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=371
+PosicionInicialArriba=289
+PosicionInicialAltura=189
+PosicionInicialAncho=282
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Explorar]
+Nombre=Explorar
+Boton=0
+NombreDesplegar=&Comisiones y Destajos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarAgent
+Activo=S
+Visible=S
+
+[Acciones.ExplorarVentas]
+Nombre=ExplorarVentas
+Boton=0
+NombreDesplegar=&Ventas por Agente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarAgentVentaD
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Explorar
+Explorar=ExplorarVentas
+ExplorarVentas=(Fin)

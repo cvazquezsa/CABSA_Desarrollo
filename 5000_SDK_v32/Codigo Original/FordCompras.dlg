@@ -1,0 +1,72 @@
+[Dialogo]
+Clave=FordCompras
+Nombre=Conexión con Ford
+Icono=82
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=66
+PosicionInicialAncho=236
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=522
+PosicionInicialArriba=462
+
+[Acciones.EnviarPedido]
+Nombre=EnviarPedido
+Boton=0
+NombreDesplegar=&Enviar Pedido Ford
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=GuardarLista(SQLEnLista(<T>spFordPedido :nID<T>, Info.ID), General.FordDirectorioSalida, <T>RPPEDIDO<T>, <T>DAT<T>, <T>Datos<T>, <T>Datos<T>)
+VisibleCondicion=(Info.Estatus=EstatusPendiente) y (Info.Mov=General.FordMovPedido)
+
+[Acciones.RecibirRemision]
+Nombre=RecibirRemision
+Boton=0
+NombreDesplegar=Recibir &Remisión Ford
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>SHP*<T>, <T>DAT<T>, <T>Datos<T>, <T>Datos<T>)), ProcesarSQL(<T>spFordRemision :nSuc, :nID, :nEstacion, :tUsr, :fFecha, :tMov<T>,  Sucursal, Info.ID, EstacionTrabajo, Usuario, FechaTrabajo, General.FordMovRemision))
+VisibleCondicion=(Info.Estatus=EstatusPendiente) y (Info.Mov=General.FordMovAvance)
+
+[Acciones.CancelarPedido]
+Nombre=CancelarPedido
+Boton=0
+NombreDesplegar=&Cancelar Pedido Ford
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=GuardarLista(SQLEnLista(<T>spFordPedido :nID<T>, Info.ID), General.FordDirectorioSalida, <T>CPEDIDO_<T>+Info.MovID, <T>DAT<T>, <T>Datos<T>, <T>Datos<T>)
+VisibleCondicion=(Info.Estatus=EstatusCancelado) y (Info.Mov=General.FordMovPedido)
+
+[Acciones.RecibirAvance]
+Nombre=RecibirAvance
+Boton=0
+NombreDesplegar=Recibir &Avance Ford
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>ORD*<T>, <T>DAT<T>, <T>Datos<T>, <T>Datos<T>)), ProcesarSQL(<T>spFordRemision :nSuc, :nID, :nEstacion, :tUsr, :fFecha, :tMov<T>,  Sucursal, Info.ID, EstacionTrabajo, Usuario, FechaTrabajo, General.FordMovAvance))
+VisibleCondicion=(Info.Estatus=EstatusPendiente) y (Info.Mov=General.FordMovPedido)
+
+[Dialogo.ListaAcciones]
+(Inicio)=EnviarPedido
+EnviarPedido=CancelarPedido
+CancelarPedido=RecibirAvance
+RecibirAvance=RecibirRemision
+RecibirRemision=(Fin)

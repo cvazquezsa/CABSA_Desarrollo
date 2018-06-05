@@ -1,0 +1,70 @@
+[Dialogo]
+Clave=MenuCfgImpresion
+Nombre=Impresión
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=237
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=521
+PosicionInicialArriba=417
+VentanaConIcono=S
+
+[Acciones.ServerImpresion]
+Nombre=ServerImpresion
+Boton=0
+NombreDesplegar=&Servidor de Impresiones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ServerImpresion
+Activo=S
+Visible=S
+
+[Acciones.ServerImpresionC]
+Nombre=ServerImpresionC
+Boton=0
+NombreDesplegar=&Consecutivos de Impresión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ServerImpresionC
+Activo=S
+Visible=S
+
+[Acciones.ImpresoraModo]
+Nombre=ImpresoraModo
+Boton=0
+NombreDesplegar=&Modos de Impresión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ImpresoraModo
+Activo=S
+Visible=S
+
+[Acciones.LPR]
+Nombre=LPR
+Boton=0
+NombreDesplegar=Servidores &LPR
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=LPR
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ServerImpresion
+ServerImpresion=ServerImpresionC
+ServerImpresionC=ImpresoraModo
+ImpresoraModo=LPR
+LPR=(Fin)

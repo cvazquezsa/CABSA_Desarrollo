@@ -1,0 +1,54 @@
+[Tabla]
+Icono=0
+Clave=AutoComision
+Archivo=AutoComision
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos de Comisión
+Singular=Tipo Comisión
+LlavePrimaria=Comision
+CampoTipo=Tipo
+SQL=SELECT<BR>  Comision,<BR>  Tipo,<BR>  Cantidad<BR><BR>FROM<BR>  AutoComision
+
+[Comision]
+Clave=Comision
+Nombre=Comision
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Tabla.ListaCampos]
+(Inicio)=Comision
+Comision=Tipo
+Tipo=Cantidad
+Cantidad=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Porcentaje Boletos
+Porcentaje Boletos=Importe por Servicio
+Importe por Servicio=Factor por km
+Factor por km=(Fin)

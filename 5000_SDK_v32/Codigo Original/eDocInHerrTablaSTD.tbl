@@ -1,0 +1,104 @@
+
+[Tabla]
+Icono=0
+Clave=eDocInHerrTablaSTD
+Nombre=eDocInHerrTablaSTD
+Archivo=eDocInHerrTablaSTD
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlID=S
+CampoID=ID
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Operando1]
+Clave=Operando1
+Nombre=Valor 1
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT           Campo FROM SysCampoExt WHERE Tabla = :tTabla<T>,eDocInHerrTablaST:eDocInHerrTablaST.Tablas)
+[Operador]
+Clave=Operador
+Nombre=Operador
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+[Operando2]
+Clave=Operando2
+Nombre=Valor 2
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[Operador.ListaOpciones]
+(Inicio)=IGUAL QUE
+IGUAL QUE=DIFERENTE QUE
+DIFERENTE QUE=MAYOR QUE
+MAYOR QUE=MENOR QUE
+MENOR QUE=MAYOR O IGUAL QUE
+MAYOR O IGUAL QUE=MENOR O IGUAL QUE
+MENOR O IGUAL QUE=(Fin)
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=ID
+ID=Operando1
+Operando1=Operador
+Operador=Operando2
+Operando2=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=ID,
+ID,=Operando1,
+Operando1,=Operador,
+Operador,=Operando2
+Operando2=FROM eDocInHerrTablaSTD
+FROM eDocInHerrTablaSTD=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Estacion
+Estacion=ID
+ID=(Fin)

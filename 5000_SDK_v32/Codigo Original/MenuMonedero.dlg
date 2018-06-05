@@ -1,0 +1,48 @@
+
+[Dialogo]
+Clave=MenuMonedero
+Nombre=Monedero
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+[Acciones.TarjetaMonedero]
+Nombre=TarjetaMonedero
+Boton=0
+NombreDesplegar=Tarjeta Monedero
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=TarjetaMonedero
+Activo=S
+Visible=S
+
+[Acciones.Monedero]
+Nombre=Monedero
+Boton=0
+NombreDesplegar=&Monedero Electrònico
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=Monedero
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=TarjetaMonedero
+TarjetaMonedero=Monedero
+Monedero=(Fin)

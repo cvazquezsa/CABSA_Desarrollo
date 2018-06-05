@@ -1,0 +1,74 @@
+[Tabla]
+Icono=0
+Clave=CfgECollaborationMov
+Archivo=CfgECollaborationMov
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=Modulo<BR>Mov
+ControlMov=S
+CampoMov=Mov
+SQL=SELECT<BR>  Modulo,<BR>  Mov,<BR>  ModuloDestino,<BR>  MovDestino<BR><BR>FROM<BR>  CfgECollaborationMov
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ConRefrescar=S
+ListaRefrescar=ModuloDestino
+ListaOpciones=(Lista)
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento Origen
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+
+[MovDestino]
+Clave=MovDestino
+Nombre=Movimiento Destino
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(ModuloDestino)
+
+[ModuloDestino]
+Clave=ModuloDestino
+Nombre=Módulo Destino
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorRefrescar=Caso Modulo<BR>  Es <T>VTAS<T> Entonces <T>COMS<T><BR>  Es <T>COMS<T> Entonces <T>VTAS<T><BR>  Es <T>CXC<T>  Entonces <T>CXP<T><BR>  Es <T>CXP<T>  Entonces <T>CXC<T><BR>Fin
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=ModuloDestino
+ModuloDestino=MovDestino
+MovDestino=(Fin)
+
+[Modulo.ListaOpciones]
+(Inicio)=VTAS
+VTAS=COMS
+COMS=CXC
+CXC=CXP
+CXP=(Fin)

@@ -1,0 +1,205 @@
+
+
+[Tabla]
+Icono=0
+Clave=CFDIRetencionCfg
+Nombre=CFDIRetencionCfg
+Archivo=CFDIRetencionCfg
+Modulos=(Todos)
+Singular=CFDIRetencionCfg
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=RID
+
+ControlID=S
+CampoID=RID
+SQL=(Lista)
+[MovTimbrado]
+Clave=MovTimbrado
+Nombre=Movimiento Timbrado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+
+
+
+
+
+
+
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+
+
+
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXP
+
+
+
+
+
+
+
+[Version]
+Clave=Version
+Nombre=Versión
+Visible=S
+TamanoValidacion=2
+TipoDatos=Texto
+Tamano=5
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+Formula=SQLEnLista(<T>SELECT DISTINCT Version FROM CFDIRetencionXMLPlantilla ORDER BY Version<T>)
+
+
+
+
+
+
+
+
+
+
+[RepConstancia]
+Clave=RepConstancia
+Nombre=Reporte de Constancia
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+
+Formula=ListaReportes
+
+
+
+
+
+
+[PeriodosEspecificos]
+Clave=PeriodosEspecificos
+Nombre=Especificar Periodos Inicial y Final en Constancia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+[MesIni]
+Clave=MesIni
+Nombre=Mes Inicial Constancia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=PeriodosEspecificos
+RequeridoActivo=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Meses Num.
+OpcionesRenglones=8
+[MesFin]
+Clave=MesFin
+Nombre=Mes Fin Constancia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=PeriodosEspecificos
+
+
+
+RequeridoActivo=S
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Meses Num.
+OpcionesRenglones=8
+
+
+[Ejerc]
+Clave=Ejerc
+Nombre=Ejercicio Constancia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=PeriodosEspecificos
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Años
+OpcionesRenglones=8
+OpcionesLlave=Opción
+[PeriodosEspecificos.ListaRefrescarCondiciones]
+(Inicio)=MesIni
+MesIni=MesFin
+MesFin=Ejerc
+Ejerc=(Fin)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=MovTimbrado
+MovTimbrado=RID
+RID=Concepto
+Concepto=Version
+Version=RepConstancia
+RepConstancia=PeriodosEspecificos
+PeriodosEspecificos=MesIni
+MesIni=MesFin
+MesFin=Ejerc
+Ejerc=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=RID,
+RID,=Version,
+Version,=MovTimbrado,
+MovTimbrado,=Concepto,
+Concepto,=RepConstancia,
+RepConstancia,=PeriodosEspecificos,
+PeriodosEspecificos,=Ejerc,
+Ejerc,=MesIni,
+MesIni,=MesFin
+MesFin=FROM CFDIRetencionCfg
+FROM CFDIRetencionCfg=(Fin)

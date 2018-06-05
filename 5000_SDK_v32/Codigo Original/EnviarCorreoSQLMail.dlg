@@ -1,0 +1,92 @@
+[Dialogo]
+Clave=EnviarCorreoSQLMail
+Nombre=<T>Enviar Correo - SQL Mail<T>
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=517
+PosicionInicialArriba=405
+PosicionInicialAlturaCliente=186
+PosicionInicialAncho=245
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.Cte]
+Nombre=Cte
+Boton=0
+NombreDesplegar=&Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EnviarCorreo
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Nombre, <T>Clientes<T>)
+
+[Acciones.Prov]
+Nombre=Prov
+Boton=0
+NombreDesplegar=&Proveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EnviarCorreo
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Nombre, <T>Proveedores<T>)
+Visible=S
+
+[Acciones.Personal]
+Nombre=Personal
+Boton=0
+NombreDesplegar=P&ersonal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EnviarCorreo
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Nombre, <T>Personal<T>)
+
+[Acciones.Agente]
+Nombre=Agente
+Boton=0
+NombreDesplegar=&Agentes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EnviarCorreo
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Nombre, <T>Agentes<T>)
+Visible=S
+
+[Acciones.Usuarios]
+Nombre=Usuarios
+Boton=0
+NombreDesplegar=&Usuarios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EnviarCorreo
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Nombre, <T>Usuarios<T>)
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cte
+Cte=Prov
+Prov=Agente
+Agente=Personal
+Personal=Usuarios
+Usuarios=(Fin)

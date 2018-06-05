@@ -1,0 +1,953 @@
+[Reporte]
+Clave=OportunidadPlantilla
+Nombre=Plantillas de Oportunidades
+Icono=6
+Vista=OportunidadPlantillaT
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=27.9
+LargoPagina=21.6
+Parametros1=OportunidadPlantilla.ID
+Parametros2==
+Parametros3=N
+Parametros=S
+Columnas=1
+OtroOrden=S
+ListaOrden=OportunidadPlantilla.ID<TAB>(Acendente)
+PosicionInicialAltura=425
+PosicionInicialAncho=1382
+PosicionInicialIzquierda=45
+PosicionInicialArriba=75
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Menus=S
+Ascii=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Modo=0
+PosicionSeparador=100
+Tipo=Reporte
+FuentePorOmision={MS Sans Serif, 8, Negro, []}
+ImpresoraPixeles=(Auto)
+PosicionInicialAlturaCliente=706
+Orientacion=Horizontal
+
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: OportunidadPlantilla.ID<BR>Inicio: OportunidadPlantilla.ID<BR>Inicio: OportunidadPlantilla.ID<BR>Inicio: OportunidadPlantilla.ID<BR>Inicio: OportunidadPlantilla.ID<BR>Inicio: OportunidadPlantilla.ID<BR>Detalle<BR>Detalle<BR>Fin: OportunidadPlantilla.ID<BR>Pie
+VentanaIzquierda=-8
+VentanaArriba=-8
+VentanaAltura=744
+VentanaAncho=1382
+PanelArriba=171
+PanelBotones=113
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Arriba
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+Grupo=
+Marco=N
+EstiloMarco=0
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: OportunidadPlantilla.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=0
+Grupo=OportunidadPlantilla.ID
+Marco=N
+BordeArriba=N
+BorqueIzquierdo=N
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea3]
+Clave=Inicio: OportunidadPlantilla.ID
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=1
+AltoEnCm=0.63
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Cursiva]}
+Objetos=5
+Grupo=OportunidadPlantilla.ID
+BordeArriba=N
+BorqueIzquierdo=N
+FondoEstilo=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Inicio: OportunidadPlantilla.ID
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=OportunidadPlantilla.ID
+Marco=N
+EstiloMarco=0
+FondoEstilo=0
+BordeAbajo=N
+Visible=
+Renglones=1
+FondoColor=Blanco
+
+[Linea5]
+Clave=Inicio: OportunidadPlantilla.ID
+Objetos=4
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=3
+AltoEnCm=1.6
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=OportunidadPlantilla.ID
+BordeAbajo=N
+FondoEstilo=0
+Visible=
+BordeArriba=N
+EstiloAbajo=0
+Renglones=4
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=12.9
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Plantilla<T>
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeIzquierdo=N
+BordeDerecho=N
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=69
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=13
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+Marco=N
+BordeArriba=N
+BordeAbajo=S
+BordeDerecho=N
+FormatoValidacion=
+EstiloMarco=0
+EstiloAbajo=3
+AnchoTexto=70
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=OportunidadPlantilla
+ListaParametros1=ID
+ListaParametros=S
+Visible=S
+Activo=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+EnMenu=S
+EspacioPrevio=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=OportunidadPlantilla
+ListaParametros1=ID
+ListaParametros=S
+Visible=S
+
+ActivoCondicion=Usuario.EnviarExcel
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreDesplegar=&Cerrar
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Visible=S
+Activo=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+EspacioPrevio=
+NombreEnBoton=S
+EnBarraHerramientas=S
+
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=2.71
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre( OportunidadPlantilla.Categoria ) & <T>:<T><BR>CampoNombre( OportunidadPlantilla.Grupo ) & <T>:<T><BR>CampoNombre( OportunidadPlantilla.Familia ) & <T>:<T>
+BordeAbajo=N
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=7
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=OportunidadPlantilla.Categoria<BR>OportunidadPlantilla.Grupo<BR>OportunidadPlantilla.Familia
+BordeAbajo=N
+FormatoValidacion=
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+[Linea6]
+Clave=Inicio: OportunidadPlantilla.ID
+Seccion=Inicio Grupo
+Grupo=OportunidadPlantilla.ID
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={MS Sans Serif, 8, Negro, []}
+Objetos=1
+Visible=
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+
+BordeArriba=N
+[Linea7]
+Clave=Inicio: OportunidadPlantilla.ID
+Seccion=Inicio Grupo
+Grupo=OportunidadPlantilla.ID
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 9, Negro, [Negritas]}
+Objetos=5
+Visible=
+BordeArriba=N
+BordeAbajo=S
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+
+
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=5.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=OportunidadPlantilla.Plantilla
+Marco=N
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=2.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=EstatusNombreSingular(OportunidadPlantilla.Estatus)
+Marco=N
+EstiloMarco=1
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+AnchoEnCm=5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Plantilla de Correos:<T><BR>Si(OportunidadPlantilla.GenerarMov, <T>Generar Movimiento al Ganar Op: <T>, <T><T>)<BR><T>Movimiento Oportunidad:<T>
+
+ExpresionMultiple=S
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[D5]
+Celda=D5
+Alineacion=Izquierda
+AnchoEnCm=10
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=OportunidadPlantilla.PlantillaeMail<BR>Si(OportunidadPlantilla.GenerarMov, OportunidadPlantilla.Mov, <T><T>)<BR>OportunidadPlantilla.MovOportunidad
+
+ExpresionMultiple=S
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=11.29
+Marco=N
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=
+AnchoTexto=61
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=N
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=3.61
+Marco=N
+EstiloMarco=1
+FormatoValidacion=d mmmm yyyy
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=OportunidadPlantilla.FechaEmision
+AnchoTexto=15
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+[Linea8]
+Clave=Detalle
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+
+Grupo=
+Visible=OportunidadPlantillaD.Tipo = <T>Etapa<T>
+
+BordeAbajo=N
+EstiloAbajo=0
+EstiloMarco=3
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=25.4
+ExpresionMultiple=N
+AnchoTexto=137
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={MS Sans Serif, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+
+
+[Linea9]
+Clave=Detalle
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Visible=OportunidadPlantillaD.Tipo = <T>Actividad<T>
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=5
+Grupo=
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+[Linea10]
+Clave=Fin: OportunidadPlantilla.ID
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=1
+Visible=
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={MS Sans Serif, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=0
+BordeArriba=S
+Marco=N
+Grupo=OportunidadPlantilla.ID
+BordeAbajo=N
+EstiloAbajo=0
+EstiloArriba=0
+
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=1.5
+ExpresionMultiple=N
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(OportunidadPlantillaD.Tipo)
+
+BordeAbajo=S
+EstiloAbajo=1
+[B7]
+Celda=B7
+Alineacion=Izquierda
+AnchoEnCm=2.5
+ExpresionMultiple=N
+AnchoTexto=15
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(OportunidadPlantillaD.Clave)
+
+
+BordeAbajo=S
+EstiloAbajo=1
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=8
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Tipo
+
+EstiloMarco=3
+[B8]
+Celda=B8
+Alineacion=Izquierda
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Clave
+
+
+
+
+
+
+
+
+
+
+
+
+
+EstiloMarco=3
+[C7]
+Celda=C7
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=33
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(OportunidadPlantillaD.Descripcion)
+
+BordeAbajo=S
+EstiloAbajo=1
+[D7]
+Celda=D7
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Recurso por Omisión<T>
+
+
+
+
+
+
+
+
+
+BordeAbajo=S
+EstiloAbajo=1
+
+
+
+
+
+[E7]
+Celda=E7
+Alineacion=Derecha
+AnchoEnCm=2.39
+AnchoTexto=12
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>% Ponderado<T>
+
+
+
+
+
+[C8]
+Celda=C8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=6.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Descripcion
+
+[D8]
+Celda=D8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=7
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[E8]
+Celda=E8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=2.39
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Linea11]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A9]
+Celda=A9
+Alineacion=Derecha
+AnchoEnCm=1.5
+AnchoTexto=13
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Tipo
+
+[B9]
+Celda=B9
+Alineacion=Izquierda
+AnchoEnCm=2.5
+AnchoTexto=40
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Clave
+
+[C9]
+Celda=C9
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.Descripcion
+
+[D9]
+Celda=D9
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=27
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si ConDatos(OportunidadPlantillaD.RecursoOmision)<BR>Entonces<BR>  NombreRecurso + <T> (<T>+OportunidadPlantillaD.RecursoOmision+<T>)<T><BR>Sino<BR>  <T><T><BR>Fin
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+FormatoValidacion=#.##%
+AnchoEnCm=2.39
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OportunidadPlantillaD.PorcentajePonderado
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=12.89
+AnchoTexto=69
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B11]
+Celda=B11
+Alineacion=Derecha
+AnchoEnCm=12.89
+AnchoTexto=69
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

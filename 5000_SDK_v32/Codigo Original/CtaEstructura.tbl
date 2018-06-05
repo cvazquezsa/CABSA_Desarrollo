@@ -1,0 +1,34 @@
+[Tabla]
+Icono=0
+Clave=CtaEstructura
+Archivo=CtaEstructura
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Cuentas de Estructura
+Singular=Cuenta de Estructura
+LlavePrimaria=Cuenta
+ControlCuenta=S
+CampoCuenta=Cuenta
+SQL=SELECT<BR>  Cuenta,<BR>  Descripcion<BR><BR>FROM<BR>  CtaEstructura
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=Descripcion
+Descripcion=(Fin)

@@ -1,0 +1,236 @@
+[Tabla]
+Icono=0
+Clave=ProyectoDesarrollo
+Nombre=Proyecto Desarrollo
+Archivo=ProyectoDesarrollo
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+LlavePrimaria=ID
+CampoID=ID
+CampoTipo=Tipo
+ListaRelaciones=Mon
+SQL=SELECT<BR>  ID,<BR>  Tipo,<BR>  VersionCliente,<BR>  Causa,<BR>  FechaRequerida,<BR>  Importe,<BR>  Moneda,<BR>  TipoCambio,<BR>  Clase1,<BR>  Clase2,<BR>  Clase3,<BR>  Clase4,<BR>  Clase5,<BR>  Problema,<BR>  Solucion<BR><BR>FROM<BR>  ProyectoDesarrollo
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[VersionCliente]
+Clave=VersionCliente
+Nombre=Versión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Causa]
+Clave=Causa
+Nombre=Causa
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQL(<T>SELECT Causa FROM ProyectoDesarrolloCausa<T>)
+TipoDatos=Texto
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Clase1]
+Clave=Clase1
+Nombre=Clasificación 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaMemEnBlanco=S
+Formula=SQLEnLista(<T>SELECT Clase1 FROM ProyectoDesarrolloClase1 ORDER BY Orden<T>)
+
+[Clase2]
+Clave=Clase2
+Nombre=Clasificación 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Clase2 FROM ProyectoDesarrolloClase2 WHERE Clase1 = :tClase1 ORDER BY Orden<T>, Clase1)
+
+[Clase3]
+Clave=Clase3
+Nombre=Clasificación 3
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Clase3 FROM ProyectoDesarrolloClase3 WHERE Clase1 = :tClase1 AND Clase2 = :tClase2 ORDER BY Orden<T>, Clase1, Clase2)
+
+[Clase4]
+Clave=Clase4
+Nombre=Clasificación 4
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescar=S
+ListaRefrescar=Clase5
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Clase4 FROM ProyectoDesarrolloClase4 WHERE Clase1 = :tClase1 AND Clase2 = :tClase2 AND Clase3 = :tClase3 ORDER BY Orden<T>, Clase1, Clase2, Clase3)
+
+[Clase5]
+Clave=Clase5
+Nombre=Clasificación 5
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Clase5 FROM ProyectoDesarrolloClase5 WHERE Clase1 = :tClase1 AND Clase2 = :tClase2 AND Clase3 = :tClase3 AND Clase4 = :tClase4 ORDER BY Orden<T>, Clase1, Clase2, Clase3, Clase4)
+
+[Problema]
+Clave=Problema
+Nombre=Problema
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[Solucion]
+Clave=Solucion
+Nombre=Solución
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[FechaRequerida]
+Clave=FechaRequerida
+Nombre=Fecha Requerida
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Moneda
+ListaRefrescar=TipoCambio
+Requerido=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=TipoCambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=Info.TipoCambio
+Requerido=S
+AyudaEnCaptura=Calculadora
+
+[Relaciones.Mon]
+TipoRelacion=Forzosa
+LlaveLocal=Moneda
+Clave=Mon
+TablaRemota=Mon
+LlaveRemota=Moneda
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Tipo
+Tipo=VersionCliente
+VersionCliente=Causa
+Causa=Importe
+Importe=Moneda
+Moneda=TipoCambio
+TipoCambio=FechaRequerida
+FechaRequerida=Clase1
+Clase1=Clase2
+Clase2=Clase3
+Clase3=Clase4
+Clase4=Clase5
+Clase5=Problema
+Problema=Solucion
+Solucion=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Nuevo
+Nuevo=Mejora
+Mejora=Error
+Error=Adecuación
+Adecuación=Corrección
+Corrección=(Fin)
+
+[Clase1.ListaRefrescar]
+(Inicio)=Clase2
+Clase2=Clase3
+Clase3=Clase4
+Clase4=Clase5
+Clase5=(Fin)
+
+[Clase2.ListaRefrescar]
+(Inicio)=Clase3
+Clase3=Clase4
+Clase4=Clase5
+Clase5=(Fin)
+
+[Clase3.ListaRefrescar]
+(Inicio)=Clase4
+Clase4=Clase5
+Clase5=(Fin)

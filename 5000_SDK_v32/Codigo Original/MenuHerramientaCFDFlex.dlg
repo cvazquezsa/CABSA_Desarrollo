@@ -1,0 +1,33 @@
+
+[Dialogo]
+Clave=MenuHerramientaCFDFlex
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=GenerarPDF
+PosicionInicialIzquierda=1600
+PosicionInicialAlturaCliente=80
+PosicionInicialAncho=500
+[Acciones.GenerarPDF]
+Nombre=GenerarPDF
+Boton=0
+NombreDesplegar=&Monitor CFDI
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CFDFlex
+Activo=S
+Visible=S
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarPDF
+GenerarPDF=MonitorCFDFlex
+MonitorCFDFlex=(Fin)

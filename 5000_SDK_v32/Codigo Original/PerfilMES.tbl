@@ -1,0 +1,28 @@
+
+[Tabla]
+Icono=0
+Clave=PerfilMES
+Nombre=PerfilMES
+Archivo=PerfilMES
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=PerfilMES
+
+LlavePrimaria=PerfilMES
+SQL=(Lista)
+[PerfilMES]
+Clave=PerfilMES
+Nombre=Perfil Factory
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=PerfilMES
+PerfilMES=FROM PerfilMES
+FROM PerfilMES=(Fin)

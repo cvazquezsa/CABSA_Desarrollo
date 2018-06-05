@@ -1,0 +1,49 @@
+[Vista]
+Icono=0
+Clave=FormaPagoTipoD
+Nombre=Detalle
+Modulos=(Todos)
+Singular=Detalle
+ListaTablas=FormaPagoTipoD
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=FormaPagoTipoD
+SQL=SELECT<BR>  FormaPagoTipoD.Tipo,<BR>  FormaPagoTipoD.FormaPago<BR><BR>FROM<BR>  FormaPagoTipoD
+
+[FormaPagoTipoD.Tipo]
+Clave=FormaPagoTipoD.Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tipo
+LigaTabla=FormaPagoTipoD
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Tipo
+
+[FormaPagoTipoD.FormaPago]
+Clave=FormaPagoTipoD.FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+LigaTabla=FormaPagoTipoD
+LigaCampo=FormaPago
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=FormaPago
+
+[Vista.ListaCampos]
+(Inicio)=FormaPagoTipoD.Tipo
+FormaPagoTipoD.Tipo=FormaPagoTipoD.FormaPago
+FormaPagoTipoD.FormaPago=(Fin)

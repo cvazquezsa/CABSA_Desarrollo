@@ -1,0 +1,165 @@
+[Dialogo]
+Clave=GenerarPCPProyectoPresupuesto
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=362
+PosicionInicialArriba=262
+PosicionInicialAltura=117
+PosicionInicialAncho=300
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=210
+
+[Acciones.Presupuesto]
+Nombre=Presupuesto
+Boton=0
+NombreDesplegar=Generar Pre&supuesto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPPresupuesto FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.Estructura]
+Nombre=Estructura
+Boton=0
+NombreDesplegar=Generar &Estructura
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPEstructura FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.ClavePresupuestal]
+Nombre=ClavePresupuestal
+Boton=0
+NombreDesplegar=Generar Clave &Presupuestal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPClavePresupuestal FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.EliminarClavePresupuestal]
+Nombre=EliminarClavePresupuestal
+Boton=0
+NombreDesplegar=Generar Eliminación &Clave Presupuestal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPEliminacionClave FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.Regla]
+Nombre=Regla
+Boton=0
+NombreDesplegar=Generar &Regla
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPRegla FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.EliminarRegla]
+Nombre=EliminarRegla
+Boton=0
+NombreDesplegar=Generar Eliminación Re&gla
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPEliminacionRegla FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Estructura
+Estructura=ClavePresupuestal
+ClavePresupuestal=EliminarClavePresupuestal
+EliminarClavePresupuestal=Regla
+Regla=EliminarRegla
+EliminarRegla=Presupuesto
+Presupuesto=(Fin)

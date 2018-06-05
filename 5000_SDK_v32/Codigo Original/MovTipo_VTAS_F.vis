@@ -1,0 +1,19 @@
+[Vista]
+Icono=0
+Clave=MovTipo_VTAS_F
+Nombre=Facturas
+Modulos=(Todos)
+Singular=Factura
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=Mov
+LlavePrimaria=Mov
+SQL=SELECT Mov FROM MovTipo WHERE Clave = <T>VTAS.F<T>
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Mov

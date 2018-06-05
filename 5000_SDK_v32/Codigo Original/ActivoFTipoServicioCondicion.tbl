@@ -1,0 +1,187 @@
+
+[Tabla]
+Icono=0
+Clave=ActivoFTipoServicioCondicion
+Nombre=ActivoFTipoServicioCondicion
+Archivo=ActivoFTipoServicioCondicion
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+LlavePrimaria=(Lista)
+ControlTipo=S
+CampoTipo=Tipo
+ListaRelaciones=ActivoFTipoIndicador
+SQL=SELECT<BR>  Tipo,<BR>  Servicio,<BR>  Orden,<BR>  Operador,<BR>  Indicador,<BR>  Condicion,<BR>  Valor,<BR>  Valor2<BR><BR>FROM<BR>  ActivoFTipoServicioCondicion
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Tipo
+[Servicio]
+Clave=Servicio
+Nombre=Servicio
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Servicio
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Operador]
+Clave=Operador
+Nombre=Operador
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+[Indicador]
+Clave=Indicador
+Nombre=Indicador
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>Select Indicador From ActivoFTipoIndicador  Where Tipo = {Comillas(Info.Tipo)}<T>)
+[Condicion]
+Clave=Condicion
+Nombre=Condicion
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Caso SQL(<T>SELECT TipoDato FROM ActivoFTipoIndicador WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo, Indicador)<BR>  Es <T>TEXTO<T>          Entonces LISTA(<T>ENTRE<T>,<T>IGUAL QUE<T>,<T>DIFERENTE QUE<T>,<T>MAYOR QUE<T>,<T>MENOR QUE<T>,<T>MAYOR O IGUAL QUE<T>,<T>MENOR O IGUAL QUE<T>)<BR>  Es <T>NUMERICO<T>       Entonces LISTA(<T>ENTRE<T>,<T>IGUAL QUE<T>,<T>DIFERENTE QUE<T>,<T>MAYOR QUE<T>,<T>MENOR QUE<T>,<T>MAYOR O IGUAL QUE<T>,<T>MENOR O IGUAL QUE<T>,<T>CADA<T>)<BR>  Es <T>FECHA<T>          Entonces LISTA(<T>ENTRE<T>,<T>IGUAL QUE<T>,<T>DIFERENTE QUE<T>,<T>MAYOR QUE<T>,<T>MENOR QUE<T>,<T>MAYOR O IGUAL QUE<T>,<T>MENOR O IGUAL QUE<T>)<BR>  Es <T>VENCIMIENTO<T>    Entonces LISTA(<T>FALTAN MENOS DE<T>,<T>PASARON MAS DE<T>)<BR>  Es <T>LOGICO<T>         Entonces LISTA(<T>IGUAL QUE<T>)<BR>Fin
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Caso  SQL(<T>SELECT TipoDato FROM ActivoFTipoIndicador WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo, Indicador)<BR>  Es <T>TEXTO<T>          Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>NUMERICO<T>       Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>FECHA<T>          Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>VENCIMIENTO<T>    Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>LOGICO<T>         Entonces LISTA(<T>0<T>,<T>1<T>)<BR>Fin
+[Valor2]
+Clave=Valor2
+Nombre=Valor 2
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+
+
+
+
+
+
+
+
+
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+
+AyudaMemOpc=Consulta opcional
+Formula=Caso  SQL(<T>SELECT TipoDato FROM ActivoFTipoIndicador WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo, Indicador)<BR>  Es <T>TEXTO<T>          Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>NUMERICO<T>       Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>FECHA<T>          Entonces SQLENLISTA(<T>SELECT Valor FROM ActivoFTipoIndicadorLista WHERE Tipo = :tTipo AND Indicador = :tIndicador<T>,Tipo,Indicador)<BR>  Es <T>VENCIMIENTO<T>    Entonces LISTA(<T>DIAS<T>,<T>SEMANAS<T>,<T>MESES<T>,<T>AÑOS<T>)<BR>  Es <T>LOGICO<T>         Entonces LISTA(<T>0<T>,<T>1<T>)<BR>Fin
+[Condicion.ListaOpciones]
+(Inicio)=ENTRE
+ENTRE=IGUAL QUE
+IGUAL QUE=DIFERENTE QUE
+DIFERENTE QUE=MAYOR QUE
+MAYOR QUE=MENOR QUE
+MENOR QUE=MAYOR O IGUAL QUE
+MAYOR O IGUAL QUE=MENOR O IGUAL QUE
+MENOR O IGUAL QUE=FALTAN MENOS DE
+FALTAN MENOS DE=PASARON MAS DE
+PASARON MAS DE=(Fin)
+
+
+
+
+
+[Relaciones.ActivoFTipoIndicador]
+TipoRelacion=Forzosa
+LlaveLocal=(Lista)
+
+Clave=ActivoFTipoIndicador
+TablaRemota=ActivoFTipoIndicador
+LlaveRemota=(Lista)
+
+
+[Operador.ListaOpciones]
+(Inicio)=Y
+Y=O
+O=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+[Relaciones.ActivoFTipoIndicador.LlaveLocal]
+(Inicio)=Tipo
+Tipo=Indicador
+Indicador=(Fin)
+
+[Relaciones.ActivoFTipoIndicador.LlaveRemota]
+(Inicio)=Tipo
+Tipo=Indicador
+Indicador=(Fin)
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Servicio
+Servicio=Orden
+Orden=Operador
+Operador=Indicador
+Indicador=Condicion
+Condicion=Valor
+Valor=Valor2
+Valor2=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Tipo
+Tipo=Servicio
+Servicio=Orden
+Orden=(Fin)

@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=AutoCorridaRol
+Archivo=AutoCorridaRol
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Roles
+Singular=Rol
+LlavePrimaria=Corrida<BR>Rol
+SQL=SELECT<BR>  Corrida,<BR>  Rol<BR><BR>FROM<BR>  AutoCorridaRol
+
+[Corrida]
+Clave=Corrida
+Nombre=Corrida
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Corrida
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AutoRol
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Corrida
+Corrida=Rol
+Rol=(Fin)

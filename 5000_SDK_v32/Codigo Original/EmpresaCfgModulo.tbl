@@ -1,0 +1,251 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgModulo
+Archivo=EmpresaCfgModulo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=(Lista)
+CampoEmpresa=Empresa
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Módulos
+Mayusculas=S
+
+TipoDatos=Texto
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+[EditarConsec]
+Clave=EditarConsec
+Nombre=Editar Consecutivos
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=2
+Tamano=2
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ValorPorOmision=<T>No<T>
+TipoDatos=Texto
+
+[Situaciones]
+Clave=Situaciones
+Nombre=Situaciones
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=2
+Tamano=2
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Si - No
+ValorPorOmision=<T>No<T>
+TipoDatos=Texto
+
+[ContXGenerar]
+Clave=ContXGenerar
+Nombre=Conexión Contable
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=General.ContX
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Tiempos]
+Clave=Tiempos
+Nombre=Control Tiempos
+Visible=S
+TamanoValidacion=2
+Tamano=2
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[ValidarFechas]
+Clave=ValidarFechas
+Nombre=Validar Fechas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PeriodosEspeciales]
+Clave=PeriodosEspeciales
+Nombre=Periodos Especiales
+Visible=S
+TamanoValidacion=2
+Tamano=2
+ValorPorOmision=<T>No<T>
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=Fecha Emisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Servidor<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+RefrescarTodoCondiciones=S
+TipoDatos=Texto
+
+CondicionEdicion=1=2
+ListaOpciones=(Lista)
+[FlujoAbierto]
+Clave=FlujoAbierto
+Nombre=Flujo Abierto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=2
+Tamano=2
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+ValorPorOmision=<T>No<T>
+CondicionEdicion=Modulo en (<T>VTAS<T>, <T>COMS<T>, <T>CXC<T>, <T>CXP<T>, <T>DIN<T>, <T>GAS<T>, <T>INV<T>, <T>PROD<T>, <T>AGENT<T>, <T>RH<T>, <T>PROY<T>, <T>CP<T>, <T>GES<T>)
+
+TipoDatos=Texto
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>General<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+
+[ContXGenerar.ListaOpciones]
+(Inicio)=No
+No=por Movimiento
+por Movimiento=por Dia
+por Dia=(Fin)
+
+[ValidarFechas.ListaOpciones]
+(Inicio)=No
+No=Ejercicio
+Ejercicio=Dentro del Mes
+Dentro del Mes=No Adelantarse
+No Adelantarse=Mismo Dia
+Mismo Dia=Cierre Diario
+Cierre Diario=(Fin)
+
+
+[TipoCambio.ListaOpciones]
+(Inicio)=General
+General=Venta
+Venta=Compra
+Compra=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[FechaEmision.ListaOpciones]
+(Inicio)=Cliente
+Cliente=Servidor
+Servidor=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=EditarConsec
+EditarConsec=Situaciones
+Situaciones=Tiempos
+Tiempos=ContXGenerar
+ContXGenerar=PeriodosEspeciales
+PeriodosEspeciales=ValidarFechas
+ValidarFechas=FechaEmision
+FechaEmision=FlujoAbierto
+FlujoAbierto=TipoCambio
+TipoCambio=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=Modulo,
+Modulo,=EditarConsec,
+EditarConsec,=Situaciones,
+Situaciones,=Tiempos,
+Tiempos,=ContXGenerar,
+ContXGenerar,=ValidarFechas,
+ValidarFechas,=PeriodosEspeciales,
+PeriodosEspeciales,=FechaEmision,
+FechaEmision,=FlujoAbierto,
+FlujoAbierto,=TipoCambio
+TipoCambio=FROM
+FROM=EmpresaCfgModulo
+EmpresaCfgModulo=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=(Fin)

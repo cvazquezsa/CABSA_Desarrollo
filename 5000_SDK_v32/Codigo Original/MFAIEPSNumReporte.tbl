@@ -1,0 +1,41 @@
+
+[Tabla]
+Icono=0
+Clave=MFAIEPSNumReporte
+Nombre=MFAIEPSNumReporte
+Archivo=MFAIEPSNumReporte
+Modulos=(Todos)
+Singular=MFAIEPSNumReporte
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=(Lista)
+LlavePrimaria=NumReporte
+[NumReporte]
+Clave=NumReporte
+Nombre=Número Reporte
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[Tabla.ListaCampos]
+(Inicio)=NumReporte
+NumReporte=Descripcion
+Descripcion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=NumReporte,
+NumReporte,=Descripcion
+Descripcion=FROM MFAIEPSNumReporte
+FROM MFAIEPSNumReporte=(Fin)

@@ -1,0 +1,784 @@
+[Vista]
+Icono=0
+Clave=CxcAuxCorte
+Nombre=Auxiliares
+Modulos=(Todos)
+Singular=Auxiliar
+ListaTablas=(Lista)
+UsoReportes=S
+TablaPrincipal=VerAuxCorte
+ListaCampos=(Lista)
+ListaRelaciones=(Lista)
+ListaCalculados=(Lista)
+UsarJOIN=S
+
+SQL=(Lista)
+[Dias]
+Clave=Dias
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Días
+
+Formula=Si((VerAuxCorte.Saldo<>0.0) y ConDatos(Cxc.Vencimiento), Info.FechaA-ExtraeFecha(Cxc.Vencimiento))
+[Plazo1]
+Clave=Plazo1
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Plazo 1
+Monetario=S
+Formula=Si((Config.CxcPlazo1>0) y (Dias>0) y (Dias<=Config.CxcPlazo1), VerAuxCorte.Saldo)
+
+[Plazo2]
+Clave=Plazo2
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Plazo 2
+Monetario=S
+Formula=Si((Config.CxcPlazo2>0) y (Dias>Config.CxcPlazo1) y (Dias<=Config.CxcPlazo2), VerAuxCorte.Saldo)
+
+[Plazo3]
+Clave=Plazo3
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Plazo 3
+Monetario=S
+Formula=Si((Config.CxcPlazo3>0) y (Dias>Config.CxcPlazo2) y (Dias<=Config.CxcPlazo3), VerAuxCorte.Saldo)
+
+[Plazo4]
+Clave=Plazo4
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Plazo 4
+Monetario=S
+Formula=Si((Config.CxcPlazo4>0) y (Dias>Config.CxcPlazo3) y (Dias<=Config.CxcPlazo4), VerAuxCorte.Saldo)
+
+[AlCorriente]
+Clave=AlCorriente
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Al Corriente
+Monetario=S
+Formula=Si(Dias<=0, VerAuxCorte.Saldo)
+
+[PlazoMayor]
+Clave=PlazoMayor
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Mayor Plazo 4
+Formula=Si(Dias>Config.CxcPlazo4, VerAuxCorte.Saldo)
+
+[Posfechado]
+Clave=Posfechado
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Posfechados
+Formula=Si(MovTipo(<T>CXC<T>, VerAuxCorte.Mov) = CXC.NCP, VerAuxCorte.Saldo, 0.0)
+
+[VerAuxCorte.Estacion]
+Clave=VerAuxCorte.Estacion
+LigaTabla=VerAuxCorte
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Estacion
+
+[VerAuxCorte.ID]
+Clave=VerAuxCorte.ID
+LigaTabla=VerAuxCorte
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=ID
+
+[VerAuxCorte.Empresa]
+Clave=VerAuxCorte.Empresa
+LigaTabla=VerAuxCorte
+LigaCampo=Empresa
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=Empresa
+
+[VerAuxCorte.Modulo]
+Clave=VerAuxCorte.Modulo
+LigaTabla=VerAuxCorte
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=Modulo
+
+[VerAuxCorte.Moneda]
+Clave=VerAuxCorte.Moneda
+LigaTabla=VerAuxCorte
+LigaCampo=Moneda
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Moneda
+
+[VerAuxCorte.Cuenta]
+Clave=VerAuxCorte.Cuenta
+LigaTabla=VerAuxCorte
+LigaCampo=Cuenta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Cuenta
+
+[VerAuxCorte.Mov]
+Clave=VerAuxCorte.Mov
+LigaTabla=VerAuxCorte
+LigaCampo=Mov
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Mov
+
+[VerAuxCorte.MovID]
+Clave=VerAuxCorte.MovID
+LigaTabla=VerAuxCorte
+LigaCampo=MovID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=MovID
+
+[VerAuxCorte.ModuloID]
+Clave=VerAuxCorte.ModuloID
+LigaTabla=VerAuxCorte
+LigaCampo=ModuloID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=ModuloID
+
+[VerAuxCorte.Saldo]
+Clave=VerAuxCorte.Saldo
+LigaTabla=VerAuxCorte
+LigaCampo=Saldo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=Saldo
+
+[Cxc.ID]
+Clave=Cxc.ID
+LigaTabla=Cxc
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=ID_1
+
+[Cxc.FechaEmision]
+Clave=Cxc.FechaEmision
+LigaTabla=Cxc
+LigaCampo=FechaEmision
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=FechaEmision
+
+[Cxc.Concepto]
+Clave=Cxc.Concepto
+LigaTabla=Cxc
+LigaCampo=Concepto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Concepto
+
+[Cxc.Proyecto]
+Clave=Cxc.Proyecto
+LigaTabla=Cxc
+LigaCampo=Proyecto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Proyecto
+
+[Cxc.Moneda]
+Clave=Cxc.Moneda
+LigaTabla=Cxc
+LigaCampo=Moneda
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Moneda_1
+
+[Cxc.TipoCambio]
+Clave=Cxc.TipoCambio
+LigaTabla=Cxc
+LigaCampo=TipoCambio
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=TipoCambio
+
+[Cxc.Usuario]
+Clave=Cxc.Usuario
+LigaTabla=Cxc
+LigaCampo=Usuario
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Usuario
+
+[Cxc.Referencia]
+Clave=Cxc.Referencia
+LigaTabla=Cxc
+LigaCampo=Referencia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Referencia
+
+[Cxc.Observaciones]
+Clave=Cxc.Observaciones
+LigaTabla=Cxc
+LigaCampo=Observaciones
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Observaciones
+
+[Cxc.Estatus]
+Clave=Cxc.Estatus
+LigaTabla=Cxc
+LigaCampo=Estatus
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Estatus
+
+[Cxc.Situacion]
+Clave=Cxc.Situacion
+LigaTabla=Cxc
+LigaCampo=Situacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Situacion
+
+[Cxc.SituacionFecha]
+Clave=Cxc.SituacionFecha
+LigaTabla=Cxc
+LigaCampo=SituacionFecha
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=SituacionFecha
+
+[Cxc.ClienteEnviarA]
+Clave=Cxc.ClienteEnviarA
+LigaTabla=Cxc
+LigaCampo=ClienteEnviarA
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=ClienteEnviarA
+
+[Cxc.Condicion]
+Clave=Cxc.Condicion
+LigaTabla=Cxc
+LigaCampo=Condicion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Condicion
+
+[Cxc.Vencimiento]
+Clave=Cxc.Vencimiento
+LigaTabla=Cxc
+LigaCampo=Vencimiento
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Vencimiento
+
+[Cxc.CtaDinero]
+Clave=Cxc.CtaDinero
+LigaTabla=Cxc
+LigaCampo=CtaDinero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=CtaDinero
+
+[Cxc.Importe]
+Clave=Cxc.Importe
+LigaTabla=Cxc
+LigaCampo=Importe
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=Importe
+
+[Cxc.Impuestos]
+Clave=Cxc.Impuestos
+LigaTabla=Cxc
+LigaCampo=Impuestos
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=Impuestos
+
+[Cxc.Agente]
+Clave=Cxc.Agente
+LigaTabla=Cxc
+LigaCampo=Agente
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Agente
+
+[Cxc.ComisionTotal]
+Clave=Cxc.ComisionTotal
+LigaTabla=Cxc
+LigaCampo=ComisionTotal
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=ComisionTotal
+
+[Cte.Cliente]
+Clave=Cte.Cliente
+LigaTabla=Cte
+LigaCampo=Cliente
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Cliente
+
+[Cte.Nombre]
+Clave=Cte.Nombre
+LigaTabla=Cte
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+
+[Cte.NombreCorto]
+Clave=Cte.NombreCorto
+LigaTabla=Cte
+LigaCampo=NombreCorto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=NombreCorto
+
+[Cte.Numero]
+Clave=Cte.Numero
+LigaTabla=Cte
+LigaCampo=Numero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Numero
+
+[Cte.Tipo]
+Clave=Cte.Tipo
+LigaTabla=Cte
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Tipo
+
+[Cte.Direccion]
+Clave=Cte.Direccion
+LigaTabla=Cte
+LigaCampo=Direccion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Direccion
+
+[Cte.EntreCalles]
+Clave=Cte.EntreCalles
+LigaTabla=Cte
+LigaCampo=EntreCalles
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=EntreCalles
+
+[Cte.Plano]
+Clave=Cte.Plano
+LigaTabla=Cte
+LigaCampo=Plano
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Plano
+
+[Cte.Observaciones]
+Clave=Cte.Observaciones
+LigaTabla=Cte
+LigaCampo=Observaciones
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Observaciones_1
+
+[Cte.Colonia]
+Clave=Cte.Colonia
+LigaTabla=Cte
+LigaCampo=Colonia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Colonia
+
+[Cte.CodigoPostal]
+Clave=Cte.CodigoPostal
+LigaTabla=Cte
+LigaCampo=CodigoPostal
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=CodigoPostal
+
+[Cte.Poblacion]
+Clave=Cte.Poblacion
+LigaTabla=Cte
+LigaCampo=Poblacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Poblacion
+
+[Cte.Estado]
+Clave=Cte.Estado
+LigaTabla=Cte
+LigaCampo=Estado
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Estado
+
+[Cte.Pais]
+Clave=Cte.Pais
+LigaTabla=Cte
+LigaCampo=Pais
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Pais
+
+[Cte.Zona]
+Clave=Cte.Zona
+LigaTabla=Cte
+LigaCampo=Zona
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Zona
+
+[Cte.RFC]
+Clave=Cte.RFC
+LigaTabla=Cte
+LigaCampo=RFC
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=RFC
+
+[Cte.Telefonos]
+Clave=Cte.Telefonos
+LigaTabla=Cte
+LigaCampo=Telefonos
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Telefonos
+
+[Cte.Fax]
+Clave=Cte.Fax
+LigaTabla=Cte
+LigaCampo=Fax
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Fax
+
+[Cte.Contacto1]
+Clave=Cte.Contacto1
+LigaTabla=Cte
+LigaCampo=Contacto1
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Contacto1
+
+[Cte.Contacto2]
+Clave=Cte.Contacto2
+LigaTabla=Cte
+LigaCampo=Contacto2
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Contacto2
+
+[Cte.Categoria]
+Clave=Cte.Categoria
+LigaTabla=Cte
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria
+
+[Cte.Familia]
+Clave=Cte.Familia
+LigaTabla=Cte
+LigaCampo=Familia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Familia
+
+[Cte.Grupo]
+Clave=Cte.Grupo
+LigaTabla=Cte
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[Cte.Condicion]
+Clave=Cte.Condicion
+LigaTabla=Cte
+LigaCampo=Condicion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Condicion_1
+
+[Relaciones.VerAuxCorte.Cxc]
+Clave=VerAuxCorte.Cxc
+TablaRemota=Cxc
+LlaveLocal=VerAuxCorte.ModuloID
+LlaveRemota=ID
+TipoRelacion=Opcional
+
+[Relaciones.VerAuxCorte.Cte]
+Clave=VerAuxCorte.Cte
+TablaRemota=Cte
+LlaveLocal=VerAuxCorte.Cuenta
+LlaveRemota=Cliente
+TipoRelacion=Forzosa
+
+[Relaciones.Cxc.Cte]
+Clave=Cxc.Cte
+TablaRemota=Cte
+LlaveLocal=Cxc.Cliente
+LlaveRemota=Cliente
+TipoRelacion=Forzosa
+
+
+
+[Vista.ListaCampos]
+(Inicio)=VerAuxCorte.Estacion
+VerAuxCorte.Estacion=VerAuxCorte.ID
+VerAuxCorte.ID=VerAuxCorte.Empresa
+VerAuxCorte.Empresa=VerAuxCorte.Modulo
+VerAuxCorte.Modulo=VerAuxCorte.Moneda
+VerAuxCorte.Moneda=VerAuxCorte.Cuenta
+VerAuxCorte.Cuenta=VerAuxCorte.Mov
+VerAuxCorte.Mov=VerAuxCorte.MovID
+VerAuxCorte.MovID=VerAuxCorte.ModuloID
+VerAuxCorte.ModuloID=VerAuxCorte.Saldo
+VerAuxCorte.Saldo=Cxc.ID
+Cxc.ID=Cxc.FechaEmision
+Cxc.FechaEmision=Cxc.Concepto
+Cxc.Concepto=Cxc.Proyecto
+Cxc.Proyecto=Cxc.Moneda
+Cxc.Moneda=Cxc.TipoCambio
+Cxc.TipoCambio=Cxc.Usuario
+Cxc.Usuario=Cxc.Referencia
+Cxc.Referencia=Cxc.Observaciones
+Cxc.Observaciones=Cxc.Estatus
+Cxc.Estatus=Cxc.Situacion
+Cxc.Situacion=Cxc.SituacionFecha
+Cxc.SituacionFecha=Cxc.ClienteEnviarA
+Cxc.ClienteEnviarA=Cxc.Condicion
+Cxc.Condicion=Cxc.Vencimiento
+Cxc.Vencimiento=Cxc.CtaDinero
+Cxc.CtaDinero=Cxc.Importe
+Cxc.Importe=Cxc.Impuestos
+Cxc.Impuestos=Cxc.Agente
+Cxc.Agente=Cxc.ComisionTotal
+Cxc.ComisionTotal=Cte.Cliente
+Cte.Cliente=Cte.Nombre
+Cte.Nombre=Cte.NombreCorto
+Cte.NombreCorto=Cte.Numero
+Cte.Numero=Cte.Tipo
+Cte.Tipo=Cte.Direccion
+Cte.Direccion=Cte.EntreCalles
+Cte.EntreCalles=Cte.Plano
+Cte.Plano=Cte.Observaciones
+Cte.Observaciones=Cte.Colonia
+Cte.Colonia=Cte.CodigoPostal
+Cte.CodigoPostal=Cte.Poblacion
+Cte.Poblacion=Cte.Estado
+Cte.Estado=Cte.Pais
+Cte.Pais=Cte.Zona
+Cte.Zona=Cte.RFC
+Cte.RFC=Cte.Telefonos
+Cte.Telefonos=Cte.Fax
+Cte.Fax=Cte.Contacto1
+Cte.Contacto1=Cte.Contacto2
+Cte.Contacto2=Cte.Categoria
+Cte.Categoria=Cte.Familia
+Cte.Familia=Cte.Grupo
+Cte.Grupo=Cte.Condicion
+Cte.Condicion=(Fin)
+
+[Vista.ListaTablas]
+(Inicio)=VerAuxCorte
+VerAuxCorte=Cxc
+Cxc=Cte
+Cte=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=  VerAuxCorte.Estacion,
+  VerAuxCorte.Estacion,=  VerAuxCorte.ID,
+  VerAuxCorte.ID,=  VerAuxCorte.Empresa,
+  VerAuxCorte.Empresa,=  VerAuxCorte.Modulo,
+  VerAuxCorte.Modulo,=  VerAuxCorte.Moneda,
+  VerAuxCorte.Moneda,=  VerAuxCorte.Cuenta,
+  VerAuxCorte.Cuenta,=  VerAuxCorte.Mov,
+  VerAuxCorte.Mov,=  VerAuxCorte.MovID,
+  VerAuxCorte.MovID,=  VerAuxCorte.ModuloID,
+  VerAuxCorte.ModuloID,=  VerAuxCorte.Saldo,
+  VerAuxCorte.Saldo,=  Cxc.ID,
+  Cxc.ID,=  Cxc.FechaEmision,
+  Cxc.FechaEmision,=  Cxc.Concepto,
+  Cxc.Concepto,=  Cxc.Proyecto,
+  Cxc.Proyecto,=  Cxc.Moneda,
+  Cxc.Moneda,=  Cxc.TipoCambio,
+  Cxc.TipoCambio,=  Cxc.Usuario,
+  Cxc.Usuario,=  Cxc.Referencia,
+  Cxc.Referencia,=  Cxc.Observaciones,
+  Cxc.Observaciones,=  Cxc.Estatus,
+  Cxc.Estatus,=  Cxc.Situacion,
+  Cxc.Situacion,=  Cxc.SituacionFecha,
+  Cxc.SituacionFecha,=  Cxc.ClienteEnviarA,
+  Cxc.ClienteEnviarA,=  Cxc.Condicion,
+  Cxc.Condicion,=  Cxc.Vencimiento,
+  Cxc.Vencimiento,=  Cxc.CtaDinero,
+  Cxc.CtaDinero,=  Cxc.Importe,
+  Cxc.Importe,=  Cxc.Impuestos,
+  Cxc.Impuestos,=  Cxc.Agente,
+  Cxc.Agente,=  Cxc.ComisionTotal,
+  Cxc.ComisionTotal,=  Cte.Cliente,
+  Cte.Cliente,=  Cte.Nombre,
+  Cte.Nombre,=  Cte.NombreCorto,
+  Cte.NombreCorto,=  Cte.Numero,
+  Cte.Numero,=  Cte.Tipo,
+  Cte.Tipo,=  Cte.Direccion,
+  Cte.Direccion,=  Cte.EntreCalles,
+  Cte.EntreCalles,=  Cte.Plano,
+  Cte.Plano,=  Cte.Observaciones,
+  Cte.Observaciones,=  Cte.Colonia,
+  Cte.Colonia,=  Cte.CodigoPostal,
+  Cte.CodigoPostal,=  Cte.Poblacion,
+  Cte.Poblacion,=  Cte.Estado,
+  Cte.Estado,=  Cte.Pais,
+  Cte.Pais,=  Cte.Zona,
+  Cte.Zona,=  Cte.RFC,
+  Cte.RFC,=  Cte.Telefonos,
+  Cte.Telefonos,=  Cte.Fax,
+  Cte.Fax,=  Cte.Contacto1,
+  Cte.Contacto1,=  Cte.Contacto2,
+  Cte.Contacto2,=  Cte.Categoria,
+  Cte.Categoria,=  Cte.Familia,
+  Cte.Familia,=  Cte.Grupo,
+  Cte.Grupo,=  Cte.Condicion
+  Cte.Condicion=FROM
+FROM=  VerAuxCorte
+  VerAuxCorte=  LEFT OUTER JOIN Cxc ON VerAuxCorte.ModuloID<IGUAL>Cxc.ID
+  LEFT OUTER JOIN Cxc ON VerAuxCorte.ModuloID<IGUAL>Cxc.ID=  JOIN Cte ON VerAuxCorte.Cuenta<IGUAL>Cte.Cliente
+  JOIN Cte ON VerAuxCorte.Cuenta<IGUAL>Cte.Cliente=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=Dias
+Dias=Posfechado
+Posfechado=AlCorriente
+AlCorriente=Plazo1
+Plazo1=Plazo2
+Plazo2=Plazo3
+Plazo3=Plazo4
+Plazo4=PlazoMayor
+PlazoMayor=(Fin)
+
+[Vista.ListaRelaciones]
+(Inicio)=VerAuxCorte.Cxc
+VerAuxCorte.Cxc=VerAuxCorte.Cte
+VerAuxCorte.Cte=Cxc.Cte
+Cxc.Cte=(Fin)

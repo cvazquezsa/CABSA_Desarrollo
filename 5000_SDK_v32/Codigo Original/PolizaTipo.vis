@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PolizaTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=PolizaTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PolizaTipo.PolizaTipo
+TablaPrincipal=PolizaTipo
+UsarJOIN=S
+SQL=SELECT<BR>  PolizaTipo.PolizaTipo<BR><BR>FROM<BR>  PolizaTipo
+
+[PolizaTipo.PolizaTipo]
+Clave=PolizaTipo.PolizaTipo
+LigaTabla=PolizaTipo
+LigaCampo=PolizaTipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=PolizaTipo

@@ -1,0 +1,68 @@
+
+[Tabla]
+Icono=0
+Clave=EntidadTipoRelacion
+Archivo=EntidadTipoRelacion
+Modulos=(Todos)
+TipoTabla=Maestros
+
+ListaCampos=(Lista)
+Nombre=Tipos Relaciones
+Singular=Tipo Relación
+LlavePrimaria=(Lista)
+SQL=SELECT<BR>  ContactoTipo,<BR>  TipoRelacion<BR><BR>FROM<BR>  EntidadTipoRelacion
+[TipoRelacion]
+Clave=TipoRelacion
+Nombre=Tipo Relación
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[ContactoTipo]
+Clave=ContactoTipo
+Nombre=Tipo Cuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+
+
+
+
+
+
+
+
+
+ListaOpciones=(Lista)
+
+
+[ContactoTipo.ListaOpciones]
+(Inicio)=Entidad
+Entidad=Prospecto
+Prospecto=Cliente
+Cliente=Proveedor
+Proveedor=Agente
+Agente=Personal
+Personal=Espacio
+Espacio=Recurso
+Recurso=VIN
+VIN=Usuario
+Usuario=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ContactoTipo
+ContactoTipo=TipoRelacion
+TipoRelacion=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ContactoTipo
+ContactoTipo=TipoRelacion
+TipoRelacion=(Fin)

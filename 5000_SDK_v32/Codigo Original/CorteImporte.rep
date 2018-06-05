@@ -1,0 +1,2554 @@
+[Reporte]
+Clave=CorteImporte
+Icono=17
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=27.9
+LargoPagina=21.6
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+Orientacion=Horizontal
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+Vista=CorteDReporte
+
+Parametros1=CorteDReporte.ID
+Parametros2==
+Parametros3=N
+PosicionInicialAlturaCliente=706
+PosicionInicialAncho=1382
+PreliminarColores=S
+Nombre=Rep.Titulo
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Parametros4=
+Columnas=1
+ListaCampos=
+ListaExpresiones=
+MargenIzquierdo=1
+MargenDerecho=1
+Filtros=S
+FiltroRespetar=S
+[Formato]
+VentanaIzquierda=-8
+VentanaArriba=-8
+VentanaAltura=744
+VentanaAncho=1382
+PanelArriba=217
+PanelBotones=80
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Pie
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+Grupo=
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Cursiva]}
+AVertical=Centrado
+Objetos=5
+Visible=
+Marco=S
+EstiloMarco=1
+
+BordeAbajo=N
+[A1]
+Celda=A1
+Alineacion=Centrado
+AnchoEnCm=6.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT ISNULL(Mov, :tVacio) FROM Corte WHERE ID = :nID<T>, <T><T>, <BR>CorteDReporte.ID) + <T> <T> + SQL(<T>SELECT ISNULL(MovID, :tVacio) FROM Corte <BR>WHERE ID = :nID<T>, <T><T>, CorteDReporte.ID)
+
+BordeAbajo=N
+EsImagen=N
+
+[Linea2]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=0.1
+Renglones=1
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=
+BordeAbajo=N
+Grupo=
+
+
+[Linea3]
+Clave=Encabezado
+Seccion=Encabezado Página
+Grupo=
+AltoEnCm=1.6
+Renglones=5
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=1
+Visible=
+EstiloMarco=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=4.5
+AnchoTexto=24
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Logo.bmp
+
+EstiloMarco=0
+ExpresionMultiple=N
+
+EsImagen=S
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=EstatusNombreSingular(SQL(<T>SELECT Estatus FROM Corte WHERE ID = :nID<T>, <BR>CorteDReporte.ID))
+
+[C1]
+Celda=C1
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT ISNULL(Proyecto, :tVacio) FROM Corte WHERE ID = :nID<T>, <T><T>, <BR>CorteDReporte.ID)
+
+[D1]
+Celda=D1
+Alineacion=Centrado
+AnchoEnCm=4.5
+AnchoTexto=24
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=Asigna(Info.Moneda, SQL(<T>SELECT Moneda FROM Corte WHERE ID = :nID<T>,<BR>CorteDReporte.ID))<BR>Asigna(Info.TipoCambio, SQL(<T>SELECT TipoCambio FROM Corte WHERE ID = <BR>:nID<T>, CorteDReporte.ID))<BR><BR>Info.Moneda+ Si(Info.TipoCambio<>1,<T>: <T>&Info.TipoCambio)
+[E1]
+Celda=E1
+Alineacion=Centrado
+FormatoValidacion=d mmmm yyyy
+AnchoEnCm=4.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT FechaEmision FROM Corte WHERE ID = :nID<T>, CorteDReporte.ID)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=CorteImporte
+ListaParametros1=CorteDReporte.ID
+ListaParametros=S
+Activo=S
+Visible=S
+
+
+EspacioPrevio=S
+[Acciones.Excel]
+Nombre=Excel
+Boton=115
+NombreDesplegar=Excel
+EnBarraHerramientas=S
+TipoAccion=Reportes Excel
+ClaveAccion=CorteImporte
+ListaParametros1=CorteDReporte.ID
+ListaParametros=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ActivoCondicion=Usuario.EnviarExcel
+[Linea4]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=0.2
+Renglones=1
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=
+[Linea5]
+Clave=Encabezado
+Objetos=4
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=
+BordeAbajo=N
+[Linea6]
+Clave=Encabezado
+Objetos=4
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=
+
+
+BordeAbajo=N
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=2.39
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+ExpresionMultiple=N
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC1<T>)
+BordeAbajo=N
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna2 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC1<T>)
+
+ExpresionMultiple=N
+BordeAbajo=N
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=2.39
+AnchoTexto=16
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC2<T>)
+
+BordeAbajo=N
+ExpresionMultiple=N
+[Linea7]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=4
+
+BordeAbajo=N
+EstiloAbajo=0
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=2.39
+AnchoTexto=11
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC3<T>)
+
+BordeAbajo=N
+EstiloAbajo=0
+[B7]
+Celda=B7
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=48
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna2 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC3<T>)
+
+
+BordeAbajo=N
+EstiloAbajo=0
+
+[Linea8]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC4<T>)
+[B8]
+Celda=B8
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna2 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC4<T>)
+
+
+[Linea9]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+BordeAbajo=S
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=
+Marco=N
+BordeArriba=N
+EstiloAbajo=0
+[A9]
+Celda=A9
+Alineacion=Derecha
+AnchoEnCm=24.9
+AnchoTexto=134
+BordeAbajo=S
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo IN<BR>(:tTipo1, :tTipo2)<T>, CorteDReporte.ID, <T>ENC5<T>, <T>ENC6<T>)
+
+Marco=N
+BordeArriba=N
+EstiloAbajo=0
+
+[Linea10]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+EstiloMarco=3
+FondoEstilo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+BordeArriba=N
+EstiloArriba=0
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=18
+AnchoTexto=97
+EstiloMarco=3
+FondoEstilo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+BordeArriba=N
+
+EstiloArriba=0
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[Linea11]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+
+
+Objetos=2
+
+BordeArriba=N
+FondoEstilo=0
+
+
+
+
+
+EstiloArriba=0
+BordeAbajo=N
+EstiloAbajo=0
+
+[B10]
+Celda=B10
+Alineacion=Derecha
+AnchoEnCm=6.9
+AnchoTexto=37
+BordeArriba=N
+EstiloMarco=3
+FondoEstilo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC7<T>)
+
+EstiloArriba=0
+BordeAbajo=N
+EstiloAbajo=0
+
+Marco=N
+[Linea12]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+BordeArriba=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+EstiloArriba=0
+FondoEstilo=0
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=18
+AnchoTexto=16
+BordeArriba=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+EstiloArriba=0
+FondoEstilo=0
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[B12]
+Celda=B12
+Alineacion=Derecha
+AnchoEnCm=6.89
+AnchoTexto=5
+BordeArriba=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+EstiloArriba=0
+FondoEstilo=0
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC9<T>)
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=18
+AnchoTexto=16
+BordeArriba=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+FondoEstilo=0
+EstiloArriba=0
+Marco=N
+BordeAbajo=N
+EstiloAbajo=0
+[B11]
+Celda=B11
+Alineacion=Derecha
+AnchoEnCm=6.89
+AnchoTexto=5
+BordeArriba=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC8<T>)
+
+FondoEstilo=0
+EstiloArriba=0
+Marco=N
+BordeAbajo=N
+EstiloAbajo=0
+
+[Linea13]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+FondoEstilo=0
+
+
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[K10]
+Celda=K10
+Alineacion=Izquierda
+AnchoEnCm=1.5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna11
+
+[L10]
+Celda=L10
+Alineacion=Derecha
+AnchoEnCm=2.61
+AnchoTexto=7
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna12
+
+[M10]
+Celda=M10
+Alineacion=Derecha
+AnchoEnCm=2.61
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna13
+
+[N10]
+Celda=N10
+Alineacion=Derecha
+AnchoEnCm=2.55
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna14
+
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=18
+AnchoTexto=16
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+FondoEstilo=0
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[B13]
+Celda=B13
+Alineacion=Derecha
+AnchoEnCm=6.89
+AnchoTexto=5
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+FondoEstilo=0
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC10<T>)
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+
+[Linea14]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+Visible=
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+
+
+
+
+
+
+
+
+
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=18
+AnchoTexto=97
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+[B14]
+Celda=B14
+Alineacion=Derecha
+AnchoEnCm=6.89
+AnchoTexto=37
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC11<T>)
+
+BordeAbajo=N
+EstiloAbajo=0
+Marco=N
+
+[B3]
+Celda=B3
+Alineacion=Izquierda
+AnchoEnCm=10.29
+ExpresionMultiple=S
+AnchoTexto=55
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Referencia FROM Corte WHERE ID = :nID<T>, CorteDReporte.ID)<BR>SQL(<T>SELECT Concepto FROM Corte WHERE ID = :nID<T>, CorteDReporte.ID)<BR>SQL(<T>SELECT Observaciones FROM Corte WHERE ID = :nID<T>, CorteDReporte.ID)
+
+
+
+
+[Linea15]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=0.3
+Renglones=1
+Visible=
+BordeArriba=N
+EstiloMarco=0
+FondoEstilo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+BordeAbajo=N
+EstiloAbajo=0
+[Linea16]
+Clave=Encabezado
+Objetos=12
+Seccion=Encabezado Página
+AltoEnCm=0.5
+Renglones=1
+Visible=
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+FondoEstilo=0
+
+BordeAbajo=S
+EstiloAbajo=1
+
+
+
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=3.39
+AnchoTexto=18
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna1 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+FondoEstilo=0
+BordeAbajo=S
+EstiloAbajo=1
+
+
+
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeAbajo=N
+Expresion=SQL(<T>SELECT Columna3 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC1<T>)
+[D5]
+Celda=D5
+Alineacion=Derecha
+AnchoEnCm=10.5
+ExpresionMultiple=N
+AnchoTexto=56
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna4 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC1<T>)
+
+BordeAbajo=N
+
+
+
+[Linea17]
+Clave=Detalle
+Objetos=1
+Seccion=Detalle
+AltoEnCm=0.5
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>SUBT3<T>
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Plata
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+FondoEstilo=1
+
+
+
+
+
+
+
+
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=48
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna2 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC2<T>)
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna3 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC2<T>)
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+AnchoEnCm=10.5
+AnchoTexto=53
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna4 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC2<T>)
+
+
+
+
+
+
+
+
+[Linea18]
+Clave=Detalle
+Objetos=12
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>DET<T>
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, []}
+AVertical=Centrado
+
+FondoEstilo=0
+BordeAbajo=N
+[C7]
+Celda=C7
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna3 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC3<T>)
+
+BordeAbajo=N
+[D7]
+Celda=D7
+Alineacion=Derecha
+AnchoEnCm=10.5
+AnchoTexto=53
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna4 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>ENC3<T>)
+
+BordeAbajo=N
+[G13]
+Celda=G13
+Alineacion=Izquierda
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna7
+
+[H13]
+Celda=H13
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=5
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna8
+
+[I13]
+Celda=I13
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=5
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna9
+
+[J13]
+Celda=J13
+Alineacion=Derecha
+AnchoEnCm=2.5
+AnchoTexto=5
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna10
+
+
+
+
+
+
+[Linea20]
+Clave=Detalle
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.5
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>SUBT<T>
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Plata
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+FondoEstilo=0
+Marco=N
+BordeAbajo=N
+EstiloAbajo=0
+
+
+
+
+
+[Linea21]
+Clave=Detalle
+Objetos=0
+Seccion=Detalle
+AltoEnCm=0.1
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>SUBT<T> y(1=0)
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeAbajo=N
+EstiloAbajo=0
+FondoEstilo=0
+[F18]
+Celda=F18
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=17
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna6
+
+[G18]
+Celda=G18
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=13
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna7
+
+[H18]
+Celda=H18
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna8
+
+[I18]
+Celda=I18
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna9
+
+[J18]
+Celda=J18
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna10
+
+
+
+
+
+
+
+
+
+FondoEstilo=1
+[Linea19]
+Clave=Detalle
+Seccion=Detalle
+AltoEnCm=0.1
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>SUBT<T>y(1=0)
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objetos=0
+BordeArriba=N
+
+
+
+
+EstiloArriba=0
+[Linea22]
+Clave=Detalle
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.5
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>SUBT2<T>
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Plata
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+BordeAbajo=S
+EstiloAbajo=0
+
+
+
+
+
+FondoEstilo=1
+[Linea23]
+Clave=Detalle
+Objetos=0
+Seccion=Detalle
+AltoEnCm=0.1
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>TOT<T>
+BordeAbajo=N
+EstiloMarco=3
+EstiloArriba=0
+EstiloAbajo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=24.89
+AnchoTexto=133
+EstiloMarco=3
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna1
+
+FondoEstilo=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Linea24]
+Clave=Detalle
+Objetos=1
+Seccion=Detalle
+AltoEnCm=0.1
+Renglones=1
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Visible=CorteDReporte.Tipo = <T>TOT<T>
+[Linea25]
+Clave=Detalle
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Visible=CorteDReporte.Tipo = <T>TOT<T>
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea26]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[B16]
+Celda=B16
+Alineacion=Izquierda
+AnchoEnCm=1.79
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna2 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[C16]
+Celda=C16
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna3 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[D16]
+Celda=D16
+Alineacion=Izquierda
+AnchoEnCm=1.29
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna4 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[E16]
+Celda=E16
+Alineacion=Izquierda
+AnchoEnCm=1.71
+AnchoTexto=26
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna5 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[F16]
+Celda=F16
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=17
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna6 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[G16]
+Celda=G16
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=13
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna7 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[H16]
+Celda=H16
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna8 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[I16]
+Celda=I16
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna9 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[J16]
+Celda=J16
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna10 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+FondoEstilo=1
+[K16]
+Celda=K16
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna11 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+[L16]
+Celda=L16
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SQL(<T>SELECT Columna12 FROM CorteDReporte WHERE ID = :nID AND Tipo = <BR>:tTipo<T>, CorteDReporte.ID, <T>NOM<T>)
+
+FondoEstilo=1
+[A18]
+Celda=A18
+Alineacion=Izquierda
+AnchoEnCm=3.39
+AnchoTexto=7
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna1
+
+[B18]
+Celda=B18
+Alineacion=Izquierda
+AnchoEnCm=1.79
+AnchoTexto=7
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna2
+
+[C18]
+Celda=C18
+Alineacion=Izquierda
+AnchoEnCm=1.39
+AnchoTexto=6
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna3
+
+[D18]
+Celda=D18
+Alineacion=Izquierda
+AnchoEnCm=1.29
+AnchoTexto=12
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna4
+
+[E18]
+Celda=E18
+Alineacion=Izquierda
+AnchoEnCm=1.71
+AnchoTexto=7
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna5
+
+[K18]
+Celda=K18
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna11
+
+[L18]
+Celda=L18
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna12
+
+FondoEstilo=1
+[A20]
+Celda=A20
+Alineacion=Izquierda
+AnchoEnCm=13.79
+TextoConFlujo=S
+AlturaVariable=S
+AnchoTexto=74
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna1  & <T> <T> & CorteDReporte.Columna2 & <T>, <T> &<BR>CorteDReporte.Columna3  & <T> <T> & CorteDReporte.Columna4 & <T>, <T> &<BR>CorteDReporte.Columna5  & <T> <T> & CorteDReporte.Columna6 & <T>, <T> &<BR>CorteDReporte.Columna7  & <T> <T> & CorteDReporte.Columna8 & <T>, <T> &<BR>CorteDReporte.Columna9  & <T> <T> & CorteDReporte.Columna10 & <T>, <T> &<BR>CorteDReporte.Columna11 & <T> <T> & CorteDReporte.Columna12 & <T>, <T> &<BR>CorteDReporte.Columna13 & <T> <T> & CorteDReporte.Columna14 & <T>, <T> &<BR>CorteDReporte.Columna15 & <T> <T> & CorteDReporte.Columna16 & <T>, <T> &<BR>CorteDReporte.Columna17 & <T> <T> & CorteDReporte.Columna18 & <T>, <T> &<BR>CorteDReporte.Columna19 & <T> <T> & CorteDReporte.Columna20 & <T>, <T> &<BR>CorteDReporte.Columna21 & <T> <T> & CorteDReporte.Columna22 & <T>, <T> &<BR>CorteDReporte.Columna23 & <T> <T> & CorteDReporte.Columna24 & <T>, <T> &<BR>CorteDReporte.Columna25 & <T> <T> & CorteDReporte.Columna26 & <T>, <T> &<BR>CorteDReporte.Columna27 & <T> <T> & CorteDReporte.Columna28 & <T>, <T> &<BR>CorteDReporte.Columna29 & <T> <T> & CorteDReporte.Columna30
+
+[B20]
+Celda=B20
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna31
+
+[C20]
+Celda=C20
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=13
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna32
+
+FondoEstilo=1
+[D20]
+Celda=D20
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna33
+
+[E20]
+Celda=E20
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna34
+
+FondoEstilo=1
+[A22]
+Celda=A22
+Alineacion=Izquierda
+AnchoEnCm=13.79
+AnchoTexto=74
+BordeAbajo=N
+EstiloMarco=3
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna1
+
+[B22]
+Celda=B22
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoEstilo=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna2
+
+[C22]
+Celda=C22
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoEstilo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna3
+
+[D22]
+Celda=D22
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoEstilo=0
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna4
+
+[E22]
+Celda=E22
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoEstilo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna5
+
+[A24]
+Celda=A24
+Alineacion=Izquierda
+AnchoEnCm=24.89
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A25]
+Celda=A25
+Alineacion=Izquierda
+AnchoEnCm=13.79
+AnchoTexto=85
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna1
+
+[B25]
+Celda=B25
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=13
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna2
+
+[C25]
+Celda=C25
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=12
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna3
+
+FondoEstilo=1
+[D25]
+Celda=D25
+Alineacion=Derecha
+AnchoEnCm=2.71
+AnchoTexto=5
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna4
+
+[E25]
+Celda=E25
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+BordeAbajo=S
+EstiloMarco=3
+EstiloArriba=1
+EstiloAbajo=1
+FondoColor=$00FBFBFB
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CorteDReporte.Columna5
+
+FondoEstilo=1
+[A26]
+Celda=A26
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=7.4
+AnchoTexto=40
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B26]
+Celda=B26
+Alineacion=Derecha
+AnchoEnCm=17.5
+AnchoTexto=94
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

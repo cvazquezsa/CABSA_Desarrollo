@@ -1,0 +1,66 @@
+
+[Dialogo]
+Clave=MenuHerramientasMES
+Nombre=Herramientas Intelisis\Factory
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=1747
+PosicionInicialArriba=263
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=345
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEstadoInicial=Normal
+[Acciones.MESArtExistenciaInt]
+Nombre=MESArtExistenciaInt
+Boton=0
+NombreDesplegar=Cuadrar Existencias Intelisis\Factory
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MESArtExistenciaInt
+Activo=S
+
+VisibleCondicion=General.ProdInterfazINFOR
+[Acciones.vwIntelisisServiceFactoryMonitor]
+Nombre=vwIntelisisServiceFactoryMonitor
+Boton=0
+NombreDesplegar=Monitor Intelisis Service Factory
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=vwIntelisisServiceFactoryMonitor
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=General.ProdInterfazINFOR
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=MESArtExistenciaInt
+MESArtExistenciaInt=vwIntelisisServiceFactoryMonitor
+vwIntelisisServiceFactoryMonitor=(Fin)

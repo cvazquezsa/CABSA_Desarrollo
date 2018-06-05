@@ -1,0 +1,96 @@
+[Dialogo]
+Clave=MenuRepVtaParticipacion
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=404
+PosicionInicialArriba=238
+PosicionInicialAltura=292
+PosicionInicialAncho=216
+ListaAcciones=(Lista)
+
+[Acciones.Categoria]
+Nombre=Categoria
+Boton=0
+NombreDesplegar=Por Artículo - &Categoría
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepVentaParticProdCat
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Participa/Categoria<T>)
+[Acciones.Fabricante]
+Nombre=Fabricante
+Boton=0
+NombreDesplegar=Por Artículo - &Fabricante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepVentaParticProdFabric
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Participa/Fabricante<T>)
+[Acciones.Familia]
+Nombre=Familia
+Boton=0
+NombreDesplegar=Por Artículo - Fa&milia
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepVentaParticProdFam
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Participa/Familia<T>)
+[Acciones.Grupo]
+Nombre=Grupo
+Boton=0
+NombreDesplegar=Por Artículo - &Grupo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepVentaParticProdGrupo
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Participa/Grupo<T>)
+[Acciones.Linea]
+Nombre=Linea
+Boton=0
+NombreDesplegar=Por Artículo - &Línea
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepVentaParticProdLinea
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Ventas/Participa/Linea<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Categoria
+Categoria=Fabricante
+Fabricante=Familia
+Familia=Grupo
+Grupo=Linea
+Linea=(Fin)

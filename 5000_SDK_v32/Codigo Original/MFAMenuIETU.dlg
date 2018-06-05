@@ -1,0 +1,54 @@
+
+[Dialogo]
+Clave=MFAMenuIETU
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=433
+PosicionInicialArriba=293
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+[Acciones.TiposSubTipos]
+Nombre=TiposSubTipos
+Boton=0
+NombreDesplegar=&Tipos y Sub Tipos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MovTipoMFATipoIetu
+Activo=S
+Visible=S
+
+[Acciones.ConfiguracionConceptos]
+Nombre=ConfiguracionConceptos
+Boton=0
+NombreDesplegar=&Configuración Sub Tipos Conceptos
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=MFAIETUSubTipoConcepto
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=TiposSubTipos
+TiposSubTipos=ConfiguracionConceptos
+ConfiguracionConceptos=(Fin)

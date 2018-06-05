@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=MenuCtaDinero
+Nombre=Cuentas Dinero
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=141
+PosicionInicialAncho=267
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=378
+PosicionInicialArriba=313
+
+[Acciones.CtaDinero]
+Nombre=CtaDinero
+Boton=0
+NombreDesplegar=Cuentas de &Dinero
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CtaDinero
+Activo=S
+Visible=S
+
+[Acciones.CtaDineroL]
+Nombre=CtaDineroL
+Boton=0
+NombreDesplegar=&Listas de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CtaDineroL
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=CtaDinero
+CtaDinero=CtaDineroL
+CtaDineroL=(Fin)

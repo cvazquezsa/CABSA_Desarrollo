@@ -1,0 +1,178 @@
+[Tabla]
+Icono=0
+Clave=CPCal
+Archivo=CPCal
+Modulos=(Todos)
+TipoTabla=Movimientos
+
+ListaCampos=(Lista)
+Nombre=Calendarización
+Singular=Calendarización
+LlavePrimaria=(Lista)
+CampoID=ID
+CampoPeriodo=Periodo
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=Info.ID
+[ClavePresupuestal]
+Clave=ClavePresupuestal
+Nombre=Clave Presupuestal
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.ClavePresupuestal
+Mayusculas=S
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=10
+TipoDatos=Numérico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Meses Num.
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+Monetario=S
+AyudaEnCaptura=Calculadora
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.Ejercicio
+
+
+
+
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Años
+OpcionesRenglones=8
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+ValorPorOmision=Info.Tipo
+[EnMov]
+Clave=EnMov
+Nombre=En Movimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=ClavePresupuestal
+ClavePresupuestal=Tipo
+Tipo=Ejercicio
+Ejercicio=Periodo
+Periodo=Importe
+Importe=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=EnMov
+EnMov=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  ClavePresupuestal,
+  ClavePresupuestal,=  Tipo,
+  Tipo,=  Ejercicio,
+  Ejercicio,=  Periodo,
+  Periodo,=  Importe,
+  Importe,=  EnMov,
+  EnMov,=  Sucursal,
+  Sucursal,=  SucursalOrigen
+  SucursalOrigen=FROM
+FROM=  CPCal
+  CPCal=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ID
+ID=ClavePresupuestal
+ClavePresupuestal=Ejercicio
+Ejercicio=Periodo
+Periodo=Tipo
+Tipo=(Fin)

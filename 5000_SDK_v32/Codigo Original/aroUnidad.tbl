@@ -1,0 +1,116 @@
+[Tabla]
+Icono=0
+Clave=aroUnidad
+Archivo=aroUnidad
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Unidades Organizacional
+Singular=Unidad Organizacional
+LlavePrimaria=UnidadOrganizacional
+ListaRelaciones=(Lista)
+Niveles=S
+CampoAcumulativa=EsEstructura
+SQL=SELECT<BR>  UnidadOrganizacional,<BR>  Nombre,<BR>  CentroCostos,<BR>  LineaNegocios,<BR>  EsEstructura,<BR>  Orden<BR><BR>FROM<BR>  aroUnidad
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+TipoDatos=Texto
+
+[CentroCostos]
+Clave=CentroCostos
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostosLista
+AyudaVista=CentroCostosLista
+AyudaCampo=CentroCostosLista.CentroCostos
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos
+TipoDatos=Texto
+
+[UnidadOrganizacional]
+Clave=UnidadOrganizacional
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Clave Incorrecta<T>
+ConRefrescar=S
+ListaRefrescar=Orden
+ValidacionCondicion=EstructuraOk(UnidadOrganizacional, <T><T>, 5)
+TipoDatos=Texto
+
+[LineaNegocios]
+Clave=LineaNegocios
+Nombre=Línea Negocios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=aroLinea
+AyudaEnCaptura=Vista
+AyudaForma=aroLineaLista
+AyudaVista=aroLinea
+AyudaCampo=aroLinea.LineaNegocios
+TipoDatos=Texto
+
+[Relaciones.aroLinea]
+TipoRelacion=Opcional
+LlaveLocal=LineaNegocios
+Clave=aroLinea
+TablaRemota=aroLinea
+LlaveRemota=LineaNegocios
+
+[Relaciones.CentroCostos]
+TipoRelacion=Opcional
+LlaveLocal=CentroCostos
+Clave=CentroCostos
+TablaRemota=CentroCostos
+LlaveRemota=CentroCostos
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=EstructuraEnOrden(UnidadOrganizacional, 5)
+TipoDatos=Texto
+
+[EsEstructura]
+Clave=EsEstructura
+Nombre=Estructura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=UnidadOrganizacional
+UnidadOrganizacional=Nombre
+Nombre=CentroCostos
+CentroCostos=LineaNegocios
+LineaNegocios=EsEstructura
+EsEstructura=Orden
+Orden=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=aroLinea
+aroLinea=CentroCostos
+CentroCostos=(Fin)

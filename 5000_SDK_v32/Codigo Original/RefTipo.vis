@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=RefTipo
+Nombre=Tipos Referencias
+Modulos=(Todos)
+Singular=Tipo Referencias
+ListaTablas=RefTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=RefTipo.Tipo
+TablaPrincipal=RefTipo
+UsarJOIN=S
+SQL=SELECT<BR>  RefTipo.Tipo<BR><BR>FROM<BR>  RefTipo
+
+[RefTipo.Tipo]
+Clave=RefTipo.Tipo
+LigaTabla=RefTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

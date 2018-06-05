@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=aroRiesgoArt
+Archivo=aroRiesgoArt
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Artículos
+Singular=Artículo
+LlavePrimaria=Riesgo<BR>Articulo
+ListaRelaciones=Art
+SQL=SELECT<BR>  Riesgo,<BR>  Articulo<BR><BR>FROM<BR>  aroRiesgoArt
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=aroProcedimientoArtLista
+AyudaVista=aroProcedimientoArt
+AyudaCampo=aroProcedimientoArt.Articulo
+AyudaMultiple=S
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+AyudaBusquedaRapida=Asigna(Info.Procedimiento, aroRiesgo:aroRiesgo.Procedimiento)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT Articulo FROM aroProcedimientoArt WHERE Procedimiento=:tProcedimiento AND Articulo=:tArticulo<T>, aroRiesgo:aroRiesgo.Procedimiento, Articulo)=Articulo
+ValidacionMensajeError=<T>No corresponde al procedimiento<T>
+
+[Relaciones.Art]
+TipoRelacion=Forzosa
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Riesgo]
+Clave=Riesgo
+Nombre=Riesgo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Tabla.ListaCampos]
+(Inicio)=Riesgo
+Riesgo=Articulo
+Articulo=(Fin)

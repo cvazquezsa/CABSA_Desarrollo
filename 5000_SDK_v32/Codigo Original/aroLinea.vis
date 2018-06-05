@@ -1,0 +1,47 @@
+[Vista]
+Icono=0
+Clave=aroLinea
+Nombre=Lineas Negocios
+Modulos=(Todos)
+Singular=Linea Negocio
+ListaTablas=aroLinea
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=aroLinea
+SQL=SELECT<BR>  aroLinea.LineaNegocios,<BR>  aroLinea.Nombre<BR><BR>FROM<BR>  aroLinea
+
+[aroLinea.LineaNegocios]
+Clave=aroLinea.LineaNegocios
+Nombre=Linea Negocios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+LigaTabla=aroLinea
+LigaCampo=LineaNegocios
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=LineaNegocios
+
+[aroLinea.Nombre]
+Clave=aroLinea.Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+LigaTabla=aroLinea
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Nombre
+
+[Vista.ListaCampos]
+(Inicio)=aroLinea.LineaNegocios
+aroLinea.LineaNegocios=aroLinea.Nombre
+aroLinea.Nombre=(Fin)

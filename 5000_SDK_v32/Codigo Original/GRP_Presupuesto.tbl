@@ -1,0 +1,208 @@
+[Tabla]
+Icono=0
+Clave=GRP_Presupuesto
+Archivo=GRP_Presupuesto
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Datos Cuenta
+Singular=Dato Cuenta
+ListaRelaciones=Cta
+LlavePrimaria=ID
+ControlEjercicios=S
+CampoEjercicio=Ejercicio
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  Ejercicio,<BR>  Partida,<BR>  AP,<BR>  GF,<BR>  Funcion,<BR>  SubFuncion,<BR>  Programa,<BR>  AI,<BR>  Proyecto,<BR>  TG,<BR>  FF,<BR>  Importe,<BR>  Neto,<BR>  Observaciones<BR><BR>FROM<BR>  GRP_Presupuesto
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Info.Ejercicio
+
+[Funcion]
+Clave=Funcion
+Nombre=Función
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_Funcion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[SubFuncion]
+Clave=SubFuncion
+Nombre=Sub Función
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_SubFuncion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+TamanoValidacion=4
+Tamano=4
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_Proyecto
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Partida
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Partida]
+Clave=Partida
+Nombre=Partida
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+MascaraEdicion=Config.CtaFormato
+TipoDatos=Texto
+
+[AP]
+Clave=AP
+Nombre=AP
+Visible=S
+TamanoValidacion=4
+Tamano=4
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_AP
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[GF]
+Clave=GF
+Nombre=GF
+Visible=S
+TamanoValidacion=3
+Tamano=3
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_GF
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Programa]
+Clave=Programa
+Nombre=Programa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_Programa
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[AI]
+Clave=AI
+Nombre=AI
+Visible=S
+TamanoValidacion=2
+Tamano=2
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_AI
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TG]
+Clave=TG
+Nombre=TG
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_TG
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[FF]
+Clave=FF
+Nombre=FF
+Visible=S
+TamanoValidacion=2
+Tamano=2
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GRP_FF
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Importe]
+Clave=Importe
+Nombre=Monto PPEF
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+VerificarOrtografia=S
+
+[Neto]
+Clave=Neto
+Nombre=Monto PEF
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Ejercicio
+Ejercicio=Funcion
+Funcion=SubFuncion
+SubFuncion=Proyecto
+Proyecto=Partida
+Partida=AP
+AP=GF
+GF=Programa
+Programa=AI
+AI=TG
+TG=FF
+FF=Importe
+Importe=Neto
+Neto=Observaciones
+Observaciones=(Fin)

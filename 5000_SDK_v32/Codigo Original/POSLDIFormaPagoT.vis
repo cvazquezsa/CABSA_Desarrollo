@@ -1,0 +1,201 @@
+
+[Vista]
+Icono=0
+Clave=POSLDIFormaPagoT
+Nombre=POSLDIFormaPagoT
+Modulos=(Todos)
+ListaTablas=(Lista)
+
+TablaPrincipal=POSLDIFormaPago
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaRelaciones=(Lista)
+
+
+
+
+ListaCampos=(Lista)
+
+
+SQL=(Lista)
+[POSLDIFormaPago.FormaPago]
+Clave=POSLDIFormaPago.FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Requerido=N
+AyudaEnCaptura=Expresion
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ValorRefrescar=Asigna(Info.FormaPago, POSLDIFormaPago.FormaPago)
+AlCambiar=Asigna(Info.FormaPago, POSLDIFormaPago.FormaPago)
+Formula=SQLenLista(<T>SELECT FormaPago FROM FormaPago<T>)
+LigaTabla=POSLDIFormaPago
+LigaCampo=FormaPago
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FormaPago
+
+[POSLDIFormaPago.Servicio]
+Clave=POSLDIFormaPago.Servicio
+Nombre=Servicio
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+Requerido=N
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLenLista(<T>SELECT Servicio FROM POSLDIServicio<T>)
+LigaTabla=POSLDIFormaPago
+LigaCampo=Servicio
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Servicio
+
+[POSLDIFormaPago.Forma]
+Clave=POSLDIFormaPago.Forma
+Nombre=Forma
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=POSLDIFormaPago
+LigaCampo=Forma
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Forma
+
+[POSLDIFormaPago.ServicioInverso]
+Clave=POSLDIFormaPago.ServicioInverso
+Nombre=Servicio Inverso
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLenLista(<T>SELECT Servicio FROM POSLDIServicio<T>)
+LigaTabla=POSLDIFormaPago
+LigaCampo=ServicioInverso
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ServicioInverso
+
+[POSLDIFormaPago.AplicaMeses]
+Clave=POSLDIFormaPago.AplicaMeses
+Nombre=Aplica Meses?
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ListaRefrescar=ApartirDe
+Tamano=10
+ValorPorOmision=<T>No<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ApartirDe
+AlCambiar=Si<BR>  POSLDIFormaPago.AplicaMeses = <T>Si<T><BR>Entonces<BR>  Forma(<T>POSLDIFormaPagoDMeses<T>)<BR>Sino<BR>  <T><T> <BR>Fin
+LigaTabla=POSLDIFormaPago
+LigaCampo=AplicaMeses
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=AplicaMeses
+
+[POSLDIFormaPago.ApartirDe]
+Clave=POSLDIFormaPago.ApartirDe
+Nombre=Apartir De
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+Monetario=S
+CondicionEdicion=POSLDIFormaPago.AplicaMeses  = <T>Si<T>
+ValorPorOmision=0
+LigaTabla=POSLDIFormaPago
+LigaCampo=ApartirDe
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ApartirDe
+
+[POSLDIFormaPagoDMeses.Meses]
+Clave=POSLDIFormaPagoDMeses.Meses
+Nombre=Meses
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+LigaTabla=POSLDIFormaPagoDMeses
+LigaCampo=Meses
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Meses
+
+[Relaciones.POSLDIFormaPago.POSLDIFormaPagoDMeses]
+Clave=POSLDIFormaPago.POSLDIFormaPagoDMeses
+TablaRemota=POSLDIFormaPagoDMeses
+LlaveLocal=POSLDIFormaPago.FormaPago
+LlaveRemota=FormaPago
+TipoRelacion=Forzosa
+
+[Relaciones.POSLDIFormaPagoDMeses.POSLDIFormaPago]
+Clave=POSLDIFormaPagoDMeses.POSLDIFormaPago
+TablaRemota=POSLDIFormaPago
+LlaveLocal=POSLDIFormaPagoDMeses.FormaPago
+LlaveRemota=FormaPago
+TipoRelacion=Forzosa
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=POSLDIFormaPago.FormaPago
+POSLDIFormaPago.FormaPago=POSLDIFormaPago.Servicio
+POSLDIFormaPago.Servicio=POSLDIFormaPago.Forma
+POSLDIFormaPago.Forma=POSLDIFormaPago.ServicioInverso
+POSLDIFormaPago.ServicioInverso=POSLDIFormaPago.AplicaMeses
+POSLDIFormaPago.AplicaMeses=POSLDIFormaPago.ApartirDe
+POSLDIFormaPago.ApartirDe=POSLDIFormaPagoDMeses.Meses
+POSLDIFormaPagoDMeses.Meses=(Fin)
+
+[Vista.ListaTablas]
+(Inicio)=POSLDIFormaPago
+POSLDIFormaPago=POSLDIFormaPagoDMeses
+POSLDIFormaPagoDMeses=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSLDIFormaPago.FormaPago,
+POSLDIFormaPago.FormaPago,=POSLDIFormaPago.Servicio,
+POSLDIFormaPago.Servicio,=POSLDIFormaPago.Forma,
+POSLDIFormaPago.Forma,=POSLDIFormaPago.ServicioInverso,
+POSLDIFormaPago.ServicioInverso,=POSLDIFormaPago.AplicaMeses,
+POSLDIFormaPago.AplicaMeses,=POSLDIFormaPago.ApartirDe,
+POSLDIFormaPago.ApartirDe,=POSLDIFormaPagoDMeses.Meses
+POSLDIFormaPagoDMeses.Meses=FROM POSLDIFormaPago
+FROM POSLDIFormaPago=JOIN POSLDIFormaPagoDMeses ON POSLDIFormaPago.FormaPago<IGUAL>POSLDIFormaPagoDMeses.FormaPago
+JOIN POSLDIFormaPagoDMeses ON POSLDIFormaPago.FormaPago<IGUAL>POSLDIFormaPagoDMeses.FormaPago=(Fin)
+
+[Vista.ListaRelaciones]
+(Inicio)=POSLDIFormaPago.POSLDIFormaPagoDMeses
+POSLDIFormaPago.POSLDIFormaPagoDMeses=POSLDIFormaPagoDMeses.POSLDIFormaPago
+POSLDIFormaPagoDMeses.POSLDIFormaPago=(Fin)

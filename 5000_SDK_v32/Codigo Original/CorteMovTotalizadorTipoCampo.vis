@@ -1,0 +1,63 @@
+
+[Vista]
+Icono=0
+Clave=CorteMovTotalizadorTipoCampo
+Nombre=CorteMovTotalizadorTipoCampo
+Modulos=(Todos)
+Singular=CorteMovTotalizadorTipoCampo
+ListaTablas=CorteMovTotalizadorTipoCampo
+TablaPrincipal=CorteMovTotalizadorTipoCampo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[CorteMovTotalizadorTipoCampo.Totalizador]
+Clave=CorteMovTotalizadorTipoCampo.Totalizador
+Nombre=Totalizador
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>EXEC spCorteTotalizadorAyudaCaptura<T>)
+LigaTabla=CorteMovTotalizadorTipoCampo
+LigaCampo=Totalizador
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Totalizador
+
+[CorteMovTotalizadorTipoCampo.Tipo]
+Clave=CorteMovTotalizadorTipoCampo.Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+LigaTabla=CorteMovTotalizadorTipoCampo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Tipo
+
+[Vista.ListaCampos]
+(Inicio)=CorteMovTotalizadorTipoCampo.Totalizador
+CorteMovTotalizadorTipoCampo.Totalizador=CorteMovTotalizadorTipoCampo.Tipo
+CorteMovTotalizadorTipoCampo.Tipo=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=CorteMovTotalizadorTipoCampo.Totalizador,
+CorteMovTotalizadorTipoCampo.Totalizador,=CorteMovTotalizadorTipoCampo.Tipo
+CorteMovTotalizadorTipoCampo.Tipo=FROM CorteMovTotalizadorTipoCampo
+FROM CorteMovTotalizadorTipoCampo=(Fin)

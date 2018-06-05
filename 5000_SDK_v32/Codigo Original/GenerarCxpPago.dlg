@@ -1,0 +1,241 @@
+[Dialogo]
+Clave=GenerarCxpPago
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=819
+PosicionInicialArriba=477
+PosicionInicialAltura=189
+PosicionInicialAncho=281
+VentanaConIcono=S
+PosicionInicialAlturaCliente=210
+
+[Acciones.Pago]
+Nombre=Pago
+Boton=0
+NombreDesplegar=Generar Pag&o
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpPago, Afectar.FormaCaptura)
+
+[Acciones.NCredito]
+Nombre=NCredito
+Boton=0
+NombreDesplegar=Generar &Crédito Proveedor
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpCreditoProveedor, Afectar.FormaCaptura)
+
+[Acciones.Posfechado]
+Nombre=Posfechado
+Boton=0
+NombreDesplegar=Generar Pago P&osfechado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpPagoPosfechado, Afectar.FormaCaptura)
+VisibleCondicion=Config.CxpPosfechados
+
+[Acciones.ContraRecibo]
+Nombre=ContraRecibo
+Boton=0
+NombreDesplegar=Generar Contra &Recibo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpContraRecibo, Afectar.FormaCaptura)
+VisibleCondicion=Info.MovTipo noen (CXP.D, CXP.DM)
+
+[Acciones.Pagare]
+Nombre=Pagare
+Boton=0
+NombreDesplegar=Generar &Pagaré
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpPagare, Afectar.FormaCaptura)
+VisibleCondicion=Info.Pagares y (Info.MovTipo <> CXP.PAG)
+
+[Acciones.Factoraje]
+Nombre=Factoraje
+Boton=0
+NombreDesplegar=Generar &Factoraje
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpFactoraje, Afectar.FormaCaptura)
+VisibleCondicion=Info.MovTipo = CXP.PAG
+
+[Acciones.CartaCredito]
+Nombre=CartaCredito
+Boton=0
+NombreDesplegar=Generar C&arta Crédito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpCartaCredito, Afectar.FormaCaptura)
+VisibleCondicion=Info.MovTipo en (CXP.F, CXP.CA, CXP.CAD, CXP.PAG)
+
+[Acciones.GenerarForward]
+Nombre=GenerarForward
+Boton=0
+NombreDesplegar=Generar &Forward Compra
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpForwardCompra, Afectar.FormaCaptura)
+VisibleCondicion=Afectar.Mov=ConfigMov.CxpCartaCredito
+
+[Acciones.Otros1]
+Nombre=Otros1
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros2]
+Nombre=Otros2
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros3]
+Nombre=Otros3
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros4]
+Nombre=Otros4
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros5]
+Nombre=Otros5
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros6]
+Nombre=Otros6
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros7]
+Nombre=Otros7
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros8]
+Nombre=Otros8
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Otros9]
+Nombre=Otros9
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+
+[Acciones.Endoso]
+Nombre=Endoso
+Boton=0
+NombreDesplegar=Generar &Endoso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpEndoso, Afectar.FormaCaptura)
+Visible=S
+
+[Acciones.Documento]
+Nombre=Documento
+Boton=0
+NombreDesplegar=Generar &Documento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpDocumento, Afectar.FormaCaptura)
+Activo=S
+VisibleCondicion=Info.MovTipo noen (CXC.D,CXC.DM)
+
+[Acciones.NCargo]
+Nombre=NCargo
+Boton=0
+NombreDesplegar=Generar C&argo Proveedor
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxpCargoProveedor, Afectar.FormaCaptura)
+
+[Acciones.PagoTasa]
+Nombre=PagoTasa
+Boton=0
+NombreDesplegar=Generar Pago con &Descuento (Tasa)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Si<BR>  Forma(<T>EspecificarTasa<T>)<BR>Entonces<BR>  EjecutarSQL(<T>spSPIDTemp @Flotante=:nTasa<T>, Info.Tasa)<BR>  Generar(<T>CXP<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>, ConfigMov.CxpPago, Afectar.FormaCaptura)<BR>Fin
+VisibleCondicion=Config.CxpPagoTasa
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pago
+Pago=PagoTasa
+PagoTasa=Posfechado
+Posfechado=ContraRecibo
+ContraRecibo=Documento
+Documento=Pagare
+Pagare=Factoraje
+Factoraje=NCredito
+NCredito=NCargo
+NCargo=Endoso
+Endoso=CartaCredito
+CartaCredito=GenerarForward
+GenerarForward=Otros1
+Otros1=Otros2
+Otros2=Otros3
+Otros3=Otros4
+Otros4=Otros5
+Otros5=Otros6
+Otros6=Otros7
+Otros7=Otros8
+Otros8=Otros9
+Otros9=(Fin)

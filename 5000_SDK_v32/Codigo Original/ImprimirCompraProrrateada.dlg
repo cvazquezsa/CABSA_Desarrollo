@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=ImprimirCompraProrrateada
+Nombre=Imprimir Juego
+Icono=18
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=212
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=385
+PosicionInicialArriba=310
+VentanaConIcono=S
+
+[Acciones.Concentrado]
+Nombre=Concentrado
+Boton=0
+NombreDesplegar=&Concentrado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=CompraProrrateadaConcentrada
+Activo=S
+Visible=S
+
+[Acciones.Desglosado]
+Nombre=Desglosado
+Boton=0
+NombreDesplegar=&Desglosado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=CompraProrrateadaDesglosada
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Concentrado
+Concentrado=Desglosado
+Desglosado=(Fin)

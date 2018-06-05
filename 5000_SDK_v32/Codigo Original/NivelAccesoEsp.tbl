@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=NivelAccesoEsp
+Archivo=NivelAccesoEsp
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Nivel Acceso
+Singular=Nivel Acceso
+LlavePrimaria=Orden
+SQL=SELECT<BR>  Nivel,<BR>  Orden<BR><BR>FROM<BR>  NivelAccesoEsp
+
+[Nivel]
+Clave=Nivel
+Nombre=Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=52
+TipoDatos=Texto
+Tamano=52
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Nivel
+Nivel=Orden
+Orden=(Fin)

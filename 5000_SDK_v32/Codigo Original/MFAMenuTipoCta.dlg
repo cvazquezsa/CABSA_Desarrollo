@@ -1,0 +1,39 @@
+
+[Dialogo]
+Clave=MFAMenuTipoCta
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+
+
+
+ListaAcciones=Cuenta
+PosicionInicialIzquierda=390
+PosicionInicialArriba=317
+PosicionInicialAlturaCliente=80
+PosicionInicialAncho=500
+[Dialogo.ListaAcciones]
+(Inicio)=Concepto
+Concepto=Impuesto
+Impuesto=(Fin)
+
+[Acciones.Cuenta]
+Nombre=Cuenta
+Boton=0
+NombreDesplegar=& Cuentas contables
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MFATipoCta
+Activo=S
+Visible=S

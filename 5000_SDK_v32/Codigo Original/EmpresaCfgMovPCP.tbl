@@ -1,0 +1,235 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovPCP
+Nombre=EmpresaCfgMovPCP
+Archivo=EmpresaCfgMovPCP
+Modulos=(Todos)
+Singular=EmpresaCfgMovPCP
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[PCPPresupuesto]
+Clave=PCPPresupuesto
+Nombre=Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[PCPEstructura]
+Clave=PCPEstructura
+Nombre=Estructura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPEstructuraAprobada]
+Clave=PCPEstructuraAprobada
+Nombre=Estructura Aprobada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPCatalogo]
+Clave=PCPCatalogo
+Nombre=Catálogo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPEliminacionCatalogo]
+Clave=PCPEliminacionCatalogo
+Nombre=Eliminación Catálogo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPModificacionCatalogo]
+Clave=PCPModificacionCatalogo
+Nombre=Modificación Catálogo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPClavePresupuestal]
+Clave=PCPClavePresupuestal
+Nombre=Clave Presupuestal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPRegla]
+Clave=PCPRegla
+Nombre=Regla
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+[PCPEliminacionRegla]
+Clave=PCPEliminacionRegla
+Nombre=Eliminación Regla
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+
+
+
+
+
+[PCPEliminacionClave]
+Clave=PCPEliminacionClave
+Nombre=Eliminación Clave Presupuestal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PCP
+
+
+
+
+
+[PCPConcluirPresupuesto]
+Clave=PCPConcluirPresupuesto
+Nombre=Concluir Presupuesto
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=PCP
+OpcionesUnicamente=S
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=PCPPresupuesto
+PCPPresupuesto=PCPEstructura
+PCPEstructura=PCPEstructuraAprobada
+PCPEstructuraAprobada=PCPCatalogo
+PCPCatalogo=PCPEliminacionCatalogo
+PCPEliminacionCatalogo=PCPModificacionCatalogo
+PCPModificacionCatalogo=PCPClavePresupuestal
+PCPClavePresupuestal=PCPEliminacionClave
+PCPEliminacionClave=PCPRegla
+PCPRegla=PCPEliminacionRegla
+PCPEliminacionRegla=PCPConcluirPresupuesto
+PCPConcluirPresupuesto=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=PCPPresupuesto,
+PCPPresupuesto,=PCPEstructura,
+PCPEstructura,=PCPEstructuraAprobada,
+PCPEstructuraAprobada,=PCPCatalogo,
+PCPCatalogo,=PCPEliminacionCatalogo,
+PCPEliminacionCatalogo,=PCPModificacionCatalogo,
+PCPModificacionCatalogo,=PCPClavePresupuestal,
+PCPClavePresupuestal,=PCPEliminacionClave,
+PCPEliminacionClave,=PCPRegla,
+PCPRegla,=PCPEliminacionRegla,
+PCPEliminacionRegla,=PCPConcluirPresupuesto
+PCPConcluirPresupuesto=FROM EmpresaCfgMovPCP
+FROM EmpresaCfgMovPCP=(Fin)

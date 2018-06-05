@@ -1,0 +1,71 @@
+
+[Vista]
+Icono=0
+Clave=MovTipoListaRI
+Nombre=Tipos de Movimientos
+Modulos=(Todos)
+Singular=Tipo de Movimiento
+
+VistaIndependiente=S
+TipoTabla=General
+
+
+
+
+ListaCampos=(Lista)
+
+LlavePrimaria=Tipo Movimiento
+CamposBusquedaRapida=Tipo Movimiento
+SQL=(Lista)
+[Tipo Movimiento]
+Clave=Tipo Movimiento
+Nombre=Tipo Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo Movimiento
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Clave
+
+[SubClave]
+Clave=SubClave
+Nombre=SubClave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=SubClave
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Tipo Movimiento
+Tipo Movimiento=Clave
+Clave=SubClave
+SubClave=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT MovTipo.Mov 'Tipo Movimiento', MovTipo.Clave, MovTipo.SubClave
+SELECT MovTipo.Mov 'Tipo Movimiento', MovTipo.Clave, MovTipo.SubClave=FROM MovTipo
+FROM MovTipo=WHERE MovTipo.Modulo <IGUAL> 'INV'
+WHERE MovTipo.Modulo <IGUAL> 'INV'=AND MovTipo.Clave IN ('INV.A', 'INV.CM', 'INV.CP', 'INV.E', 'INV.EP', 'INV.EI', 'INV.IF',
+AND MovTipo.Clave IN ('INV.A', 'INV.CM', 'INV.CP', 'INV.E', 'INV.EP', 'INV.EI', 'INV.IF',='INV.OI', 'INV.OT', 'INV.P', 'INV.R', 'INV.S', 'INV.SI', 'INV.SM',
+'INV.OI', 'INV.OT', 'INV.P', 'INV.R', 'INV.S', 'INV.SI', 'INV.SM',='INV.SOL', 'INV.T', 'INV.TG', 'INV.TI', 'INV.DTI', 'INV.TIF', 'INV.TIS')
+'INV.SOL', 'INV.T', 'INV.TG', 'INV.TI', 'INV.DTI', 'INV.TIF', 'INV.TIS')=ORDER BY MovTipo.Mov
+ORDER BY MovTipo.Mov=(Fin)

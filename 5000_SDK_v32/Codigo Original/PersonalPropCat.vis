@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PersonalPropCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=PersonalPropCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PersonalPropCat.Categoria
+TablaPrincipal=PersonalPropCat
+UsarJOIN=S
+SQL=SELECT<BR>  PersonalPropCat.Categoria<BR><BR>FROM<BR>  PersonalPropCat
+
+[PersonalPropCat.Categoria]
+Clave=PersonalPropCat.Categoria
+LigaTabla=PersonalPropCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

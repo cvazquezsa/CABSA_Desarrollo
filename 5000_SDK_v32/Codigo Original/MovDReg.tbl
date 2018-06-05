@@ -1,0 +1,803 @@
+[Tabla]
+Icono=0
+Clave=MovDReg
+Archivo=MovDReg
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Detalles
+Singular=Detalle
+LlavePrimaria=(Lista)
+ControlID=S
+ControlSubCuenta=S
+CampoID=ID
+CampoSubCuenta=SubCuenta
+ControlRenglonID=S
+CampoRenglonID=RenglonID
+ControlRenglonTipo=S
+CampoRenglonTipo=RenglonTipo
+ControlCuenta=S
+CampoCuenta=Cuenta
+ControlProyectos=S
+CampoProyecto=Proyecto
+ControlTipo=S
+CampoTipo=Tipo
+
+SQL=(Lista)
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Renglon]
+Clave=Renglon
+Nombre=Renglon
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[RenglonSub]
+Clave=RenglonSub
+Nombre=RenglonSub
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[RenglonID]
+Clave=RenglonID
+Nombre=RenglonID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[RenglonTipo]
+Clave=RenglonTipo
+Nombre=RenglonTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=30
+Tamano=30
+TipoDatos=Texto
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[SubCuenta]
+Clave=SubCuenta
+Nombre=Opción
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+
+[Unidad]
+Clave=Unidad
+Nombre=Unidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Factor]
+Clave=Factor
+Nombre=Factor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[CantidadInventario]
+Clave=CantidadInventario
+Nombre=Cantidad Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+
+[Costo]
+Clave=Costo
+Nombre=Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+
+[CostoInv]
+Clave=CostoInv
+Nombre=Costo Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+
+[CostoActividad]
+Clave=CostoActividad
+Nombre=Costo Actividad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+
+[Precio]
+Clave=Precio
+Nombre=Precio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+
+[DescuentoTipo]
+Clave=DescuentoTipo
+Nombre=Tipo Descuento
+Visible=S
+TamanoValidacion=1
+Tamano=1
+TipoDatos=Texto
+
+[DescuentoLinea]
+Clave=DescuentoLinea
+Nombre=Descuento Línea
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[DescuentoImporte]
+Clave=DescuentoImporte
+Nombre=Descuento Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Impuesto1]
+Clave=Impuesto1
+Nombre=IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Impuesto2]
+Clave=Impuesto2
+Nombre=IEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Impuesto3]
+Clave=Impuesto3
+Nombre=Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Retencion1]
+Clave=Retencion1
+Nombre=Retención ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Retencion2]
+Clave=Retencion2
+Nombre=Retención IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Retencion3]
+Clave=Retencion3
+Nombre=Retención 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[DescripcionExtra]
+Clave=DescripcionExtra
+Nombre=Descripción Extra
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Paquete]
+Clave=Paquete
+Nombre=Paquete
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[ContUso]
+Clave=ContUso
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Comision]
+Clave=Comision
+Nombre=Comisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Aplica]
+Clave=Aplica
+Nombre=Aplicación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[AplicaID]
+Clave=AplicaID
+Nombre=Aplicación Consecutivo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[DestinoTipo]
+Clave=DestinoTipo
+Nombre=Tipo Destino
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Destino]
+Clave=Destino
+Nombre=Destino
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[DestinoID]
+Clave=DestinoID
+Nombre=Consecutivo Destino
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Departamento]
+Clave=Departamento
+Nombre=Departamento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Espacio]
+Clave=Espacio
+Nombre=Espacio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Estado]
+Clave=Estado
+Nombre=Estado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+[AFArticulo]
+Clave=AFArticulo
+Nombre=Activo Fijo Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[AFSerie]
+Clave=AFSerie
+Nombre=Activo Fijo Serie
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[CostoUEPS]
+Clave=CostoUEPS
+Nombre=Costo UEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[CostoPEPS]
+Clave=CostoPEPS
+Nombre=Costo PEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[UltimoCosto]
+Clave=UltimoCosto
+Nombre=Ultimo Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioLista]
+Clave=PrecioLista
+Nombre=Precio Lista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Posicion]
+Clave=Posicion
+Nombre=Posición
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[DepartamentoDetallista]
+Clave=DepartamentoDetallista
+Nombre=Departamento Detallista
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SerieLote]
+Clave=SerieLote
+Nombre=Serie Lote
+Visible=S
+TamanoValidacion=20
+Tamano=50
+
+[Producto]
+Clave=Producto
+Nombre=Producto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[SubProducto]
+Clave=SubProducto
+Nombre=Sub Producto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Merma]
+Clave=Merma
+Nombre=Merma
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Desperdicio]
+Clave=Desperdicio
+Nombre=Desperdicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=Porcentaje
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Impuestos]
+Clave=Impuestos
+Nombre=Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Provision]
+Clave=Provision
+Nombre=Provisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Depreciacion]
+Clave=Depreciacion
+Nombre=Depreciación
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[DescuentoRecargos]
+Clave=DescuentoRecargos
+Nombre=Descuento Recargos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[InteresesOrdinarios]
+Clave=InteresesOrdinarios
+Nombre=Intereses Ordinarios
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[InteresesMoratorios]
+Clave=InteresesMoratorios
+Nombre=Intereses Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Actividad]
+Clave=Actividad
+Nombre=Actividad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=ID
+ID=Renglon
+Renglon=RenglonSub
+RenglonSub=RenglonID
+RenglonID=RenglonTipo
+RenglonTipo=UEN
+UEN=Concepto
+Concepto=Personal
+Personal=Almacen
+Almacen=Codigo
+Codigo=Articulo
+Articulo=SubCuenta
+SubCuenta=Cantidad
+Cantidad=Unidad
+Unidad=Factor
+Factor=CantidadInventario
+CantidadInventario=Costo
+Costo=CostoInv
+CostoInv=CostoActividad
+CostoActividad=Precio
+Precio=DescuentoTipo
+DescuentoTipo=DescuentoLinea
+DescuentoLinea=DescuentoImporte
+DescuentoImporte=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Retencion1
+Retencion1=Retencion2
+Retencion2=Retencion3
+Retencion3=DescripcionExtra
+DescripcionExtra=Paquete
+Paquete=ContUso
+ContUso=Comision
+Comision=Aplica
+Aplica=AplicaID
+AplicaID=DestinoTipo
+DestinoTipo=Destino
+Destino=DestinoID
+DestinoID=Cliente
+Cliente=Agente
+Agente=Departamento
+Departamento=Espacio
+Espacio=Estado
+Estado=AFArticulo
+AFArticulo=AFSerie
+AFSerie=CostoUEPS
+CostoUEPS=CostoPEPS
+CostoPEPS=UltimoCosto
+UltimoCosto=PrecioLista
+PrecioLista=Posicion
+Posicion=DepartamentoDetallista
+DepartamentoDetallista=SerieLote
+SerieLote=Producto
+Producto=SubProducto
+SubProducto=Merma
+Merma=Desperdicio
+Desperdicio=Tipo
+Tipo=Ruta
+Ruta=Fecha
+Fecha=Importe
+Importe=Porcentaje
+Porcentaje=Impuestos
+Impuestos=Provision
+Provision=Depreciacion
+Depreciacion=DescuentoRecargos
+DescuentoRecargos=InteresesOrdinarios
+InteresesOrdinarios=InteresesMoratorios
+InteresesMoratorios=FormaPago
+FormaPago=Referencia
+Referencia=Proyecto
+Proyecto=Actividad
+Actividad=Cuenta
+Cuenta=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Modulo,
+  Modulo,=  ID,
+  ID,=  Renglon,
+  Renglon,=  RenglonSub,
+  RenglonSub,=  RenglonID,
+  RenglonID,=  RenglonTipo,
+  RenglonTipo,=  UEN,
+  UEN,=  Concepto,
+  Concepto,=  Personal,
+  Personal,=  Almacen,
+  Almacen,=  Codigo,
+  Codigo,=  Articulo,
+  Articulo,=  SubCuenta,
+  SubCuenta,=  Cantidad,
+  Cantidad,=  Unidad,
+  Unidad,=  Factor,
+  Factor,=  CantidadInventario,
+  CantidadInventario,=  Costo,
+  Costo,=  CostoInv,
+  CostoInv,=  CostoActividad,
+  CostoActividad,=  Precio,
+  Precio,=  DescuentoTipo,
+  DescuentoTipo,=  DescuentoLinea,
+  DescuentoLinea,=  DescuentoImporte,
+  DescuentoImporte,=  Impuesto1,
+  Impuesto1,=  Impuesto2,
+  Impuesto2,=  Impuesto3,
+  Impuesto3,=  Retencion1,
+  Retencion1,=  Retencion2,
+  Retencion2,=  Retencion3,
+  Retencion3,=  DescripcionExtra,
+  DescripcionExtra,=  Paquete,
+  Paquete,=  ContUso,
+  ContUso,=  Comision,
+  Comision,=  Aplica,
+  Aplica,=  AplicaID,
+  AplicaID,=  DestinoTipo,
+  DestinoTipo,=  Destino,
+  Destino,=  DestinoID,
+  DestinoID,=  Cliente,
+  Cliente,=  Agente,
+  Agente,=  Departamento,
+  Departamento,=  Espacio,
+  Espacio,=  Estado,
+  Estado,=  AFArticulo,
+  AFArticulo,=  AFSerie,
+  AFSerie,=  CostoUEPS,
+  CostoUEPS,=  CostoPEPS,
+  CostoPEPS,=  UltimoCosto,
+  UltimoCosto,=  PrecioLista,
+  PrecioLista,=  Posicion,
+  Posicion,=  DepartamentoDetallista,
+  DepartamentoDetallista,=  SerieLote,
+  SerieLote,=  Producto,
+  Producto,=  SubProducto,
+  SubProducto,=  Merma,
+  Merma,=  Desperdicio,
+  Desperdicio,=  Tipo,
+  Tipo,=  Ruta,
+  Ruta,=  Fecha,
+  Fecha,=  Importe,
+  Importe,=  Porcentaje,
+  Porcentaje,=  Impuestos,
+  Impuestos,=  Provision,
+  Provision,=  Depreciacion,
+  Depreciacion,=  DescuentoRecargos,
+  DescuentoRecargos,=  InteresesOrdinarios,
+  InteresesOrdinarios,=  InteresesMoratorios,
+  InteresesMoratorios,=  FormaPago,
+  FormaPago,=  Referencia,
+  Referencia,=  Proyecto,
+  Proyecto,=  Actividad,
+  Actividad,=  Cuenta
+  Cuenta=FROM
+FROM=  MovDReg
+  MovDReg=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Modulo
+Modulo=ID
+ID=Renglon
+Renglon=RenglonSub
+RenglonSub=(Fin)

@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=AutoRolComision
+Archivo=AutoRolComision
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Comisiones
+Singular=Comisión
+LlavePrimaria=Rol<BR>Comision
+SQL=SELECT<BR>  Rol,<BR>  Comision<BR><BR>FROM<BR>  AutoRolComision
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=20
+Tamano=50
+ValorPorOmision=Info.Rol
+
+[Comision]
+Clave=Comision
+Nombre=Tipo Comisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AutoComision
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Rol
+Rol=Comision
+Comision=(Fin)

@@ -1,0 +1,28 @@
+[Vista]
+Icono=0
+Clave=AnexoDocTipo
+Nombre=Tipos Documentos
+Modulos=(Todos)
+Singular=Tipo Documento
+ListaTablas=AnexoDocTipo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=AnexoDocTipo.Tipo
+TablaPrincipal=AnexoDocTipo
+SQL=SELECT<BR>  AnexoDocTipo.Tipo<BR><BR>FROM<BR>  AnexoDocTipo
+
+[AnexoDocTipo.Tipo]
+Clave=AnexoDocTipo.Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=AnexoDocTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Tipo

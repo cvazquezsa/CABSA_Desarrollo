@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=GarantiaTipo
+Nombre=Tipos Garantias
+Modulos=(Todos)
+Singular=Tipo Garantía
+ListaTablas=GarantiaTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=GarantiaTipo.Tipo
+TablaPrincipal=GarantiaTipo
+UsarJOIN=S
+SQL=SELECT<BR>  GarantiaTipo.Tipo<BR><BR>FROM<BR>  GarantiaTipo
+
+[GarantiaTipo.Tipo]
+Clave=GarantiaTipo.Tipo
+LigaTabla=GarantiaTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

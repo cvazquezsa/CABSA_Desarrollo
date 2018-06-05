@@ -1,0 +1,83 @@
+[Vista]
+Icono=0
+Clave=ArtCompraProrrateo
+Nombre=Tabla Prorrateo
+Modulos=(Todos)
+Singular=Tabla Prorrateo
+ListaTablas=ArtCompraProrrateo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ArtCompraProrrateo
+ListaCalculados=(Lista)
+UsarJOIN=S
+SQL=SELECT<BR>  ArtCompraProrrateo.Articulo,<BR>  ArtCompraProrrateo.Grupo,<BR>  ArtCompraProrrateo.Porcentaje,<BR>  ArtCompraProrrateo.Cantidad<BR><BR>FROM<BR>  ArtCompraProrrateo
+
+[Sucursales]
+Clave=Sucursales
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Sucursales
+Formula=SQL(<T>SELECT Sucursales FROM SucursalesDelGrupoConAlm WHERE Grupo=:tGrupo<T>, ArtCompraProrrateo.Grupo)
+
+[CantidadTotal]
+Clave=CantidadTotal
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Cantidad Total
+Cantidad=S
+Formula=ArtCompraProrrateo.Cantidad*Sucursales
+
+[ArtCompraProrrateo.Articulo]
+Clave=ArtCompraProrrateo.Articulo
+LigaTabla=ArtCompraProrrateo
+LigaCampo=Articulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Articulo
+
+[ArtCompraProrrateo.Grupo]
+Clave=ArtCompraProrrateo.Grupo
+LigaTabla=ArtCompraProrrateo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[ArtCompraProrrateo.Porcentaje]
+Clave=ArtCompraProrrateo.Porcentaje
+LigaTabla=ArtCompraProrrateo
+LigaCampo=Porcentaje
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Porcentaje
+
+[ArtCompraProrrateo.Cantidad]
+Clave=ArtCompraProrrateo.Cantidad
+LigaTabla=ArtCompraProrrateo
+LigaCampo=Cantidad
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Cantidad
+
+[Vista.ListaCampos]
+(Inicio)=ArtCompraProrrateo.Articulo
+ArtCompraProrrateo.Articulo=ArtCompraProrrateo.Grupo
+ArtCompraProrrateo.Grupo=ArtCompraProrrateo.Porcentaje
+ArtCompraProrrateo.Porcentaje=ArtCompraProrrateo.Cantidad
+ArtCompraProrrateo.Cantidad=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=Sucursales
+Sucursales=CantidadTotal
+CantidadTotal=(Fin)

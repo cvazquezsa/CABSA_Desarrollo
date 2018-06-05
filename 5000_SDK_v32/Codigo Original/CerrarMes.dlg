@@ -1,0 +1,110 @@
+[Dialogo]
+Clave=CerrarMes
+Nombre=Cerrar Mes
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=234
+PosicionInicialAncho=339
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=815
+PosicionInicialArriba=583
+ListaAcciones=(Lista)
+
+[Acciones.CxcEliminarSaldosMenores]
+Nombre=CxcEliminarSaldosMenores
+Boton=0
+NombreDesplegar=&1.- Eliminar Saldos Menores (Cuentas por Cobrar)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=CxcEliminarSaldosMenores
+Activo=S
+Visible=S
+
+[Acciones.CxpEliminarSaldosMenores]
+Nombre=CxpEliminarSaldosMenores
+Boton=0
+NombreDesplegar=&2.- Eliminar Saldos Menores (Cuentas por Pagar) 
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=CxpEliminarSaldosMenores
+Activo=S
+Visible=S
+
+[Acciones.CxcReevaluacion]
+Nombre=CxcReevaluacion
+Boton=0
+NombreDesplegar=&3. -Reevaluar (Cuentas por Cobrar)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Reevaluacion
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>CXC<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas por Cobrar<T>)
+
+[Acciones.CxpReevaluacion]
+Nombre=CxpReevaluacion
+Boton=0
+NombreDesplegar=4.- Reevaluar (Cuentas por Pagar)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Reevaluacion
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>CXP<T>)<BR>Asigna(Info.Descripcion, <T>Cuentas por Pagar<T>)
+Visible=S
+
+[Acciones.AFDepreciacion]
+Nombre=AFDepreciacion
+Boton=0
+NombreDesplegar=&5.- Generar Depreciación del Mes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Fecha, UltimoDiaMes(Hoy))<BR>Asigna(Info.Mov, ConfigMov.AFDepreciacion)<BR>Si<BR>  Forma(<T>GenerarMovFecha<T>)<BR>Entonces<BR>  ProcesarSQL(<T>spSugerirAFMov :tEmpresa, :nSucursal, :tUsuario, :fFecha, :tMov<T>, Empresa, Sucursal, Usuario, Info.Fecha, Info.Mov) <BR>Fin
+Activo=S
+Visible=S
+
+[Acciones.AFRevaluacion]
+Nombre=AFRevaluacion
+Boton=0
+NombreDesplegar=&6.- Generar Revaluacion del Mes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Fecha, UltimoDiaMes(Hoy))<BR>Asigna(Info.Mov, ConfigMov.AFRevaluacion)<BR>Si<BR>  Forma(<T>GenerarMovFecha<T>)<BR>Entonces<BR>  ProcesarSQL(<T>spSugerirAFMov :tEmpresa, :nSucursal, :tUsuario, :fFecha, :tMov<T>, Empresa, Sucursal, Usuario, Info.Fecha, Info.Mov) <BR>Fin
+
+[Acciones.ContabilizarMes]
+Nombre=ContabilizarMes
+Boton=0
+NombreDesplegar=&7.- Contabilizar Pólizas Borrador
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Fecha, UltimoDiaMes(Hoy))<BR>Si<BR>  Forma(<T>AfectarFecha<T>)<BR>Entonces<BR>  ProcesarSQL(<T>spAfectarContBorradorCierreMes :tEmpresa, :tUsuario, :fFecha<T>, Empresa, Usuario, Info.Fecha) <BR>Fin
+
+[Dialogo.ListaAcciones]
+(Inicio)=CxcEliminarSaldosMenores
+CxcEliminarSaldosMenores=CxpEliminarSaldosMenores
+CxpEliminarSaldosMenores=CxcReevaluacion
+CxcReevaluacion=CxpReevaluacion
+CxpReevaluacion=AFDepreciacion
+AFDepreciacion=AFRevaluacion
+AFRevaluacion=ContabilizarMes
+ContabilizarMes=(Fin)

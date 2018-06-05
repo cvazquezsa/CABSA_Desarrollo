@@ -1,0 +1,2766 @@
+
+[Reporte]
+Clave=PCP
+Nombre=Planeación Presupuestal
+Icono=0
+Vista=PCPT
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=27.9
+LargoPagina=21.6
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=Horizontal
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+
+PosicionInicialAlturaCliente=701
+PosicionInicialAncho=1288
+Parametros1=PCP.ID
+Parametros2==
+Parametros3=N
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+ListaOrden=PCP.ID<TAB>(Acendente)
+ListaAcciones=(Lista)
+Parametros4=
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Inicio: PCP.ID<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Detalle<BR>Pie
+
+VentanaIzquierda=127
+VentanaArriba=31
+VentanaAltura=721
+VentanaAncho=1127
+PanelArriba=166
+PanelBotones=80
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.66
+Renglones=2
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Objetos=2
+Visible=
+
+BordeAbajo=S
+EstiloAbajo=3
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=10
+AnchoTexto=16
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Planeación Presupuestal<T>
+
+BordeAbajo=S
+EstiloAbajo=3
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=15
+AnchoTexto=81
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+BordeAbajo=S
+EstiloAbajo=3
+[Linea2]
+Clave=Inicio: PCP.ID
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+Visible=
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=PCP.ID
+
+
+[Linea3]
+Clave=Inicio: PCP.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.63
+Renglones=1
+Visible=
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Cursiva]}
+AVertical=Centrado
+
+Objetos=5
+Grupo=PCP.ID
+[Linea4]
+Clave=Inicio: PCP.ID
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+Renglones=1
+Visible=
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+
+
+
+
+Grupo=PCP.ID
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=24
+Marco=S
+BordeArriba=N
+BordeAbajo=N
+BordeIzquierdo=N
+BordeDerecho=N
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.Mov + <T> <T> + PCP.MovID
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=21
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=EstatusNombreSingular( PCP.Estatus )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=PCP
+Activo=S
+Visible=S
+
+
+
+ListaParametros1=PCP.ID
+ListaParametros=S
+
+
+
+
+
+
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=115
+NombreDesplegar=Enviar a Excel
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Excel
+ClaveAccion=PCP
+ListaParametros1=PCP.ID
+ListaParametros=S
+Visible=S
+
+
+
+
+
+
+ActivoCondicion=Usuario.EnviarExcel
+[Linea9]
+Clave=Inicio: PCP.ID
+Objetos=6
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CP) )
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Marco=N
+Grupo=PCP.ID
+[Linea10]
+Clave=Inicio: PCP.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Objetos=7
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.E) )
+Marco=N
+EstiloMarco=0
+Grupo=PCP.ID
+
+[B4]
+Celda=B4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Columna2
+
+[C4]
+Celda=C4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Columna3
+
+[D4]
+Celda=D4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Columna4
+
+[E4]
+Celda=E4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Columna5
+
+
+
+[A9]
+Celda=A9
+Alineacion=Centrado
+AnchoEnCm=5.5
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.ClavePresupuestal )
+
+Marco=N
+[B9]
+Celda=B9
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.ClavePresupuestalNombre )
+
+Marco=N
+[C9]
+Celda=C9
+Alineacion=Centrado
+AnchoEnCm=6.5
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.ClavePresupuestalDescripcion )
+
+Marco=N
+[D9]
+Celda=D9
+Alineacion=Centrado
+AnchoEnCm=1.71
+AnchoTexto=9
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.ObjetoGasto )
+
+Marco=N
+[E9]
+Celda=E9
+Alineacion=Centrado
+AnchoEnCm=1.5
+AnchoTexto=5
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Art. Esp.<T><BR>//CampoNombre( PCPD.ClavePresupuestalArticulosEsp )
+
+Marco=N
+[F9]
+Celda=F9
+Alineacion=Centrado
+AnchoEnCm=4.79
+AnchoTexto=26
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+Marco=N
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=5.5
+AnchoTexto=22
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.Proyecto
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=26
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.Moneda + Si(PCP.TipoCambio<>1, <T>: <T> & PCP.TipoCambio)
+
+
+
+
+[Linea5]
+Clave=Inicio: PCP.ID
+Seccion=Inicio Grupo
+Grupo=PCP.ID
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=2
+Visible=no MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.EC, PCP.MC) )
+[Linea6]
+Clave=Inicio: PCP.ID
+Objetos=4
+Seccion=Inicio Grupo
+AltoEnCm=1.55
+Renglones=4
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=PCP.ID
+[E3]
+Celda=E3
+Alineacion=Centrado
+FormatoValidacion=d mmmm aaaa
+AnchoEnCm=5
+AnchoTexto=29
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.FechaEmision
+
+
+
+
+
+
+[Linea7]
+Clave=Inicio: PCP.ID
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=0
+
+
+
+Marco=N
+EstiloMarco=0
+Grupo=PCP.ID
+Visible=
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=5
+ExpresionMultiple=N
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Mascara Clave Presupuesta:
+
+
+
+
+[A6]
+Celda=A6
+Alineacion=Derecha
+AnchoEnCm=5
+AnchoTexto=23
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ExpresionMultiple=S
+Expresion=CampoNombre( PCP.Concepto )  + <T>:<T><BR>CampoNombre( PCP.Referencia ) + <T>:<T><BR>CampoNombre( PCP.Observaciones ) + <T>:<T><BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CAT, PCP.E, PCP.EC ) ), CampoNombre( PCP.Categoria ) + <T>:<T>)
+[Linea8]
+Clave=Inicio: PCP.ID
+Objetos=8
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Marco=N
+EstiloMarco=0
+
+
+
+
+
+
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CAT ))
+Grupo=PCP.ID
+
+BordeAbajo=N
+EstiloAbajo=1
+[Linea11]
+Clave=Inicio: PCP.ID
+Objetos=3
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.EA, PCP.EC, PCP.ECP) )
+Marco=N
+EstiloMarco=0
+Grupo=PCP.ID
+[A10]
+Celda=A10
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(PCPD.CatalogoTipoTipo )
+
+[B10]
+Celda=B10
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(PCPD.CatalogoTipoRama  )
+
+[A11]
+Celda=A11
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.EA<T> Entonces CampoNombre( PCPD.Aplica )<BR>  Es <T>PCP.EC<T> Entonces CampoNombre( PCPD.CatalogoTipo )<BR>  Es <T>PCP.ECP<T> Entonces CampoNombre( PCPD.ClavePresupuestal )<BR><BR>Fin
+
+Marco=N
+EstiloMarco=0
+
+
+
+[Linea12]
+Clave=Inicio: PCP.ID
+Objetos=7
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.MC) )
+Marco=N
+EstiloMarco=0
+
+
+
+
+
+
+Grupo=PCP.ID
+[A12]
+Celda=A12
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(PCPD.CatalogoTipo  )
+
+Marco=N
+EstiloMarco=0
+[B12]
+Celda=B12
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoClave )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Marco=N
+EstiloMarco=0
+
+[Linea13]
+Clave=Inicio: PCP.ID
+Objetos=5
+Seccion=Inicio Grupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.ER, PCP.R) )
+Marco=N
+EstiloMarco=3
+
+Grupo=PCP.ID
+[C12]
+Celda=C12
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoNombre )
+
+
+
+
+
+[A13]
+Celda=A13
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  CampoNombre( PCPD.ReglaID )<BR>  Es <T>PCP.R<T> Entonces  CampoNombre( PCPD.ReglaOrden )<BR>Fin
+
+Marco=N
+EstiloMarco=3
+
+[A8]
+Celda=A8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(PCPD.CatalogoTipo  )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[B8]
+Celda=B8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoClave )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[C8]
+Celda=C8
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoNombre )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[D8]
+Celda=D8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoRama )
+
+OmitirFormato=N
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[E8]
+Celda=E8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoTechoPresupuesto  )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[F8]
+Celda=F8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoDescripcion  )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[G8]
+Celda=G8
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Obs. del Catalogo<T><BR>//CampoNombre( PCPD.CatalogoObservaciones )
+
+
+
+
+
+
+
+
+
+
+
+
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[Linea14]
+Clave=Detalle
+Objetos=8
+Seccion=Detalle
+AltoEnCm=0.5
+Renglones=1
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, []}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CAT) )
+[Linea15]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 7, Negro, []}
+AVertical=Centrado
+
+Marco=S
+EstiloMarco=3
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CP) )
+
+
+
+
+
+
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipo
+
+[B14]
+Celda=B14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoClave
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=5.5
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.ClavePresupuestal
+
+Marco=S
+EstiloMarco=3
+[B15]
+Celda=B15
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.ClavePresupuestalNombre
+
+
+
+
+
+
+Marco=S
+EstiloMarco=3
+[C10]
+Celda=C10
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoTipoDigitos  )
+
+
+[D10]
+Celda=D10
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoTipoValidacion )
+
+
+
+
+[C14]
+Celda=C14
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoNombre
+
+[D14]
+Celda=D14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=17
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoRama
+
+
+
+
+[Linea16]
+Clave=Detalle
+Objetos=7
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, []}
+AVertical=Centrado
+
+Marco=S
+EstiloMarco=3
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.E) )
+
+
+
+
+
+
+
+
+
+
+
+
+[E14]
+Celda=E14
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=15
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTechoPresupuesto
+
+FormatoValidacion=(Monetario)
+[F14]
+Celda=F14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoDescripcion
+
+
+[C15]
+Celda=C15
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=5
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.ClavePresupuestalDescripcion
+
+[D15]
+Celda=D15
+Alineacion=Centrado
+AnchoEnCm=1.71
+AnchoTexto=5
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.ObjetoGasto
+
+
+
+
+[Linea17]
+Clave=Detalle
+Objetos=3
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, []}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.EA, PCP.EC, PCP.ECP) )
+Marco=S
+EstiloMarco=3
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR> Es <T>PCP.EA<T> Entonces PCPD.Aplica + <T> <T> + PCPD.AplicaID<BR>  Es <T>PCP.EC<T> Entonces PCPD.CatalogoTipo<BR>  Es <T>PCP.ECP<T> Entonces PCPD.ClavePresupuestal<BR>Fin
+
+Marco=S
+EstiloMarco=3
+[B17]
+Celda=B17
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.EA<T> Entonces PCPD.CatalogoTipoTipo<BR>  Es <T>PCP.EC<T> Entonces PCPD.CatalogoClave<BR>  Es <T>PCP.ECP<T> Entonces ClavePresupuestal.Nombre<BR>Fin
+
+
+Marco=S
+EstiloMarco=3
+[B11]
+Celda=B11
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.EA<T> Entonces CampoNombre( PCPD.CatalogoTipoTipo )<BR>  Es <T>PCP.EC<T> Entonces CampoNombre( PCPD.CatalogoClave )<BR>  Es <T>PCP.ECP<T> Entonces CampoNombre( PCPD.ClavePresupuestalNombre )<BR>Fin
+
+
+[C11]
+Celda=C11
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipoTipo
+
+[B16]
+Celda=B16
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipoRama
+
+[C16]
+Celda=C16
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipoDigitos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Linea18]
+Clave=Detalle
+Objetos=7
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, []}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.MC) )
+Marco=S
+EstiloMarco=3
+[A18]
+Celda=A18
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipo
+
+Marco=S
+EstiloMarco=3
+[B18]
+Celda=B18
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoClave
+
+
+Marco=S
+EstiloMarco=3
+[C17]
+Celda=C17
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+
+
+
+[Linea19]
+Clave=Detalle
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial Narrow, 8, Negro, []}
+AVertical=Centrado
+
+Visible=MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.ER, PCP.R) )
+Marco=S
+EstiloMarco=3
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=5.5
+ExpresionMultiple=S
+AnchoTexto=29
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.Concepto<BR>PCP.Referencia<BR>PCP.Observaciones<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CAT, PCP.E, PCP.EC ) ), PCP.Categoria  )
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=5
+ExpresionMultiple=S
+AnchoTexto=22
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), CampoNombre( PCP.ProyectoDescripcion ) + <T>:<T>)<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), CampoNombre( PCP.FechaInicio ) + <T>:<T>)<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), CampoNombre( PCP.FechaFin ) + <T>:<T>)<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CP, PCP.PP ) ), CampoNombre( PCP.CategoriaPredominante ) + <T>:<T>)
+
+[D6]
+Celda=D6
+Alineacion=Izquierda
+AnchoEnCm=5.5
+ExpresionMultiple=S
+AnchoTexto=26
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), PCP.ProyectoDescripcion )<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), PCP.FechaInicio)<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.P,PCP.PC, PCP.PP ) ), PCP.FechaFin )<BR>Si( MovTipoEn( <T>PCP<T>, PCP.Mov, (PCP.CP, PCP.PP ) ),  PCP.CategoriaPredominante)
+
+[H8]
+Celda=H8
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+[E10]
+Celda=E10
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoTipoTechoPresupuesto )
+
+[F10]
+Celda=F10
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Estatus  )
+
+[G10]
+Celda=G10
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+
+
+[E15]
+Celda=E15
+Alineacion=Centrado
+AnchoEnCm=1.5
+AnchoTexto=5
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.ClavePresupuestalArticulosEsp
+
+[F15]
+Celda=F15
+Alineacion=Izquierda
+AnchoEnCm=4.79
+AnchoTexto=5
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+
+[C18]
+Celda=C18
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoNombre
+
+[D18]
+Celda=D18
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTechoPresupuesto
+
+FormatoValidacion=(Monetario)
+[E18]
+Celda=E18
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoDescripcion
+
+[A19]
+Celda=A19
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  PCPD.ReglaID<BR>  Es <T>PCP.R<T> Entonces  PCPD.ReglaOrden<BR>Fin
+
+Marco=S
+EstiloMarco=3
+[B19]
+Celda=B19
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  ProyClavePresupuestalRegla.Descripcion<BR>  Es <T>PCP.R<T> Entonces  PCPD.ReglaDescripcion<BR>Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Marco=S
+EstiloMarco=3
+
+
+[D12]
+Celda=D12
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoTechoPresupuesto  )
+
+[E12]
+Celda=E12
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoDescripcion  )
+
+[F12]
+Celda=F12
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.CatalogoObservaciones )
+
+[G12]
+Celda=G12
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+
+
+
+
+
+
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=16
+AnchoTexto=86
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCP.ClavePresupuestalMascara
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Linea20]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[G14]
+Celda=G14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=17
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoObservaciones
+
+[H14]
+Celda=H14
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+[D16]
+Celda=D16
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipoValidacion
+
+[E16]
+Celda=E16
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoTipoTechoPresupuesto
+
+[F16]
+Celda=F16
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Estatus
+
+[G16]
+Celda=G16
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+[F18]
+Celda=F18
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.CatalogoObservaciones
+
+[G18]
+Celda=G18
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+[C19]
+Celda=C19
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=19
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  ProyClavePresupuestalRegla.Tipo<BR>  Es <T>PCP.R<T> Entonces  PCPD.ReglaTipo<BR>Fin
+
+[D19]
+Celda=D19
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  ProyClavePresupuestalRegla.Mascara<BR>  Es <T>PCP.R<T> Entonces  PCPD.ReglaMascara<BR>Fin
+
+[E19]
+Celda=E19
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+Marco=S
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PCPD.Observaciones
+
+[A20]
+Celda=A20
+Alineacion=Izquierda
+AnchoEnCm=6.7
+AnchoTexto=36
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B20]
+Celda=B20
+Alineacion=Izquierda
+AnchoEnCm=8.21
+AnchoTexto=44
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+
+[B13]
+Celda=B13
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces  CampoNombre( <BR>ProyClavePresupuestalRegla.Descripcion )<BR>  Es <T>PCP.R<T> Entonces  CampoNombre( PCPD.ReglaDescripcion )<BR>Fin
+
+[C13]
+Celda=C13
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces CampoNombre( ProyClavePresupuestalRegla.Tipo )<BR>  Es <T>PCP.R<T> Entonces CampoNombre( PCPD.ReglaTipo )<BR>Fin
+
+[D13]
+Celda=D13
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso MovTipo( <T>PCP<T>, PCP.Mov )<BR>  Es <T>PCP.ER<T> Entonces CampoNombre( ProyClavePresupuestalRegla.Mascara )<BR>  Es <T>PCP.R<T> Entonces CampoNombre( PCPD.ReglaMascara )<BR>Fin
+
+[E13]
+Celda=E13
+Alineacion=Centrado
+AnchoEnCm=6
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Narrow, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( PCPD.Observaciones )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

@@ -1,0 +1,78 @@
+[Tabla]
+Icono=0
+Clave=AutoRolCargo
+Archivo=AutoRolCargo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Cargos Fijos
+Singular=Cargo Fijo
+ListaRelaciones=Art
+LlavePrimaria=Rol<BR>Articulo
+ControlTipo=S
+CampoTipo=Tipo
+SQL=SELECT<BR>  Rol,<BR>  Articulo,<BR>  Tipo,<BR>  Importe<BR><BR>FROM<BR>  AutoRolCargo
+
+[Rol]
+Clave=Rol
+Nombre=Rol
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Rol
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>por Rol<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Relaciones.Art]
+TipoRelacion=Forzosa
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Tabla.ListaCampos]
+(Inicio)=Rol
+Rol=Articulo
+Articulo=Tipo
+Tipo=Importe
+Importe=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=por Rol
+por Rol=por Dia
+por Dia=(Fin)

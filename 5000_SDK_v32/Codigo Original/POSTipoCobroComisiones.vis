@@ -1,0 +1,57 @@
+
+[Vista]
+Icono=0
+Clave=POSTipoCobroComisiones
+Nombre=POSTipoCobroComisiones
+Modulos=(Todos)
+Singular=POSTipoCobroComisiones
+ListaTablas=POSTipoCobroComisiones
+TablaPrincipal=POSTipoCobroComisiones
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[POSTipoCobroComisiones.IdTipoCobroComision]
+Clave=POSTipoCobroComisiones.IdTipoCobroComision
+Nombre=IdTipoCobroComision
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=POSTipoCobroComisiones
+LigaCampo=IdTipoCobroComision
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IdTipoCobroComision
+
+[POSTipoCobroComisiones.TipoCobroComision]
+Clave=POSTipoCobroComisiones.TipoCobroComision
+Nombre=Tipo de cobro de comisión
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT TipoCobroComision FROM POSTipoCobroComisiones<T>)
+LigaTabla=POSTipoCobroComisiones
+LigaCampo=TipoCobroComision
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCobroComision
+
+[Vista.ListaCampos]
+(Inicio)=POSTipoCobroComisiones.IdTipoCobroComision
+POSTipoCobroComisiones.IdTipoCobroComision=POSTipoCobroComisiones.TipoCobroComision
+POSTipoCobroComisiones.TipoCobroComision=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSTipoCobroComisiones.IdTipoCobroComision,
+POSTipoCobroComisiones.IdTipoCobroComision,=POSTipoCobroComisiones.TipoCobroComision
+POSTipoCobroComisiones.TipoCobroComision=FROM POSTipoCobroComisiones
+FROM POSTipoCobroComisiones=(Fin)

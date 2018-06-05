@@ -1,0 +1,162 @@
+[Tabla]
+Icono=0
+Clave=Layout
+Archivo=Layout
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Layout
+Singular=Layout
+LlavePrimaria=Layout
+SQL=SELECT<BR>  Layout,<BR>  Formato,<BR>  Separador,<BR>  TextosEntreComillas,<BR>  VerTipoDatos,<BR>  Codificacion,<BR>  Nombre,<BR>  IDLista,<BR>  InsertarVacios,<BR>  TieneEstructura<BR><BR>FROM<BR>  Layout
+
+[Layout]
+Clave=Layout
+Nombre=&Clave
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Formato]
+Clave=Formato
+Nombre=&Formato
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Ancho Fijo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Separador]
+Clave=Separador
+Nombre=&Separador
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=TieneEstructura o (Formato=<T>Separador<T>)
+ListaOpciones=(Lista)
+
+[TextosEntreComillas]
+Clave=TextosEntreComillas
+Nombre=Te&xtos Entre Comillas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Formato=<T>Separador<T>
+
+[VerTipoDatos]
+Clave=VerTipoDatos
+Nombre=&Tipo Datos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Codificacion]
+Clave=Codificacion
+Nombre=Co&dificación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=N&ombre
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[IDLista]
+Clave=IDLista
+Nombre=&Identificación Lista
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Cada Registro<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Layout:Layout.Formato noen (<T>INI Dinamico<T>, <T>INI Estatico<T>)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[InsertarVacios]
+Clave=InsertarVacios
+Nombre=Insertar &Vacios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TieneEstructura]
+Clave=TieneEstructura
+Nombre=Tiene &Estructura
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Izquierda(Layout:Layout.Formato, 3)=<T>INI<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Separador
+
+[Tabla.ListaCampos]
+(Inicio)=Layout
+Layout=Nombre
+Nombre=Formato
+Formato=Separador
+Separador=TextosEntreComillas
+TextosEntreComillas=VerTipoDatos
+VerTipoDatos=Codificacion
+Codificacion=IDLista
+IDLista=InsertarVacios
+InsertarVacios=TieneEstructura
+TieneEstructura=(Fin)
+
+[Formato.ListaOpciones]
+(Inicio)=Ancho Fijo
+Ancho Fijo=Separador
+Separador=INI Estatico
+INI Estatico=INI Dinamico
+INI Dinamico=(Fin)
+
+[Separador.ListaOpciones]
+(Inicio)=|
+|=/
+/=&
+&=,
+,=.
+.=<Tab>
+<Tab>=(Fin)
+
+[Codificacion.ListaOpciones]
+(Inicio)=ANSI
+ANSI=UTF-8
+UTF-8=ISO-8859-1
+ISO-8859-1=(Fin)
+
+[IDLista.ListaOpciones]
+(Inicio)=N/A
+N/A=Cada Registro
+Cada Registro=Comienzo - Fin
+Comienzo - Fin=(Fin)

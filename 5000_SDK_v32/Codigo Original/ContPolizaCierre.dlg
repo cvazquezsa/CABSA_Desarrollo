@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=ContPolizaCierre
+Nombre=<T>Póliza de Cierre<T>
+Icono=5
+TipoMensaje=Precaución
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=125
+PosicionInicialAncho=385
+PosicionInicialIzquierda=319
+PosicionInicialArriba=321
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEscCerrar=S
+VentanaExclusiva=S
+Mensaje=<T>¿ Esta Seguro que desea Generar la Póliza de Cierre de <T>+EjercicioTrabajo+<T> ?<T>
+
+[Acciones.Salir]
+Nombre=Salir
+Boton=0
+NombreDesplegar=&Salir
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Acciones.Generar]
+Nombre=Generar
+Boton=0
+NombreDesplegar=&Generar
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Antes=S
+AntesExpresiones=ProcesarSQL(<T>spContPolizaCierre :nEstacion, :tEmp, :tMov, :tMoneda, :tCta, :tUsuario, :fFecha<T>, <BR>             EstacionTrabajo, Empresa, ConfigMov.ContCierre, Config.ContMoneda,  Config.CtaResultados, Usuario, FechaTrabajo)
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Generar
+Generar=Salir
+Salir=(Fin)

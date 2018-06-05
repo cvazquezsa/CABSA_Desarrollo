@@ -1,0 +1,36 @@
+[Tabla]
+Icono=0
+Clave=OportunidadPlantillaCat
+Archivo=OportunidadPlantillaCat
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=Categoria
+Nombre=OportunidadPlantillaCat
+Singular=OportunidadPlantillaCat
+LlavePrimaria=Categoria
+
+SQL=(Lista)
+[Categoria]
+Clave=Categoria
+Nombre=Categoria
+Tamano=50
+TamanoValidacion=50
+TipoDatos=Texto
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Categoria
+Categoria=CategoriaMaestra
+CategoriaMaestra=Icono
+Icono=(Fin)
+
+
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Categoria
+Categoria=FROM OportunidadPlantillaCat
+FROM OportunidadPlantillaCat=(Fin)

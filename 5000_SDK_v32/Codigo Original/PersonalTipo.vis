@@ -1,0 +1,37 @@
+[Vista]
+Icono=0
+Clave=PersonalTipo
+Nombre=Tipos Personal
+Modulos=(Todos)
+Singular=Tipo Personal
+ListaTablas=PersonalTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=PersonalTipo
+UsarJOIN=S
+SQL=SELECT<BR>  PersonalTipo.Tipo,<BR>  PersonalTipo.Orden<BR><BR>FROM<BR>  PersonalTipo
+
+[PersonalTipo.Tipo]
+Clave=PersonalTipo.Tipo
+LigaTabla=PersonalTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo
+
+[PersonalTipo.Orden]
+Clave=PersonalTipo.Orden
+LigaTabla=PersonalTipo
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[Vista.ListaCampos]
+(Inicio)=PersonalTipo.Tipo
+PersonalTipo.Tipo=PersonalTipo.Orden
+PersonalTipo.Orden=(Fin)

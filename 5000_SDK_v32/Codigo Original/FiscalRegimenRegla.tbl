@@ -1,0 +1,291 @@
+
+[Tabla]
+Icono=0
+Clave=FiscalRegimenRegla
+Archivo=FiscalRegimenRegla
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+Nombre=Reglas
+Singular=Regla
+LlavePrimaria=ID
+ControlID=S
+ControlEstatus=S
+CampoID=ID
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[VigenciaD]
+Clave=VigenciaD
+Nombre=Vigencia Desde
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+Requerido=S
+[VigenciaA]
+Clave=VigenciaA
+Nombre=Vigencia Hasta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+[FiscalRegimenEmpresa]
+Clave=FiscalRegimenEmpresa
+Nombre=Régimen Fiscal Empresa
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalRegimen
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+Mayusculas=S
+Requerido=S
+[FiscalRegimenCliente]
+Clave=FiscalRegimenCliente
+Nombre=Régimen Fiscal Cliente
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalRegimen
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+[FiscalRegimenProveedor]
+Clave=FiscalRegimenProveedor
+Nombre=Régimen Fiscal Proveedor
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalRegimen
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+[TipoImpuesto]
+Clave=TipoImpuesto
+Nombre=Tipo Impuesto
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT TipoImpuesto FROM TipoImpuesto)+NuevaLinea+Lista(<T>(Impuesto 1)<T>, <T>(Impuesto 2)<T>, <T>(Impuesto 3)<T>, <T>(Impuesto 4)<T>,<T>(Retencion 1)<T>, <T>(Retencion 2)<T>, <T>(Retencion 3)<T>)
+[TipoImpuestoNuevo]
+Clave=TipoImpuestoNuevo
+Nombre=Tipo Impuesto Nuevo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoImpuesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+
+
+
+
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo Especifico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Módulos
+[Mov]
+Clave=Mov
+Nombre=Movimiento Especifico
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos( Modulo )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[FiscalZonaCliente]
+Clave=FiscalZonaCliente
+Nombre=Zona Fiscal Cliente
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalZona
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+AyudaMemEnBlanco=S
+[FiscalZonaProveedor]
+Clave=FiscalZonaProveedor
+Nombre=Zona Fiscal Proveedor
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalZona
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+AyudaMemRenglones=12
+[FiscalZonaEmpresa]
+Clave=FiscalZonaEmpresa
+Nombre=Zona Fiscal Empresa
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FiscalZona
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+
+Requerido=S
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Nombre
+Nombre=Descripcion
+Descripcion=VigenciaD
+VigenciaD=VigenciaA
+VigenciaA=Estatus
+Estatus=FiscalRegimenEmpresa
+FiscalRegimenEmpresa=FiscalRegimenCliente
+FiscalRegimenCliente=FiscalRegimenProveedor
+FiscalRegimenProveedor=TipoImpuesto
+TipoImpuesto=TipoImpuestoNuevo
+TipoImpuestoNuevo=Modulo
+Modulo=Mov
+Mov=FiscalZonaCliente
+FiscalZonaCliente=FiscalZonaProveedor
+FiscalZonaProveedor=FiscalZonaEmpresa
+FiscalZonaEmpresa=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=Nombre,
+Nombre,=Descripcion,
+Descripcion,=VigenciaD,
+VigenciaD,=VigenciaA,
+VigenciaA,=Estatus,
+Estatus,=Modulo,
+Modulo,=Mov,
+Mov,=FiscalRegimenEmpresa,
+FiscalRegimenEmpresa,=FiscalRegimenCliente,
+FiscalRegimenCliente,=FiscalRegimenProveedor,
+FiscalRegimenProveedor,=TipoImpuesto,
+TipoImpuesto,=TipoImpuestoNuevo,
+TipoImpuestoNuevo,=FiscalZonaCliente,
+FiscalZonaCliente,=FiscalZonaProveedor,
+FiscalZonaProveedor,=FiscalZonaEmpresa
+FiscalZonaEmpresa=FROM FiscalRegimenRegla
+FROM FiscalRegimenRegla=(Fin)

@@ -1,0 +1,95 @@
+[Dialogo]
+Clave=MenuHerramientaSincroSSB
+Nombre=Sincronización
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=227
+PosicionInicialIzquierda=462
+PosicionInicialArriba=334
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+
+[Acciones.Sincro]
+Nombre=Sincro
+Boton=0
+NombreDesplegar=&Sincronizar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=EjecutarSQL(<T>spSincroSSB_Sincronizar<T>)
+VisibleCondicion=SQL(<T>SELECT Sucursal FROM Version<T>)>0
+
+[Acciones.TRCL]
+Nombre=TRCL
+Boton=0
+NombreDesplegar=Solicitar &TRCL
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+ConfirmarAntes=S
+DialogoMensaje=EstaSeguro
+Expresion=EjecutarSQLLocal(<T>spSincroSSB_SolicitarTRCL<T>)
+VisibleCondicion=SQL(<T>SELECT TRCL FROM Version<T>)
+
+[Acciones.Errores]
+Nombre=Errores
+Boton=0
+NombreDesplegar=Ver &Errores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VerSincroSSBOk
+Activo=S
+Visible=S
+
+[Acciones.Bitacora]
+Nombre=Bitacora
+Boton=0
+NombreDesplegar=Ver &Bitácora
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VerSincroSSBLog
+
+[Acciones.Solicitud]
+Nombre=Solicitud
+Boton=0
+NombreDesplegar=Ver &Solicitudes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VerSincroSSBSolicitud
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Acciones.TRCLPRUE]
+Nombre=TRCLPRUE
+Boton=0
+NombreDesplegar=Solicitar Prueba TRCL
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=EjecutarSQLLocal(<T>spSincroSSB_SolicitarPrueba<T>)
+VisibleCondicion=SQL(<T>SELECT TRCL FROM Version<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Sincro
+Sincro=TRCL
+TRCL=TRCLPRUE
+TRCLPRUE=Solicitud
+Solicitud=Bitacora
+Bitacora=Errores
+Errores=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AgendaHora
+Nombre=Horas
+Modulos=(Todos)
+Singular=Hora
+ListaTablas=AgendaHora
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AgendaHora.Hora
+TablaPrincipal=AgendaHora
+UsarJOIN=S
+SQL=SELECT<BR>  AgendaHora.Hora<BR><BR>FROM<BR>  AgendaHora
+
+[AgendaHora.Hora]
+Clave=AgendaHora.Hora
+LigaTabla=AgendaHora
+LigaCampo=Hora
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=Hora

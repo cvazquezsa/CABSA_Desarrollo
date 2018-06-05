@@ -1,0 +1,63 @@
+
+[Dialogo]
+Clave=MenuFiscalAvanzado
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=500
+
+
+[Acciones.FiscalAvanzado]
+Nombre=FiscalAvanzado
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Módulo Fiscal Avanzado
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+Expresion=Asigna(Info.Ruta, SQL(<T>SELECT InterfazExentus FROM Version<T>))<BR>Asigna(Info.Contrasena, SQL(<T>SELECT InterfazExentus2 FROM Version<T>))<BR>Asigna(Info.Nombre2, <T>SN=<T> + SQL(<T>SELECT @@SERVERNAME<T>) + <T>~DBN=<T> + BaseDatos + <T>~UN=<T> + SQL(<T>SELECT SUSER_SNAME()<T>) + <T>~P=<T>  + Info.Contrasena + <T>~E=<T> +  Empresa + <T>~S=<T> + Sucursal + <T>~U=<T> + Usuario )<BR>Asigna(Info.Nombre, Info.Ruta + <T> <T> + Info.Nombre2)<BR>Ejecutar(Info.Nombre)
+[Acciones.PerfilesUsuario]
+Nombre=PerfilesUsuario
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Perfiles de Usuario
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Ruta, SQL(<T>SELECT AccesoInterfazExentus FROM Version<T>))<BR>Asigna(Info.Contrasena, SQL(<T>SELECT InterfazExentus2 FROM Version<T>))<BR>Asigna(Info.Nombre2, <T>SN=<T> + SQL(<T>SELECT @@SERVERNAME<T>) + <T>~DBN=<T> + BaseDatos + <T>~UN=<T> + SQL(<T>SELECT SUSER_SNAME()<T>) + <T>~P=<T>  + Info.Contrasena + <T>~E=<T> +  Empresa + <T>~S=<T> + Sucursal + <T>~U=<T> + Usuario )<BR>Asigna(Info.Nombre, Info.Ruta + <T> <T> + Info.Nombre2)<BR>Ejecutar(Info.Nombre)
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=FiscalAvanzado
+FiscalAvanzado=PerfilesUsuario
+PerfilesUsuario=(Fin)

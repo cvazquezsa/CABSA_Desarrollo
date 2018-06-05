@@ -1,0 +1,107 @@
+
+[Dialogo]
+Clave=GenerarPCPEstructura
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+PosicionInicialIzquierda=387
+PosicionInicialArriba=286
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=250
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+VentanaConIcono=S
+[Acciones.EstructuraAprobada]
+Nombre=EstructuraAprobada
+Boton=0
+NombreDesplegar=Generar Estructura &Aprobada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPEstructuraAprobada FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.GenerarCatalogo]
+Nombre=GenerarCatalogo
+Boton=0
+NombreDesplegar=Generar &Catálogo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Antes=S
+Visible=S
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPCatalogo FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.EliminacionCatalogo]
+Nombre=EliminacionCatalogo
+Boton=0
+NombreDesplegar=Generar &Eliminación Catálogo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPEliminacionCatalogo FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+[Acciones.ModificacionCatalogo]
+Nombre=ModificacionCatalogo
+Boton=0
+NombreDesplegar=Generar Catálogo &Modificado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, SQL(<T>SELECT PCPModificacionCatalogo FROM EmpresaCfgMovPCP WHERE Empresa = :tEmpresa<T>,Empresa), Afectar.FormaCaptura)
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarCatalogo
+GenerarCatalogo=ModificacionCatalogo
+ModificacionCatalogo=EliminacionCatalogo
+EliminacionCatalogo=EstructuraAprobada
+EstructuraAprobada=(Fin)

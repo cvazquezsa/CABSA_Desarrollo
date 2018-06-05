@@ -1,0 +1,214 @@
+[Tabla]
+Icono=0
+Clave=CtaMov
+Archivo=CtaMov
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Movimientos
+Singular=Movimiento
+LlavePrimaria=Cuenta<BR>ID
+ControlID=S
+CampoID=ID
+CampoMov=Mov
+ControlCuenta=S
+CampoCuenta=Cuenta
+SQL=SELECT<BR>  Cuenta,<BR>  ID,<BR>  Modulo,<BR>  Mov,<BR>  Debe,<BR>  Haber,<BR>  Concepto,<BR>  Clase,<BR>  SubClase,<BR>  ContactoTipo,<BR>  ContactoSubTipo,<BR>  ContactoNivel,<BR>  ContactoClave<BR><BR>FROM<BR>  CtaMov
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Cuenta
+TipoDatos=Texto
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Módulos
+ConRefrescar=S
+ListaRefrescar=Mov
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ValorRefrescar=<T><T>
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+TipoDatos=Texto
+
+[Debe]
+Clave=Debe
+Nombre=Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>Importe<T>, <T>Impuestos<T>, <T>Retenciones<T>, <T>Importe Total<T>)+<BR>Caso Modulo<BR>  Es <T>VTAS<T> Entonces NuevaLinea+<T>Costo Total<T><BR>  Es <T>CXC<T> Entonces NuevaLinea+<T>Diferencia Cambiaria<T><BR>  Es <T>CXP<T> Entonces NuevaLinea+<T>Diferencia Cambiaria<T><BR>Fin
+TipoDatos=Texto
+
+[Haber]
+Clave=Haber
+Nombre=Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>Importe<T>, <T>Impuestos<T>, <T>Retenciones<T>, <T>Importe Total<T>)+<BR>Caso Modulo<BR>  Es <T>VTAS<T> Entonces NuevaLinea+<T>Costo Total<T><BR>  Es <T>CXC<T> Entonces NuevaLinea+<T>Diferencia Cambiaria<T><BR>  Es <T>CXP<T> Entonces NuevaLinea+<T>Diferencia Cambiaria<T><BR>Fin
+TipoDatos=Texto
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaConceptos( Modulo, Mov )
+TipoDatos=Texto
+
+[Clase]
+Clave=Clase
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,Modulo)
+TipoDatos=Texto
+
+[SubClase]
+Clave=SubClase
+Nombre=Subclasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>, Modulo, Clase)
+TipoDatos=Texto
+
+[ContactoTipo]
+Clave=ContactoTipo
+Nombre=Tipo Contacto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ListaOpciones=(Lista)
+
+[ContactoSubTipo]
+Clave=ContactoSubTipo
+Nombre=Sub Tipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Caso ContactoTipo<BR>  Es <T>Cliente<T>   Entonces SQLEnLista(<T>SELECT Tipo FROM CteTipo<T>) <BR>  Es <T>Proveedor<T> Entonces SQLEnLista(<T>SELECT Tipo FROM ProvTipo<T>) <BR>  Es <T>Agente<T>    Entonces SQLEnLista(<T>SELECT Tipo FROM AgenteTipo<T>)<BR>  Es <T>Personal<T>  Entonces SQLEnLista(<T>SELECT Tipo FROM PersonalTipo<T>) <BR>  Es <T>Almacen<T>   Entonces Lista(<T>Normal<T>, <T>Proceso<T>, <T>Activos Fijos<T>, <T>Garantias<T>)<BR>Fin
+
+[ContactoNivel]
+Clave=ContactoNivel
+Nombre=Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[ContactoClave]
+Clave=ContactoClave
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+AyudaRefrescar=S
+Formula=Caso<BR>  ContactoNivel<BR>  Es <T>Sub Tipo<T> Entonces<BR>    Caso ContactoTipo<BR>      Es <T>Cliente<T>   Entonces SQLEnLista(<T>SELECT Tipo FROM CteTipo<T>) <BR>      Es <T>Proveedor<T> Entonces SQLEnLista(<T>SELECT Tipo FROM ProvTipo<T>) <BR>      Es <T>Agente<T>    Entonces SQLEnLista(<T>SELECT Tipo FROM AgenteTipo<T>)<BR>      Es <T>Personal<T>  Entonces SQLEnLista(<T>SELECT Tipo FROM PersonalTipo<T>) <BR>      Es <T>Almacen<T>   Entonces Lista(<T>Normal<T>, <T>Proceso<T>, <T>Activos Fijos<T>, <T>Garantias<T>)<BR>      Es <T>Empresa<T>   Entonces Lista(<T><T>)<BR>    Fin<BR><BR>  Es <T>Rama<T> Entonces<BR>    Caso ContactoTipo<BR>      Es <T>Cliente<T>   Entonces SQLEnLista(<T>SELECT DISTINCT Rama FROM Cte<T>) <BR>      Es <T>Proveedor<T> Entonces SQLEnLista(<T>SELECT DISTINCT Rama FROM Prov<T>) <BR>      Es <T>Agente<T>    Entonces Lista(<T><T>)<BR>      Es <T>Personal<T>  Entonces SQLEnLista(<T>SELECT DISTINCT ReportaA FROM Personal<T>) <BR>      Es <T>Almacen<T>   Entonces SQLEnLista(<T>SELECT DISTINCT Rama FROM Alm<T>)<BR>      Es <T>Empresa<T>   Entonces Lista(<T><T>)<BR>    Fin<BR><BR>  Es <T>Clave<T> Entonces<BR>    Caso ContactoTipo<BR>      Es <T>Cliente<T>   Entonces SQLEnLista(<T>SELECT Cliente FROM Cte<T>)       <BR>      Es <T>Proveedor<T> Entonces SQLEnLista(<T>SELECT Proveedor FROM Prov<T>) <BR>      Es <T>Agente<T>    Entonces SQLEnLista(<T>SELECT Agente FROM Agente<T>)<BR>      Es <T>Personal<T>  Entonces SQLEnLista(<T>SELECT Personal FROM Personal<T>) <BR>      Es <T>Almacen<T>   Entonces SQLEnLista(<T>SELECT Almacen FROM Alm<T>)<BR>      Es <T>Empresa<T>   Entonces SQLEnLista(<T>SELECT Empresa FROM Empresa<T>)<BR>    Fin<BR>Fin
+
+[Tabla.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=ID
+ID=Modulo
+Modulo=Mov
+Mov=Concepto
+Concepto=Clase
+Clase=SubClase
+SubClase=ContactoTipo
+ContactoTipo=ContactoSubTipo
+ContactoSubTipo=ContactoNivel
+ContactoNivel=ContactoClave
+ContactoClave=Debe
+Debe=Haber
+Haber=(Fin)
+
+[ContactoTipo.ListaOpciones]
+(Inicio)=Cliente
+Cliente=Proveedor
+Proveedor=Agente
+Agente=Personal
+Personal=Almacen
+Almacen=Empresa
+Empresa=(Fin)
+
+[ContactoNivel.ListaOpciones]
+(Inicio)=Sub Tipo
+Sub Tipo=Rama
+Rama=Clave
+Clave=(Fin)

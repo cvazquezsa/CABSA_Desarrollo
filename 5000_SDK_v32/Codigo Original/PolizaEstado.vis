@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PolizaEstado
+Nombre=Estados
+Modulos=(Todos)
+Singular=Estado
+ListaTablas=PolizaEstado
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PolizaEstado.PolizaEstado
+TablaPrincipal=PolizaEstado
+UsarJOIN=S
+SQL=SELECT<BR>  PolizaEstado.PolizaEstado<BR><BR>FROM<BR>  PolizaEstado
+
+[PolizaEstado.PolizaEstado]
+Clave=PolizaEstado.PolizaEstado
+LigaTabla=PolizaEstado
+LigaCampo=PolizaEstado
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=PolizaEstado

@@ -1,0 +1,58 @@
+
+[Vista]
+Icono=0
+Clave=FormaPagoAcceso
+Nombre=FormaPagoAcceso
+Modulos=(Todos)
+Singular=FormaPagoAcceso
+ListaTablas=FormaPagoAcceso
+TablaPrincipal=FormaPagoAcceso
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[FormaPagoAcceso.FormaPago]
+Clave=FormaPagoAcceso.FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ValorPorOmision=Info.FormaPago
+LigaTabla=FormaPagoAcceso
+LigaCampo=FormaPago
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FormaPago
+
+[FormaPagoAcceso.Nivel]
+Clave=FormaPagoAcceso.Nivel
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Nivel FROM NivelAcceso ORDER BY Orden<T>)
+LigaTabla=FormaPagoAcceso
+LigaCampo=Nivel
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Nivel
+
+[Vista.ListaCampos]
+(Inicio)=FormaPagoAcceso.FormaPago
+FormaPagoAcceso.FormaPago=FormaPagoAcceso.Nivel
+FormaPagoAcceso.Nivel=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=FormaPagoAcceso.FormaPago,
+FormaPagoAcceso.FormaPago,=FormaPagoAcceso.Nivel
+FormaPagoAcceso.Nivel=FROM FormaPagoAcceso
+FROM FormaPagoAcceso=(Fin)

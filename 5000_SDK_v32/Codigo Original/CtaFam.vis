@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CtaFam
+Nombre=Familias
+Modulos=(Todos)
+Singular=Familia
+ListaTablas=CtaFam
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CtaFam.Familia
+TablaPrincipal=CtaFam
+UsarJOIN=S
+SQL=SELECT<BR>  CtaFam.Familia<BR><BR>FROM<BR>  CtaFam
+
+[CtaFam.Familia]
+Clave=CtaFam.Familia
+LigaTabla=CtaFam
+LigaCampo=Familia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Familia

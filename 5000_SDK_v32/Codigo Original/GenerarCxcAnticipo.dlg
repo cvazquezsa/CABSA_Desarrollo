@@ -1,0 +1,61 @@
+[Dialogo]
+Clave=GenerarCxcAnticipo
+Nombre=Info.TituloDialogo
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=526
+PosicionInicialArriba=429
+PosicionInicialAltura=165
+PosicionInicialAncho=228
+VentanaConIcono=S
+PosicionInicialAlturaCliente=138
+
+[Acciones.Aplicacion]
+Nombre=Aplicacion
+Boton=0
+NombreDesplegar=Generar &Aplicación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcAplicacion, Afectar.FormaCaptura)
+
+[Acciones.Devolucion]
+Nombre=Devolucion
+Boton=0
+NombreDesplegar=Generar &Devolución
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcDevolucion, Afectar.FormaCaptura)
+
+[Acciones.Reasignacion]
+Nombre=Reasignacion
+Boton=0
+NombreDesplegar=Generar &Reasignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcReasignacionAnticipo, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Aplicacion
+Aplicacion=Reasignacion
+Reasignacion=Devolucion
+Devolucion=(Fin)

@@ -1,0 +1,79 @@
+[Tabla]
+Icono=0
+Clave=PeriodoTipo
+Archivo=PeriodoTipo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tipos Periodos
+Singular=Tipo Periodo
+LlavePrimaria=PeriodoTipo
+
+SQL=(Lista)
+[PeriodoTipo]
+Clave=PeriodoTipo
+Nombre=Periodo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Requerido=S
+AyudaEnCaptura=Expresion
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+Formula=Lista(<T>(sin Periodo)<T>,<T>Semanal<T>,<T>Decenal<T>,<T>Catorcenal<T>,<T>Quincenal<T>,<T>Mensual<T>,<T>Anual<T>) + Si(Empresa.Pais = <T>Venezuela<T>, NuevaLinea + Lista(<T>Vacaciones<T>))
+[DiasPeriodo]
+Clave=DiasPeriodo
+Nombre=Días Periodo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si Empresa.Pais <> <T>Venezuela<T> Entonces<BR>  Caso  PeriodoTipo<BR>    Es <T>Semanal<T> Entonces 7<BR>    Es <T>Decenal<T> Entonces 10<BR>    Es <T>Catorcenal<T> Entonces 14<BR>    Es <T>Quincenal<T> Entonces 15<BR>    Es <T>Mensual<T> Entonces 30<BR>    Es <T>Anual<T> Entonces 365<BR>  Fin<BR>Sino<BR>  Caso  PeriodoTipo<BR>    Es <T>Semanal<T> Entonces 7<BR>    Es <T>Decenal<T> Entonces 10<BR>    Es <T>Catorcenal<T> Entonces 14<BR>    Es <T>Quincenal<T> Entonces 15<BR>    Es <T>Mensual<T> Entonces 30<BR>    Es <T>Anual<T> Entonces 365<BR>    Es <T>Vacaciones<T> Entonces 25<BR>  Fin<BR>Fin
+Requerido=S
+
+[DiasHabiles]
+Clave=DiasHabiles
+Nombre=Días Hábiles
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si Empresa.Pais = <T>Venezuela<T> Entonces<BR>  Caso  PeriodoTipo<BR>    Es <T>Semanal<T> Entonces 6<BR>    Es <T>Decenal<T> Entonces 8.5<BR>    Es <T>Catorcenal<T> Entonces 10<BR>    Es <T>Quincenal<T> Entonces 11<BR>    Es <T>Mensual<T> Entonces 22<BR>    Es <T>Anual<T> Entonces 261<BR>    Es <T>Vacaciones<T> Entonces 10<BR>  Fin<BR> Sino<BR>  Caso  PeriodoTipo<BR>    Es <T>Semanal<T> Entonces 6<BR>    Es <T>Decenal<T> Entonces 8.5<BR>    Es <T>Catorcenal<T> Entonces 10<BR>    Es <T>Quincenal<T> Entonces 11<BR>    Es <T>Mensual<T> Entonces 22<BR>    Es <T>Anual<T> Entonces 261<BR>  Fin<BR>Fin
+Requerido=S
+
+[UltimoDiaPagado]
+Clave=UltimoDiaPagado
+Nombre=Ultimo día pagado
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+ValorPorOmision=Hoy
+Requerido=S
+
+
+
+
+[PeriodoTipo.ListaRefrescar]
+(Inicio)=DiasPeriodo
+DiasPeriodo=DiasHabiles
+DiasHabiles=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=PeriodoTipo
+PeriodoTipo=DiasPeriodo
+DiasPeriodo=DiasHabiles
+DiasHabiles=UltimoDiaPagado
+UltimoDiaPagado=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  PeriodoTipo,
+  PeriodoTipo,=  DiasPeriodo,
+  DiasPeriodo,=  DiasHabiles,
+  DiasHabiles,=  UltimoDiaPagado
+  UltimoDiaPagado=FROM
+FROM=  PeriodoTipo
+  PeriodoTipo=(Fin)

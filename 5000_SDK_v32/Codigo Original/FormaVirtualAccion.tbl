@@ -1,0 +1,76 @@
+[Tabla]
+Icono=0
+Clave=FormaVirtualAccion
+Archivo=FormaVirtualAccion
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Acciones
+Singular=Acción
+LlavePrimaria=FormaVirtual<BR>Accion
+SQL=SELECT<BR>  FormaVirtual,<BR>  Accion,<BR>  Nombre,<BR>  Etiqueta,<BR>  Visible,<BR>  Activo<BR><BR>FROM<BR>  FormaVirtualAccion
+
+[FormaVirtual]
+Clave=FormaVirtual
+Nombre=Sub Forma
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Etiqueta]
+Clave=Etiqueta
+Nombre=Etiqueta
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Accion]
+Clave=Accion
+Nombre=Acción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+[Visible]
+Clave=Visible
+Nombre=Visible
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[Activo]
+Clave=Activo
+Nombre=Activo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=FormaVirtual
+FormaVirtual=Accion
+Accion=Nombre
+Nombre=Etiqueta
+Etiqueta=Visible
+Visible=Activo
+Activo=(Fin)

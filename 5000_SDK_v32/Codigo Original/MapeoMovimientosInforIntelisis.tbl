@@ -1,0 +1,173 @@
+
+[Tabla]
+Icono=0
+Clave=MapeoMovimientosInforIntelisis
+Nombre=MapeoMovimientosInforIntelisis
+Archivo=MapeoMovimientosInforIntelisis
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=INFORMov
+CampoMov=Mov
+SQL=(Lista)
+[Mov]
+Clave=Mov
+Nombre=Movimiento Intelisis
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+ListaRefrescar=Modulo
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Clave IN (:tClave,:tClave2,:tClave3,:tClave4,:tClave5,:tClav6,:tClav7,:tClav8,:tClave9) and Modulo = :tClave10<T>,<T>INV.E<T>,<T>INV.S<T>,<T>COMS.O<T>,<T>INV.SOL<T>,<T>COMS.F<T>,<T>INV.OT<T>,<T>INV.EP<T>,<T>INV.EST<T>,<T>INV.T<T>, Modulo)
+[INFORMov]
+Clave=INFORMov
+Nombre=Movimiento Factory
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Mov.ListaOpciones]
+(Inicio)=Entrada Diversa
+Entrada Diversa=Salida Diversa
+Salida Diversa=Salida Por Rechazo
+Salida Por Rechazo=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[INFORMov.ListaOpciones]
+(Inicio)=Entrada Diversa
+Entrada Diversa=Salida Diversa
+Salida Diversa=Salida Por Rechazo
+Salida Por Rechazo=Entrada Por Rechazo
+Entrada Por Rechazo=Orden Compra
+Orden Compra=Costos
+Costos=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+
+
+AyudaEnCaptura=Expresion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RefrescarTodo=
+
+
+
+
+
+
+
+
+
+
+ConRefrescar=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RefrescarTodoCondiciones=
+
+
+Formula=SQLEnLista(<T>SELECT Modulo FROM MovTipo WHERE Clave IN (:tClave,:tClave2,:tClave3,:tClave4) GROUP BY Modulo<T>,<T>INV.E<T>,<T>INV.S<T>,<T>COMS.O<T>,<T>INV.SOL<T>)
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=INFORMov
+INFORMov=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Mov,
+Mov,=INFORMov,
+INFORMov,=Modulo
+Modulo=FROM MapeoMovimientosInforIntelisis
+FROM MapeoMovimientosInforIntelisis=(Fin)

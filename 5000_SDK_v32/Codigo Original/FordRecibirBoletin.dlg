@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=FordRecibirBoletin
+Nombre=Boletín
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=403
+PosicionInicialArriba=310
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=217
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+
+[Acciones.Parcial]
+Nombre=Parcial
+Boton=0
+NombreDesplegar=Actualización &Parcial
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>BOLPRE*<T>, <T>TXT<T>, <T>Datos<T>, <T>Datos<T>)), ProcesarSQL(<T>spFordBoletin :tEmp, :tUsr, :nSuc, :nEstacion, :fFecha, 0<T>,  Empresa, Usuario, Sucursal, EstacionTrabajo, FechaTrabajo))
+
+[Acciones.Total]
+Nombre=Total
+Boton=0
+NombreDesplegar=Actualización &Total
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si(RegistrarLista(LeerLista(General.FordDirectorioEntrada, <T>BOLPRE*<T>, <T>TXT<T>, <T>Datos<T>, <T>Datos<T>)), ProcesarSQL(<T>spFordBoletin :tEmp, :tUsr, :nSuc, :nEstacion, :fFecha, 1<T>,  Empresa, Usuario, Sucursal, EstacionTrabajo, FechaTrabajo))
+
+[Dialogo.ListaAcciones]
+(Inicio)=Parcial
+Parcial=Total
+Total=(Fin)

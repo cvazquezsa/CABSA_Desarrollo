@@ -1,0 +1,36 @@
+[Tabla]
+Icono=0
+Clave=PropTipo
+Archivo=PropTipo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos
+Singular=Tipo
+LlavePrimaria=Tipo<BR>Categoria
+SQL=SELECT<BR>  Tipo,<BR>  Categoria<BR><BR>FROM<BR>  PropTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Nombre
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+AyudaMemTabla=PropCat
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Categoria
+Categoria=(Fin)

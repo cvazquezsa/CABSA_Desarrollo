@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=NominaConceptoEstado
+Archivo=NominaConceptoEstado
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Estados
+Singular=Estado
+LlavePrimaria=NominaConcepto<BR>Estado
+SQL=SELECT<BR>  NominaConcepto,<BR>  Estado,<BR>  GravaImpuestoEstatal<BR><BR>FROM<BR>  NominaConceptoEstado
+
+[NominaConcepto]
+Clave=NominaConcepto
+Nombre=NominaConcepto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.NominaConcepto
+
+[Estado]
+Clave=Estado
+Nombre=Estado
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PaisEstadoMexico
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[GravaImpuestoEstatal]
+Clave=GravaImpuestoEstatal
+Nombre=Grava Impuesto Estatal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Si<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=NominaConcepto
+NominaConcepto=Estado
+Estado=GravaImpuestoEstatal
+GravaImpuestoEstatal=(Fin)
+
+[GravaImpuestoEstatal.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=(Fin)

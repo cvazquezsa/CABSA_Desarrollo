@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=EstaSeguroTraspasarMovimientos
+Nombre=Traspasar Movimientos
+Icono=7
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=481
+PosicionInicialIzquierda=271
+PosicionInicialArriba=291
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+Mensaje=<T>PRECAUCIONES: <T>+NuevaLinea+NuevaLinea+<BR><T> - Esta Herramienta NO debe Ejecutarse si Maneja Sucursales Sincronizadas<T>+NuevaLinea+<BR><T> - Una vez ejecutada NO hay posibilidades de Regresar al Estado Anterior<T>+NuevaLinea+<BR><T> - Es muy Importante Realizar un Respaldo Antes de Ejecutar esta Opción.<T>+NuevaLinea+<BR>NuevaLinea+NuevaLinea+<T>¿ Desea Continuar ?<T>
+
+[Acciones.Si]
+Nombre=Si
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+
+[Acciones.No]
+Nombre=No
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=No
+No=Si
+Si=(Fin)

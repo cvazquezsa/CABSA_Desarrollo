@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=MenuExpCR
+Nombre=Cajas Registradoras
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=286
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=369
+PosicionInicialArriba=310
+VentanaConIcono=S
+
+[Acciones.Movimientos]
+Nombre=Movimientos
+Boton=0
+NombreDesplegar=&Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarCR
+Activo=S
+Visible=S
+
+[Acciones.Detalle]
+Nombre=Detalle
+Boton=0
+NombreDesplegar=Movimientos (&Detalle)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarCRD
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Movimientos
+Movimientos=Detalle
+Detalle=(Fin)

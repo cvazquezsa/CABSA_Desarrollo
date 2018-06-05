@@ -1,0 +1,91 @@
+[Dialogo]
+Clave=GenerarAutoOrdenMantenimiento
+Nombre=Afectar.Mov
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=374
+PosicionInicialArriba=274
+PosicionInicialAltura=333
+PosicionInicialAncho=275
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Reservar
+ActivoCondicion=Usuario.Reservar
+Visible=S
+
+[Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesReservar
+ActivoCondicion=Usuario.DesReservar
+Visible=S
+
+[Acciones.OrdenReparacionInterna]
+Nombre=OrdenReparacionInterna
+Boton=0
+NombreDesplegar=Generar Orden Reparación &Interna
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Orden Reparacion Int<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.OrdenReparacionExterna]
+Nombre=OrdenReparacionExterna
+Boton=0
+NombreDesplegar=Generar Orden Reparación &Externa
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Orden Reparacion Ext<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Acciones.OrdenReparacionTerceros]
+Nombre=OrdenReparacionTerceros
+Boton=0
+NombreDesplegar=Generar Orden Reparación &Terceros
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Orden Reparacion Ter<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Dialogo.ListaAcciones]
+(Inicio)=OrdenReparacionInterna
+OrdenReparacionInterna=OrdenReparacionExterna
+OrdenReparacionExterna=OrdenReparacionTerceros
+OrdenReparacionTerceros=Reservar
+Reservar=DesReservar
+DesReservar=(Fin)

@@ -1,0 +1,244 @@
+[Tabla]
+Icono=0
+Clave=ObligacionFiscal
+Archivo=ObligacionFiscal
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Obligaciones Fiscales
+Singular=Obligación Fiscal
+LlavePrimaria=ObligacionFiscal
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+
+SQL=(Lista)
+[ObligacionFiscal]
+Clave=ObligacionFiscal
+Nombre=Obligación Fiscal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[Relaciones.CtaDestino]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta2
+Clave=CtaDestino
+TablaRemota=CtaDestino
+LlaveRemota=Cuenta
+
+[Acreedor]
+Clave=Acreedor
+Nombre=Acreedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Acreedor
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Condicion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.Acreedor]
+TipoRelacion=Opcional
+LlaveLocal=Acreedor
+Clave=Acreedor
+TablaRemota=Acreedor
+LlaveRemota=Proveedor
+
+[GenerarEn]
+Clave=GenerarEn
+Nombre=Generar en
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Flujo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FechaD]
+Clave=FechaD
+Nombre=Desde
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[FechaA]
+Clave=FechaA
+Nombre=Hasta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+
+
+[Tipo.ListaOpciones]
+(Inicio)=Impuesto 1
+Impuesto 1=Impuesto 2
+Impuesto 2=Impuesto 3
+Impuesto 3=Retencion 1
+Retencion 1=Retencion 2
+Retencion 2=Retencion 3
+Retencion 3=Base 2
+Base 2=Base 3
+Base 3=(Otros)
+(Otros)=(Fin)
+
+[GenerarEn.ListaOpciones]
+(Inicio)=No
+No=Emision
+Emision=Flujo
+Flujo=(Fin)
+
+
+
+
+
+
+
+
+
+
+[Regimen]
+Clave=Regimen
+Nombre=Régimen Fiscal
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=30
+AyudaEnCaptura=Expresion
+
+
+
+
+
+
+
+AyudaMemOpc=Consulta opcional
+
+
+
+ValidacionConCondiciones=S
+
+
+
+
+
+
+
+
+
+
+
+
+Requerido=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ValidacionCondicion=SI(((SQL(<T>IF NOT EXISTS(SELECT * FROM FiscalRegimen WHERE FiscalRegimen = :tRegimen) SELECT 0 ELSE SELECT 1<T>,Regimen) = 0) Y (Regimen <> <T>(Todos)<T>)) o (No ConDatos(Regimen)),Falso,Verdadero)
+Formula=Lista(<T>(Todos)<T>) & NuevaLinea & SQLENLISTA(<T>SELECT FiscalRegimen FROM FiscalRegimen<T>)
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ObligacionFiscal
+ObligacionFiscal=Tipo
+Tipo=Orden
+Orden=Acreedor
+Acreedor=Condicion
+Condicion=GenerarEn
+GenerarEn=FechaD
+FechaD=FechaA
+FechaA=Regimen
+Regimen=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ObligacionFiscal,
+ObligacionFiscal,=Tipo,
+Tipo,=Orden,
+Orden,=Acreedor,
+Acreedor,=Condicion,
+Condicion,=GenerarEn,
+GenerarEn,=FechaD,
+FechaD,=FechaA,
+FechaA,=Regimen
+Regimen=FROM ObligacionFiscal
+FROM ObligacionFiscal=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Acreedor
+Acreedor=Cta
+Cta=CtaDestino
+CtaDestino=(Fin)

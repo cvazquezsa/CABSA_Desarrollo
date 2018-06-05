@@ -1,0 +1,43 @@
+[Tabla]
+Icono=0
+Clave=ArtFactor
+Archivo=ArtFactor
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Factores de Costos
+Singular=Factor de Costos
+LlavePrimaria=Factor
+CampoSugerido=Factor
+SQL=SELECT<BR>  Factor,<BR>  Importe<BR><BR>FROM<BR>  ArtFactor
+
+[Factor]
+Clave=Factor
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Mayusculas=
+Requerido=Si
+TipoDatos=Texto
+
+[Importe]
+Clave=Importe
+Nombre=Factor
+OpcionesColumnas=1
+TipoDatos=NumFlotante
+TamanoValidacion=10
+ValidacionCondicion=
+Formula=
+FormulaSQL=
+ListaOpciones=
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Factor
+Factor=Importe
+Importe=(Fin)

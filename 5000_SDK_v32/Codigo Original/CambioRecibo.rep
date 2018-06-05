@@ -1,0 +1,838 @@
+[Reporte]
+Clave=CambioRecibo
+Nombre=Recibo
+Icono=0
+Vista=VerCambioRecibo
+Menus=S
+BarraHerramientas=S
+MargenArriba=1
+MargenAbajo=0.5
+MargenIzquierdo=0.5
+MargenDerecho=0.5
+Orientacion=Vertical
+FuentePorOmision={Arial, 8, Negro, []}
+Ascii=
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=3
+AnchoPagina=21.6
+LargoPagina=35.6
+Parametros=S
+Columnas=1
+ListaAcciones=Cerrar
+PosicionInicialAltura=557
+PosicionInicialAncho=816
+ImprimirDirectamente=S
+FormatoSinConexion=S
+Tipo=Reporte
+PosicionInicialAlturaCliente=530
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Formato]
+ListaLineas=Encabezado<BR>Cliente<BR>Datos Cliente<BR>Detalle<BR>Espacio<BR>Total<BR>Encabezado<BR>Espacio<BR>Beneficiario<BR>Espacio<BR>Final<BR>Encabezado<BR>Cliente<BR>Datos Cliente<BR>Detalle<BR>Espacio<BR>Total
+VentanaIzquierda=0
+VentanaArriba=10
+VentanaAltura=580
+VentanaAncho=808
+PanelArriba=123
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=1.8
+AVertical=Centrado
+Visible=(GuiaZona=1) y (GuiaSeccion=1)
+Fuente={Arial, 10, Negro, []}
+Renglones=7
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=16
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+AnchoTexto=15
+CBTipo=UPC A
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=3.11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 14, Negro, [Negritas]}
+Expresion=MovID
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea2]
+Clave=Cliente
+Objetos=2
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.8
+AVertical=Centrado
+Visible=(GuiaZona=1) y (GuiaSeccion=2)
+Fuente={Arial, 12, Negro, [Negritas]}
+Renglones=1
+
+[Linea3]
+Clave=Datos Cliente
+Objetos=3
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=2.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Visible=(GuiaZona=1) y (GuiaSeccion=2)
+Renglones=6
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=2.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=
+AnchoTexto=15
+CBTipo=UPC A
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=14.2
+EstiloMarco=3
+FondoColor=Blanco
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>                            <T>+Direccion<BR><T>                            <T>+Colonia<BR><T>                            <T>+CodigoPostal+<T>,  <T>+Poblacion+<T>,  <T>+Estado<BR>Si(RFC > <T>1<T>,<T>                            RFC:  <T>+RFC,<T> <T>)
+AnchoTexto=15
+CBTipo=UPC A
+
+[B3]
+Celda=B3
+Alineacion=Derecha
+AnchoEnCm=1.8
+EstiloMarco=3
+FondoColor=Blanco
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Fecha:<T><BR>Si(FechaEmision <> Vencimiento,<T>Valor:<T>, <T> <T>)<BR><T>Atendio:<T><BR><T>Ruta:<T>
+AnchoTexto=15
+CBTipo=UPC A
+
+[C3]
+Celda=C3
+Alineacion=Izquierda
+AnchoEnCm=3.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+ExpresionMultiple=S
+Expresion=<T> <T>+FechaDMA(FechaEmision) <BR><T> <T>+Si(FechaEmision <> Vencimiento,FechaDMA(Vencimiento), <T> <T>)<BR><T> <T>+ SQL( <T>Select Usuario From Cambio Where Id = :nId<T>,  GuiaID ) <BR><T> <T>+Ruta
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea4]
+Clave=Detalle
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=6
+Visible=(GuiaZona=1) y (GuiaSeccion=3)
+Renglones=1
+
+[Linea5]
+Clave=Espacio
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.42
+AVertical=Centrado
+Visible=(GuiaZona=1) y (GuiaSeccion=4)
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+
+[Linea6]
+Clave=Total
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.61
+AVertical=Centrado
+Visible=(GuiaZona=1) y (GuiaSeccion=5)
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=N
+Objetos=1
+Renglones=2
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=2.8
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Tipo
+AnchoTexto=15
+CBTipo=UPC A
+
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=3.5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Moneda
+AnchoTexto=15
+CBTipo=UPC A
+
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=3.71
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(Tipo en (<T>Compra<T>,<T>Pago<T>), FormaPagoCompra, FormaPagoVenta) + <T>  (<T> + <BR>CtaDineroVenta + <T>)<T>
+AnchoTexto=15
+CBTipo=UPC A
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+AnchoEnCm=3.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto
+AnchoTexto=15
+CBTipo=UPC A
+
+[E4]
+Celda=E4
+Alineacion=Derecha
+AnchoEnCm=2
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=#,###.000000
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=TipoCambio
+AnchoTexto=11
+CBTipo=UPC A
+
+[F4]
+Celda=F4
+Alineacion=Derecha
+AnchoEnCm=3
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(TipoCambio <> 1, Monto*TipoCambio, <T> <T>)
+AnchoTexto=15
+CBTipo=UPC A
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=19.21
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+AnchoTexto=15
+CBTipo=UPC A
+
+[B2]
+Celda=B2
+Alineacion=Izquierda
+AnchoEnCm=13.79
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Nombre
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea7]
+Clave=Encabezado
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=2
+AVertical=Centrado
+Visible=(GuiaZona=2) y (GuiaSeccion =1)
+Fuente={Arial, 8, Negro, []}
+Objetos=3
+Renglones=2
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=16.11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+AnchoTexto=87
+CBTipo=UPC A
+
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=3.11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 14, Negro, [Negritas]}
+Expresion=MovID
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea8]
+Clave=Espacio
+Objetos=1
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=3
+AVertical=Centrado
+Visible=(GuiaZona= 2) y (GuiaSeccion =2)
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+
+[Linea9]
+Clave=Beneficiario
+Objetos=1
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Visible=(GuiaZona=2) y (GuiaSeccion=3)
+Marco=N
+Renglones=2
+
+[Linea10]
+Clave=Espacio
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.42
+AVertical=Centrado
+Visible=(GuiaZona=2) y (GuiaSeccion=4)
+Fuente={Arial, 8, Negro, []}
+Objetos=1
+Renglones=2
+
+[Linea11]
+Clave=Final
+Objetos=1
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=2.61
+AVertical=Centrado
+Visible=(GuiaZona=2) y (GuiaSeccion=5)
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=N
+Renglones=2
+
+[Linea12]
+Clave=Encabezado
+Objetos=2
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=2
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Visible=(GuiaZona=3) y (GuiaSeccion=1)
+Renglones=1
+
+[A12]
+Celda=A12
+Alineacion=Derecha
+AnchoEnCm=16.1
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+AnchoTexto=87
+CBTipo=UPC A
+
+[B12]
+Celda=B12
+Alineacion=Centrado
+AnchoEnCm=3.11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 14, Negro, [Negritas]}
+Expresion=MovID
+ExpresionMultiple=N
+AnchoTexto=17
+CBTipo=UPC A
+
+[Linea13]
+Clave=Cliente
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.8
+AVertical=Centrado
+Visible=(GuiaZona=3) y (GuiaSeccion=2)
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+Renglones=1
+
+[Linea14]
+Clave=Datos Cliente
+Seccion=Detalle
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=2.2
+AVertical=Centrado
+Visible=(GuiaZona=3) y (GuiaSeccion=2)
+Fuente={Arial, 8, Negro, []}
+Objetos=3
+Renglones=1
+
+[Linea15]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.4
+AVertical=Abajo
+Visible=(GuiaZona=3) y (GuiaSeccion=3)
+Fuente={Arial, 8, Negro, []}
+Marco=N
+Renglones=1
+
+[A13]
+Celda=A13
+Alineacion=Derecha
+AnchoEnCm=2.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+AnchoTexto=15
+CBTipo=UPC A
+
+[B13]
+Celda=B13
+Alineacion=Izquierda
+AnchoEnCm=13.9
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Nombre
+ExpresionMultiple=N
+AnchoTexto=75
+CBTipo=UPC A
+
+[C13]
+Celda=C13
+Alineacion=Izquierda
+AnchoEnCm=3
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=FechaDMA(FechaEmision)<BR>Usuario<BR>Ruta
+ExpresionMultiple=S
+
+[D13]
+Celda=D13
+Alineacion=Derecha
+AnchoEnCm=3.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto
+
+[E13]
+Celda=E13
+Alineacion=Derecha
+AnchoEnCm=2.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=#,.####
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=TipoCambio
+
+[F13]
+Celda=F13
+Alineacion=Derecha
+AnchoEnCm=3
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto*TipoCambio
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=2.79
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Tipo
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea16]
+Clave=Espacio
+Objetos=0
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.42
+AVertical=Centrado
+Visible=(GuiaZona=3) y (GuiaSeccion=4)
+Fuente={Arial, 8, Negro, []}
+Marco=N
+Renglones=1
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+AnchoEnCm=3.11
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=MovID
+AnchoTexto=15
+CBTipo=UPC A
+
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=14.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>                            <T>+Direccion<BR><T>                            <T>+Colonia<BR><T>                            <T>+CodigoPostal+<T>,  <T>+Poblacion+<T>,  <T>+Estado<BR>Si(RFC > <T>1<T>,<T>                            RFC:  <T>+RFC,<T> <T>)
+AnchoTexto=15
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[B14]
+Celda=B14
+Alineacion=Derecha
+AnchoEnCm=1.9
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Fecha:<T><BR>Si(FechaEmision <> Vencimiento,<T>Valor:<T>, <T> <T>)<BR><T>Atendio:<T><BR><T>Ruta:<T>
+ExpresionMultiple=S
+AnchoTexto=10
+CBTipo=UPC A
+
+[C14]
+Celda=C14
+Alineacion=Izquierda
+AnchoEnCm=3.11
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T> <T>+FechaDMA(FechaEmision) <BR><T> <T>+Si(FechaEmision <> Vencimiento,FechaDMA(Vencimiento), <T> <T>)<BR><T> <T>+SQL( <T>Select Usuario From Cambio Where Id = :nId<T>,  GuiaID ) <BR><T> <T>+Ruta
+ExpresionMultiple=S
+AnchoTexto=17
+CBTipo=UPC A
+
+[D14]
+Celda=D14
+Alineacion=Derecha
+AnchoEnCm=3.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto
+
+[E14]
+Celda=E14
+Alineacion=Derecha
+AnchoEnCm=2.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=#,.####
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=TipoCambio
+
+[F14]
+Celda=F14
+Alineacion=Derecha
+AnchoEnCm=3
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto*TipoCambio
+
+[A16]
+Celda=A16
+Alineacion=Derecha
+AnchoEnCm=19.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+
+[Linea17]
+Clave=Total
+Objetos=1
+Seccion=Detalle
+EstiloMarco=3
+FondoColor=Blanco
+AltoEnCm=0.61
+AVertical=Centrado
+Visible=(GuiaZona=3) y (GuiaSeccion=5)
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=S
+Renglones=1
+
+[A10]
+Celda=A10
+Alineacion=Derecha
+AnchoEnCm=19.21
+EstiloMarco=3
+FondoColor=Blanco
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+AnchoTexto=103
+CBTipo=UPC A
+
+[B15]
+Celda=B15
+Alineacion=Izquierda
+AnchoEnCm=3.5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Moneda
+AnchoTexto=15
+CBTipo=UPC A
+
+[C15]
+Celda=C15
+Alineacion=Izquierda
+AnchoEnCm=3.74
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(Tipo en (<T>Compra<T>,<T>Pago<T>), FormaPagoCompra, FormaPagoVenta) + <T>  (<T> + <BR>CtaDineroVenta + <T>)<T>
+AnchoTexto=15
+CBTipo=UPC A
+
+[D15]
+Celda=D15
+Alineacion=Derecha
+AnchoEnCm=3.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Monto
+AnchoTexto=15
+CBTipo=UPC A
+
+[E15]
+Celda=E15
+Alineacion=Derecha
+AnchoEnCm=2.21
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=#,####.000000
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=TipoCambio
+AnchoTexto=15
+CBTipo=UPC A
+
+[F15]
+Celda=F15
+Alineacion=Derecha
+AnchoEnCm=3
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(TipoCambio <> 1, Monto*TipoCambio, <T> <T>)
+AnchoTexto=15
+CBTipo=UPC A
+
+[A17]
+Celda=A17
+Alineacion=Derecha
+AnchoEnCm=19.21
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=N
+AnchoTexto=15
+CBTipo=UPC A
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=16.11
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+AnchoTexto=87
+CBTipo=UPC A
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=19.2
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+AnchoTexto=103
+CBTipo=UPC A
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=20.5
+ExpresionMultiple=S
+AnchoTexto=87
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={MS Serif, 6, Negro, []}
+Expresion=Si    Info2 > <T>.<T> Entonces <T>Amnt: <T> + NumEnTexto(Monto, <T>###,###.00<T>) + <T>   Bnf: <T> + Info1 + <T> <T> + Info2 + <T> <T> +Info3 + <T>  Thru: <T> + SQL(<T>select Institucion + Nombre   from institucionfin where institucion =:tinstitucion<T>,institucion) + <T>   Info: <T> + InfoAd1 + <T> <T> + InfoAd2 + <T> <T> + InfoAd3 + <T> <T> + InfoAd4<BR>Sino  <T> <T> <BR>Fin
+CBTipo=UPC A

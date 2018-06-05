@@ -1,0 +1,3037 @@
+[Reporte]
+Clave=mis_ContResultadosPCC
+Nombre=Rep.Titulo
+Icono=0
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=.5
+MargenDerecho=.5
+Orientacion=Horizontal
+FuentePorOmision={Arial, 8, Negro, []}
+Ascii=S
+Impresora=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=27.9
+LargoPagina=21.6
+Parametros=S
+Columnas=1
+PosicionInicialAltura=486
+PosicionInicialAncho=827
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+OtroOrden=S
+ListaOrden=(Lista)
+PreliminarSinRetroceder=S
+Tipo=Reporte
+PosicionInicialAlturaCliente=459
+VistaEspecial=S
+ExpresionesAntes=Si(Info.CentroCostos=<T>(Todos)<T>, Asigna(Info.CentroCostos, <T><T>))<BR>Asigna(Rep.Suma, 0)<BR>Asigna(Rep.SumaFinal, 0)
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Título<BR>Título<BR>Inicio: Rama<BR>Inicio: Grupo<BR>Inicio: SubGrupo<BR>Inicio: SubSubGrupo<BR>Inicio: SubCuenta<BR>Detalle<BR>Fin: SubCuenta<BR>Fin: SubSubGrupo<BR>Fin: SubGrupo<BR>Fin: Grupo<BR>Fin: Rama<BR>Fin: Clase
+VentanaIzquierda=0
+VentanaArriba=0
+VentanaAltura=776
+VentanaAncho=1032
+PanelArriba=167
+PanelBotones=77
+
+[Linea1]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 12, Negro, [Negritas]}
+Objetos=1
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Centrado
+AnchoEnCm=26.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Rep.Titulo
+BordeAbajo=N
+EstiloAbajo=0
+AnchoTexto=142
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea3]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+EstiloMarco=0
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Grupo=
+Renglones=1
+FondoColor=Blanco
+Visible=ConDatos(Info.CentroCostos)
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=26.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Empresa.Nombre
+AnchoTexto=142
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=mis_ContResultadosPCC
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=mis_ContResultadosPCC
+Visible=S
+ActivoCondicion=Usuario.EnviarExcel
+
+[Linea4]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+BordeArriba=N
+EstiloArriba=0
+EstiloMarco=0
+Grupo=
+Renglones=1
+FondoColor=Blanco
+Visible=Rep.Sucursal<>Nulo
+
+[A4]
+Celda=A4
+Alineacion=Centrado
+AnchoEnCm=26.5
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Expresion=SQL(<T>SELECT Nombre FROM Sucursal WHERE Sucursal=:n<T>, Rep.Sucursal)
+BordeArriba=N
+EstiloArriba=0
+EstiloMarco=0
+AnchoTexto=142
+FondoColor=Blanco
+ExpresionMultiple=N
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea5]
+Clave=Encabezado
+Objetos=1
+Seccion=Encabezado Página
+Grupo=
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloMarco=0
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+
+[Linea6]
+Clave=Título
+Objetos=1
+Seccion=Título
+BordeArriba=N
+EstiloArriba=0
+AltoEnCm=1.6
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=
+Renglones=4
+EstiloMarco=0
+FondoColor=Blanco
+
+[A5]
+Celda=A5
+Alineacion=Centrado
+AnchoEnCm=26.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloMarco=0
+AnchoTexto=142
+FondoColor=Blanco
+Expresion=Info.ContMoneda
+ExpresionMultiple=N
+BordeArriba=N
+EstiloArriba=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A6]
+Celda=A6
+Alineacion=Centrado
+AnchoEnCm=26.5
+BordeArriba=N
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Direccion<BR>Empresa.CodigoPostal+<T> <T>+Empresa.Colonia+<T> <T><BR>Empresa.Poblacion+<T> <T>+Empresa.Estado+<T> <T>+Empresa.Pais<BR>Empresa.RFC
+AnchoTexto=142
+EstiloMarco=0
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+[Linea7]
+Clave=Título
+Objetos=7
+Seccion=Título
+BordeArriba=S
+EstiloArriba=1
+AltoEnCm=0.8
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+Grupo=
+Renglones=1
+FondoColor=Blanco
+EstiloMarco=0
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=5.71
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=<T>Ejercicio <T>+Info.Ejercicio<BR><T>de <T>+ PeriodoNombre(Info.PeriodoD, <T>CONT<T>) + <T> a <T> + PeriodoNombre(Info.PeriodoA, <T>CONT<T>)
+AnchoTexto=38
+FondoColor=Blanco
+EstiloMarco=0
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+ExpresionMultiple=S
+
+[Linea8]
+Clave=Inicio: Rama
+Objetos=1
+Seccion=Inicio Grupo
+BordeArriba=N
+EstiloArriba=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+Grupo=Rama
+Renglones=1
+FondoColor=Blanco
+EstiloMarco=0
+Visible=
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=12.7
+BordeArriba=N
+EstiloArriba=0
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=RamaDesc
+AnchoTexto=68
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloMarco=0
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=26.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas + Cursiva]}
+Expresion=<T>(<T>+Info.CentroCostos+<T>)<T>
+ExpresionMultiple=N
+AnchoTexto=142
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea9]
+Clave=Inicio: Grupo
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=Grupo
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+EstiloMarco=0
+Visible=ConDatos(Grupo)
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=2
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloMarco=0
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B9]
+Celda=B9
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=5.21
+AnchoTexto=36
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Grupo
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+EstiloMarco=0
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea10]
+Clave=Inicio: SubGrupo
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=SubGrupo
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Visible=ConDatos(SubGrupo)
+EstiloMarco=0
+
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=0.79
+AnchoTexto=3
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EstiloMarco=0
+
+[B10]
+Celda=B10
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4.92
+AnchoTexto=27
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SubGrupo
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EstiloMarco=0
+
+[Linea11]
+Clave=Inicio: SubSubGrupo
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=SubSubGrupo
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+Visible=ConDatos(SubSubGrupo)
+EstiloMarco=0
+
+[Linea12]
+Clave=Inicio: SubCuenta
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=SubCuenta
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Visible=ConDatos(SubCuenta) y (Info.Desglosar=<T>Si<T>)
+EstiloMarco=0
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=1.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EstiloMarco=0
+
+[B11]
+Celda=B11
+Alineacion=Izquierda
+AnchoEnCm=4.51
+AnchoTexto=24
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeArriba=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+Expresion=SubSubGrupo
+EstiloMarco=0
+
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=1.71
+AnchoTexto=9
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EstiloMarco=0
+
+[B12]
+Celda=B12
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CentroCostos
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EstiloMarco=0
+
+[Linea13]
+Clave=Detalle
+Objetos=14
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, []}
+AVertical=Centrado
+Visible=Info.Desglosar=<T>Si<T>
+EstiloMarco=3
+
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=2.11
+AnchoTexto=11
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[B13]
+Celda=B13
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3.61
+AnchoTexto=19
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Descripcion
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[C13]
+Celda=C13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAl, SaldoAl)
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[D13]
+Celda=D13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, PorcentajeAl, -PorcentajeAl)
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[E13]
+Celda=E13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -Saldo, Saldo)
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[Linea14]
+Clave=Fin: SubCuenta
+Objetos=14
+Seccion=Fin Grupo
+Grupo=SubCuenta
+AltoEnCm=0.5
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Arriba
+Visible=
+
+[F13]
+Celda=F13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=6
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, Porcentaje, -Porcentaje)
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+EstiloMarco=3
+
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=1.71
+AnchoTexto=4
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B14]
+Celda=B14
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4
+AnchoTexto=22
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(Info.Desglosar=<T>Si<T>, <T>Total <T>)+CentroCostos
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C14]
+Celda=C14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAl), Suma(SaldoAl))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D14]
+Celda=D14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAl/IngresosAl*100), <BR>Suma(-SaldoAl/IngresosAl*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E14]
+Celda=E14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea15]
+Clave=Fin: SubSubGrupo
+Objetos=14
+Seccion=Fin Grupo
+Grupo=SubSubGrupo
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+Visible=ConDatos(SubSubGrupo)
+
+[Linea16]
+Clave=Fin: SubGrupo
+Objetos=14
+Seccion=Fin Grupo
+Grupo=SubGrupo
+AltoEnCm=0.5
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+Visible=ConDatos(SubGrupo)
+
+[F14]
+Celda=F14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=6
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(Saldo/Ingresos*100), Suma(-Saldo/Ingresos*100))
+EstiloArriba=0
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=1.21
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B15]
+Celda=B15
+Alineacion=Izquierda
+AnchoEnCm=4.51
+AnchoTexto=24
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total <T>+SubSubGrupo
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C15]
+Celda=C15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAl), Suma(SaldoAl))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D15]
+Celda=D15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=6
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAl/IngresosAl*100), <BR>Suma(-SaldoAl/IngresosAl*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E15]
+Celda=E15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[F15]
+Celda=F15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(Saldo/Ingresos*100), Suma(-Saldo/Ingresos*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=0.79
+AnchoTexto=16
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B16]
+Celda=B16
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=4.92
+AnchoTexto=26
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total <T>+SubGrupo
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C16]
+Celda=C16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAl), Suma(SaldoAl))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D16]
+Celda=D16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=6
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAl/IngresosAl*100), <BR>Suma(-SaldoAl/IngresosAl*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E16]
+Celda=E16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea17]
+Clave=Fin: Grupo
+Objetos=14
+Seccion=Fin Grupo
+Grupo=Grupo
+AltoEnCm=0.5
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+Visible=ConDatos(Grupo)
+
+[Linea18]
+Clave=Fin: Rama
+Objetos=14
+Seccion=Fin Grupo
+Grupo=Rama
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+[F16]
+Celda=F16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=6
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(Saldo/Ingresos*100), Suma(-Saldo/Ingresos*100))
+EstiloArriba=0
+
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B17]
+Celda=B17
+Alineacion=Izquierda
+AnchoEnCm=5.21
+AnchoTexto=28
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total <T>+Grupo
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C17]
+Celda=C17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAl), Suma(SaldoAl))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D17]
+Celda=D17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAl/IngresosAl*100), <BR>Suma(-SaldoAl/IngresosAl*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E17]
+Celda=E17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[F17]
+Celda=F17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(Saldo/Ingresos*100), Suma(-Saldo/Ingresos*100))
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A18]
+Celda=A18
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AnchoTexto=15
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[B18]
+Celda=B18
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=5.21
+AnchoTexto=28
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total <T>+RamaDesc
+
+[C18]
+Celda=C18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAl), Suma(SaldoAl))
+
+[D18]
+Celda=D18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAl/IngresosAl*100), <BR>Suma(-SaldoAl/IngresosAl*100))
+
+[E18]
+Celda=E18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-Saldo), Suma(Saldo))
+
+[Linea19]
+Clave=Fin: Clase
+Objetos=13
+Seccion=Fin Grupo
+Grupo=Clase
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 7, Negro, [Negritas]}
+AVertical=Centrado
+
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=25
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=MesNombre(Info.PeriodoA)
+
+[C7]
+Celda=C7
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=23
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Acumulado<T>
+
+[F18]
+Celda=F18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(Saldo/Ingresos*100), Suma(-Saldo/Ingresos*100))
+
+[A19]
+Celda=A19
+Alineacion=Izquierda
+AnchoEnCm=5.71
+AnchoTexto=31
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Clase
+
+[B19]
+Celda=B19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma, Rep.Suma - Suma(SaldoAl))<BR>Rep.Suma
+
+[C19]
+Celda=C19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.Suma/IngresosAl)*100
+
+[D19]
+Celda=D19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=20
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.SumaFinal, Rep.SumaFinal - Suma(Saldo))<BR>Rep.SumaFinal
+
+[E19]
+Celda=E19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=7
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.SumaFinal/Ingresos)*100
+
+[Vista]
+Icono=0
+Clave=mis_ContResultadosPCC
+Nombre=mis_ContResultadosPCC
+VistaIndependiente=S
+ListaCampos=(Lista)
+SQL=mis_spVerContResultadosP <T>{Empresa}<T>,<BR>                         {Info.Ejercicio},<BR>                         {Info.PeriodoD},<BR>                         {Info.PeriodoA},<BR>                         <T>{Info.ConMovimientos}<T>,<BR>                         {Comillas(Info.CentroCostos)},<BR>                         {Si(Rep.Sucursal=Nulo, -1, Rep.Sucursal)},<BR>                         <T>{Info.AgruparCC}<T>,<BR>                         {Comillas(Info.ContMoneda)},<BR>                         {Comillas(Info.Grupo)}
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=ID
+
+[Clase]
+Clave=Clase
+Nombre=Clase
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Clase
+
+[SubClase]
+Clave=SubClase
+Nombre=SubClase
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=SubClase
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Rama
+
+[RamaDesc]
+Clave=RamaDesc
+Nombre=RamaDesc
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=RamaDesc
+
+[RamaEsAcreedora]
+Clave=RamaEsAcreedora
+Nombre=RamaEsAcreedora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=RamaEsAcreedora
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Cuenta
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=EsAcreedora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcreedora
+
+[SubCuenta]
+Clave=SubCuenta
+Nombre=SubCuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=SubCuenta
+
+[CentroCostos]
+Clave=CentroCostos
+Nombre=CentroCostos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=CentroCostos
+
+[Saldo]
+Clave=Saldo
+Nombre=Saldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Saldo
+
+[Ingresos]
+Clave=Ingresos
+Nombre=Ingresos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Ingresos
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=Porcentaje
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Porcentaje
+
+[SaldoAl]
+Clave=SaldoAl
+Nombre=SaldoAl
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAl
+
+[IngresosAl]
+Clave=IngresosAl
+Nombre=IngresosAl
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=IngresosAl
+
+[PorcentajeAl]
+Clave=PorcentajeAl
+Nombre=PorcentajeAl
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=PorcentajeAl
+
+[SaldoPE]
+Clave=SaldoPE
+Nombre=SaldoPE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoPE
+
+[IngresosPE]
+Clave=IngresosPE
+Nombre=IngresosPE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=IngresosPE
+
+[PorcentajePE]
+Clave=PorcentajePE
+Nombre=PorcentajePE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=PorcentajePE
+
+[SaldoAlPE]
+Clave=SaldoAlPE
+Nombre=SaldoAlPE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SaldoAlPE
+
+[IngresosAlPE]
+Clave=IngresosAlPE
+Nombre=IngresosAlPE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=IngresosAlPE
+
+[PorcentajeAlPE]
+Clave=PorcentajeAlPE
+Nombre=PorcentajeAlPE
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=PorcentajeAlPE
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[SubGrupo]
+Clave=SubGrupo
+Nombre=SubGrupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=SubGrupo
+
+[SubSubGrupo]
+Clave=SubSubGrupo
+Nombre=SubSubGrupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=SubSubGrupo
+
+[D7]
+Celda=D7
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Presupuesto<T><BR>MesNombre(Info.PeriodoA)
+ExpresionMultiple=S
+
+[E7]
+Celda=E7
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Presupuesto<T><BR><T>Acumulado<T>
+ExpresionMultiple=S
+
+[F7]
+Celda=F7
+Alineacion=Centrado
+AnchoEnCm=3.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Diferencia<T>
+
+[G7]
+Celda=G7
+Alineacion=Centrado
+AnchoEnCm=3.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Diferencia<T><BR><T>Acumulada<T>
+ExpresionMultiple=S
+
+[G13]
+Celda=G13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoAlPE, SaldoAlPE)
+
+[H13]
+Celda=H13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, PorcentajeAlPE, -PorcentajeAlPE)
+
+[I13]
+Celda=I13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -SaldoPE, SaldoPE)
+
+[J13]
+Celda=J13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, PorcentajePE, -PorcentajePE)
+
+[G14]
+Celda=G14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlPE), Suma(SaldoAlPE))
+
+[H14]
+Celda=H14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAlPE/IngresosAlPE*100), <BR>Suma(-SaldoAlPE/IngresosAlPE*100))
+
+[I14]
+Celda=I14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoPE), Suma(SaldoPE))
+
+[J14]
+Celda=J14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoPE/IngresosPE*100), <BR>Suma(-SaldoPE/IngresosPE*100))
+
+[G15]
+Celda=G15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlPE), Suma(SaldoAlPE))
+
+[H15]
+Celda=H15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAlPE/IngresosAlPE*100), <BR>Suma(-SaldoAlPE/IngresosAlPE*100))
+
+[I15]
+Celda=I15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoPE), Suma(SaldoPE))
+
+[J15]
+Celda=J15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoPE/IngresosPE*100), <BR>Suma(-SaldoPE/IngresosPE*100))
+
+[G16]
+Celda=G16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlPE), Suma(SaldoAlPE))
+
+[H16]
+Celda=H16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAlPE/IngresosAlPE*100), <BR>Suma(-SaldoAlPE/IngresosAlPE*100))
+
+[I16]
+Celda=I16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoPE), Suma(SaldoPE))
+
+[J16]
+Celda=J16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoPE/IngresosPE*100), <BR>Suma(-SaldoPE/IngresosPE*100))
+
+[G17]
+Celda=G17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlPE), Suma(SaldoAlPE))
+
+[H17]
+Celda=H17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAlPE/IngresosAlPE*100), <BR>Suma(-SaldoAlPE/IngresosAlPE*100))
+
+[I17]
+Celda=I17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoPE), Suma(SaldoPE))
+
+[J17]
+Celda=J17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoPE/IngresosPE*100), <BR>Suma(-SaldoPE/IngresosPE*100))
+
+[G18]
+Celda=G18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoAlPE), Suma(SaldoAlPE))
+
+[H18]
+Celda=H18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoAlPE/IngresosAlPE*100), <BR>Suma(-SaldoAlPE/IngresosAlPE*100))
+
+[I18]
+Celda=I18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-SaldoPE), Suma(SaldoPE))
+
+[J18]
+Celda=J18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(SaldoPE/IngresosPE*100), <BR>Suma(-SaldoPE/IngresosPE*100))
+
+[F19]
+Celda=F19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma1, Rep.Suma1 - Suma(SaldoAlPE))<BR>Rep.Suma1
+
+[G19]
+Celda=G19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.Suma1/IngresosAlPE)*100
+
+[H19]
+Celda=H19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.5
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma2, Rep.Suma2 - Suma(SaldoPE))<BR>Rep.Suma2
+
+[I19]
+Celda=I19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.Suma2/IngresosPE)*100
+
+[K13]
+Celda=K13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -(SaldoAl - SaldoAlPE), (SaldoAl - SaldoAlPE))
+
+[K14]
+Celda=K14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(SaldoAl - SaldoAlPE)), Suma((SaldoAl - SaldoAlPE)))
+
+[K15]
+Celda=K15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(SaldoAl - SaldoAlPE)), Suma((SaldoAl - SaldoAlPE)))
+
+[K16]
+Celda=K16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(SaldoAl - SaldoAlPE)), Suma((SaldoAl - SaldoAlPE)))
+
+[K17]
+Celda=K17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(SaldoAl - SaldoAlPE)), Suma((SaldoAl - SaldoAlPE)))
+
+[K18]
+Celda=K18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(SaldoAl - SaldoAlPE)), Suma((SaldoAl - SaldoAlPE)))
+
+[J19]
+Celda=J19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma3, Rep.Suma3 - Suma((SaldoAl - SaldoAlPE)))<BR>Rep.Suma3
+
+[L13]
+Celda=L13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, (PorcentajeAl - PorcentajeAlPE), -(PorcentajeAl - <BR>PorcentajeAlPE))
+
+[M13]
+Celda=M13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, -(Saldo - SaldoPE), (Saldo - SaldoPE))
+
+[N13]
+Celda=N13
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(EsAcreedora, (Porcentaje - PorcentajePE), -(Porcentaje - PorcentajePE))
+
+[L14]
+Celda=L14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((SaldoAl - SaldoAlPE)/(IngresosAl - <BR>IngresosAlPE)*100), <BR>Suma(-(SaldoAl - SaldoAlPE)/(IngresosAl - IngresosAlPE)*100))
+
+[M14]
+Celda=M14
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(Saldo - SaldoPE)), Suma((Saldo - SaldoPE)))
+
+[N14]
+Celda=N14
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((Saldo - SaldoPE)/(Ingresos - IngresosPE)*100), <BR>Suma(-(Saldo - SaldoPE)/(Ingresos - IngresosPE)*100))
+
+[L15]
+Celda=L15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((SaldoAl - SaldoAlPE)/(IngresosAl - <BR>IngresosAlPE)*100), <BR>Suma(-(SaldoAl - SaldoAlPE)/(IngresosAl - IngresosAlPE)*100))
+
+[M15]
+Celda=M15
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(Saldo - SaldoPE)), Suma((Saldo - SaldoPE)))
+
+[N15]
+Celda=N15
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((Saldo - SaldoPE)/(Ingresos - IngresosPE)*100), <BR>Suma(-(Saldo - SaldoPE)/(Ingresos - IngresosPE)*100))
+
+[L16]
+Celda=L16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((SaldoAl - SaldoAlPE)/(IngresosAl - <BR>IngresosAlPE)*100), <BR>Suma(-(SaldoAl - SaldoAlPE)/(IngresosAl - IngresosAlPE)*100))
+
+[M16]
+Celda=M16
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(Saldo - SaldoPE)), Suma((Saldo - SaldoPE)))
+
+[N16]
+Celda=N16
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((Saldo - SaldoPE)/(Ingresos - IngresosPE)*100), <BR>Suma(-(Saldo - SaldoPE)/(Ingresos - IngresosPE)*100))
+
+[L17]
+Celda=L17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((SaldoAl - SaldoAlPE)/(IngresosAl - <BR>IngresosAlPE)*100), <BR>Suma(-(SaldoAl - SaldoAlPE)/(IngresosAl - IngresosAlPE)*100))
+
+[M17]
+Celda=M17
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(Saldo - SaldoPE)), Suma((Saldo - SaldoPE)))
+
+[N17]
+Celda=N17
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((Saldo - SaldoPE)/(Ingresos - IngresosPE)*100), <BR>Suma(-(Saldo - SaldoPE)/(Ingresos - IngresosPE)*100))
+
+[L18]
+Celda=L18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((SaldoAl - SaldoAlPE)/(IngresosAl - <BR>IngresosAlPE)*100), <BR>Suma(-(SaldoAl - SaldoAlPE)/(IngresosAl - IngresosAlPE)*100))
+
+[M18]
+Celda=M18
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma(-(Saldo - SaldoPE)), Suma((Saldo - SaldoPE)))
+
+[N18]
+Celda=N18
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si(RamaEsAcreedora, Suma((Saldo - SaldoPE)/(Ingresos - IngresosPE)*100), <BR>Suma(-(Saldo - SaldoPE)/(Ingresos - IngresosPE)*100))
+
+[K19]
+Celda=K19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.Suma3/(IngresosAl - IngresosAlPE))*100
+
+[L19]
+Celda=L19
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.39
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Asigna(Rep.Suma4, Rep.Suma4 - Suma((Saldo - SaldoPE)))<BR>Rep.Suma4
+
+[M19]
+Celda=M19
+Alineacion=Derecha
+FormatoValidacion=#.#%;(#.#%); ;
+AnchoEnCm=1
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=(-Rep.Suma4/(Ingresos - IngresosPE))*100
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Reporte.ListaOrden]
+(Inicio)=Clase<TAB>(Acendente)
+Clase<TAB>(Acendente)=Rama<TAB>(Acendente)
+Rama<TAB>(Acendente)=Grupo<TAB>(Acendente)
+Grupo<TAB>(Acendente)=SubGrupo<TAB>(Acendente)
+SubGrupo<TAB>(Acendente)=SubSubGrupo<TAB>(Acendente)
+SubSubGrupo<TAB>(Acendente)=SubCuenta<TAB>(Acendente)
+SubCuenta<TAB>(Acendente)=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=Orden
+Orden=ID
+ID=Clase
+Clase=SubClase
+SubClase=Rama
+Rama=RamaDesc
+RamaDesc=RamaEsAcreedora
+RamaEsAcreedora=Cuenta
+Cuenta=Descripcion
+Descripcion=EsAcreedora
+EsAcreedora=SubCuenta
+SubCuenta=CentroCostos
+CentroCostos=Saldo
+Saldo=Ingresos
+Ingresos=Porcentaje
+Porcentaje=SaldoAl
+SaldoAl=IngresosAl
+IngresosAl=PorcentajeAl
+PorcentajeAl=SaldoPE
+SaldoPE=IngresosPE
+IngresosPE=PorcentajePE
+PorcentajePE=SaldoAlPE
+SaldoAlPE=IngresosAlPE
+IngresosAlPE=PorcentajeAlPE
+PorcentajeAlPE=Grupo
+Grupo=SubGrupo
+SubGrupo=SubSubGrupo
+SubSubGrupo=(Fin)

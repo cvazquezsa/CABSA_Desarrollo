@@ -1,0 +1,96 @@
+[Tabla]
+Icono=0
+Clave=OtrosCargos
+Archivo=OtrosCargos
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Otros Cargos
+SQL=SELECT<BR>  OtrosCargos,<BR>  Articulo,<BR>  Tipo,<BR>  Porcentaje,<BR>  Importe,<BR>  Moneda<BR><BR>FROM<BR>  OtrosCargos
+ListaRelaciones=Art
+LlavePrimaria=OtrosCargos
+ControlTipo=S
+CampoTipo=Tipo
+
+[OtrosCargos]
+Clave=OtrosCargos
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Relaciones.Art]
+TipoRelacion=Forzosa
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Tabla.ListaCampos]
+(Inicio)=OtrosCargos
+OtrosCargos=Articulo
+Articulo=Tipo
+Tipo=Porcentaje
+Porcentaje=Importe
+Importe=Moneda
+Moneda=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=% SubTotal
+% SubTotal=Importe Fijo
+Importe Fijo=(Fin)

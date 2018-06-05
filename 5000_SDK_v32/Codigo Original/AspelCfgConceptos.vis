@@ -1,0 +1,75 @@
+[Vista]
+Icono=0
+Clave=AspelCfgConceptos
+Nombre=AspelCfgConceptos
+Modulos=(Todos)
+ListaTablas=AspelCfgConceptos
+TablaPrincipal=AspelCfgConceptos
+UsoCapturas=S
+ListaCampos=AspelCfgConceptos.Modulo<BR>AspelCfgConceptos.Tipo<BR>AspelCfgConceptos.NumConcepto<BR>AspelCfgConceptos.MovimientoIntelisisCxC<BR>AspelCfgConceptos.MovimientoIntelisisCxP
+SQL=SELECT<BR>  AspelCfgConceptos.Modulo,<BR>  AspelCfgConceptos.Tipo,<BR>  AspelCfgConceptos.NumConcepto,<BR>  AspelCfgConceptos.MovimientoIntelisisCxC,<BR>  AspelCfgConceptos.MovimientoIntelisisCxP<BR><BR>FROM<BR>  AspelCfgConceptos
+[AspelCfgConceptos.Modulo]
+Clave=AspelCfgConceptos.Modulo
+LigaTabla=AspelCfgConceptos
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=3
+ClaveBDE=Modulo
+[AspelCfgConceptos.Tipo]
+Clave=AspelCfgConceptos.Tipo
+LigaTabla=AspelCfgConceptos
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=1
+ClaveBDE=Tipo
+[AspelCfgConceptos.NumConcepto]
+Clave=AspelCfgConceptos.NumConcepto
+LigaTabla=AspelCfgConceptos
+LigaCampo=NumConcepto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=NumConcepto
+[AspelCfgConceptos.MovimientoIntelisisCxC]
+Clave=AspelCfgConceptos.MovimientoIntelisisCxC
+Nombre=Movimiento Intelisis
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesValidar=S
+OpcionesModulo=CXC
+LigaTabla=AspelCfgConceptos
+LigaCampo=MovimientoIntelisisCxC
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovimientoIntelisisCxC
+[AspelCfgConceptos.MovimientoIntelisisCxP]
+Clave=AspelCfgConceptos.MovimientoIntelisisCxP
+Nombre=Movimiento Intelisis
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesValidar=S
+OpcionesModulo=CXP
+LigaTabla=AspelCfgConceptos
+LigaCampo=MovimientoIntelisisCxP
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovimientoIntelisisCxP

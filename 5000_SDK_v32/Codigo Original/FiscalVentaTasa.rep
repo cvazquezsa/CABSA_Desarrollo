@@ -1,0 +1,350 @@
+[Reporte]
+Clave=FiscalVentaTasa
+Nombre=Ventas por Tasa
+Icono=0
+Tipo=Reporte
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+BarraHerramientas=S
+Menus=S
+Filtros=S
+TieneFiltroAbierto=S
+VistaEspecial=S
+PosicionInicialAlturaCliente=708
+PosicionInicialAncho=1032
+ListaAcciones=(Lista)
+
+[Vista]
+Icono=0
+Clave=FiscalVentaTasa
+VistaIndependiente=S
+ListaCampos=(Lista)
+SQL=DECLARE @VentaPreciosImpuestoIncluido<TAB>bit<BR>SELECT @VentaPreciosImpuestoIncluido = VentaPreciosImpuestoIncluido FROM EmpresaCfg WHERE Empresa = <T>{Empresa}<T><BR><BR>SELECT d.Impuesto1,<BR><T>Neto<T> = SUM((1-(ISNULL(v.DescuentoGlobal,0)/100))*(d.Precio*d.Cantidad*m.Factor)*((1-(case d.DescuentoTipo when <T>$<T> then (ISNULL(d.DescuentoLinea, 0.0)/d.Precio)*100 else ISNULL(d.DescuentoLinea,0.0) end)/100))/(1.0+((CASE @VentaPreciosImpuestoIncluido WHEN 1 THEN 15 ELSE 0 END)/100.0)))<BR>FROM Cte c, Venta v, VentaD d, MovTipo m<BR> WHERE c.Cliente = v.Cliente<BR>   AND m.Mov = v.Mov AND m.Modulo = <T>VTAS<T> AND m.Clave IN (<T>VTAS.F<T>, <T>VTAS.FM<T>, <T>VTAS.D<T>, <T>VTAS.DF<T>, <T>VTAS.B<T>)<BR>   AND v.ID = d.ID<BR>AND v.Estatus = <T>CONCLUIDO<T><BR>AND v.Empresa = <T>{Empresa}<T><BR>AND DATEPART(YEAR, v.Fechaemision) = {Info.Ejercicio}<BR>GROUP BY d.Impuesto1<BR>ORDER BY d.Impuesto1
+
+[Impuesto1]
+Clave=Impuesto1
+Nombre=Impuesto1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Impuesto1
+
+[Neto]
+Clave=Neto
+Nombre=Neto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Neto
+
+[Formato]
+ListaLineas=Encabezado<BR>Detalle<BR>Final<BR>Pie
+VentanaIzquierda=0
+VentanaArriba=13
+VentanaAltura=742
+VentanaAncho=1032
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[Linea2]
+Clave=Detalle
+Objetos=2
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeArriba=S
+
+[Linea3]
+Clave=Final
+Objetos=2
+Seccion=Final
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea4]
+Clave=Pie
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=2
+BordeArriba=S
+EstiloArriba=3
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=6
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ReporteNombre
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=7
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Ejercicio
+
+[C1]
+Celda=C1
+Alineacion=Derecha
+AnchoEnCm=6
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+FormatoValidacion=#,.## %
+AnchoEnCm=4.21
+AnchoTexto=23
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Impuesto1
+BordeArriba=S
+
+[B2]
+Celda=B2
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Neto
+BordeArriba=S
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=4.21
+AnchoTexto=23
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B3]
+Celda=B3
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Neto)
+BordeArriba=S
+EstiloArriba=1
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=48
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+BordeArriba=S
+EstiloArriba=3
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=10
+AnchoTexto=54
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+BordeArriba=S
+EstiloArriba=3
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=FiscalVentaTasa
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Excel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=FiscalVentaTasa
+Activo=S
+Visible=S
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=Impuesto1
+Impuesto1=Neto
+Neto=(Fin)

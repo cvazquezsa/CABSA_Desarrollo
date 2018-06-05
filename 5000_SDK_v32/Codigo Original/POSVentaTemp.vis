@@ -1,0 +1,414 @@
+
+[Vista]
+Icono=0
+Clave=POSVentaTemp
+Nombre=POSVentaTemp
+Modulos=(Todos)
+ListaTablas=POSVentaTemp
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=POSVentaTemp
+SQL=(Lista)
+[POSVentaTemp.ID]
+Clave=POSVentaTemp.ID
+Nombre=ID
+TipoDatos=Numérico
+TamanoValidacion=10
+LigaTabla=POSVentaTemp
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ID
+
+[POSVentaTemp.Empresa]
+Clave=POSVentaTemp.Empresa
+Nombre=Empresa
+OpcionesColumnas=1
+OpcionesRenglones=8
+Tamano=5
+TamanoValidacion=5
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Empresa
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Empresa
+
+[POSVentaTemp.Mov]
+Clave=POSVentaTemp.Mov
+Nombre=&Movimiento
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=30
+Tamano=20
+TamanoValidacion=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Movimientos Forma
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=(Estatus=EstatusSinAfectar) y Vacio(Mensaje) y Vacio(MovID) y Vacio(Filtro.Mov)
+ConRefrescar=S
+ListaRefrescar=Concepto<BR>Almacen<BR>Periodicidad<BR>ConVigencia<BR>DesglosarImpuesto2
+Requerido=N
+AutoBloqueaDetalle=S
+ValorPorOmision=Vacio(Filtro.Mov, Usuario.DefMovVentas)
+TipoDatos=Texto
+ValidacionUsaTabla=S
+ValidacionTablas=MovTipo
+LigaTabla=POSVentaTemp
+LigaCampo=Mov
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Mov
+
+[POSVentaTemp.MovID]
+Clave=POSVentaTemp.MovID
+Nombre=Consecutivo
+TamanoValidacion=10
+CondicionEdicion=(ConfigModulo(<T>VTAS<T>, <T>EditarConsec<T>)=<T>Si<T>) y (Estatus=EstatusSinAfectar) y Usuario.ModificarConsecutivos
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=MovID
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=MovID
+
+[POSVentaTemp.FechaEmision]
+Clave=POSVentaTemp.FechaEmision
+Nombre=&Fecha Emisión
+AyudaEnCaptura=Calendario sin Hora
+TipoDatos=FechaHora
+TamanoValidacion=15
+ValorPorOmision=FechaTrabajo
+FormatoValidacion=dd/mmm/aaaa
+Requerido=N
+CondicionEdicion=(no Usuario.BloquearFechaEmision) y <BR>((Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o ((Estatus=EstatusProcesar) y (MovTipo(<T>VTAS<T>, POSVentaTemp.Mov)=VTAS.NO)))
+LigaTabla=POSVentaTemp
+LigaCampo=FechaEmision
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FechaEmision
+
+[POSVentaTemp.Concepto]
+Clave=POSVentaTemp.Concepto
+Nombre=Concepto
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaMemEnBlanco=S
+AyudaRefrescar=S
+CondicionEdicion=Vacio(AnexoID) y ((Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarConceptos)
+ValorRefrescar=ConceptoOmision(<T>VTAS<T>, POSVentaTemp.Mov)
+Formula=ListaConceptos(<T>VTAS<T>, POSVentaTemp.Mov)
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Concepto
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Concepto
+
+[POSVentaTemp.Proyecto]
+Clave=POSVentaTemp.Proyecto
+Nombre=Proyecto
+AyudaEnCaptura=Vista
+TamanoValidacion=50
+AyudaMemTabla=Proy
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=8
+ValorPorOmision=Si(ConDatos(Filtro.Proyecto), Filtro.Proyecto, Usuario.DefProyecto)
+ValorRefrescar=Si(ConDatos(Venta:CteEnviarA.Proyecto), Venta:CteEnviarA.Proyecto, Si(ConDatos(Venta:Cte.Proyecto), Venta:Cte.Proyecto,POSVentaTemp.Proyecto))
+AyudaMemEnBlanco=S
+CondicionEdicion=Vacio(AnexoID) y Vacio(Filtro.Proyecto) y (no Usuario.BloquearProyecto) y ((Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarProyUENActCC)
+AutoBloqueaDetalle=S
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Proyecto
+AyudaMemAvanzada=S
+AlCambiar=Asigna(Info.Espacio, SQL(<T>SELECT Espacio FROM Proy WHERE Proyecto=:tProy<T>, POSVentaTemp.Proyecto))
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+Tamano=50
+ValidacionCondicion=SQL(<T>SELECT Proyecto FROM Proy WHERE Proyecto=:tProy AND Estatus=:tEstatus<T>, POSVentaTemp.Proyecto, EstatusAlta)=POSVentaTemp.Proyecto
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Proyecto
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Proyecto
+
+[POSVentaTemp.Moneda]
+Clave=POSVentaTemp.Moneda
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+Tamano=10
+TamanoValidacion=10
+AyudaMemTabla=Mon
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemRenglones=8
+ValorPorOmision=Usuario.DefMoneda
+Requerido=N
+ValidacionUsaTabla=S
+ValidacionTablas=Mon
+ValorRefrescar=Si((POSVentaTemp.Moneda=Usuario.DefMoneda) y ConDatos(Venta:Cte.DefMoneda), Venta:Cte.DefMoneda, POSVentaTemp.Moneda)
+AlCambiar=Asigna(TipoCambio, Caso ConfigModulo(<T>VTAS<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Venta:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Venta:Mon.TipoCambioCompra<BR>Sino<BR>  Venta:Mon.TipoCambio<BR>Fin)
+CondicionEdicion=Vacio(AnexoID) y (no Usuario.BloquearMoneda)
+AutoBloqueaDetalle=S
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Moneda
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Moneda
+
+[POSVentaTemp.TipoCambio]
+Clave=POSVentaTemp.TipoCambio
+Nombre=Tipo Cambio
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=Caso ConfigModulo(<T>VTAS<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Venta:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Venta:Mon.TipoCambioCompra<BR>Sino<BR>  Venta:Mon.TipoCambio<BR>Fin
+CondicionEdicion=Vacio(AnexoID) y (no Usuario.BloquearTipoCambio)
+AutoBloqueaDetalle=S
+LigaTabla=POSVentaTemp
+LigaCampo=TipoCambio
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCambio
+
+[POSVentaTemp.Referencia]
+Clave=POSVentaTemp.Referencia
+Nombre=Referencia
+Tamano=50
+TamanoValidacion=50
+CondicionEdicion=Vacio(AnexoID) y ((Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias) o Usuario.ModificarReferenciasSiempre)
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Referencia
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Referencia
+
+[POSVentaTemp.Estatus]
+Clave=POSVentaTemp.Estatus
+Nombre=Estatus
+Tamano=15
+TamanoValidacion=15
+TipoDatos=Texto
+LigaTabla=POSVentaTemp
+LigaCampo=Estatus
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estatus
+
+[POSVentaTemp.Cliente]
+Clave=POSVentaTemp.Cliente
+Nombre=&Cliente
+AyudaEnCaptura=Vista
+Tamano=10
+TamanoValidacion=10
+Mayusculas=S
+Requerido=N
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+ConRefrescar=S
+ListaRefrescar=POSVentaTemp.Proyecto<BR>EnviarA<BR>Agente<BR>AgenteServicio<BR>FormaEnvio<BR>Condicion<BR>Vencimiento<BR>Descuento<BR>DescuentoGlobal<BR>Bonificacion<BR>Almacen<BR>ListaPreciosEsp<BR>ZonaImpuesto<BR>POSVentaTemp.Moneda<BR>DesglosarImpuestos<BR>DesglosarImpuesto2<BR>ContratoMov<BR>ContratoMovID<BR>ContratoID<BR>Establecimiento<BR>PuntoEmision<BR>AutorizacionSRI<BR>VigenteA
+ConMensageEmergente=S
+MensageEmergente=Venta:Cte.Mensaje
+RefrescarTotales=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=Venta:Cte.Cliente+Si(Venta:Cte.Tipo=<T>Estructura<T>,<T> No es un Cliente<T>,<T> No permiten las Ventas a Consignación<T>)
+ValorPorOmision=Si(ConDatos(Filtro.Cliente), Filtro.Cliente, Usuario.DefCliente)
+ValorRefrescar=Si(ConDatos(Info.Cliente),Info.Cliente,POSVentaTemp.Cliente)
+MascaraEdicion=Config.CteFormato
+AyudaRefrescar=S
+AutoBloqueaDetalle=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Vencimiento<BR>Bonificacion
+CondicionEdicion=Vacio(AnexoID) y Vacio(Filtro.Cliente)
+AlCambiar=Si(MovTipoEn(<T>VTAS<T>, POSVentaTemp.Mov, (VTAS.S, VTAS.CS)), Asigna(ServicioAseguradora, SQL(<T>SELECT Aseguradora FROM Cte WHERE Cliente=:tCte<T>, POSVentaTemp.Cliente)))
+TipoDatos=Texto
+ValidacionCondicion=(Venta:Cte.Tipo<><T>Estructura<T>) y<BR>((MovTipo(<T>VTAS<T>,POSVentaTemp.Mov) noen (VTAS.VC, VTAS.DC,VTAS.DCR)) o Venta:Cte.VtasConsignacion)
+LigaTabla=POSVentaTemp
+LigaCampo=Cliente
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Cliente
+
+[POSVentaTemp.FechaRequerida]
+Clave=POSVentaTemp.FechaRequerida
+Nombre=Fecha &Requerida
+AyudaEnCaptura=Calendario sin Hora
+TipoDatos=FechaHora
+TamanoValidacion=15
+FormatoValidacion=dd/mmm/aaaa
+CondicionDespliege=MovTipoEn(<T>VTAS<T>, POSVentaTemp.Mov, (VTAS.C,VTAS.CS,VTAS.P,VTAS.VP,VTAS.S,VTAS.PR,VTAS.EST,VTAS.F, VTAS.FAR,VTAS.FC,VTAS.DFC,VTAS.FB,VTAS.R,VTAS.SG,VTAS.EG,VTAS.VC,VTAS.VCR,VTAS.SD))
+ValorPorOmision=Si<BR>  Config.VentaTEEstandar>0<BR>Entonces<BR>  Asigna(Temp.Fecha, SQL(<T>spAgregarDias :fFecha, :nDias, :tHabiles, :tTipo, 0, NULL, 1<T>, FechaTrabajo, Config.VentaTEEstandar, General.DiasHabiles, Config.VentaTEEstandarTipoDias))<BR>  Si(Config.VentaTEEstandarRecorrerDomingo y (DiaNombre(Temp.Fecha)=<T>Domingo<T>), Asigna(Temp.Fecha, Temp.Fecha+1))<BR>  Temp.Fecha<BR>Sino<BR>  FechaTrabajo<BR>Fin
+LigaTabla=POSVentaTemp
+LigaCampo=FechaRequerida
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FechaRequerida
+
+[POSVentaTemp.Vencimiento]
+Clave=POSVentaTemp.Vencimiento
+Nombre=Vencimiento
+AyudaEnCaptura=Calendario sin Hora
+TipoDatos=FechaHora
+TamanoValidacion=15
+CondicionDespliege=MovTipoEn(<T>VTAS<T>, POSVentaTemp.Mov, (VTAS.C,VTAS.CS,VTAS.P,VTAS.VP,VTAS.S,VTAS.F, VTAS.FAR,VTAS.FB,VTAS.VC,VTAS.VCR,VTAS.CO,VTAS.SD,VTAS.D,VTAS.DF,VTAS.B,VTAS.EST))
+FormatoValidacion=dd/mmm/aaaa
+CondicionEdicion=Vacio(AnexoID) y ((Condicion=<T>(Fecha)<T>) y ((POSVentaTemp.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((POSVentaTemp.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarVencimientos)))
+ValorRefrescar=SQL(<T>spVerVencimiento :tModulo, :Empresa, :tContacto, :tCondicion, :fFecha<T>, <T>CXC<T>, Empresa, POSVentaTemp.Cliente, Condicion, POSVentaTemp.FechaEmision)
+ValorPorOmision=Hoy
+AutoBloqueaDetalle=S
+LigaTabla=POSVentaTemp
+LigaCampo=Vencimiento
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Vencimiento
+
+[POSVentaTemp.Saldo]
+Clave=POSVentaTemp.Saldo
+Nombre=Saldo
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+UnicamenteLectura=S
+LigaTabla=POSVentaTemp
+LigaCampo=Saldo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Saldo
+
+[POSVentaTemp.Importe]
+Clave=POSVentaTemp.Importe
+Nombre=Importe
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+Tamano=0
+LigaTabla=POSVentaTemp
+LigaCampo=Importe
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Importe
+
+[POSVentaTemp.Impuestos]
+Clave=POSVentaTemp.Impuestos
+Nombre=Impuestos
+TipoDatos=NumFlotante
+TamanoValidacion=10
+Monetario=S
+Tamano=0
+LigaTabla=POSVentaTemp
+LigaCampo=Impuestos
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Impuestos
+
+[POSVentaTemp.UEN]
+Clave=POSVentaTemp.UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Usuario.UEN
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+CondicionEdicion=Vacio(AnexoID) y (((POSVentaTemp.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarProyUENActCC))
+LigaTabla=POSVentaTemp
+LigaCampo=UEN
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=UEN
+
+[POSVentaTemp.Estacion]
+Clave=POSVentaTemp.Estacion
+Nombre=Estacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+SQL=(Lista)
+LigaTabla=POSVentaTemp
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estacion
+
+[POSVentaTemp.ClienteEnviarA]
+Clave=POSVentaTemp.ClienteEnviarA
+Nombre=ClienteEnviarA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=POSVentaTemp
+LigaCampo=ClienteEnviarA
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ClienteEnviarA
+
+[Vista.ListaCampos]
+(Inicio)=POSVentaTemp.ID
+POSVentaTemp.ID=POSVentaTemp.Empresa
+POSVentaTemp.Empresa=POSVentaTemp.Mov
+POSVentaTemp.Mov=POSVentaTemp.MovID
+POSVentaTemp.MovID=POSVentaTemp.FechaEmision
+POSVentaTemp.FechaEmision=POSVentaTemp.Concepto
+POSVentaTemp.Concepto=POSVentaTemp.Proyecto
+POSVentaTemp.Proyecto=POSVentaTemp.Moneda
+POSVentaTemp.Moneda=POSVentaTemp.TipoCambio
+POSVentaTemp.TipoCambio=POSVentaTemp.Referencia
+POSVentaTemp.Referencia=POSVentaTemp.Estatus
+POSVentaTemp.Estatus=POSVentaTemp.Cliente
+POSVentaTemp.Cliente=POSVentaTemp.FechaRequerida
+POSVentaTemp.FechaRequerida=POSVentaTemp.Vencimiento
+POSVentaTemp.Vencimiento=POSVentaTemp.Saldo
+POSVentaTemp.Saldo=POSVentaTemp.Importe
+POSVentaTemp.Importe=POSVentaTemp.Impuestos
+POSVentaTemp.Impuestos=POSVentaTemp.UEN
+POSVentaTemp.UEN=POSVentaTemp.Estacion
+POSVentaTemp.Estacion=POSVentaTemp.ClienteEnviarA
+POSVentaTemp.ClienteEnviarA=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSVentaTemp.ID,
+POSVentaTemp.ID,=POSVentaTemp.Empresa,
+POSVentaTemp.Empresa,=POSVentaTemp.Mov,
+POSVentaTemp.Mov,=POSVentaTemp.MovID,
+POSVentaTemp.MovID,=POSVentaTemp.FechaEmision,
+POSVentaTemp.FechaEmision,=POSVentaTemp.Concepto,
+POSVentaTemp.Concepto,=POSVentaTemp.Proyecto,
+POSVentaTemp.Proyecto,=POSVentaTemp.Moneda,
+POSVentaTemp.Moneda,=POSVentaTemp.TipoCambio,
+POSVentaTemp.TipoCambio,=POSVentaTemp.Referencia,
+POSVentaTemp.Referencia,=POSVentaTemp.Estatus,
+POSVentaTemp.Estatus,=POSVentaTemp.Cliente,
+POSVentaTemp.Cliente,=POSVentaTemp.FechaRequerida,
+POSVentaTemp.FechaRequerida,=POSVentaTemp.Vencimiento,
+POSVentaTemp.Vencimiento,=POSVentaTemp.Saldo,
+POSVentaTemp.Saldo,=POSVentaTemp.Importe,
+POSVentaTemp.Importe,=POSVentaTemp.Impuestos,
+POSVentaTemp.Impuestos,=POSVentaTemp.UEN,
+POSVentaTemp.UEN,=POSVentaTemp.Estacion,
+POSVentaTemp.Estacion,=POSVentaTemp.ClienteEnviarA
+POSVentaTemp.ClienteEnviarA=FROM POSVentaTemp
+FROM POSVentaTemp=(Fin)

@@ -1,0 +1,49 @@
+[Dialogo]
+Clave=GenerarGasto
+Nombre=<T>Generar Gasto<T>
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=861
+PosicionInicialArriba=525
+PosicionInicialAltura=141
+PosicionInicialAncho=197
+PosicionInicialAlturaCliente=114
+
+[Acciones.Directo]
+Nombre=Directo
+Boton=0
+NombreDesplegar=&Directo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.Gasto, Afectar.FormaCaptura)
+
+[Acciones.Prorrateado]
+Nombre=Prorrateado
+Boton=0
+NombreDesplegar=&Prorrateado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.GastoProrrateado, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Directo
+Directo=Prorrateado
+Prorrateado=(Fin)

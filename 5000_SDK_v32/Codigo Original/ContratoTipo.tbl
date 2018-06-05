@@ -1,0 +1,41 @@
+[Tabla]
+Icono=0
+Clave=ContratoTipo
+Archivo=ContratoTipo
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos de Contratos
+Singular=Tipo de Contrato
+LlavePrimaria=Modulo<BR>Tipo
+SQL=SELECT<BR>  Modulo,<BR>  Tipo<BR><BR>FROM<BR>  ContratoTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Tabla.Modulos]
+(Inicio)=VTAS
+VTAS=SERV
+SERV=NOM
+NOM=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Tipo
+Tipo=(Fin)

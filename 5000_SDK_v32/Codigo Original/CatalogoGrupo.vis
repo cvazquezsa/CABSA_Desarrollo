@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CatalogoGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=CatalogoGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CatalogoGrupo.Grupo
+TablaPrincipal=CatalogoGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  CatalogoGrupo.Grupo<BR><BR>FROM<BR>  CatalogoGrupo
+
+[CatalogoGrupo.Grupo]
+Clave=CatalogoGrupo.Grupo
+LigaTabla=CatalogoGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

@@ -1,0 +1,24 @@
+
+[Dialogo]
+Clave=MenuInfContables
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=Balanza
+[Acciones.Balanza]
+Nombre=Balanza
+Boton=0
+NombreDesplegar=&Balanza de Comprobación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeContBalanza<T>)
+Activo=S
+Visible=S

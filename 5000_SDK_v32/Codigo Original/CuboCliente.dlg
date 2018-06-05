@@ -1,0 +1,72 @@
+[Dialogo]
+Clave=CuboCliente
+Nombre=Cubos del Cliente
+Icono=81
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=243
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=390
+PosicionInicialArriba=286
+
+[Acciones.Ventas]
+Nombre=Ventas
+Boton=0
+NombreDesplegar=Cubo &Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cubo(<T>VTAS<T>, <T>Cliente<T>, Info.Cliente, Info.Nombre)
+
+[Acciones.Cxc]
+Nombre=Cxc
+Boton=0
+NombreDesplegar=Cubo &Cuentas por Cobrar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cubo(<T>CXC<T>, <T>Cliente<T>, Info.Cliente, Info.Nombre)
+
+[Acciones.Embarques]
+Nombre=Embarques
+Boton=0
+NombreDesplegar=Cubo &Embarques
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cubo(<T>EMB<T>, <T>Cliente<T>, Info.Cliente, Info.Nombre)
+
+[Acciones.AttnCte]
+Nombre=AttnCte
+Boton=0
+NombreDesplegar=Cubo &Atención Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>ST_CTE<T>, <T>Cliente<T>, Info.Cliente, Info.Nombre)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Ventas
+Ventas=Cxc
+Cxc=Embarques
+Embarques=AttnCte
+AttnCte=(Fin)

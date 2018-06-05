@@ -1,0 +1,165 @@
+
+[Vista]
+Icono=0
+Clave=EmpresaCfgMovRecluta
+Nombre=EmpresaCfgMovRecluta
+Modulos=(Todos)
+Singular=EmpresaCfgMovRecluta
+ListaTablas=EmpresaCfgMovRecluta
+TablaPrincipal=EmpresaCfgMovRecluta
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+SQL=(Lista)
+[EmpresaCfgMovRecluta.Empresa]
+Clave=EmpresaCfgMovRecluta.Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=Empresa
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Empresa
+
+[EmpresaCfgMovRecluta.REAutorizacionPlaza]
+Clave=EmpresaCfgMovRecluta.REAutorizacionPlaza
+Nombre=Autorización Plaza
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=REAutorizacionPlaza
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=REAutorizacionPlaza
+
+[EmpresaCfgMovRecluta.REEntrevista]
+Clave=EmpresaCfgMovRecluta.REEntrevista
+Nombre=Entrevista
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=REEntrevista
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=REEntrevista
+
+[EmpresaCfgMovRecluta.REContratacion]
+Clave=EmpresaCfgMovRecluta.REContratacion
+Nombre=Contratación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=REContratacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=REContratacion
+
+[EmpresaCfgMovRecluta.RERechazoRequisicion]
+Clave=EmpresaCfgMovRecluta.RERechazoRequisicion
+Nombre=Rechazo Requisición
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=RERechazoRequisicion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=RERechazoRequisicion
+
+[EmpresaCfgMovRecluta.RESolicitudEvaluacion]
+Clave=EmpresaCfgMovRecluta.RESolicitudEvaluacion
+Nombre=Solicitud Evaluación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=RESolicitudEvaluacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=RESolicitudEvaluacion
+
+[EmpresaCfgMovRecluta.REEvaluacion]
+Clave=EmpresaCfgMovRecluta.REEvaluacion
+Nombre=Evaluación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+LigaTabla=EmpresaCfgMovRecluta
+LigaCampo=REEvaluacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=REEvaluacion
+
+[Vista.ListaCampos]
+(Inicio)=EmpresaCfgMovRecluta.Empresa
+EmpresaCfgMovRecluta.Empresa=EmpresaCfgMovRecluta.REAutorizacionPlaza
+EmpresaCfgMovRecluta.REAutorizacionPlaza=EmpresaCfgMovRecluta.REEntrevista
+EmpresaCfgMovRecluta.REEntrevista=EmpresaCfgMovRecluta.REContratacion
+EmpresaCfgMovRecluta.REContratacion=EmpresaCfgMovRecluta.RERechazoRequisicion
+EmpresaCfgMovRecluta.RERechazoRequisicion=EmpresaCfgMovRecluta.RESolicitudEvaluacion
+EmpresaCfgMovRecluta.RESolicitudEvaluacion=EmpresaCfgMovRecluta.REEvaluacion
+EmpresaCfgMovRecluta.REEvaluacion=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=EmpresaCfgMovRecluta.Empresa,
+EmpresaCfgMovRecluta.Empresa,=EmpresaCfgMovRecluta.REAutorizacionPlaza,
+EmpresaCfgMovRecluta.REAutorizacionPlaza,=EmpresaCfgMovRecluta.REEntrevista,
+EmpresaCfgMovRecluta.REEntrevista,=EmpresaCfgMovRecluta.REContratacion,
+EmpresaCfgMovRecluta.REContratacion,=EmpresaCfgMovRecluta.RERechazoRequisicion,
+EmpresaCfgMovRecluta.RERechazoRequisicion,=EmpresaCfgMovRecluta.RESolicitudEvaluacion,
+EmpresaCfgMovRecluta.RESolicitudEvaluacion,=EmpresaCfgMovRecluta.REEvaluacion
+EmpresaCfgMovRecluta.REEvaluacion=FROM EmpresaCfgMovRecluta
+FROM EmpresaCfgMovRecluta=(Fin)

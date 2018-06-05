@@ -1,0 +1,84 @@
+[Dialogo]
+Clave=GenerarActPendiente
+Nombre=Afectar.Mov
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=521
+PosicionInicialArriba=405
+PosicionInicialAlturaCliente=186
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaExclusiva=S
+VentanaEscCerrar=S
+
+[Acciones.Avance]
+Nombre=Avance
+Boton=0
+NombreDesplegar=Generar A&vance
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ACT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ActAvance, Afectar.FormaCaptura)
+
+[Acciones.Conclusion]
+Nombre=Conclusion
+Boton=0
+NombreDesplegar=Generar &Conclusión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ACT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ActConclusion, Afectar.FormaCaptura)
+
+[Acciones.Cancelacion]
+Nombre=Cancelacion
+Boton=0
+NombreDesplegar=Generar Cance&lación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ACT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ActCancelacion, Afectar.FormaCaptura)
+
+[Acciones.Modificar]
+Nombre=Modificar
+Boton=0
+NombreDesplegar=Generar &Modificación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ACT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ActModificacion, Afectar.FormaCaptura)
+
+[Acciones.Atraso]
+Nombre=Atraso
+Boton=0
+NombreDesplegar=Generar Atra&so
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(<T>ACT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.ActAtraso, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Avance
+Avance=Conclusion
+Conclusion=Cancelacion
+Cancelacion=Modificar
+Modificar=Atraso
+Atraso=(Fin)

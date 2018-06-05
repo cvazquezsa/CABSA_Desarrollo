@@ -1,0 +1,87 @@
+[Dialogo]
+Clave=GenerarSolicitudMaterial
+Nombre=Solicitud Material
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=519
+PosicionInicialArriba=405
+PosicionInicialAltura=165
+PosicionInicialAncho=242
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Reservar
+Visible=S
+ActivoCondicion=Usuario.Reservar
+
+[Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesReservar
+Visible=S
+ActivoCondicion=Usuario.DesReservar
+
+[Acciones.Asignar]
+Nombre=Asignar
+Boton=0
+NombreDesplegar=As&ignar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Asignar
+Visible=S
+ActivoCondicion=Usuario.Asignar y Config.BackOrders
+
+[Acciones.DesAsignar]
+Nombre=DesAsignar
+Boton=0
+NombreDesplegar=Des-Asig&nar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesAsignar
+Visible=S
+ActivoCondicion=Usuario.DesAsignar y Config.BackOrders
+
+[Acciones.ConsumoMaterial]
+Nombre=ConsumoMaterial
+Boton=0
+NombreDesplegar=&Generar Consumo Material
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.ProdConsumoMaterial)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[Dialogo.ListaAcciones]
+(Inicio)=ConsumoMaterial
+ConsumoMaterial=Reservar
+Reservar=DesReservar
+DesReservar=Asignar
+Asignar=DesAsignar
+DesAsignar=(Fin)

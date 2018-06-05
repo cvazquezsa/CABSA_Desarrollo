@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=AnexoCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=AnexoCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=AnexoCat.Categoria
+TablaPrincipal=AnexoCat
+UsarJOIN=S
+SQL=SELECT<BR>  AnexoCat.Categoria<BR><BR>FROM<BR>  AnexoCat
+
+[AnexoCat.Categoria]
+Clave=AnexoCat.Categoria
+LigaTabla=AnexoCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

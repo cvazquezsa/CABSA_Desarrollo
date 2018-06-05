@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=CfgRegHistCampo
+Archivo=CfgRegHistCampo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Campos
+Singular=Campo
+SQL=SELECT<BR>  SysTabla,<BR>  Campo<BR><BR>FROM<BR>  CfgRegHistCampo
+LlavePrimaria=SysTabla<BR>Campo
+
+[SysTabla]
+Clave=SysTabla
+Nombre=Tabla
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorPorOmision=Info.Tabla
+
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Campo FROM SysCampo WHERE Tabla=:t<T>, Info.Tabla)
+
+[Tabla.ListaCampos]
+(Inicio)=SysTabla
+SysTabla=Campo
+Campo=(Fin)

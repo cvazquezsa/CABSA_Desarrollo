@@ -1,0 +1,27 @@
+
+[Tabla]
+Icono=0
+Clave=NominaProrrateo
+Nombre=NominaProrrateo
+Archivo=NominaProrrateo
+Modulos=(Todos)
+Singular=NominaProrrateo
+
+TipoTabla=General
+ListaCampos=Prorrateo
+
+SQL=(Lista)
+LlavePrimaria=Prorrateo
+[Prorrateo]
+Clave=Prorrateo
+Nombre=Prorrateo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Prorrateo
+Prorrateo=FROM NominaProrrateo
+FROM NominaProrrateo=(Fin)

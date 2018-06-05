@@ -1,0 +1,350 @@
+[Tabla]
+Icono=0
+Clave=CampanaCfgSituacion
+Archivo=CampanaCfgSituacion
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Situaciones
+Singular=Situación
+LlavePrimaria=(Lista)
+ControlID=S
+ControlEstatus=S
+CampoID=CfgID
+CampoEstatus=Estatus
+CampoSituacion=Situacion
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+
+SQL=SELECT<BR>  ID,<BR>  CfgID,<BR>  Situacion,<BR>  Accion,<BR>  Pagina,<BR>  Asunto,<BR>  ProyectoMov,<BR>  ProyectoPlantilla,<BR>  CampanaMov,<BR>  CampanaMovID,<BR>  OportunidadMov,<BR>  Estatus,<BR>  Sucursal,<BR>  SucursalOrigen,<BR>  GestionMov,<BR>  GestionAsunto,<BR>  GestionPara<BR><BR>FROM<BR>  CampanaCfgSituacion
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[CfgID]
+Clave=CfgID
+Nombre=CfgID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Situacion FROM CampanaTipoSituacion WHERE CampanaTipo=:tTipo ORDER BY Orden<T>, Info.Tipo)
+TipoDatos=Texto
+
+[Accion]
+Clave=Accion
+Nombre=Acción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+
+RefrescarTodoCondiciones=S
+TipoDatos=Texto
+ListaOpciones=(Lista)
+[Pagina]
+Clave=Pagina
+Nombre=Página
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=WebPaginaLista
+AyudaVista=WebPagina
+AyudaCampo=WebPagina.Pagina
+ValidacionUsaTabla=S
+ValidacionTablas=WebPagina
+CondicionDespliege=Accion=<T>Enviar Correo<T>
+ConRefrescar=S
+ListaRefrescar=Asunto
+TipoDatos=Texto
+
+[Asunto]
+Clave=Asunto
+Nombre=Asunto
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=CampanaCfgSituacion:WebPagina.Nombre
+CondicionDespliege=Accion=<T>Enviar Correo<T>
+TipoDatos=Texto
+
+[ProyectoMov]
+Clave=ProyectoMov
+Nombre=Proyecto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=PROY
+CondicionDespliege=Accion=<T>Generar Proyecto<T>
+TipoDatos=Texto
+
+[CampanaMov]
+Clave=CampanaMov
+Nombre=Campaña
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CMP
+CondicionDespliege=Accion en (<T>Copiar Contacto<T>, <T>Mover Contacto<T>)
+
+[CampanaMovID]
+Clave=CampanaMovID
+Nombre=Consecutivo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=Accion en (<T>Copiar Contacto<T>, <T>Mover Contacto<T>)
+AyudaEnCaptura=Vista
+AyudaForma=CampanaPendienteLista
+AyudaVista=Campana
+AyudaCampo=Campana.MovID
+AyudaBusquedaRapida=Asigna(Info.Mov, CampanaMov)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=Campana
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Relaciones.WebPagina]
+TipoRelacion=Opcional
+LlaveLocal=Pagina
+Clave=WebPagina
+TablaRemota=WebPagina
+LlaveRemota=Pagina
+
+[Relaciones.Campana]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=Campana
+TablaRemota=Campana
+LlaveRemota=(Lista)
+
+[ProyectoPlantilla]
+Clave=ProyectoPlantilla
+Nombre=Plantilla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PlantillaProyecto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Accion=<T>Generar Proyecto<T>
+TipoDatos=Texto
+
+[OportunidadMov]
+Clave=OportunidadMov
+Nombre=Oportunidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+OpcionesUnicamente=S
+CondicionDespliege=Accion = <T>Generar Oportunidad<T>
+
+
+
+
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[Relaciones.Campana.LlaveLocal]
+(Inicio)=CampanaMov
+CampanaMov=CampanaMovID
+CampanaMovID=(Fin)
+
+[Relaciones.Campana.LlaveRemota]
+(Inicio)=Mov
+Mov=MovID
+MovID=(Fin)
+
+
+
+
+[GestionMov]
+Clave=GestionMov
+Nombre=Movimiento (Gestión)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=GES
+CondicionDespliege=Accion = <T>Generar Gestion<T>
+[GestionAsunto]
+Clave=GestionAsunto
+Nombre=Asunto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+CondicionDespliege=Accion = <T>Generar Gestion<T>
+[GestionPara]
+Clave=GestionPara
+Nombre=Para
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=UsuarioLista
+AyudaVista=UsuarioA
+AyudaCampo=Usuario.Usuario
+
+ValidacionUsaTabla=S
+ValidacionTablas=Usuario
+CondicionDespliege=Accion = <T>Generar Gestion<T>
+[Relaciones.Usuario]
+TipoRelacion=Opcional
+LlaveLocal=GestionPara
+Clave=Usuario
+TablaRemota=Usuario
+LlaveRemota=Usuario
+
+
+
+
+
+
+
+[Accion.ListaRefrescarCondiciones]
+(Inicio)=Pagina
+Pagina=Asunto
+Asunto=ProyectoMov
+ProyectoMov=ProyectoPlantilla
+ProyectoPlantilla=CampanaMov
+CampanaMov=CampanaMovID
+CampanaMovID=(Fin)
+
+
+
+
+
+
+
+
+
+[Accion.ListaOpciones]
+(Inicio)=Enviar Correo
+Enviar Correo=Generar Proyecto
+Generar Proyecto=Mover Contacto
+Mover Contacto=Copiar Contacto
+Copiar Contacto=Eliminar Contacto
+Eliminar Contacto=Generar Oportunidad
+Generar Oportunidad=Generar Cliente
+Generar Cliente=Generar Proveedor
+Generar Proveedor=Generar Agente
+Generar Agente=Generar Personal
+Generar Personal=Generar Gestion
+Generar Gestion=Actualizar Situacion Contacto
+Actualizar Situacion Contacto=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=CfgID
+CfgID=Situacion
+Situacion=Accion
+Accion=Pagina
+Pagina=Asunto
+Asunto=ProyectoMov
+ProyectoMov=ProyectoPlantilla
+ProyectoPlantilla=CampanaMov
+CampanaMov=CampanaMovID
+CampanaMovID=OportunidadMov
+OportunidadMov=Estatus
+Estatus=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=GestionMov
+GestionMov=GestionAsunto
+GestionAsunto=GestionPara
+GestionPara=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=WebPagina
+WebPagina=Campana
+Campana=Usuario
+Usuario=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ID
+ID=CfgID
+CfgID=(Fin)

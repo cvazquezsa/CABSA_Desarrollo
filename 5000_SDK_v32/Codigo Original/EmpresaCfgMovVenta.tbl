@@ -1,0 +1,81 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovVenta
+Archivo=EmpresaCfgMovVenta
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+Nombre=EmpresaCfgMovVenta
+Singular=EmpresaCfgMovVenta
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  VentaBonificacion,<BR>  VentaEstadistica,<BR>  VentaPedidoEstadistico<BR><BR>FROM<BR>  EmpresaCfgMovVenta
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[VentaBonificacion]
+Clave=VentaBonificacion
+Nombre=Bonificacion Venta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+
+
+
+
+[VentaEstadistica]
+Clave=VentaEstadistica
+Nombre=Factura Estadistica
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+
+
+
+
+[VentaPedidoEstadistico]
+Clave=VentaPedidoEstadistico
+Nombre=Pedido Estadistico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=VentaBonificacion
+VentaBonificacion=VentaEstadistica
+VentaEstadistica=VentaPedidoEstadistico
+VentaPedidoEstadistico=(Fin)

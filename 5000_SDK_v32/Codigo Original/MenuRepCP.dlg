@@ -1,0 +1,36 @@
+[Dialogo]
+Clave=MenuRepCP
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=990
+PosicionInicialArriba=493
+PosicionInicialAltura=141
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+
+ListaAcciones=Informe
+PosicionInicialAlturaCliente=90
+[Dialogo.ListaAcciones]
+(Inicio)=ArtPrecioHist
+ArtPrecioHist=General
+General=(Fin)
+
+[Acciones.Informe]
+Nombre=Informe
+Boton=0
+NombreDesplegar=Presupuesto por partida presupuestal
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=InformeCP
+Activo=S
+Visible=S

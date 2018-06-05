@@ -1,0 +1,24 @@
+[Tabla]
+Icono=0
+Clave=AlmGrupo
+Archivo=AlmGrupo
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Grupo
+Nombre=Grupos
+Singular=Grupo
+LlavePrimaria=Grupo
+SQL=SELECT<BR>  Grupo<BR><BR>FROM<BR>  AlmGrupo
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

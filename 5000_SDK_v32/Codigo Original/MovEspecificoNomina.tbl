@@ -1,0 +1,56 @@
+[Tabla]
+Icono=0
+Clave=MovEspecificoNomina
+Nombre=Movimiento Especifico Nomina
+Archivo=MovEspecificoNomina
+Modulos=(Todos)
+Singular=Movimiento Especifico Nomina
+TipoTabla=General
+ListaCampos=(Lista)
+LlavePrimaria=MovEspecificoNomina<BR>NominaConcepto
+ListaRelaciones=(Lista)
+SQL=SELECT<BR>  MovEspecificoNomina,<BR>  NominaConcepto<BR><BR>FROM<BR>  MovEspecificoNomina
+
+[MovEspecificoNomina]
+Clave=MovEspecificoNomina
+Nombre=MovEspecificoNomina
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+Formula=SQLEnLista(<T>SELECT  MOV FROM  MovTipo  WHERE  Modulo=:tm AND Clave IN(:tc,:tk)<T>, <T>NOM<T>, <T>NOM.N<T>, <T>NOM.NE<T>)
+TipoDatos=Texto
+
+[NominaConcepto]
+Clave=NominaConcepto
+Nombre=NominaConcepto
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.NominaConcepto
+ValorRefrescar=Info.NominaConcepto
+TipoDatos=Texto
+
+[Relaciones.Nominaconcepto]
+TipoRelacion=Forzosa
+LlaveLocal=NominaConcepto
+Clave=Nominaconcepto
+TablaRemota=NominaConcepto
+LlaveRemota=NominaConcepto
+
+[Relaciones.Mov]
+TipoRelacion=Forzosa
+LlaveLocal=MovEspecificoNomina
+Clave=Mov
+TablaRemota=MovTipo
+LlaveRemota=Mov
+
+[Tabla.ListaCampos]
+(Inicio)=MovEspecificoNomina
+MovEspecificoNomina=NominaConcepto
+NominaConcepto=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Nominaconcepto
+Nominaconcepto=Mov
+Mov=(Fin)

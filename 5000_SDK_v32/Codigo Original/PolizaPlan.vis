@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PolizaPlan
+Nombre=Planes
+Modulos=(Todos)
+Singular=Plan
+ListaTablas=PolizaPlan
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PolizaPlan.PolizaPlan
+TablaPrincipal=PolizaPlan
+UsarJOIN=S
+SQL=SELECT<BR>  PolizaPlan.PolizaPlan<BR><BR>FROM<BR>  PolizaPlan
+
+[PolizaPlan.PolizaPlan]
+Clave=PolizaPlan.PolizaPlan
+LigaTabla=PolizaPlan
+LigaCampo=PolizaPlan
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=PolizaPlan

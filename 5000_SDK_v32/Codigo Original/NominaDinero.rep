@@ -1,0 +1,598 @@
+[Reporte]
+Clave=NominaDinero
+Icono=0
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+Orientacion=por Omision
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros=S
+Columnas=1
+PosicionInicialAltura=603
+PosicionInicialAncho=798
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+Vista=NominaDinero
+Nombre=Rep.Titulo
+OtroOrden=S
+ImpresoraPixeles=(Auto)
+Parametros1=
+Parametros2=
+Parametros3=
+ListaOrden=NominaD.Movimiento<TAB>(Acendente)
+Filtros=S
+TieneFiltroAbierto=S
+FiltroAbierto=Nomina.ID={Info.ID} AND NominaD.Modulo=<T>DIN<T>
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Inicio: NominaD.Movimiento<BR>Detalle<BR>Fin: NominaD.Movimiento<BR>Final<BR>Pie
+VentanaIzquierda=38
+VentanaArriba=99
+VentanaAltura=570
+VentanaAncho=947
+PanelArriba=279
+PanelBotones=149
+
+[Linea1]
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Objetos=6
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Marco=N
+ExpresionesAntesImprimir=
+Renglones=1
+FondoColor=Blanco
+BordeAbajo=S
+EstiloAbajo=1
+Visible=
+EstiloMarco=0
+
+[Linea3]
+Clave=Inicio: NominaD.Movimiento
+Objetos=1
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=0
+AltoEnCm=0.6
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+Grupo=NominaD.Movimiento
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=7
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Rep.Titulo
+Marco=N
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=43
+FondoColor=Blanco
+CBTipo=UPC A
+
+[Linea4]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+EstiloMarco=3
+AltoEnCm=0.39
+AVertical=Centrado
+Visible=
+Fuente={Arial, 8, Negro, []}
+Marco=N
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+Grupo=
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+ClaveAccion=NominaDinero
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=NominaDinero
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea5]
+Clave=Fin: NominaD.Movimiento
+Objetos=2
+Seccion=Fin Grupo
+AltoEnCm=0.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+EstiloMarco=0
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+EstiloArriba=0
+Renglones=1
+FondoColor=Blanco
+Grupo=NominaD.Movimiento
+ExpresionesAntesImprimir=
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=5.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Nomina.Mov+<T> <T>+Nomina.MovID
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=8.1
+AnchoTexto=44
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=NominaD.Movimiento
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+BordeAbajo=N
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=0.71
+AnchoTexto=4
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=
+CBTipo=UPC A
+Marco=N
+EstiloMarco=0
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=17
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(NominaD.Cuenta)
+CBTipo=UPC A
+Marco=N
+EstiloMarco=0
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C2]
+Celda=C2
+Alineacion=Centrado
+AnchoEnCm=4.39
+AnchoTexto=24
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CtaDinero.Descripcion)
+CBTipo=UPC A
+Marco=N
+EstiloMarco=0
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D2]
+Celda=D2
+Alineacion=Centrado
+AnchoEnCm=5.39
+AnchoTexto=29
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(NominaD.Referencia)
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+Marco=N
+EstiloMarco=0
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=16.5
+AnchoTexto=89
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=
+FormatoValidacion=
+
+[C1]
+Celda=C1
+Alineacion=Derecha
+AnchoEnCm=7
+AnchoTexto=15
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+
+[F7]
+Celda=F7
+Alineacion=Derecha
+AnchoEnCm=1.5
+AnchoTexto=11
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(NominaD.Cantidad)
+FormatoValidacion=#,
+
+[E2]
+Celda=E2
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=20
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(NominaD.Concepto)
+
+[F2]
+Celda=F2
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=11
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(NominaD.Importe)
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(NominaD.Importe)
+FormatoValidacion=(Monetario)
+
+[Linea6]
+Clave=Final
+Objetos=2
+Seccion=Final
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+Fuente={Arial, 12, Negro, [Negritas]}
+AVertical=Centrado
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=0.71
+AnchoTexto=4
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=3
+
+[B4]
+Celda=B4
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=NominaD.Cuenta
+EstiloMarco=3
+EstiloArriba=3
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=15.6
+AnchoTexto=84
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=<T>Total<T>
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+AnchoEnCm=3.89
+AnchoTexto=21
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Suma(NominaD.Importe)
+FormatoValidacion=(Monetario)
+
+[Linea7]
+Clave=Pie
+Objetos=3
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=4.39
+AnchoTexto=24
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=CtaDinero.Descripcion
+
+[D4]
+Celda=D4
+Alineacion=Izquierda
+AnchoEnCm=5.39
+AnchoTexto=29
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=NominaD.Referencia
+
+[E4]
+Celda=E4
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=NominaD.Concepto
+
+[F4]
+Celda=F4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=NominaD.Importe
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=1.61
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Nomina.Moneda
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

@@ -1,0 +1,91 @@
+[Tabla]
+Icono=0
+Clave=ArtArancel
+Archivo=ArtArancel
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Aranceles
+Singular=Arancel
+LlavePrimaria=Arancel
+SQL=SELECT<BR>  Arancel,<BR>  Porcentaje,<BR>  Unidad,<BR>  Cuota,<BR>  Porcentaje2,<BR>  UnidadVenta,<BR>  UnidadCompra<BR><BR>FROM<BR>  ArtArancel
+
+[Arancel]
+Clave=Arancel
+Nombre=Arancel
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=% IGI
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Unidad]
+Clave=Unidad
+Nombre=UMT
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=Unidad
+AyudaVista=Unidad
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Cuota]
+Clave=Cuota
+Nombre=% Cuota Compensatoria
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Porcentaje2]
+Clave=Porcentaje2
+Nombre=% IGE
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[UnidadVenta]
+Clave=UnidadVenta
+Nombre=UMV
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[UnidadCompra]
+Clave=UnidadCompra
+Nombre=UMC
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Arancel
+Arancel=Cuota
+Cuota=Porcentaje
+Porcentaje=Porcentaje2
+Porcentaje2=Unidad
+Unidad=UnidadVenta
+UnidadVenta=UnidadCompra
+UnidadCompra=(Fin)

@@ -1,0 +1,19 @@
+[Vista]
+Icono=0
+Clave=InfoSubComite
+Nombre=Sub Comite
+Modulos=(Todos)
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=SubComite
+SQL=SELECT DISTINCT SubComite FROM CteCtoComites WHERE Comite = <T>{Info.Comite}<T>
+LlavePrimaria=SubComite
+CamposBusquedaRapida=SubComite
+
+[SubComite]
+Clave=SubComite
+Nombre=Sub Comite
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ClaveBDE=SubComite

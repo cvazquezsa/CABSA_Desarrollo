@@ -1,0 +1,72 @@
+[Vista]
+Icono=0
+Clave=CompraProrrateoManual
+Nombre=Tabla Prorrateo
+Modulos=(Todos)
+Singular=Tabla Prorrateo
+ListaTablas=CompraProrrateoManual
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=CompraProrrateoManual
+ListaCalculados=(Lista)
+UsarJOIN=S
+SQL=SELECT<BR>  CompraProrrateoManual.Estacion,<BR>  CompraProrrateoManual.Grupo,<BR>  CompraProrrateoManual.Cantidad<BR><BR>FROM<BR>  CompraProrrateoManual
+
+[CantidadTotal]
+Clave=CantidadTotal
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Cantidad Total
+Cantidad=S
+Formula=CompraProrrateoManual.Cantidad*Sucursales
+
+[Sucursales]
+Clave=Sucursales
+TipoDatos=Numérico
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Sucursales
+Formula=SQL(<T>SELECT Sucursales FROM SucursalesDelGrupoConAlm WHERE Grupo=:tGrupo<T>, CompraProrrateoManual.Grupo)
+
+[CompraProrrateoManual.Estacion]
+Clave=CompraProrrateoManual.Estacion
+LigaTabla=CompraProrrateoManual
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Estacion
+
+[CompraProrrateoManual.Grupo]
+Clave=CompraProrrateoManual.Grupo
+LigaTabla=CompraProrrateoManual
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[CompraProrrateoManual.Cantidad]
+Clave=CompraProrrateoManual.Cantidad
+LigaTabla=CompraProrrateoManual
+LigaCampo=Cantidad
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Cantidad
+
+[Vista.ListaCampos]
+(Inicio)=CompraProrrateoManual.Estacion
+CompraProrrateoManual.Estacion=CompraProrrateoManual.Grupo
+CompraProrrateoManual.Grupo=CompraProrrateoManual.Cantidad
+CompraProrrateoManual.Cantidad=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=Sucursales
+Sucursales=CantidadTotal
+CantidadTotal=(Fin)

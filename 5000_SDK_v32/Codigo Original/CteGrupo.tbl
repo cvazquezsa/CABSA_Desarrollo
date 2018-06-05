@@ -1,0 +1,34 @@
+[Tabla]
+Icono=0
+Clave=CteGrupo
+Archivo=CteGrupo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Grupos
+Singular=Grupo
+LlavePrimaria=Grupo
+SQL=SELECT<BR>  Grupo,<BR>  ACPorcentajeResidual<BR><BR>FROM<BR>  CteGrupo
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+OpcionesColumnas=1
+OpcionesRenglones=8
+Tamano=50
+TamanoValidacion=50
+TipoDatos=Texto
+
+[ACPorcentajeResidual]
+Clave=ACPorcentajeResidual
+Nombre=% Residual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=General.AC
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Grupo
+Grupo=ACPorcentajeResidual
+ACPorcentajeResidual=(Fin)

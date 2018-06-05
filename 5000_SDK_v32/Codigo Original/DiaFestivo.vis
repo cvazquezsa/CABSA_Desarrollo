@@ -1,0 +1,47 @@
+[Vista]
+Icono=0
+Clave=DiaFestivo
+Nombre=Días Festivos
+Modulos=(Todos)
+Singular=Día Festivo
+ListaTablas=DiaFestivo
+TablaPrincipal=DiaFestivo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+UsarJOIN=S
+SQL=SELECT<BR>  DiaFestivo.Fecha,<BR>  DiaFestivo.Concepto,<BR>  DiaFestivo.EsLaborable<BR><BR>FROM<BR>  DiaFestivo
+
+[DiaFestivo.Fecha]
+Clave=DiaFestivo.Fecha
+LigaTabla=DiaFestivo
+LigaCampo=Fecha
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Fecha
+
+[DiaFestivo.Concepto]
+Clave=DiaFestivo.Concepto
+LigaTabla=DiaFestivo
+LigaCampo=Concepto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Concepto
+
+[DiaFestivo.EsLaborable]
+Clave=DiaFestivo.EsLaborable
+LigaTabla=DiaFestivo
+LigaCampo=EsLaborable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=EsLaborable
+
+[Vista.ListaCampos]
+(Inicio)=DiaFestivo.Fecha
+DiaFestivo.Fecha=DiaFestivo.Concepto
+DiaFestivo.Concepto=DiaFestivo.EsLaborable
+DiaFestivo.EsLaborable=(Fin)

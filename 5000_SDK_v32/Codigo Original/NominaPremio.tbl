@@ -1,0 +1,198 @@
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Nivel]
+Clave=Nivel
+Nombre=Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+CondicionDespliege=Nivel en (<T>Agente<T>, <T>Director<T>)
+
+[Linea]
+Clave=Linea
+Nombre=Línea
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtLinea
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Nivel en (<T>Agente<T>, <T>Director<T>)
+
+[Meta]
+Clave=Meta
+Nombre=Meta (Importe)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Nivel en (<T>Agente<T>, <T>Director<T>)
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[MetaCantidad]
+Clave=MetaCantidad
+Nombre=Meta (Cantidad)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Nivel en (<T>Agente<T>, <T>Director<T>)
+
+[MetaPorcentaje]
+Clave=MetaPorcentaje
+Nombre=Meta (%)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Nivel en (<T>Agente<T>, <T>Director<T>)
+
+[TablaImpuestos]
+Clave=TablaImpuestos
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaImpuesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla]
+ListaCampos=(Lista)
+Icono=0
+Clave=NominaPremio
+Nombre=Premios
+Archivo=NominaPremio
+Modulos=(Todos)
+Singular=Premio
+ListaRelaciones=Art
+LlavePrimaria=ID
+TipoTabla=Configuracion
+ControlID=S
+ControlEstatus=S
+CampoID=ID
+CampoEstatus=Estatus
+EstatusDefault=ACTIVO
+SQL=SELECT<BR>  ID,<BR>  Nombre,<BR>  Nivel,<BR>  Estatus,<BR>  Articulo,<BR>  Linea,<BR>  Meta,<BR>  MetaCantidad,<BR>  MetaPorcentaje,<BR>  TablaImpuestos,<BR>  PersonalGrupo,<BR>  PenalizacionPorcentaje,<BR>  PenalizacionCuota<BR><BR>FROM<BR>  NominaPremio
+
+[PersonalGrupo]
+Clave=PersonalGrupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PersonalGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[PenalizacionPorcentaje]
+Clave=PenalizacionPorcentaje
+Nombre=% Penalización
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[PenalizacionCuota]
+Clave=PenalizacionCuota
+Nombre=Cuota Penalización
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Nivel.ListaOpciones]
+(Inicio)=Agente
+Agente=Encargado
+Encargado=Encargado Zona
+Encargado Zona=Supervisor
+Supervisor=Gerente
+Gerente=Director
+Director=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ACTIVO
+ACTIVO=INACTIVO
+INACTIVO=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Nombre
+Nombre=Nivel
+Nivel=Estatus
+Estatus=Articulo
+Articulo=Linea
+Linea=Meta
+Meta=MetaCantidad
+MetaCantidad=MetaPorcentaje
+MetaPorcentaje=TablaImpuestos
+TablaImpuestos=PersonalGrupo
+PersonalGrupo=PenalizacionPorcentaje
+PenalizacionPorcentaje=PenalizacionCuota
+PenalizacionCuota=(Fin)

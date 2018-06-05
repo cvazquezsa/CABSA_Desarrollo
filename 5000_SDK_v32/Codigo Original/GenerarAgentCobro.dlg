@@ -1,0 +1,35 @@
+[Dialogo]
+Clave=GenerarAgentCobro
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=404
+PosicionInicialArriba=322
+PosicionInicialAltura=117
+PosicionInicialAncho=215
+ListaAcciones=Cobro
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Cobro]
+Nombre=Cobro
+Boton=0
+NombreDesplegar=Generar &Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.AgentCobro, Afectar.FormaCaptura)
+Activo=S
+Visible=S

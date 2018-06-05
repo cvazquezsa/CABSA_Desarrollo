@@ -1,0 +1,2392 @@
+[Tabla]
+Icono=0
+Clave=CompraD
+Archivo=CompraD
+Modulos=COMS
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Compras
+Singular=Compra
+LlavePrimaria=(Lista)
+ControlSubCuenta=S
+CampoID=ID
+CampoSubCuenta=SubCuenta
+ControlRenglonID=S
+CampoRenglonID=RenglonID
+ControlRenglonTipo=S
+CampoRenglonTipo=RenglonTipo
+ControlCuenta=S
+CampoCuenta=Articulo
+ControlGrupo=S
+CampoGrupo=Almacen
+ListaRelaciones=(Lista)
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Renglon]
+Clave=Renglon
+Nombre=Renglón
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[RenglonSub]
+Clave=RenglonSub
+Nombre=RenglonSub
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=0
+
+[RenglonID]
+Clave=RenglonID
+Nombre=RenglonID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[RenglonTipo]
+Clave=RenglonTipo
+Nombre=RenglonTipo
+TamanoValidacion=1
+Tamano=1
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si((Info.Copiar) Y (Vacio(Cantidad)), Info.CantidadPendiente, Si(Usuario.CompraSugerirDisponible, SQL(<T>SELECT Disponible FROM ArtDisponible WHERE Empresa=:tEmp AND Articulo=:tArt AND Almacen=:tAlm<T>, Empresa, Articulo, Almacen), Cantidad)))
+CondicionDespliege=Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)
+ConRefrescar=S
+ListaRefrescar=(Lista)
+Cantidad=S
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén
+AyudaEnCaptura=Vista
+TamanoValidacion=10
+Tamano=10
+AyudaMemTabla=AlmCompra
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Compra:Compra.Almacen
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+CondicionEdicion=(no Usuario.BloquearAlmacen) y ((Compra:Compra.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Compra:Compra.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.O, COMS.OP, COMS.CP, COMS.OG, COMS.OD, COMS.OI, COMS.R)) y Usuario.ModificarAlmacenEntregas))
+ValorRefrescar=Info.Almacen
+Requerido=S
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=AlmDetalle
+CondicionDespliege=Config.CompraMultiAlmacen o ((MovTipo(<T>COMS<T>, Compra:Compra.Mov) = COMS.CC) y (Compra:Compra.Estatus en (EstatusPendiente, EstatusConcluido)))
+TipoDatos=Texto
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+AyudaForma=ArtCompraLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+AyudaMultiple=S
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Articulo, Si(ConDatos(CompraD:CB.SubCuenta), Forma.BloquearAsistenteOpcionesUnaVez) CompraD:CB.Cuenta)
+MascaraEdicion=Config.ArtFormato
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+AlCambiar=Asigna(SubCuenta, Nulo)
+AyudaBusquedaRapida=Asigna(Info.Proveedor, Compra:Compra.Proveedor)<BR>Asigna(Info.Nombre, Compra:Prov.Nombre)
+ConAyudaBusquedaRapida=S
+ConMensageEmergente=S
+MensageEmergente=CompraD:Art.Mensaje
+RequeridoActivo=S
+TipoDatos=Texto
+
+CondicionDespliege=((no Config.CompraPresupuestosCategoria) o (MovTipo(<T>COMS<T>, Compra:Compra.Mov)<>COMS.PR))
+ValidacionCondicion=(CompraD:Art.Tipo<><T>Estructura<T>) y ((MovTipo(<T>COMS<T>, Compra:Compra.Mov)<>COMS.FL) o (CompraD:Art.TipoCompra=<T>Local<T>))
+[SubCuenta]
+Clave=SubCuenta
+Nombre=Opción
+TamanoValidacion=20
+Tamano=50
+ValorRefrescar=Si(Info.Copiar, Info.SubCuenta, Vacio(CompraD:CB.SubCuenta, SubCuenta))
+OpcionesPresentacion=Consulta Opcional
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaOpcionesArticulo=CompraD:CompraD.Articulo
+AyudaForma=ArtAlmDesglose
+AyudaVista=ArtDesglose
+AyudaCampo=ArtSubDisponible.SubCuenta
+AyudaBusquedaRapida=Asigna(Info.Articulo, Articulo)<BR>Asigna(Info.Almacen, Almacen)<BR>Asigna(Info.Descripcion, CompraD:Art.Descripcion1)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ConRefrescar=S
+ListaRefrescar=Costo
+CondicionDespliege=((no Config.CompraPresupuestosCategoria) o (MovTipo(<T>COMS<T>, Compra:Compra.Mov)<>COMS.PR))
+TipoDatos=Texto
+
+[FechaEntrega]
+Clave=FechaEntrega
+Nombre=Fecha Entrega
+AyudaEnCaptura=Calendario sin Hora
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+CondicionDespliege=MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.O,COMS.OP,COMS.CP,COMS.OG,COMS.OD,COMS.OI))
+ValorPorOmision=Compra:Compra.FechaEntrega
+CondicionEdicion=(Compra:Compra.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Compra:Compra.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarEntregas)
+
+[Costo]
+Clave=Costo
+Nombre=Costo Unitario
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=(Usuario.Costos o (MovTipo(<T>COMS<T>,Compra:Compra.Mov)=COMS.FL)) y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.IG, COMS.DG))
+ValorRefrescar=Si<BR>  Info.Copiar<BR>Entonces<BR>  Info.Costo<BR>Sino<BR>  Si<BR>    Config.CompraCostoConImpuesto<BR>  Entonces<BR>    QuitarPorcentaje(CostoConImpuesto-Si(Version.Impuesto3Info, 0, Impuesto3), JuntarImpuestos(Impuesto1, Si(Version.Impuesto2Info, 0, Impuesto2)))<BR>  Sino<BR>    Si<BR>      Info.CambioImpuesto<BR>    Entonces<BR>      Asigna(Info.CambioImpuesto, Falso)<BR>      Costo<BR>    Sino<BR>      Si(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.R, COMS.C,COMS.O,COMS.OP,COMS.CP,COMS.D,COMS.OG,COMS.OD,COMS.OI,COMS.F,COMS.FL,COMS.EG,COMS.EI,COMS.IG,COMS.CC)), Si(ConDatos(Compra:Compra.ListaPreciosEsp), SQL(<T>spVerPrecioEsp :tLista, :tMoneda, :tArt, :tSub, :tUnidad<T>, Compra:Compra.ListaPreciosEsp, Compra:Compra.Moneda, CompraD:CompraD.Articulo, CompraD:CompraD.SubCuenta, CompraD:CompraD.Unidad), SQL(<T>spVerCosto :nSucursal, :tEmpresa, :tProv, :tArticulo, :tSub, :tUnidad, :tCual, :tMoneda, :nTipoCambio<T>, Sucursal, Empresa, Compra:Compra.Proveedor, Articulo, SubCuenta, Unidad, Config.CompraCostoSugerido, Compra:Compra.Moneda, Compra:Compra.TipoCambio)))<BR>    Fin<BR>  Fin<BR>Fin
+ConRefrescar=S
+ListaRefrescar=DescuentoImporte
+CondicionEdicion=(no Config.CompraCostoConImpuesto) y (no Usuario.BloquearCostos)
+
+[DescuentoTipo]
+Clave=DescuentoTipo
+Nombre=Tipo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Config.CompraDescImporte y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.IG, COMS.DG, COMS.B))
+ValorRefrescar=Info.DescTipo
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DescuentoLinea]
+Clave=DescuentoLinea
+Nombre=Desc.
+AyudaEnCaptura=Descuentos Cascada
+TamanoValidacion=10
+TipoDatos=NumMonetario
+CondicionDespliege=Usuario.Costos y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.IG, COMS.DG, COMS.B))
+ValorRefrescar=Si<BR>  MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.D, COMS.DG, COMS.B)<BR>Entonces<BR>  Si(Info.Copiar, Info.Desc, Si(General.ClaveDesarrollo=<T>INFO<T>, SQL(<T>SELECT ISNULL(Flotante1, 0.0) FROM ArtGrupo WHERE Grupo = :tGrupo<T>, CompraD:Art.Grupo), Si(Config.ArtDescuentoCompraCascada, Asigna(DescripcionExtra,  ListaConFormato(SQLEnLista(<T>SELECT Porcentaje FROM ArtDescuentoCompra WHERE Articulo=:tArt<T>, Articulo), ,<T>, <T>))) CompraD:Art.DescuentoCompra ))<BR>Fin
+ConRefrescar=S
+ListaRefrescar=DescuentoImporte
+AyudaOpcionesArticulo=CompraD:CompraD.DescripcionExtra
+
+[DescripcionExtra]
+Clave=DescripcionExtra
+Nombre=Observaciones
+TamanoValidacion=20
+Tamano=100
+CondicionDespliege=Config.CompraVerDescripcionExtra o MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.R, COMS.C, COMS.OG, COMS.OD, COMS.IG, COMS.DG))
+ValorRefrescar=Info.Descripcion
+TipoDatos=Texto
+
+[DestinoTipo]
+Clave=DestinoTipo
+Nombre=Tipo Destino
+TamanoValidacion=10
+Tamano=10
+ValorRefrescar=Info.OrigenTipo
+TipoDatos=Texto
+
+[Destino]
+Clave=Destino
+Nombre=Destino
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=Info.Origen
+CondicionDespliege=Compra:Compra.VerDestino y MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.O,COMS.OP,COMS.OG,COMS.OI)) y (Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))
+AyudaForma=VentaPendienteDLista
+AyudaVista=VentaPendienteD
+AyudaCampo=VentaPendienteD.Mov
+AyudaBusquedaRapida=Asigna(Info.Cliente, Nulo)
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaRefrescar=S
+TipoDatos=Texto
+
+[DestinoID]
+Clave=DestinoID
+Nombre=Consecutivo
+TamanoValidacion=10
+ValorRefrescar=Info.OrigenID
+CondicionDespliege=Compra:Compra.VerDestino y MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.O,COMS.OP,COMS.OG,COMS.OI)) y (Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Aplica]
+Clave=Aplica
+Nombre=Aplica
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=(MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.R,COMS.O,COMS.OP,COMS.CP,COMS.OG,COMS.OD,COMS.OI)) o MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.C, COMS.F, COMS.FL, COMS.EG, COMS.EI, COMS.IG, COMS.D, COMS.DG, COMS.CC))) y (no Compra:Compra.Directo) y (Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))
+AyudaForma=CompraPendienteDLista
+AyudaVista=CompraPendienteD
+AyudaCampo=CompraPendienteD.Mov
+AyudaBusquedaRapida=Asigna(Info.Moneda, Compra:Compra.Moneda)<BR>Si(MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.C,COMS.O,COMS.OP,COMS.CP,COMS.OG,COMS.OD,COMS.OI)), Asigna(Info.Proveedor, Nulo), Asigna(Info.Proveedor, Compra:Compra.Proveedor))
+ConAyudaBusquedaRapida=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaRefrescar=S
+TipoDatos=Texto
+
+[AplicaID]
+Clave=AplicaID
+Nombre=Consecutivo
+TamanoValidacion=10
+CondicionDespliege=(MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.R,COMS.O,COMS.OP,COMS.CP,COMS.OG,COMS.OD,COMS.OI)) o MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.C, COMS.F, COMS.FL, COMS.EG, COMS.EI, COMS.IG, COMS.D, COMS.DG, COMS.CC))) y (no Compra:Compra.Directo) y (Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))
+ValorRefrescar=Info.MovID
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[CantidadPendiente]
+Clave=CantidadPendiente
+Nombre=Pendiente
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=(Compra:Compra.Estatus=EstatusPendiente) y Usuario.ConsultarCompraPendiente
+Cantidad=S
+UnicamenteLectura=S
+
+[CantidadA]
+Clave=CantidadA
+Nombre=a Afectar
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Compra:Compra.Estatus=EstatusPendiente
+Cantidad=S
+
+[Impuesto1]
+Clave=Impuesto1
+Nombre=% IVA
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si<BR>  General.TipoImpuesto<BR>Entonces<BR>  Asigna(Temp.Reg, SQL(<T>spTipoImpuesto :tModulo, :nID, :tMov, :fFecha, :tEmpresa, :nSucursal, :tProv, @Articulo = :tArt, @VerTipos=1<T>, <T>COMS<T>, Compra:Compra.ID, Compra:Compra.Mov, Compra:Compra.FechaEmision, Empresa, Compra:Compra.Sucursal, Compra:Compra.Proveedor, CompraD:CompraD.Articulo))<BR>  Asigna(Info.Impuesto1, Temp.Reg[1])<BR>  Asigna(Info.Impuesto2, Temp.Reg[2])<BR>  Asigna(Info.Impuesto3, Temp.Reg[3])<BR>  Asigna(Info.Retencion1, Temp.Reg[4])<BR>  Asigna(Info.Retencion2, Temp.Reg[5])<BR>  Asigna(Info.Retencion3, Temp.Reg[6])<BR>  Asigna(TipoImpuesto1, Temp.Reg[7], falso)<BR>  Asigna(TipoImpuesto2, Temp.Reg[8], falso)<BR>  Asigna(TipoImpuesto3, Temp.Reg[9], falso)<BR>  Asigna(TipoRetencion1, Temp.Reg[10], falso)          <BR>  Asigna(TipoRetencion2, Temp.Reg[11], falso)<BR>  Asigna(TipoRetencion3, Temp.Reg[12], falso)<BR>  Asigna(TipoImpuesto4, Temp.Reg[13], falso)<BR>  Asigna(Impuesto5, Temp.Reg[14], falso)<BR>  Asigna(TipoImpuesto5, Temp.Reg[15], falso)<BR>Fin<BR>Si(General.TipoImpuesto o Info.Copiar,Info.Impuesto1,ImpuestoZona(CompraD:Art.Impuesto1, Compra:Compra.ZonaImpuesto))
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=Config.CompraVerImpuesto1
+[Impuesto2]
+Clave=Impuesto2
+Nombre=% IEPS
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si(General.TipoImpuesto o Info.Copiar, Asigna(Info.Copiar, Falso) Info.Impuesto2, Si(CompraD:Art.Tipo<>TipoVIN, ImpuestoZona(CompraD:Art.Impuesto2, Compra:Compra.ZonaImpuesto)))
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=Config.CompraVerImpuesto2
+[FechaRequerida]
+Clave=FechaRequerida
+Nombre=Fecha Requerida
+AyudaEnCaptura=Calendario sin Hora
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+ValorRefrescar=Info.FechaD
+ValorPorOmision=Compra:Compra.FechaRequerida
+CondicionDespliege=MovTipo(<T>COMS<T>, Compra:Compra.Mov) noen (COMS.D, COMS.DG, COMS.B, COMS.DC)
+CondicionEdicion=(Compra:Compra.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Compra:Compra.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarFechaRequerida)
+
+[CantidadCancelada]
+Clave=CantidadCancelada
+Nombre=Cancelado
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=(Compra:Compra.Estatus=EstatusConcluido) y MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.O, COMS.OP, COMS.OG, COMS.OD, COMS.OI))
+Cantidad=S
+UnicamenteLectura=S
+
+[ContUso]
+Clave=ContUso
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+MascaraEdicion=Config.CentrosCostosFormato
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostosLista
+AyudaVista=CentroCostosLista
+AyudaCampo=CentroCostosLista.CentroCostos
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos
+CondicionDespliege=Config.ContUsoCompras
+Mayusculas=S
+ValorPorOmision=Usuario.DefContUso
+CondicionEdicion=(no Usuario.BloquearContUso) y ((Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarProyUENActCC)
+ValorRefrescar=Si(ConDatos(CompraD:Art.ContUso),CompraD:Art.ContUso,Usuario.DefContUso)
+TipoDatos=Texto
+
+[ReferenciaExtra]
+Clave=ReferenciaExtra
+Nombre=Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.OG, COMS.OD, COMS.OP, COMS.IG, COMS.DG)) o (General.Ford y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.O) y (Compra:Compra.Estatus=EstatusPendiente))
+CondicionEdicion=(Compra:Compra.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Compra:Compra.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias)
+TipoDatos=Texto
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Relaciones.AlmDetalle]
+TipoRelacion=Opcional
+LlaveLocal=Almacen
+Clave=AlmDetalle
+TablaRemota=AlmDetalle
+LlaveRemota=Almacen
+
+[CostoInv]
+Clave=CostoInv
+Nombre=Costo Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=(MovTipo(<T>COMS<T>, Compra:Compra.Mov) en (COMS.EG,COMS.EI,COMS.PR,COMS.OI)) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>) 
+CondicionEdicion=no Usuario.BloquearCostos
+
+[Unidad]
+Clave=Unidad
+Nombre=Unidad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorRefrescar=Si(Info.Copiar, Info.Unidad, Si(Config.MultiUnidades, CompraD:Art.UnidadCompra))
+AyudaMemTabla=Unidad
+CondicionDespliege=Config.MultiUnidades
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaRefrescar=S
+Formula=UnidadesArticulo(Articulo)
+TipoDatos=Texto
+
+[Factor]
+Clave=Factor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1.0
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+CondicionDespliege=Config.BackOrders y (Config.BackOrdersNivel=<T>Cliente<T>) y MovTipoEn(<T>COMS<T>,Compra:Compra.Mov, (COMS.O,COMS.OP,COMS.OG,COMS.OI,COMS.F,COMS.FL,COMS.EG,COMS.EI,COMS.IG))
+CondicionEdicion=(Compra:Compra.Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Compra:Compra.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarClienteBackOrder)
+TipoDatos=Texto
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[ServicioArticulo]
+Clave=ServicioArticulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValorRefrescar=Info.ArticuloCopia
+TipoDatos=Texto
+
+[ServicioSerie]
+Clave=ServicioSerie
+Nombre=Serie
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=Info.SerieLote
+TipoDatos=Texto
+
+[Impuesto3]
+Clave=Impuesto3
+Nombre=Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Asigna(Info.Factor,SQL(<T>SELECT dbo.fnArtUnidadFactor(:tEmpresa, :tArticulo,:tUnidad)<T>,Compra:Compra.Empresa, CompraD:CompraD.Articulo,CompraD:CompraD.Unidad))<BR>Si(General.TipoImpuesto o Info.Copiar, Asigna(Info.Copiar, Falso) Info.Impuesto3*Info.Factor, ImpuestoZona(CompraD:Art.Impuesto3, Compra:Compra.ZonaImpuesto)*Info.Factor)
+AyudaEnCaptura=Calculadora
+
+Monetario=S
+CondicionDespliege=Config.CompraVerImpuesto3
+[CantidadInventario]
+Clave=CantidadInventario
+Nombre=Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Config.MultiUnidades y Config.CompraFactorDinamico y (Compra:Compra.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))
+ValorRefrescar=Si(Config.MultiUnidades y Config.CompraFactorDinamico, Si(Info.Copiar, Info.CantidadInventarioPendiente, Cantidad*UnidadFactor(Unidad, Articulo)))
+Cantidad=S
+AlCambiar=Si(Config.MultiUnidades y Config.CompraFactorDinamico y Vacio(Cantidad), Asigna(Cantidad, CantidadInventario/UnidadFactor(Unidad, Articulo)))
+CondicionEdicion=no Config.BloquearCantidadInventario
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+[FechaOrdenar]
+Clave=FechaOrdenar
+Nombre=Fecha Ordenar
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=Sucursal Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Relaciones.CentroCostos]
+TipoRelacion=Opcional
+LlaveLocal=ContUso
+Clave=CentroCostos
+TablaRemota=CentroCostos
+LlaveRemota=CentroCostos
+
+[DescuentoImporte]
+Clave=DescuentoImporte
+Nombre=Descuento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Config.CompraDescuentoImporte y Usuario.Costos y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.OD, COMS.IG, COMS.DG, COMS.B))
+ValorRefrescar=Si(Config.CompraDescuentoImporte, ImportePorcentaje(Cantidad*Costo, DescuentoLinea))
+ListaRefrescar=DescuentoLinea
+AlCambiar=Si(ConDatos(Cantidad), Asigna(DescuentoLinea, PorcentajeImporte(Cantidad*Costo, DescuentoImporte)))
+ValorMinimo=0
+
+[Paquete]
+Clave=Paquete
+Nombre=Paquete
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Config.CompraPaquetes
+
+ValorRefrescar=Cantidad/PaqueteCantidad
+AlCambiar=Asigna(PaqueteCantidad, Cantidad/Paquete)
+[ImportacionProveedor]
+Clave=ImportacionProveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=ProvImportacion
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+TipoDatos=Texto
+
+[ImportacionReferencia]
+Clave=ImportacionReferencia
+Nombre=Referencia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+TipoDatos=Texto
+
+[Relaciones.ProvImportacion]
+TipoRelacion=Opcional
+LlaveLocal=ImportacionProveedor
+Clave=ProvImportacion
+TablaRemota=ProvImportacion
+LlaveRemota=Proveedor
+
+[Retencion1]
+Clave=Retencion1
+Nombre=% Retención ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si(General.TipoImpuesto o Info.Copiar, Info.Retencion1, Si(Config.CompraRetenciones, CompraD:Art.Retencion1))
+
+CondicionDespliege=Config.CompraVerRetencion1
+[Retencion2]
+Clave=Retencion2
+Nombre=% Retención IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si(General.TipoImpuesto o Info.Copiar, Info.Retencion2, Si(Config.CompraRetenciones, CompraD:Art.Retencion2))
+CondicionDespliege=Config.Gasto2Retenciones y Config.CompraVerRetencion2
+
+[ProveedorRef]
+Clave=ProveedorRef
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=ProvRef
+AyudaEnCaptura=Vista
+AyudaForma=ArtProvLista
+AyudaVista=ArtProv
+AyudaCampo=ArtProv.Proveedor
+AyudaBusquedaRapida=Asigna(Info.Articulo, Articulo)<BR>Asigna(Info.SubCuenta, SubCuenta)<BR>Asigna(Info.Descripcion, CompraDRef:Art.Descripcion1)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+AlCambiar=Si(ConDatos(Info.Costo), Asigna(Costo, Info.Costo))
+TipoDatos=Texto
+
+[Relaciones.ProvRef]
+TipoRelacion=Opcional
+LlaveLocal=ProveedorRef
+Clave=ProvRef
+TablaRemota=ProvRef
+LlaveRemota=Proveedor
+
+[AgenteRef]
+Clave=AgenteRef
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=AgenteRef
+CondicionEdicion=Usuario.CompraGenerarOrdenesAlProcesar
+TipoDatos=Texto
+
+[Relaciones.AgenteRef]
+TipoRelacion=Opcional
+LlaveLocal=AgenteRef
+Clave=AgenteRef
+TablaRemota=AgenteRef
+LlaveRemota=Agente
+
+[EstadoRef]
+Clave=EstadoRef
+Nombre=Estado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+AlCambiar=Si((EstadoRef=<T>Autorizado<T>) y Vacio(CantidadA), Asigna(CantidadA, CantidadPendiente))
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FechaCaducidad]
+Clave=FechaCaducidad
+Nombre=Caducidad
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionDespliege=Config.CompraCaducidad y MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.F, COMS.FL, COMS.EG, COMS.EI, COMS.CC))
+
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=30
+Tamano=30
+Mayusculas=S
+CondicionDespliege=General.MovCB y ((no Config.CompraPresupuestosCategoria) o (MovTipo(<T>COMS<T>, Compra:Compra.Mov)<>COMS.PR))
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValidacionUsaTabla=S
+ValidacionTablas=CB
+AyudaEnCaptura=Vista
+AyudaForma=ArtCBLista
+AyudaVista=ArtCB
+AyudaCampo=ArtCB.Codigo
+AyudaMultiple=S
+TipoDatos=Texto
+
+[Relaciones.CB]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=CB
+TablaRemota=CB
+LlaveRemota=(Lista)
+
+[Retencion3]
+Clave=Retencion3
+Nombre=% Retención 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Config.Gasto3Retenciones y Config.CompraVerRetencion3
+ValorRefrescar=Si(General.TipoImpuesto o Info.Copiar, Info.Retencion3, Si(Config.CompraRetenciones, CompraD:Art.Retencion3))
+
+[Descuento]
+Clave=Descuento
+Nombre=Descuento
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Descuento
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=Descuento
+AlCambiar=Asigna(DescuentoLinea, CompraD:Descuento.Porcentaje)
+CondicionDespliege=Config.CompraDescuentoCascadaDetalle y Usuario.Costos y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.OD, COMS.IG, COMS.DG, COMS.B))
+TipoDatos=Texto
+
+[Relaciones.Descuento]
+TipoRelacion=Opcional
+LlaveLocal=Descuento
+Clave=Descuento
+TablaRemota=Descuento
+LlaveRemota=Descuento
+
+[CostoUEPS]
+Clave=CostoUEPS
+Nombre=Costo UEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[CostoPEPS]
+Clave=CostoPEPS
+Nombre=Costo PEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[UltimoCosto]
+Clave=UltimoCosto
+Nombre=Ultimo Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioLista]
+Clave=PrecioLista
+Nombre=Precio Lista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[ProveedorArt]
+Clave=ProveedorArt
+Nombre=Proveedor Artículo
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+CondicionDespliege=General.eCollaboration y General.eCollaboration2Capas y Compra:Prov.Intercompania y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.O)
+ValorRefrescar=Si(General.eCollaboration y General.eCollaboration2Capas y Compra:Prov.Intercompania y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.O), CompraD:Art.Proveedor)
+ValidacionUsaTabla=S
+ValidacionTablas=ProvArt
+TipoDatos=Texto
+
+[Relaciones.ProvArt]
+TipoRelacion=Opcional
+LlaveLocal=ProveedorArt
+Clave=ProvArt
+TablaRemota=ProvArt
+LlaveRemota=Proveedor
+
+[ProveedorArtCosto]
+Clave=ProveedorArtCosto
+Nombre=Costo Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=General.eCollaboration y General.eCollaboration2Capas y Compra:Prov.Intercompania y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.O)
+
+[Posicion]
+Clave=Posicion
+Nombre=Posición
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+CondicionDespliege=Config.Posiciones
+AyudaEnCaptura=Vista
+AyudaForma=AlmPosLista
+AyudaVista=AlmPos
+AyudaCampo=AlmPos.Posicion
+ValidacionUsaTabla=S
+ValidacionTablas=AlmPos
+AyudaBusquedaRapida=Asigna(Info.Almacen, Almacen)<BR>Asigna(Info.Tipo,<T>Recibo<T>)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+TipoDatos=Texto
+
+[AjusteCosteo]
+Clave=AjusteCosteo
+Nombre=Ajuste Costeo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+UnicamenteLectura=S
+
+[DepartamentoDetallista]
+Clave=DepartamentoDetallista
+Nombre=Departamento Detallista
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Pais]
+Clave=Pais
+Nombre=País
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Pais
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+ValorRefrescar=CompraD:Art.OrigenPais
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[TratadoComercial]
+Clave=TratadoComercial
+Nombre=Tratado Comercial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TratadoComercial
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+ValorRefrescar=Info.TratadoComercial
+TipoDatos=Texto
+
+[ProgramaSectorial]
+Clave=ProgramaSectorial
+Nombre=Programa Sectorial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ProgramaSectorial
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+ValorRefrescar=Info.ProgramaSectorial
+TipoDatos=Texto
+
+[ValorAduana]
+Clave=ValorAduana
+Nombre=Valor Aduana
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+
+[ID1]
+Clave=ID1
+Nombre=ID 1
+Visible=S
+TamanoValidacion=2
+Tamano=2
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=IDImportacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+TipoDatos=Texto
+
+[ID2]
+Clave=ID2
+Nombre=ID 2
+Visible=S
+TamanoValidacion=2
+Tamano=2
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=IDImportacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+TipoDatos=Texto
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPagoImportacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+TipoDatos=Texto
+
+[ImportacionImpuesto1]
+Clave=ImportacionImpuesto1
+Nombre=% IGI
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+ValorRefrescar=Si<BR>  ConDatos(CompraD:Art.Arancel) y ConDatos(Pais)<BR>Entonces<BR>  Asigna(Temp.Reg, SQL(<T>spImpuestosImportacion :tArt, :tArancel, :tPais<T>, CompraD:CompraD.Articulo, CompraD:Art.Arancel, Pais))<BR>  Asigna(Info.ImportacionImpuesto1, Temp.Reg[1])<BR>  Asigna(Info.ImportacionImpuesto2, Temp.Reg[2])<BR>  Asigna(Info.TratadoComercial, Temp.Reg[3])<BR>  Asigna(Info.ProgramaSectorial, Temp.Reg[4])<BR>Sino<BR>  Asigna(Info.ImportacionImpuesto1, Nulo)<BR>  Asigna(Info.ImportacionImpuesto2, Nulo)<BR>  Asigna(Info.TratadoComercial, Nulo)<BR>  Asigna(Info.ProgramaSectorial, Nulo)<BR>Fin<BR>Info.ImportacionImpuesto1
+
+[ImportacionImpuesto2]
+Clave=ImportacionImpuesto2
+Nombre=% Cuota Compensatoria
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+ValorRefrescar=Info.ImportacionImpuesto2
+
+[Relaciones.AlmPos]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=AlmPos
+TablaRemota=AlmPos
+LlaveRemota=(Lista)
+
+[EsEstadistica]
+Clave=EsEstadistica
+Nombre=Estadística
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PresupuestoEsp]
+Clave=PresupuestoEsp
+Nombre=Presupuesto Especifico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.PPTO
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+OpcionesUnicamente=S
+
+[Tarima]
+Clave=Tarima
+Nombre=Tarima
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+CondicionDespliege=(General.WMS) y (SQL(<T>SELECT WMS FROM Alm WHERE Almacen = :tAlmacen<T>, Compra:Compra.Almacen) = Verdadero y (MovTipo(<T>COMS<T>, Compra:Compra.Mov) noen (COMS.B, COMS.FL, COMS.F, COMS.EG, COMS.EI, COMS.O)))
+AyudaEnCaptura=Vista
+AyudaForma=TarimaPosicionLista
+AyudaVista=Tarima
+AyudaCampo=Tarima.Tarima
+AyudaBusquedaRapida=Asigna(Info.Almacen, Almacen)<BR>Asigna(Info.Articulo,Articulo)<BR>Asigna(Info.Tipo,<T>Recibo<T>) Asigna(Info.Posicion, Compra:Compra.Posicion)
+ConAyudaBusquedaRapida=S
+TipoDatos=Texto
+
+AyudaRefrescar=S
+[ContUso2]
+Clave=ContUso2
+Nombre=Centro Costos 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Config.CentroCostos2CompraD y Config.CentroCostos2Compra y Config.ContCentrosCostos
+ValorPorOmision=Compra:Compra.ContUso2
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostos2Lista
+AyudaVista=CentroCostos2Lista
+AyudaCampo=CentroCostos2Lista.CentroCostos2
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos2
+ValorRefrescar=Si(ConDatos(CompraD:Art.ContUso2),CompraD:Art.ContUso2,Compra:Compra.ContUso2)
+TipoDatos=Texto
+
+[ContUso3]
+Clave=ContUso3
+Nombre=Centro Costos 3
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Config.CentroCostos3CompraD y Config.CentroCostos3Compra y Config.ContCentrosCostos
+ValorPorOmision=Compra:Compra.ContUso3
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostos3Lista
+AyudaVista=CentroCostos3Lista
+AyudaCampo=CentroCostos3Lista.CentroCostos3
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos3
+ValorRefrescar=Si(ConDatos(CompraD:Art.ContUso3),CompraD:Art.ContUso3,Compra:Compra.ContUso3) 
+TipoDatos=Texto
+
+[Relaciones.CentroCostos2]
+TipoRelacion=Opcional
+LlaveLocal=ContUso2
+Clave=CentroCostos2
+TablaRemota=CentroCostos2
+LlaveRemota=CentroCostos2
+
+[Relaciones.CentroCostos3]
+TipoRelacion=Opcional
+LlaveLocal=ContUso3
+Clave=CentroCostos3
+TablaRemota=CentroCostos3
+LlaveRemota=CentroCostos3
+
+[EmpresaRef]
+Clave=EmpresaRef
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+CondicionDespliege=Config.CompraMultiempresas y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.C)
+UnicamenteLectura=S
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtCat
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Config.CompraPresupuestosCategoria y (MovTipo(<T>COMS<T>, Compra:Compra.Mov)=COMS.PR)
+TipoDatos=Texto
+
+[ABC]
+Clave=ABC
+Nombre=ABC
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Config.CompraABC
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ABC
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Info.ABC
+AlCambiar=Asigna(Info.ABC, ABC)
+
+
+
+TipoDatos=Texto
+
+[DescuentoTipo.ListaOpciones]
+(Inicio)=%
+%=$
+$=(Fin)
+
+[Destino.ListaRefrescar]
+(Inicio)=Articulo
+Articulo=SubCuenta
+SubCuenta=Cantidad
+Cantidad=Unidad
+Unidad=CantidadInventario
+CantidadInventario=Almacen
+Almacen=DestinoTipo
+DestinoTipo=DestinoID
+DestinoID=ServicioArticulo
+ServicioArticulo=ServicioSerie
+ServicioSerie=DescripcionExtra
+DescripcionExtra=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=(Fin)
+
+[Aplica.ListaRefrescar]
+(Inicio)=Articulo
+Articulo=SubCuenta
+SubCuenta=Cantidad
+Cantidad=Costo
+Costo=Unidad
+Unidad=CantidadInventario
+CantidadInventario=FechaRequerida
+FechaRequerida=DescuentoTipo
+DescuentoTipo=DescuentoLinea
+DescuentoLinea=DescripcionExtra
+DescripcionExtra=AplicaID
+AplicaID=DestinoTipo
+DestinoTipo=Destino
+Destino=DestinoID
+DestinoID=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=AplicaRenglon
+AplicaRenglon=(Fin)
+
+
+[Unidad.ListaRefrescar]
+(Inicio)=Costo
+Costo=CantidadInventario
+CantidadInventario=(Fin)
+
+[EstadoRef.ListaOpciones]
+(Inicio)=En Espera
+En Espera=Cotizado
+Cotizado=Rechazado
+Rechazado=Autorizado
+Autorizado=Liberado
+Liberado=(Fin)
+
+[Codigo.ListaRefrescar]
+(Inicio)=Articulo
+Articulo=SubCuenta
+SubCuenta=Cantidad
+Cantidad=Unidad
+Unidad=CantidadInventario
+CantidadInventario=Costo
+Costo=DescuentoLinea
+DescuentoLinea=DescuentoImporte
+DescuentoImporte=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Retencion1
+Retencion1=Retencion2
+Retencion2=(Fin)
+
+[Relaciones.CB.LlaveLocal]
+(Inicio)=Codigo
+Codigo={Comillas(<T>Articulos<T>)}
+{Comillas(<T>Articulos<T>)}=(Fin)
+
+[Relaciones.CB.LlaveRemota]
+(Inicio)=Codigo
+Codigo=TipoCuenta
+TipoCuenta=(Fin)
+
+
+[Relaciones.AlmPos.LlaveLocal]
+(Inicio)=Almacen
+Almacen=Posicion
+Posicion=(Fin)
+
+[Relaciones.AlmPos.LlaveRemota]
+(Inicio)=Almacen
+Almacen=Posicion
+Posicion=(Fin)
+
+
+
+
+[Estado]
+Clave=Estado
+Nombre=Estado
+Visible=S
+TamanoValidacion=30
+Tamano=30
+
+
+
+
+CondicionDespliege=(MovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.C<T>) y (Compra:Compra.Estatus en (EstatusPorConfirmar, EstatusConcluido, EstatusCancelado))
+
+
+
+UnicamenteLectura=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TipoDatos=Texto
+
+[PaqueteCantidad]
+Clave=PaqueteCantidad
+Nombre=Paquete Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=Config.CompraPaquetes
+
+
+
+
+
+
+ConRefrescar=S
+ListaRefrescar=Paquete
+
+
+
+
+
+
+ValorRefrescar=Cantidad/Paquete
+
+[CostoEstandar]
+Clave=CostoEstandar
+Nombre=Costo Estándar
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[CantidadEmbarcada]
+Clave=CantidadEmbarcada
+Nombre=Cantidad Embarcada
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+
+
+
+
+
+
+UnicamenteLectura=S
+[ClavePresupuestal]
+Clave=ClavePresupuestal
+Nombre=Clave Presupuestal
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=50
+Mayusculas=S
+CondicionDespliege=General.CP
+
+
+
+
+
+
+
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalObjetoGasto
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+ValidacionUsaTabla=S
+ValidacionTablas=ClavePresupuestal
+
+
+
+AyudaBusquedaRapida=Asigna(Info.ObjetoGasto, CompraD:Art.ObjetoGasto)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Corresponde el Objeto Gasto<T>
+ValidacionCondicion=CompraD:Art.ObjetoGasto=CompraD:ClavePresupuestal.ObjetoGasto
+[Relaciones.ClavePresupuestal]
+TipoRelacion=Opcional
+LlaveLocal=ClavePresupuestal
+Clave=ClavePresupuestal
+TablaRemota=ClavePresupuestal
+LlaveRemota=ClavePresupuestal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Articulo.ListaRefrescar]
+(Inicio)=Cantidad
+Cantidad=Unidad
+Unidad=CantidadInventario
+CantidadInventario=Costo
+Costo=DescuentoLinea
+DescuentoLinea=DescuentoImporte
+DescuentoImporte=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Retencion1
+Retencion1=Retencion2
+Retencion2=Retencion3
+Retencion3=ProveedorArt
+ProveedorArt=Pais
+Pais=ImportacionImpuesto1
+ImportacionImpuesto1=ImportacionImpuesto2
+ImportacionImpuesto2=TratadoComercial
+TratadoComercial=ProgramaSectorial
+ProgramaSectorial=ContUso
+ContUso=ContUso2
+ContUso2=ContUso3
+ContUso3=(Fin)
+
+
+
+
+
+
+
+[TipoImpuesto1]
+Clave=TipoImpuesto1
+Nombre=Tipo IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoImpuesto1
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=General.TipoImpuesto y Config.CompraVerImpuesto1
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Impuesto1, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoImpuesto)<T>, TipoImpuesto1))<BR>Asigna(Info.CambioImpuesto, Verdadero)
+ConRefrescar=S
+ListaRefrescar=(Lista)
+[TipoImpuesto2]
+Clave=TipoImpuesto2
+Nombre=Tipo IEPS
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoImpuesto2
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=General.TipoImpuesto y Config.CompraVerImpuesto2
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Impuesto2, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoImpuesto)<T>, TipoImpuesto2))<BR>Asigna(Info.CambioImpuesto, Verdadero)
+ConRefrescar=S
+ListaRefrescar=(Lista)
+[TipoImpuesto3]
+Clave=TipoImpuesto3
+Nombre=Tipo Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoImpuesto3
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=General.TipoImpuesto y Config.CompraVerImpuesto3
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Impuesto3, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoImpuesto)<T>, TipoImpuesto3))<BR>Asigna(Info.CambioImpuesto, Verdadero)
+ConRefrescar=S
+ListaRefrescar=(Lista)
+[TipoRetencion1]
+Clave=TipoRetencion1
+Nombre=Tipo Retención ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion1
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=General.TipoImpuesto y Config.CompraVerRetencion1
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Retencion1, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoRetencion)<T>, TipoRetencion1))
+[TipoRetencion2]
+Clave=TipoRetencion2
+Nombre=Tipo Retención IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion2
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Config.Gasto2Retenciones y General.TipoImpuesto y Config.CompraVerRetencion2
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Retencion2, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoRetencion)<T>, TipoRetencion2))
+[TipoRetencion3]
+Clave=TipoRetencion3
+Nombre=Tipo Retención 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion3
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Config.Gasto3Retenciones y General.TipoImpuesto y Config.CompraVerRetencion3
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+
+
+
+
+
+
+
+AlCambiar=Asigna(Retencion3, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoRetencion)<T>, TipoRetencion3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[CostoConImpuesto]
+Clave=CostoConImpuesto
+Nombre=Costo c/Impuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Config.CompraCostoConImpuesto y (Usuario.Costos o (MovTipo(<T>COMS<T>,Compra:Compra.Mov)=COMS.FL)) y (MovTipo(<T>COMS<T>,Compra:Compra.Mov) noen (COMS.OG, COMS.IG, COMS.DG))
+AyudaEnCaptura=Calculadora
+CondicionEdicion=no Usuario.BloquearCostos
+
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monetario=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TipoImpuesto4]
+Clave=TipoImpuesto4
+Nombre=Tipo Impuesto 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+
+
+
+Mayusculas=S
+CondicionDespliege=General.TipoImpuesto y Config.CompraVerImpuesto4
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AyudaEnCaptura=Vista
+AyudaMemTabla=TipoImpuesto4
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+
+
+
+
+
+
+
+
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+
+
+AlCambiar=Asigna(Info.CambioImpuesto, Verdadero)
+AyudaForma=TipoImpuesto4Lista
+AyudaVista=TipoImpuesto4
+AyudaCampo=TipoImpuesto4.TipoImpuesto
+[CostoConImpuesto.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+
+
+
+
+
+
+
+[TipoImpuesto2.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+[TipoImpuesto3.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+
+[TipoImpuesto1.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+
+
+
+
+
+
+[TipoComprobante]
+Clave=TipoComprobante
+Nombre=Código Tipo Comprobante
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+AyudaEnCaptura=Vista
+AyudaForma=TipoComprobanteLista
+AyudaVista=TipoComprobante
+AyudaCampo=TipoComprobante.TipoComprobante
+ValidacionUsaTabla=S
+ValidacionTablas=TipoComprobante
+ConRefrescar=S
+ListaRefrescar=(Lista)
+
+[SustentoComprobante]
+Clave=SustentoComprobante
+Nombre=Identificación Sustento Tributario
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+AyudaEnCaptura=Vista
+AyudaForma=SustentoComprobanteLista
+AyudaVista=SustentoComprobante
+AyudaCampo=SustentoComprobante.SustentoComprobante
+ValidacionUsaTabla=S
+ValidacionTablas=SustentoComprobante
+
+[TipoIdentificacion]
+Clave=TipoIdentificacion
+Nombre=Tipo Identificacion
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+AyudaEnCaptura=Vista
+AyudaForma=TipoRegistroLista
+AyudaVista=TipoRegistro
+AyudaCampo=TipoRegistro.TipoRegistro
+ValidacionUsaTabla=S
+ValidacionTablas=TipoRegistro
+ValorRefrescar=SQL(<T>spEcuadorSugerirAutorizacion :nSucursal, :tEmpresa, :tModulo, :tMov, :tCampo, :fFechaEmision, :tProveedor<T>,Sucursal, Empresa, <T>COMS<T>, Compra:Compra.Mov, <T>TipoIdentificacion<T>, Compra:Compra.FechaEmision, Compra:Compra.Proveedor)
+
+[DerechoDevolucion]
+Clave=DerechoDevolucion
+Nombre=Transacción con Derecho a Devolución
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+[Establecimiento]
+Clave=Establecimiento
+Nombre=Número de Documento
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+ValidacionConCondiciones=S
+ValidacionCondicion=Longitud(Establecimiento) = (SQL(<T>SELECT LongitudEstablecimiento FROM Empresa WHERE Empresa = :tEmpresa<T>,Empresa))
+[PuntoEmision]
+Clave=PuntoEmision
+Nombre=Punto Emisión
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+ValidacionConCondiciones=S
+ValidacionCondicion=Longitud(PuntoEmision) = (SQL(<T>SELECT LongitudPuntoEmision FROM Empresa WHERE Empresa = :tEmpresa<T>,Empresa))
+[SecuencialSRI]
+Clave=SecuencialSRI
+Nombre=Secuencial SRI
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+ValidacionConCondiciones=S
+ValidacionCondicion=Longitud(SecuencialSRI) = (SQL(<T>SELECT LongitudSecuencialSRI FROM Empresa WHERE Empresa = :tEmpresa<T>,Empresa))
+[AutorizacionSRI]
+Clave=AutorizacionSRI
+Nombre=Autorización SRI
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+ValorRefrescar=SQL(<T>spEcuadorSugerirAutorizacion :nSucursal, :tEmpresa, :tModulo, :tMov, :tCampo, :fFechaEmision, :tProveedor<T>,Sucursal, Empresa, <T>COMS<T>, Compra:Compra.Mov, <T>AutorizacionSRI<T>, Compra:Compra.FechaEmision, Compra:Compra.Proveedor)
+
+[VigenteA]
+Clave=VigenteA
+Nombre=Fecha Caducidad SRI
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+AyudaEnCaptura=Calendario sin Hora
+ValorRefrescar=SQL(<T>spEcuadorSugerirAutorizacion :nSucursal, :tEmpresa, :tModulo, :tMov, :tCampo, :fFechaEmision, :tProveedor<T>,Sucursal, Empresa, <T>COMS<T>, Compra:Compra.Mov, <T>VigenteA<T>, Compra:Compra.FechaEmision, Compra:Compra.Proveedor)
+
+[SecuenciaRetencion]
+Clave=SecuenciaRetencion
+Nombre=Secuencial Retención
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+[Comprobante]
+Clave=Comprobante
+Nombre=Comprobante
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+[FechaContableMov]
+Clave=FechaContableMov
+Nombre=Fecha Contable Movimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+CondicionDespliege=(Empresa.EsEcuador) Y (Compra:MovTipo.EcuadorMostrarAnexo EN <T>Detalle<T>)
+
+[Relaciones.TipoComprobante]
+TipoRelacion=Opcional
+LlaveLocal=TipoComprobante
+Clave=TipoComprobante
+TablaRemota=TipoComprobante
+LlaveRemota=TipoComprobante
+
+
+
+
+[Relaciones.SustentoComprobante]
+TipoRelacion=Opcional
+LlaveLocal=SustentoComprobante
+Clave=SustentoComprobante
+TablaRemota=SustentoComprobante
+LlaveRemota=SustentoComprobante
+
+[Relaciones.TipoRegistro]
+TipoRelacion=Opcional
+LlaveLocal=TipoIdentificacion
+Clave=TipoRegistro
+TablaRemota=TipoRegistro
+LlaveRemota=TipoRegistro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TipoComprobante.ListaRefrescar]
+(Inicio)=AutorizacionSRI
+AutorizacionSRI=VigenteA
+VigenteA=TipoIdentificacion
+TipoIdentificacion=(Fin)
+
+
+
+
+
+
+
+
+[Cantidad.ListaRefrescar]
+(Inicio)=CantidadInventario
+CantidadInventario=DescuentoImporte
+DescuentoImporte=Paquete
+Paquete=PaqueteCantidad
+PaqueteCantidad=(Fin)
+
+
+
+
+
+
+
+[CostoPromedio]
+Clave=CostoPromedio
+Nombre=CostoPromedio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[CostoReposicion]
+Clave=CostoReposicion
+Nombre=CostoReposicion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[TipoImpuesto5]
+Clave=TipoImpuesto5
+Nombre=Tipo Impuesto 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+Mayusculas=S
+CondicionDespliege=Config.CompraVerImpuesto5
+ConRefrescar=S
+ListaRefrescar=(Lista)
+CondicionEdicion=Usuario.ModificarTipoImpuesto
+AlCambiar=Asigna(Impuesto5, SQL(<T>SELECT dbo.fnTipoImpuestoTasa(:tTipoImpuesto)<T>, TipoImpuesto5))<BR>Asigna(CambioImpuesto, Verdadero)
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoImpuesto5
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+[Impuesto5]
+Clave=Impuesto5
+Nombre=Impuesto 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+Monetario=S
+CondicionDespliege=Config.CompraVerImpuesto5
+ValorRefrescar=Si(General.TipoImpuesto o Info.Copiar, Asigna(Info.Copiar, Falso) Info.Impuesto5, ImpuestoZona(CompraD:Art.Impuesto5, Compra:Compra.ZonaImpuesto))
+
+[TipoImpuesto4.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+[CambioImpuesto]
+Clave=CambioImpuesto
+Nombre=CambioImpuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+
+
+
+[TipoImpuesto5.ListaRefrescar]
+(Inicio)=Costo
+Costo=DescuentoImporte
+DescuentoImporte=(Fin)
+
+
+
+
+
+[Relaciones.MovOpcion]
+TipoRelacion=Opcional
+Clave=MovOpcion
+TablaRemota=MovOpcion
+
+LlaveLocal=(Lista)
+LlaveRemota=(Lista)
+
+
+
+
+
+
+
+
+
+
+[Relaciones.MovOpcion.LlaveLocal]
+(Inicio)={Comillas('COMS')}
+{Comillas('COMS')}=ID
+ID=Renglon
+Renglon=RenglonSub
+RenglonSub=(Fin)
+
+[Relaciones.MovOpcion.LlaveRemota]
+(Inicio)=Modulo
+Modulo=ModuloID
+ModuloID=Renglon
+Renglon=RenglonSub
+RenglonSub=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[EmidaFechaRecarga]
+Clave=EmidaFechaRecarga
+Nombre=Fecha Recarga
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+FormatoValidacion=dd/mmm/aaaa
+CondicionDespliege=fnSubMovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.OEMIDA<T>
+[EmidaProveedorCelular]
+Clave=EmidaProveedorCelular
+Nombre=Proveedor Celular
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+CondicionDespliege=fnSubMovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.OEMIDA<T>
+
+
+
+
+
+
+
+
+
+[EmidaURL]
+Clave=EmidaURL
+Nombre=URL
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+CondicionDespliege=fnSubMovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.OEMIDA<T>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ArticuloMaquila]
+Clave=ArticuloMaquila
+Nombre=Articulo Maquila
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+Mayusculas=S
+CondicionDespliege=fnSubMovTipo(<T>COMS<T>,Compra:Compra.Mov) en(<T>COMS.EMAQUILA<T>, <T>COMS.OMAQUILA<T>) y General.ProdInterfazINFOR
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+AyudaRefrescar=S
+
+ValidacionUsaTabla=S
+ValidacionTablas=Art2
+[Relaciones.ArtMaquila]
+TipoRelacion=Opcional
+LlaveLocal=ArticuloMaquila
+Clave=ArtMaquila
+TablaRemota=Art2
+LlaveRemota=Articulo
+
+
+
+
+
+[AplicaRenglon]
+Clave=AplicaRenglon
+Nombre=AplicaRenglon
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Info.Renglon
+
+[MonedaD]
+Clave=MonedaD
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+AyudaEnCaptura=Calculadora
+AyudaMemTabla=Mon
+AyudaMemRenglones=6
+AyudaMemOpc=Unicamente opciones listadas
+[TipoCambioD]
+Clave=TipoCambioD
+Nombre=Tipo Cambio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=(MovTipoEn(<T>COMS<T>, Compra:Compra.Mov, (COMS.EI))) o (fnSubmovTipo(<T>COMS<T>, Compra:Compra.Mov) = <T>COMS.EIMPO<T>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Pais.ListaRefrescar]
+(Inicio)=ImportacionImpuesto1
+ImportacionImpuesto1=ImportacionImpuesto2
+ImportacionImpuesto2=TratadoComercial
+TratadoComercial=ProgramaSectorial
+ProgramaSectorial=(Fin)
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Renglon
+Renglon=RenglonSub
+RenglonSub=RenglonID
+RenglonID=RenglonTipo
+RenglonTipo=Almacen
+Almacen=FechaRequerida
+FechaRequerida=FechaOrdenar
+FechaOrdenar=FechaEntrega
+FechaEntrega=Categoria
+Categoria=Codigo
+Codigo=Articulo
+Articulo=SubCuenta
+SubCuenta=Cantidad
+Cantidad=CostoConImpuesto
+CostoConImpuesto=Costo
+Costo=CostoInv
+CostoInv=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Descuento
+Descuento=DescuentoTipo
+DescuentoTipo=DescuentoLinea
+DescuentoLinea=DescuentoImporte
+DescuentoImporte=DescripcionExtra
+DescripcionExtra=ReferenciaExtra
+ReferenciaExtra=DestinoTipo
+DestinoTipo=Destino
+Destino=DestinoID
+DestinoID=Cliente
+Cliente=Aplica
+Aplica=AplicaID
+AplicaID=CantidadPendiente
+CantidadPendiente=CantidadCancelada
+CantidadCancelada=CantidadInventario
+CantidadInventario=CantidadA
+CantidadA=ContUso
+ContUso=Unidad
+Unidad=Factor
+Factor=ServicioArticulo
+ServicioArticulo=ServicioSerie
+ServicioSerie=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=Paquete
+Paquete=ImportacionProveedor
+ImportacionProveedor=ImportacionReferencia
+ImportacionReferencia=Retencion1
+Retencion1=Retencion2
+Retencion2=Retencion3
+Retencion3=ProveedorRef
+ProveedorRef=AgenteRef
+AgenteRef=EstadoRef
+EstadoRef=FechaCaducidad
+FechaCaducidad=CostoUEPS
+CostoUEPS=CostoPEPS
+CostoPEPS=UltimoCosto
+UltimoCosto=PrecioLista
+PrecioLista=ProveedorArt
+ProveedorArt=ProveedorArtCosto
+ProveedorArtCosto=Posicion
+Posicion=AjusteCosteo
+AjusteCosteo=DepartamentoDetallista
+DepartamentoDetallista=Pais
+Pais=TratadoComercial
+TratadoComercial=ProgramaSectorial
+ProgramaSectorial=ValorAduana
+ValorAduana=ID1
+ID1=ID2
+ID2=FormaPago
+FormaPago=ImportacionImpuesto1
+ImportacionImpuesto1=ImportacionImpuesto2
+ImportacionImpuesto2=EsEstadistica
+EsEstadistica=PresupuestoEsp
+PresupuestoEsp=Tarima
+Tarima=ContUso2
+ContUso2=ContUso3
+ContUso3=EmpresaRef
+EmpresaRef=ABC
+ABC=Estado
+Estado=PaqueteCantidad
+PaqueteCantidad=CostoEstandar
+CostoEstandar=CantidadEmbarcada
+CantidadEmbarcada=ClavePresupuestal
+ClavePresupuestal=TipoImpuesto1
+TipoImpuesto1=TipoImpuesto2
+TipoImpuesto2=TipoImpuesto3
+TipoImpuesto3=TipoImpuesto4
+TipoImpuesto4=TipoRetencion1
+TipoRetencion1=TipoRetencion2
+TipoRetencion2=TipoRetencion3
+TipoRetencion3=TipoComprobante
+TipoComprobante=SustentoComprobante
+SustentoComprobante=TipoIdentificacion
+TipoIdentificacion=DerechoDevolucion
+DerechoDevolucion=Establecimiento
+Establecimiento=PuntoEmision
+PuntoEmision=SecuencialSRI
+SecuencialSRI=AutorizacionSRI
+AutorizacionSRI=VigenteA
+VigenteA=SecuenciaRetencion
+SecuenciaRetencion=Comprobante
+Comprobante=FechaContableMov
+FechaContableMov=CostoPromedio
+CostoPromedio=CostoReposicion
+CostoReposicion=TipoImpuesto5
+TipoImpuesto5=Impuesto5
+Impuesto5=CambioImpuesto
+CambioImpuesto=EmidaFechaRecarga
+EmidaFechaRecarga=EmidaProveedorCelular
+EmidaProveedorCelular=EmidaURL
+EmidaURL=ArticuloMaquila
+ArticuloMaquila=AplicaRenglon
+AplicaRenglon=MonedaD
+MonedaD=TipoCambioD
+TipoCambioD=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=Renglon,
+Renglon,=RenglonSub,
+RenglonSub,=RenglonID,
+RenglonID,=RenglonTipo,
+RenglonTipo,=Cantidad,
+Cantidad,=Almacen,
+Almacen,=Codigo,
+Codigo,=Articulo,
+Articulo,=SubCuenta,
+SubCuenta,=FechaRequerida,
+FechaRequerida,=FechaOrdenar,
+FechaOrdenar,=FechaEntrega,
+FechaEntrega,=CostoConImpuesto,
+CostoConImpuesto,=Costo,
+Costo,=Impuesto1,
+Impuesto1,=Impuesto2,
+Impuesto2,=Impuesto3,
+Impuesto3,=Retencion1,
+Retencion1,=Retencion2,
+Retencion2,=Retencion3,
+Retencion3,=Descuento,
+Descuento,=DescuentoTipo,
+DescuentoTipo,=DescuentoLinea,
+DescuentoLinea,=DescuentoImporte,
+DescuentoImporte,=DescripcionExtra,
+DescripcionExtra,=ReferenciaExtra,
+ReferenciaExtra,=ContUso,
+ContUso,=ContUso2,
+ContUso2,=ContUso3,
+ContUso3,=ClavePresupuestal,
+ClavePresupuestal,=DestinoTipo,
+DestinoTipo,=Destino,
+Destino,=DestinoID,
+DestinoID,=Aplica,
+Aplica,=AplicaID,
+AplicaID,=CantidadPendiente,
+CantidadPendiente,=CantidadCancelada,
+CantidadCancelada,=CantidadA,
+CantidadA,=CostoInv,
+CostoInv,=Unidad,
+Unidad,=Factor,
+Factor,=CantidadInventario,
+CantidadInventario,=Cliente,
+Cliente,=ServicioArticulo,
+ServicioArticulo,=ServicioSerie,
+ServicioSerie,=Paquete,
+Paquete,=Sucursal,
+Sucursal,=ImportacionProveedor,
+ImportacionProveedor,=ImportacionReferencia,
+ImportacionReferencia,=ProveedorRef,
+ProveedorRef,=AgenteRef,
+AgenteRef,=EstadoRef,
+EstadoRef,=FechaCaducidad,
+FechaCaducidad,=ProveedorArt,
+ProveedorArt,=ProveedorArtCosto,
+ProveedorArtCosto,=AjusteCosteo,
+AjusteCosteo,=CostoUEPS,
+CostoUEPS,=CostoPEPS,
+CostoPEPS,=UltimoCosto,
+UltimoCosto,=CostoEstandar,
+CostoEstandar,=PrecioLista,
+PrecioLista,=Posicion,
+Posicion,=DepartamentoDetallista,
+DepartamentoDetallista,=Pais,
+Pais,=TratadoComercial,
+TratadoComercial,=ProgramaSectorial,
+ProgramaSectorial,=ValorAduana,
+ValorAduana,=ImportacionImpuesto1,
+ImportacionImpuesto1,=ImportacionImpuesto2,
+ImportacionImpuesto2,=ID1,
+ID1,=ID2,
+ID2,=FormaPago,
+FormaPago,=EsEstadistica,
+EsEstadistica,=PresupuestoEsp,
+PresupuestoEsp,=Tarima,
+Tarima,=EmpresaRef,
+EmpresaRef,=Categoria,
+Categoria,=ABC,
+ABC,=Estado,
+Estado,=PaqueteCantidad,
+PaqueteCantidad,=CantidadEmbarcada,
+CantidadEmbarcada,=TipoImpuesto1,
+TipoImpuesto1,=TipoImpuesto2,
+TipoImpuesto2,=TipoImpuesto3,
+TipoImpuesto3,=TipoImpuesto4,
+TipoImpuesto4,=TipoRetencion1,
+TipoRetencion1,=TipoRetencion2,
+TipoRetencion2,=TipoRetencion3,
+TipoRetencion3,=SucursalOrigen,
+SucursalOrigen,=CostoPromedio,
+CostoPromedio,=CostoReposicion,
+CostoReposicion,=TipoComprobante,
+TipoComprobante,=SustentoComprobante,
+SustentoComprobante,=TipoIdentificacion,
+TipoIdentificacion,=DerechoDevolucion,
+DerechoDevolucion,=Establecimiento,
+Establecimiento,=PuntoEmision,
+PuntoEmision,=SecuencialSRI,
+SecuencialSRI,=AutorizacionSRI,
+AutorizacionSRI,=VigenteA,
+VigenteA,=SecuenciaRetencion,
+SecuenciaRetencion,=Comprobante,
+Comprobante,=FechaContableMov,
+FechaContableMov,=TipoImpuesto5,
+TipoImpuesto5,=Impuesto5,
+Impuesto5,=CambioImpuesto,
+CambioImpuesto,=EmidaFechaRecarga,
+EmidaFechaRecarga,=EmidaProveedorCelular,
+EmidaProveedorCelular,=EmidaURL,
+EmidaURL,=ArticuloMaquila,
+ArticuloMaquila,=AplicaRenglon,
+AplicaRenglon,=MonedaD,
+MonedaD,=TipoCambioD
+TipoCambioD=FROM
+FROM=CompraD
+CompraD=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=CB
+CB=Art
+Art=AlmDetalle
+AlmDetalle=CentroCostos
+CentroCostos=Cte
+Cte=ProvImportacion
+ProvImportacion=ProvRef
+ProvRef=ProvArt
+ProvArt=AgenteRef
+AgenteRef=Descuento
+Descuento=AlmPos
+AlmPos=CentroCostos2
+CentroCostos2=CentroCostos3
+CentroCostos3=ClavePresupuestal
+ClavePresupuestal=TipoComprobante
+TipoComprobante=SustentoComprobante
+SustentoComprobante=TipoRegistro
+TipoRegistro=MovOpcion
+MovOpcion=ArtMaquila
+ArtMaquila=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ID
+ID=Renglon
+Renglon=RenglonSub
+RenglonSub=(Fin)

@@ -1,0 +1,155 @@
+[Dialogo]
+Clave=MenuCfgVentas
+Nombre=Ventas
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=828
+PosicionInicialArriba=453
+PosicionInicialAltura=189
+PosicionInicialAncho=263
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=258
+
+[Acciones.Causa]
+Nombre=Causa
+Boton=0
+NombreDesplegar=Ca&usas (Cancelación/Devolución)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Causa
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Descripcion, <T>Ventas<T>)
+
+[Acciones.Instruccion]
+Nombre=Instruccion
+Boton=0
+NombreDesplegar=&Instrucciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Instruccion
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Descripcion, <T>Ventas<T>)
+
+[Acciones.Descuento]
+Nombre=Descuento
+Boton=0
+NombreDesplegar=&Descuentos Globales
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Descuento
+Activo=S
+Visible=S
+
+[Acciones.Clase]
+Nombre=Clase
+Boton=0
+NombreDesplegar=C&lasificaciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Clase
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Descripcion, <T>Ventas<T>)
+Visible=S
+
+[Acciones.OtrosCargos]
+Nombre=OtrosCargos
+Boton=0
+NombreDesplegar=&Otros Cargos (Automáticos)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=OtrosCargos
+Activo=S
+Visible=S
+
+[Acciones.Comentario]
+Nombre=Comentario
+Boton=0
+NombreDesplegar=Co&mentarios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Comentario
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)
+
+[Acciones.CfgAnexarMov]
+Nombre=CfgAnexarMov
+Boton=0
+NombreDesplegar=Ane&xar Movimientos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CfgAnexarMov
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Descripcion, <T>Ventas<T>)
+VisibleCondicion=Config.VentaAnexarMov
+
+[Acciones.ContratoTipo]
+Nombre=ContratoTipo
+Boton=0
+NombreDesplegar=Tipos de &Contratos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ContratoTipo
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>VTAS<T>)<BR>Asigna(Info.Nombre, <T>Ventas<T>)
+
+[Acciones.VentaRestringida]
+Nombre=VentaRestringida
+Boton=0
+NombreDesplegar=Venta &Restringida (Fechas/Horas)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VentaRestringida
+Visible=S
+ActivoCondicion=Config.VentaRestringida
+
+[Acciones.OportunidadEtapa]
+Nombre=OportunidadEtapa
+Boton=0
+NombreDesplegar=&Etapa (Oportunidades)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=OportunidadEtapa
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Descuento
+Descuento=OtrosCargos
+OtrosCargos=Causa
+Causa=Instruccion
+Instruccion=Clase
+Clase=ContratoTipo
+ContratoTipo=Comentario
+Comentario=CfgAnexarMov
+CfgAnexarMov=VentaRestringida
+VentaRestringida=OportunidadEtapa
+OportunidadEtapa=(Fin)

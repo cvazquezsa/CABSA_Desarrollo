@@ -1,0 +1,1386 @@
+[Reporte]
+Clave=mis_NomISRAnualSinEstimar
+Nombre=ISR Anual Sin Estimar
+Icono=0
+Tipo=Reporte
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=27.9
+LargoPagina=21.6
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=Horizontal
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+VistaEspecial=S
+PosicionInicialAlturaCliente=581
+PosicionInicialAncho=808
+BarraHerramientas=S
+ListaAcciones=(Lista)
+ExpresionesAntes=Asigna( Info.Importe, 0 )<BR>Asigna( Info.Impuesto1, 0 )<BR>Asigna( Info.Impuesto2, 0 )<BR>Asigna( Info.precio, 0 )
+
+[Vista]
+Icono=0
+Clave=NomISRAnualSinEstimar
+VistaIndependiente=S
+ListaCampos=(Lista)
+ListaCalculados=(Lista)
+SQL=SELECT<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Personal.FechaAntiguedad,<BR>  Personal.Estatus,<BR>  PErsonal.UltimoPago,Personal.SucursalTrabajo<BR>FROM <BR>  Personal <BR>Where <BR>Estatus=<T>Alta<T> or Estatus=<T>Baja<T><BR>Order By Estatus,personal,ApellidoPaterno,ApellidoMaterno,Nombre
+
+[Formato]
+ListaLineas=Encabezado<BR>Título<BR>Título<BR>Título<BR>Título<BR>Título<BR>Detalle<BR>Final<BR>Final<BR>Pie
+VentanaIzquierda=0
+VentanaArriba=0
+VentanaAltura=776
+VentanaAncho=1032
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Objetos=1
+BordeAbajo=S
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Personal
+
+[Linea2]
+Clave=Título
+Objetos=1
+Seccion=Título
+AltoEnCm=0.8
+Renglones=3
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 14, Negro, [Negritas]}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=25.61
+AnchoTexto=138
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ReporteNombre
+BordeAbajo=S
+
+[ApellidoPaterno]
+Clave=ApellidoPaterno
+Nombre=ApellidoPaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=ApellidoPaterno
+
+[ApellidoMaterno]
+Clave=ApellidoMaterno
+Nombre=ApellidoMaterno
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=ApellidoMaterno
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Nombre
+
+[Linea3]
+Clave=Título
+Objetos=1
+Seccion=Título
+AltoEnCm=1.45
+Renglones=4
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeAbajo=N
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=25.61
+AnchoTexto=138
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Direccion + <T> <T>+Empresa.Colonia +<T> <T>+ Empresa.CodigoPostal<BR>Empresa.Poblacion +<T> <T>+ Empresa.Estado<BR><T>RFC: <T>+Empresa.RFC 
+BordeAbajo=N
+ExpresionMultiple=S
+AlturaVariable=S
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=25.61
+AnchoTexto=138
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.nombre
+ExpresionMultiple=N
+AlturaVariable=N
+
+[GravableISR]
+Clave=GravableISR
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=G
+Formula=Redondea(SQL(<T>Select sum(Importe) From Nominad, Nomina WHERE Nomina.Id = <BR>Nominad.Id AND <BR>NominaD.Concepto = :tD AND <BR>Estatus= :tS And Empresa = :tE <BR>AND (Nomina.FechaA>=:tI  OR (Nomina.FechaEmision>= :tI  )  ) AND <BR>Nominad.Personal = :tP  AND (Nomina.FechaA<= :tF OR (Nomina.FechaEmision<= :tF )) Group by Personal<T>, <T>Gravable ISR<T>, <T>Concluido<T>, Empresa,FechaInicio1,FechaInicio1 ,<BR>Personal,FechaFormatoServidor(info.fecha),FechaFormatoServidor(info.fecha)),2)
+
+[ISRRetenido]
+Clave=ISRRetenido
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=I
+Formula=Redondea(SQL(<T>Select Sum(Importe) From Nominad, Nomina WHERE Nomina.Id = <BR>Nominad.Id AND <BR>NominaD.Concepto = :tD AND Estatus= :tS And Empresa = :tE AND (Nomina.FechaA>=:tI  OR (Nomina.FechaEmision>= :tI  )  ) AND<BR>Nominad.Personal = :tP and (Nomina.FechaA<= :tF or (Nomina.FechaEmision<= :tF )) Group by Personal<T>, <T>ISR<T>, <T>Concluido<T>, Empresa,FechaInicio1,FechaInicio1, <BR>Personal,FechaFormatoServidor(info.fecha),FechaFormatoServidor(info.fecha)),2)
+
+[DiasContemplados]
+Clave=DiasContemplados
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=D
+Formula=Menor(( Info.Fecha - PrimerDiaAño( Info.Fecha ) ), Info.Fecha - FechaAntiguedad )+1
+
+[FechaAntiguedad]
+Clave=FechaAntiguedad
+Nombre=FechaAntiguedad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=FechaAntiguedad
+
+[DiasAnoCalculo]
+Clave=DiasAnoCalculo
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=D
+Formula=UltimoDiaAño( Info.Fecha )  - PrimerDiaAño( Info.Fecha ) + 1
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=mis_NomISRAnualSinEstimar
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar Excel
+EnBarraHerramientas=S
+TipoAccion=Reportes Excel
+ClaveAccion=mis_NomISRAnualSinEstimar
+Activo=S
+Visible=S
+
+[Subsidio]
+Clave=Subsidio
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=S
+Formula=SQL(<T>SELECT Valor FROM PersonalPropValor WHERE  RAMA = :Ts AND Cuenta = :TE AND Propiedad =:Tp <T>, <T>EMP<T>, Empresa, <T>% Subsidio Acreditable<T>)
+
+[CreditoalSalarioRetenido]
+Clave=CreditoalSalarioRetenido
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=CreditoalSalarioRetenido
+Formula=Redondea(SQL(<T>Select Sum(Importe) From Nominad, Nomina WHERE Nomina.Id = <BR>Nominad.Id AND <BR>NominaD.Concepto = :tD AND Estatus= :tS And Empresa = :tE AND <BR>Nominad.Personal = :tP AND (Nomina.FechaA>=:tI  OR (Nomina.FechaEmision>= :tI  )  )  AND (Nomina.FechaA<= :tF or (Nomina.FechaEmision<= :tF )) Group by Personal<T>, <T>Credito al Salario<T>, <T>Concluido<T>, Empresa, <BR>Personal,FechaInicio1,fechainicio1,FechaFormatoservidor(Info.fecha),FechaFormatoservidor(Info.fecha)),2)
+
+[FechaInicio1]
+Clave=FechaInicio1
+TipoCampo=Calculado
+Nombre=F
+Formula=FechaFormatoServidor(PrimerDiaAño(info.fecha))
+
+[Linea4]
+Clave=Título
+Objetos=2
+Seccion=Título
+AltoEnCm=0.39
+Renglones=1
+BordeArriba=N
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeAbajo=N
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=13
+AnchoTexto=61
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+BordeAbajo=N
+
+[E1]
+Celda=E1
+Alineacion=Derecha
+AnchoEnCm=4.21
+AnchoTexto=23
+BordeAbajo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[Linea5]
+Clave=Título
+Objetos=3
+Seccion=Título
+AltoEnCm=0.53
+Renglones=1
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+BordeAbajo=S
+
+[Linea6]
+Clave=Título
+Objetos=10
+Seccion=Título
+AltoEnCm=0.84
+Renglones=2
+BordeArriba=S
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+EstiloMarco=0
+ExpresionesDespuesImprimir=
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=12.61
+AnchoTexto=79
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Registro P:<T> + SQL( <T>Select  Valor from personalpropvalor where propiedad = <T> + <BR>Comillas(<T>Registro Patronal<T>) + <T> and rama = <T> + Comillas(<T>Suc<T>) + <T> and Cuenta=<T> + <BR>Comillas(SucursalTrabajo) )
+BordeAbajo=N
+TextoConFlujo=N
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=7.29
+AnchoTexto=34
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Periodo del <T> + FechaDMA(PrimerDiaAño(Info.Fecha)) + <T> al <T> + <BR>FechaDMA(Info.Fecha)
+BordeAbajo=S
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=5.61
+AnchoTexto=30
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Ultimo Pago: <T>+FechaDMA(UltimoPago)
+BordeAbajo=S
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=12.71
+AnchoTexto=68
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>   Porcentaje Subsidio: <T>+Subsidio
+BordeAbajo=S
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=38
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Nombre<T>
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Estatus
+
+[UltimoPago]
+Clave=UltimoPago
+Nombre=UltimoPago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=UltimoPago
+
+[E3]
+Celda=E3
+Alineacion=Derecha
+AnchoEnCm=8.21
+AnchoTexto=44
+BordeAbajo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[SucursalTrabajo]
+Clave=SucursalTrabajo
+Nombre=SucursalTrabajo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=SucursalTrabajo
+
+[Linea7]
+Clave=Detalle
+Objetos=10
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+ExpresionesDespuesImprimir=Si( (ISRRetenido - ISRReal) < 0, Asigna(Info.Importe  , info.importe   +  ISRReal - ISRRetenido  ))<BR>Si( (ISRRetenido - ISRReal) > 0, Asigna(Info.Impuesto1, info.impuesto1 +  ISRReal - ISRRetenido  ))<BR>Si( (CreditoAlSalarioRetenido - CreditoAlSalarioReal) < 0, Asigna(Info.impuesto2, info.impuesto2 + CreditoAlSalarioReal - CreditoAlSalarioRetenido ))<BR>Si( (CreditoAlSalarioRetenido - CreditoAlSalarioReal) > 0, Asigna(Info.Precio,    info.Precio    + CreditoAlSalarioReal - CreditoAlSalarioRetenido ))
+EstiloMarco=3
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=2.2
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Estatus<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=1.39
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Dias<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+AnchoEnCm=2.21
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Gravable ISR<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=7
+AnchoTexto=38
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 7, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>(<T>+Recorta(Personal)+<T>) <T> + Recorta(ApellidoPaterno) + <T> <T> + <BR>Recorta(ApellidoMaterno) + <T> <T> + Nombre
+EstiloMarco=3
+
+[ISRReal]
+Clave=ISRReal
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=I
+Formula=Redondea( ( (TablaImpuestos( <T>ISR<T>, <T>ANUAL<T>, ( GravableISR * DiasAnoCalculo / <BR>DiasContemplados  ) )<BR>-<BR>(TablaImpuestos( <T>Subsidio<T>, <T>ANUAL<T>, ( GravableISR * DiasAnoCalculo / <BR>DiasContemplados), <T>ISR<T> ) *(Subsidio/100))) * DiasContemplados / DiasAnoCalculo),2)
+
+[E6]
+Celda=E6
+Alineacion=Derecha
+AnchoEnCm=2.21
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ISR Retenido<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[F6]
+Celda=F6
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ISR Real<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[G6]
+Celda=G6
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Diferencia<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[CreditoAlSalarioReal]
+Clave=CreditoAlSalarioReal
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=C
+Formula=(TablaImpuestos( <T>Credito al salario<T>, <T>ANUAL<T>, ( GravableISR * DiasAnoCalculo / <BR>DiasContemplados  ) ))* <BR>DiasContemplados/DiasAnoCalculo)
+
+[H6]
+Celda=H6
+Alineacion=Centrado
+AnchoEnCm=2.58
+AnchoTexto=14
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Credito al salario Pagado<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+TextoConFlujo=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[I6]
+Celda=I6
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Credito al salario Real<T>
+FormatoValidacion=
+BordeArriba=S
+EstiloMarco=0
+TextoConFlujo=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[Linea8]
+Clave=Final
+Objetos=10
+Seccion=Final
+AltoEnCm=0.79
+Renglones=2
+BordeArriba=S
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[B7]
+Celda=B7
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=12
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Estatus
+EstiloMarco=3
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=1.4
+AnchoTexto=8
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(DiasContemplados,2)
+EstiloMarco=3
+
+[D7]
+Celda=D7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=12
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(GravableISR,2)
+EstiloMarco=3
+
+[E7]
+Celda=E7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=12
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(ISRRetenido,2)
+EstiloMarco=3
+
+[F7]
+Celda=F7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=9
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(ISRReal,2)
+EstiloMarco=3
+
+[G7]
+Celda=G7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=9
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea( Redondea( ISRReal, 2 ) - Redondea( ISRRetenido , 2 ), 2 )
+EstiloMarco=3
+
+[H7]
+Celda=H7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.58
+AnchoTexto=14
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(CreditoalSalarioRetenido,2)
+EstiloMarco=3
+
+[I7]
+Celda=I7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=16
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(CreditoAlSalarioReal,2)
+EstiloMarco=3
+
+[A8]
+Celda=A8
+Alineacion=Derecha
+AnchoEnCm=7
+AnchoTexto=38
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Total Trabajadores: <T>
+ExpresionMultiple=N
+
+[Linea9]
+Clave=Final
+Objetos=5
+Seccion=Final
+AltoEnCm=1.2
+Renglones=5
+BordeArriba=N
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[B8]
+Celda=B8
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=2.2
+ExpresionMultiple=N
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Conteo
+BordeArriba=S
+
+[A9]
+Celda=A9
+Alineacion=Derecha
+AnchoEnCm=15.03
+AnchoTexto=81
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+ExpresionMultiple=S
+
+[J6]
+Celda=J6
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=2
+AnchoTexto=9
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Diferencia<T>
+BordeArriba=S
+BordeAbajo=S
+EstiloArriba=1
+EstiloAbajo=1
+
+[J7]
+Celda=J7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=9
+BordeArriba=N
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea( Redondea( CreditoAlSalarioReal, 2) - Redondea( <BR>CreditoalSalarioRetenido , 2 ) , 2 )
+EstiloMarco=3
+
+[C8]
+Celda=C8
+Alineacion=Derecha
+FormatoValidacion=(Cantidades)
+AnchoEnCm=1.39
+ExpresionMultiple=N
+AnchoTexto=7
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(DiasContemplados),2)
+BordeArriba=S
+
+[D8]
+Celda=D8
+Alineacion=Derecha
+AnchoEnCm=2.21
+ExpresionMultiple=N
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(GravableISR),2)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+
+[E8]
+Celda=E8
+Alineacion=Derecha
+AnchoEnCm=2.2
+ExpresionMultiple=N
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(ISRRetenido),2)
+FormatoValidacion=(Monetario)
+BordeArriba=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Linea10]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[F8]
+Celda=F8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(ISRReal),2)
+
+[G8]
+Celda=G8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Redondea(Suma(ISRReal),2)-Suma(Redondea(ISRRetenido,2)),2)
+
+[H8]
+Celda=H8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.58
+AnchoTexto=14
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(CreditoalSalarioRetenido),2)
+
+[I8]
+Celda=I8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Suma(CreditoAlSalarioReal),2)
+
+[J8]
+Celda=J8
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+AnchoTexto=11
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea( Redondea( Suma( CreditoAlSalarioReal), 2 ) - Redondea( Suma( <BR>CreditoAlSalarioRetenido ), 2 ), 2 )
+
+[B9]
+Celda=B9
+Alineacion=Derecha
+AnchoEnCm=2
+ExpresionMultiple=S
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ISR a Cargo: <T><BR><T>ISR a Favor: <T>
+
+[C9]
+Celda=C9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+ExpresionMultiple=S
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Info.Importe,2)<BR>Redondea(Info.Impuesto1,2)
+
+[D9]
+Celda=D9
+Alineacion=Derecha
+AnchoEnCm=4.58
+ExpresionMultiple=S
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Credito al Salario a Cargo: <T><BR><T>Credito al Salario a Favor: <T>
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2
+ExpresionMultiple=S
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Redondea(Info.Impuesto2,2)<BR>Redondea(Info.Precio,2)
+
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=13
+AnchoTexto=70
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B10]
+Celda=B10
+Alineacion=Derecha
+AnchoEnCm=12.61
+AnchoTexto=138
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=Personal
+Personal=ApellidoPaterno
+ApellidoPaterno=ApellidoMaterno
+ApellidoMaterno=Nombre
+Nombre=FechaAntiguedad
+FechaAntiguedad=Estatus
+Estatus=UltimoPago
+UltimoPago=SucursalTrabajo
+SucursalTrabajo=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=FechaInicio1
+FechaInicio1=GravableISR
+GravableISR=ISRRetenido
+ISRRetenido=DiasContemplados
+DiasContemplados=DiasAnoCalculo
+DiasAnoCalculo=Subsidio
+Subsidio=CreditoalSalarioRetenido
+CreditoalSalarioRetenido=ISRReal
+ISRReal=CreditoAlSalarioReal
+CreditoAlSalarioReal=(Fin)

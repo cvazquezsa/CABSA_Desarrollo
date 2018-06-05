@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=aroRiesgoControlInterno
+Archivo=aroRiesgoControlInterno
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Controles Internos
+Singular=Control Interno
+SQL=SELECT<BR>  Riesgo,<BR>  ControlInterno,<BR>  Tipo<BR><BR>FROM<BR>  aroRiesgoControlInterno
+LlavePrimaria=Riesgo<BR>ControlInterno
+ControlTipo=S
+CampoTipo=Tipo
+
+[Riesgo]
+Clave=Riesgo
+Nombre=Riesgo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[ControlInterno]
+Clave=ControlInterno
+Nombre=Control Interno Aplicado
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[Tabla.ListaCampos]
+(Inicio)=Riesgo
+Riesgo=ControlInterno
+ControlInterno=Tipo
+Tipo=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Automatizado 
+Automatizado =Semi Automatizado
+Semi Automatizado=Manual
+Manual=(Fin)

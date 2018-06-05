@@ -1,0 +1,6562 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfg
+Archivo=EmpresaCfg
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=Empresa
+CampoEmpresa=Empresa
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[TipoCosteo]
+Clave=TipoCosteo
+Nombre=Tipo Costeo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=10
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CompraCostearDCporMovimiento
+ListaOpciones=(Lista)
+
+[FormaCosteo]
+Clave=FormaCosteo
+Nombre=Forma Costeo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SeriesLotesAutoCampo]
+Clave=SeriesLotesAutoCampo
+Nombre=Series y lotes automáticas
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionEdicion=SeriesLotesMayoreo
+ListaOpciones=Numero
+TipoDatos=Texto
+
+[SeriesLotesAutoOrden]
+Clave=SeriesLotesAutoOrden
+Nombre=Surtido Automático Series/Lotes (por omisión)
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionEdicion=SeriesLotesMayoreo
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PresentacionAutoOrden]
+Clave=PresentacionAutoOrden
+Nombre=Orden: Presentación
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CxcAplicaAutoOrden]
+Clave=CxcAplicaAutoOrden
+Nombre=Orden Aplicación Automática
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CxpAplicaAutoOrden]
+Clave=CxpAplicaAutoOrden
+Nombre=Orden Aplicación Automática
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PedidosReservar]
+Clave=PedidosReservar
+Nombre=Auto Reservar (Pedidos/Solicitudes)
+TamanoValidacion=20
+TipoDatos=Lógico
+OpcionesPresentacion=Consulta Opcional
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CompraConsignacion]
+Clave=CompraConsignacion
+Nombre=Compra Consignación
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ChequesPendientes]
+Clave=ChequesPendientes
+Nombre=Cheques Pendientes
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Falso
+OpcionesPresentacion=Consulta Opcional
+
+[CBSubCodigos]
+Clave=CBSubCodigos
+Nombre=Sub Códigos de Barras
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CBSubCuentas]
+Clave=CBSubCuentas
+Nombre=Subcuentas en Códigos de Barras
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CB]
+Clave=CB
+Nombre=Códigos de Barras
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CtaFormato]
+Clave=CtaFormato
+Nombre=Formato Cuenta
+AyudaEnCaptura=Editor Mascaras
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[ContMoneda]
+Clave=ContMoneda
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Pesos<T>
+AyudaMemTabla=Mon
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CtaContabilidad]
+Clave=CtaContabilidad
+Nombre=Cuenta Contabilidad
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>A<T>
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+AyudaIgnoraChequeos=S
+Mayusculas=S
+TipoDatos=Texto
+
+[CtaOrden]
+Clave=CtaOrden
+Nombre=Cuenta Orden
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>X<T>
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+AyudaIgnoraChequeos=S
+Mayusculas=S
+TipoDatos=Texto
+
+[ContVerificarPosicion]
+Clave=ContVerificarPosicion
+Nombre=Verificar posición de la cuenta
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CtaResultados]
+Clave=CtaResultados
+Nombre=Cuenta Resultados
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>R<T>
+Mayusculas=S
+TipoDatos=Texto
+
+[ValidarMargenMinimo]
+Clave=ValidarMargenMinimo
+Nombre=Validar Margen Mínimo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=ValidarPrecios=<T>Margen Minimo<T>
+ValorRefrescar=<T>Ultimo Costo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SeriesLotesMayoreo]
+Clave=SeriesLotesMayoreo
+Nombre=Series/VIN<T>s  Lotes/Partidas
+TamanoValidacion=2
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescar=S
+ListaRefrescar=Partidas
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[AutorizarRequisiciones]
+Clave=AutorizarRequisiciones
+Nombre=Autorizar Requisiciones
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraCostoSugerido]
+Clave=CompraCostoSugerido
+Nombre=Costo Sugerido
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Ultimo<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CompraDescImporte]
+Clave=CompraDescImporte
+Nombre=Descuento Lineal en Importe
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[VentaDescImporte]
+Clave=VentaDescImporte
+Nombre=Descuento Lineal en Importe
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[BackOrders]
+Clave=BackOrders
+Nombre=Back Order<T>s
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=BackOrdersNivel
+
+[VentaSurtirDemas]
+Clave=VentaSurtirDemas
+Nombre=Surtir de Más
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcMoratoriosTasa]
+Clave=CxcMoratoriosTasa
+Nombre=Intereses Moratorios / Recargos
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=0.#######
+
+[CxcAutoAjuste]
+Clave=CxcAutoAjuste
+Nombre=Tolerancia Redondeo Detalle (+/-)
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ValorPorOmision=1
+Monetario=S
+
+[CxpAutoAjuste]
+Clave=CxpAutoAjuste
+Nombre=Tolerancia Redondeo Detalle (+/-)
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ValorPorOmision=1
+Monetario=S
+
+[ContVerificarIVA]
+Clave=ContVerificarIVA
+Nombre=Verificar IVA
+TamanoValidacion=3
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCentrosCostos]
+Clave=ContCentrosCostos
+Nombre=Centros de Costos
+TamanoValidacion=3
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[VentaChecarCredito]
+Clave=VentaChecarCredito
+Nombre=Checar Límite d/Crédito (a partir de)
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Pedido<T>
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[eChequesPendientes]
+Clave=eChequesPendientes
+Nombre=Cheques Electrónicos Pendientes
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaBloquearMorosos]
+Clave=VentaBloquearMorosos
+Nombre=Bloquear Clientes Morosos
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=15
+TamanoValidacion=20
+Tamano=20
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CtaActivo]
+Clave=CtaActivo
+Nombre=Cuenta Activo
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>B<T>
+Mayusculas=S
+TipoDatos=Texto
+
+[CtaPasivo]
+Clave=CtaPasivo
+Nombre=Cuenta Pasivo
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>H<T>
+Mayusculas=S
+TipoDatos=Texto
+
+[CtaCapital]
+Clave=CtaCapital
+Nombre=Cuenta Capital
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValorPorOmision=<T>Q<T>
+TipoDatos=Texto
+
+[CtaIngresos]
+Clave=CtaIngresos
+Nombre=Cuenta Ingresos
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValorPorOmision=<T>S<T>
+TipoDatos=Texto
+
+[CtaCostoDirecto]
+Clave=CtaCostoDirecto
+Nombre=Cuenta Costo Directo
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValorPorOmision=<T>T<T>
+TipoDatos=Texto
+
+[CxcFormaCobroDA]
+Clave=CxcFormaCobroDA
+Nombre=Forma Cobro <T>Movimientos Anticipados<T>
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=20
+Tamano=50
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CxcRefinanciamientoTasa]
+Clave=CxcRefinanciamientoTasa
+Nombre=Refinanciamientos
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=0.#######
+
+[VentaLiquidaIntegral]
+Clave=VentaLiquidaIntegral
+Nombre=Cobro Directo
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=VentaLiquidaIntegralCxc
+
+[VentaPrecios]
+Clave=VentaPrecios
+Nombre=Listas de Precios
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=1
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[VentaConfirmarServicios]
+Clave=VentaConfirmarServicios
+Nombre=Confirmar Servicios
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[VentaContratosImpuesto]
+Clave=VentaContratosImpuesto
+Nombre=Impuesto para Contratos
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[VentaContratosArticulo]
+Clave=VentaContratosArticulo
+Nombre=Artículo para Facturar Contratos
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+AyudaIgnoraChequeos=S
+Mayusculas=S
+TipoDatos=Texto
+
+[VentaConfirmarContratos]
+Clave=VentaConfirmarContratos
+Nombre=Confirmar Contratos
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[InvPrestamosGarantias]
+Clave=InvPrestamosGarantias
+Nombre=Préstamos de Garantías
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Fecha1]
+Clave=Fecha1
+Nombre=Fecha1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Fecha2]
+Clave=Fecha2
+Nombre=Fecha2
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Partidas]
+Clave=Partidas
+Nombre=Partidas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorRefrescar=Falso
+CondicionEdicion=SeriesLotesMayoreo
+ValorPorOmision=Falso
+
+[VentaDefCantidad]
+Clave=VentaDefCantidad
+Nombre=Cantidad por Omisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+
+[InvEntradasSinCosto]
+Clave=InvEntradasSinCosto
+Nombre=Entradas sin Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CBProcesarLote]
+Clave=CBProcesarLote
+Nombre=Proceso Especial para Códigos de Barras (en Lote)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcProntoPago]
+Clave=CxcProntoPago
+Nombre=Pronto pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcProntoPagoConcepto]
+Clave=CxcProntoPagoConcepto
+Nombre=Concepto Nota Crédito Pronto pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpProntoPagoConcepto]
+Clave=CxpProntoPagoConcepto
+Nombre=Concepto Nota Crédito Pronto pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ContTablaINPC]
+Clave=ContTablaINPC
+Nombre=Tabla INPC
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaAnual
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[SeriesImprimirMov]
+Clave=SeriesImprimirMov
+Nombre=Imprimir Series en Movimientos Generales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=SeriesImprimirProp
+CondicionEdicion=SeriesLotesMayoreo
+
+[VentaServiciosRequiereTareas]
+Clave=VentaServiciosRequiereTareas
+Nombre=Servicios Requieren Tareas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=VentaServiciosTareaOmision
+
+[VentaPaquetes]
+Clave=VentaPaquetes
+Nombre=Paquetes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[InvPaquetes]
+Clave=InvPaquetes
+Nombre=Paquetes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+Tamano=0
+
+[EmbarqueAfectarCobros]
+Clave=EmbarqueAfectarCobros
+Nombre=Afectar Automáticamente los Embarques Cobrados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AFMantenimientoPendiente]
+Clave=AFMantenimientoPendiente
+Nombre=Mantenimientos/Reparaciones Pendientes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[AFAfectarDinero]
+Clave=AFAfectarDinero
+Nombre=Afectar Tesoreria
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[AFRevaluarDepreciacion]
+Clave=AFRevaluarDepreciacion
+Nombre=Reevaluar Depreciaciones (por Omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CteFormato]
+Clave=CteFormato
+Nombre=Formato Cliente
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[ArtFormato]
+Clave=ArtFormato
+Nombre=Formato Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[CentrosCostosFormato]
+Clave=CentrosCostosFormato
+Nombre=Formato Centros Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Editor Mascaras
+CondicionDespliege=ContCentrosCostos
+TipoDatos=Texto
+
+[ContCentrosCostosVerificarPos]
+Clave=ContCentrosCostosVerificarPos
+Nombre=Verificar posición del centro de costos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[Texto1]
+Clave=Texto1
+Nombre=Texto1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[ContUsoInv]
+Clave=ContUsoInv
+Nombre=Inventarios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[ContUsoCompras]
+Clave=ContUsoCompras
+Nombre=Compras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[ContUsoGastos]
+Clave=ContUsoGastos
+Nombre=Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[ContUsoVentas]
+Clave=ContUsoVentas
+Nombre=Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[ContUsoFormato]
+Clave=ContUsoFormato
+Nombre=Formato Uso Contable
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[NomOmision]
+Clave=NomOmision
+Nombre=Nomina por Omisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=NomXLista
+AyudaVista=NomX
+AyudaCampo=NomX.Nombre
+TipoDatos=Texto
+
+[NomBeneficiario]
+Clave=NomBeneficiario
+Nombre=Beneficiario (Cheque Nomina Efectivo)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[VentaServiciosTareaOmision]
+Clave=VentaServiciosTareaOmision
+Nombre=Tarea por Omisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=TareaDefLista
+AyudaVista=TareaDef
+AyudaCampo=TareaDef.Tarea
+CondicionDespliege=VentaServiciosRequiereTareas
+TipoDatos=Texto
+
+[CompraVentaSinIVA]
+Clave=CompraVentaSinIVA
+Nombre=Validar Compra/Venta sin IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[SeriesImprimirProp]
+Clave=SeriesImprimirProp
+Nombre=Imprimir Propiedades
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=SeriesImprimirMov
+CondicionEdicion=SeriesLotesMayoreo
+
+[NomOmisionPeriodo]
+Clave=NomOmisionPeriodo
+Nombre=Período por Omisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PeriodoTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[CxcTopeEfectivoAuto]
+Clave=CxcTopeEfectivoAuto
+Nombre=Tope efectivo automático (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ValorPorOmision=50.0
+AyudaEnCaptura=Calculadora
+Monetario=S
+CondicionDespliege=CxcControlEfectivo
+
+[CxpTopeEfectivoAuto]
+Clave=CxpTopeEfectivoAuto
+Nombre=Tope efectivo automático (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ValorPorOmision=50.0
+AyudaEnCaptura=Calculadora
+Monetario=S
+CondicionDespliege=CxpControlEfectivo
+
+[CxcControlEfectivo]
+Clave=CxcControlEfectivo
+Nombre=Control del Efectivo (Cargos/Creditos Diversos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CxcTopeEfectivoAuto
+
+[CxpControlEfectivo]
+Clave=CxpControlEfectivo
+Nombre=Control del Efectivo (Cargos/Creditos Diversos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CxpTopeEfectivoAuto
+
+[AsisteToleraEntrada]
+Clave=AsisteToleraEntrada
+Nombre=Minutos Tolerancia Entrada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[AsisteToleraSalida]
+Clave=AsisteToleraSalida
+Nombre=Minutos Tolerancia Salida
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[VentaPreciosImpuestoIncluido]
+Clave=VentaPreciosImpuestoIncluido
+Nombre=Precios con Impuesto Incluido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RHPlaza]
+Clave=RHPlaza
+Nombre=Control Plazas Simple
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[FacturasPendientes]
+Clave=FacturasPendientes
+Nombre=Facturas Pendientes (sin Existencia)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaComisionesCobradas]
+Clave=VentaComisionesCobradas
+Nombre=Comisiones Cobradas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AlCambiar=Asigna(EmpresaCfg:EmpresaCfg.ComisionBase, <T>Venta<T>)
+
+[InvSugererirCompra]
+Clave=InvSugererirCompra
+Nombre=Sugererir Compras
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CompraVerClaveProveedor]
+Clave=CompraVerClaveProveedor
+Nombre=Ver Clave del Proveedor (en Movimientos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaLimiteRenFacturas]
+Clave=VentaLimiteRenFacturas
+Nombre=Límite captura renglones (Facturas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FormaPagoCambio]
+Clave=FormaPagoCambio
+Nombre=Forma Pago <T>Cambio de la Nota<T>
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CambioTasa]
+Clave=CambioTasa
+Nombre=Tasa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[NotasBorrador]
+Clave=NotasBorrador
+Nombre=Afectar Notas sin Existencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[InvFisicoConteo]
+Clave=InvFisicoConteo
+Nombre=Número de Conteos (Inventario Físico)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[ValidarPrecios]
+Clave=ValidarPrecios
+Nombre=Validar Precios
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ConRefrescar=S
+ListaRefrescar=ValidarMargenMinimo
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CxcPlazo1]
+Clave=CxcPlazo1
+Nombre=Plazo 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxcPlazo2]
+Clave=CxcPlazo2
+Nombre=Plazo 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxcPlazo3]
+Clave=CxcPlazo3
+Nombre=Plazo 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxcPlazo4]
+Clave=CxcPlazo4
+Nombre=Plazo 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SugerirCostoDev]
+Clave=SugerirCostoDev
+Nombre=Sugerir Costo Devoluciones
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[GastoAfecta]
+Clave=GastoAfecta
+Nombre=Gasto Afecta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Dinero<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[BackOrdersNivel]
+Clave=BackOrdersNivel
+Nombre=Nivel
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=BackOrders
+ValorPorOmision=<T>Cliente<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AlmacenDestinoEntregaGarantia]
+Clave=AlmacenDestinoEntregaGarantia
+Nombre=Almacén Destino (Entrega Garantía)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CxpPlazo1]
+Clave=CxpPlazo1
+Nombre=Plazo 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxpPlazo2]
+Clave=CxpPlazo2
+Nombre=Plazo 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxpPlazo3]
+Clave=CxpPlazo3
+Nombre=Plazo 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxpPlazo4]
+Clave=CxpPlazo4
+Nombre=Plazo 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[ToleranciaCosto]
+Clave=ToleranciaCosto
+Nombre=% Tolerancia Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+FormatoValidacion=0.##
+AyudaEnCaptura=Calculadora
+
+[ToleranciaTipoCosto]
+Clave=ToleranciaTipoCosto
+Nombre=Validación Costo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CosteoNivelSubCuenta]
+Clave=CosteoNivelSubCuenta
+Nombre=Costeo a Nivel Opción
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PreciosNivelSubCuenta]
+Clave=PreciosNivelSubCuenta
+Nombre=Precios a Nivel SubCuenta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaListaPrecios]
+Clave=VentaListaPrecios
+Nombre=Listas Precios
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>(Multiples)<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EmbarqueModificarVencimiento]
+Clave=EmbarqueModificarVencimiento
+Nombre=Recalcular el Vencimiento en base a la Fecha Entrega del Embarque
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CosteoLotes]
+Clave=CosteoLotes
+Nombre=Costeo por Lotes/Partidas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=SeriesLotesMayoreo
+
+[CosteoSeries]
+Clave=CosteoSeries
+Nombre=Costeo por Series/VIN<T>s
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=SeriesLotesMayoreo
+
+[ArtRevision]
+Clave=ArtRevision
+Nombre=Revisión Artículos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CancelarOtroMesFactura]
+Clave=CancelarOtroMesFactura
+Nombre=Cancelación de Facturas al Cambiar de Mes (Generan el Movimiento <T>Cancelacion Factura<T>)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[EmbarqueEstadoPendiente]
+Clave=EmbarqueEstadoPendiente
+Nombre=Estado del Embarque Pendiente (por omisión)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=EmbarqueEstado
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[EmbarqueEstadoTransito]
+Clave=EmbarqueEstadoTransito
+Nombre=Estado del Embarque Transito (por omisión)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=EmbarqueEstado
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NomISRSimplificado]
+Clave=NomISRSimplificado
+Nombre=ISR Simplificado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaTEEstandar]
+Clave=VentaTEEstandar
+Nombre=Días Entrega (por Omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[VentaTEEstandarTipoDias]
+Clave=VentaTEEstandarTipoDias
+Nombre=Tipo Días
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Habiles<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[VentaServiciosAutoOP]
+Clave=VentaServiciosAutoOP
+Nombre=Auto Generar Orden Producción (por Omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=General.Prod
+
+[CxcDocAutoFolio]
+Clave=CxcDocAutoFolio
+Nombre=Movimiento Folio Documentación Automática
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDocAutoFolio]
+Clave=CxpDocAutoFolio
+Nombre=Movimiento Folio Documentación Automatica
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CxcProntoPagoTasa]
+Clave=CxcProntoPagoTasa
+Nombre=Descuento Pronto Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0.#######
+
+[CxpProntoPagoTasa]
+Clave=CxpProntoPagoTasa
+Nombre=Descuento Pronto Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0.#######
+
+[CxcProntoPagoTasaDiaria]
+Clave=CxcProntoPagoTasaDiaria
+Nombre=Tasa Diaria
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CxcProntoPagoTasa
+
+[CxpProntoPagoTasaDiaria]
+Clave=CxpProntoPagoTasaDiaria
+Nombre=Pronto Pago (Cxp)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CxpProntoPagoTasa
+
+[CxpProntoPago]
+Clave=CxpProntoPago
+Nombre=Pronto pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TransferirDemas]
+Clave=TransferirDemas
+Nombre=Transferir de Más
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcAnticipoEfectivo]
+Clave=CxcAnticipoEfectivo
+Nombre=Acumular Anticipos (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxpAnticipoEfectivo]
+Clave=CxpAnticipoEfectivo
+Nombre=Acumular Anticipos (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Cajeros]
+Clave=Cajeros
+Nombre=Controlar Cajeros
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DineroAutoFaltanteSobrante
+
+[CxcFormaCobroVales]
+Clave=CxcFormaCobroVales
+Nombre=Forma Cobro <T>Vales<T>
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ClienteFacturaVMOS]
+Clave=ClienteFacturaVMOS
+Nombre=Cliente Factura (Procesar Notas)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+TipoDatos=Texto
+
+[CxpMoratoriosTasa]
+Clave=CxpMoratoriosTasa
+Nombre=Intereses Moratorios / Recargos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=0.#######
+AyudaEnCaptura=Calculadora
+
+[CxcRecargosConcepto]
+Clave=CxcRecargosConcepto
+Nombre=Concepto Nota Cargo Recargos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpRecargosConcepto]
+Clave=CxpRecargosConcepto
+Nombre=Concepto Nota Cargo Recargos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[FormaPagoOmision]
+Clave=FormaPagoOmision
+Nombre=Forma Pago (por omisión)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[FormaCobroOmision]
+Clave=FormaCobroOmision
+Nombre=Forma Cobro (por omisión)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CxpRecorrerVencimiento]
+Clave=CxpRecorrerVencimiento
+Nombre=Recorrer Vencimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FormaPagoRequerida]
+Clave=FormaPagoRequerida
+Nombre=Formas Cobro/Pago Requeridas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NomConceptoSDI]
+Clave=NomConceptoSDI
+Nombre=Concepto SDI
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NomSugerirSDI
+TipoDatos=Texto
+
+[NomSugerirSDI]
+Clave=NomSugerirSDI
+Nombre=Sugerir Modificación SDI
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=NomConceptoSDI
+
+[NomConceptoAumentoVacaciones]
+Clave=NomConceptoAumentoVacaciones
+Nombre=Concepto Aumento Vacaciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NomSugerirAumentoVacaciones
+TipoDatos=Texto
+
+[NomSugerirAumentoVacaciones]
+Clave=NomSugerirAumentoVacaciones
+Nombre=Sugerir Aumento Vacaciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[MonedaCosteo]
+Clave=MonedaCosteo
+Nombre=Moneda Costeo
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[MonedaCosteoNivelArticulo]
+Clave=MonedaCosteoNivelArticulo
+Nombre=Moneda Costeo Nivel Articulo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=Falso
+
+[CambioOperacionRelevante]
+Clave=CambioOperacionRelevante
+Nombre=Operación Relevante
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[CambioMonedaRelevante]
+Clave=CambioMonedaRelevante
+Nombre=Moneda Relevante
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CambioCategoriaRelevante1]
+Clave=CambioCategoriaRelevante1
+Nombre=Categoria Relevante
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CteCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CambioCategoriaRelevante2]
+Clave=CambioCategoriaRelevante2
+Nombre=Categoria Relevante
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CteCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CambioDiasRemesas]
+Clave=CambioDiasRemesas
+Nombre=Días (Naturales) Remesas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CxcDocAnticipoAutoFolio]
+Clave=CxcDocAnticipoAutoFolio
+Nombre=y para Anticipos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CxpDocAnticipoAutoFolio]
+Clave=CxpDocAnticipoAutoFolio
+Nombre=y para Anticipos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CompraPaquetes]
+Clave=CompraPaquetes
+Nombre=Paquetes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EmbarqueGenerarGastoTarifas]
+Clave=EmbarqueGenerarGastoTarifas
+Nombre=Generar Gasto Automático - Tarifa Zona
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroDesgloseObligatorio]
+Clave=DineroDesgloseObligatorio
+Nombre=Desglose Obligatorio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroAfectarComision]
+Clave=DineroAfectarComision
+Nombre=Generar Comisiones Bancarias (Formas Pago)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DineroAfectarComisionIVA
+
+[CompraVerClaveIdioma]
+Clave=CompraVerClaveIdioma
+Nombre=Ver Clave Otro Idioma (en Movimientos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CancelarFacturaReservarPedido]
+Clave=CancelarFacturaReservarPedido
+Nombre=Reservar Pedido(s) al Cancelar Factura
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[InvVerClaveIdioma]
+Clave=InvVerClaveIdioma
+Nombre=Ver Clave Otro Idioma (Almacen Destino, en Movimientos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaVerClaveIdioma]
+Clave=VentaVerClaveIdioma
+Nombre=Ver Clave Otro Idioma (en Movimientos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EmbarqueAfectarGastoTarifas]
+Clave=EmbarqueAfectarGastoTarifas
+Nombre=Afectar Gasto Automático - Tarifa Zona
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ComisionBase]
+Clave=ComisionBase
+Nombre=Origen de la Comisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Venta<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionEdicion=VentaComisionesCobradas
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[NomAfectarAumentoVacaciones]
+Clave=NomAfectarAumentoVacaciones
+Nombre=Afectar Aumento Vacaciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=NomSugerirAumentoVacaciones
+
+[CBDirAlmacen]
+Clave=CBDirAlmacen
+Nombre=Directorio Códigos de Barras (a Nivel Almacén/Cliente)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NomCCRequerido]
+Clave=NomCCRequerido
+Nombre=Centro Costos Requerido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ComisionEspecial]
+Clave=ComisionEspecial
+Nombre=Proceso Especial para Generar Comisiones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaAnticipoCredito]
+Clave=VentaAnticipoCredito
+Nombre=Sugerir Anticipo de Pedidos a Crédito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraAnticipoCredito]
+Clave=CompraAnticipoCredito
+Nombre=Sugerir Anticipo de Ordenes Compra a Crédito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroContX]
+Clave=DineroContX
+Nombre=Conexión Contable a Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Encabezado<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[DineroControlarSobregiros]
+Clave=DineroControlarSobregiros
+Nombre=Controlar Sobregiros (Bancos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaSugerirSaldoFavorID]
+Clave=VentaSugerirSaldoFavorID
+Nombre=Sugerir Saldo Favor Identificado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaCobroRedondeoDecimales]
+Clave=VentaCobroRedondeoDecimales
+Nombre=Redondeo Decimales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Ninguna
+Ayuda=Ejemplo: Importe = 100.56; 2 = 100.56, 1 = 100.60, 0 = 101.00
+ListaOpciones=(Lista)
+
+[ContMovPresupuesto]
+Clave=ContMovPresupuesto
+Nombre=Afectar el Presupuesto con Movimientos (Pólizas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no General.TiposPresupuesto
+
+[ContValidarPresupuesto]
+Clave=ContValidarPresupuesto
+Nombre=Validar contra Presupuesto Disponible (en línea)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no General.TiposPresupuesto
+
+[ContReservarPresupuesto]
+Clave=ContReservarPresupuesto
+Nombre=Reservar Presupuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no General.TiposPresupuesto
+
+[CompraProveedorRequisicion]
+Clave=CompraProveedorRequisicion
+Nombre=Proveedor en Requisiciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EspaciosCfg]
+Clave=EspaciosCfg
+Nombre=Configuración a Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Empresa<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EspaciosNivel]
+Clave=EspaciosNivel
+Nombre=Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Dia<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EspaciosMinutos]
+Clave=EspaciosMinutos
+Nombre=Intervalo (Minutos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+ValorPorOmision=60
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+OpcionesLlave=Opción
+
+[EspaciosBloquearAnteriores]
+Clave=EspaciosBloquearAnteriores
+Nombre=Bloquear Fechas Anteriores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[EspaciosHoraD]
+Clave=EspaciosHoraD
+Nombre=De Hora
+Visible=S
+TamanoValidacion=5
+Tamano=5
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[EspaciosHoraA]
+Clave=EspaciosHoraA
+Nombre=A Hora
+Visible=S
+TamanoValidacion=5
+Tamano=5
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[EspaciosSobreventa]
+Clave=EspaciosSobreventa
+Nombre=% Sobreventa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[EspaciosAsignacion]
+Clave=EspaciosAsignacion
+Nombre=Asignación Directa (sin Movimientos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaActualizarPrecioMoneda]
+Clave=VentaActualizarPrecioMoneda
+Nombre=Actualizar Precios Otras Monedas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CentroCostosRamas]
+Clave=CentroCostosRamas
+Nombre=Ramas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[CtaGastosOperacion]
+Clave=CtaGastosOperacion
+Nombre=Gastos Operación
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[CtaOtrosGastosProductos]
+Clave=CtaOtrosGastosProductos
+Nombre=Otros Gastos Productos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[CtaImpuestos]
+Clave=CtaImpuestos
+Nombre=Impuestos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[ContMoneda2]
+Clave=ContMoneda2
+Nombre=Paralelo Otra Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Expresion
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>(No)<T>,SQLEnLista(<T>SELECT Moneda FROM Mon WHERE Moneda<>:tMon ORDER BY Orden<T>, ContMoneda))
+TipoDatos=Texto
+
+[CompraValidarArtProv]
+Clave=CompraValidarArtProv
+Nombre=Validar Proveedores del Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[InvConfirmarSolicitudes]
+Clave=InvConfirmarSolicitudes
+Nombre=Confirmar Solicitudes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EstatusFacturaVMOS]
+Clave=EstatusFacturaVMOS
+Nombre=Estatus Factura (Procesar Notas)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>CONCLUIDO<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VentaIncentivos]
+Clave=VentaIncentivos
+Nombre=Incentivos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ChequesDirectos]
+Clave=ChequesDirectos
+Nombre=Permitir Cheques Directos (sin Origen)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TablaISAN]
+Clave=TablaISAN
+Nombre=Tabla ISAN
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaImpuesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NomModificarFechaNomina]
+Clave=NomModificarFechaNomina
+Nombre=Modificar Fecha (Generar la Nómina)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[TablaVacaciones]
+Clave=TablaVacaciones
+Nombre=Tabla Vacaciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaNum
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[SugerirCostoArtServicio]
+Clave=SugerirCostoArtServicio
+Nombre=Sugerir Costo Art. Servicio/Juego
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VentaServicioSituacionTipo]
+Clave=VentaServicioSituacionTipo
+Nombre=Situaciones por Tipo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[KmsxMes]
+Clave=KmsxMes
+Nombre=Kilómetros por Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+FormatoValidacion=#,
+
+[AFConceptoDepreciacion]
+Clave=AFConceptoDepreciacion
+Nombre=Concepto Depreciación (Gastos)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=GAS
+TipoDatos=Texto
+CondicionDespliege=AFGenerarGasto y(AFGenerarGastoCfg = <T>Empresa<T>)
+
+[AFAcreedorDepreciacion]
+Clave=AFAcreedorDepreciacion
+Nombre=Acreedor Depreciación
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+TipoDatos=Texto
+
+CondicionDespliege=AFGenerarGasto y(AFGenerarGastoCfg = <T>Empresa<T>)
+[CompraAutoEndoso]
+Clave=CompraAutoEndoso
+Nombre=Auto Endosar (Cuentas por Pagar)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CompraAutoEndosoEmpresas]
+Clave=CompraAutoEndosoEmpresas
+Nombre=Triangular Entre Empresas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=CompraAutoEndoso
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[NomDiasDesfasoIncidencias]
+Clave=NomDiasDesfasoIncidencias
+Nombre=Días Desfaso Incidencias
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=16
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+OpcionesLlave=Opción
+
+[NomPremios]
+Clave=NomPremios
+Nombre=Premios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContMultiSucursal]
+Clave=ContMultiSucursal
+Nombre=Pólizas Multi Sucursales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaCliente]
+Clave=ContCtaCliente
+Nombre=Cuenta Contable a Nivel Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaProveedor]
+Clave=ContCtaProveedor
+Nombre=Cuenta Contable a Nivel Proveedor
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaAlmacen]
+Clave=ContCtaAlmacen
+Nombre=Cuenta Contable a Nivel Almacen
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaPersonal]
+Clave=ContCtaPersonal
+Nombre=Cuenta Contable a Nivel Personal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaDinero]
+Clave=ContCtaDinero
+Nombre=Cuenta Contable a Nivel Cuenta Dinero
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PersonalFormato]
+Clave=PersonalFormato
+Nombre=Formato Personal
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Editor Mascaras
+TipoDatos=Texto
+
+[NomValidarReferencias]
+Clave=NomValidarReferencias
+Nombre=Validar Referencias Duplicadas (Incapacidades)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcRecorrerVencimiento]
+Clave=CxcRecorrerVencimiento
+Nombre=Recorrer Vencimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ContNivelPresupuesto]
+Clave=ContNivelPresupuesto
+Nombre=Nivel Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Detalle<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[CompraProrrateada]
+Clave=CompraProrrateada
+Nombre=Compras Prorrateadas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CompraProrrateadaRedondeo
+
+[CompraProrrateadaRedondeo]
+Clave=CompraProrrateadaRedondeo
+Nombre=Redondeo Decimales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesLlave=Opción
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=CompraProrrateada
+ListaOpciones=(Lista)
+
+[AsisteGenerarFaltas]
+Clave=AsisteGenerarFaltas
+Nombre=Sugerir Faltas a la Nómina
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteGenerarRetardos]
+Clave=AsisteGenerarRetardos
+Nombre=Sugerir Retardos a la Nómina
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteGenerarHorasExtras]
+Clave=AsisteGenerarHorasExtras
+Nombre=Sugerir Horas Extras a la Nómina
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+[ContCtaFormaPago]
+Clave=ContCtaFormaPago
+Nombre=Cuenta Contable a Nivel Forma Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCtaArticulo]
+Clave=ContCtaArticulo
+Nombre=Cuenta Contable a Nivel Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroAutoFaltanteSobrante]
+Clave=DineroAutoFaltanteSobrante
+Nombre=Auto Generar Faltante/Sobrante (Corte Caja)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Cajeros
+
+[FormaPagoEfectivo]
+Clave=FormaPagoEfectivo
+Nombre=Forma Pago (Efectivo)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CxcDescContado]
+Clave=CxcDescContado
+Nombre=Descuento Cobro de Contado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CxcDescContadoDias]
+Clave=CxcDescContadoDias
+Nombre=Días
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=CxcDescContado
+
+[CxcDescContadoPorcentaje]
+Clave=CxcDescContadoPorcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=CxcDescContado
+
+[CxcValidarDescPPMorosos]
+Clave=CxcValidarDescPPMorosos
+Nombre=Validar Descuentos <T>Contado/Pronto Pago<T> en Clientes Morosos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CentroCostosValidar]
+Clave=CentroCostosValidar
+Nombre=Validar (Empresas, Sucursales y Usuarios)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ContCentrosCostos
+
+[ContPermitirCancelacionOrigen]
+Clave=ContPermitirCancelacionOrigen
+Nombre=Permitir Cancelación/Desafectación Pólizas con Origen de Otros Módulos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroFaltanteModulo]
+Clave=DineroFaltanteModulo
+Nombre=Faltante Caja - Afecta Módulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=<T>AGENT<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[PedidosReservarEsp]
+Clave=PedidosReservarEsp
+Nombre=Auto Reservar - Movimientos Especificos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=PedidosReservar
+
+[CancelarFactura]
+Clave=CancelarFactura
+Nombre=Cancelación de Facturas Extemporáneas (Generan el Movimiento <T>Cancelacion Factura<T>)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Cambio Mes<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DineroConciliarPorSucursales]
+Clave=DineroConciliarPorSucursales
+Nombre=Validar Sucursales Bancarias (Conciliación Bancaria)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PrecioMinimoNivelSucursal]
+Clave=PrecioMinimoNivelSucursal
+Nombre=Precio Mínimo Nivel Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ValidarPrecios=<T>Precio Minimo<T>
+ValorPorOmision=Falso
+
+[ContToleraciaRedondeo]
+Clave=ContToleraciaRedondeo
+Nombre=Toleracia Redondeo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorMinimo=0
+ValorMaximo=1
+
+[NomPorcentajeSubsidio]
+Clave=NomPorcentajeSubsidio
+Nombre=% Subsidio Acreditable
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[CRAcreedor]
+Clave=CRAcreedor
+Nombre=Acreedor (gastos)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Proveedor FROM Prov WHERE Proveedor=:tProv<T>, CRAcreedor)=CRAcreedor
+TipoDatos=Texto
+
+[CRClase]
+Clave=CRClase
+Nombre=&Clasificación (gastos)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+ConRefrescar=S
+ListaRefrescar=CRSubClase
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,<T>GAS<T>)
+TipoDatos=Texto
+
+[CRSubClase]
+Clave=CRSubClase
+Nombre=&Subclasificación (gastos)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+ValorRefrescar=<T><T>
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,<T>GAS<T>, EmpresaCfg:EmpresaCfg.CRClase)
+TipoDatos=Texto
+
+[CRFormaPago]
+Clave=CRFormaPago
+Nombre=Forma Pago (gastos)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[VentaRestringirArtBloqueados]
+Clave=VentaRestringirArtBloqueados
+Nombre=Restringir Movimientos Artículos Bloqueados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraRestringirArtBloquedos]
+Clave=CompraRestringirArtBloquedos
+Nombre=Restringir Movimientos Artículos Bloqueados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaServiciosValidarID]
+Clave=VentaServiciosValidarID
+Nombre=Validar Identificador
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CRCorteCajaCentralMax]
+Clave=CRCorteCajaCentralMax
+Nombre=Cortes Cajas Centrales Máximos por Día
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CRValidarCorteSaldoCero]
+Clave=CRValidarCorteSaldoCero
+Nombre=Validar Corte Caja a Saldo Cero
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRValidarCorteZSaldoCero]
+Clave=CRValidarCorteZSaldoCero
+Nombre=Validar Corte Caja Central a Saldo Cero
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaLimiteCreditoNivelGrupo]
+Clave=VentaLimiteCreditoNivelGrupo
+Nombre=Validar Límite Crédito a Nivel Grupo de Empresas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaAnexosAlFacturar]
+Clave=VentaAnexosAlFacturar
+Nombre=Anexos al Facturar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRAfectarAuto]
+Clave=CRAfectarAuto
+Nombre=Afectar Automáticamente al Recibir Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CRCerrarDiaAuto]
+Clave=CRCerrarDiaAuto
+Nombre=Cerrar Día Automáticamente al Recibir Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CRValidarFolio]
+Clave=CRValidarFolio
+Nombre=Validar Folio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraValidarPresupuesto]
+Clave=CompraValidarPresupuesto
+Nombre=Validar Presupuesto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+OpcionesValidar=S
+TipoDatos=Texto
+
+[ContCuentaCierre]
+Clave=ContCuentaCierre
+Nombre=Cuenta Cierre (por Omisión)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+TipoDatos=Texto
+
+[VentaEndoso]
+Clave=VentaEndoso
+Nombre=Permitir Endoso
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraAutoEndosoMovs]
+Clave=CompraAutoEndosoMovs
+Nombre=Endosar con Movimientos (No Usar en Combinación con Documentación/Bonificaciones Automáticas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=CompraAutoEndoso
+ValorPorOmision=Falso
+
+[ImporteISANLujo]
+Clave=ImporteISANLujo
+Nombre=Importe ISAN de Lujo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[TablaISANLujo]
+Clave=TablaISANLujo
+Nombre=Tabla ISAN de Lujo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaImpuesto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ArtRedondeo]
+Clave=ArtRedondeo
+Nombre=Artículo Redondeo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+TipoDatos=Texto
+
+[AFSugerirSerieEntrada]
+Clave=AFSugerirSerieEntrada
+Nombre=Sugerir Número Serie en Entradas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=AFConsecutivo
+
+[AFConsecutivo]
+Clave=AFConsecutivo
+Nombre=Ultimo Consecutivo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=AFSugerirSerieEntrada
+
+[AsignarConsecutivoFacturaVMOS]
+Clave=AsignarConsecutivoFacturaVMOS
+Nombre=Asignar Consecutivo (Procesar Notas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaPPIndirectos]
+Clave=VentaPPIndirectos
+Nombre=Refrescar Política Precios en Movimientos No Directos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EmbarqueBaseProrrateo]
+Clave=EmbarqueBaseProrrateo
+Nombre=Base Prorrateo Gastos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Importe<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[ContUsoDinero]
+Clave=ContUsoDinero
+Nombre=Tesoreria
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+
+[CompraValidarPresupuestoFR]
+Clave=CompraValidarPresupuestoFR
+Nombre=Validar Presupuesto en Base Fecha Requerida
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaRefSerieLotePedidos]
+Clave=VentaRefSerieLotePedidos
+Nombre=Referenciar Series/Lotes en Pedidos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaLimiteCreditoNivelUEN]
+Clave=VentaLimiteCreditoNivelUEN
+Nombre=Límite Crédito a Nivel UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CosteoActividades]
+Clave=CosteoActividades
+Nombre=Costeo Actividades
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Tiempo Estandar<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VentaVerDescripcionExtra]
+Clave=VentaVerDescripcionExtra
+Nombre=Ver Descripción Extra en el Detalle
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACFactorcapacidadPago]
+Clave=ACFactorcapacidadPago
+Nombre=Factor Capacidad Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[CBPreguntarCantidad]
+Clave=CBPreguntarCantidad
+Nombre=Preguntar Cantidad (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CB
+
+[ACClienteDevengados]
+Clave=ACClienteDevengados
+Nombre=Cliente Intereses Devengados
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT Cliente FROM Cte WHERE Cliente=:tCte<T>, ACClienteDevengados)=ACClienteDevengados
+ValidacionMensajeError=<T>No Existe<T>
+TipoDatos=Texto
+
+[ACProveedorDevengados]
+Clave=ACProveedorDevengados
+Nombre=Proveedor Intereses Devengados
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT Proveedor FROM Prov WHERE Proveedor=:tProv<T>, ACProveedorDevengados)=ACProveedorDevengados
+ValidacionMensajeError=<T>No Existe<T>
+TipoDatos=Texto
+
+[CompraVerDescripcionExtra]
+Clave=CompraVerDescripcionExtra
+Nombre=Ver Descripción Extra en el Detalle
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaLiquidaIntegralCxc]
+Clave=VentaLiquidaIntegralCxc
+Nombre=Generar Cobro en Cxc (Concluido)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+CondicionEdicion=VentaLiquidaIntegral
+
+[ACCobroIntereses]
+Clave=ACCobroIntereses
+Nombre=Cobro Intereses (por omisión)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Devengados<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VentaPedidosDisminuyenCredito]
+Clave=VentaPedidosDisminuyenCredito
+Nombre=Considerar Pedidos en el Límite de Crédito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroCorteSDPorFormaPago]
+Clave=DineroCorteSDPorFormaPago
+Nombre=Generar Solicitud Depósito por Forma Pago (Corte Caja)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaTEEstandarRecorrerDomingo]
+Clave=VentaTEEstandarRecorrerDomingo
+Nombre=Recorrer Domingo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraConcentrarEntrada]
+Clave=CompraConcentrarEntrada
+Nombre=Concentrar Entradas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CancelarFacturaFecha]
+Clave=CancelarFacturaFecha
+Nombre=Fecha Cancelación de Facturas Extemporáneas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Fecha Cancelacion<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CancelarFacturaFisicamente]
+Clave=CancelarFacturaFisicamente
+Nombre=Cancelar Fisicamente los 2 Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContMoneda2Auto]
+Clave=ContMoneda2Auto
+Nombre=Paralelo Otra Moneda Automático
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[EmbarqueEliminarDetalle]
+Clave=EmbarqueEliminarDetalle
+Nombre=Eliminar Partidas Pendientes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRVentaDescripcionExtra]
+Clave=CRVentaDescripcionExtra
+Nombre=Descripción Extra (Venta)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRVentaPrecio]
+Clave=CRVentaPrecio
+Nombre=Precios (Venta)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRVentaDescuentoLinea]
+Clave=CRVentaDescuentoLinea
+Nombre=Descuento Línea (Venta)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRAgente]
+Clave=CRAgente
+Nombre=Multiples Vendedores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[CRSoporte]
+Clave=CRSoporte
+Nombre=Atención a Clientes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRInvFisico]
+Clave=CRInvFisico
+Nombre=Inventario Físico
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRCaja]
+Clave=CRCaja
+Nombre=Caja
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRCxc]
+Clave=CRCxc
+Nombre=Movimientos Crédito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContUsoCxc]
+Clave=ContUsoCxc
+Nombre=Cxc
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+
+[ContUsoCxp]
+Clave=ContUsoCxp
+Nombre=Cxp
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+
+[CRSugerirDescuento]
+Clave=CRSugerirDescuento
+Nombre=Sugerir Descuento del Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRSugerirPrecio]
+Clave=CRSugerirPrecio
+Nombre=Sugerir Precio del Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaComisionVariable]
+Clave=VentaComisionVariable
+Nombre=Comisión Variable
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContArticulo]
+Clave=ContArticulo
+Nombre=Pólizas con Artículos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NConsumoSugerir]
+Clave=NConsumoSugerir
+Nombre=Sugerir Importe Cliente/Aseguradora (Facturación Notas Consumo)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[NConsumoArtDeducible]
+Clave=NConsumoArtDeducible
+Nombre=Artículo Deducible
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+CondicionDespliege=NConsumoSugerir
+TipoDatos=Texto
+
+[NConsumoArtCoAseguro]
+Clave=NConsumoArtCoAseguro
+Nombre=Artículo Coaseguro
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+CondicionDespliege=NConsumoSugerir
+TipoDatos=Texto
+
+[CRTransferencias]
+Clave=CRTransferencias
+Nombre=Transferencias
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CosteoMultipleSimultaneo]
+Clave=CosteoMultipleSimultaneo
+Nombre=Costeo Multiple Simultaneo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[Posiciones]
+Clave=Posiciones
+Nombre=Posiciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACRetencionPF]
+Clave=ACRetencionPF
+Nombre=% Retención (Personas Físicas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[DineroAfectarComisionIVA]
+Clave=DineroAfectarComisionIVA
+Nombre=Desglosar IVA (en otro movimiento)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=DineroAfectarComision
+
+[VentaPerdidaAuto]
+Clave=VentaPerdidaAuto
+Nombre=Eliminar Pendientes Automáticamente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=VentaPerdidaAutoPorcentaje
+
+[CompraPerdidaAuto]
+Clave=CompraPerdidaAuto
+Nombre=Eliminar Pendientes Automáticamente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CompraPerdidaAutoPorcentaje
+
+[EmbarqueDesembarquesParciales]
+Clave=EmbarqueDesembarquesParciales
+Nombre=Desembarques Parciales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NConsumoArtAjusteCobertura]
+Clave=NConsumoArtAjusteCobertura
+Nombre=Artículo Ajuste Cobertura
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NConsumoSugerir
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+TipoDatos=Texto
+
+[AsisteJornadasNocturnas]
+Clave=AsisteJornadasNocturnas
+Nombre=Jornadas Nocturnas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACReciprocidad]
+Clave=ACReciprocidad
+Nombre=% Reciprocidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[ImportacionImpuesto1Acreedor]
+Clave=ImportacionImpuesto1Acreedor
+Nombre=Acreedor IGI
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+TipoDatos=Texto
+
+[ImportacionImpuesto1Concepto]
+Clave=ImportacionImpuesto1Concepto
+Nombre=Concepto IGI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[ImportacionImpuesto2Acreedor]
+Clave=ImportacionImpuesto2Acreedor
+Nombre=Acreedor Cuota Compensatoria
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+TipoDatos=Texto
+
+[ImportacionImpuesto2Concepto]
+Clave=ImportacionImpuesto2Concepto
+Nombre=Concepto Cuota Compensatoria
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXP
+TipoDatos=Texto
+
+[CBSerieLote]
+Clave=CBSerieLote
+Nombre=Usar el Código Barras como Serie/Lote
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CB
+
+[ACAjusteConceptoValorResidual]
+Clave=ACAjusteConceptoValorResidual
+Nombre=Concepto Ajuste Valor Residual
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACAjusteConceptoImpuestoAd]
+Clave=ACAjusteConceptoImpuestoAd
+Nombre=Concepto Ajuste Impuesto Adicional
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Conceptos
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[CRPrestamoCxc]
+Clave=CRPrestamoCxc
+Nombre=Prestamos Generan Cuentas por Cobrar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACPlazoDias]
+Clave=ACPlazoDias
+Nombre=Plazo (Días)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Naturales<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[ExistenciaAlterna]
+Clave=ExistenciaAlterna
+Nombre=Existencia Alterna
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ExistenciaAlternaSerieLote
+
+[ExistenciaAlternaSerieLote]
+Clave=ExistenciaAlternaSerieLote
+Nombre=Nivel Serie Lote
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=ExistenciaAlterna
+
+[VentaVerDatosOC]
+Clave=VentaVerDatosOC
+Nombre=Ver Datos Orden Compra
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcDARef]
+Clave=CxcDARef
+Nombre=Depósitos Anticipados por Referencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRVentaMov]
+Clave=CRVentaMov
+Nombre=Movimiento (Venta)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[CRVentaMovID]
+Clave=CRVentaMovID
+Nombre=Consecutivo (Venta)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[VentaLimiteRenFacturasVMOS]
+Clave=VentaLimiteRenFacturasVMOS
+Nombre=Validar al Procesar Notas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRZonaImpuestoNivelCte]
+Clave=CRZonaImpuestoNivelCte
+Nombre=Considerar Zona Impuestos a Nivel Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AFDepreciacionAnualAjustada]
+Clave=AFDepreciacionAnualAjustada
+Nombre=Depreciación Anual Ajustada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACAcreedorEnDisposiciones]
+Clave=ACAcreedorEnDisposiciones
+Nombre=Generar CxP en Disposiciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroPagoConciliado]
+Clave=DineroPagoConciliado
+Nombre=Considerar Pagos Conciliados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RHControlPlazas]
+Clave=RHControlPlazas
+Nombre=Control Plazas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CREstatusSinAfectar]
+Clave=CREstatusSinAfectar
+Nombre=CREstatusSinAfectar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+[AsisteRegistroCantidad]
+Clave=AsisteRegistroCantidad
+Nombre=Horas en Cantidad (Registro Asistencia)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteRegistroEstadoAvance]
+Clave=AsisteRegistroEstadoAvance
+Nombre=Capturar Estado y Avance (Registro Asistencia)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteVerCostoHora]
+Clave=AsisteVerCostoHora
+Nombre=Consultar/Editar Costo Hora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteCargarTiempoActConcluida]
+Clave=AsisteCargarTiempoActConcluida
+Nombre=Cargar Tiempos en Actividades Completadas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AsisteCargarTiempoActCancelada]
+Clave=AsisteCargarTiempoActCancelada
+Nombre=Cargar Tiempos en Actividades Canceladas o Eliminadas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroValidarMovImpuesto]
+Clave=DineroValidarMovImpuesto
+Nombre=Validar Impuestos Arrastrados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACLineaCreditoExpress]
+Clave=ACLineaCreditoExpress
+Nombre=Línea Crédito Express
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CreditoTipoAmortizacion]
+Clave=CreditoTipoAmortizacion
+Nombre=Tipo Amortización
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=TipoAmortizacionLista
+AyudaVista=TipoAmortizacion
+AyudaCampo=TipoAmortizacion.TipoAmortizacion
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=CreditoTipoAmortizacion=SQL(<T>SELECT TipoAmortizacion FROM TipoAmortizacion WHERE TipoAmortizacion=:tTipoAmortizacion<T>, CreditoTipoAmortizacion)
+TipoDatos=Texto
+
+[CreditoTipoTasa]
+Clave=CreditoTipoTasa
+Nombre=Tipo Tasa (por Omisión)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=TipoTasaLista
+AyudaVista=TipoTasa
+AyudaCampo=TipoTasa.TipoTasa
+ValidacionConCondiciones=S
+ValidacionCondicion=CreditoTipoTasa=SQL(<T>SELECT TipoTasa FROM TipoTasa WHERE TipoTasa=:tTipoTasa<T>, CreditoTipoTasa)
+ValidacionMensajeError=<T>No Existe<T>
+TipoDatos=Texto
+
+[VentaArrastrarSerieLote]
+Clave=VentaArrastrarSerieLote
+Nombre=Arrastrar Series/Lotes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CompraAutoEndosoWSDL]
+Clave=CompraAutoEndosoWSDL
+Nombre=WSDL
+Visible=S
+TamanoValidacion=255
+Tamano=255
+CondicionDespliege=CompraAutoEndoso y CompraAutoEndosoEmpresas y CompraAutoEndosoWS
+AyudaEnCaptura=Buscar Direccion
+TipoDatos=Texto
+
+[CompraAutoEndosoWS]
+Clave=CompraAutoEndosoWS
+Nombre=Web Service
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CompraAutoEndoso y CompraAutoEndosoEmpresas
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CompraAutoEndosoWSDL
+
+[CxcFormaCobroTarjetas]
+Clave=CxcFormaCobroTarjetas
+Nombre=Forma Cobro <T>Tarjetas<T>
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CxcArticuloTarjetasDef]
+Clave=CxcArticuloTarjetasDef
+Nombre=Artículo de Tarjetas por Omisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+TipoDatos=Texto
+
+[CxcAlmacenTarjetasDef]
+Clave=CxcAlmacenTarjetasDef
+Nombre=Almacén de Tarjetas por Omisión
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+TipoDatos=Texto
+
+[CxcValidarPrecioTarjetas]
+Clave=CxcValidarPrecioTarjetas
+Nombre=Validar Precio de Tarjetas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[NomComplemento]
+Clave=NomComplemento
+Nombre=Complementos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[NomComplementoTope]
+Clave=NomComplementoTope
+Nombre=Tope (Mensual)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+CondicionDespliege=NomComplemento
+Monetario=S
+
+[NomComplementoRetencion]
+Clave=NomComplementoRetencion
+Nombre=% Retención
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=NomComplemento
+
+[NomDiasMes]
+Clave=NomDiasMes
+Nombre=Días del Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Lista de Opciones
+OpcionesLlave=Opción
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+
+[NomComplementoPremios]
+Clave=NomComplementoPremios
+Nombre=% Premios
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=NomComplemento
+
+[DineroInversionIntereses]
+Clave=DineroInversionIntereses
+Nombre=Capitalización Intereses (Inversiones)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PedidosReservarLineaCompleta]
+Clave=PedidosReservarLineaCompleta
+Nombre=Auto Reservar Partidas Completas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=PedidosReservar
+
+[CxcAutoAjusteMov]
+Clave=CxcAutoAjusteMov
+Nombre=Tolerancia Redondeo Movimiento (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+Monetario=S
+
+[CxpAutoAjusteMov]
+Clave=CxpAutoAjusteMov
+Nombre=Tolerancia Redondeo Movimiento (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+Monetario=S
+
+[AsisteRecurso]
+Clave=AsisteRecurso
+Nombre=Recursos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ProyCrearProyecto]
+Clave=ProyCrearProyecto
+Nombre=ProyCrearProyecto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[ProyAsunto]
+Clave=ProyAsunto
+Nombre=Asunto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[ProyFechaRevision]
+Clave=ProyFechaRevision
+Nombre=Fecha Revisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[ProyDiasIndicador1]
+Clave=ProyDiasIndicador1
+Nombre=Días Indicador (Verde)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[EmbarqueCobrarDemas]
+Clave=EmbarqueCobrarDemas
+Nombre=Cobrar Demás
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ProyIndicador1Liberados]
+Clave=ProyIndicador1Liberados
+Nombre=Diferenciar Indicador entre Liberados y Concluidos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaProveedorRef]
+Clave=VentaProveedorRef
+Nombre=Proveedor Referencia a Nivel Detalle
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaPrecioMoneda]
+Clave=VentaPrecioMoneda
+Nombre=Moneda a Nivel Detalle
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ProyActividadAsunto]
+Clave=ProyActividadAsunto
+Nombre=ProyActividadAsunto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[ProyFasesInformativas]
+Clave=ProyFasesInformativas
+Nombre=Fases Informativas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CRProcesoDistribuido]
+Clave=CRProcesoDistribuido
+Nombre=Proceso Distribuido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CRServidorOperaciones]
+Clave=CRServidorOperaciones
+Nombre=Servidor Operaciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=CRProcesoDistribuido
+TipoDatos=Texto
+
+[CRBaseDatosOperaciones]
+Clave=CRBaseDatosOperaciones
+Nombre=Base Datos Operaciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=CRProcesoDistribuido
+TipoDatos=Texto
+
+[CompraAutoEndosoAutoCargos]
+Clave=CompraAutoEndosoAutoCargos
+Nombre=Bonificación Automática (Movimiento Endoso)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=CompraAutoEndoso
+
+[MoverNotasAuto]
+Clave=MoverNotasAuto
+Nombre=Mover Notas Procesadas Automáticamente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACPermitirMovFechaAnterior]
+Clave=ACPermitirMovFechaAnterior
+Nombre=Permitir Movimientos Fecha Anterior
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DineroConciliarEstatus]
+Clave=DineroConciliarEstatus
+Nombre=Al Conciliar Modificar el Estatus a CONCILIADO
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RHValidarAF]
+Clave=RHValidarAF
+Nombre=Validar Activos Fijos Asignados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[PermiteCompletarEnAvances]
+Clave=PermiteCompletarEnAvances
+Nombre=Permite Completar (Tareas/Reuniones) en Avances
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContCuentaCuadre]
+Clave=ContCuentaCuadre
+Nombre=Cuenta Cuadre
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+TipoDatos=Texto
+
+[ContToleranciaCuadre]
+Clave=ContToleranciaCuadre
+Nombre=Tolerancia Cuadre (+/-)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[CentroCostos2Venta]
+Clave=CentroCostos2Venta
+Nombre=Centro Costos 2 Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos2VentaD
+
+[CentroCostos2VentaD]
+Clave=CentroCostos2VentaD
+Nombre=En Detalle Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos2Venta
+ValorPorOmision=Falso
+
+[CentroCostos2Gasto]
+Clave=CentroCostos2Gasto
+Nombre=Centro Costos 2 Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos2GastoD
+
+[CentroCostos2GastoD]
+Clave=CentroCostos2GastoD
+Nombre=En Detalle Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos2Gasto
+
+[CentroCostos2Compra]
+Clave=CentroCostos2Compra
+Nombre=Centro Costos 2 Compras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos2CompraD
+
+[CentroCostos2CompraD]
+Clave=CentroCostos2CompraD
+Nombre=En Detalle Compras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos2Compra
+
+[CentroCostos3Venta]
+Clave=CentroCostos3Venta
+Nombre=Centro Costos 3 Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos3VentaD
+CondicionDespliege=ContCentrosCostos
+
+[CentroCostos3VentaD]
+Clave=CentroCostos3VentaD
+Nombre=En Detalle Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos3Venta
+
+[CentroCostos3Gasto]
+Clave=CentroCostos3Gasto
+Nombre=Centro Costos 3 Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos3GastoD
+CondicionDespliege=ContCentrosCostos
+
+[CentroCostos3GastoD]
+Clave=CentroCostos3GastoD
+Nombre=En Detalle Gastos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos3Gasto
+
+[CentroCostos3Compra]
+Clave=CentroCostos3Compra
+Nombre=Centro Costos 3 Compras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CentroCostos3CompraD
+
+[CentroCostos3CompraD]
+Clave=CentroCostos3CompraD
+Nombre=En Detalle Compras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos y CentroCostos3Compra
+
+[VisualizarArrastre]
+Clave=VisualizarArrastre
+Nombre=Visualizar Arrastre Módulos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=False
+
+[EmbarqueSugerirCobros]
+Clave=EmbarqueSugerirCobros
+Nombre=Ejecutar Sugerido Cobro al Cobrar Embarques
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ACFacturarInteresesAlCobro]
+Clave=ACFacturarInteresesAlCobro
+Nombre=Facturar (Estadística) Intereses Ordinarios al Cobro
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[ACBonificarQuitasAlCobro]
+Clave=ACBonificarQuitasAlCobro
+Nombre=Bonificar (Estadística) Quitas al Cobro
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[ACFacturarInteresesMov]
+Clave=ACFacturarInteresesMov
+Nombre=Ordinarios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACFacturarInteresesAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACFacturarInteresesConcepto]
+Clave=ACFacturarInteresesConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACFacturarInteresesAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACFacturarMoratoriosMov]
+Clave=ACFacturarMoratoriosMov
+Nombre=Moratorios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACFacturarInteresesAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACFacturarMoratoriosConcepto]
+Clave=ACFacturarMoratoriosConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACFacturarInteresesAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACBonificarQuitasMov]
+Clave=ACBonificarQuitasMov
+Nombre=Ordinarios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACBonificarQuitasAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACBonificarQuitasConcepto]
+Clave=ACBonificarQuitasConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACBonificarQuitasAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACBonificarQuitasMoraMov]
+Clave=ACBonificarQuitasMoraMov
+Nombre=Moratorios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACBonificarQuitasAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+[ACBonificarQuitasMoraConcepto]
+Clave=ACBonificarQuitasMoraConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=ACBonificarQuitasAlCobro
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Conceptos
+OpcionesRenglones=8
+OpcionesModulo=CXC
+TipoDatos=Texto
+
+
+[FormaCosteo.ListaOpciones]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=(Fin)
+
+[SeriesLotesAutoOrden.ListaOpciones]
+(Inicio)=No
+No=Ascendente
+Ascendente=Descendente
+Descendente=Fecha 1
+Fecha 1=(Fin)
+
+[PresentacionAutoOrden.ListaOpciones]
+(Inicio)=Unidades Primero
+Unidades Primero=Unidades al Final
+Unidades al Final=(Fin)
+
+[CxcAplicaAutoOrden.ListaOpciones]
+(Inicio)=Fecha Vencimiento
+Fecha Vencimiento=Fecha Emision
+Fecha Emision=Consecutivo
+Consecutivo=Saldo Mayor
+Saldo Mayor=Saldo Menor
+Saldo Menor=(Fin)
+
+[CxpAplicaAutoOrden.ListaOpciones]
+(Inicio)=Fecha Vencimiento
+Fecha Vencimiento=Fecha Emision
+Fecha Emision=Consecutivo
+Consecutivo=Saldo Mayor
+Saldo Mayor=Saldo Menor
+Saldo Menor=(Fin)
+
+[PedidosReservar.ListaRefrescarCondiciones]
+(Inicio)=PedidosReservarEsp
+PedidosReservarEsp=PedidosReservarLineaCompleta
+PedidosReservarLineaCompleta=(Fin)
+
+[CompraConsignacion.ListaOpciones]
+(Inicio)=No
+No=Automatico
+Automatico=Manual
+Manual=(Fin)
+
+[CB.ListaRefrescarCondiciones]
+(Inicio)=CBPreguntarCantidad
+CBPreguntarCantidad=CBSerieLote
+CBSerieLote=(Fin)
+
+[ValidarMargenMinimo.ListaOpciones]
+(Inicio)=Ultimo Costo
+Ultimo Costo=Costo Promedio
+Costo Promedio=Costo Estandar
+Costo Estandar=Costo Reposicion
+Costo Reposicion=(Mayor Costo)
+(Mayor Costo)=(Fin)
+
+[SeriesLotesMayoreo.ListaRefrescarCondiciones]
+(Inicio)=CosteoSeries
+CosteoSeries=CosteoLotes
+CosteoLotes=SeriesImprimirMov
+SeriesImprimirMov=SeriesImprimirProp
+SeriesImprimirProp=SeriesLotesAutoCampo
+SeriesLotesAutoCampo=SeriesLotesAutoOrden
+SeriesLotesAutoOrden=Partidas
+Partidas=(Fin)
+
+[CompraCostoSugerido.ListaOpciones]
+(Inicio)=No
+No=Ultimo
+Ultimo=Promedio
+Promedio=Estandar
+Estandar=Precio Lista
+Precio Lista=Ultimo (Autotrans)
+Ultimo (Autotrans)=(Fin)
+
+[VentaChecarCredito.ListaOpciones]
+(Inicio)=Cotizacion
+Cotizacion=Pedido
+Pedido=Venta
+Venta=(Fin)
+
+[VentaBloquearMorosos.ListaOpciones]
+(Inicio)=No
+No=Si
+Si=1 Dia Tolerancia
+1 Dia Tolerancia=2 Dias Tolerancia
+2 Dias Tolerancia=3 Dias Tolerancia
+3 Dias Tolerancia=4 Dias Tolerancia
+4 Dias Tolerancia=5 Dias Tolerancia
+5 Dias Tolerancia=6 Dias Tolerancia
+6 Dias Tolerancia=7 Dias Tolerancia
+7 Dias Tolerancia=9 Dias Tolerancia
+9 Dias Tolerancia=10 Dias Tolerancia
+10 Dias Tolerancia=(especificar dias tolerancia)
+(especificar dias tolerancia)=(Fin)
+
+[VentaPrecios.ListaOpciones]
+(Inicio)=1
+1=2
+2=3
+3=4
+4=5
+5=6
+6=7
+7=8
+8=9
+9=10
+10=(Fin)
+
+[InvSugererirCompra.ListaOpciones]
+(Inicio)=No
+No=Minimos y Maximos
+Minimos y Maximos=Punto de Orden
+Punto de Orden=(Fin)
+
+[InvFisicoConteo.ListaOpciones]
+(Inicio)=1
+1=2
+2=3
+3=(Fin)
+
+[ValidarPrecios.ListaRefrescarCondiciones]
+(Inicio)=ValidarMargenMinimo
+ValidarMargenMinimo=PrecioMinimoNivelSucursal
+PrecioMinimoNivelSucursal=(Fin)
+
+[ValidarPrecios.ListaOpciones]
+(Inicio)=No
+No=Precio Minimo
+Precio Minimo=Margen Minimo
+Margen Minimo=Costo Promedio
+Costo Promedio=Ultimo Costo
+Ultimo Costo=Costo Estandar
+Costo Estandar=Costo Reposicion
+Costo Reposicion=(Fin)
+
+[SugerirCostoDev.ListaOpciones]
+(Inicio)=No
+No=Promedio
+Promedio=Ultimo Costo
+Ultimo Costo=Ultimo Costo s/Gasto
+Ultimo Costo s/Gasto=Estandar
+Estandar=Reposicion
+Reposicion=(Fin)
+
+[GastoAfecta.ListaOpciones]
+(Inicio)=Dinero
+Dinero=Cuentas por Pagar
+Cuentas por Pagar=Opcional
+Opcional=(Fin)
+
+[BackOrdersNivel.ListaOpciones]
+(Inicio)=Cliente
+Cliente=Movimiento
+Movimiento=(Fin)
+
+[VentaListaPrecios.ListaOpciones]
+(Inicio)=(Multiples)
+(Multiples)=01
+01=02
+02=03
+03=04
+04=05
+05=06
+06=07
+07=08
+08=09
+09=10
+10=(Fin)
+
+[VentaTEEstandarTipoDias.ListaOpciones]
+(Inicio)=Habiles
+Habiles=Naturales
+Naturales=(Fin)
+
+[CxpRecorrerVencimiento.ListaOpciones]
+(Inicio)=No
+No=Domingo
+Domingo=Lunes
+Lunes=Martes
+Martes=Miercoles
+Miercoles=Jueves
+Jueves=Viernes
+Viernes=Sabado
+Sabado=Quincena
+Quincena=Fin de Mes
+Fin de Mes=(Especial)
+(Especial)=<dia especifico>
+<dia especifico>=(Fin)
+
+[NomSugerirAumentoVacaciones.ListaRefrescarCondiciones]
+(Inicio)=NomConceptoAumentoVacaciones
+NomConceptoAumentoVacaciones=NomAfectarAumentoVacaciones
+NomAfectarAumentoVacaciones=(Fin)
+
+[ComisionBase.ListaOpciones]
+(Inicio)=Venta
+Venta=Cobro
+Cobro=(Fin)
+
+[DineroContX.ListaOpciones]
+(Inicio)=Encabezado
+Encabezado=Detalle
+Detalle=(Fin)
+
+[VentaCobroRedondeoDecimales.ListaOpciones]
+(Inicio)=0
+0=1
+1=2
+2=3
+3=4
+4=(Fin)
+
+[EspaciosCfg.ListaOpciones]
+(Inicio)=Articulo
+Articulo=Empresa
+Empresa=(Fin)
+
+[EspaciosNivel.ListaRefrescarCondiciones]
+(Inicio)=EspaciosHoraD
+EspaciosHoraD=EspaciosHoraA
+EspaciosHoraA=EspaciosMinutos
+EspaciosMinutos=(Fin)
+
+[EspaciosNivel.ListaOpciones]
+(Inicio)=Dia
+Dia=Hora
+Hora=(Fin)
+
+[EspaciosMinutos.ListaOpciones]
+(Inicio)=15
+15=20
+20=30
+30=60
+60=90
+90=120
+120=(Fin)
+
+[EstatusFacturaVMOS.ListaOpciones]
+(Inicio)=SINAFECTAR
+SINAFECTAR=CONFIRMAR
+CONFIRMAR=BORRADOR
+BORRADOR=CONCLUIDO
+CONCLUIDO=(Fin)
+
+[SugerirCostoArtServicio.ListaOpciones]
+(Inicio)=No
+No=Estandar
+Estandar=Reposicion
+Reposicion=Margen
+Margen=(Fin)
+
+[CompraAutoEndoso.ListaRefrescarCondiciones]
+(Inicio)=CompraAutoEndosoEmpresas
+CompraAutoEndosoEmpresas=CompraAutoEndosoMovs
+CompraAutoEndosoMovs=CompraAutoEndosoWS
+CompraAutoEndosoWS=CompraAutoEndosoWSDL
+CompraAutoEndosoWSDL=CompraAutoEndosoAutoCargos
+CompraAutoEndosoAutoCargos=(Fin)
+
+[CompraAutoEndosoEmpresas.ListaRefrescarCondiciones]
+(Inicio)=CompraAutoEndosoWS
+CompraAutoEndosoWS=CompraAutoEndosoWSDL
+CompraAutoEndosoWSDL=(Fin)
+
+[NomDiasDesfasoIncidencias.ListaOpciones]
+(Inicio)=0
+0=1
+1=2
+2=3
+3=4
+4=5
+5=6
+6=7
+7=8
+8=9
+9=10
+10=11
+11=12
+12=13
+13=14
+14=15
+15=(Fin)
+
+[CxcRecorrerVencimiento.ListaOpciones]
+(Inicio)=No
+No=Domingo
+Domingo=Lunes
+Lunes=Martes
+Martes=Miercoles
+Miercoles=Jueves
+Jueves=Viernes
+Viernes=Sabado
+Sabado=Quincena
+Quincena=Fin de Mes
+Fin de Mes=(Especial)
+(Especial)=<dia especifico>
+<dia especifico>=(Fin)
+
+[ContNivelPresupuesto.ListaOpciones]
+(Inicio)=Detalle
+Detalle=Mayor
+Mayor=(Fin)
+
+[CompraProrrateadaRedondeo.ListaOpciones]
+(Inicio)=0
+0=1
+1=2
+2=3
+3=4
+4=5
+5=(Fin)
+
+[CxcDescContado.ListaRefrescarCondiciones]
+(Inicio)=CxcDescContadoDias
+CxcDescContadoDias=CxcDescContadoPorcentaje
+CxcDescContadoPorcentaje=(Fin)
+
+[DineroFaltanteModulo.ListaOpciones]
+(Inicio)=AGENT
+AGENT=CXC
+CXC=(Fin)
+
+[CancelarFactura.ListaOpciones]
+(Inicio)=No
+No=Cambio Dia
+Cambio Dia=Cambio Mes
+Cambio Mes=(Fin)
+
+[EmbarqueBaseProrrateo.ListaOpciones]
+(Inicio)=Importe
+Importe=Paquetes
+Paquetes=Peso
+Peso=Volumen
+Volumen=Peso/Volumen
+Peso/Volumen=(Fin)
+
+[CosteoActividades.ListaOpciones]
+(Inicio)=Tiempo Estandar
+Tiempo Estandar=Tiempo Real
+Tiempo Real=(Fin)
+
+[ACCobroIntereses.ListaOpciones]
+(Inicio)=Devengados
+Devengados=Fijos
+Fijos=(Fin)
+
+[CancelarFacturaFecha.ListaOpciones]
+(Inicio)=Fecha Cancelacion
+Fecha Cancelacion=Fecha Emision
+Fecha Emision=(Fin)
+
+[NConsumoSugerir.ListaRefrescarCondiciones]
+(Inicio)=NConsumoArtDeducible
+NConsumoArtDeducible=NConsumoArtCoAseguro
+NConsumoArtCoAseguro=NConsumoArtAjusteCobertura
+NConsumoArtAjusteCobertura=(Fin)
+
+[ACPlazoDias.ListaOpciones]
+(Inicio)=Naturales
+Naturales=Meses 30
+Meses 30=(Fin)
+
+[RHControlPlazas.ListaOpciones]
+(Inicio)=No
+No=Simple
+Simple=Avanzado
+Avanzado=(Fin)
+
+
+[NomDiasMes.ListaOpciones]
+(Inicio)=30
+30=30.4
+30.4=(Fin)
+
+[DineroInversionIntereses.ListaOpciones]
+(Inicio)=Retiro Inversion
+Retiro Inversion=Cierre Diario
+Cierre Diario=(Fin)
+
+[ProyAsunto.ListaOpciones]
+(Inicio)=Abierto
+Abierto=Clave
+Clave=Mixto
+Mixto=(Fin)
+
+[ProyFechaRevision.ListaOpciones]
+(Inicio)=Servidor
+Servidor=Proyecto
+Proyecto=(Fin)
+
+[CRProcesoDistribuido.ListaRefrescarCondiciones]
+(Inicio)=CRServidorOperaciones
+CRServidorOperaciones=CRBaseDatosOperaciones
+CRBaseDatosOperaciones=(Fin)
+
+[RHValidarAF.ListaOpciones]
+(Inicio)=Baja
+Baja=Pago
+Pago=(Fin)
+
+[ACFacturarInteresesAlCobro.ListaRefrescarCondiciones]
+(Inicio)=ACFacturarInteresesMov
+ACFacturarInteresesMov=ACFacturarInteresesConcepto
+ACFacturarInteresesConcepto=ACFacturarMoratoriosMov
+ACFacturarMoratoriosMov=ACFacturarMoratoriosConcepto
+ACFacturarMoratoriosConcepto=(Fin)
+
+[ACBonificarQuitasAlCobro.ListaRefrescarCondiciones]
+(Inicio)=ACBonificarQuitasMov
+ACBonificarQuitasMov=ACBonificarQuitasConcepto
+ACBonificarQuitasConcepto=ACBonificarQuitasMoraMov
+ACBonificarQuitasMoraMov=ACBonificarQuitasMoraConcepto
+ACBonificarQuitasMoraConcepto=(Fin)
+
+[VentaPerdidaAutoPorcentaje]
+Clave=VentaPerdidaAutoPorcentaje
+Nombre=% Cumplimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=VentaPerdidaAuto
+AyudaEnCaptura=Calculadora
+ValorMinimo=1
+ValorMaximo=99
+
+[CompraPerdidaAutoPorcentaje]
+Clave=CompraPerdidaAutoPorcentaje
+Nombre=% Cumplimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=CompraPerdidaAuto
+AyudaEnCaptura=Calculadora
+ValorMinimo=1
+ValorMaximo=99
+
+[ToleranciaCostoInferior]
+Clave=ToleranciaCostoInferior
+Nombre=% Tolerancia Costo Inferior
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0.##
+
+[ValidarOrdenCompraTolerancia]
+Clave=ValidarOrdenCompraTolerancia
+Nombre=Validación Adicional Orden Compra Tolerancia Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ToleranciaTipoCosto.ListaOpciones]
+(Inicio)=(Sin Validar)
+(Sin Validar)=Promedio
+Promedio=Estandar
+Estandar=Reposicion
+Reposicion=Ultimo Costo
+Ultimo Costo=(Fin)
+
+[ProyGenerarInvAlAfectar]
+Clave=ProyGenerarInvAlAfectar
+Nombre=Generar Solicitud de Inventario al Afectar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[ProyGenerarInvPorActividad]
+Clave=ProyGenerarInvPorActividad
+Nombre=Generar Solicitud de Inventario por Actividad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ProyGenerarInvTiempo]
+Clave=ProyGenerarInvTiempo
+Nombre=Anticipar Solicitud de Inventario
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionEdicion=NO ProyGenerarInvAlAfectar
+ValorMinimo=0
+CondicionDespliege=NO ProyGenerarInvAlAfectar
+
+[ProyGenerarInvTiempoUnidad]
+Clave=ProyGenerarInvTiempoUnidad
+Nombre=Unidad de Tiempo Anticipo Solicitud Inventario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionEdicion=No ProyGenerarInvAlAfectar
+CondicionDespliege=NO ProyGenerarInvAlAfectar
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ProyGenerarInvTiempoUnidad.ListaOpciones]
+(Inicio)=Dia
+Dia=Semana
+Semana=Mes
+Mes=Año
+Año=(Fin)
+
+[ProyGenerarInvAlAfectar.ListaRefrescarCondiciones]
+(Inicio)=ProyGenerarInvTiempo
+ProyGenerarInvTiempo=ProyGenerarInvTiempoUnidad
+ProyGenerarInvTiempoUnidad=(Fin)
+
+[CompraValidarPresupuestoMov]
+Clave=CompraValidarPresupuestoMov
+Nombre=Validar Presupuesto a Partir de
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=15
+CondicionDespliege=Mayusculas(CompraValidarPresupuesto) = <T>SI<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ValorPorOmision=<T>Entrada Compra<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CompraValidarPresupuestoCC]
+Clave=CompraValidarPresupuestoCC
+Nombre=Validar Presupuesto por Centro de Costos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Mayusculas(CompraValidarPresupuesto) = <T>SI<T>
+
+[CompraValidarPresupuestoCant]
+Clave=CompraValidarPresupuestoCant
+Nombre=Validar Cantidad del Presupuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Mayusculas(CompraValidarPresupuesto) = <T>SI<T>
+ValorPorOmision=Falso
+
+[CompraValidarPresupuestoMov.ListaOpciones]
+(Inicio)=Requisicion
+Requisicion=Orden Compra
+Orden Compra=Entrada Compra
+Entrada Compra=(Fin)
+
+[CompraValidarPresupuesto.ListaRefrescarCondiciones]
+(Inicio)=CompraValidarPresupuestoMov
+CompraValidarPresupuestoMov=CompraValidarPresupuestoCC
+CompraValidarPresupuestoCC=CompraValidarPresupuestoCant
+CompraValidarPresupuestoCant=(Fin)
+
+[CompraValidarPresupuesto.ListaOpciones]
+(Inicio)=No
+No=Si
+Si=(Fin)
+
+[WMSSugerirEntarimado]
+Clave=WMSSugerirEntarimado
+Nombre=Sugerir Entarimado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[WMSInventarioTarimas]
+Clave=WMSInventarioTarimas
+Nombre=Inventario Tarimas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NomConceptoDisminuirVacaciones]
+Clave=NomConceptoDisminuirVacaciones
+Nombre=Concepto Disminución Vacaciones
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NomSugerirDisminuirVacaciones
+TipoDatos=Texto
+
+[NomAfectarDisminuirVacaciones]
+Clave=NomAfectarDisminuirVacaciones
+Nombre=Afectar Disminución Vacaciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=NomSugerirDisminuirVacaciones
+ValorPorOmision=False
+
+[NomSugerirDisminuirVacaciones]
+Clave=NomSugerirDisminuirVacaciones
+Nombre=Sugerir Disminución Vacaciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[NomSugerirDisminuirVacaciones.ListaRefrescarCondiciones]
+(Inicio)=NomConceptoDisminuirVacaciones
+NomConceptoDisminuirVacaciones=NomAfectarDisminuirVacaciones
+NomAfectarDisminuirVacaciones=(Fin)
+
+[RHIDSE]
+Clave=RHIDSE
+Nombre=Conciliar IDSE
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=RHIDSERuta
+
+[RHIDSERuta]
+Clave=RHIDSERuta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+CondicionDespliege=RHIDSE
+
+[CPComprometido2]
+Clave=CPComprometido2
+Nombre=Comprometido 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CPDevengado2]
+Clave=CPDevengado2
+Nombre=Devengado 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcIntransferibleTarjeta]
+Clave=CxcIntransferibleTarjeta
+Nombre=Tarjeta Intransferible
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CxcCaducidadTarjeta]
+Clave=CxcCaducidadTarjeta
+Nombre=Caducidad General Tarjeta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CxcCaducidadTarjetaFecha
+
+[CxcCaducidadTarjetaFecha]
+Clave=CxcCaducidadTarjetaFecha
+Nombre=Fecha Caducidad General Tarjeta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+CondicionDespliege=CxcCaducidadTarjeta
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[CPClavePresupuestalImpuesto1]
+Clave=CPClavePresupuestalImpuesto1
+Nombre=Clave Presupuestal (IVA)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+CondicionDespliege=CPSepararImpuestos
+
+[CPClavePresupuestalImpuesto2]
+Clave=CPClavePresupuestalImpuesto2
+Nombre=Clave Presupuestal (IEPS)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+CondicionDespliege=CPSepararImpuestos
+
+[CPClavePresupuestalImpuesto3]
+Clave=CPClavePresupuestalImpuesto3
+Nombre=Clave Presupuestal (Impuesto 3)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+Mayusculas=S
+CondicionDespliege=CPSepararImpuestos
+
+[CPSepararImpuestos]
+Clave=CPSepararImpuestos
+Nombre=Separar Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[CPSepararImpuestos.ListaRefrescarCondiciones]
+(Inicio)=CPClavePresupuestalImpuesto1
+CPClavePresupuestalImpuesto1=CPClavePresupuestalImpuesto2
+CPClavePresupuestalImpuesto2=CPClavePresupuestalImpuesto3
+CPClavePresupuestalImpuesto3=(Fin)
+
+[PersonalCostoHoraFactor]
+Clave=PersonalCostoHoraFactor
+Nombre=Personal Factor Costo x Hora
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[OrganizacionNivelDetalle]
+Clave=OrganizacionNivelDetalle
+Nombre=Organización Nivel Detalle
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=falso
+
+[CompraCostoConImpuesto]
+Clave=CompraCostoConImpuesto
+Nombre=Capturar Costos con Impuesto Incluido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RHAutorizarPlazas]
+Clave=RHAutorizarPlazas
+Nombre=Autorizar Plazas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[VentaMovImpuestoDesdeRemision]
+Clave=VentaMovImpuestoDesdeRemision
+Nombre=Impuestos en Remisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[SAUXConsumo]
+Clave=SAUXConsumo
+Nombre=Lugar Consumo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesLlave=Opción
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[SAUXConsumo.ListaOpciones]
+(Inicio)=(Sol. Pendiente)
+(Sol. Pendiente)=(Sol. Concluida)
+(Sol. Concluida)=(Fin)
+
+[CentroCostos2AF]
+Clave=CentroCostos2AF
+Nombre=Centro Costos 2 Activos Fijos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=CentroCostos2AFD
+
+[CentroCostos3AF]
+Clave=CentroCostos3AF
+Nombre=Centro Costos 3 Activos Fijos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=ContCentrosCostos
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=CentroCostos3AFD
+
+[ContCentrosCostos.ListaRefrescarCondiciones]
+(Inicio)=ContCentrosCostosVerificarPos
+ContCentrosCostosVerificarPos=CentrosCostosFormato
+CentrosCostosFormato=ContUsoInv
+ContUsoInv=ContUsoCompras
+ContUsoCompras=ContUsoVentas
+ContUsoVentas=ContUsoGastos
+ContUsoGastos=ContUsoDinero
+ContUsoDinero=ContUsoCxc
+ContUsoCxc=ContUsoCxp
+ContUsoCxp=CentroCostosRamas
+CentroCostosRamas=CentroCostosValidar
+CentroCostosValidar=CentroCostos2Venta
+CentroCostos2Venta=CentroCostos2VentaD
+CentroCostos2VentaD=CentroCostos2Gasto
+CentroCostos2Gasto=CentroCostos2GastoD
+CentroCostos2GastoD=CentroCostos2Compra
+CentroCostos2Compra=CentroCostos2CompraD
+CentroCostos2CompraD=CentroCostos3Venta
+CentroCostos3Venta=CentroCostos3VentaD
+CentroCostos3VentaD=CentroCostos3Gasto
+CentroCostos3Gasto=CentroCostos3GastoD
+CentroCostos3GastoD=CentroCostos3Compra
+CentroCostos3Compra=CentroCostos3CompraD
+CentroCostos3CompraD=CentroCostos2AF
+CentroCostos2AF=CentroCostos3AF
+CentroCostos3AF=(Fin)
+
+[DineroProrrateoMovImpuesto]
+Clave=DineroProrrateoMovImpuesto
+Nombre=Generar Mov Impuesto Desde Ultimo Corte
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+CondicionDespliege=Cajeros
+[AFGenerarGasto]
+Clave=AFGenerarGasto
+Nombre=Generar Gasto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[AFGenerarGastoCfg]
+Clave=AFGenerarGastoCfg
+Nombre=Configuración a Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=AFGenerarGasto
+
+ListaOpciones=(Lista)
+[AFGenerarGasto.ListaRefrescarCondiciones]
+(Inicio)=AFGenerarGastoCfg
+AFGenerarGastoCfg=AFConceptoDepreciacion
+AFConceptoDepreciacion=AFAcreedorDepreciacion
+AFAcreedorDepreciacion=(Fin)
+
+
+
+[ACConsiderarInflacionIVA]
+Clave=ACConsiderarInflacionIVA
+Nombre=Considerar Inflación Cálculo IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ACMonedaCalculoInflacionIVA
+
+[ACMonedaCalculoInflacionIVA]
+Clave=ACMonedaCalculoInflacionIVA
+Nombre=Moneda Cálculo Inflación IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+CondicionDespliege=ACConsiderarInflacionIVA
+
+
+
+[AjustesAutomaticosMES]
+Clave=AjustesAutomaticosMES
+Nombre=Ajustes Automaticos Factory
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.ProdInterfazINFOR
+ValorPorOmision=Falso
+
+
+
+
+
+[WMSLeerPosicionOrigen]
+Clave=WMSLeerPosicionOrigen
+Nombre=Leer Posición Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=1
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[WMSDispararReacomodos]
+Clave=WMSDispararReacomodos
+Nombre=Disparar Reacomodos en Automático
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si<BR>    WMSReacomodoSurtido = Verdadero<BR>Entonces<BR>    Falso<BR>Sino<BR>    Verdadero<BR>Fin
+[WMSRotacionArticulo]
+Clave=WMSRotacionArticulo
+Nombre=Controlar Posiciones en base a la Rotación del Artículo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[WMSAndenSurtidoContacto]
+Clave=WMSAndenSurtidoContacto
+Nombre=Andén de Surtido de Contacto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[WMSMovilTarea]
+Clave=WMSMovilTarea
+Nombre=Tareas de móvil por
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[WMSMovilTarea.ListaOpciones]
+(Inicio)=Flujo y Prioridad
+Flujo y Prioridad=Solo Prioridad
+Solo Prioridad=(Fin)
+
+[WMSValidarZona]
+Clave=WMSValidarZona
+Nombre=Validar Zona
+Visible=S
+TipoDatos=Lógico
+
+[WMSTipoAcomodador]
+Clave=WMSTipoAcomodador
+Nombre=Tipo Acomodador
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+Formula=SQLEnLista(<T>SELECT Tipo FROM AgenteTipo<T>)
+[WMSPermitirReacomodosDomicilio]
+Clave=WMSPermitirReacomodosDomicilio
+Nombre=Permitir Reacomodos Domicilio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+
+
+
+
+ValorRefrescar=Si<BR>    WMSReacomodoSurtido = Verdadero<BR>Entonces<BR>    verdadero<BR>Sino<BR>    Falso<BR>Fin
+CondicionDespliege=0
+[AFGenerarGastoCfg.ListaRefrescarCondiciones]
+(Inicio)=AFConceptoDepreciacion
+AFConceptoDepreciacion=AFAcreedorDepreciacion
+AFAcreedorDepreciacion=(Fin)
+
+[AFGenerarGastoCfg.ListaOpciones]
+(Inicio)=Empresa
+Empresa=Movimiento
+Movimiento=(Fin)
+
+
+
+
+
+[CPClavePresupuestalRetencion1]
+Clave=CPClavePresupuestalRetencion1
+Nombre=Clave Presupuestal (Retención 1)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+CondicionDespliege=CPSepararImpuestos
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+Mayusculas=S
+[CPClavePresupuestalRetencion2]
+Clave=CPClavePresupuestalRetencion2
+Nombre=Clave Presupuestal (Retención 2)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+Mayusculas=S
+CondicionDespliege=CPSepararImpuestos
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+[CPClavePresupuestalRetencion3]
+Clave=CPClavePresupuestalRetencion3
+Nombre=Clave Presupuestal (Retención 3)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Mayusculas=S
+CondicionDespliege=CPSepararImpuestos
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+
+
+
+
+
+
+[GenerarNCAlProcesar]
+Clave=GenerarNCAlProcesar
+Nombre=Procesar Devoluciones (Notas Negativo)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ArtTarjetaServicio]
+Clave=ArtTarjetaServicio
+Nombre=Artículo Tarjeta Devoluciones
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=ArtServicioLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+AyudaRefrescar=S
+
+
+
+
+
+
+
+
+
+[FacturaGlobalPeriodo]
+Clave=FacturaGlobalPeriodo
+Nombre=Factura Global por Periodo (Procesar Notas)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+
+
+
+
+
+
+
+[AFGastoConCategoriaAF]
+Clave=AFGastoConCategoriaAF
+Nombre=AFGastoConCategoriaAF
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[WMSReacomodoSurtido]
+Clave=WMSReacomodoSurtido
+Nombre=Generar Sol. de Reacomodo al Explosionar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si<BR>    WMSDispararReacomodos = Verdadero<BR>Entonces<BR>    Falso<BR>Sino<BR>    Verdadero<BR>Fin
+[ReservarSolicitudesFacory]
+Clave=ReservarSolicitudesFacory
+Nombre=Reservar Solicitudes Factory
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+CondicionDespliege=General.ProdInterfazINFOR
+ValorPorOmision=falso
+[ToleranciaAjuste]
+Clave=ToleranciaAjuste
+Nombre=Factory Tolerancia Ajuste
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=General.ProdInterfazINFOR
+Cantidad=S
+FormatoEdicion=(Cantidades)
+ValorPorOmision=0.0
+AyudaEnCaptura=Calculadora
+
+
+
+
+[TipoCosteo.ListaOpciones]
+(Inicio)=Promedio
+Promedio=Estandar
+Estandar=Reposicion
+Reposicion=PEPS
+PEPS=(Fin)
+
+
+
+
+
+[NomComplemento.ListaRefrescarCondiciones]
+(Inicio)=NomComplementoTope
+NomComplementoTope=NomComplementoPremios
+NomComplementoPremios=NomComplementoRetencion
+NomComplementoRetencion=(Fin)
+
+
+
+
+
+[HorasExtrasCompletas]
+Clave=HorasExtrasCompletas
+Nombre=Horas Extra Completas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+
+
+
+
+
+
+CondicionDespliege=AsisteGenerarHorasExtras = Verdadero
+[ProyEnviarTareaGestion]
+Clave=ProyEnviarTareaGestion
+Nombre=Enviar Tareas a Gestión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ProyTareaEstado
+[ProyTareaEstado]
+Clave=ProyTareaEstado
+Nombre=Estado Tareas Gestión
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TareaEstado
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+
+
+CondicionDespliege=ProyEnviarTareaGestion
+
+
+
+
+
+
+
+
+[HerramientaHorasExtra]
+Clave=HerramientaHorasExtra
+Nombre=Utilizar Herramienta de Horas Extra
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=AsisteGenerarHorasExtras = Verdadero
+
+
+
+[AsisteGenerarHorasExtras.ListaRefrescarCondiciones]
+(Inicio)=HorasExtrasCompletas
+HorasExtrasCompletas=HerramientaHorasExtra
+HerramientaHorasExtra=(Fin)
+
+[CompraCostearDCporMovimiento]
+Clave=CompraCostearDCporMovimiento
+Nombre=Costear Devolución Compra en base al Costo del Movimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionEdicion=TipoCosteo = <T>Promedio<T>
+
+[IntelMESInterfase]
+Clave=IntelMESInterfase
+Nombre=MES Interfase
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=IntelMESInterfaseRuta
+
+ValorPorOmision=Falso
+[IntelMESInterfaseRuta]
+Clave=IntelMESInterfaseRuta
+Nombre=MES Interfase Ruta
+Visible=S
+TamanoValidacion=200
+TipoDatos=Texto
+Tamano=200
+AyudaEnCaptura=Buscar Directorio
+CondicionDespliege=IntelMESInterfase
+
+
+[WMSPorcentajeMinimoADom]
+Clave=WMSPorcentajeMinimoADom
+Nombre=% Mínimo A Domicilio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[WMSPCKUbicacion]
+Clave=WMSPCKUbicacion
+Nombre=Picking a Tarimas de Ubicación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[PosicionArticulo]
+Clave=PosicionArticulo
+Nombre=PosicionArticulo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[DesentarimarPedido]
+Clave=DesentarimarPedido
+Nombre=Generar Desentarimado al Cancelar Pedido
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+[WMSDispararReacomodos.ListaRefrescar]
+(Inicio)=WMSReacomodoSurtido
+WMSReacomodoSurtido=WMSPermitirReacomodosDomicilio
+WMSPermitirReacomodosDomicilio=(Fin)
+
+
+
+[WMSReacomodoSurtido.ListaRefrescar]
+(Inicio)=WMSPermitirReacomodosDomicilio
+WMSPermitirReacomodosDomicilio=WMSDispararReacomodos
+WMSDispararReacomodos=(Fin)
+
+
+
+
+
+[AsistDescansolaborado]
+Clave=AsistDescansolaborado
+Nombre=Sugerir Descanso Laborado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[AsistDiaFestivolaborado]
+Clave=AsistDiaFestivolaborado
+Nombre=Sugerir Día Festivo Laborado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[AsistDomingoLaborado]
+Clave=AsistDomingoLaborado
+Nombre=Sugerir Domingo Laborado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=FormaCosteo
+FormaCosteo=TipoCosteo
+TipoCosteo=CosteoNivelSubCuenta
+CosteoNivelSubCuenta=VentaListaPrecios
+VentaListaPrecios=PreciosNivelSubCuenta
+PreciosNivelSubCuenta=SugerirCostoDev
+SugerirCostoDev=SugerirCostoArtServicio
+SugerirCostoArtServicio=ToleranciaCosto
+ToleranciaCosto=ToleranciaTipoCosto
+ToleranciaTipoCosto=CB
+CB=CBSerieLote
+CBSerieLote=CBSubCodigos
+CBSubCodigos=CBSubCuentas
+CBSubCuentas=CBPreguntarCantidad
+CBPreguntarCantidad=CBProcesarLote
+CBProcesarLote=SeriesLotesMayoreo
+SeriesLotesMayoreo=SeriesImprimirMov
+SeriesImprimirMov=CosteoLotes
+CosteoLotes=CosteoSeries
+CosteoSeries=SeriesImprimirProp
+SeriesImprimirProp=Partidas
+Partidas=SeriesLotesAutoCampo
+SeriesLotesAutoCampo=SeriesLotesAutoOrden
+SeriesLotesAutoOrden=PresentacionAutoOrden
+PresentacionAutoOrden=CxcAplicaAutoOrden
+CxcAplicaAutoOrden=CxpAplicaAutoOrden
+CxpAplicaAutoOrden=PedidosReservar
+PedidosReservar=FacturasPendientes
+FacturasPendientes=CxcMoratoriosTasa
+CxcMoratoriosTasa=CxcRefinanciamientoTasa
+CxcRefinanciamientoTasa=CxcAutoAjuste
+CxcAutoAjuste=CxcFormaCobroDA
+CxcFormaCobroDA=CxcDARef
+CxcDARef=CxcProntoPago
+CxcProntoPago=CxcProntoPagoConcepto
+CxcProntoPagoConcepto=CxcControlEfectivo
+CxcControlEfectivo=CxcTopeEfectivoAuto
+CxcTopeEfectivoAuto=CxpAutoAjuste
+CxpAutoAjuste=CxpProntoPagoConcepto
+CxpProntoPagoConcepto=CxpControlEfectivo
+CxpControlEfectivo=CxpTopeEfectivoAuto
+CxpTopeEfectivoAuto=CompraConsignacion
+CompraConsignacion=CompraCostoSugerido
+CompraCostoSugerido=CompraDescImporte
+CompraDescImporte=CompraVentaSinIVA
+CompraVentaSinIVA=CompraVerClaveProveedor
+CompraVerClaveProveedor=CompraVerClaveIdioma
+CompraVerClaveIdioma=VentaSurtirDemas
+VentaSurtirDemas=VentaDescImporte
+VentaDescImporte=VentaChecarCredito
+VentaChecarCredito=VentaBloquearMorosos
+VentaBloquearMorosos=VentaLiquidaIntegral
+VentaLiquidaIntegral=VentaLiquidaIntegralCxc
+VentaLiquidaIntegralCxc=VentaPrecios
+VentaPrecios=VentaConfirmarServicios
+VentaConfirmarServicios=VentaConfirmarContratos
+VentaConfirmarContratos=VentaContratosArticulo
+VentaContratosArticulo=VentaContratosImpuesto
+VentaContratosImpuesto=VentaServiciosRequiereTareas
+VentaServiciosRequiereTareas=VentaServiciosTareaOmision
+VentaServiciosTareaOmision=VentaServiciosAutoOP
+VentaServiciosAutoOP=VentaDefCantidad
+VentaDefCantidad=VentaPaquetes
+VentaPaquetes=VentaPreciosImpuestoIncluido
+VentaPreciosImpuestoIncluido=VentaComisionesCobradas
+VentaComisionesCobradas=VentaLimiteRenFacturas
+VentaLimiteRenFacturas=VentaLimiteRenFacturasVMOS
+VentaLimiteRenFacturasVMOS=InvSugererirCompra
+InvSugererirCompra=InvPaquetes
+InvPaquetes=InvPrestamosGarantias
+InvPrestamosGarantias=InvEntradasSinCosto
+InvEntradasSinCosto=ChequesPendientes
+ChequesPendientes=eChequesPendientes
+eChequesPendientes=ChequesDirectos
+ChequesDirectos=ArtFormato
+ArtFormato=CteFormato
+CteFormato=CtaFormato
+CtaFormato=PersonalFormato
+PersonalFormato=CtaContabilidad
+CtaContabilidad=CtaActivo
+CtaActivo=CtaPasivo
+CtaPasivo=CtaCapital
+CtaCapital=CtaResultados
+CtaResultados=CtaIngresos
+CtaIngresos=CtaCostoDirecto
+CtaCostoDirecto=CtaOrden
+CtaOrden=ContMoneda
+ContMoneda=ContVerificarPosicion
+ContVerificarPosicion=ContVerificarIVA
+ContVerificarIVA=ContCentrosCostos
+ContCentrosCostos=ContUsoFormato
+ContUsoFormato=ContUsoInv
+ContUsoInv=ContUsoCompras
+ContUsoCompras=ContUsoVentas
+ContUsoVentas=ContUsoGastos
+ContUsoGastos=ContUsoCxc
+ContUsoCxc=ContUsoCxp
+ContUsoCxp=CentrosCostosFormato
+CentrosCostosFormato=CentroCostosValidar
+CentroCostosValidar=ContValidarPresupuesto
+ContValidarPresupuesto=ContCentrosCostosVerificarPos
+ContCentrosCostosVerificarPos=ContTablaINPC
+ContTablaINPC=AutorizarRequisiciones
+AutorizarRequisiciones=InvFisicoConteo
+InvFisicoConteo=BackOrders
+BackOrders=BackOrdersNivel
+BackOrdersNivel=EmbarqueAfectarCobros
+EmbarqueAfectarCobros=EmbarqueModificarVencimiento
+EmbarqueModificarVencimiento=AFRevaluarDepreciacion
+AFRevaluarDepreciacion=AFAfectarDinero
+AFAfectarDinero=AFMantenimientoPendiente
+AFMantenimientoPendiente=NomOmision
+NomOmision=NomOmisionPeriodo
+NomOmisionPeriodo=NomBeneficiario
+NomBeneficiario=NomISRSimplificado
+NomISRSimplificado=NomSugerirSDI
+NomSugerirSDI=NomConceptoSDI
+NomConceptoSDI=NomSugerirAumentoVacaciones
+NomSugerirAumentoVacaciones=NomConceptoAumentoVacaciones
+NomConceptoAumentoVacaciones=NomAfectarAumentoVacaciones
+NomAfectarAumentoVacaciones=AsisteToleraEntrada
+AsisteToleraEntrada=AsisteToleraSalida
+AsisteToleraSalida=RHPlaza
+RHPlaza=FormaPagoCambio
+FormaPagoCambio=CambioTasa
+CambioTasa=NotasBorrador
+NotasBorrador=ValidarPrecios
+ValidarPrecios=ValidarMargenMinimo
+ValidarMargenMinimo=CxcPlazo1
+CxcPlazo1=CxcPlazo2
+CxcPlazo2=CxcPlazo3
+CxcPlazo3=CxcPlazo4
+CxcPlazo4=CxpPlazo1
+CxpPlazo1=CxpPlazo2
+CxpPlazo2=CxpPlazo3
+CxpPlazo3=CxpPlazo4
+CxpPlazo4=GastoAfecta
+GastoAfecta=AlmacenDestinoEntregaGarantia
+AlmacenDestinoEntregaGarantia=Fecha1
+Fecha1=Fecha2
+Fecha2=Texto1
+Texto1=ArtRevision
+ArtRevision=CancelarOtroMesFactura
+CancelarOtroMesFactura=CancelarFactura
+CancelarFactura=CancelarFacturaFecha
+CancelarFacturaFecha=EmbarqueEstadoPendiente
+EmbarqueEstadoPendiente=EmbarqueEstadoTransito
+EmbarqueEstadoTransito=VentaTEEstandar
+VentaTEEstandar=VentaTEEstandarTipoDias
+VentaTEEstandarTipoDias=CxcDocAutoFolio
+CxcDocAutoFolio=CxpDocAutoFolio
+CxpDocAutoFolio=CxcProntoPagoTasaDiaria
+CxcProntoPagoTasaDiaria=CxcProntoPagoTasa
+CxcProntoPagoTasa=CxpProntoPago
+CxpProntoPago=CxpProntoPagoTasaDiaria
+CxpProntoPagoTasaDiaria=CxpProntoPagoTasa
+CxpProntoPagoTasa=CxcAnticipoEfectivo
+CxcAnticipoEfectivo=CxpAnticipoEfectivo
+CxpAnticipoEfectivo=TransferirDemas
+TransferirDemas=Cajeros
+Cajeros=DineroAutoFaltanteSobrante
+DineroAutoFaltanteSobrante=CxcFormaCobroVales
+CxcFormaCobroVales=ClienteFacturaVMOS
+ClienteFacturaVMOS=EstatusFacturaVMOS
+EstatusFacturaVMOS=AsignarConsecutivoFacturaVMOS
+AsignarConsecutivoFacturaVMOS=CxpMoratoriosTasa
+CxpMoratoriosTasa=CxcRecargosConcepto
+CxcRecargosConcepto=CxpRecargosConcepto
+CxpRecargosConcepto=FormaPagoOmision
+FormaPagoOmision=FormaCobroOmision
+FormaCobroOmision=CxpRecorrerVencimiento
+CxpRecorrerVencimiento=FormaPagoRequerida
+FormaPagoRequerida=MonedaCosteo
+MonedaCosteo=MonedaCosteoNivelArticulo
+MonedaCosteoNivelArticulo=CambioOperacionRelevante
+CambioOperacionRelevante=CambioMonedaRelevante
+CambioMonedaRelevante=CambioCategoriaRelevante1
+CambioCategoriaRelevante1=CambioCategoriaRelevante2
+CambioCategoriaRelevante2=CambioDiasRemesas
+CambioDiasRemesas=CxcDocAnticipoAutoFolio
+CxcDocAnticipoAutoFolio=CxpDocAnticipoAutoFolio
+CxpDocAnticipoAutoFolio=CompraPaquetes
+CompraPaquetes=EmbarqueGenerarGastoTarifas
+EmbarqueGenerarGastoTarifas=EmbarqueAfectarGastoTarifas
+EmbarqueAfectarGastoTarifas=DineroDesgloseObligatorio
+DineroDesgloseObligatorio=DineroAfectarComision
+DineroAfectarComision=DineroAfectarComisionIVA
+DineroAfectarComisionIVA=CancelarFacturaReservarPedido
+CancelarFacturaReservarPedido=InvVerClaveIdioma
+InvVerClaveIdioma=VentaVerClaveIdioma
+VentaVerClaveIdioma=ComisionBase
+ComisionBase=CBDirAlmacen
+CBDirAlmacen=NomCCRequerido
+NomCCRequerido=ComisionEspecial
+ComisionEspecial=VentaAnticipoCredito
+VentaAnticipoCredito=CompraAnticipoCredito
+CompraAnticipoCredito=DineroContX
+DineroContX=DineroControlarSobregiros
+DineroControlarSobregiros=VentaSugerirSaldoFavorID
+VentaSugerirSaldoFavorID=VentaCobroRedondeoDecimales
+VentaCobroRedondeoDecimales=ContMovPresupuesto
+ContMovPresupuesto=ContReservarPresupuesto
+ContReservarPresupuesto=CompraProveedorRequisicion
+CompraProveedorRequisicion=EspaciosCfg
+EspaciosCfg=EspaciosSobreventa
+EspaciosSobreventa=EspaciosNivel
+EspaciosNivel=EspaciosMinutos
+EspaciosMinutos=EspaciosBloquearAnteriores
+EspaciosBloquearAnteriores=EspaciosHoraD
+EspaciosHoraD=EspaciosHoraA
+EspaciosHoraA=EspaciosAsignacion
+EspaciosAsignacion=VentaActualizarPrecioMoneda
+VentaActualizarPrecioMoneda=CentroCostosRamas
+CentroCostosRamas=CtaGastosOperacion
+CtaGastosOperacion=CtaOtrosGastosProductos
+CtaOtrosGastosProductos=CtaImpuestos
+CtaImpuestos=ContMoneda2
+ContMoneda2=ContMoneda2Auto
+ContMoneda2Auto=CompraValidarArtProv
+CompraValidarArtProv=InvConfirmarSolicitudes
+InvConfirmarSolicitudes=VentaIncentivos
+VentaIncentivos=TablaISAN
+TablaISAN=NomModificarFechaNomina
+NomModificarFechaNomina=TablaVacaciones
+TablaVacaciones=VentaServicioSituacionTipo
+VentaServicioSituacionTipo=KmsxMes
+KmsxMes=AFConceptoDepreciacion
+AFConceptoDepreciacion=AFAcreedorDepreciacion
+AFAcreedorDepreciacion=CompraAutoEndoso
+CompraAutoEndoso=CompraAutoEndosoEmpresas
+CompraAutoEndosoEmpresas=CompraAutoEndosoWS
+CompraAutoEndosoWS=CompraAutoEndosoWSDL
+CompraAutoEndosoWSDL=CompraAutoEndosoMovs
+CompraAutoEndosoMovs=NomDiasDesfasoIncidencias
+NomDiasDesfasoIncidencias=NomPremios
+NomPremios=ContMultiSucursal
+ContMultiSucursal=ContCtaCliente
+ContCtaCliente=ContCtaProveedor
+ContCtaProveedor=ContCtaPersonal
+ContCtaPersonal=ContCtaAlmacen
+ContCtaAlmacen=ContCtaDinero
+ContCtaDinero=NomValidarReferencias
+NomValidarReferencias=CxcRecorrerVencimiento
+CxcRecorrerVencimiento=ContNivelPresupuesto
+ContNivelPresupuesto=CompraProrrateada
+CompraProrrateada=CompraProrrateadaRedondeo
+CompraProrrateadaRedondeo=AsisteGenerarFaltas
+AsisteGenerarFaltas=AsisteGenerarRetardos
+AsisteGenerarRetardos=AsisteGenerarHorasExtras
+AsisteGenerarHorasExtras=ContCtaFormaPago
+ContCtaFormaPago=ContCtaArticulo
+ContCtaArticulo=FormaPagoEfectivo
+FormaPagoEfectivo=CxcDescContado
+CxcDescContado=CxcDescContadoDias
+CxcDescContadoDias=CxcDescContadoPorcentaje
+CxcDescContadoPorcentaje=CxcValidarDescPPMorosos
+CxcValidarDescPPMorosos=ContPermitirCancelacionOrigen
+ContPermitirCancelacionOrigen=DineroFaltanteModulo
+DineroFaltanteModulo=PedidosReservarEsp
+PedidosReservarEsp=DineroConciliarPorSucursales
+DineroConciliarPorSucursales=PrecioMinimoNivelSucursal
+PrecioMinimoNivelSucursal=ContToleraciaRedondeo
+ContToleraciaRedondeo=NomPorcentajeSubsidio
+NomPorcentajeSubsidio=CRAcreedor
+CRAcreedor=CRClase
+CRClase=CRSubClase
+CRSubClase=CRFormaPago
+CRFormaPago=VentaRestringirArtBloqueados
+VentaRestringirArtBloqueados=CompraRestringirArtBloquedos
+CompraRestringirArtBloquedos=VentaServiciosValidarID
+VentaServiciosValidarID=CRCorteCajaCentralMax
+CRCorteCajaCentralMax=CRValidarCorteSaldoCero
+CRValidarCorteSaldoCero=CRValidarCorteZSaldoCero
+CRValidarCorteZSaldoCero=VentaLimiteCreditoNivelGrupo
+VentaLimiteCreditoNivelGrupo=VentaLimiteCreditoNivelUEN
+VentaLimiteCreditoNivelUEN=VentaAnexosAlFacturar
+VentaAnexosAlFacturar=CRAfectarAuto
+CRAfectarAuto=CRCerrarDiaAuto
+CRCerrarDiaAuto=CRValidarFolio
+CRValidarFolio=CompraValidarPresupuesto
+CompraValidarPresupuesto=ContCuentaCierre
+ContCuentaCierre=VentaEndoso
+VentaEndoso=ImporteISANLujo
+ImporteISANLujo=TablaISANLujo
+TablaISANLujo=ArtRedondeo
+ArtRedondeo=AFSugerirSerieEntrada
+AFSugerirSerieEntrada=AFConsecutivo
+AFConsecutivo=VentaPPIndirectos
+VentaPPIndirectos=EmbarqueBaseProrrateo
+EmbarqueBaseProrrateo=ContUsoDinero
+ContUsoDinero=CompraValidarPresupuestoFR
+CompraValidarPresupuestoFR=VentaRefSerieLotePedidos
+VentaRefSerieLotePedidos=CosteoActividades
+CosteoActividades=VentaVerDescripcionExtra
+VentaVerDescripcionExtra=CompraVerDescripcionExtra
+CompraVerDescripcionExtra=ACFactorcapacidadPago
+ACFactorcapacidadPago=ACClienteDevengados
+ACClienteDevengados=ACProveedorDevengados
+ACProveedorDevengados=ACCobroIntereses
+ACCobroIntereses=VentaPedidosDisminuyenCredito
+VentaPedidosDisminuyenCredito=DineroCorteSDPorFormaPago
+DineroCorteSDPorFormaPago=VentaTEEstandarRecorrerDomingo
+VentaTEEstandarRecorrerDomingo=CompraConcentrarEntrada
+CompraConcentrarEntrada=CancelarFacturaFisicamente
+CancelarFacturaFisicamente=EmbarqueEliminarDetalle
+EmbarqueEliminarDetalle=CRVentaDescripcionExtra
+CRVentaDescripcionExtra=CRVentaPrecio
+CRVentaPrecio=CRVentaDescuentoLinea
+CRVentaDescuentoLinea=CRAgente
+CRAgente=CRSoporte
+CRSoporte=CRInvFisico
+CRInvFisico=CRCaja
+CRCaja=CRCxc
+CRCxc=CRSugerirDescuento
+CRSugerirDescuento=CRSugerirPrecio
+CRSugerirPrecio=VentaComisionVariable
+VentaComisionVariable=ContArticulo
+ContArticulo=NConsumoSugerir
+NConsumoSugerir=NConsumoArtDeducible
+NConsumoArtDeducible=NConsumoArtCoAseguro
+NConsumoArtCoAseguro=NConsumoArtAjusteCobertura
+NConsumoArtAjusteCobertura=CRTransferencias
+CRTransferencias=CosteoMultipleSimultaneo
+CosteoMultipleSimultaneo=Posiciones
+Posiciones=ACRetencionPF
+ACRetencionPF=VentaPerdidaAuto
+VentaPerdidaAuto=CompraPerdidaAuto
+CompraPerdidaAuto=EmbarqueDesembarquesParciales
+EmbarqueDesembarquesParciales=AsisteJornadasNocturnas
+AsisteJornadasNocturnas=ACReciprocidad
+ACReciprocidad=ImportacionImpuesto1Acreedor
+ImportacionImpuesto1Acreedor=ImportacionImpuesto1Concepto
+ImportacionImpuesto1Concepto=ImportacionImpuesto2Acreedor
+ImportacionImpuesto2Acreedor=ImportacionImpuesto2Concepto
+ImportacionImpuesto2Concepto=ACAjusteConceptoValorResidual
+ACAjusteConceptoValorResidual=ACAjusteConceptoImpuestoAd
+ACAjusteConceptoImpuestoAd=CRPrestamoCxc
+CRPrestamoCxc=ACPlazoDias
+ACPlazoDias=ExistenciaAlterna
+ExistenciaAlterna=ExistenciaAlternaSerieLote
+ExistenciaAlternaSerieLote=VentaVerDatosOC
+VentaVerDatosOC=CRVentaMov
+CRVentaMov=CRVentaMovID
+CRVentaMovID=CRZonaImpuestoNivelCte
+CRZonaImpuestoNivelCte=AFDepreciacionAnualAjustada
+AFDepreciacionAnualAjustada=ACAcreedorEnDisposiciones
+ACAcreedorEnDisposiciones=DineroPagoConciliado
+DineroPagoConciliado=RHControlPlazas
+RHControlPlazas=CREstatusSinAfectar
+CREstatusSinAfectar=AsisteRegistroCantidad
+AsisteRegistroCantidad=AsisteRegistroEstadoAvance
+AsisteRegistroEstadoAvance=AsisteVerCostoHora
+AsisteVerCostoHora=AsisteCargarTiempoActConcluida
+AsisteCargarTiempoActConcluida=AsisteCargarTiempoActCancelada
+AsisteCargarTiempoActCancelada=DineroValidarMovImpuesto
+DineroValidarMovImpuesto=ACLineaCreditoExpress
+ACLineaCreditoExpress=CreditoTipoAmortizacion
+CreditoTipoAmortizacion=CreditoTipoTasa
+CreditoTipoTasa=VentaArrastrarSerieLote
+VentaArrastrarSerieLote=CxcFormaCobroTarjetas
+CxcFormaCobroTarjetas=CxcArticuloTarjetasDef
+CxcArticuloTarjetasDef=CxcAlmacenTarjetasDef
+CxcAlmacenTarjetasDef=CxcValidarPrecioTarjetas
+CxcValidarPrecioTarjetas=NomComplemento
+NomComplemento=NomComplementoTope
+NomComplementoTope=NomComplementoPremios
+NomComplementoPremios=NomComplementoRetencion
+NomComplementoRetencion=NomDiasMes
+NomDiasMes=DineroInversionIntereses
+DineroInversionIntereses=PedidosReservarLineaCompleta
+PedidosReservarLineaCompleta=CxcAutoAjusteMov
+CxcAutoAjusteMov=CxpAutoAjusteMov
+CxpAutoAjusteMov=AsisteRecurso
+AsisteRecurso=ProyCrearProyecto
+ProyCrearProyecto=ProyAsunto
+ProyAsunto=ProyFechaRevision
+ProyFechaRevision=ProyDiasIndicador1
+ProyDiasIndicador1=EmbarqueCobrarDemas
+EmbarqueCobrarDemas=ProyIndicador1Liberados
+ProyIndicador1Liberados=VentaProveedorRef
+VentaProveedorRef=VentaPrecioMoneda
+VentaPrecioMoneda=ProyActividadAsunto
+ProyActividadAsunto=ProyFasesInformativas
+ProyFasesInformativas=CRProcesoDistribuido
+CRProcesoDistribuido=CRServidorOperaciones
+CRServidorOperaciones=CRBaseDatosOperaciones
+CRBaseDatosOperaciones=CompraAutoEndosoAutoCargos
+CompraAutoEndosoAutoCargos=MoverNotasAuto
+MoverNotasAuto=ACPermitirMovFechaAnterior
+ACPermitirMovFechaAnterior=DineroConciliarEstatus
+DineroConciliarEstatus=RHValidarAF
+RHValidarAF=PermiteCompletarEnAvances
+PermiteCompletarEnAvances=ContCuentaCuadre
+ContCuentaCuadre=ContToleranciaCuadre
+ContToleranciaCuadre=CentroCostos2Venta
+CentroCostos2Venta=CentroCostos2VentaD
+CentroCostos2VentaD=CentroCostos2Gasto
+CentroCostos2Gasto=CentroCostos2GastoD
+CentroCostos2GastoD=CentroCostos2Compra
+CentroCostos2Compra=CentroCostos2CompraD
+CentroCostos2CompraD=CentroCostos3Venta
+CentroCostos3Venta=CentroCostos3VentaD
+CentroCostos3VentaD=CentroCostos3Gasto
+CentroCostos3Gasto=CentroCostos3GastoD
+CentroCostos3GastoD=CentroCostos3Compra
+CentroCostos3Compra=CentroCostos3CompraD
+CentroCostos3CompraD=VisualizarArrastre
+VisualizarArrastre=EmbarqueSugerirCobros
+EmbarqueSugerirCobros=ACFacturarInteresesAlCobro
+ACFacturarInteresesAlCobro=ACFacturarInteresesMov
+ACFacturarInteresesMov=ACFacturarInteresesConcepto
+ACFacturarInteresesConcepto=ACFacturarMoratoriosMov
+ACFacturarMoratoriosMov=ACFacturarMoratoriosConcepto
+ACFacturarMoratoriosConcepto=ACBonificarQuitasAlCobro
+ACBonificarQuitasAlCobro=ACBonificarQuitasMov
+ACBonificarQuitasMov=ACBonificarQuitasConcepto
+ACBonificarQuitasConcepto=ACBonificarQuitasMoraMov
+ACBonificarQuitasMoraMov=ACBonificarQuitasMoraConcepto
+ACBonificarQuitasMoraConcepto=VentaPerdidaAutoPorcentaje
+VentaPerdidaAutoPorcentaje=CompraPerdidaAutoPorcentaje
+CompraPerdidaAutoPorcentaje=ToleranciaCostoInferior
+ToleranciaCostoInferior=ValidarOrdenCompraTolerancia
+ValidarOrdenCompraTolerancia=ProyGenerarInvAlAfectar
+ProyGenerarInvAlAfectar=ProyGenerarInvPorActividad
+ProyGenerarInvPorActividad=ProyGenerarInvTiempo
+ProyGenerarInvTiempo=ProyGenerarInvTiempoUnidad
+ProyGenerarInvTiempoUnidad=CompraValidarPresupuestoMov
+CompraValidarPresupuestoMov=CompraValidarPresupuestoCC
+CompraValidarPresupuestoCC=CompraValidarPresupuestoCant
+CompraValidarPresupuestoCant=WMSSugerirEntarimado
+WMSSugerirEntarimado=WMSInventarioTarimas
+WMSInventarioTarimas=NomConceptoDisminuirVacaciones
+NomConceptoDisminuirVacaciones=NomAfectarDisminuirVacaciones
+NomAfectarDisminuirVacaciones=NomSugerirDisminuirVacaciones
+NomSugerirDisminuirVacaciones=RHIDSE
+RHIDSE=RHIDSERuta
+RHIDSERuta=CPComprometido2
+CPComprometido2=CPDevengado2
+CPDevengado2=CxcIntransferibleTarjeta
+CxcIntransferibleTarjeta=CxcCaducidadTarjeta
+CxcCaducidadTarjeta=AjustesAutomaticosMES
+AjustesAutomaticosMES=CxcCaducidadTarjetaFecha
+CxcCaducidadTarjetaFecha=CPSepararImpuestos
+CPSepararImpuestos=CPClavePresupuestalImpuesto1
+CPClavePresupuestalImpuesto1=CPClavePresupuestalImpuesto2
+CPClavePresupuestalImpuesto2=CPClavePresupuestalImpuesto3
+CPClavePresupuestalImpuesto3=CPClavePresupuestalRetencion1
+CPClavePresupuestalRetencion1=CPClavePresupuestalRetencion2
+CPClavePresupuestalRetencion2=CPClavePresupuestalRetencion3
+CPClavePresupuestalRetencion3=PersonalCostoHoraFactor
+PersonalCostoHoraFactor=OrganizacionNivelDetalle
+OrganizacionNivelDetalle=CompraCostoConImpuesto
+CompraCostoConImpuesto=RHAutorizarPlazas
+RHAutorizarPlazas=VentaMovImpuestoDesdeRemision
+VentaMovImpuestoDesdeRemision=SAUXConsumo
+SAUXConsumo=CentroCostos2AF
+CentroCostos2AF=CentroCostos3AF
+CentroCostos3AF=DineroProrrateoMovImpuesto
+DineroProrrateoMovImpuesto=AFGenerarGasto
+AFGenerarGasto=AFGenerarGastoCfg
+AFGenerarGastoCfg=ACConsiderarInflacionIVA
+ACConsiderarInflacionIVA=ACMonedaCalculoInflacionIVA
+ACMonedaCalculoInflacionIVA=WMSLeerPosicionOrigen
+WMSLeerPosicionOrigen=WMSDispararReacomodos
+WMSDispararReacomodos=WMSRotacionArticulo
+WMSRotacionArticulo=WMSAndenSurtidoContacto
+WMSAndenSurtidoContacto=WMSMovilTarea
+WMSMovilTarea=WMSValidarZona
+WMSValidarZona=WMSTipoAcomodador
+WMSTipoAcomodador=WMSPermitirReacomodosDomicilio
+WMSPermitirReacomodosDomicilio=GenerarNCAlProcesar
+GenerarNCAlProcesar=ArtTarjetaServicio
+ArtTarjetaServicio=FacturaGlobalPeriodo
+FacturaGlobalPeriodo=AFGastoConCategoriaAF
+AFGastoConCategoriaAF=WMSReacomodoSurtido
+WMSReacomodoSurtido=ReservarSolicitudesFacory
+ReservarSolicitudesFacory=ToleranciaAjuste
+ToleranciaAjuste=HorasExtrasCompletas
+HorasExtrasCompletas=ProyEnviarTareaGestion
+ProyEnviarTareaGestion=ProyTareaEstado
+ProyTareaEstado=HerramientaHorasExtra
+HerramientaHorasExtra=WMSPorcentajeMinimoADom
+WMSPorcentajeMinimoADom=WMSPCKUbicacion
+WMSPCKUbicacion=PosicionArticulo
+PosicionArticulo=DesentarimarPedido
+DesentarimarPedido=AsistDescansolaborado
+AsistDescansolaborado=AsistDiaFestivolaborado
+AsistDiaFestivolaborado=AsistDomingoLaborado
+AsistDomingoLaborado=CompraCostearDCporMovimiento
+CompraCostearDCporMovimiento=IntelMESInterfase
+IntelMESInterfase=IntelMESInterfaseRuta
+IntelMESInterfaseRuta=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=FormaCosteo,
+FormaCosteo,=TipoCosteo,
+TipoCosteo,=SugerirCostoDev,
+SugerirCostoDev,=SugerirCostoArtServicio,
+SugerirCostoArtServicio,=CosteoNivelSubCuenta,
+CosteoNivelSubCuenta,=PreciosNivelSubCuenta,
+PreciosNivelSubCuenta,=CosteoActividades,
+CosteoActividades,=ToleranciaCosto,
+ToleranciaCosto,=ToleranciaCostoInferior,
+ToleranciaCostoInferior,=ToleranciaTipoCosto,
+ToleranciaTipoCosto,=ValidarMargenMinimo,
+ValidarMargenMinimo,=SeriesLotesMayoreo,
+SeriesLotesMayoreo,=Partidas,
+Partidas,=SeriesLotesAutoCampo,
+SeriesLotesAutoCampo,=SeriesLotesAutoOrden,
+SeriesLotesAutoOrden,=SeriesImprimirMov,
+SeriesImprimirMov,=SeriesImprimirProp,
+SeriesImprimirProp,=PresentacionAutoOrden,
+PresentacionAutoOrden,=CB,
+CB,=CBSerieLote,
+CBSerieLote,=CBSubCodigos,
+CBSubCodigos,=CBSubCuentas,
+CBSubCuentas,=CBPreguntarCantidad,
+CBPreguntarCantidad,=CBProcesarLote,
+CBProcesarLote,=CxcAplicaAutoOrden,
+CxcAplicaAutoOrden,=CxpAplicaAutoOrden,
+CxpAplicaAutoOrden,=PedidosReservar,
+PedidosReservar,=PedidosReservarEsp,
+PedidosReservarEsp,=PedidosReservarLineaCompleta,
+PedidosReservarLineaCompleta,=FacturasPendientes,
+FacturasPendientes,=CompraConsignacion,
+CompraConsignacion,=CompraCostoSugerido,
+CompraCostoSugerido,=CompraDescImporte,
+CompraDescImporte,=CompraVentaSinIVA,
+CompraVentaSinIVA,=CompraVerClaveProveedor,
+CompraVerClaveProveedor,=VentaDescImporte,
+VentaDescImporte,=VentaChecarCredito,
+VentaChecarCredito,=VentaPedidosDisminuyenCredito,
+VentaPedidosDisminuyenCredito,=VentaBloquearMorosos,
+VentaBloquearMorosos,=VentaLiquidaIntegral,
+VentaLiquidaIntegral,=VentaLiquidaIntegralCxc,
+VentaLiquidaIntegralCxc,=BackOrders,
+BackOrders,=BackOrdersNivel,
+BackOrdersNivel,=VentaSurtirDemas,
+VentaSurtirDemas,=VentaPrecios,
+VentaPrecios,=VentaIncentivos,
+VentaIncentivos,=VentaListaPrecios,
+VentaListaPrecios,=VentaConfirmarServicios,
+VentaConfirmarServicios,=VentaConfirmarContratos,
+VentaConfirmarContratos,=VentaContratosImpuesto,
+VentaContratosImpuesto,=VentaContratosArticulo,
+VentaContratosArticulo,=VentaServiciosRequiereTareas,
+VentaServiciosRequiereTareas,=VentaServiciosTareaOmision,
+VentaServiciosTareaOmision,=VentaServiciosAutoOP,
+VentaServiciosAutoOP,=VentaServiciosValidarID,
+VentaServiciosValidarID,=VentaDefCantidad,
+VentaDefCantidad,=VentaPaquetes,
+VentaPaquetes,=VentaPreciosImpuestoIncluido,
+VentaPreciosImpuestoIncluido,=VentaComisionesCobradas,
+VentaComisionesCobradas,=ComisionBase,
+ComisionBase,=ComisionEspecial,
+ComisionEspecial,=VentaLimiteRenFacturas,
+VentaLimiteRenFacturas,=VentaLimiteRenFacturasVMOS,
+VentaLimiteRenFacturasVMOS,=VentaTEEstandar,
+VentaTEEstandar,=VentaTEEstandarTipoDias,
+VentaTEEstandarTipoDias,=VentaTEEstandarRecorrerDomingo,
+VentaTEEstandarRecorrerDomingo,=InvPaquetes,
+InvPaquetes,=InvPrestamosGarantias,
+InvPrestamosGarantias,=InvEntradasSinCosto,
+InvEntradasSinCosto,=InvSugererirCompra,
+InvSugererirCompra,=CxcProntoPagoTasaDiaria,
+CxcProntoPagoTasaDiaria,=CxcProntoPagoTasa,
+CxcProntoPagoTasa,=CxpProntoPagoTasaDiaria,
+CxpProntoPagoTasaDiaria,=CxpProntoPagoTasa,
+CxpProntoPagoTasa,=CxcMoratoriosTasa,
+CxcMoratoriosTasa,=CxcRefinanciamientoTasa,
+CxcRefinanciamientoTasa,=CxcAutoAjuste,
+CxcAutoAjuste,=CxcAutoAjusteMov,
+CxcAutoAjusteMov,=CxcFormaCobroDA,
+CxcFormaCobroDA,=CxcDARef,
+CxcDARef,=CxcFormaCobroVales,
+CxcFormaCobroVales,=CxpProntoPago,
+CxpProntoPago,=CxcProntoPago,
+CxcProntoPago,=CxcProntoPagoConcepto,
+CxcProntoPagoConcepto,=CxpAutoAjuste,
+CxpAutoAjuste,=CxpAutoAjusteMov,
+CxpAutoAjusteMov,=CxcControlEfectivo,
+CxcControlEfectivo,=CxcTopeEfectivoAuto,
+CxcTopeEfectivoAuto,=CxcFormaCobroTarjetas,
+CxcFormaCobroTarjetas,=CxcArticuloTarjetasDef,
+CxcArticuloTarjetasDef,=CxcAlmacenTarjetasDef,
+CxcAlmacenTarjetasDef,=CxcValidarPrecioTarjetas,
+CxcValidarPrecioTarjetas,=CxpProntoPagoConcepto,
+CxpProntoPagoConcepto,=CxpControlEfectivo,
+CxpControlEfectivo,=CxpTopeEfectivoAuto,
+CxpTopeEfectivoAuto,=ChequesPendientes,
+ChequesPendientes,=eChequesPendientes,
+eChequesPendientes,=ChequesDirectos,
+ChequesDirectos,=FormaPagoCambio,
+FormaPagoCambio,=CtaFormato,
+CtaFormato,=CteFormato,
+CteFormato,=ArtFormato,
+ArtFormato,=PersonalFormato,
+PersonalFormato,=CentrosCostosFormato,
+CentrosCostosFormato,=ContMoneda,
+ContMoneda,=ContVerificarPosicion,
+ContVerificarPosicion,=ContVerificarIVA,
+ContVerificarIVA,=ContCentrosCostos,
+ContCentrosCostos,=ContCentrosCostosVerificarPos,
+ContCentrosCostosVerificarPos,=ContTablaINPC,
+ContTablaINPC,=TablaISAN,
+TablaISAN,=ImporteISANLujo,
+ImporteISANLujo,=TablaISANLujo,
+TablaISANLujo,=ContUsoInv,
+ContUsoInv,=ContUsoCompras,
+ContUsoCompras,=ContUsoGastos,
+ContUsoGastos,=ContUsoVentas,
+ContUsoVentas,=ContUsoDinero,
+ContUsoDinero,=ContUsoCxc,
+ContUsoCxc,=ContUsoCxp,
+ContUsoCxp,=ContUsoFormato,
+ContUsoFormato,=CtaContabilidad,
+CtaContabilidad,=CtaActivo,
+CtaActivo,=CtaPasivo,
+CtaPasivo,=CtaCapital,
+CtaCapital,=CtaResultados,
+CtaResultados,=CtaIngresos,
+CtaIngresos,=CtaCostoDirecto,
+CtaCostoDirecto,=CtaGastosOperacion,
+CtaGastosOperacion,=CtaOtrosGastosProductos,
+CtaOtrosGastosProductos,=CtaImpuestos,
+CtaImpuestos,=CtaOrden,
+CtaOrden,=AutorizarRequisiciones,
+AutorizarRequisiciones,=EmbarqueAfectarCobros,
+EmbarqueAfectarCobros,=EmbarqueCobrarDemas,
+EmbarqueCobrarDemas,=EmbarqueModificarVencimiento,
+EmbarqueModificarVencimiento,=AFRevaluarDepreciacion,
+AFRevaluarDepreciacion,=AFAfectarDinero,
+AFAfectarDinero,=AFMantenimientoPendiente,
+AFMantenimientoPendiente,=NomOmision,
+NomOmision,=NomOmisionPeriodo,
+NomOmisionPeriodo,=NomBeneficiario,
+NomBeneficiario,=NomISRSimplificado,
+NomISRSimplificado,=NomSugerirSDI,
+NomSugerirSDI,=NomConceptoSDI,
+NomConceptoSDI,=NomSugerirAumentoVacaciones,
+NomSugerirAumentoVacaciones,=NomConceptoAumentoVacaciones,
+NomConceptoAumentoVacaciones,=NomAfectarAumentoVacaciones,
+NomAfectarAumentoVacaciones,=NomSugerirDisminuirVacaciones,
+NomSugerirDisminuirVacaciones,=NomConceptoDisminuirVacaciones,
+NomConceptoDisminuirVacaciones,=NomAfectarDisminuirVacaciones,
+NomAfectarDisminuirVacaciones,=NomModificarFechaNomina,
+NomModificarFechaNomina,=TablaVacaciones,
+TablaVacaciones,=AsisteToleraEntrada,
+AsisteToleraEntrada,=AsisteToleraSalida,
+AsisteToleraSalida,=AsisteGenerarFaltas,
+AsisteGenerarFaltas,=AsisteGenerarRetardos,
+AsisteGenerarRetardos,=AsisteGenerarHorasExtras,
+AsisteGenerarHorasExtras,=RHControlPlazas,
+RHControlPlazas,=RHPlaza,
+RHPlaza,=RHValidarAF,
+RHValidarAF,=RHIDSE,
+RHIDSE,=RHIDSERuta,
+RHIDSERuta,=CambioTasa,
+CambioTasa,=NotasBorrador,
+NotasBorrador,=InvFisicoConteo,
+InvFisicoConteo,=ValidarPrecios,
+ValidarPrecios,=CxcPlazo1,
+CxcPlazo1,=CxcPlazo2,
+CxcPlazo2,=CxcPlazo3,
+CxcPlazo3,=CxcPlazo4,
+CxcPlazo4,=GastoAfecta,
+GastoAfecta,=AlmacenDestinoEntregaGarantia,
+AlmacenDestinoEntregaGarantia,=CxpPlazo1,
+CxpPlazo1,=CxpPlazo2,
+CxpPlazo2,=CxpPlazo3,
+CxpPlazo3,=CxpPlazo4,
+CxpPlazo4,=CosteoSeries,
+CosteoSeries,=CosteoLotes,
+CosteoLotes,=ArtRevision,
+ArtRevision,=CancelarOtroMesFactura,
+CancelarOtroMesFactura,=CancelarFactura,
+CancelarFactura,=CancelarFacturaFecha,
+CancelarFacturaFecha,=CancelarFacturaFisicamente,
+CancelarFacturaFisicamente,=EmbarqueEstadoPendiente,
+EmbarqueEstadoPendiente,=EmbarqueEstadoTransito,
+EmbarqueEstadoTransito,=TransferirDemas,
+TransferirDemas,=CxcDocAutoFolio,
+CxcDocAutoFolio,=CxpDocAutoFolio,
+CxpDocAutoFolio,=CxcDocAnticipoAutoFolio,
+CxcDocAnticipoAutoFolio,=CxpDocAnticipoAutoFolio,
+CxpDocAnticipoAutoFolio,=CxcAnticipoEfectivo,
+CxcAnticipoEfectivo,=CxpAnticipoEfectivo,
+CxpAnticipoEfectivo,=Cajeros,
+Cajeros,=ClienteFacturaVMOS,
+ClienteFacturaVMOS,=EstatusFacturaVMOS,
+EstatusFacturaVMOS,=AsignarConsecutivoFacturaVMOS,
+AsignarConsecutivoFacturaVMOS,=CxpMoratoriosTasa,
+CxpMoratoriosTasa,=CxcRecargosConcepto,
+CxcRecargosConcepto,=CxpRecargosConcepto,
+CxpRecargosConcepto,=FormaPagoOmision,
+FormaPagoOmision,=FormaCobroOmision,
+FormaCobroOmision,=CxpRecorrerVencimiento,
+CxpRecorrerVencimiento,=CxcRecorrerVencimiento,
+CxcRecorrerVencimiento,=FormaPagoRequerida,
+FormaPagoRequerida,=MonedaCosteo,
+MonedaCosteo,=MonedaCosteoNivelArticulo,
+MonedaCosteoNivelArticulo,=CambioOperacionRelevante,
+CambioOperacionRelevante,=CambioMonedaRelevante,
+CambioMonedaRelevante,=CambioCategoriaRelevante1,
+CambioCategoriaRelevante1,=CambioCategoriaRelevante2,
+CambioCategoriaRelevante2,=CambioDiasRemesas,
+CambioDiasRemesas,=CompraPaquetes,
+CompraPaquetes,=EmbarqueGenerarGastoTarifas,
+EmbarqueGenerarGastoTarifas,=EmbarqueAfectarGastoTarifas,
+EmbarqueAfectarGastoTarifas,=DineroDesgloseObligatorio,
+DineroDesgloseObligatorio,=DineroAfectarComision,
+DineroAfectarComision,=CancelarFacturaReservarPedido,
+CancelarFacturaReservarPedido,=Texto1,
+Texto1,=Fecha1,
+Fecha1,=Fecha2,
+Fecha2,=CompraVerClaveIdioma,
+CompraVerClaveIdioma,=InvVerClaveIdioma,
+InvVerClaveIdioma,=VentaVerClaveIdioma,
+VentaVerClaveIdioma,=CBDirAlmacen,
+CBDirAlmacen,=NomCCRequerido,
+NomCCRequerido,=VentaAnticipoCredito,
+VentaAnticipoCredito,=CompraAnticipoCredito,
+CompraAnticipoCredito,=DineroContX,
+DineroContX,=DineroControlarSobregiros,
+DineroControlarSobregiros,=VentaSugerirSaldoFavorID,
+VentaSugerirSaldoFavorID,=VentaCobroRedondeoDecimales,
+VentaCobroRedondeoDecimales,=ContMovPresupuesto,
+ContMovPresupuesto,=ContReservarPresupuesto,
+ContReservarPresupuesto,=ContValidarPresupuesto,
+ContValidarPresupuesto,=ContNivelPresupuesto,
+ContNivelPresupuesto,=CompraProveedorRequisicion,
+CompraProveedorRequisicion,=VentaActualizarPrecioMoneda,
+VentaActualizarPrecioMoneda,=EspaciosNivel,
+EspaciosNivel,=EspaciosSobreventa,
+EspaciosSobreventa,=EspaciosMinutos,
+EspaciosMinutos,=EspaciosBloquearAnteriores,
+EspaciosBloquearAnteriores,=EspaciosHoraD,
+EspaciosHoraD,=EspaciosHoraA,
+EspaciosHoraA,=EspaciosCfg,
+EspaciosCfg,=EspaciosAsignacion,
+EspaciosAsignacion,=CentroCostosRamas,
+CentroCostosRamas,=CentroCostosValidar,
+CentroCostosValidar,=CentroCostos2Venta,
+CentroCostos2Venta,=CentroCostos2VentaD,
+CentroCostos2VentaD,=CentroCostos2Gasto,
+CentroCostos2Gasto,=CentroCostos2GastoD,
+CentroCostos2GastoD,=CentroCostos2Compra,
+CentroCostos2Compra,=CentroCostos2CompraD,
+CentroCostos2CompraD,=CentroCostos3Venta,
+CentroCostos3Venta,=CentroCostos3VentaD,
+CentroCostos3VentaD,=CentroCostos3Gasto,
+CentroCostos3Gasto,=CentroCostos3GastoD,
+CentroCostos3GastoD,=CentroCostos3Compra,
+CentroCostos3Compra,=CentroCostos3CompraD,
+CentroCostos3CompraD,=ContMoneda2,
+ContMoneda2,=ContMoneda2Auto,
+ContMoneda2Auto,=CompraValidarArtProv,
+CompraValidarArtProv,=InvConfirmarSolicitudes,
+InvConfirmarSolicitudes,=VentaServicioSituacionTipo,
+VentaServicioSituacionTipo,=KmsxMes,
+KmsxMes,=AFConceptoDepreciacion,
+AFConceptoDepreciacion,=AFAcreedorDepreciacion,
+AFAcreedorDepreciacion,=CompraAutoEndoso,
+CompraAutoEndoso,=CompraAutoEndosoEmpresas,
+CompraAutoEndosoEmpresas,=CompraAutoEndosoWS,
+CompraAutoEndosoWS,=CompraAutoEndosoWSDL,
+CompraAutoEndosoWSDL,=CompraAutoEndosoMovs,
+CompraAutoEndosoMovs,=CompraAutoEndosoAutoCargos,
+CompraAutoEndosoAutoCargos,=NomDiasDesfasoIncidencias,
+NomDiasDesfasoIncidencias,=NomPremios,
+NomPremios,=ContMultiSucursal,
+ContMultiSucursal,=ContCtaCliente,
+ContCtaCliente,=ContCtaProveedor,
+ContCtaProveedor,=ContCtaAlmacen,
+ContCtaAlmacen,=ContCtaPersonal,
+ContCtaPersonal,=ContCtaDinero,
+ContCtaDinero,=ContCtaFormaPago,
+ContCtaFormaPago,=ContCtaArticulo,
+ContCtaArticulo,=NomValidarReferencias,
+NomValidarReferencias,=CompraProrrateada,
+CompraProrrateada,=CompraProrrateadaRedondeo,
+CompraProrrateadaRedondeo,=DineroAutoFaltanteSobrante,
+DineroAutoFaltanteSobrante,=FormaPagoEfectivo,
+FormaPagoEfectivo,=CxcDescContado,
+CxcDescContado,=CxcDescContadoDias,
+CxcDescContadoDias,=CxcDescContadoPorcentaje,
+CxcDescContadoPorcentaje,=CxcValidarDescPPMorosos,
+CxcValidarDescPPMorosos,=ContPermitirCancelacionOrigen,
+ContPermitirCancelacionOrigen,=DineroFaltanteModulo,
+DineroFaltanteModulo,=DineroConciliarPorSucursales,
+DineroConciliarPorSucursales,=PrecioMinimoNivelSucursal,
+PrecioMinimoNivelSucursal,=ContToleraciaRedondeo,
+ContToleraciaRedondeo,=NomPorcentajeSubsidio,
+NomPorcentajeSubsidio,=CRAcreedor,
+CRAcreedor,=CRClase,
+CRClase,=CRSubClase,
+CRSubClase,=CRFormaPago,
+CRFormaPago,=CRCorteCajaCentralMax,
+CRCorteCajaCentralMax,=CRValidarCorteSaldoCero,
+CRValidarCorteSaldoCero,=CRValidarCorteZSaldoCero,
+CRValidarCorteZSaldoCero,=CRAfectarAuto,
+CRAfectarAuto,=CREstatusSinAfectar,
+CREstatusSinAfectar,=CRCerrarDiaAuto,
+CRCerrarDiaAuto,=CRValidarFolio,
+CRValidarFolio,=ArtRedondeo,
+ArtRedondeo,=VentaRestringirArtBloqueados,
+VentaRestringirArtBloqueados,=CompraRestringirArtBloquedos,
+CompraRestringirArtBloquedos,=VentaLimiteCreditoNivelGrupo,
+VentaLimiteCreditoNivelGrupo,=VentaLimiteCreditoNivelUEN,
+VentaLimiteCreditoNivelUEN,=VentaAnexosAlFacturar,
+VentaAnexosAlFacturar,=CompraValidarPresupuesto,
+CompraValidarPresupuesto,=CompraValidarPresupuestoFR,
+CompraValidarPresupuestoFR,=ContCuentaCierre,
+ContCuentaCierre,=VentaEndoso,
+VentaEndoso,=AFSugerirSerieEntrada,
+AFSugerirSerieEntrada,=AFConsecutivo,
+AFConsecutivo,=VentaPPIndirectos,
+VentaPPIndirectos,=EmbarqueBaseProrrateo,
+EmbarqueBaseProrrateo,=VentaRefSerieLotePedidos,
+VentaRefSerieLotePedidos,=VentaArrastrarSerieLote,
+VentaArrastrarSerieLote,=ACFactorCapacidadPago,
+ACFactorCapacidadPago,=ACClienteDevengados,
+ACClienteDevengados,=ACProveedorDevengados,
+ACProveedorDevengados,=ACCobroIntereses,
+ACCobroIntereses,=VentaVerDescripcionExtra,
+VentaVerDescripcionExtra,=CompraVerDescripcionExtra,
+CompraVerDescripcionExtra,=DineroCorteSDPorFormaPago,
+DineroCorteSDPorFormaPago,=CompraConcentrarEntrada,
+CompraConcentrarEntrada,=EmbarqueEliminarDetalle,
+EmbarqueEliminarDetalle,=CRVentaDescripcionExtra,
+CRVentaDescripcionExtra,=CRVentaPrecio,
+CRVentaPrecio,=CRVentaDescuentoLinea,
+CRVentaDescuentoLinea,=CRAgente,
+CRAgente,=CRSoporte,
+CRSoporte,=CRInvFisico,
+CRInvFisico,=CRCaja,
+CRCaja,=CRCxc,
+CRCxc,=CRSugerirDescuento,
+CRSugerirDescuento,=CRSugerirPrecio,
+CRSugerirPrecio,=VentaComisionVariable,
+VentaComisionVariable,=ContArticulo,
+ContArticulo,=NConsumoSugerir,
+NConsumoSugerir,=NConsumoArtDeducible,
+NConsumoArtDeducible,=NConsumoArtCoAseguro,
+NConsumoArtCoAseguro,=NConsumoArtAjusteCobertura,
+NConsumoArtAjusteCobertura,=CRTransferencias,
+CRTransferencias,=CosteoMultipleSimultaneo,
+CosteoMultipleSimultaneo,=ExistenciaAlterna,
+ExistenciaAlterna,=ExistenciaAlternaSerieLote,
+ExistenciaAlternaSerieLote,=Posiciones,
+Posiciones,=ACRetencionPF,
+ACRetencionPF,=VentaPerdidaAuto,
+VentaPerdidaAuto,=CompraPerdidaAuto,
+CompraPerdidaAuto,=EmbarqueDesembarquesParciales,
+EmbarqueDesembarquesParciales,=AsisteJornadasNocturnas,
+AsisteJornadasNocturnas,=ACReciprocidad,
+ACReciprocidad,=ImportacionImpuesto1Acreedor,
+ImportacionImpuesto1Acreedor,=ImportacionImpuesto1Concepto,
+ImportacionImpuesto1Concepto,=ImportacionImpuesto2Acreedor,
+ImportacionImpuesto2Acreedor,=ImportacionImpuesto2Concepto,
+ImportacionImpuesto2Concepto,=ACAjusteConceptoValorResidual,
+ACAjusteConceptoValorResidual,=ACAjusteConceptoImpuestoAd,
+ACAjusteConceptoImpuestoAd,=CRPrestamoCxc,
+CRPrestamoCxc,=ACPlazoDias,
+ACPlazoDias,=VentaVerDatosOC,
+VentaVerDatosOC,=CRVentaMov,
+CRVentaMov,=CRVentaMovID,
+CRVentaMovID,=CRZonaImpuestoNivelCte,
+CRZonaImpuestoNivelCte,=AFDepreciacionAnualAjustada,
+AFDepreciacionAnualAjustada,=ACAcreedorEnDisposiciones,
+ACAcreedorEnDisposiciones,=DineroPagoConciliado,
+DineroPagoConciliado,=AsisteRegistroCantidad,
+AsisteRegistroCantidad,=AsisteRegistroEstadoAvance,
+AsisteRegistroEstadoAvance,=AsisteVerCostoHora,
+AsisteVerCostoHora,=AsisteCargarTiempoActConcluida,
+AsisteCargarTiempoActConcluida,=AsisteCargarTiempoActCancelada,
+AsisteCargarTiempoActCancelada,=DineroValidarMovImpuesto,
+DineroValidarMovImpuesto,=ACLineaCreditoExpress,
+ACLineaCreditoExpress,=CreditoTipoAmortizacion,
+CreditoTipoAmortizacion,=CreditoTipoTasa,
+CreditoTipoTasa,=NomDiasMes,
+NomDiasMes,=NomComplemento,
+NomComplemento,=NomComplementoTope,
+NomComplementoTope,=NomComplementoPremios,
+NomComplementoPremios,=NomComplementoRetencion,
+NomComplementoRetencion,=DineroInversionIntereses,
+DineroInversionIntereses,=AsisteRecurso,
+AsisteRecurso,=ProyCrearProyecto,
+ProyCrearProyecto,=ProyActividadAsunto,
+ProyActividadAsunto,=ProyFechaRevision,
+ProyFechaRevision,=ProyDiasIndicador1,
+ProyDiasIndicador1,=ProyIndicador1Liberados,
+ProyIndicador1Liberados,=ProyFasesInformativas,
+ProyFasesInformativas,=ProyGenerarInvAlAfectar,
+ProyGenerarInvAlAfectar,=ProyGenerarInvPorActividad,
+ProyGenerarInvPorActividad,=ProyGenerarInvTiempo,
+ProyGenerarInvTiempo,=ProyGenerarInvTiempoUnidad,
+ProyGenerarInvTiempoUnidad,=VentaProveedorRef,
+VentaProveedorRef,=VentaPrecioMoneda,
+VentaPrecioMoneda,=CRProcesoDistribuido,
+CRProcesoDistribuido,=CRServidorOperaciones,
+CRServidorOperaciones,=CRBaseDatosOperaciones,
+CRBaseDatosOperaciones,=MoverNotasAuto,
+MoverNotasAuto,=ACPermitirMovFechaAnterior,
+ACPermitirMovFechaAnterior,=DineroConciliarEstatus,
+DineroConciliarEstatus,=PermiteCompletarEnAvances,
+PermiteCompletarEnAvances,=ContCuentaCuadre,
+ContCuentaCuadre,=ContToleranciaCuadre,
+ContToleranciaCuadre,=VisualizarArrastre,
+VisualizarArrastre,=VentaPerdidaAutoPorcentaje,
+VentaPerdidaAutoPorcentaje,=CompraPerdidaAutoPorcentaje,
+CompraPerdidaAutoPorcentaje,=ValidarOrdenCompraTolerancia,
+ValidarOrdenCompraTolerancia,=CompraValidarPresupuestoMov,
+CompraValidarPresupuestoMov,=CompraValidarPresupuestoCC,
+CompraValidarPresupuestoCC,=CompraValidarPresupuestoCant,
+CompraValidarPresupuestoCant,=WMSSugerirEntarimado,
+WMSSugerirEntarimado,=WMSInventarioTarimas,
+WMSInventarioTarimas,=CPComprometido2,
+CPComprometido2,=CPDevengado2,
+CPDevengado2,=CxcIntransferibleTarjeta,
+CxcIntransferibleTarjeta,=CxcCaducidadTarjeta,
+CxcCaducidadTarjeta,=CxcCaducidadTarjetaFecha,
+CxcCaducidadTarjetaFecha,=CPSepararImpuestos,
+CPSepararImpuestos,=CPClavePresupuestalImpuesto1,
+CPClavePresupuestalImpuesto1,=CPClavePresupuestalImpuesto2,
+CPClavePresupuestalImpuesto2,=CPClavePresupuestalImpuesto3,
+CPClavePresupuestalImpuesto3,=PersonalCostoHoraFactor,
+PersonalCostoHoraFactor,=OrganizacionNivelDetalle,
+OrganizacionNivelDetalle,=CompraCostoConImpuesto,
+CompraCostoConImpuesto,=RHAutorizarPlazas,
+RHAutorizarPlazas,=VentaMovImpuestoDesdeRemision,
+VentaMovImpuestoDesdeRemision,=DineroAfectarComisionIVA,
+DineroAfectarComisionIVA,=ProyAsunto,
+ProyAsunto,=EmbarqueSugerirCobros,
+EmbarqueSugerirCobros,=ACFacturarInteresesAlCobro,
+ACFacturarInteresesAlCobro,=ACFacturarInteresesMov,
+ACFacturarInteresesMov,=ACFacturarInteresesConcepto,
+ACFacturarInteresesConcepto,=ACFacturarMoratoriosMov,
+ACFacturarMoratoriosMov,=ACFacturarMoratoriosConcepto,
+ACFacturarMoratoriosConcepto,=ACBonificarQuitasAlCobro,
+ACBonificarQuitasAlCobro,=ACBonificarQuitasMov,
+ACBonificarQuitasMov,=ACBonificarQuitasConcepto,
+ACBonificarQuitasConcepto,=ACBonificarQuitasMoraMov,
+ACBonificarQuitasMoraMov,=ACBonificarQuitasMoraConcepto,
+ACBonificarQuitasMoraConcepto,=SAUXConsumo,
+SAUXConsumo,=DineroProrrateoMovImpuesto,
+DineroProrrateoMovImpuesto,=CPClavePresupuestalRetencion1,
+CPClavePresupuestalRetencion1,=CPClavePresupuestalRetencion2,
+CPClavePresupuestalRetencion2,=CPClavePresupuestalRetencion3,
+CPClavePresupuestalRetencion3,=CentroCostos2AF,
+CentroCostos2AF,=CentroCostos3AF,
+CentroCostos3AF,=AFGastoConCategoriaAF,
+AFGastoConCategoriaAF,=ACConsiderarInflacionIVA,
+ACConsiderarInflacionIVA,=ACMonedaCalculoInflacionIVA,
+ACMonedaCalculoInflacionIVA,=AFGenerarGastoCfg,
+AFGenerarGastoCfg,=AFGenerarGasto,
+AFGenerarGasto,=AjustesAutomaticosMES,
+AjustesAutomaticosMES,=WMSAndenSurtidoContacto,
+WMSAndenSurtidoContacto,=WMSDispararReacomodos,
+WMSDispararReacomodos,=WMSPermitirReacomodosDomicilio,
+WMSPermitirReacomodosDomicilio,=WMSLeerPosicionOrigen,
+WMSLeerPosicionOrigen,=WMSRotacionArticulo,
+WMSRotacionArticulo,=WMSTipoAcomodador,
+WMSTipoAcomodador,=WMSValidarZona,
+WMSValidarZona,=WMSMovilTarea,
+WMSMovilTarea,=GenerarNCAlProcesar,
+GenerarNCAlProcesar,=ArtTarjetaServicio,
+ArtTarjetaServicio,=FacturaGlobalPeriodo,
+FacturaGlobalPeriodo,=ReservarSolicitudesFacory,
+ReservarSolicitudesFacory,=ToleranciaAjuste,
+ToleranciaAjuste,=WMSReacomodoSurtido,
+WMSReacomodoSurtido,=HorasExtrasCompletas,
+HorasExtrasCompletas,=HerramientaHorasExtra,
+HerramientaHorasExtra,=ProyEnviarTareaGestion,
+ProyEnviarTareaGestion,=ProyTareaEstado,
+ProyTareaEstado,=WMSPorcentajeMinimoADom,
+WMSPorcentajeMinimoADom,=WMSPCKUbicacion,
+WMSPCKUbicacion,=PosicionArticulo,
+PosicionArticulo,=DesentarimarPedido,
+DesentarimarPedido,=AsistDescansolaborado,
+AsistDescansolaborado,=AsistDiaFestivolaborado,
+AsistDiaFestivolaborado,=AsistDomingoLaborado
+AsistDomingoLaborado=(Fin)

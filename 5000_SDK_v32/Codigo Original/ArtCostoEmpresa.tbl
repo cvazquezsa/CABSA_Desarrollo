@@ -1,0 +1,103 @@
+[Tabla]
+Icono=0
+Clave=ArtCostoEmpresa
+Archivo=ArtCostoEmpresa
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+ControlEmpresas=S
+CampoEmpresa=Empresa
+Nombre=Costos
+Singular=Costo
+LlavePrimaria=(Lista)
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[CostoPromedio]
+Clave=CostoPromedio
+Nombre=Último Costo Promedio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[UltimoCosto]
+Clave=UltimoCosto
+Nombre=Último Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[UltimoCostoSinGastos]
+Clave=UltimoCostoSinGastos
+Nombre=Último Costo (Sin Gastos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[CostoEstandar]
+Clave=CostoEstandar
+Nombre=Costo Estandar
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[CostoReposicion]
+Clave=CostoReposicion
+Nombre=Costo Reposición
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=CostoPromedio
+CostoPromedio=UltimoCosto
+UltimoCosto=UltimoCostoSinGastos
+UltimoCostoSinGastos=CostoEstandar
+CostoEstandar=CostoReposicion
+CostoReposicion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Empresa,
+  Empresa,=  Articulo,
+  Articulo,=  CostoPromedio,
+  CostoPromedio,=  UltimoCosto,
+  UltimoCosto,=  UltimoCostoSinGastos,
+  UltimoCostoSinGastos,=  CostoEstandar,
+  CostoEstandar,=  CostoReposicion
+  CostoReposicion=FROM
+FROM=  ArtCostoEmpresa
+  ArtCostoEmpresa=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=(Fin)

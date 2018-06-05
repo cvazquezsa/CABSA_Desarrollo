@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=DineroLiberarCH
+Nombre=Liberar Solicitudes
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=387
+PosicionInicialArriba=310
+PosicionInicialAltura=165
+PosicionInicialAncho=250
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Cheque]
+Nombre=Cheque
+Boton=0
+NombreDesplegar=Generar &Cheques
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ProcesarSQL(<T>spLiberarDinero :tEmp, :tUsu, :nSuc, :tCta, :tMov<T>, Empresa, Usuario, Sucursal, Info.CtaDinero, ConfigMov.BancoCheque)
+
+[Acciones.ChequeElectronico]
+Nombre=ChequeElectronico
+Boton=0
+NombreDesplegar=Generar Cheques &Electrónicos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ProcesarSQL(<T>spLiberarDinero :tEmp, :tUsu, :nSuc, :tCta, :tMov<T>, Empresa, Usuario, Sucursal, Info.CtaDinero, ConfigMov.BancoChequeElectronico)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cheque
+Cheque=ChequeElectronico
+ChequeElectronico=(Fin)

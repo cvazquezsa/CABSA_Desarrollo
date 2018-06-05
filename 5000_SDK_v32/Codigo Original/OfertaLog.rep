@@ -1,0 +1,1681 @@
+
+[Reporte]
+Clave=OfertaLog
+Nombre=OfertaLog
+Icono=0
+Vista=OfertaLog
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=1
+AnchoPagina=29
+LargoPagina=21.6
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=Horizontal
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+PosicionInicialAlturaCliente=549
+PosicionInicialAncho=864
+
+Filtros=S
+TieneFiltroAbierto=S
+FiltroAbierto=OfertaLog.ID = {Info.ID}
+[Formato]
+ListaLineas=Título<BR>Inicio: OfertaLog.Articulo<BR>Inicio: OfertaLog.SubCuenta<BR>Inicio: OfertaLog.Tipo<BR>EncabezadoDescuento<BR>DetalleDescuento<BR>EncabezadoPuntos<BR>DetallePuntos<BR>EncabezadoPrecioCosto<BR>DetallePrecioCosto<BR>Encabezado Obsequios<BR>DetalleObsequios<BR>DescripcionPrecioCosto<BR>Fin: OfertaLog.Tipo<BR>Fin: OfertaLog.SubCuenta<BR>Fin: OfertaLog.Articulo<BR>Pie
+
+VentanaIzquierda=20
+VentanaArriba=7
+VentanaAltura=780
+VentanaAncho=1320
+PanelArriba=120
+PanelBotones=148
+[Linea1]
+Clave=Título
+Objetos=3
+Seccion=Título
+AltoEnCm=1.16
+Renglones=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[Linea2]
+Clave=Inicio: OfertaLog.Articulo
+Objetos=9
+Seccion=Inicio Grupo
+Grupo=OfertaLog.Articulo
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Plata
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeArriba=S
+FondoEstilo=0
+EstiloArriba=1
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=27
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Movimiento<T>
+
+
+
+
+
+
+BordeArriba=S
+FondoEstilo=0
+EstiloArriba=1
+[Linea3]
+Clave=Inicio: OfertaLog.SubCuenta
+Objetos=0
+Seccion=Inicio Grupo
+Grupo=OfertaLog.SubCuenta
+AltoEnCm=0.2
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Marco=N
+EstiloMarco=0
+BordeAbajo=N
+EstiloAbajo=0
+[Linea4]
+Clave=Inicio: OfertaLog.Tipo
+Objetos=9
+Seccion=Inicio Grupo
+AltoEnCm=0.6
+Renglones=2
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=OfertaLog.Tipo
+FondoEstilo=0
+BordeArriba=N
+EstiloArriba=0
+Visible=
+BordeAbajo=S
+EstiloAbajo=1
+[Linea5]
+Clave=EncabezadoDescuento
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=3
+Marco=N
+EstiloMarco=3
+
+BordeAbajo=N
+EstiloAbajo=0
+Visible=(OfertaLog.Descuento <> 0) O (OfertaLog.DescuentoImporte <> 0.00)
+
+[A4]
+Celda=A4
+Alineacion=Centrado
+AnchoEnCm=3.5
+ExpresionMultiple=N
+AnchoTexto=27
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Mov + <T> <T> + OfertaLog.MovID
+
+
+
+FondoEstilo=0
+BordeArriba=N
+EstiloArriba=0
+BordeAbajo=S
+EstiloAbajo=1
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=18
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Tipo<T>
+
+BordeArriba=S
+FondoEstilo=0
+EstiloArriba=1
+[C2]
+Celda=C2
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=23
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Forma<T>
+
+BordeArriba=S
+FondoEstilo=0
+EstiloArriba=1
+[D2]
+Celda=D2
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=13
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Usar<T>
+
+BordeArriba=S
+FondoEstilo=0
+
+
+EstiloArriba=1
+
+
+
+
+[E2]
+Celda=E2
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeArriba=S
+FondoEstilo=0
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Artículo<T>
+
+EstiloArriba=1
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Subrayado]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descuentos: <T>
+
+Marco=N
+EstiloMarco=3
+BordeAbajo=N
+EstiloAbajo=0
+[Linea6]
+Clave=DetalleDescuento
+Objetos=3
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=
+EstiloMarco=3
+Visible=(OfertaLog.Descuento <> 0) O (OfertaLog.DescuentoImporte <> 0.00)
+[B5]
+Celda=B5
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descuento<T>
+
+BordeAbajo=N
+EstiloAbajo=0
+[C5]
+Celda=C5
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descuento Importe<T>
+
+
+BordeAbajo=N
+EstiloAbajo=0
+[F4]
+Celda=F4
+Alineacion=Centrado
+AnchoEnCm=1.29
+AnchoTexto=13
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR>  OfertaLog.Forma = <T>OBSEQUIO COMBINADO<T><BR>Entonces<BR>    <T><T>    <BR>Sino<BR>  OfertaLog.SubCuenta<BR>Fin
+
+BordeAbajo=S
+EstiloAbajo=1
+[G4]
+Celda=G4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR>  OfertaLog.Forma = <T>OBSEQUIO COMBINADO<T><BR>Entonces<BR>  <T><T><BR>Sino<BR>  OfertaLog.Unidad<BR>Fin
+
+BordeAbajo=S
+EstiloAbajo=1
+[H4]
+Celda=H4
+Alineacion=Centrado
+AnchoEnCm=1.5
+AnchoTexto=10
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Prioridad
+
+BordeAbajo=S
+EstiloAbajo=1
+[I4]
+Celda=I4
+Alineacion=Centrado
+AnchoEnCm=1.3
+AnchoTexto=8
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.RID
+
+BordeAbajo=S
+EstiloAbajo=1
+[J4]
+Celda=J4
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cantidad Obsequio<T>
+
+
+[F5]
+Celda=F5
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Puntos
+
+[G5]
+Celda=G5
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.PuntosPorcentaje
+
+[H5]
+Celda=H5
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Comision
+
+[I5]
+Celda=I5
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.ComisionPorcentaje
+
+[J5]
+Celda=J5
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.CantidadObsequio
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Subrayado]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Puntos: <T>
+
+
+
+Marco=N
+[Linea7]
+Clave=EncabezadoPuntos
+Objetos=3
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=2
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Marco=N
+EstiloMarco=3
+
+
+Visible=(OfertaLog.Puntos <> 0) O (OfertaLog.PuntosPorcentaje <> 0)
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+EstiloMarco=3
+[B6]
+Celda=B6
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=NumEnTexto( OfertaLog.Descuento ) + <T> %<T>
+
+EstiloMarco=3
+AlturaVariable=S
+[B7]
+Celda=B7
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Puntos<T>
+
+
+
+[Linea8]
+Clave=DetallePuntos
+Objetos=3
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Visible=(OfertaLog.Puntos <> 0) O (OfertaLog.PuntosPorcentaje <> 0)
+[Linea9]
+Clave=EncabezadoPrecioCosto
+Objetos=2
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Visible=(OfertaLog.Precio <> 0.00)
+[Linea10]
+Clave=DetallePrecioCosto
+Objetos=2
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Visible=(OfertaLog.Precio <> 0.00)
+[Linea11]
+Clave=Encabezado Obsequios
+Objetos=5
+Seccion=Detalle
+AltoEnCm=0.58
+Renglones=2
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeAbajo=N
+Visible=(OfertaLog.ArticuloObsequio <> NULL) y (OfertaLog.CantidadObsequio <> 0) y (OfertaLog.UnidadObsequio <> NULL)
+[Linea12]
+Clave=DetalleObsequios
+Objetos=6
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+EstiloMarco=3
+Grupo=
+BordeAbajo=N
+Visible=(OfertaLog.ArticuloObsequio <> NULL) y (OfertaLog.CantidadObsequio <> 0) y (OfertaLog.UnidadObsequio <> NULL)
+[C6]
+Celda=C6
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR>  OfertaLog.DescuentoImporte <> 0.00<BR>Entonces<BR>  <T>$ <T> + OfertaLog.DescuentoImporte<BR>Sino<BR>   <T>$ 0<T><BR>Fin
+
+[C7]
+Celda=C7
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Puntos porcentaje<T>
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[B8]
+Celda=B8
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Puntos
+
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Subrayado]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=<T>Precios: <T>
+[B9]
+Celda=B9
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Precio<T>
+
+
+[A10]
+Celda=A10
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[B10]
+Celda=B10
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>$ <T>+OfertaLog.Precio
+
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Subrayado]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeAbajo=N
+Expresion=<T>Obsequios: <T>
+[B11]
+Celda=B11
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Artículo Obsequio<T>
+
+BordeAbajo=N
+[C11]
+Celda=C11
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cantidad Obsequio<T>
+
+BordeAbajo=N
+
+[Linea13]
+Clave=DescripcionPrecioCosto
+Objetos=2
+Seccion=Detalle
+AltoEnCm=0.6
+Renglones=1
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+BordeAbajo=S
+Grupo=
+
+Visible=(OfertaLog.Descripcion <> {Nulo}) y<BR>(OfertaLog.Descripcion <> <T><T>) y<BR>(OfertaLog.Descripcion <> <T> <T>)
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=15
+AnchoTexto=81
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 15, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Log de Ofertas<T>
+
+[C1]
+Celda=C1
+Alineacion=Centrado
+AnchoEnCm=6.61
+AnchoTexto=31
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Info.Mov + <T>  <T> + Info.MovID
+
+[F2]
+Celda=F2
+Alineacion=Centrado
+AnchoEnCm=1.29
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Opción<T>
+
+
+[E5]
+Celda=E5
+Alineacion=Izquierda
+AnchoEnCm=13.39
+AnchoTexto=72
+BordeAbajo=S
+EstiloMarco=3
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[G2]
+Celda=G2
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=9
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Unidad<T>
+
+[H2]
+Celda=H2
+Alineacion=Centrado
+AnchoEnCm=1.5
+AnchoTexto=10
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Prioridad<T>
+
+[I2]
+Celda=I2
+Alineacion=Centrado
+AnchoEnCm=1.3
+AnchoTexto=8
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Plata
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Orden<T>
+
+
+
+
+[D11]
+Celda=D11
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Unidad Obsequio<T>
+
+BordeAbajo=N
+
+[A16]
+Celda=A16
+Alineacion=Derecha
+AnchoEnCm=25.89
+AnchoTexto=139
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Pagina <T>+ ReportePaginaNumero
+
+
+[D8]
+Celda=D8
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Precio Base Costo<T>
+
+[E8]
+Celda=E8
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Precio Base Lista<T>
+
+[D9]
+Celda=D9
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.PrecioBaseCosto
+
+[E9]
+Celda=E9
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.PrecioBaseLista
+
+
+
+[Linea14]
+Clave=Fin: OfertaLog.Tipo
+Objetos=0
+Seccion=Fin Grupo
+AltoEnCm=0.1
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=
+[B12]
+Celda=B12
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.ArticuloObsequio
+
+
+
+
+
+
+
+[E11]
+Celda=E11
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Opción Obsequio<T>
+
+
+[C12]
+Celda=C12
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+BordeAbajo=N
+Expresion=OfertaLog.CantidadObsequio
+[Linea15]
+Clave=Fin: OfertaLog.SubCuenta
+Objetos=1
+Seccion=Fin Grupo
+AltoEnCm=0.18
+Renglones=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=OfertaLog.SubCuenta
+
+[Linea16]
+Clave=Fin: OfertaLog.Articulo
+Objetos=0
+Seccion=Fin Grupo
+AltoEnCm=0.1
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Grupo=OfertaLog.Articulo
+[C8]
+Celda=C8
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=NumEnTexto( OfertaLog.PuntosPorcentaje ) + <T> %<T>
+
+[D12]
+Celda=D12
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=5
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.UnidadObsequio
+
+[E12]
+Celda=E12
+Alineacion=Centrado
+AnchoEnCm=3
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.SubCuentaObsequio
+
+[F12]
+Celda=F12
+Alineacion=Izquierda
+AnchoEnCm=13.39
+AnchoTexto=72
+BordeAbajo=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Subrayado]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Descripción: <T>
+
+BordeAbajo=N
+[B13]
+Celda=B13
+Alineacion=Izquierda
+AnchoEnCm=23
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Descripcion
+
+BordeAbajo=N
+
+[B4]
+Celda=B4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=18
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Tipo
+
+BordeAbajo=S
+EstiloAbajo=1
+[C4]
+Celda=C4
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=23
+EstiloMarco=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Forma
+
+BordeAbajo=S
+EstiloAbajo=1
+
+
+
+
+
+[Linea17]
+Clave=Pie
+Objetos=1
+Seccion=Pie Página
+AltoEnCm=0.6
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+
+[D4]
+Celda=D4
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=12
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Usar
+
+[E4]
+Celda=E4
+Alineacion=Centrado
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Si<BR>   OfertaLog.Forma = <T>OBSEQUIO COMBINADO<T><BR>Entonces<BR>   <T><T><BR>Sino<BR>   OfertaLog.Articulo<BR>Fin
+
+[A17]
+Celda=A17
+Alineacion=Derecha
+AnchoEnCm=25.89
+AnchoTexto=139
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Pagina <T>+ ReportePaginaNumero
+
+
+[E6]
+Celda=E6
+Alineacion=Izquierda
+AnchoEnCm=1
+AnchoTexto=16
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial Unicode MS, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>%<T>
+
+[C10]
+Celda=C10
+Alineacion=Centrado
+AnchoEnCm=4
+AnchoTexto=5
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=OfertaLog.Precio
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=26.5
+AnchoTexto=16
+BordeAbajo=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)

@@ -1,0 +1,49 @@
+[Tabla]
+Icono=0
+Clave=aroRiesgoFactor
+Archivo=aroRiesgoFactor
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Factores Riesgo
+Singular=Factor Riesgo
+LlavePrimaria=Riesgo<BR>FactorRiesgo
+ListaRelaciones=aroFactor
+SQL=SELECT<BR>  Riesgo,<BR>  FactorRiesgo<BR><BR>FROM<BR>  aroRiesgoFactor
+
+[Relaciones.aroFactor]
+TipoRelacion=Forzosa
+LlaveLocal=FactorRiesgo
+Clave=aroFactor
+TablaRemota=aroFactor
+LlaveRemota=FactorRiesgo
+
+[FactorRiesgo]
+Clave=FactorRiesgo
+Nombre=Factor Riesgo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=aroFactorLista
+ValidacionUsaTabla=S
+ValidacionTablas=aroFactor
+AyudaVista=aroFactor
+AyudaCampo=aroFactor.FactorRiesgo
+AyudaMultiple=S
+
+[Riesgo]
+Clave=Riesgo
+Nombre=Riesgo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Tabla.ListaCampos]
+(Inicio)=Riesgo
+Riesgo=FactorRiesgo
+FactorRiesgo=(Fin)

@@ -1,0 +1,24 @@
+[Tabla]
+Icono=0
+Clave=AlmTipo
+Archivo=AlmTipo
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Tipo
+Nombre=Tipos
+Singular=Tipo
+LlavePrimaria=Tipo
+SQL=SELECT<BR>  Tipo<BR><BR>FROM<BR>  AlmTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

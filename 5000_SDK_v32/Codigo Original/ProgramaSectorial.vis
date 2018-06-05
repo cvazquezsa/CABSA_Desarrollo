@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=ProgramaSectorial
+Nombre=Programas Sectoriales
+Modulos=(Todos)
+Singular=Programa Sectorial
+ListaTablas=ProgramaSectorial
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ProgramaSectorial
+UsarJOIN=S
+SQL=SELECT<BR>  ProgramaSectorial.ProgramaSectorial,<BR>  ProgramaSectorial.Descripcion<BR><BR>FROM<BR>  ProgramaSectorial
+
+[ProgramaSectorial.ProgramaSectorial]
+Clave=ProgramaSectorial.ProgramaSectorial
+LigaTabla=ProgramaSectorial
+LigaCampo=ProgramaSectorial
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=ProgramaSectorial
+
+[ProgramaSectorial.Descripcion]
+Clave=ProgramaSectorial.Descripcion
+LigaTabla=ProgramaSectorial
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=255
+ClaveBDE=Descripcion
+
+[Vista.ListaCampos]
+(Inicio)=ProgramaSectorial.ProgramaSectorial
+ProgramaSectorial.ProgramaSectorial=ProgramaSectorial.Descripcion
+ProgramaSectorial.Descripcion=(Fin)

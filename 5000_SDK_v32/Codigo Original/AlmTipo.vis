@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=AlmTipo
+Nombre=Tipos
+Modulos=INV
+Singular=Categoría
+ListaTablas=AlmTipo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=AlmTipo.Tipo
+TablaPrincipal=AlmTipo
+UsarJOIN=S
+SQL=SELECT<BR>  AlmTipo.Tipo<BR><BR>FROM<BR>  AlmTipo
+
+[AlmTipo.Tipo]
+Clave=AlmTipo.Tipo
+LigaTabla=AlmTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

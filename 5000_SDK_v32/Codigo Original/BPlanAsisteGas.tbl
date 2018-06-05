@@ -1,0 +1,143 @@
+[Tabla]
+Icono=0
+Clave=BPlanAsisteGas
+Nombre=BPlanAsisteGas
+Archivo=BPlanAsisteGas
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+LlavePrimaria=Estacion
+ControlEjercicios=S
+CampoEjercicio=Ejercicio
+SQL=SELECT<BR>  Estacion,<BR>  Ejercicio,<BR>  Clasificacion,<BR>  SubClasificacion,<BR>  Inc,<BR>  Inc2,<BR>  Inc3,<BR>  Precio,<BR>  Redondeo,<BR>  Usar<BR><BR>FROM<BR>  BPlanAsisteGas
+
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Años
+OpcionesValidar=S
+OpcionesLlave=Opción
+
+[Clasificacion]
+Clave=Clasificacion
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,<T>GAS<T>)
+TipoDatos=Texto
+
+[Inc]
+Clave=Inc
+Nombre=% Moderado
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Inc2]
+Clave=Inc2
+Nombre=% Optimista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Inc3]
+Clave=Inc3
+Nombre=% Pesimista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Precio]
+Clave=Precio
+Nombre=Precio a Sugerir
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesValidar=S
+ListaOpciones=(Lista)
+
+[Redondeo]
+Clave=Redondeo
+Nombre=Redondeo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+AyudaEnCaptura=Calculadora
+
+[Usar]
+Clave=Usar
+Nombre=Método
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SubClasificacion]
+Clave=SubClasificacion
+Nombre=SubClasificacion
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,<T>GAS<T>, Clasificacion)
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Ejercicio
+Ejercicio=Clasificacion
+Clasificacion=SubClasificacion
+SubClasificacion=Inc
+Inc=Inc2
+Inc2=Inc3
+Inc3=Precio
+Precio=Redondeo
+Redondeo=Usar
+Usar=(Fin)
+
+[Precio.ListaOpciones]
+(Inicio)=Importe Promedio
+Importe Promedio=Del Último Mes
+Del Último Mes=(Fin)
+
+[Usar.ListaOpciones]
+(Inicio)=Moderado
+Moderado=Optimista
+Optimista=Pesimista
+Pesimista=(Fin)

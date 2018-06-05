@@ -1,0 +1,556 @@
+[Tabla]
+Icono=0
+Clave=Fiscal
+Archivo=Fiscal
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Fiscal
+Singular=Fiscal
+LlavePrimaria=ID
+ControlID=S
+ControlMov=S
+ControlMovID=S
+ControlEstatus=S
+ControlCambios=S
+ControlUsuarios=S
+ControlEmpresas=S
+CampoID=ID
+CampoMov=Mov
+CampoMovID=MovID
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+EstatusDefault=SINAFECTAR
+ListaRelaciones=(Lista)
+ControlSituacion=S
+CampoSituacion=Situacion
+ControlSituacionFecha=S
+CampoSituacionFecha=SituacionFecha
+ControlProyectos=S
+CampoProyecto=Proyecto
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalDestino=S
+CampoSucursalDestino=SucursalDestino
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+CampoSituacionUsuario=SituacionUsuario
+ControlSituacionUsuario=S
+CampoSituacionNota=SituacionNota
+ControlSituacionNota=S
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+TipoDatos=Numérico
+TamanoValidacion=10
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Tamano=5
+TamanoValidacion=5
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=&Movimiento
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=20
+Tamano=20
+TamanoValidacion=20
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Movimientos Forma
+OpcionesUnicamente=S
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+Requerido=S
+CondicionEdicion=Estatus=EstatusSinAfectar
+TipoDatos=Texto
+
+[MovID]
+Clave=MovID
+Nombre=Consecutivo
+TamanoValidacion=10
+CondicionEdicion=(ConfigModulo(<T>FIS<T>, <T>EditarConsec<T>)=<T>Si<T>) y (Estatus=EstatusSinAfectar) y Usuario.ModificarConsecutivos
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=&Fecha Emisión
+AyudaEnCaptura=Calendario sin Hora
+TipoDatos=FechaHora
+TamanoValidacion=15
+FormatoValidacion=dd/mmm/aaaa
+ValorPorOmision=FechaTrabajo
+Requerido=S
+CondicionEdicion=no Usuario.BloquearFechaEmision
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=Ultimo Cambio
+TipoDatos=FechaHora
+TamanoValidacion=15
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaMemEnBlanco=S
+AyudaRefrescar=S
+CondicionEdicion=(Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o Usuario.ModificarConceptos
+ValorRefrescar=ConceptoOmision(<T>FIS<T>, Mov)
+Formula=ListaConceptos(<T>FIS<T>, Mov)
+TipoDatos=Texto
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+AyudaEnCaptura=Vista
+Tamano=50
+TamanoValidacion=50
+ValorPorOmision=Usuario.DefProyecto
+AyudaMemTabla=Proy
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+CondicionEdicion=no Usuario.BloquearProyecto
+AyudaForma=ProyLista
+AyudaVista=Proy
+AyudaCampo=Proy.Proyecto
+AyudaMemAvanzada=S
+TipoDatos=Texto
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Proyecto FROM Proy WHERE Proyecto=:tProy AND Estatus=:tEstatus<T>, Proyecto, EstatusAlta)=Proyecto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+Tamano=10
+TamanoValidacion=10
+ValorPorOmision=Usuario.DefMoneda
+AyudaMemTabla=Mon
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=Mon
+Requerido=S
+AlCambiar=Asigna(TipoCambio, Caso ConfigModulo(<T>FIS<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Fiscal:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Fiscal:Mon.TipoCambioCompra<BR>Sino<BR>  Fiscal:Mon.TipoCambio<BR>Fin)
+CondicionEdicion=no Usuario.BloquearMoneda
+TipoDatos=Texto
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Tamano=10
+TamanoValidacion=10
+TipoDatos=Texto
+
+[Autorizacion]
+Clave=Autorizacion
+Nombre=Autorización
+Tamano=10
+TamanoValidacion=10
+TipoDatos=Texto
+
+[Referencia]
+Clave=Referencia
+Nombre=Referencia
+Tamano=50
+TamanoValidacion=50
+ValorRefrescar=Si(ConDatos(MovAplica), MovAplica+<T> <T>+MovAplicaID)
+CondicionEdicion=(Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias) o Usuario.ModificarReferenciasSiempre
+TipoDatos=Texto
+
+[Observaciones]
+Clave=Observaciones
+Nombre=&Observaciones
+AyudaEnCaptura=Vista
+Tamano=100
+TamanoValidacion=100
+AyudaForma=ObservacionLista
+AyudaVista=Observacion
+AyudaCampo=Observacion.Observacion
+AyudaBusquedaRapida=Asigna(Info.Modulo, <T>FIS<T>) Asigna(Info.Descripcion, <T>Comisiones y Destajos<T>)
+ConAyudaBusquedaRapida=S
+CondicionEdicion=(Estatus=EstatusSinAfectar) o Usuario.ModificarConceptos
+AyudaRefrescar=S
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Tamano=15
+TamanoValidacion=15
+TipoDatos=Texto
+
+[FechaConclusion]
+Clave=FechaConclusion
+Nombre=Fecha Conclusión
+TipoDatos=FechaHora
+TamanoValidacion=15
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+[DocFuente]
+Clave=DocFuente
+Nombre=DocFuente
+TipoDatos=Numérico
+Tamano=0
+TamanoValidacion=20
+
+[FechaCancelacion]
+Clave=FechaCancelacion
+Nombre=Fecha Cancelación
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=Caso ConfigModulo(<T>FIS<T>, <T>TipoCambio<T>)<BR>  Es <T>Venta<T> Entonces Fiscal:Mon.TipoCambioVenta<BR>  Es <T>Compra<T> Entonces Fiscal:Mon.TipoCambioCompra<BR>Sino<BR>  Fiscal:Mon.TipoCambio<BR>Fin
+
+[Relaciones.Mon]
+TipoRelacion=Forzosa
+LlaveLocal=Moneda
+Clave=Mon
+TablaRemota=Mon
+LlaveRemota=Moneda
+
+[OrigenTipo]
+Clave=OrigenTipo
+Nombre=Tipo Origen
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Origen]
+Clave=Origen
+Nombre=Origen
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[OrigenID]
+Clave=OrigenID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Poliza]
+Clave=Poliza
+Nombre=Poliza
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[PolizaID]
+Clave=PolizaID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaRegistro]
+Clave=FechaRegistro
+Nombre=Fecha Registro
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa h:nn am/pm
+
+[GenerarPoliza]
+Clave=GenerarPoliza
+Nombre=Generar Póliza
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[ContID]
+Clave=ContID
+Nombre=ContID
+Visible=S
+TamanoValidacion=15
+TipoDatos=Numérico
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalDestino]
+Clave=SucursalDestino
+Nombre=Sucursal Destino
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+UnicamenteLectura=S
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=Sucursal Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Usuario.UEN
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+
+[Relaciones.UEN]
+TipoRelacion=Opcional
+LlaveLocal=UEN
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+
+[SituacionUsuario]
+Clave=SituacionUsuario
+Nombre=Usuario seguimiento
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[SituacionNota]
+Clave=SituacionNota
+Nombre=Nota
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Relaciones.FiscalD]
+TipoRelacion=Opcional
+LlaveLocal=ID
+Clave=FiscalD
+TablaRemota=FiscalD
+LlaveRemota=ID
+
+[Acreedor]
+Clave=Acreedor
+Nombre=Acreedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Acreedor
+CondicionDespliege=MovTipo(<T>FIS<T>, Mov) en (FIS.D, FIS.C)
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Condicion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=MovTipoEn(<T>FIS<T>, Mov, (FIS.D, FIS.C))
+ConRefrescar=S
+ListaRefrescar=Vencimiento
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Vencimiento
+TipoDatos=Texto
+
+[Relaciones.Acreedor]
+TipoRelacion=Opcional
+LlaveLocal=Acreedor
+Clave=Acreedor
+TablaRemota=Acreedor
+LlaveRemota=Proveedor
+
+[Vencimiento]
+Clave=Vencimiento
+Nombre=Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ValorPorOmision=Hoy
+ValorRefrescar=Si<BR>  MovTipo(<T>FIS<T>, Mov) en (FIS.D, FIS.C)<BR>Entonces<BR>  SQL(<T>spVerVencimiento :tModulo, :Empresa, :tContacto, :tCondicion, :fFecha<T>, <T>CXP<T>, Empresa, Acreedor, Condicion, FechaEmision)<BR>Fin
+CondicionEdicion=((Condicion=<T>(Fecha)<T>) y (Estatus en (EstatusSinAfectar, EstatusPorConfirmar))) o ((Estatus=EstatusPendiente) y Usuario.ModificarVencimientos)
+
+
+
+[Mov.ListaRefrescar]
+(Inicio)=Concepto
+Concepto=RetencionPorcentaje
+RetencionPorcentaje=ImpuestosPorcentaje
+ImpuestosPorcentaje=(Fin)
+
+[Relaciones.EmpresaCfg]
+TipoRelacion=Forzosa
+LlaveLocal=Empresa
+Clave=EmpresaCfg
+TablaRemota=EmpresaCfg
+LlaveRemota=Empresa
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Empresa
+Empresa=Mov
+Mov=MovID
+MovID=FechaEmision
+FechaEmision=UltimoCambio
+UltimoCambio=Concepto
+Concepto=Proyecto
+Proyecto=Moneda
+Moneda=TipoCambio
+TipoCambio=Usuario
+Usuario=Autorizacion
+Autorizacion=Referencia
+Referencia=DocFuente
+DocFuente=Observaciones
+Observaciones=Estatus
+Estatus=Situacion
+Situacion=SituacionFecha
+SituacionFecha=SituacionUsuario
+SituacionUsuario=SituacionNota
+SituacionNota=OrigenTipo
+OrigenTipo=Origen
+Origen=OrigenID
+OrigenID=Poliza
+Poliza=PolizaID
+PolizaID=GenerarPoliza
+GenerarPoliza=ContID
+ContID=Ejercicio
+Ejercicio=Periodo
+Periodo=FechaRegistro
+FechaRegistro=FechaConclusion
+FechaConclusion=FechaCancelacion
+FechaCancelacion=Sucursal
+Sucursal=SucursalDestino
+SucursalDestino=SucursalOrigen
+SucursalOrigen=UEN
+UEN=Acreedor
+Acreedor=Condicion
+Condicion=Vencimiento
+Vencimiento=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  Empresa,
+  Empresa,=  Mov,
+  Mov,=  MovID,
+  MovID,=  FechaEmision,
+  FechaEmision,=  UltimoCambio,
+  UltimoCambio,=  Concepto,
+  Concepto,=  Proyecto,
+  Proyecto,=  UEN,
+  UEN,=  Moneda,
+  Moneda,=  TipoCambio,
+  TipoCambio,=  Usuario,
+  Usuario,=  Autorizacion,
+  Autorizacion,=  Referencia,
+  Referencia,=  DocFuente,
+  DocFuente,=  Observaciones,
+  Observaciones,=  Estatus,
+  Estatus,=  Situacion,
+  Situacion,=  SituacionFecha,
+  SituacionFecha,=  SituacionUsuario,
+  SituacionUsuario,=  SituacionNota,
+  SituacionNota,=  OrigenTipo,
+  OrigenTipo,=  Origen,
+  Origen,=  OrigenID,
+  OrigenID,=  Poliza,
+  Poliza,=  PolizaID,
+  PolizaID,=  GenerarPoliza,
+  GenerarPoliza,=  ContID,
+  ContID,=  Ejercicio,
+  Ejercicio,=  Periodo,
+  Periodo,=  FechaRegistro,
+  FechaRegistro,=  FechaConclusion,
+  FechaConclusion,=  FechaCancelacion,
+  FechaCancelacion,=  Sucursal,
+  Sucursal,=  SucursalOrigen,
+  SucursalOrigen,=  SucursalDestino,
+  SucursalDestino,=  Acreedor,
+  Acreedor,=  Condicion,
+  Condicion,=  Vencimiento
+  Vencimiento=FROM
+FROM=  Fiscal
+  Fiscal=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Mon
+Mon=UEN
+UEN=FiscalD
+FiscalD=Acreedor
+Acreedor=EmpresaCfg
+EmpresaCfg=(Fin)

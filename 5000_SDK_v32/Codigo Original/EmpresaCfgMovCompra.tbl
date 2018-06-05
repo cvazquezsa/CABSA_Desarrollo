@@ -1,0 +1,72 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovCompra
+Nombre=EmpresaCfgMovCompra
+Archivo=EmpresaCfgMovCompra
+Modulos=(Todos)
+Singular=EmpresaCfgMovCompra
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[COMSEntradaConsignacion]
+Clave=COMSEntradaConsignacion
+Nombre=Entrada Consignación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=COMS
+
+
+
+
+
+[EntradaMaquila]
+Clave=EntradaMaquila
+Nombre=Entrada Maquila
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesValidar=S
+OpcionesModulo=COMS
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=COMSEntradaConsignacion
+COMSEntradaConsignacion=EntradaMaquila
+EntradaMaquila=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=COMSEntradaConsignacion,
+COMSEntradaConsignacion,=EntradaMaquila
+EntradaMaquila=FROM EmpresaCfgMovCompra
+FROM EmpresaCfgMovCompra=(Fin)

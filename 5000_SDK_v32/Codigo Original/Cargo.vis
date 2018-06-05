@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=Cargo
+Nombre=Cargos
+Modulos=(Todos)
+Singular=Cargo
+ListaTablas=Cargo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=Cargo.Cargo
+TablaPrincipal=Cargo
+UsarJOIN=S
+SQL=SELECT<BR>  Cargo.Cargo<BR><BR>FROM<BR>  Cargo
+
+[Cargo.Cargo]
+Clave=Cargo.Cargo
+LigaTabla=Cargo
+LigaCampo=Cargo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Cargo

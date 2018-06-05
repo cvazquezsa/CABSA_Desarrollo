@@ -1,0 +1,925 @@
+[Tabla]
+Icono=0
+Clave=GastoPendiente
+Archivo=GastoPendiente
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Gastos
+Singular=Gasto
+LlavePrimaria=ID
+CampoID=ID
+CampoMov=Mov
+CampoMovID=MovID
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+CampoPeriodo=Periodo
+CampoEjercicio=Ejercicio
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+CampoSituacion=Situacion
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalDestino=S
+CampoSucursalDestino=SucursalDestino
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Mov
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[MovID]
+Clave=MovID
+Nombre=MovID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=Fecha Emisión
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=Ultimo Cambio
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Autorizacion]
+Clave=Autorizacion
+Nombre=Autorizacion
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[DocFuente]
+Clave=DocFuente
+Nombre=DocFuente
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Acreedor]
+Clave=Acreedor
+Nombre=Acreedor
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Clase]
+Clave=Clase
+Nombre=Clasificación
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[SubClase]
+Clave=SubClase
+Nombre=SubClasificación
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[CtaDinero]
+Clave=CtaDinero
+Nombre=Cuenta Dinero
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Comprobar
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Vencimiento]
+Clave=Vencimiento
+Nombre=&Vencimiento
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Impuestos]
+Clave=Impuestos
+Nombre=Impuestos
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Saldo]
+Clave=Saldo
+Nombre=Saldo
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Anticipo]
+Clave=Anticipo
+Nombre=Anticipo
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[MovAplica]
+Clave=MovAplica
+Nombre=Antecendente
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[MovAplicaID]
+Clave=MovAplicaID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[OrigenTipo]
+Clave=OrigenTipo
+Nombre=OrigenTipo
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Origen]
+Clave=Origen
+Nombre=Origen
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[OrigenID]
+Clave=OrigenID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[Poliza]
+Clave=Poliza
+Nombre=Poliza
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[PolizaID]
+Clave=PolizaID
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[GenerarPoliza]
+Clave=GenerarPoliza
+Nombre=Generar Póliza
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaRegistro]
+Clave=FechaRegistro
+Nombre=Fecha Registro
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[FechaConclusion]
+Clave=FechaConclusion
+Nombre=Fecha Conclusión
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[FechaCancelacion]
+Clave=FechaCancelacion
+Nombre=Fecha Cancelación
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Periodicidad]
+Clave=Periodicidad
+Nombre=Periodicidad
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[TieneRetencion]
+Clave=TieneRetencion
+Nombre=Tiene Retenciones
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Retencion]
+Clave=Retencion
+Nombre=Retenciones
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=SituacionFecha
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Multiple]
+Clave=Multiple
+Nombre=Multiple
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ContID]
+Clave=ContID
+Nombre=ContID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaRequerida]
+Clave=FechaRequerida
+Nombre=FechaRequerida
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[CXP]
+Clave=CXP
+Nombre=CXP
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[GenerarDinero]
+Clave=GenerarDinero
+Nombre=GenerarDinero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Dinero]
+Clave=Dinero
+Nombre=Dinero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[DineroID]
+Clave=DineroID
+Nombre=DineroID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[DineroCtaDinero]
+Clave=DineroCtaDinero
+Nombre=DineroCtaDinero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[AnexoModulo]
+Clave=AnexoModulo
+Nombre=AnexoModulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[AnexoID]
+Clave=AnexoID
+Nombre=AnexoID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[ProdSerieLote]
+Clave=ProdSerieLote
+Nombre=ProdSerieLote
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalDestino]
+Clave=SucursalDestino
+Nombre=Sucursal Destino
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=Sucursal Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[DineroConciliado]
+Clave=DineroConciliado
+Nombre=DineroConciliado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[DineroFechaConciliacion]
+Clave=DineroFechaConciliacion
+Nombre=DineroFechaConciliacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Mensaje]
+Clave=Mensaje
+Nombre=Mensaje
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Actividad]
+Clave=Actividad
+Nombre=Actividad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=100
+
+[IVAFiscal]
+Clave=IVAFiscal
+Nombre=IVAFiscal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[EspacioResultado]
+Clave=EspacioResultado
+Nombre=EspacioResultado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EstaImpreso]
+Clave=EstaImpreso
+Nombre=EstaImpreso
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[AF]
+Clave=AF
+Nombre=AF
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[AFArticulo]
+Clave=AFArticulo
+Nombre=AFArticulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[AFSerie]
+Clave=AFSerie
+Nombre=AFSerie
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Pagado]
+Clave=Pagado
+Nombre=Pagado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Comentarios]
+Clave=Comentarios
+Nombre=Comentarios
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50x3
+TipoDatos=Memo
+VerificarOrtografia=S
+
+[ConVigencia]
+Clave=ConVigencia
+Nombre=ConVigencia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[VigenciaDesde]
+Clave=VigenciaDesde
+Nombre=VigenciaDesde
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[VigenciaHasta]
+Clave=VigenciaHasta
+Nombre=VigenciaHasta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[ContratoTipo]
+Clave=ContratoTipo
+Nombre=ContratoTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[ContratoDescripcion]
+Clave=ContratoDescripcion
+Nombre=ContratoDescripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[ContratoSerie]
+Clave=ContratoSerie
+Nombre=ContratoSerie
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[ContratoValor]
+Clave=ContratoValor
+Nombre=ContratoValor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[ContratoSeguro]
+Clave=ContratoSeguro
+Nombre=ContratoSeguro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[ContratoResponsable]
+Clave=ContratoResponsable
+Nombre=ContratoResponsable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[ContratoValorMoneda]
+Clave=ContratoValorMoneda
+Nombre=ContratoValorMoneda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[ContratoVencimiento]
+Clave=ContratoVencimiento
+Nombre=ContratoVencimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Prioridad]
+Clave=Prioridad
+Nombre=Prioridad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[CostoPisoD]
+Clave=CostoPisoD
+Nombre=CostoPisoD
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[CostoPisoA]
+Clave=CostoPisoA
+Nombre=CostoPisoA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[IEPSFiscal]
+Clave=IEPSFiscal
+Nombre=IEPSFiscal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Empresa
+Empresa=Mov
+Mov=MovID
+MovID=FechaEmision
+FechaEmision=UltimoCambio
+UltimoCambio=Proyecto
+Proyecto=Moneda
+Moneda=TipoCambio
+TipoCambio=Usuario
+Usuario=Autorizacion
+Autorizacion=DocFuente
+DocFuente=Observaciones
+Observaciones=Estatus
+Estatus=Situacion
+Situacion=SituacionFecha
+SituacionFecha=Acreedor
+Acreedor=Clase
+Clase=SubClase
+SubClase=CtaDinero
+CtaDinero=FormaPago
+FormaPago=Condicion
+Condicion=Vencimiento
+Vencimiento=Importe
+Importe=Retencion
+Retencion=Impuestos
+Impuestos=Saldo
+Saldo=Anticipo
+Anticipo=TieneRetencion
+TieneRetencion=MovAplica
+MovAplica=MovAplicaID
+MovAplicaID=OrigenTipo
+OrigenTipo=Origen
+Origen=OrigenID
+OrigenID=Poliza
+Poliza=PolizaID
+PolizaID=GenerarPoliza
+GenerarPoliza=Ejercicio
+Ejercicio=Periodo
+Periodo=FechaRegistro
+FechaRegistro=FechaConclusion
+FechaConclusion=FechaCancelacion
+FechaCancelacion=Periodicidad
+Periodicidad=Multiple
+Multiple=ContID
+ContID=FechaRequerida
+FechaRequerida=CXP
+CXP=GenerarDinero
+GenerarDinero=Dinero
+Dinero=DineroID
+DineroID=DineroCtaDinero
+DineroCtaDinero=AnexoModulo
+AnexoModulo=AnexoID
+AnexoID=ProdSerieLote
+ProdSerieLote=Sucursal
+Sucursal=SucursalDestino
+SucursalDestino=SucursalOrigen
+SucursalOrigen=UEN
+UEN=DineroConciliado
+DineroConciliado=DineroFechaConciliacion
+DineroFechaConciliacion=Mensaje
+Mensaje=Actividad
+Actividad=IVAFiscal
+IVAFiscal=IEPSFiscal
+IEPSFiscal=EspacioResultado
+EspacioResultado=EstaImpreso
+EstaImpreso=AF
+AF=AFArticulo
+AFArticulo=AFSerie
+AFSerie=Pagado
+Pagado=Comentarios
+Comentarios=ConVigencia
+ConVigencia=VigenciaDesde
+VigenciaDesde=VigenciaHasta
+VigenciaHasta=ContratoTipo
+ContratoTipo=ContratoDescripcion
+ContratoDescripcion=ContratoSerie
+ContratoSerie=ContratoValor
+ContratoValor=ContratoSeguro
+ContratoSeguro=ContratoResponsable
+ContratoResponsable=ContratoValorMoneda
+ContratoValorMoneda=ContratoVencimiento
+ContratoVencimiento=Prioridad
+Prioridad=CostoPisoD
+CostoPisoD=CostoPisoA
+CostoPisoA=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  ID,
+  ID,=  Empresa,
+  Empresa,=  Mov,
+  Mov,=  MovID,
+  MovID,=  FechaEmision,
+  FechaEmision,=  UltimoCambio,
+  UltimoCambio,=  Proyecto,
+  Proyecto,=  UEN,
+  UEN,=  Moneda,
+  Moneda,=  TipoCambio,
+  TipoCambio,=  Usuario,
+  Usuario,=  Autorizacion,
+  Autorizacion,=  DocFuente,
+  DocFuente,=  Observaciones,
+  Observaciones,=  Estatus,
+  Estatus,=  Situacion,
+  Situacion,=  SituacionFecha,
+  SituacionFecha,=  Periodicidad,
+  Periodicidad,=  TieneRetencion,
+  TieneRetencion,=  Acreedor,
+  Acreedor,=  Clase,
+  Clase,=  Subclase,
+  Subclase,=  CtaDinero,
+  CtaDinero,=  FormaPago,
+  FormaPago,=  Condicion,
+  Condicion,=  Vencimiento,
+  Vencimiento,=  Importe,
+  Importe,=  Retencion,
+  Retencion,=  Impuestos,
+  Impuestos,=  Saldo,
+  Saldo,=  Anticipo,
+  Anticipo,=  MovAplica,
+  MovAplica,=  MovAplicaID,
+  MovAplicaID,=  Multiple,
+  Multiple,=  OrigenTipo,
+  OrigenTipo,=  Origen,
+  Origen,=  OrigenID,
+  OrigenID,=  Poliza,
+  Poliza,=  PolizaID,
+  PolizaID,=  GenerarPoliza,
+  GenerarPoliza,=  ContID,
+  ContID,=  Ejercicio,
+  Ejercicio,=  Periodo,
+  Periodo,=  FechaRegistro,
+  FechaRegistro,=  FechaConclusion,
+  FechaConclusion,=  FechaCancelacion,
+  FechaCancelacion,=  FechaRequerida,
+  FechaRequerida,=  CXP,
+  CXP,=  GenerarDinero,
+  GenerarDinero,=  Dinero,
+  Dinero,=  DineroID,
+  DineroID,=  DineroCtaDinero,
+  DineroCtaDinero,=  DineroConciliado,
+  DineroConciliado,=  DineroFechaConciliacion,
+  DineroFechaConciliacion,=  AnexoModulo,
+  AnexoModulo,=  AnexoID,
+  AnexoID,=  ProdSerieLote,
+  ProdSerieLote,=  Sucursal,
+  Sucursal,=  Mensaje,
+  Mensaje,=  Actividad,
+  Actividad,=  IVAFiscal,
+  IVAFiscal,=  EspacioResultado,
+  EspacioResultado,=  EstaImpreso,
+  EstaImpreso,=  AF,
+  AF,=  AFArticulo,
+  AFArticulo,=  AFSerie,
+  AFSerie,=  Pagado,
+  Pagado,=  SucursalOrigen,
+  SucursalOrigen,=  SucursalDestino,
+  SucursalDestino,=  Comentarios,
+  Comentarios,=  ConVigencia,
+  ConVigencia,=  VigenciaDesde,
+  VigenciaDesde,=  VigenciaHasta,
+  VigenciaHasta,=  ContratoTipo,
+  ContratoTipo,=  ContratoDescripcion,
+  ContratoDescripcion,=  ContratoSerie,
+  ContratoSerie,=  ContratoValor,
+  ContratoValor,=  ContratoSeguro,
+  ContratoSeguro,=  ContratoResponsable,
+  ContratoResponsable,=  ContratoValorMoneda,
+  ContratoValorMoneda,=  ContratoVencimiento,
+  ContratoVencimiento,=  Prioridad,
+  Prioridad,=  CostoPisoD,
+  CostoPisoD,=  CostoPisoA,
+  CostoPisoA,=  IEPSFiscal
+  IEPSFiscal=FROM
+FROM=  GastoPendiente
+  GastoPendiente=(Fin)

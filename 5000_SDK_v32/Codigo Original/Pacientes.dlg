@@ -1,0 +1,29 @@
+[Dialogo]
+Clave=Pacientes
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Pacientes
+PosicionInicialIzquierda=386
+PosicionInicialArriba=326
+PosicionInicialAlturaCliente=80
+PosicionInicialAncho=252
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+
+[Acciones.Pacientes]
+Nombre=Pacientes
+Boton=0
+NombreDesplegar=&Pacientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Forma(<T>Paciente<T>)

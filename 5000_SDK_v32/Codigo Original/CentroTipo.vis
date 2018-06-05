@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=CentroTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=CentroTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=CentroTipo.Tipo
+TablaPrincipal=CentroTipo
+UsarJOIN=S
+SQL=SELECT<BR>  CentroTipo.Tipo<BR><BR>FROM<BR>  CentroTipo
+
+[CentroTipo.Tipo]
+Clave=CentroTipo.Tipo
+LigaTabla=CentroTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

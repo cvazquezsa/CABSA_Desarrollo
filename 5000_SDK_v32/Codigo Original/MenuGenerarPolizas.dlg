@@ -1,0 +1,46 @@
+[Dialogo]
+Clave=MenuGenerarPolizas
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=262
+PosicionInicialArriba=313
+PosicionInicialAltura=132
+PosicionInicialAncho=228
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.GenerarPolizas]
+Nombre=GenerarPolizas
+Boton=0
+NombreDesplegar=&Generar Pólizas...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Generar Polizas
+Activo=S
+Visible=S
+
+[Acciones.MonitorContable]
+Nombre=MonitorContable
+Boton=0
+NombreDesplegar=&Monitor
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MonitorContable
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=GenerarPolizas
+GenerarPolizas=MonitorContable
+MonitorContable=(Fin)

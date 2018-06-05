@@ -1,0 +1,112 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgPuntosEnVales
+Archivo=EmpresaCfgPuntosEnVales
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Puntos en Vales
+Singular=Puntos en Vales
+LlavePrimaria=Empresa
+CampoSugerido=Consecutivo
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  ValesMov,<BR>  ValeTipo,<BR>  Duracion,<BR>  DuracionUnidad,<BR>  Consecutivo<BR><BR>FROM<BR>  EmpresaCfgPuntosEnVales
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+
+[ValesMov]
+Clave=ValesMov
+Nombre=Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VALE
+
+[ValeTipo]
+Clave=ValeTipo
+Nombre=Tipo Vale
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ValeTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Duracion]
+Clave=Duracion
+Nombre=Duración
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=13
+ListaOpciones=(Lista)
+
+[DuracionUnidad]
+Clave=DuracionUnidad
+Nombre=Unidad
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+[Consecutivo]
+Clave=Consecutivo
+Nombre=Consecutivo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Consecutivo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=ValesMov
+ValesMov=ValeTipo
+ValeTipo=Duracion
+Duracion=DuracionUnidad
+DuracionUnidad=Consecutivo
+Consecutivo=(Fin)
+
+[Duracion.ListaOpciones]
+(Inicio)=Este
+Este=1
+1=2
+2=3
+3=4
+4=5
+5=6
+6=7
+7=8
+8=9
+9=10
+10=11
+11=12
+12=(Fin)
+
+[DuracionUnidad.ListaOpciones]
+(Inicio)=Dia
+Dia=Semana
+Semana=Mes
+Mes=Año
+Año=(Fin)

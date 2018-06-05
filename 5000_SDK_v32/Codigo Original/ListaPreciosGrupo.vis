@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ListaPreciosGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=ListaPreciosGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ListaPreciosGrupo.Grupo
+TablaPrincipal=ListaPreciosGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  ListaPreciosGrupo.Grupo<BR><BR>FROM<BR>  ListaPreciosGrupo
+
+[ListaPreciosGrupo.Grupo]
+Clave=ListaPreciosGrupo.Grupo
+LigaTabla=ListaPreciosGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=CuboProveedor
+Nombre=<T>Cubos del Proveedor<T>
+Icono=81
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=381
+PosicionInicialArriba=298
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=262
+
+[Acciones.Compras]
+Nombre=Compras
+Boton=0
+NombreDesplegar=Cubo C&ompras
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cubo(<T>COMS<T>, <T>Proveedor<T>, Info.Proveedor, Info.Nombre)
+
+[Acciones.Cxp]
+Nombre=Cxp
+Boton=0
+NombreDesplegar=Cubo Cuentas por &Pagar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>CXP<T>, <T>Proveedor<T>, Info.Proveedor, Info.Nombre)
+Activo=S
+Visible=S
+
+[Acciones.Gastos]
+Nombre=Gastos
+Boton=0
+NombreDesplegar=Cubo &Gastos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>GAS<T>, <T>Acreedor<T>, Info.Proveedor, Info.Nombre)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Compras
+Compras=Cxp
+Cxp=Gastos
+Gastos=(Fin)

@@ -1,0 +1,75 @@
+[Dialogo]
+Clave=GenerarFacturaRecurrente
+Nombre=Factura Recurrente
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=389
+PosicionInicialArriba=286
+PosicionInicialAltura=189
+PosicionInicialAncho=246
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Pedido]
+Nombre=Pedido
+Boton=0
+NombreDesplegar=Generar &Pedido
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaPedido,Afectar.FormaCaptura)
+
+[Acciones.Factura]
+Nombre=Factura
+Boton=0
+NombreDesplegar=Generar &Factura
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaFactura,Afectar.FormaCaptura)
+
+[Acciones.VentaConsignacion]
+Nombre=VentaConsignacion
+Boton=0
+NombreDesplegar=Generar &Venta a consignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaConsignacion,Afectar.FormaCaptura)
+
+[Acciones.Remision]
+Nombre=Remision
+Boton=0
+NombreDesplegar=Generar &Remisión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaRemision,Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Pedido
+Pedido=Factura
+Factura=Remision
+Remision=VentaConsignacion
+VentaConsignacion=(Fin)

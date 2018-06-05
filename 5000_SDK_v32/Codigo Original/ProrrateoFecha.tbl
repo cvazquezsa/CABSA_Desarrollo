@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=ProrrateoFecha
+Archivo=ProrrateoFecha
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Prorrateo Fechas
+Singular=Prorrateo Fechas
+LlavePrimaria=Estacion<BR>ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  Estacion,<BR>  ID,<BR>  Cantidad,<BR>  Fecha<BR><BR>FROM<BR>  ProrrateoFecha
+
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+Cantidad=S
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=ID
+ID=Cantidad
+Cantidad=Fecha
+Fecha=(Fin)

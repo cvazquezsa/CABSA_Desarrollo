@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=AutorizarProdAvance
+Nombre=Confirmación
+Icono=5
+TipoMensaje=Confirmación
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=360
+PosicionInicialArriba=326
+PosicionInicialAltura=116
+PosicionInicialAncho=304
+VentanaSiempreAlFrente=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+Mensaje=<T>¿ Desea Concluir - <T>+Afectar.Mov+<T> <T>+Afectar.MovID+<T> ?<T>
+
+[Acciones.No]
+Nombre=No
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Acciones.Si]
+Nombre=Si
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>TODO<T>, Afectar.GenerarMov, Afectar.FormaCaptura)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Si
+Si=No
+No=(Fin)

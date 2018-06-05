@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ConceptoGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=ConceptoGrupo
+TablaPrincipal=ConceptoGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=ConceptoGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  ConceptoGrupo.Grupo<BR><BR>FROM<BR>  ConceptoGrupo
+
+[ConceptoGrupo.Grupo]
+Clave=ConceptoGrupo.Grupo
+LigaTabla=ConceptoGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

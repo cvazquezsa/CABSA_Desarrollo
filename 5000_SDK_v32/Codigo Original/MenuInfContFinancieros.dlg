@@ -1,0 +1,46 @@
+
+[Dialogo]
+Clave=MenuInfContFinancieros
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+[Acciones.EdoResultados]
+Nombre=EdoResultados
+Boton=0
+NombreDesplegar=Estado de &Resultados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeContResultados<T>)
+Activo=S
+Visible=S
+
+[Acciones.InfContResultadosAnual]
+Nombre=InfContResultadosAnual
+Boton=0
+NombreDesplegar=Estado de Resultados (&Anual)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeContResultadosAnuales<T>)
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=EdoResultados
+EdoResultados=InfContResultadosAnual
+InfContResultadosAnual=(Fin)

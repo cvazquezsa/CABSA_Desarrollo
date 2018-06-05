@@ -1,0 +1,93 @@
+
+[Tabla]
+Icono=0
+Clave=POSCfgUbicacionRed
+Nombre=POSCfgUbicacionRed
+Archivo=POSCfgUbicacionRed
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Tipo
+ControlTipo=S
+CampoTipo=Tipo
+SQL=(Lista)
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+[Servidor]
+Clave=Servidor
+Nombre=Servidor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[BaseDatos]
+Clave=BaseDatos
+Nombre=Base de Datos
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tipo.ListaOpciones]
+(Inicio)=Matriz
+Matriz=Sucursal
+Sucursal=(Fin)
+
+
+
+
+
+[ConexionActiva]
+Clave=ConexionActiva
+Nombre=Conexión Activa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+[UbicacionLocal]
+Clave=UbicacionLocal
+Nombre=Ubicación Local
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Servidor
+Servidor=BaseDatos
+BaseDatos=ConexionActiva
+ConexionActiva=UbicacionLocal
+UbicacionLocal=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Tipo,
+Tipo,=Servidor,
+Servidor,=BaseDatos,
+BaseDatos,=ConexionActiva,
+ConexionActiva,=UbicacionLocal
+UbicacionLocal=FROM POSCfgUbicacionRed
+FROM POSCfgUbicacionRed=(Fin)

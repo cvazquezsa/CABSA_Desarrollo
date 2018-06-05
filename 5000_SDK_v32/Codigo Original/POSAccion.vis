@@ -1,0 +1,34 @@
+
+[Vista]
+Icono=0
+Clave=POSAccion
+Nombre=POSAccion
+Modulos=(Todos)
+ListaTablas=POSAccion
+UsoCapturas=S
+UsarJOIN=S
+TablaPrincipal=POSAccion
+
+ListaCampos=POSAccion.Accion
+UsoReportes=S
+SQL=(Lista)
+[POSAccion.Accion]
+Clave=POSAccion.Accion
+Nombre=Accion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=POSAccion
+LigaCampo=Accion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Accion
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=POSAccion.Accion
+POSAccion.Accion=FROM POSAccion
+FROM POSAccion=(Fin)

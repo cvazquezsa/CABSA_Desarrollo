@@ -1,0 +1,39 @@
+[Tabla]
+Icono=0
+Clave=CteMapeoMov
+Archivo=CteMapeoMov
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Mapeo
+Singular=Mapeo
+LlavePrimaria=Cliente<BR>MovOrigen
+SQL=SELECT<BR>  Cliente,<BR>  MovOrigen,<BR>  MovDestino<BR><BR>FROM<BR>  CteMapeoMov
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+
+[MovOrigen]
+Clave=MovOrigen
+Nombre=Movimiento Origen
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[MovDestino]
+Clave=MovDestino
+Nombre=Movimiento Destino
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[Tabla.ListaCampos]
+(Inicio)=Cliente
+Cliente=MovOrigen
+MovOrigen=MovDestino
+MovDestino=(Fin)

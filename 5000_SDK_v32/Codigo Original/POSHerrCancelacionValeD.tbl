@@ -1,0 +1,55 @@
+
+[Tabla]
+Icono=0
+Clave=POSHerrCancelacionValeD
+Nombre=POSHerrCancelacionValeD
+Archivo=POSHerrCancelacionValeD
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=(Lista)
+LlavePrimaria=Estacion
+ControlTipo=S
+CampoTipo=Tipo
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[Tipo]
+Clave=Tipo
+Nombre=Tipo Monedero
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ValeTipo
+AyudaMemOpc=Validar captura en la lista
+[Fecha]
+Clave=Fecha
+Nombre=Fecha Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Tipo
+Tipo=Fecha
+Fecha=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=Tipo,
+Tipo,=Fecha
+Fecha=FROM POSHerrCancelacionValeD
+FROM POSHerrCancelacionValeD=(Fin)

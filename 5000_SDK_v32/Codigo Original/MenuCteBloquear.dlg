@@ -1,0 +1,58 @@
+[Dialogo]
+Clave=MenuCteBloquear
+Nombre=Bloquear/Desbloquear
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=165
+PosicionInicialAncho=270
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=377
+PosicionInicialArriba=301
+
+[Acciones.Bloquear]
+Nombre=Bloquear
+Boton=0
+NombreDesplegar=&Cliente Especifico
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CteBloqueo
+Activo=S
+Visible=S
+
+[Acciones.CteArtBloqueo]
+Nombre=CteArtBloqueo
+Boton=0
+NombreDesplegar=por Agrupadores de &Artículos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CteArtBloqueo
+Activo=S
+Visible=S
+
+[Acciones.CteEnviarABloqueo]
+Nombre=CteEnviarABloqueo
+Boton=0
+NombreDesplegar=&Sucursal Especifica
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CteEnviarABloqueo
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Bloquear
+Bloquear=CteEnviarABloqueo
+CteEnviarABloqueo=CteArtBloqueo
+CteArtBloqueo=(Fin)

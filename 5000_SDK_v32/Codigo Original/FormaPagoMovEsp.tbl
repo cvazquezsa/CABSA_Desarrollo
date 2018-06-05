@@ -1,0 +1,112 @@
+
+[Tabla]
+Icono=0
+Clave=FormaPagoMovEsp
+Nombre=FormaPagoMovEsp
+Archivo=FormaPagoMovEsp
+Modulos=(Todos)
+Singular=FormaPagoMovEsp
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlMov=S
+CampoMov=Mov
+SQL=(Lista)
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.FormaPago
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>EXEC spNotificacionAyudaCaptura :tVacio, :tCampo, :tModulo<T>, <T><T>, <T>Movimiento<T>, Modulo)
+[ConDesglose]
+Clave=ConDesglose
+Nombre=Con Desglose
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+
+OpcionesPredefinidas=Ninguna
+
+
+
+
+ValorPorOmision=<T>(Todos)<T>
+
+
+
+
+
+
+
+
+
+OpcionesValidar=S
+
+
+
+
+ListaOpciones=(Lista)
+
+
+
+[ConDesglose.ListaOpciones]
+(Inicio)=No
+No=(Todos)
+(Todos)=(Forma Pago 1)
+(Forma Pago 1)=(Forma Pago 2)
+(Forma Pago 2)=(Forma Pago 3)
+(Forma Pago 3)=(Forma Pago 4)
+(Forma Pago 4)=(Forma Pago 5)
+(Forma Pago 5)=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=FormaPago
+FormaPago=Modulo
+Modulo=Mov
+Mov=ConDesglose
+ConDesglose=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=FormaPago,
+FormaPago,=Modulo,
+Modulo,=Mov,
+Mov,=ConDesglose
+ConDesglose=FROM FormaPagoMovEsp
+FROM FormaPagoMovEsp=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=FormaPago
+FormaPago=Modulo
+Modulo=Mov
+Mov=(Fin)

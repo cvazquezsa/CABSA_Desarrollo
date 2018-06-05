@@ -1,0 +1,53 @@
+
+[Tabla]
+Icono=0
+Clave=MFAMon
+Nombre=MFAMon
+Archivo=MFAMon
+Modulos=(Todos)
+Singular=MFAMon
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Moneda
+SQL=(Lista)
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+AyudaEnCaptura=Expresion
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Moneda FROM Mon ORDER BY Moneda<T>)
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Moneda
+Moneda=Codigo
+Codigo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Moneda,
+Moneda,=Codigo
+Codigo=FROM MFAMon
+FROM MFAMon=(Fin)

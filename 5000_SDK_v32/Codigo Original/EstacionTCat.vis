@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=EstacionTCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=EstacionTCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=EstacionTCat.Categoria
+TablaPrincipal=EstacionTCat
+UsarJOIN=S
+SQL=SELECT<BR>  EstacionTCat.Categoria<BR><BR>FROM<BR>  EstacionTCat
+
+[EstacionTCat.Categoria]
+Clave=EstacionTCat.Categoria
+LigaTabla=EstacionTCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

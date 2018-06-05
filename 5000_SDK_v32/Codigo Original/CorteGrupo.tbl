@@ -1,0 +1,31 @@
+
+[Tabla]
+Icono=0
+Clave=CorteGrupo
+Nombre=CorteGrupo
+Archivo=CorteGrupo
+Modulos=CORTE
+Singular=CorteGrupo
+
+TipoTabla=General
+ListaCampos=Grupo
+
+SQL=(Lista)
+LlavePrimaria=Grupo
+ControlGrupo=S
+CampoGrupo=Grupo
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Grupo
+Grupo=FROM CorteGrupo
+FROM CorteGrupo=(Fin)

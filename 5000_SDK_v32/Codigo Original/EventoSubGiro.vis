@@ -1,0 +1,17 @@
+[Vista]
+Icono=0
+Clave=EventoSubGiro
+Nombre=Sub Giro
+Modulos=(Todos)
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=SubGiro
+SQL=SELECT DISTINCT SubGiro FROM EventoD WHERE Giro = <T>{Info.Giro}<T>
+
+[SubGiro]
+Clave=SubGiro
+Nombre=Sub Giro
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=SubGiro

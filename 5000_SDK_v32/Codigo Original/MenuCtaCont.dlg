@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=MenuCtaCont
+Nombre=Cuentas Contables
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=131
+PosicionInicialAncho=252
+PosicionInicialAlturaCliente=138
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=514
+PosicionInicialArriba=429
+
+[Acciones.Cta]
+Nombre=Cta
+Boton=0
+NombreDesplegar=&Cuentas Contables
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Cta
+Activo=S
+Visible=S
+
+[Acciones.CtaL]
+Nombre=CtaL
+Boton=0
+NombreDesplegar=&Listas de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=CtaL
+Activo=S
+Visible=S
+
+[Acciones.MenuCfgGRP]
+Nombre=MenuCfgGRP
+Boton=0
+NombreDesplegar=&GRP
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCfgGRP
+ActivoCondicion=General.GRP
+VisibleCondicion=General.GRP
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cta
+Cta=CtaL
+CtaL=MenuCfgGRP
+MenuCfgGRP=(Fin)

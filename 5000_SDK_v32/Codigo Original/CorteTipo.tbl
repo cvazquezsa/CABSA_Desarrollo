@@ -1,0 +1,31 @@
+
+[Tabla]
+Icono=0
+Clave=CorteTipo
+Nombre=CorteTipo
+Archivo=CorteTipo
+Modulos=CORTE
+Singular=CorteTipo
+
+TipoTabla=General
+ListaCampos=Tipo
+
+SQL=(Lista)
+LlavePrimaria=Tipo
+ControlTipo=S
+CampoTipo=Tipo
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Tipo
+Tipo=FROM CorteTipo
+FROM CorteTipo=(Fin)

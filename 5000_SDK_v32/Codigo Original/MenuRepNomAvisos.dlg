@@ -1,0 +1,66 @@
+[Dialogo]
+Clave=MenuRepNomAvisos
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=355
+PosicionInicialArriba=313
+PosicionInicialAltura=141
+PosicionInicialAncho=238
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ListaAcciones=(Lista)
+
+[Acciones.Alta]
+Nombre=Alta
+Boton=0
+NombreDesplegar=&Inscripción IMSS
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepNomAfilAlta
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Nomina/Avisos/Alta<T>)
+[Acciones.Baja]
+Nombre=Baja
+Boton=0
+NombreDesplegar=&Baja IMSS
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepNomAfilBaja
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Nomina/Avisos/Baja<T>)
+[Acciones.Modif]
+Nombre=Modif
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+NombreDesplegar=&Modificación IMSS
+TipoAccion=Formas
+ClaveAccion=mis_RepNomAfilModif
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Nomina/Avisos/Modif<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Alta
+Alta=Baja
+Baja=Modif
+Modif=(Fin)

@@ -1,0 +1,93 @@
+[Dialogo]
+Clave=MenuExpSoporteClaseST
+Nombre=Atención
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=549
+PosicionInicialAncho=259
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=382
+PosicionInicialArriba=274
+PosicionInicialAlturaCliente=186
+
+[Acciones.ST]
+Nombre=ST
+Boton=0
+NombreDesplegar=Atención &Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarSoporteClase
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Modulo, <T>ST<T>)<BR>Asigna(Info.Descripcion, <T>Atención Clientes<T>)
+
+[Acciones.PROY]
+Nombre=PROY
+Boton=0
+NombreDesplegar=&Proyectos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarSoporteClase
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>PROY<T>)<BR>Asigna(Info.Descripcion, <T>Proyectos<T>)
+
+[Acciones.SI]
+Nombre=SI
+Boton=0
+NombreDesplegar=&Servicios Internos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarSoporteClase
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>SI<T>)<BR>Asigna(Info.Descripcion, <T>Servicios Internos<T>)
+
+[Acciones.STPRO]
+Nombre=STPRO
+Boton=0
+NombreDesplegar=Atención Pr&oveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarSoporteClase
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>STPRO<T>)<BR>Asigna(Info.Descripcion, <T>Atención Proveedores<T>)
+
+[Acciones.STPER]
+Nombre=STPER
+Boton=0
+NombreDesplegar=Atención P&ersonal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarSoporteClase
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Modulo, <T>STPER<T>)<BR>Asigna(Info.Descripcion, <T>Atención Personal<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=ST
+ST=STPRO
+STPRO=STPER
+STPER=PROY
+PROY=SI
+SI=(Fin)

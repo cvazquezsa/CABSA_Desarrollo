@@ -1,0 +1,222 @@
+
+[Dialogo]
+Clave=MenuMESAcciones
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=248
+PosicionInicialAncho=500
+[Acciones.MES.Estructuras]
+Nombre=MES.Estructuras
+Boton=0
+NombreDesplegar=Estructuras
+EnMenu=S
+TipoAccion=Expresion
+Visible=S
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;0;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+ActivoCondicion=(Usuario.MESAcceso) y (Usuario.MESEstructura)
+
+[Acciones.MES.Planificiacion]
+Nombre=MES.Planificiacion
+Boton=0
+NombreDesplegar=Planificación
+EnMenu=S
+TipoAccion=Expresion
+Visible=S
+
+
+
+
+
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;1;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+ActivoCondicion=(Usuario.MESAcceso) y (Usuario.MESPlanificacion)
+
+
+
+[Acciones.MES.Scheduling]
+Nombre=MES.Scheduling
+Boton=0
+NombreDesplegar=Scheduling
+EnMenu=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;2;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+ActivoCondicion=(Usuario.MESAcceso) y (Usuario.MESScheduling)
+Visible=S
+
+
+
+
+[Acciones.MES.Variante]
+Nombre=MES.Variante
+Boton=0
+NombreDesplegar=Variante
+EnMenu=S
+TipoAccion=Expresion
+Visible=S
+
+
+
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;3;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+ActivoCondicion=(Usuario.MESAcceso) y (Usuario.MESVariantes)
+
+
+
+
+
+
+
+[Acciones.MES.EIS]
+Nombre=MES.EIS
+Boton=0
+NombreDesplegar=EIS
+EnMenu=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;12;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.MES.Proyectos]
+Nombre=MES.Proyectos
+Boton=0
+NombreDesplegar=Proyectos
+EnMenu=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT IntelMESInterfaseRuta FROM EmpresaCfg WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Base, SQL(<T>SELECT BD FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Asigna(Info.Dato, SQL(<T>SELECT Servidor FROM EmpresaCfgMES WHERE Empresa = :tEmpresa<T>, Empresa))<BR>Ejecutar(ASCII(34) + Info.Nombre + <T>\Modulos.EXE<T>+ASCII(34)+<T> <T>+Usuario+<T>;17;<T>+Info.Base+<T>;<T>+Info.Dato+<T>;<T>+Info.Nombre)
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.MES.Situciacion]
+Nombre=MES.Situciacion
+Boton=0
+NombreDesplegar=Situciación Artículo
+EnMenu=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+Expresion=Asigna(Info.Nombre, SQL(<T>SELECT RutaSituacionArticulo FROM EmpresaCfgMES WHERE Empresa = :tE<T>, Empresa))<BR>//Asigna(Info.Base, SQL(<T>SELECT DB_NAME()<T>))<BR>//Asigna(Info.Dato,SQL(<T>SELECT @@SERVERNAME<T>))<BR>Asigna(Info.Usuario, SQL(<T>SELECT UserMes FROM SucursalMes WHERE Sucursal = :nS<T>, Sucursal))<BR>Asigna(Info.Contrasena, SQL(<T>SELECT Pass FROM SucursalMes WHERE Sucursal = :nS<T>, Sucursal))<BR>Asigna(Info.Base, SQL(<T>SELECT BDMES FROM SucursalMES WHERE Sucursal = :nS<T>, Sucursal))<BR>Asigna(Info.Dato, SQL(<T>SELECT Server FROM SucursalMES WHERE Sucursal = :nS<T>, Sucursal))<BR>Asigna(Info.Articulo, Nulo)<BR>Si(Forma(<T>EspecificarArticulo<T>), Ejecutar(ASCII(34) + Info.Nombre + <T> <T>+Info.Usuario+<T>,<T>+Info.Contrasena+<T>,<T>+Info.Base+<T>,<T>+Info.Dato+<T>,<T>+Info.Articulo + ASCII(34)))<BR>//INFORMACION(ASCII(34) + Info.Nombre + <T> <T>+Info.Usuario+<T>,<T>+Info.Contrasena+<T>,<T>+Info.Base+<T>,<T>+Info.Dato+<T>,<T>+Info.Articulo + ASCII(34))<BR>/*<BR> USUARIO,PASSWORD,BBDD MES,SERVIDOR,ARTICULO. Todo ello separado por comas.<BR><BR><T>C:\Archivos de programa\Industry\ESTACION\IntelisisMES_SituacionArticulo.exe sa,,IPTutorial,VMDESARROLLO07,IND.A<T><BR>*/
+
+
+
+
+
+[Acciones.VentasMES]
+Nombre=VentasMES
+Boton=0
+NombreDesplegar=Autorizar Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VentaMES
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.EmpresaCfgMES]
+Nombre=EmpresaCfgMES
+Boton=0
+NombreDesplegar=Configuración Empresa
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=EmpresaCfgMES
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+[Acciones.FormaPagoComparaMES]
+Nombre=FormaPagoComparaMES
+Boton=0
+NombreDesplegar=Forma de Pago Intelisis-MES
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=FormaPagoComparaMES
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.Importar]
+Nombre=Importar
+Boton=0
+NombreDesplegar=Importar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuMESImportar
+Activo=S
+Visible=S
+
+
+
+
+[Acciones.Transferencias]
+Nombre=Transferencias
+Boton=0
+NombreDesplegar=Transferencias
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=ProcesarSQL(<T>spMesTransfer :tE, :tU, :nS<T>, Empresa, Usuario, Sucursal)
+ActivoCondicion=no(SQL(<T>SELECT TransferenciaManual FROM EmpresaCfgMes WHERE Empresa = :tE<T>, Empresa))
+Visible=S
+
+
+
+
+[Acciones.MesInvTransfer]
+Nombre=MesInvTransfer
+Boton=0
+NombreDesplegar=Transferencia Manual
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MesInvTransfer
+ActivoCondicion=SQL(<T>SELECT TransferenciaManual FROM EmpresaCfgMes WHERE Empresa = :tE<T>, Empresa)
+Visible=S
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=MES.Estructuras
+MES.Estructuras=MES.Planificiacion
+MES.Planificiacion=MES.Scheduling
+MES.Scheduling=MES.Variante
+MES.Variante=MES.EIS
+MES.EIS=MES.Proyectos
+MES.Proyectos=MES.Situciacion
+MES.Situciacion=VentasMES
+VentasMES=EmpresaCfgMES
+EmpresaCfgMES=FormaPagoComparaMES
+FormaPagoComparaMES=Importar
+Importar=Transferencias
+Transferencias=MesInvTransfer
+MesInvTransfer=(Fin)

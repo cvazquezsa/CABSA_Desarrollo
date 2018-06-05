@@ -1,0 +1,37 @@
+[Dialogo]
+Clave=GenerarCorteUnidades
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=575
+PosicionInicialArriba=300
+PosicionInicialAltura=117
+PosicionInicialAncho=299
+ListaAcciones=CorteUnidades
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=90
+
+
+
+[Acciones.CorteUnidades]
+Nombre=CorteUnidades
+Boton=0
+NombreDesplegar=Generar &Corte Unidades
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Afectar.GenerarMov, SQL(<T>SELECT CorteUnidades FROM EmpresaCfgMovCorte WHERE Empresa = :tEmpresa<T>, Empresa))<BR><BR>Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov, <T>Corte<T>)
+Activo=S
+Visible=S

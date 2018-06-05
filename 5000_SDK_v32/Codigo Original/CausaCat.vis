@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=CausaCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=CausaCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=CausaCat.Categoria
+TablaPrincipal=CausaCat
+UsarJOIN=S
+SQL=SELECT<BR>  CausaCat.Categoria<BR><BR>FROM<BR>  CausaCat
+
+[CausaCat.Categoria]
+Clave=CausaCat.Categoria
+LigaTabla=CausaCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

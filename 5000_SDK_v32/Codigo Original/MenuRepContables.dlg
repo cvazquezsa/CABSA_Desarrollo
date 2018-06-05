@@ -1,0 +1,306 @@
+[Dialogo]
+Clave=MenuRepContables
+Nombre=Reportes Contables
+Icono=18
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=478
+PosicionInicialArriba=167
+PosicionInicialAltura=357
+PosicionInicialAncho=438
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=354
+
+[Acciones.Aux]
+Nombre=Aux
+Boton=0
+NombreDesplegar=Au&xiliares
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepContAux
+Activo=S
+Antes=S
+
+AntesExpresiones=Asigna(Rep.Titulo, <T>Auxiliares Contables<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Aux<T>)
+[Acciones.Balanza]
+Nombre=Balanza
+Boton=0
+NombreDesplegar=&Balanza de Comprobación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Antes=S
+
+Expresion=<BR>  Forma(<T>RepContBalanza<T>)
+AntesExpresiones=Asigna(Rep.Titulo, <T>Balanza de Comprobación<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Balanza<T>)
+[Acciones.Diario]
+Nombre=Diario
+Boton=0
+NombreDesplegar=Diario &General
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContDiario
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Diario<T>)
+[Acciones.Acum]
+Nombre=Acum
+Boton=0
+NombreDesplegar=Ac&umulados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContAcum
+Activo=S
+Antes=S
+
+AntesExpresiones=Asigna(Rep.Titulo, <T>Acumulados - Contabilidad<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Acum<T>)
+[Acciones.LibroMayor]
+Nombre=LibroMayor
+Boton=0
+NombreDesplegar=&Libro Mayor
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepContLibroMayor
+Activo=S
+Visible=S
+
+[Acciones.Cta]
+Nombre=Cta
+Boton=0
+NombreDesplegar=Ca&tálogo de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=RepCta
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Cta<T>)
+[Acciones.Resumen]
+Nombre=Resumen
+Boton=0
+NombreDesplegar=&Póliza Concentrada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContResumen
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/Resumen<T>)
+[Acciones.SPD]
+Nombre=SPD
+Boton=0
+NombreDesplegar=Saldo Promedio &Diario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContSPD
+Activo=S
+Antes=S
+EspacioPrevio=S
+
+AntesExpresiones=Asigna(Rep.Opcion, 1)<BR>Asigna(Rep.Titulo, <T>Saldo Promedio Diario<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/SPD<T>)
+[Acciones.SMM]
+Nombre=SMM
+Boton=0
+NombreDesplegar=Saldo &Medio Mensual
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContSPD
+Activo=S
+Antes=S
+
+AntesExpresiones=Asigna(Rep.Opcion, 2)<BR>Asigna(Rep.Titulo, <T>Saldo Medio Mensual<T>)
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/SMM<T>)
+[Acciones.CI]
+Nombre=CI
+Boton=0
+NombreDesplegar=Componente &Inflacionario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuRepContCI
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/CI<T>)
+[Acciones.RepContPoliza]
+Nombre=RepContPoliza
+Boton=0
+NombreDesplegar=Póli&zas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContPoliza
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/RepContPoliza<T>)
+[Acciones.AI]
+Nombre=AI
+Boton=0
+NombreDesplegar=Ajuste In&flacionario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RepContAI
+Activo=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Contabilidad/Contables/AI<T>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Acciones.RSBalanzaCC]
+Nombre=RSBalanzaCC
+Boton=0
+NombreDesplegar=Balanza de Comprobación por Centro Costos (Reporting Services)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+
+EspacioPrevio=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  Browser(General.RSReportASPX + <T>%2fBalanzaComprobacionCentroCostos&rs:Command=Render<T>)<BR>Fin
+VisibleCondicion=SQL(<T>SELECT ISNULL(RS,0) FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa)=Verdadero
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Balanza
+Balanza=LibroMayor
+LibroMayor=Diario
+Diario=Aux
+Aux=Acum
+Acum=Resumen
+Resumen=SPD
+SPD=SMM
+SMM=AI
+AI=CI
+CI=Cta
+Cta=RepContPoliza
+RepContPoliza=RSBalanzaCC
+RSBalanzaCC=(Fin)

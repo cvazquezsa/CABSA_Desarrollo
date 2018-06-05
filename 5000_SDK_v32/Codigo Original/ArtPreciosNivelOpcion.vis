@@ -1,0 +1,36 @@
+[Vista]
+Icono=0
+Clave=ArtPreciosNivelOpcion
+Nombre=Listas Precios
+Modulos=(Todos)
+Singular=Lista Precios
+ListaTablas=ListaPreciosEsp
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ListaPreciosEsp
+UsarJOIN=S
+SQL=SELECT<BR>  ListaPreciosEsp.Lista,<BR>  ListaPreciosEsp.Orden<BR><BR>FROM<BR>  ListaPreciosEsp
+
+[ListaPreciosEsp.Lista]
+Clave=ListaPreciosEsp.Lista
+LigaTabla=ListaPreciosEsp
+LigaCampo=Lista
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Lista
+
+[ListaPreciosEsp.Orden]
+Clave=ListaPreciosEsp.Orden
+LigaTabla=ListaPreciosEsp
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[Vista.ListaCampos]
+(Inicio)=ListaPreciosEsp.Lista
+ListaPreciosEsp.Lista=ListaPreciosEsp.Orden
+ListaPreciosEsp.Orden=(Fin)

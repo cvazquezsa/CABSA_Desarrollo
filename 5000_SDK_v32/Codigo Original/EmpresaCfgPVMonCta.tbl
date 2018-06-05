@@ -1,0 +1,112 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgPVMonCta
+Archivo=EmpresaCfgPVMonCta
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+ListaRelaciones=(Lista)
+LlavePrimaria=Empresa<BR>Moneda<BR>FormaPago<BR>Usuario
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Moneda,<BR>  FormaPago,<BR>  Usuario,<BR>  CuentaCorteParcial,<BR>  CuentaCorteCaja<BR><BR>FROM<BR>  EmpresaCfgPVMonCta
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=<T>(Todos)<T>
+Formula=Lista(<T>(Todos)<T>, SQLEnLista(<T>SELECT Usuario FROM Usuario<T>))
+
+[CuentaCorteParcial]
+Clave=CuentaCorteParcial
+Nombre=Cuenta Corte Parcial
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDinero
+Mayusculas=S
+
+[CuentaCorteCaja]
+Clave=CuentaCorteCaja
+Nombre=Cuenta Corte Caja
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDineroDestino
+
+[Relaciones.CtaDinero]
+TipoRelacion=Opcional
+LlaveLocal=CuentaCorteParcial
+Clave=CtaDinero
+TablaRemota=CtaDinero
+LlaveRemota=CtaDinero
+
+[Relaciones.CtaDineroDestino]
+TipoRelacion=Opcional
+LlaveLocal=CuentaCorteCaja
+Clave=CtaDineroDestino
+TablaRemota=CtaDineroDestino
+LlaveRemota=CtaDinero
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Moneda
+Moneda=FormaPago
+FormaPago=Usuario
+Usuario=CuentaCorteParcial
+CuentaCorteParcial=CuentaCorteCaja
+CuentaCorteCaja=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=CtaDinero
+CtaDinero=CtaDineroDestino
+CtaDineroDestino=(Fin)

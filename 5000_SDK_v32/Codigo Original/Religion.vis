@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=Religion
+Nombre=Religiones
+Modulos=(Todos)
+Singular=Religión
+ListaTablas=Religion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=Religion.Religion
+TablaPrincipal=Religion
+UsarJOIN=S
+SQL=SELECT<BR>  Religion.Religion<BR><BR>FROM<BR>  Religion
+
+[Religion.Religion]
+Clave=Religion.Religion
+LigaTabla=Religion
+LigaCampo=Religion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Religion

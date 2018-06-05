@@ -1,0 +1,81 @@
+[Dialogo]
+Clave=AfectarProcesarVentaD
+Nombre=Procesar en Lote
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=401
+PosicionInicialArriba=286
+PosicionInicialAltura=189
+PosicionInicialAncho=222
+ListaAcciones=(Lista)
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=162
+
+[Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaDAfectar
+Visible=S
+Antes=S
+ActivoCondicion=Usuario.Reservar
+AntesExpresiones=Asigna(Afectar.Accion, <T>Reservar<T>)
+
+[Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaDAfectar
+Visible=S
+Antes=S
+ActivoCondicion=Usuario.DesReservar
+AntesExpresiones=Asigna(Afectar.Accion, <T>DesReservar<T>)
+
+[Acciones.Asignar]
+Nombre=Asignar
+Boton=0
+NombreDesplegar=As&ignar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaDAfectar
+Visible=S
+Antes=S
+ActivoCondicion=Usuario.Asignar y Config.BackOrders y (Config.BackOrdersNivel=<T>Movimiento<T>)
+AntesExpresiones=Asigna(Afectar.Accion, <T>Asignar<T>)
+
+[Acciones.DesAsignar]
+Nombre=DesAsignar
+Boton=0
+NombreDesplegar=Des-Asig&nar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProcesarVentaDAfectar
+Visible=S
+Antes=S
+ActivoCondicion=Usuario.DesAsignar y Config.BackOrders y (Config.BackOrdersNivel=<T>Movimiento<T>)
+AntesExpresiones=Asigna(Afectar.Accion, <T>DesAsignar<T>)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Reservar
+Reservar=DesReservar
+DesReservar=Asignar
+Asignar=DesAsignar
+DesAsignar=(Fin)

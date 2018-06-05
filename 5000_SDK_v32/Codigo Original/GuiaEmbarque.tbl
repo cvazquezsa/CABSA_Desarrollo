@@ -1,0 +1,91 @@
+[Tabla]
+Icono=0
+Clave=GuiaEmbarque
+Archivo=GuiaEmbarque
+Modulos=(Todos)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Datos Embarques
+Singular=Datos Embarque
+LlavePrimaria=Modulo<BR>ID
+CampoID=ID
+ControlSucursal=S
+CampoSucursal=Sucursal
+SQL=SELECT<BR>  Modulo,<BR>  ID,<BR>  FechaEnvio,<BR>  Paquetes,<BR>  FormaEnvio,<BR>  PersonaRecibio,<BR>  FechaRecepcion,<BR>  Sucursal<BR><BR>FROM<BR>  GuiaEmbarque
+
+[ID]
+Clave=ID
+Nombre=ID
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[FormaEnvio]
+Clave=FormaEnvio
+Nombre=Forma Envio
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=FormaEnvio
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Si(Vacio(FormaEnvio), Info.FormaEnvio, FormaEnvio)
+TipoDatos=Texto
+
+[Paquetes]
+Clave=Paquetes
+Nombre=Paquetes
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaEnvio]
+Clave=FechaEnvio
+Nombre=Fecha &Envio
+AyudaEnCaptura=Calendario
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+
+[PersonaRecibio]
+Clave=PersonaRecibio
+Nombre=Persona Recibio
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[FechaRecepcion]
+Clave=FechaRecepcion
+Nombre=Fecha &Recepción
+AyudaEnCaptura=Calendario
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=ID
+ID=FechaEnvio
+FechaEnvio=Paquetes
+Paquetes=FormaEnvio
+FormaEnvio=FechaRecepcion
+FechaRecepcion=PersonaRecibio
+PersonaRecibio=Sucursal
+Sucursal=(Fin)

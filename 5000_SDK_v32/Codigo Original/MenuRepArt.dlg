@@ -1,0 +1,68 @@
+[Dialogo]
+Clave=MenuRepArt
+Nombre=Artículos
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=523
+PosicionInicialArriba=429
+PosicionInicialAltura=172
+PosicionInicialAncho=233
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=138
+
+[Acciones.ArtPrecioHist]
+Nombre=ArtPrecioHist
+Boton=0
+NombreDesplegar=Cambios de &Precios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=ArtPrecioHist
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Articulos/ArtPrecioHist<T>)
+[Acciones.ArtSituacionHist]
+Nombre=ArtSituacionHist
+Boton=0
+NombreDesplegar=Cambios de &Situaciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=ArtSituacionHist
+Activo=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Articulos/ArtSituacionHist<T>)
+[Acciones.ListaMat]
+Nombre=ListaMat
+Boton=0
+NombreDesplegar=&Lista de Materiales
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=mis_RepEspecificaArticulo
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>Articulos/ListaMat<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=ArtPrecioHist
+ArtPrecioHist=ArtSituacionHist
+ArtSituacionHist=ListaMat
+ListaMat=(Fin)

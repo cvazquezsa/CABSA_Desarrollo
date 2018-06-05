@@ -1,0 +1,82 @@
+
+[Tabla]
+Icono=0
+Clave=POSCBExpresion
+Archivo=CB
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+CampoSubCuenta=SubCuenta
+CampoCuenta=Cuenta
+LlavePrimaria=Codigo
+SQL=(Lista)
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+[TipoCuenta]
+Clave=TipoCuenta
+Nombre=TipoCuenta
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+ValorPorOmision=<T>Expresion<T>
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Accion.ListaOpciones]
+(Inicio)=MOVIMIENTO NUEVO
+MOVIMIENTO NUEVO=CANCELAR PARTIDA
+CANCELAR PARTIDA=ELIMINAR MOVIMIENTO
+ELIMINAR MOVIMIENTO=(Fin)
+
+
+
+
+
+
+[Expresion]
+Clave=Expresion
+Nombre=Expresión
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+Requerido=S
+AyudaEnCaptura=Editor Expresiones
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Codigo
+Codigo=TipoCuenta
+TipoCuenta=Expresion
+Expresion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Codigo,
+  Codigo,=  TipoCuenta,
+  TipoCuenta,=  Expresion
+  Expresion=FROM
+FROM=  CB
+  CB=(Fin)

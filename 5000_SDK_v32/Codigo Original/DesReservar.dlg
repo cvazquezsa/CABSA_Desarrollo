@@ -1,0 +1,51 @@
+[Dialogo]
+Clave=DesReservar
+Nombre=<T>Des-Reservar Pedido<T>
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=622
+PosicionInicialArriba=299
+PosicionInicialAltura=140
+PosicionInicialAncho=272
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Cantidad &Indicada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=DesReservar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>)
+
+[Acciones.Reservado]
+Nombre=Reservado
+Boton=0
+NombreDesplegar=Cantidad &Reservada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=DesReservar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Reservado<T>)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Indicado
+Indicado=Reservado
+Reservado=(Fin)

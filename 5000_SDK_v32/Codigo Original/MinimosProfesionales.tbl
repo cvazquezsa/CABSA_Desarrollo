@@ -1,0 +1,62 @@
+[Tabla]
+Icono=0
+Clave=MinimosProfesionales
+Archivo=MinimosProfesionales
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Minimos Profesionales
+Singular=Salarios
+LlavePrimaria=Numero
+SQL=SELECT<BR>  Numero,<BR>  Descripcion,<BR>  ZonaA,<BR>  ZonaB,<BR>  ZonaC<BR><BR>FROM<BR>  MinimosProfesionales
+
+[Numero]
+Clave=Numero
+Nombre=Numero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+[ZonaA]
+Clave=ZonaA
+Nombre=Zona A
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[ZonaB]
+Clave=ZonaB
+Nombre=Zona B
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[ZonaC]
+Clave=ZonaC
+Nombre=Zona C
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Numero
+Numero=Descripcion
+Descripcion=ZonaA
+ZonaA=ZonaB
+ZonaB=ZonaC
+ZonaC=(Fin)

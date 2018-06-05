@@ -1,0 +1,57 @@
+[Tabla]
+Icono=0
+Clave=PeriodoTipoMovEmpresa
+Archivo=PeriodoTipoMovEmpresa
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Movimientos
+Singular=Movimiento
+LlavePrimaria=PeriodoTipo<BR>Mov<BR>Empresa
+CampoMov=Mov
+SQL=SELECT<BR>  PeriodoTipo,<BR>  Mov,<BR>  Empresa,<BR>  UltimoDiaPagado<BR><BR>FROM<BR>  PeriodoTipoMovEmpresa
+
+[PeriodoTipo]
+Clave=PeriodoTipo
+Nombre=PeriodoTipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[UltimoDiaPagado]
+Clave=UltimoDiaPagado
+Nombre=Ultimo día pagado
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Empresa
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=PeriodoTipo
+PeriodoTipo=Mov
+Mov=Empresa
+Empresa=UltimoDiaPagado
+UltimoDiaPagado=(Fin)

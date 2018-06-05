@@ -1,0 +1,57 @@
+
+[Tabla]
+Icono=0
+Clave=MonederoCfg
+Nombre=Configuracion Monedero
+Archivo=MonederoCfg
+Modulos=(Todos)
+Singular=Configuracion Monedero
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+AlCambiar=Empresa
+[CobroAutomatico]
+Clave=CobroAutomatico
+Nombre=Cobro Automatico Monedero
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=CobroAutomatico
+CobroAutomatico=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=CobroAutomatico
+CobroAutomatico=FROM MonederoCfg
+FROM MonederoCfg=(Fin)

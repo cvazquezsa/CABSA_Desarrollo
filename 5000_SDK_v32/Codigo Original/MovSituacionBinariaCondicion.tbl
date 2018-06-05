@@ -1,0 +1,117 @@
+
+[Tabla]
+Icono=0
+Clave=MovSituacionBinariaCondicion
+Nombre=MovSituacionBinariaCondicion
+Archivo=MovSituacionBinariaCondicion
+Modulos=(Todos)
+Singular=MovSituacionBinariaCondicion
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=RID
+ControlID=S
+CampoID=RID
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=Info.ID
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Expresion1]
+Clave=Expresion1
+Nombre=Expresión 1
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Texto
+
+Tamano=255
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>EXEC spMovSituacionBinariaAyudaCaptura<T>)
+[Expresion2]
+Clave=Expresion2
+Nombre=Expresión 2
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Texto
+
+Tamano=255
+[Expresion3]
+Clave=Expresion3
+Nombre=Expresión 3
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Texto
+
+Tamano=255
+[Operador]
+Clave=Operador
+Nombre=Operador
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+
+
+ListaOpciones=(Lista)
+
+
+[Operador.ListaOpciones]
+(Inicio)=Entre
+Entre=Igual que
+Igual que=Mayor o igual que
+Mayor o igual que=Menor o igual que
+Menor o igual que=Mayor que
+Mayor que=Menor que
+Menor que=Distinto que
+Distinto que=Contiene
+Contiene=(Fin)
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=RID
+RID=Expresion1
+Expresion1=Expresion2
+Expresion2=Expresion3
+Expresion3=Operador
+Operador=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=RID,
+RID,=Expresion1,
+Expresion1,=Expresion2,
+Expresion2,=Expresion3,
+Expresion3,=Operador
+Operador=FROM MovSituacionBinariaCondicion
+FROM MovSituacionBinariaCondicion=(Fin)

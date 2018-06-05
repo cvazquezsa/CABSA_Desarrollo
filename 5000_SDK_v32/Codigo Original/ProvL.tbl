@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=ProvL
+Archivo=Lista
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Listas
+Singular=Lista
+LlavePrimaria=Rama<BR>Lista<BR>Visible
+SQL=SELECT<BR>  Rama,<BR>  Lista,<BR>  Visible<BR><BR>FROM<BR>  Lista
+
+[Lista]
+Clave=Lista
+Nombre=Lista
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Visible]
+Clave=Visible
+Nombre=Visible
+AyudaEnCaptura=Expresion
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>General<T>
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Formula=Lista(<T>General<T>, Empresa, Usuario)
+TipoDatos=Texto
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=<T>CXP<T>
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Rama
+Rama=Lista
+Lista=Visible
+Visible=(Fin)

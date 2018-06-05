@@ -1,0 +1,59 @@
+
+[Tabla]
+Icono=0
+Clave=POSFacturarNotasTemp
+Archivo=POSFacturarNotasTemp
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Estacion
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[MovFactura]
+Clave=MovFactura
+Nombre=Movimiento Factura
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLENLista(<T>SELECT DISTINCT Mov FROM MovTipo WHERE Clave = :tClave AND Modulo = :tModulo<T>, <T>POS.F<T>, <T>POS<T>)
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=MovFactura
+MovFactura=Cliente
+Cliente=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=MovFactura,
+MovFactura,=Cliente
+Cliente=FROM POSFacturarNotasTemp
+FROM POSFacturarNotasTemp=(Fin)

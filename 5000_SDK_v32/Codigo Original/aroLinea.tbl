@@ -1,0 +1,31 @@
+[Tabla]
+Icono=0
+Clave=aroLinea
+Archivo=aroLinea
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Líneas Negocios
+Singular=Línea Negocios
+LlavePrimaria=LineaNegocios
+SQL=SELECT<BR>  LineaNegocios,<BR>  Nombre<BR><BR>FROM<BR>  aroLinea
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+
+[LineaNegocios]
+Clave=LineaNegocios
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+
+[Tabla.ListaCampos]
+(Inicio)=LineaNegocios
+LineaNegocios=Nombre
+Nombre=(Fin)

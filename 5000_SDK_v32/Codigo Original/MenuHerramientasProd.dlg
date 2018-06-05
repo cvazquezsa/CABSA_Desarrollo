@@ -1,0 +1,48 @@
+[Dialogo]
+Clave=MenuHerramientasProd
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=235
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=522
+PosicionInicialArriba=438
+VentanaExclusiva=S
+VentanaEscCerrar=S
+
+[Acciones.ProdAvanzar]
+Nombre=ProdAvanzar
+Boton=0
+NombreDesplegar=Avanzar Lote (&uno por uno)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProdAvanzar
+Activo=S
+Visible=S
+
+[Acciones.ProdAvanzarLista]
+Nombre=ProdAvanzarLista
+Boton=0
+NombreDesplegar=Avanzar Lote (en &lista)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ProdAvanzarLista
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ProdAvanzar
+ProdAvanzar=ProdAvanzarLista
+ProdAvanzarLista=(Fin)

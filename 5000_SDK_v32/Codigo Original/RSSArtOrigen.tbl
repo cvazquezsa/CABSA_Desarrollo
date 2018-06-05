@@ -1,0 +1,32 @@
+[Tabla]
+Icono=0
+Clave=RSSArtOrigen
+Archivo=RSSArtOrigen
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Origens
+Singular=ArtOrigen
+LlavePrimaria=ArtOrigen
+SQL=SELECT<BR>  ArtOrigen,<BR>  Hipervinculo<BR><BR>FROM<BR>  RSSArtOrigen
+
+[ArtOrigen]
+Clave=ArtOrigen
+Nombre=Origen
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Hipervinculo]
+Clave=Hipervinculo
+Nombre=Hipervinculo
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Direccion
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=ArtOrigen
+ArtOrigen=Hipervinculo
+Hipervinculo=(Fin)

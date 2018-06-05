@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CtaGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=CtaGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CtaGrupo.Grupo
+TablaPrincipal=CtaGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  CtaGrupo.Grupo<BR><BR>FROM<BR>  CtaGrupo
+
+[CtaGrupo.Grupo]
+Clave=CtaGrupo.Grupo
+LigaTabla=CtaGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

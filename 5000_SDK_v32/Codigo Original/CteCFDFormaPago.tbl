@@ -1,0 +1,60 @@
+[Tabla]
+Icono=0
+Clave=CteCFDFormaPago
+Nombre=CteCFDFormaPago
+Archivo=CteCFDFormaPago
+Modulos=(Todos)
+Singular=CteCFDFormaPago
+TipoTabla=General
+ListaCampos=Empresa<BR>Cliente<BR>FormaPago<BR>CuentaPago
+ListaRelaciones=Empresa<BR>Cte<BR>FormaPago
+LlavePrimaria=Empresa<BR>Cliente<BR>FormaPago<BR>CuentaPago
+SQL=SELECT<BR>  Empresa,<BR>  Cliente,<BR>  FormaPago,<BR>  CuentaPago<BR><BR>FROM<BR>  CteCFDFormaPago
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Cliente
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=5
+AyudaMemOpc=Unicamente opciones listadas
+[CuentaPago]
+Clave=CuentaPago
+Nombre=Cuenta Pago
+Visible=S
+TamanoValidacion=20
+Tamano=20
+[Relaciones.Empresa]
+TipoRelacion=Forzosa
+LlaveLocal=Empresa
+Clave=Empresa
+TablaRemota=Empresa
+LlaveRemota=Empresa
+[Relaciones.Cte]
+TipoRelacion=Forzosa
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+[Relaciones.FormaPago]
+TipoRelacion=Forzosa
+LlaveLocal=FormaPago
+Clave=FormaPago
+TablaRemota=FormaPago
+LlaveRemota=FormaPago

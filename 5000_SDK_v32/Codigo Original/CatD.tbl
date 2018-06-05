@@ -1,0 +1,56 @@
+[Tabla]
+Icono=0
+Clave=CatD
+Archivo=CatD
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Paginas
+Singular=Páginas
+LlavePrimaria=Catalogo<BR>Pagina
+SQL=SELECT<BR>  Catalogo,<BR>  Pagina,<BR>  Orden,<BR>  Nombre<BR><BR>FROM<BR>  CatD
+
+[Catalogo]
+Clave=Catalogo
+Nombre=Catalogo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Catalogo
+
+[Pagina]
+Clave=Pagina
+Nombre=Página
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Clave Incorrecta<T>
+ConRefrescar=S
+ListaRefrescar=Orden
+ValidacionCondicion=EstructuraOk(CatD:CatD.Pagina, <T><T>, 5)
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=EstructuraEnOrden(CatD:CatD.Pagina, 5)
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Tabla.ListaCampos]
+(Inicio)=Catalogo
+Catalogo=Pagina
+Pagina=Nombre
+Nombre=Orden
+Orden=(Fin)

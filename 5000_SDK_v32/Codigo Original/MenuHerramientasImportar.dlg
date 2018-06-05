@@ -1,0 +1,95 @@
+[Dialogo]
+Clave=MenuHerramientasImportar
+Nombre=Importar
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=186
+PosicionInicialAncho=227
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=398
+PosicionInicialArriba=274
+
+[Acciones.MigrarDatos]
+Nombre=MigrarDatos
+Boton=0
+NombreDesplegar=&Migrar datos...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Importar Datos
+Activo=S
+Visible=S
+
+[Acciones.Precios]
+Nombre=Precios
+Boton=0
+NombreDesplegar=&Precios...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Importar - Precios<T><BR><T>ImportarPrecios<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>xpImportarPrecios<T><BR>EstacionTrabajo
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Archivo]
+Nombre=Archivo
+Boton=0
+NombreDesplegar=&Archivo...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros=S
+Activo=S
+Visible=S
+ListaParametros1=<T>Importar - Archivo<T><BR><T>ListaSt<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>xpImportarArchivo<T><BR>EstacionTrabajo & <T>, <T> & Comillas(Empresa) & <T>, <T> & Comillas(Usuario) & <T>, <T> & Sucursal
+
+[Acciones.XML]
+Nombre=XML
+Boton=0
+NombreDesplegar=&XML...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ImportarXML(<T><T>, <T>*.xml<T>, <T>XML<T>, <T>XML<T>, <T>XML<T>)
+
+[Acciones.Aspel]
+Nombre=Aspel
+Boton=0
+NombreDesplegar=Importación &Aspel
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=AspelVisor
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=MigrarDatos
+MigrarDatos=Precios
+Precios=Archivo
+Archivo=XML
+XML=Aspel
+Aspel=(Fin)

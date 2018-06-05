@@ -1,0 +1,50 @@
+[Tabla]
+Icono=0
+Clave=JornadaDiaFestivo
+Archivo=JornadaDiaFestivo
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Días Festivos
+Singular=Día Festivo
+LlavePrimaria=Jornada<BR>Fecha
+SQL=SELECT<BR>  Jornada,<BR>  Fecha,<BR>  Concepto,<BR>  EsLaborable<BR><BR>FROM<BR>  JornadaDiaFestivo
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+AyudaEnCaptura=Calendario sin Hora
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[EsLaborable]
+Clave=EsLaborable
+Nombre=Es Laborable
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Jornada]
+Clave=Jornada
+Nombre=Jornada
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Jornada
+
+[Tabla.ListaCampos]
+(Inicio)=Jornada
+Jornada=Fecha
+Fecha=Concepto
+Concepto=EsLaborable
+EsLaborable=(Fin)

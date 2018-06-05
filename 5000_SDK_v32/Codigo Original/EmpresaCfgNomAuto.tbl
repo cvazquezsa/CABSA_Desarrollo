@@ -1,0 +1,222 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgNomAuto
+Archivo=EmpresaCfgNomAuto
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  AjusteMensualISR,<BR>  TopeHorasExtrasSemanal,<BR>  Cxc,<BR>  SueldoMinimo,<BR>  SubsidioIncapacidadEG,<BR>  PrimaDominicalAuto,<BR>  ISRLiquidacionSueldoMensual,<BR>  ISRReglamentoAguinaldo,<BR>  ISRReglamentoPTU,<BR>  FactorIntegracionAntiguedad,<BR>  FactorIntegracionTabla,<BR>  FondoAhorroRepartirInteres,<BR>  CajaAhorroRepartirInteres<BR><BR>FROM<BR>  EmpresaCfgNomAuto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[AjusteMensualISR]
+Clave=AjusteMensualISR
+Nombre=Ajuste Mensual ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[TopeHorasExtrasSemanal]
+Clave=TopeHorasExtrasSemanal
+Nombre=Tope Horas Extras Semanal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Cxc]
+Clave=Cxc
+Nombre=Integrar Cuentas por Cobrar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SueldoMinimo]
+Clave=SueldoMinimo
+Nombre=Sueldo Mínimo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[SubsidioIncapacidadEG]
+Clave=SubsidioIncapacidadEG
+Nombre=Subsidio Incapacidad Enfemedad General
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[PrimaDominicalAuto]
+Clave=PrimaDominicalAuto
+Nombre=Prima Dominical Automática (en base a la jornada)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ISRLiquidacionSueldoMensual]
+Clave=ISRLiquidacionSueldoMensual
+Nombre=ISR Liquidacion Sueldo Mensual
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Sueldo Mensual<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[ISRReglamentoAguinaldo]
+Clave=ISRReglamentoAguinaldo
+Nombre=ISR Reglamento (Aguinaldo)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ISRReglamentoPTU]
+Clave=ISRReglamentoPTU
+Nombre=ISR Reglamento (PTU)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[FactorIntegracionAntiguedad]
+Clave=FactorIntegracionAntiguedad
+Nombre=Antigüedad Factor Integración
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Siguiente<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=FactorIntegracionTabla
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FactorIntegracionTabla]
+Clave=FactorIntegracionTabla
+Nombre=Tabla Factor Integración
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TablaNum
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=FactorIntegracionAntiguedad=<T>Tabla<T>
+TipoDatos=Texto
+
+[FondoAhorroRepartirInteres]
+Clave=FondoAhorroRepartirInteres
+Nombre=Repartir Interes (Fondo Ahorro)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[CajaAhorroRepartirInteres]
+Clave=CajaAhorroRepartirInteres
+Nombre=Repartir Interes (Caja Ahorro)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=AjusteMensualISR
+AjusteMensualISR=TopeHorasExtrasSemanal
+TopeHorasExtrasSemanal=Cxc
+Cxc=SueldoMinimo
+SueldoMinimo=SubsidioIncapacidadEG
+SubsidioIncapacidadEG=PrimaDominicalAuto
+PrimaDominicalAuto=ISRLiquidacionSueldoMensual
+ISRLiquidacionSueldoMensual=ISRReglamentoAguinaldo
+ISRReglamentoAguinaldo=ISRReglamentoPTU
+ISRReglamentoPTU=FactorIntegracionAntiguedad
+FactorIntegracionAntiguedad=FactorIntegracionTabla
+FactorIntegracionTabla=FondoAhorroRepartirInteres
+FondoAhorroRepartirInteres=CajaAhorroRepartirInteres
+CajaAhorroRepartirInteres=(Fin)
+
+[Cxc.ListaOpciones]
+(Inicio)=No
+No=Parciales
+Parciales=Completas
+Completas=(Fin)
+
+[SueldoMinimo.ListaOpciones]
+(Inicio)=No
+No=Oficial
+Oficial=(Fin)
+
+[ISRLiquidacionSueldoMensual.ListaOpciones]
+(Inicio)=Sueldo Mensual
+Sueldo Mensual=Acumulado Mensual Anterior
+Acumulado Mensual Anterior=(Fin)
+
+[FactorIntegracionAntiguedad.ListaOpciones]
+(Inicio)=Siguiente
+Siguiente=Actual
+Actual=Tabla
+Tabla=(Fin)
+
+[FondoAhorroRepartirInteres.ListaOpciones]
+(Inicio)=PTU
+PTU=%
+%=(Fin)
+
+[CajaAhorroRepartirInteres.ListaOpciones]
+(Inicio)=PTU
+PTU=%
+%=(Fin)

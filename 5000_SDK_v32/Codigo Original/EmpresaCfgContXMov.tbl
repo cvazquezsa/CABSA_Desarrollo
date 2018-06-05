@@ -1,0 +1,54 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgContXMov
+Archivo=EmpresaCfgContXMov
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Movimientos
+Singular=Movimiento
+LlavePrimaria=Empresa<BR>Modulo<BR>Mov
+ControlMov=S
+ControlEmpresas=S
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov<BR><BR>FROM<BR>  EmpresaCfgContXMov
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Módulos
+OpcionesUnicamente=S
+AlCambiar=Asigna(Mov, Nulo)
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=Mov
+Mov=(Fin)

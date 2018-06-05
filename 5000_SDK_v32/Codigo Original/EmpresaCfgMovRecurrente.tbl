@@ -1,0 +1,72 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovRecurrente
+Archivo=EmpresaCfgMovRecurrente
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Movimientos
+Singular=Movimiento
+LlavePrimaria=Empresa<BR>Modulo<BR>MovOrigen
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  MovOrigen,<BR>  MovDestino<BR><BR>FROM<BR>  EmpresaCfgMovRecurrente
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[MovOrigen]
+Clave=MovOrigen
+Nombre=Movimiento Origen
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=MovTipoNombresEnLista(Modulo, VTAS.FR, GAS.GR)
+TipoDatos=Texto
+
+[MovDestino]
+Clave=MovDestino
+Nombre=Movimiento Destino
+Visible=S
+TamanoValidacion=10
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=MovOrigen
+MovOrigen=MovDestino
+MovDestino=(Fin)
+
+[Modulo.ListaOpciones]
+(Inicio)=VTAS
+VTAS=GAS
+GAS=(Fin)

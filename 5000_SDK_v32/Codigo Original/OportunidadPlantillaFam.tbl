@@ -1,0 +1,36 @@
+[Tabla]
+Icono=0
+Clave=OportunidadPlantillaFam
+Archivo=OportunidadPlantillaFam
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=Familia
+Nombre=OportunidadPlantillaFam
+Singular=OportunidadPlantillaFam
+LlavePrimaria=Familia
+
+SQL=(Lista)
+[Familia]
+Clave=Familia
+Nombre=Familia
+Tamano=50
+TamanoValidacion=50
+TipoDatos=Texto
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Familia
+Familia=FamiliaMaestra
+FamiliaMaestra=Icono
+Icono=(Fin)
+
+
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Familia
+Familia=FROM OportunidadPlantillaFam
+FROM OportunidadPlantillaFam=(Fin)

@@ -1,0 +1,79 @@
+[Dialogo]
+Clave=MenuConciliacionAutomatica
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=538
+PosicionInicialArriba=450
+PosicionInicialAlturaCliente=89
+PosicionInicialAncho=214
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+
+[Acciones.Banamex]
+Nombre=Banamex
+Boton=0
+NombreDesplegar=&Banamex
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Conciliación Automática Banamex<T><BR><T>ListaSt<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>spConcliarBanamex<T><BR>Sucursal&<T>, <T>&EstacionTrabajo&<T>, <T>&Comillas(Usuario)<BR>Verdadero
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.HSBC]
+Nombre=HSBC
+Boton=0
+NombreDesplegar=&HSBC
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Conciliación Automática HSBC<T><BR><T>ListaSt<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>spConcliarHSBC<T><BR>Sucursal&<T>, <T>&EstacionTrabajo&<T>, <T>&Comillas(Usuario)<BR>Verdadero
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Santander]
+Nombre=Santander
+Boton=0
+NombreDesplegar=&Santander Serfin
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Conciliación Automática Santander Serfin<T><BR><T>ListaSt<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>spConcliarSantander<T><BR>Sucursal&<T>, <T>&EstacionTrabajo&<T>, <T>&Comillas(Usuario)<BR>Verdadero
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Banorte]
+Nombre=Banorte
+Boton=0
+NombreDesplegar=&Banorte
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Procesar Lista
+ListaParametros1=<T>Conciliación Automática Banorte<T><BR><T>ListaSt<T><BR><T>Estacion<T><BR><T>ID<T><BR><T>spConcliarBanorte<T><BR>Sucursal&<T>, <T>&EstacionTrabajo&<T>, <T>&Comillas(Usuario)<BR>Verdadero
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Banamex
+Banamex=HSBC
+HSBC=Santander
+Santander=Banorte
+Banorte=(Fin)

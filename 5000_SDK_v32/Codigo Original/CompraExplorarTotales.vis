@@ -1,0 +1,113 @@
+
+[Vista]
+Icono=0
+Clave=CompraExplorarTotales
+Nombre=CompraExplorarTotales
+Modulos=(Todos)
+Singular=CompraExplorarTotales
+TipoTabla=General
+
+VistaIndependiente=S
+
+
+
+
+
+
+ListaCampos=(Lista)
+
+SQL=(Lista)
+[SubTotalNeto]
+Clave=SubTotalNeto
+Nombre=SubTotalNeto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=SubTotalNeto
+
+Monetario=S
+[ImpuestosNetos]
+Clave=ImpuestosNetos
+Nombre=Impuestos Netos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ImpuestosNetos
+
+Monetario=S
+[ImporteTotalNeto]
+Clave=ImporteTotalNeto
+Nombre=Importe Total Neto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=ImporteTotalNeto
+
+Monetario=S
+[SubTotalNetoMN]
+Clave=SubTotalNetoMN
+Nombre=Sub Total Neto MN
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=SubTotalNetoMN
+
+Monetario=S
+[ImpuestosNetosMN]
+Clave=ImpuestosNetosMN
+Nombre=Impuestos Netos MN
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=ImpuestosNetosMN
+
+Monetario=S
+[ImporteTotalNetoMN]
+Clave=ImporteTotalNetoMN
+Nombre=Importe Total Neto MN
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=ImporteTotalNetoMN
+
+Monetario=S
+[Registros]
+Clave=Registros
+Nombre=Registros
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Registros
+
+Cantidad=S
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=SubTotalNeto
+SubTotalNeto=ImpuestosNetos
+ImpuestosNetos=ImporteTotalNeto
+ImporteTotalNeto=SubTotalNetoMN
+SubTotalNetoMN=ImpuestosNetosMN
+ImpuestosNetosMN=ImporteTotalNetoMN
+ImporteTotalNetoMN=Registros
+Registros=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT SUM((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100)) AS SubTotalNeto,
+SELECT SUM((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100)) AS SubTotalNeto,=SUM(Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)) AS ImpuestosNetos,
+SUM(Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)) AS ImpuestosNetos,=SUM(((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))+(Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))) AS ImporteTotalNeto,
+SUM(((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))+(Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))) AS ImporteTotalNeto,=SUM((((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))*Compra.TipoCambio)/ContMoneda.TipoCambio)AS SubTotalNetoMN,
+SUM((((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))*Compra.TipoCambio)/ContMoneda.TipoCambio)AS SubTotalNetoMN,=SUM((((Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)))*Compra.TipoCambio)/ContMoneda.TipoCambio) AS ImpuestosNetosMN,
+SUM((((Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)))*Compra.TipoCambio)/ContMoneda.TipoCambio) AS ImpuestosNetosMN,=SUM(((((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))*Compra.TipoCambio)/ContMoneda.TipoCambio)+((((Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)))*Compra.TipoCambio)/ContMoneda.TipoCambio)) AS ImporteTotalNetoMN,
+SUM(((((Compra.Importe*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END))-(ISNULL(Compra.DescuentoGlobal,0)/100))*Compra.TipoCambio)/ContMoneda.TipoCambio)+((((Compra.Impuestos*(CASE WHEN MovTipo.Clave IN('COMS.D','COMS.DF','COMS.B','COMS.DC','COMS.DCR')THEN -1 ELSE 1 END)))*Compra.TipoCambio)/ContMoneda.TipoCambio)) AS ImporteTotalNetoMN,=COUNT(Compra.ID)AS Registros
+COUNT(Compra.ID)AS Registros=FROM Compra
+FROM Compra=LEFT JOIN Prov ON Compra.Proveedor<IGUAL>Prov.Proveedor
+LEFT JOIN Prov ON Compra.Proveedor<IGUAL>Prov.Proveedor=JOIN MovTipo ON Compra.Mov <IGUAL> MovTipo.Mov AND MovTipo.Modulo <IGUAL> 'COMS'
+JOIN MovTipo ON Compra.Mov <IGUAL> MovTipo.Mov AND MovTipo.Modulo <IGUAL> 'COMS'=JOIN Mon ON Compra.Moneda<IGUAL>Mon.Moneda
+JOIN Mon ON Compra.Moneda<IGUAL>Mon.Moneda=LEFT OUTER JOIN Descuento ON Compra.Descuento<IGUAL>Descuento.Descuento
+LEFT OUTER JOIN Descuento ON Compra.Descuento<IGUAL>Descuento.Descuento=JOIN ContMoneda ON Compra.Empresa<IGUAL>ContMoneda.Empresa {Info.Filtro}
+JOIN ContMoneda ON Compra.Empresa<IGUAL>ContMoneda.Empresa {Info.Filtro}=(Fin)

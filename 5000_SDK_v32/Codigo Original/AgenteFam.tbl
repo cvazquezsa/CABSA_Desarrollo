@@ -1,0 +1,26 @@
+[Tabla]
+Icono=0
+Clave=AgenteFam
+Archivo=AgenteFam
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Familia
+Nombre=Familias
+Singular=Familia
+LlavePrimaria=Familia
+CampoSugerido=Familia
+SQL=SELECT<BR>  Familia<BR><BR>FROM<BR>  AgenteFam
+
+[Familia]
+Clave=Familia
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Requerido=S
+TipoDatos=Texto
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

@@ -1,0 +1,77 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovEsp
+Archivo=EmpresaCfgMovEsp
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+LlavePrimaria=Empresa<BR>Asunto<BR>Modulo<BR>Mov
+CampoMov=Mov
+CampoEmpresa=Empresa
+Nombre=Movimientos Especiales
+Singular=Movimiento Especial
+SQL=SELECT<BR>  Empresa,<BR>  Asunto,<BR>  Modulo,<BR>  Mov,<BR>  Accion<BR><BR>FROM<BR>  EmpresaCfgMovEsp
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+[Asunto]
+Clave=Asunto
+Nombre=Asunto
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Asunto
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Módulos
+OpcionesRenglones=8
+OpcionesUnicamente=S
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(EmpresaCfgMovEsp:EmpresaCfgMovEsp.Modulo)
+
+[Accion]
+Clave=Accion
+Nombre=Acción
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaMemTabla=EmbarqueAccion
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Asunto
+Asunto=Modulo
+Modulo=Mov
+Mov=Accion
+Accion=(Fin)

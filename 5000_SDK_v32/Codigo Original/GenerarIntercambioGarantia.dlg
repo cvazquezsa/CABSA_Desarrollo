@@ -1,0 +1,36 @@
+[Dialogo]
+Clave=GenerarIntercambioGarantia
+Nombre=Intercambio Garantía
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+PosicionInicialIzquierda=388
+PosicionInicialArriba=325
+PosicionInicialAltura=117
+PosicionInicialAncho=247
+ListaAcciones=Devolucion
+VentanaSiempreAlFrente=S
+
+[Acciones.Devolucion]
+Nombre=Devolucion
+Boton=0
+NombreDesplegar=Generar &Devolución Garantía
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraDevGarantia)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+Visible=S

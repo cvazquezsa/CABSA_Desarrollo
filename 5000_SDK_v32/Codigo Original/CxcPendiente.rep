@@ -1,0 +1,992 @@
+[Reporte]
+Clave=CxcPendiente
+Nombre=Cuentas por Cobrar
+Icono=18
+Vista=CxcExplorar
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FuentePorOmision={Arial, 8, Negro, []}
+Ascii=S
+Impresora=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Parametros=S
+Columnas=1
+Parametros1=CxcInfo.Empresa<BR>CxcInfo.Cliente
+Parametros2==<BR>Entre
+Parametros3=N<BR>N
+PosicionInicialAltura=531
+PosicionInicialAncho=802
+OtroOrden=S
+ListaOrden=(Lista)
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Menus=S
+Tipo=Reporte
+PosicionInicialAlturaCliente=504
+
+[Formato]
+VentanaIzquierda=103
+VentanaArriba=111
+VentanaAltura=637
+VentanaAncho=1111
+PanelArriba=148
+PanelBotones=110
+ListaLineas=Encabezado<BR>Inicio: CxcInfo.Cliente<BR>Inicio: CxcInfo.Cliente<BR>Detalle<BR>Fin: CxcInfo.Cliente<BR>Fin: CxcInfo.Moneda<BR>Pie
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Cuentas por Cobrar<T>
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[Linea2]
+Clave=Inicio: CxcInfo.Cliente
+Seccion=Inicio Grupo
+AltoEnCm=0.6
+AVertical=Abajo
+Fuente={Arial, 10, Negro, [Negritas]}
+Objetos=1
+BordeAbajo=S
+EstiloAbajo=1
+Grupo=CxcInfo.Cliente
+Renglones=1
+FondoColor=Blanco
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=18.47
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Cte.Nombre+<T> (<T>+CxcInfo.Cliente+<T>)<T>
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=99
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[Linea3]
+Clave=Inicio: CxcInfo.Cliente
+Objetos=8
+Seccion=Inicio Grupo
+Grupo=CxcInfo.Cliente
+AltoEnCm=0.5
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Marco=N
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=
+Marco=N
+BordeAbajo=N
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+
+[Linea4]
+Clave=Detalle
+Objetos=8
+Seccion=Detalle
+Grupo=
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+Visible=
+BordeAbajo=N
+Renglones=1
+FondoColor=Blanco
+
+[Linea5]
+Clave=Fin: CxcInfo.Cliente
+Seccion=Fin Grupo
+Marco=N
+EstiloMarco=0
+AltoEnCm=0.6
+AVertical=Arriba
+Fuente={Arial, 8, Negro, [Negritas]}
+Objetos=8
+Grupo=CxcInfo.Cliente
+Visible=
+BordeArriba=S
+EstiloArriba=1
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=CxcPendiente
+ListaParametros1=Empresa<BR>Info.ClienteD<BR>Info.ClienteA
+ListaParametros=S
+Activo=S
+Visible=S
+EspacioPrevio=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=CxcPendiente
+ListaParametros1=Empresa<BR>Info.ClienteD<BR>Info.ClienteA
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea8]
+Clave=Fin: CxcInfo.Cliente
+Seccion=Fin Grupo
+Grupo=CxcInfo.Cliente
+AltoEnCm=0.6
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=0.5
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+EstiloMarco=0
+BordeArriba=N
+EstiloArriba=1
+EstiloAbajo=0
+AnchoTexto=3
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=0.39
+EstiloMarco=0
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+BordeArriba=S
+EstiloArriba=1
+EstiloAbajo=0
+FormatoValidacion=
+AnchoTexto=2
+FondoColor=Blanco
+
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[C5]
+Celda=C5
+Alineacion=Izquierda
+AnchoEnCm=0.29
+EstiloMarco=0
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+BordeArriba=S
+EstiloArriba=1
+EstiloAbajo=0
+AnchoTexto=2
+FondoColor=Blanco
+
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=0.5
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=3.5
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxcInfo.Mov+<T> <T>+CxcInfo.MovID
+BordeAbajo=N
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[H2]
+Celda=H2
+Alineacion=Centrado
+AnchoEnCm=3
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Moratorios)
+
+[H4]
+Celda=H4
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Moratorios
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[D5]
+Celda=D5
+Alineacion=Izquierda
+AnchoEnCm=0.29
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+EstiloMarco=0
+EstiloAbajo=0
+AnchoTexto=2
+FondoColor=Blanco
+
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=3.5
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxcInfo.Mov)
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[Linea7]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+
+[E5]
+Celda=E5
+Alineacion=Izquierda
+AnchoEnCm=0.29
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+
+AnchoTexto=2
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[F5]
+Celda=F5
+Alineacion=Izquierda
+AnchoEnCm=10.21
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+
+AnchoTexto=55
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[G5]
+Celda=G5
+Alineacion=Derecha
+AnchoEnCm=3.5
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(CxcInfo.Saldo)
+
+AnchoTexto=19
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[H5]
+Celda=H5
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Moratorios)
+
+AnchoTexto=16
+FondoColor=Blanco
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=0.21
+BordeArriba=S
+EstiloArriba=1
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=
+AnchoTexto=1
+FondoColor=Blanco
+FormatoValidacion=
+
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[C6]
+Celda=C6
+Alineacion=Izquierda
+AnchoEnCm=0.2
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=
+AnchoTexto=1
+FondoColor=Blanco
+
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[D6]
+Celda=D6
+Alineacion=Izquierda
+AnchoEnCm=0.21
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=
+
+AnchoTexto=1
+FondoColor=Blanco
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=9
+FormatoValidacion=dddddd (hh:nn am/pm)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=2.8
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxcInfo.Referencia)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=2.29
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxcInfo.FechaEmision)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=2
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxcInfo.Vencimiento)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[F3]
+Celda=F3
+Alineacion=Centrado
+AnchoEnCm=0.9
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Dias)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[G3]
+Celda=G3
+Alineacion=Centrado
+AnchoEnCm=3.5
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CxcInfo.Saldo)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[H3]
+Celda=H3
+Alineacion=Centrado
+AnchoEnCm=3
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Moratorios)
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=2.79
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxcInfo.Referencia
+FormatoValidacion=
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[D4]
+Celda=D4
+Alineacion=Izquierda
+AnchoEnCm=2.29
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FormatoValidacion=dd/mmm/yyyy
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxcInfo.FechaEmision
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[E4]
+Celda=E4
+Alineacion=Izquierda
+AnchoEnCm=2
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FormatoValidacion=dd/mmm/aaaa
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxcInfo.Vencimiento
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[F4]
+Celda=F4
+Alineacion=Derecha
+AnchoEnCm=0.89
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(Dias>0,Dias)
+FormatoValidacion=
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[G4]
+Celda=G4
+Alineacion=Derecha
+AnchoEnCm=3.5
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CxcInfo.Saldo
+AnchoTexto=15
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[Linea6]
+Clave=Fin: CxcInfo.Moneda
+Objetos=8
+Seccion=Fin Grupo
+BordeArriba=S
+EstiloArriba=1
+AltoEnCm=0.6
+AVertical=Arriba
+Fuente={Arial, 12, Negro, [Negritas]}
+Renglones=1
+FondoColor=Blanco
+Grupo=CxcInfo.Moneda
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=10.9
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=<T>Total <T>+CxcInfo.Moneda
+AnchoTexto=59
+FondoColor=Blanco
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+[B7]
+Celda=B7
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+CBAncho=12
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+[E6]
+Celda=E6
+Alineacion=Izquierda
+AnchoEnCm=0.2
+AnchoTexto=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F6]
+Celda=F6
+Alineacion=Izquierda
+AnchoEnCm=0.21
+AnchoTexto=1
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[G6]
+Celda=G6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3.5
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(CxcInfo.Saldo)
+
+[H6]
+Celda=H6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBAncho=12
+CBTipo=UPC A
+Fuente={Arial, 12, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Moratorios)
+
+[Reporte.ListaOrden]
+(Inicio)=CxcInfo.Moneda	(Acendente)
+CxcInfo.Moneda	(Acendente)=Cte.Numero	(Acendente)
+Cte.Numero	(Acendente)=CxcInfo.Cliente	(Acendente)
+CxcInfo.Cliente	(Acendente)=CxcInfo.Vencimiento	(Acendente)
+CxcInfo.Vencimiento	(Acendente)=(Fin)
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

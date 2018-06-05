@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PresentacionGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=PresentacionGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PresentacionGrupo.Grupo
+TablaPrincipal=PresentacionGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  PresentacionGrupo.Grupo<BR><BR>FROM<BR>  PresentacionGrupo
+
+[PresentacionGrupo.Grupo]
+Clave=PresentacionGrupo.Grupo
+LigaTabla=PresentacionGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

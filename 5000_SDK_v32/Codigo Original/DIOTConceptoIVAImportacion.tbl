@@ -1,0 +1,53 @@
+
+[Tabla]
+Icono=0
+Clave=DIOTConceptoIVAImportacion
+Nombre=DIOTConceptoIVAImportacion
+Archivo=DIOTConceptoIVAImportacion
+Modulos=(Todos)
+Singular=DIOTConceptoIVAImportacion
+
+TipoTabla=General
+ListaCampos=Concepto
+
+LlavePrimaria=Concepto
+SQL=(Lista)
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaForma=ConceptoGASLista
+AyudaVista=Concepto
+AyudaCampo=Concepto.Concepto
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Concepto Incorrecto<T>
+
+
+
+
+
+AyudaMultiple=S
+
+
+
+
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(*) FROM Concepto WHERE Concepto = :tConcepto AND Modulo = :tModulo<T>, Concepto, <T>COMSG<T>) > 0<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Falso<BR>Fin
+Formula=SQLEnLista(<T>SELECT Concepto FROM Concepto WHERE Modulo = :tModulo ORDER BY Concepto<T>, <T>COMSG<T>)
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Concepto
+Concepto=FROM DIOTConceptoIVAImportacion
+FROM DIOTConceptoIVAImportacion=(Fin)

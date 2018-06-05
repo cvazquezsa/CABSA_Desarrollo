@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=ImpresoraModo
+Nombre=Modos de Impresión
+Modulos=(Todos)
+Singular=Modo de Impresión
+ListaTablas=ImpresoraModo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ImpresoraModo
+UsarJOIN=S
+SQL=SELECT<BR>  ImpresoraModo.Modo,<BR>  ImpresoraModo.Secuencia<BR><BR>FROM<BR>  ImpresoraModo
+
+[ImpresoraModo.Modo]
+Clave=ImpresoraModo.Modo
+LigaTabla=ImpresoraModo
+LigaCampo=Modo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Modo
+
+[ImpresoraModo.Secuencia]
+Clave=ImpresoraModo.Secuencia
+LigaTabla=ImpresoraModo
+LigaCampo=Secuencia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Secuencia
+
+[Vista.ListaCampos]
+(Inicio)=ImpresoraModo.Modo
+ImpresoraModo.Modo=ImpresoraModo.Secuencia
+ImpresoraModo.Secuencia=(Fin)

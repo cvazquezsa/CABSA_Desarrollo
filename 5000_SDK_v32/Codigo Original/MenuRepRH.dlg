@@ -1,0 +1,64 @@
+[Dialogo]
+Clave=MenuRepRH
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=594
+PosicionInicialArriba=379
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=251
+ListaAcciones=(Lista)
+PosicionInicialAltura=124
+
+[Acciones.Cred]
+Nombre=Cred
+Boton=0
+NombreDesplegar=&Credenciales
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=mis_RepCredenciales
+Activo=S
+EspacioPrevio=S
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>RH/Cred<T>)
+[Acciones.Historial]
+Nombre=Historial
+Boton=0
+NombreDesplegar=Historial Personal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+Activo=S
+
+
+
+ClaveAccion=RepHistPersonal
+
+
+
+
+
+
+
+
+
+
+
+
+VisibleCondicion=no CfgLista.Existe(<T>Reportes Inactivos<T>, <T>RH/Historial<T>)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cred
+Cred=Historial
+Historial=(Fin)

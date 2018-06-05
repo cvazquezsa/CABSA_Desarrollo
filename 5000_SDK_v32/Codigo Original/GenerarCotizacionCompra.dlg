@@ -1,0 +1,36 @@
+[Dialogo]
+Clave=GenerarCotizacionCompra
+Nombre=Cotización
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Orden
+PosicionInicialIzquierda=722
+PosicionInicialArriba=463
+PosicionInicialAltura=117
+PosicionInicialAncho=236
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=90
+
+[Acciones.Orden]
+Nombre=Orden
+Boton=0
+NombreDesplegar=Generar &Orden Compra
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Antes=
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CompraOrden,Afectar.FormaCaptura)

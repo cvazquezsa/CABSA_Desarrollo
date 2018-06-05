@@ -1,0 +1,347 @@
+[Reporte]
+Clave=ArtPrecioHist
+Nombre=Cambios de Precios
+Icono=0
+Vista=ArtPrecioHist
+Tipo=Reporte
+SubmenuPreliminar=S
+Tablas=S
+TablaColumna=Numero
+TablaRenglon=Articulo
+TablaValor1=PrecioActual
+TablaAlineacionCeldas=Derecha
+TablaAlineacionEncabezados=Centrado
+TablaAlineacionRenglones=Centrado
+TablaFormato1=(Monetario)
+TablaTotalTitulo=Total
+TablaFlujoTitulo=Flujo
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+PosicionInicialAltura=500
+PosicionInicialAncho=798
+BarraHerramientas=S
+Menus=S
+ListaAcciones=(Lista)
+VistaEspecial=S
+ConFormaPrevia=S
+FormaPrevia=EspecificarFechaD
+PosicionInicialAlturaCliente=473
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Final<BR>Pie
+VentanaIzquierda=45
+VentanaArriba=174
+VentanaAltura=420
+VentanaAncho=933
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=S
+EstiloAbajo=3
+
+[Vista]
+Icono=0
+Clave=ArtPrecioHist
+VistaIndependiente=S
+ListaCampos=(Lista)
+SQL=SELECT a.Articulo, a.Numero, <T>Fecha<T> = MAX(a.Fecha), <T>PrecioActual<T> = (SELECT PrecioActual FROM ArtPrecioHist b WHERE b.Articulo = a.Articulo AND b.Numero = a.Numero AND b.Fecha = MAX(a.Fecha))<BR>  FROM ArtPrecioHist a<BR> WHERE a.Fecha >= <T>{FechaFormatoServidor(Info.FechaD)}<T><BR> GROUP BY a.Articulo, a.Numero
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Articulo
+
+[Numero]
+Clave=Numero
+Nombre=Numero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Numero
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ClaveBDE=Fecha
+
+[PrecioActual]
+Clave=PrecioActual
+Nombre=Precio Actual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=PrecioActual
+Monetario=S
+
+[Linea2]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=0.2
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=32
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+BordeAbajo=S
+EstiloAbajo=3
+Expresion=ReporteNombre
+
+[Linea3]
+Clave=Final
+Objetos=1
+Seccion=Final
+AltoEnCm=0.4
+Renglones=1
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=5
+AnchoTexto=27
+BordeAbajo=N
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+EsTabla=S
+TablaClave=<T>Artículo / Lista<T>
+
+[B3]
+Celda=B3
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=57
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Linea4]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=48
+BordeArriba=S
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=57
+BordeArriba=S
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=9.61
+AnchoTexto=52
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Del <T>+FechaEnTexto(Info.FechaD, <T>dd/mmm/aaaa<T>)+<T> al <T>+FechaEnTexto(Hoy, <BR><T>dd/mmm/aaaa<T>)
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=ArtPrecioHist
+Activo=S
+Visible=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Excel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=ArtPrecioHist
+Activo=S
+Visible=S
+
+[C1]
+Celda=C1
+Alineacion=Derecha
+AnchoEnCm=5
+AnchoTexto=105
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Vista.ListaCampos]
+(Inicio)=Articulo
+Articulo=Numero
+Numero=Fecha
+Fecha=PrecioActual
+PrecioActual=(Fin)

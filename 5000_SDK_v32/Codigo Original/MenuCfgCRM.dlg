@@ -1,0 +1,50 @@
+
+[Dialogo]
+Clave=MenuCfgCRM
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+PosicionInicialIzquierda=538
+PosicionInicialArriba=342
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=269
+
+ListaAcciones=(Lista)
+
+[Acciones.CfgCRM]
+Nombre=CfgCRM
+Boton=0
+NombreDesplegar=CRM Dynamics
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CfgCRM
+Activo=S
+Visible=S
+
+[Acciones.TablaSyncro]
+Nombre=TablaSyncro
+Boton=0
+NombreDesplegar=Tabla Syncro CRM Dynamics
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TablaSyncro
+Activo=S
+Visible=S
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=CfgCRM
+CfgCRM=TablaSyncro
+TablaSyncro=(Fin)

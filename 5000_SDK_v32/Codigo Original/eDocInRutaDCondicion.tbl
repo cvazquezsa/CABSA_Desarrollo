@@ -1,0 +1,194 @@
+
+[Tabla]
+Icono=0
+Clave=eDocInRutaDCondicion
+Nombre=eDocInRutaDCondicion
+Archivo=eDocInRutaDCondicion
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ControlID=S
+CampoID=RID
+SQL=(Lista)
+[eDocIn]
+Clave=eDocIn
+Nombre=eDocIn
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Descripcion
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Ruta
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[GUID]
+Clave=GUID
+Nombre=GUID
+Visible=S
+TamanoValidacion=36
+TipoDatos=Texto
+
+Tamano=36
+ValorPorOmision=Info.Clave
+[Operando1]
+Clave=Operando1
+Nombre=Valor 
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Texto
+
+Tamano=255
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Ruta FROM  eDocInNodoAtributoTemp2 WHERE Estacion = :nEstacion<T>,EstacionTrabajo)
+[Operador]
+Clave=Operador
+Nombre=Operador
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+RefrescarTodo=
+ListaRefrescar=Operando2
+ConRefrescar=S
+ListaOpciones=(Lista)
+[Operando2]
+Clave=Operando2
+Nombre=Valor 2
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Texto
+
+Tamano=255
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+
+Formula=SI Operador = <T>DENTRO DE LA TABLA<T><BR>  Entonces     SQLEnLista(<T>SELECT DISTINCT TablaValor FROM  TablaValor<T>)<BR>  SiNo<BR>    SQLEnLista(<T>SELECT DISTINCT Ruta FROM  eDocInNodoAtributoTemp2 WHERE Estacion = :nEstacion<T>,EstacionTrabajo)<BR>Fin
+[Relaciones.ecuadorAutorizacion.LlaveLocal]
+(Inicio)=GUID
+GUID=eDocIn
+eDocIn=Ruta
+Ruta=(Fin)
+
+[Relaciones.ecuadorAutorizacion.LlaveRemota]
+(Inicio)=GUID
+GUID=eDocIn
+eDocIn=Ruta
+Ruta=(Fin)
+
+
+
+[Relaciones.eDocInRutaD.LlaveLocal]
+(Inicio)=GUID
+GUID=eDocIn
+eDocIn=Ruta
+Ruta=(Fin)
+
+[Relaciones.eDocInRutaD.LlaveRemota]
+(Inicio)=GUID
+GUID=eDocIn
+eDocIn=Ruta
+Ruta=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Operador.ListaOpciones]
+(Inicio)=ES EL NODO PRINCIPAL
+ES EL NODO PRINCIPAL=SI EXISTE
+SI EXISTE=ES IGUAL A
+ES IGUAL A=ES MAYOR QUE
+ES MAYOR QUE=ES MENOR QUE
+ES MENOR QUE=ES MAYOR O IGUAL QUE
+ES MAYOR O IGUAL QUE=ES DIFERENTE QUE
+ES DIFERENTE QUE=ES MENOR O IGUAL QUE
+ES MENOR O IGUAL QUE=CONTIENE EL TEXTO
+CONTIENE EL TEXTO=ES EL NAME SPACE POR OMISION
+ES EL NAME SPACE POR OMISION=ES UN NAMESPACE VALIDO
+ES UN NAMESPACE VALIDO=DENTRO DE LA TABLA
+DENTRO DE LA TABLA=CFD VALIDO
+CFD VALIDO=XML VALIDO
+XML VALIDO=(Fin)
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=eDocIn
+eDocIn=Ruta
+Ruta=RID
+RID=GUID
+GUID=Operando1
+Operando1=Operador
+Operador=Operando2
+Operando2=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=eDocIn,
+eDocIn,=Ruta,
+Ruta,=RID,
+RID,=GUID,
+GUID,=Operando1,
+Operando1,=Operador,
+Operador,=Operando2
+Operando2=FROM eDocInRutaDCondicion
+FROM eDocInRutaDCondicion=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=eDocIn
+eDocIn=Ruta
+Ruta=RID
+RID=GUID
+GUID=(Fin)

@@ -1,0 +1,449 @@
+[Reporte]
+Clave=PlanArtAlm
+Icono=68
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+Orientacion=por Omision
+FuentePorOmision={Arial, 8, Negro, []}
+Parametros=S
+Columnas=1
+PosicionInicialAltura=412
+PosicionInicialAncho=857
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+ImpresoraPixeles=(Auto)
+FormatoSinConexion=S
+Nombre=<T>Plan - <T>+Info.Descripcion+<T> (<T>+Info.Almacen+<T>)<T>
+Vista=PlanArt
+Filtros=S
+Tablas=S
+TablaColumna=PlanArt.Periodo
+TablaRenglon=Acronimo.Termino
+TablaRenglonOrden=PlanEstructura.Orden
+TablaValor1=PlanArt.Cantidad
+TablaAlineacionCeldas=Derecha
+TablaAlineacionEncabezados=Centrado
+TablaAlineacionRenglones=Izquierda
+TablaFormato1=#,.#
+TablaTotalTitulo=Total
+TablaFlujoTitulo=Flujo
+ListaCampos=
+ListaExpresiones=
+OtroOrden=S
+ListaOrden=PlanArt.SubCuenta<TAB>(Acendente)
+Parametros1=
+Parametros2=
+Parametros3=
+TablaColumnaRango=S
+TablaColumnaDel=0
+TablaColumnaAl=11
+TablaTituloColumnaMenor=vencido
+TablaRangoMenores=S
+TablaTituloColumnaMayor=superior
+TieneFiltroAbierto=S
+PosicionInicialAlturaCliente=413
+FiltroAbierto=PlanArt.Empresa=<T>{Empresa}<T> AND<BR>PlanArt.Articulo=<T>{Info.Articulo}<T> AND<BR>PlanArt.Almacen=<T>{Info.Almacen}<T> AND<BR>PlanEstructura.TipoPlan=<T>ART<T> AND PlanEstructura.Visible=1
+ExpresionesAntes=Si(Config.PlanNivelArtAutoRecalc, EjecutarSQL(<T>spPlanArt :tEmp, :tArt<T>, Empresa, Info.Articulo))
+
+[Formato]
+ListaLineas=Encabezado<BR>Fin: PlanArt.SubCuenta<BR>Fin: PlanArt.SubCuenta<BR>Fin: PlanArt.SubCuenta<BR>Fin: PlanArt.SubCuenta<BR>Pie
+VentanaIzquierda=53
+VentanaArriba=140
+VentanaAltura=488
+VentanaAncho=918
+PanelArriba=219
+PanelBotones=79
+
+[Linea1]
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Fin: PlanArt.SubCuenta
+Objetos=0
+Seccion=Fin Grupo
+AltoEnCm=0.21
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+Renglones=1
+FondoColor=Blanco
+BordeAbajo=N
+EstiloAbajo=0
+Grupo=PlanArt.SubCuenta
+
+[Linea3]
+Clave=Fin: PlanArt.SubCuenta
+Objetos=1
+Seccion=Fin Grupo
+Marco=N
+EstiloMarco=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+Grupo=PlanArt.SubCuenta
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=ReporteNombre
+Marco=N
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=48
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+ClaveAccion=PlanArt
+ListaParametros1=PlanArt.Articulo
+ListaParametros=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+Visible=S
+ClaveAccion=PlanArt
+ListaParametros1=PlanArt.Articulo
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+
+[B1]
+Celda=B1
+Alineacion=Centrado
+AnchoEnCm=1.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Config.PlanTipoPeriodo<BR>
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Página)
+TablaAnchoCeldas=1
+TablaAnchoTituloRenglon=4.7
+TablaAnchoTotales=1
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+EsTabla=S
+TablaClave=PlanArt.Articulo
+TablaClaveAdicional=PlanArt.SubCuenta
+
+[Linea4]
+Clave=Fin: PlanArt.SubCuenta
+Objetos=2
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Cursiva]}
+AVertical=Arriba
+Grupo=PlanArt.SubCuenta
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=6
+AnchoTexto=32
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Art.Descripcion1
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=13.61
+AnchoTexto=73
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=PlanArtLeyenda.Leyenda
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C1]
+Celda=C1
+Alineacion=Derecha
+AnchoEnCm=9
+AnchoTexto=15
+BordeAbajo=S
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+
+[Linea5]
+Clave=Fin: PlanArt.SubCuenta
+Objetos=1
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Cursiva]}
+AVertical=Centrado
+Grupo=PlanArt.SubCuenta
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=19.61
+AnchoTexto=105
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=DescribirOpciones( PlanArt.SubCuenta )
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea6]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Acciones.Opciones]
+Nombre=Opciones
+Boton=8
+NombreDesplegar=&Opciones
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=OpcionInfo
+Activo=S
+VisibleCondicion=Info.ArtTipoOpcion=<T>Si<T>
+
+[Acciones.Almacen]
+Nombre=Almacen
+Boton=88
+NombreEnBoton=S
+NombreDesplegar=A&lmacén
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=PlanArtAlm
+Activo=S
+ConCondicion=S
+Visible=S
+EjecucionCondicion=Forma(<T>EspecificarAlmacen<T>)
+
+[Acciones.Posicion]
+Nombre=Posicion
+Boton=95
+NombreDesplegar=&Posición
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=PlanPos
+Activo=S
+Visible=S
+NombreEnBoton=S
+
+[Acciones.Resumen]
+Nombre=Resumen
+Boton=88
+NombreEnBoton=S
+NombreDesplegar=&Resumen
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=PlanArt
+Activo=S
+Visible=S
+
+[Acciones.PlanDemandaAlm]
+Nombre=PlanDemandaAlm
+Boton=47
+NombreEnBoton=S
+NombreDesplegar=&Desglosar Demanda
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=PlanDemandaAlm
+Activo=S
+Visible=S
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=PlanDemandaAlm
+PlanDemandaAlm=Almacen
+Almacen=Resumen
+Resumen=Posicion
+Posicion=Opciones
+Opciones=(Fin)

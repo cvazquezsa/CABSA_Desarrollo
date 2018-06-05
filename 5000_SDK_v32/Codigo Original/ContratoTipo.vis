@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=ContratoTipo
+Nombre=Tipos de Contratos
+Modulos=(Todos)
+Singular=Tipo de Contrato
+ListaTablas=ContratoTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ContratoTipo
+UsarJOIN=S
+SQL=SELECT<BR>  ContratoTipo.Modulo,<BR>  ContratoTipo.Tipo<BR><BR>FROM<BR>  ContratoTipo
+
+[ContratoTipo.Modulo]
+Clave=ContratoTipo.Modulo
+LigaTabla=ContratoTipo
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=Modulo
+
+[ContratoTipo.Tipo]
+Clave=ContratoTipo.Tipo
+LigaTabla=ContratoTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo
+
+[Vista.ListaCampos]
+(Inicio)=ContratoTipo.Modulo
+ContratoTipo.Modulo=ContratoTipo.Tipo
+ContratoTipo.Tipo=(Fin)

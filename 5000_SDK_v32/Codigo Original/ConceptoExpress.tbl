@@ -1,0 +1,78 @@
+[Tabla]
+Icono=0
+Clave=ConceptoExpress
+Archivo=ConceptoExpress
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Concepto Express
+Singular=Concepto Express
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  Modulo,<BR>  Concepto,<BR>  Clase,<BR>  SubClase<BR><BR>FROM<BR>  ConceptoExpress
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Clase]
+Clave=Clase
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Info.Modulo=<T>GAS<T>
+ConRefrescar=S
+ListaRefrescar=SubClase
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=SubClase
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,Info.Modulo)<TAB>
+
+[SubClase]
+Clave=SubClase
+Nombre=Subclasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Info.Modulo=<T>GAS<T>
+ValorRefrescar=<T><T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,Info.Modulo, Clase)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Modulo
+Modulo=Concepto
+Concepto=Clase
+Clase=SubClase
+SubClase=(Fin)

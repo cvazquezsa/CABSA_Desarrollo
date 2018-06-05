@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=CtaDineroGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=CtaDineroGrupo
+TablaPrincipal=CtaDineroGrupo
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=CtaDineroGrupo.Grupo
+UsarJOIN=S
+SQL=SELECT<BR>  CtaDineroGrupo.Grupo<BR><BR>FROM<BR>  CtaDineroGrupo
+
+[CtaDineroGrupo.Grupo]
+Clave=CtaDineroGrupo.Grupo
+LigaTabla=CtaDineroGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

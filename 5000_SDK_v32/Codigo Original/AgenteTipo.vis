@@ -1,0 +1,37 @@
+[Vista]
+Icono=0
+Clave=AgenteTipo
+Nombre=Tipos Agentes
+Modulos=(Todos)
+Singular=Tipo Agente
+ListaTablas=AgenteTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=AgenteTipo
+UsarJOIN=S
+SQL=SELECT<BR>  AgenteTipo.Tipo,<BR>  AgenteTipo.Orden<BR><BR>FROM<BR>  AgenteTipo
+
+[AgenteTipo.Tipo]
+Clave=AgenteTipo.Tipo
+LigaTabla=AgenteTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo
+
+[AgenteTipo.Orden]
+Clave=AgenteTipo.Orden
+LigaTabla=AgenteTipo
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[Vista.ListaCampos]
+(Inicio)=AgenteTipo.Tipo
+AgenteTipo.Tipo=AgenteTipo.Orden
+AgenteTipo.Orden=(Fin)

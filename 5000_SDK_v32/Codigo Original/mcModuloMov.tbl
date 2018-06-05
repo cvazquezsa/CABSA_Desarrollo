@@ -1,0 +1,37 @@
+[Tabla]
+Icono=0
+Clave=mcModuloMov
+Archivo=mcModuloMov
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Movimientos
+Singular=Movimiento
+LlavePrimaria=Modulo<BR>Mov
+CampoMov=Mov
+SQL=SELECT<BR>  Modulo,<BR>  Mov<BR><BR>FROM<BR>  mcModuloMov
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Validar captura en la lista
+Formula=MovTipoEnLista(Info.Modulo, Verdadero)+ListaMovimientos(Info.Modulo)
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=(Fin)

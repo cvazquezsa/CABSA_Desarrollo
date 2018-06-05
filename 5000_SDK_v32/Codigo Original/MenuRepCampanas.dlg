@@ -1,0 +1,74 @@
+[Dialogo]
+Clave=MenuRepCampanas
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=556
+PosicionInicialArriba=302
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=272
+
+
+
+
+
+
+[Acciones.ActividadesCampana]
+Nombre=ActividadesCampana
+Boton=0
+NombreDesplegar=&Actividades realizadas por Campaña
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+Expresion=Browser(General.RSReportASPX+<T>/ActividadesCampana<T>, <T>Actividades realizadas por Campaña<T>)
+[Acciones.AnalisisCampana]
+Nombre=AnalisisCampana
+Boton=0
+NombreDesplegar=&Análisis por Campaña
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+Expresion=Browser(General.RSReportASPX+<T>/AnalisisCampana<T>, <T>Análisis por Campaña<T>)
+[Acciones.EfectividadCampana]
+Nombre=EfectividadCampana
+Boton=0
+NombreDesplegar=&Efectividad Campañas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+Expresion=Browser(General.RSReportASPX+<T>/EfectividadCampana<T>, <T>Efectividad Campañas<T>)
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=ActividadesCampana
+ActividadesCampana=AnalisisCampana
+AnalisisCampana=EfectividadCampana
+EfectividadCampana=(Fin)

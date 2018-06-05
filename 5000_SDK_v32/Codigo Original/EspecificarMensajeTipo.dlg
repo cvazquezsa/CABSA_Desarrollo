@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=EspecificarMensajeTipo
+Nombre=Tipo de Mensaje
+Icono=60
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=186
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=por Diseño
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=507
+PosicionInicialArriba=410
+
+[Acciones.Citas]
+Nombre=Citas
+Boton=0
+NombreDesplegar=&Citas
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Tipo, <T>Cita<T>)
+
+[Acciones.Tareas]
+Nombre=Tareas
+Boton=0
+NombreDesplegar=&Tareas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Tipo, <T>Tarea<T>)
+Activo=S
+Visible=S
+
+[Acciones.Correos]
+Nombre=Correos
+Boton=0
+NombreDesplegar=C&orreos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Info.Tipo, <T>Correo<T>)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Correos
+Correos=Citas
+Citas=Tareas
+Tareas=(Fin)

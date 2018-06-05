@@ -1,0 +1,49 @@
+[Dialogo]
+Clave=GenerarServicioPorConfirmar
+Nombre=Servicio
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=397
+PosicionInicialArriba=310
+PosicionInicialAltura=141
+PosicionInicialAncho=229
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=114
+
+[Acciones.Cotizacion]
+Nombre=Cotizacion
+Boton=0
+NombreDesplegar=&Generar Cotización
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.VentaCotizacion, Afectar.FormaCaptura)
+
+[Acciones.Confirmar]
+Nombre=Confirmar
+Boton=0
+NombreDesplegar=&Servicio Confirmado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Cotizacion
+Cotizacion=Confirmar
+Confirmar=(Fin)

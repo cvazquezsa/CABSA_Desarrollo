@@ -1,0 +1,148 @@
+[Tabla]
+Icono=0
+Clave=OfertaFiltro
+Archivo=OfertaFiltro
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Filtros
+Singular=Filtro
+LlavePrimaria=(Lista)
+ControlID=S
+CampoID=RID
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlSucursalOrigen=S
+CampoSucursalOrigen=SucursalOrigen
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=23
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ValorPorOmision=Info.Campo
+AlCambiar=Asigna(Info.Campo, Campo)
+
+TipoDatos=Texto
+ListaOpciones=(Lista)
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+AyudaRefrescar=S
+AyudaMultiple=S
+AyudaMemRenglones=12
+AyudaMemAvanzada=S
+AyudaMemOpc=Consulta opcional
+Formula=SQLEnLista(<T>spOfertaFiltroClaveAyuda :tCampo<T>, Campo)
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=SucursalOrigen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Campo.ListaOpciones]
+(Inicio)=Almacen
+Almacen=Grupo Almacen
+Grupo Almacen=Cliente
+Cliente=Categoria Cliente
+Categoria Cliente=Grupo Cliente
+Grupo Cliente=Familia Cliente
+Familia Cliente=Zona Cliente
+Zona Cliente=Agente
+Agente=Categoria Agente
+Categoria Agente=Grupo Agente
+Grupo Agente=Familia Agente
+Familia Agente=Movimiento
+Movimiento=Proyecto
+Proyecto=Moneda
+Moneda=Condicion Pago
+Condicion Pago=Tipo Forma Pago
+Tipo Forma Pago=Forma Envio
+Forma Envio=Tipo de Servicio
+Tipo de Servicio=Region
+Region=Tipo de Contrato
+Tipo de Contrato=Lista Precios
+Lista Precios=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=RID
+RID=Campo
+Campo=Valor
+Valor=Sucursal
+Sucursal=SucursalOrigen
+SucursalOrigen=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=RID,
+RID,=Campo,
+Campo,=Valor,
+Valor,=Sucursal,
+Sucursal,=SucursalOrigen
+SucursalOrigen=FROM
+FROM=OfertaFiltro
+OfertaFiltro=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ID
+ID=RID
+RID=(Fin)

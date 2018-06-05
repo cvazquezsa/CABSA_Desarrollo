@@ -1,0 +1,572 @@
+[Reporte]
+Clave=ArtSubReservadoCteTabla
+Icono=0
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+Orientacion=por Omision
+FuentePorOmision={Arial, 8, Negro, []}
+Parametros=S
+Columnas=1
+PosicionInicialAltura=613
+PosicionInicialAncho=797
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+ImpresoraPixeles=(Auto)
+FormatoSinConexion=S
+Nombre=<T>Reservados del Artículo a Nivel Cliente/Sucursal<T>
+Vista=ArtSubVentaPendiente
+OtroOrden=S
+Tablas=S
+TablaColumna=Seccion(ArtSubVentaPendiente.SubCuenta, 2)
+TablaRenglon=   Seccion(ArtSubVentaPendiente.SubCuenta, 1)   
+TablaValor1=ArtSubVentaPendiente.CantidadReservada
+TablaTotalCol=S
+TablaTotalRen=S
+TablaAlineacionCeldas=Derecha
+TablaAlineacionEncabezados=Centrado
+TablaAlineacionRenglones=Centrado
+TablaFormato1=(Cantidades)
+TablaTotalTitulo=Total
+TablaFlujoTitulo=Flujo
+ListaOrden=(Lista)
+Parametros1=ArtSubVentaPendiente.Empresa<BR>ArtSubVentaPendiente.Articulo<BR>ArtSubVentaPendiente.Almacen
+Parametros2==<BR>=<BR>=
+Parametros3=N<BR>N<BR>N
+Filtros=S
+TieneFiltroAbierto=S
+TablaColumnaOrden=TablaConversion(<T>Orden Columnas<T>, Seccion(ArtSubVentaPendiente.SubCuenta, 2))
+FiltroAbierto=CantidadReservada>0
+
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: ArtSubVentaPendiente.Articulo<BR>Inicio: ArtSubVentaPendiente.Articulo<BR>Inicio: ArtSubVentaPendiente.Articulo<BR>Fin: ArtSubVentaPendiente.EnviarA<BR>Fin: ArtSubVentaPendiente.EnviarA<BR>Fin: ArtSubVentaPendiente.Almacen<BR>Fin: ArtSubVentaPendiente.Almacen<BR>Pie
+VentanaIzquierda=74
+VentanaArriba=140
+VentanaAltura=488
+VentanaAncho=875
+PanelArriba=120
+PanelBotones=79
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: ArtSubVentaPendiente.Articulo
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+Renglones=1
+FondoColor=Blanco
+BordeAbajo=N
+EstiloAbajo=0
+Grupo=ArtSubVentaPendiente.Articulo
+EstiloMarco=0
+
+[Linea3]
+Clave=Inicio: ArtSubVentaPendiente.Articulo
+Objetos=4
+Seccion=Inicio Grupo
+Marco=S
+EstiloMarco=1
+AltoEnCm=0.6
+AVertical=Centrado
+Fuente={Arial, 12, Negro, [Negritas]}
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+Grupo=ArtSubVentaPendiente.Articulo
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=ReporteNombre
+Marco=N
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+ClaveAccion=ArtSubReservadoCteTabla
+ListaParametros=S
+ListaParametros1=Empresa<BR>Info.Articulo<BR>Info.Almacen
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=5
+AnchoTexto=27
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Art.Articulo
+EsTabla=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+TablaClave=
+Marco=S
+EstiloMarco=1
+
+[Linea4]
+Clave=Inicio: ArtSubVentaPendiente.Articulo
+Objetos=0
+Seccion=Inicio Grupo
+AltoEnCm=0.2
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=ArtSubVentaPendiente.Articulo
+
+[B2]
+Celda=B2
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=38
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Art.Descripcion1
+Marco=S
+EstiloMarco=1
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[C2]
+Celda=C2
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=30
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Art.Categoria
+
+[Linea5]
+Clave=Fin: ArtSubVentaPendiente.EnviarA
+Objetos=1
+Seccion=Fin Grupo
+Grupo=ArtSubVentaPendiente.EnviarA
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[Linea6]
+Clave=Fin: ArtSubVentaPendiente.EnviarA
+Objetos=0
+Seccion=Fin Grupo
+AltoEnCm=0.2
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=ArtSubVentaPendiente.EnviarA
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=38
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Art.Descripcion1
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=5
+AnchoTexto=30
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Art.Categoria
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsTabla=S
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaClave=ArtSubVentaPendiente.Cliente+<T> <T>+ArtSubVentaPendiente.EnviarA
+TablaAncho=(Página)
+TablaAnchoCeldas=1
+TablaAnchoTituloRenglon=2
+TablaAnchoTotales=1
+Fuente={Arial, 8, Negro, []}
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=4.61
+AnchoTexto=25
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=Info.Almacen
+
+[Linea7]
+Clave=Fin: ArtSubVentaPendiente.Almacen
+Objetos=1
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=ArtSubVentaPendiente.Almacen
+
+[Linea8]
+Clave=Fin: ArtSubVentaPendiente.Almacen
+Objetos=0
+Seccion=Fin Grupo
+AltoEnCm=0.2
+Renglones=1
+BordeArriba=N
+EstiloArriba=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+Grupo=ArtSubVentaPendiente.Almacen
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsTabla=S
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaClave=ArtSubVentaPendiente.Almacen
+TablaAncho=(Página)
+TablaAnchoCeldas=1
+TablaAnchoTituloRenglon=2
+TablaAnchoTotales=1
+Fuente={Arial, 10, Negro, []}
+
+[A8]
+Celda=A8
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Linea9]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsTabla=S
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaClave=ArtSubVentaPendiente.Cliente
+TablaAncho=(Página)
+TablaAnchoCeldas=1
+TablaAnchoTituloRenglon=2
+TablaAnchoTotales=1
+Fuente={Arial, 8, Negro, []}
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=5
+AnchoTexto=27
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+EsTabla=S
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaClave=<T>(Todos)<T>
+TablaAncho=(Página)
+TablaAnchoCeldas=1.5
+TablaAnchoTituloRenglon=3
+TablaAnchoTotales=1.5
+Fuente={Arial, 10, Negro, []}
+
+[A9]
+Celda=A9
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B9]
+Celda=B9
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=(Fin)
+
+[Reporte.ListaOrden]
+(Inicio)=ArtSubVentaPendiente.Articulo<TAB>(Acendente)
+ArtSubVentaPendiente.Articulo<TAB>(Acendente)=ArtSubVentaPendiente.Almacen<TAB>(Acendente)
+ArtSubVentaPendiente.Almacen<TAB>(Acendente)=ArtSubVentaPendiente.Cliente<TAB>(Acendente)
+ArtSubVentaPendiente.Cliente<TAB>(Acendente)=ArtSubVentaPendiente.EnviarA<TAB>(Acendente)
+ArtSubVentaPendiente.EnviarA<TAB>(Acendente)=(Fin)

@@ -1,0 +1,51 @@
+[Dialogo]
+Clave=AfectarInventarioFisico
+Nombre=Inventario Físico
+Icono=5
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=510
+PosicionInicialArriba=441
+PosicionInicialAltura=117
+PosicionInicialAncho=260
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+ExpresionesAlMostrar=
+ExpresionesAlCerrar=
+ListaAcciones=(Lista)
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+PosicionInicialAlturaCliente=114
+
+[Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Artículos &Indicados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+
+[Acciones.Todo]
+Nombre=Todo
+Boton=0
+NombreDesplegar=&Todo el Almacén
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov,Afectar.FormaCaptura)
+VisibleCondicion=Usuario.InvFisicoAlmacen
+
+[Dialogo.ListaAcciones]
+(Inicio)=Todo
+Todo=Indicado
+Indicado=(Fin)

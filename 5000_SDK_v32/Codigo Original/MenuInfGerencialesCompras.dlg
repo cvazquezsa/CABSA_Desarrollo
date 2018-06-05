@@ -1,0 +1,67 @@
+
+[Dialogo]
+Clave=MenuInfGerencialesCompras
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=128
+PosicionInicialAncho=500
+[Acciones.Inf.CompraNeta]
+Nombre=Inf.CompraNeta
+Boton=0
+NombreDesplegar=por &Movimiento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeCompraNeta<T>)
+Activo=S
+Visible=S
+
+[Acciones.CompraProvCat]
+Nombre=CompraProvCat
+Boton=0
+NombreDesplegar=por &Categoría de Proveedores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeCompraProvCat<T>)
+Activo=S
+Visible=S
+
+
+[Acciones.CompraArtCat]
+Nombre=CompraArtCat
+Boton=0
+NombreDesplegar=por Categoría de Artículos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Forma(<T>InformeCompraArtCat<T>)
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Inf.CompraNeta
+Inf.CompraNeta=CompraProvCat
+CompraProvCat=CompraArtCat
+CompraArtCat=(Fin)

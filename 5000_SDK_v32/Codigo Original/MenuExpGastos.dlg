@@ -1,0 +1,95 @@
+[Dialogo]
+Clave=MenuExpGastos
+Nombre=Explorar Gastos
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+GastonaTipoMarco=Diálogo
+GastonaPosicionInicial=Centrado
+GastonaConIcono=S
+PosicionInicialIzquierda=372
+PosicionInicialArriba=274
+PosicionInicialAltura=237
+PosicionInicialAncho=280
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[Acciones.ExplorarGasto]
+Nombre=ExplorarGasto
+Boton=0
+NombreDesplegar=&Gastos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarGasto
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Proveedor, Nulo)<BR>Asigna(Info.Nombre, Nulo)
+
+[Acciones.ExplorarGastoD]
+Nombre=ExplorarGastoD
+Boton=0
+NombreDesplegar=G&astos Detalle (Filtro Clasificaciones)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarGastoD
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Proveedor, Nulo)<BR>Asigna(Info.Nombre, Nulo)
+
+[Acciones.ExplorarPendienteD]
+Nombre=ExplorarPendienteD
+Boton=0
+NombreDesplegar=P&endientes Detalle
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarGastoPendienteD
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Proveedor, Nulo)<BR>Asigna(Info.Nombre, Nulo)
+
+[Acciones.ExplorarPendientes]
+Nombre=ExplorarPendientes
+Boton=0
+NombreDesplegar=&Pendientes
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=ExplorarGastoPendiente
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Proveedor, Nulo)<BR>Asigna(Info.Nombre, Nulo)
+
+[Acciones.ExplorarGastoDConcepto]
+Nombre=ExplorarGastoDConcepto
+Boton=0
+NombreDesplegar=Gastos Detalle (&Filtro Concepto)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ExplorarGastoDConcepto
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=ExplorarGasto
+ExplorarGasto=ExplorarGastoD
+ExplorarGastoD=ExplorarGastoDConcepto
+ExplorarGastoDConcepto=ExplorarPendientes
+ExplorarPendientes=ExplorarPendienteD
+ExplorarPendienteD=(Fin)

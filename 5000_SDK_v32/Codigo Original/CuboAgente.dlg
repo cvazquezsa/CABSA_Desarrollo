@@ -1,0 +1,32 @@
+[Dialogo]
+Clave=CuboAgente
+Nombre=<T>Cubos del Agente<T>
+Icono=81
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Nomina
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+PosicionInicialIzquierda=386
+PosicionInicialArriba=322
+PosicionInicialAlturaCliente=90
+PosicionInicialAncho=251
+
+[Acciones.Nomina]
+Nombre=Nomina
+Boton=0
+NombreDesplegar=Cubo &Comisiones y Destajos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cubo(<T>AGENT<T>, <T>Agente<T>, Info.Agente, Info.Nombre)

@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=AfectarConfirmando
+Nombre=Confirmar
+Icono=5
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=314
+PosicionInicialArriba=318
+PosicionInicialAltura=131
+PosicionInicialAncho=396
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=
+VentanaSiempreAlFrente=S
+TipoMensaje=General
+Mensaje=<T>Esta función va a Afectar - <T>+Afectar.Mov+<T> <T>+Afectar.MovID+NuevaLinea+NuevaLinea+<BR><T>¿ Desea Continuar ?<T>
+
+[Acciones.Si]
+Nombre=Si
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID)
+
+[Acciones.No]
+Nombre=No
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Si
+Si=No
+No=(Fin)

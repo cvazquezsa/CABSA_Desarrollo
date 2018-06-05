@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=GrupoTrabajoD
+Archivo=GrupoTrabajoD
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Multiple
+Singular=Multiple
+LlavePrimaria=GrupoTrabajo<BR>GrupoTrabajoD
+SQL=SELECT<BR>  GrupoTrabajo,<BR>  GrupoTrabajoD<BR><BR>FROM<BR>  GrupoTrabajoD
+
+[GrupoTrabajo]
+Clave=GrupoTrabajo
+Nombre=Grupo Trabajo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Grupo
+
+[GrupoTrabajoD]
+Clave=GrupoTrabajoD
+Nombre=Grupo Trabajo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=GrupoTrabajo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=GrupoTrabajo
+GrupoTrabajo=GrupoTrabajoD
+GrupoTrabajoD=(Fin)

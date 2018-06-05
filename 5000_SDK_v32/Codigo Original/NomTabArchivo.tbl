@@ -1,0 +1,81 @@
+
+[Tabla]
+Icono=0
+Clave=NomTabArchivo
+Nombre=NomTabArchivo
+Archivo=NomTabArchivo
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+[RutaArchivo]
+Clave=RutaArchivo
+Nombre=Ruta Archivo
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+AyudaEnCaptura=Buscar Directorio
+[RutaRespaldo]
+Clave=RutaRespaldo
+Nombre=Ruta Respaldo
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+AyudaEnCaptura=Buscar Directorio
+[NombreArchivo]
+Clave=NombreArchivo
+Nombre=Nombre Archivo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[BaseDatos]
+Clave=BaseDatos
+Nombre=Base Datos
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=RutaArchivo
+RutaArchivo=RutaRespaldo
+RutaRespaldo=NombreArchivo
+NombreArchivo=BaseDatos
+BaseDatos=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=RutaArchivo,
+RutaArchivo,=RutaRespaldo,
+RutaRespaldo,=NombreArchivo,
+NombreArchivo,=BaseDatos
+BaseDatos=FROM NomTabArchivo
+FROM NomTabArchivo=(Fin)

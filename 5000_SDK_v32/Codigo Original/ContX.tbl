@@ -1,0 +1,299 @@
+[Tabla]
+Icono=0
+Clave=ContX
+Archivo=ContX
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Conexión Contable
+Singular=Conexión Contable
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+CampoMov=Mov
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ACTIVO
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Modulo,<BR>  Mov,<BR>  Conceptos,<BR>  ContMov,<BR>  ContConcepto,<BR>  ContReferencia,<BR>  ContProyecto,<BR>  ContObservaciones,<BR>  ContUEN,<BR>  Moneda,<BR>  TipoCambio,<BR>  Condicion,<BR>  Comentarios,<BR>  Estatus,<BR>  ConceptoNull,<BR>  EnLinea,<BR>  ContIntercompania,<BR>  ContContacto,<BR>  ContContactoTipo,<BR>  ContAfectarPresupuesto<BR><BR>FROM<BR>  ContX
+
+[ID]
+Clave=ID
+Nombre=ID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Módulos
+Mayusculas=S
+Requerido=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=20
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Requerido=S
+Formula=ListaMovimientos(ContX:ContX.Modulo)+MovTipoEnLista(ContX:ContX.Modulo, Verdadero)
+TipoDatos=Texto
+
+[ContMov]
+Clave=ContMov
+Nombre=Tipo Póliza
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=20
+Tamano=255
+AyudaMemRenglones=12
+AyudaMemEnBlanco=
+AyudaMemOpc=Consulta opcional
+Requerido=S
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=5
+Tamano=7
+ValorPorOmision=<T>(Todas)<T>
+AyudaMemTabla=Empresa
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+
+[Conceptos]
+Clave=Conceptos
+Nombre=Conceptos Validos
+AyudaEnCaptura=Vista
+TamanoValidacion=255
+Tamano=255
+AyudaForma=ConceptoLista
+AyudaVista=Concepto
+AyudaCampo=Concepto.Concepto
+AyudaBusquedaRapida=Asigna(Info.Modulo, Modulo)
+ConAyudaBusquedaRapida=S
+AyudaMultiple=S
+AyudaRefrescar=S
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+CondicionDespliege=Modulo<><T>GAS<T>
+TipoDatos=Texto
+
+[ContConcepto]
+Clave=ContConcepto
+Nombre=Concepto
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=50
+Tamano=255
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContReferencia]
+Clave=ContReferencia
+Nombre=Referencia
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=50
+Tamano=255
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContProyecto]
+Clave=ContProyecto
+Nombre=Proyecto
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=50
+Tamano=255
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContObservaciones]
+Clave=ContObservaciones
+Nombre=Observaciones
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=255
+Tamano=255
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición
+AyudaEnCaptura=Editor Expresiones
+TamanoValidacion=255
+Tamano=255
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[Comentarios]
+Clave=Comentarios
+Nombre=Comentarios Generales
+TamanoValidacion=255
+Tamano=100
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[ConceptoNull]
+Clave=ConceptoNull
+Nombre=Incluir Movimientos sin Concepto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+CondicionDespliege=Modulo<><T>GAS<T>
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=Tipo Cambio Origen 
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda Origen
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[EnLinea]
+Clave=EnLinea
+Nombre=Contabilización En Línea
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContUEN]
+Clave=ContUEN
+Nombre=UEN
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContIntercompania]
+Clave=ContIntercompania
+Nombre=Intercompañia
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContContacto]
+Clave=ContContacto
+Nombre=Contacto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContContactoTipo]
+Clave=ContContactoTipo
+Nombre=Tipo Contacto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Editor Expresiones
+AyudaExpresionesVista=Modulo.VistaGeneral(ContX:ContX.Modulo)
+TipoDatos=Texto
+
+[ContAfectarPresupuesto]
+Clave=ContAfectarPresupuesto
+Nombre=Afectar Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+CondicionDespliege=Config.ContMovPresupuesto
+ListaOpciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Empresa
+Empresa=Modulo
+Modulo=Mov
+Mov=Conceptos
+Conceptos=ContMov
+ContMov=ContConcepto
+ContConcepto=ContReferencia
+ContReferencia=ContProyecto
+ContProyecto=ContObservaciones
+ContObservaciones=ContUEN
+ContUEN=ContContacto
+ContContacto=ContContactoTipo
+ContContactoTipo=ContIntercompania
+ContIntercompania=ContAfectarPresupuesto
+ContAfectarPresupuesto=Moneda
+Moneda=TipoCambio
+TipoCambio=Condicion
+Condicion=Comentarios
+Comentarios=Estatus
+Estatus=ConceptoNull
+ConceptoNull=EnLinea
+EnLinea=(Fin)
+
+[Modulo.ListaRefrescarCondiciones]
+(Inicio)=Conceptos
+Conceptos=ConceptoNull
+ConceptoNull=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ACTIVO
+ACTIVO=INACTIVO
+INACTIVO=(Fin)
+
+[ContAfectarPresupuesto.ListaOpciones]
+(Inicio)=No
+No=Asignar
+Asignar=Reservar
+Reservar=Ejercer Reservado
+Ejercer Reservado=Ejercer Directo
+Ejercer Directo=(Fin)

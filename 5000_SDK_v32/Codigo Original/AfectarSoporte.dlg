@@ -1,0 +1,47 @@
+[Dialogo]
+Clave=AfectarSoporte
+Nombre=Afectar.Mov+<T> <T>+Afectar.MovID
+Icono=5
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=475
+PosicionInicialArriba=442
+PosicionInicialAltura=139
+PosicionInicialAncho=329
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEscCerrar=S
+VentanaConIcono=S
+Mensaje=<T>¿ Esta Seguro que Desea Concluir el Movimiento ?<T>+NuevaLinea+NuevaLinea+<BR>Si(MovTipo(<T>ST<T>, Afectar.Mov)=<T>ST.R<T>, <T>Estado: <T>+Info.Estado)
+PosicionInicialAlturaCliente=112
+
+[Acciones.Concluir]
+Nombre=Concluir
+Boton=0
+NombreDesplegar=&Sí
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Afectar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.Mov, <T>Todo<T>, <T><T>, Afectar.FormaCaptura)
+
+[Acciones.Cancelar]
+Nombre=Cancelar
+Boton=0
+NombreDesplegar=Cancelar
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Concluir
+Concluir=Cancelar
+Cancelar=(Fin)

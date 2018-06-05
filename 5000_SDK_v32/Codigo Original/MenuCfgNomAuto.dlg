@@ -1,0 +1,58 @@
+[Dialogo]
+Clave=MenuCfgNomAuto
+Nombre=Nómina Automática
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=312
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=484
+PosicionInicialArriba=429
+VentanaConIcono=S
+
+[Acciones.CfgNominaConcepto]
+Nombre=CfgNominaConcepto
+Boton=0
+NombreDesplegar=&Configuración Conceptos Nómina
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CfgNominaConcepto
+Activo=S
+Visible=S
+
+[Acciones.NominaConcepto]
+Nombre=NominaConcepto
+Boton=0
+NombreDesplegar=Conceptos &Nómina
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NominaConcepto
+Activo=S
+Visible=S
+
+[Acciones.NominaConceptoCuenta]
+Nombre=NominaConceptoCuenta
+Boton=0
+NombreDesplegar=C&uentas Contables (Conceptos Nómina)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NominaConceptoCuenta
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=CfgNominaConcepto
+CfgNominaConcepto=NominaConcepto
+NominaConcepto=NominaConceptoCuenta
+NominaConceptoCuenta=(Fin)

@@ -1,0 +1,84 @@
+[Dialogo]
+Clave=MenuHerramientaNomina
+Nombre=Nomina
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=117
+PosicionInicialAncho=263
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=508
+PosicionInicialArriba=405
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[Acciones.NominaH]
+Nombre=NominaH
+Boton=0
+NombreDesplegar=Captura en &Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+Activo=S
+ClaveAccion=NominaH
+VisibleCondicion=no General.NomAuto
+
+[Acciones.NominaFusionarBorradores]
+Nombre=NominaFusionarBorradores
+Boton=0
+NombreDesplegar=&Fusionar Borradores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NominaFusionarBorradores
+Activo=S
+Visible=S
+
+[Acciones.IncidenciaH]
+Nombre=IncidenciaH
+Boton=0
+NombreDesplegar=Incidencias en &Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=IncidenciaH
+Activo=S
+VisibleCondicion=General.NomAuto
+
+[Acciones.NominaExportarBanamex]
+Nombre=NominaExportarBanamex
+Boton=0
+NombreDesplegar=Exportar Nómina Banamex
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Impresora
+ClaveAccion=NominaExportarBanamex
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+[Acciones.NominaExportarBancomer]
+Nombre=NominaExportarBancomer
+Boton=0
+NombreDesplegar=Exportar Nómina Bancomer
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Impresora
+ClaveAccion=NominaExportarBancomer
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=NominaH
+NominaH=IncidenciaH
+IncidenciaH=NominaFusionarBorradores
+NominaFusionarBorradores=NominaExportarBanamex
+NominaExportarBanamex=NominaExportarBancomer
+NominaExportarBancomer=(Fin)

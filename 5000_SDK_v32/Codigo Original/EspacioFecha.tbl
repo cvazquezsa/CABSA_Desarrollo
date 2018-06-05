@@ -1,0 +1,43 @@
+[Tabla]
+Icono=0
+Clave=EspacioFecha
+Archivo=EspacioFecha
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Fechas
+Singular=Fecha
+LlavePrimaria=Espacio<BR>FechaD
+SQL=SELECT<BR>  Espacio,<BR>  FechaD,<BR>  FechaA<BR><BR>FROM<BR>  EspacioFecha
+
+[Espacio]
+Clave=Espacio
+Nombre=Espacio
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Espacio
+
+[FechaD]
+Clave=FechaD
+Nombre=De Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dddddd
+AyudaEnCaptura=Calendario sin Hora
+
+[FechaA]
+Clave=FechaA
+Nombre=A Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dddddd
+AyudaEnCaptura=Calendario sin Hora
+
+[Tabla.ListaCampos]
+(Inicio)=Espacio
+Espacio=FechaD
+FechaD=FechaA
+FechaA=(Fin)

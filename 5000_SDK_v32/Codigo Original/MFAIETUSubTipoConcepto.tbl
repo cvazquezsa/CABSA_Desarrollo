@@ -1,0 +1,111 @@
+
+[Tabla]
+Icono=0
+Clave=MFAIETUSubTipoConcepto
+Nombre=MFAIETUSubTipoConcepto
+Archivo=MFAIETUSubTipoConcepto
+Modulos=(Todos)
+Singular=MFAIETUSubTipoConcepto
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+ListaRelaciones=MFAConcepto
+SQL=(Lista)
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT concepto_clave FROM MFAConcepto ORDER BY concepto_clave<T>)
+[TipoAplicacion]
+Clave=TipoAplicacion
+Nombre=Tipo Aplicación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+[SubTipo]
+Clave=SubTipo
+Nombre=Sub Tipo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+
+AyudaEnCaptura=Vista
+AyudaForma=MovTipoMFASubTipoIetuLista
+AyudaVista=MovTipoMFASubTipoIetu
+AyudaCampo=MovTipoMFASubTipoIetu.SubTipo
+AyudaBusquedaRapida=Si Mayusculas(TipoAplicacion) = <T>COBRO<T><BR>Entonces<BR>  Asigna(Info.ID, 1)<BR>Sino<BR>  Si Mayusculas(TipoAplicacion) = <T>PAGO<T><BR>  Entonces<BR>    Asigna(Info.ID, 2)<BR>  Fin<BR>Fin<BR><BR>Asigna(Info.Anuncio, SQL(<T>SELECT Descripcion FROM MovTipoMFATipoIetu WHERE Tipo = :nTipo<T>, Info.ID))
+ConAyudaBusquedaRapida=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Sub Tipo incorrecto<T>
+
+ValidacionCondicion=Si Mayusculas(TipoAplicacion) = <T>COBRO<T><BR>Entonces<BR>  Si SQL(<T>SELECT COUNT(*) FROM MovTipoMFASubTipoIetu WHERE Tipo = :nTipo AND SubTipo = :nSubTipo<T>, 1, SubTipo) > 0<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>    Falso<BR>  Fin<BR>Sino<BR>  Si Mayusculas(TipoAplicacion) = <T>PAGO<T><BR>  Entonces<BR>    Si SQL(<T>SELECT COUNT(*) FROM MovTipoMFASubTipoIetu WHERE Tipo = :nTipo AND SubTipo = :nSubTipo<T>, 2, SubTipo) > 0<BR>    Entonces<BR>      Verdadero<BR>    Sino<BR>      Falso<BR>    Fin<BR>  Fin<BR>Fin
+[Relaciones.MFAConcepto]
+TipoRelacion=Forzosa
+LlaveLocal=Concepto
+Clave=MFAConcepto
+TablaRemota=MFAConcepto
+LlaveRemota=concepto_clave
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TipoAplicacion.ListaOpciones]
+(Inicio)=Pago
+Pago=Cobro
+Cobro=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Concepto
+Concepto=TipoAplicacion
+TipoAplicacion=SubTipo
+SubTipo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Concepto,
+Concepto,=TipoAplicacion,
+TipoAplicacion,=SubTipo
+SubTipo=FROM MFAIETUSubTipoConcepto
+FROM MFAIETUSubTipoConcepto=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Concepto
+Concepto=TipoAplicacion
+TipoAplicacion=(Fin)

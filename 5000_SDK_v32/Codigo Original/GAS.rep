@@ -1,0 +1,1274 @@
+[Reporte]
+Clave=GAS
+Nombre=Gastos
+Icono=0
+Vista=GastoT
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FuentePorOmision={Arial, 8, Negro, []}
+Ascii=S
+Impresora=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Parametros=S
+Columnas=1
+Parametros1=GastoT.ID
+Parametros2==
+Parametros3=N
+OtroOrden=S
+ListaOrden=GastoT.ID<TAB>(Acendente)
+PosicionInicialAltura=480
+PosicionInicialAncho=799
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Tipo=Reporte
+PosicionInicialAlturaCliente=453
+
+[Formato]
+ListaLineas=Encabezado<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Inicio: GastoT.ID<BR>Detalle<BR>Detalle<BR>Fin: GastoT.ID<BR>Pie
+VentanaIzquierda=32
+VentanaArriba=59
+VentanaAltura=650
+VentanaAncho=960
+PanelArriba=217
+PanelBotones=131
+
+[Linea1]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=2
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Inicio: GastoT.ID
+Seccion=Inicio Grupo
+Grupo=GastoT.ID
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+BordeAbajo=S
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Gastos<T>
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+BordeAbajo=S
+EstiloAbajo=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea3]
+Clave=Inicio: GastoT.ID
+Objetos=5
+Seccion=Inicio Grupo
+Grupo=GastoT.ID
+Marco=S
+EstiloMarco=1
+AltoEnCm=0.63
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Cursiva]}
+Renglones=1
+FondoColor=Blanco
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=5.5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 11, Negro, [Negritas + Cursiva]}
+Expresion=GastoT.Mov+<T> <T>+GastoT.MovID
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=2.5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=EstatusNombreSingular(GastoT.Estatus)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+AnchoEnCm=5
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=GastoT.Proyecto
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=S
+EstiloMarco=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=GastoT.Moneda+Si(GastoT.TipoCambio<>1,<T>: <T>&GastoT.TipoCambio)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+AnchoEnCm=3.61
+Marco=S
+EstiloMarco=1
+FormatoValidacion=d mmmm yyyy
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Cursiva]}
+Expresion=GastoT.FechaEmision
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea4]
+Clave=Inicio: GastoT.ID
+Seccion=Inicio Grupo
+Grupo=GastoT.ID
+AltoEnCm=0.2
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=0
+Renglones=1
+FondoColor=Blanco
+
+[Linea5]
+Clave=Inicio: GastoT.ID
+Seccion=Inicio Grupo
+Grupo=GastoT.ID
+AltoEnCm=0.71
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Objetos=4
+Renglones=2
+FondoColor=Blanco
+
+[A5]
+Celda=A5
+Alineacion=Derecha
+AnchoEnCm=4.21
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Prov.Tipo+<T>:<T>
+ExpresionMultiple=N
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=8.8
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Prov.Nombre+<T> (<T>+Prov.Proveedor+<T>)<T>
+ExpresionMultiple=N
+AnchoTexto=47
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea6]
+Clave=Inicio: GastoT.ID
+Objetos=4
+Seccion=Inicio Grupo
+Grupo=GastoT.ID
+AltoEnCm=0.8
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+FondoColor=Blanco
+
+[Linea7]
+Clave=Inicio: GastoT.ID
+Objetos=4
+Seccion=Inicio Grupo
+AltoEnCm=1.5
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=GastoT.ID
+BordeAbajo=N
+EstiloAbajo=0
+Visible=
+Renglones=4
+FondoColor=Blanco
+
+[A6]
+Celda=A6
+Alineacion=Derecha
+AnchoEnCm=4.21
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre(GastoT.Clase)+<T>:<T>
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A7]
+Celda=A7
+Alineacion=Derecha
+AnchoEnCm=4.21
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre(GastoT.Condicion)+<T>:<T><BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.DA, GAS.SR, GAS.ASC, GAS.CB, GAS.AB)), CampoNombre(GastoT.MovAplica)+<T>:<T>) <BR>CampoNombre(GastoT.Observaciones)+<T>:<T> 
+ExpresionMultiple=S
+BordeAbajo=N
+EstiloAbajo=0
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B7]
+Celda=B7
+Alineacion=Izquierda
+AnchoEnCm=8.79
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(Vacio(GastoT.Condicion),FechaEnTexto(GastoT.Vencimiento, <T>dd mmm aaaa<T>),GastoT.Condicion+<T> (<T>+ FechaEnTexto(GastoT.Vencimiento, <T>dd mmm aaaa<T>)+<T>)<T>)<BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.DA, GAS.SR, GAS.ASC, GAS.CB, GAS.AB)), Si(GastoT.Multiple, <T>(<T>+CampoNombre(GastoT.Multiple)+<T>)<T>, GastoT.MovAplica+<T> <T>+GastoT.MovAplicaID))<BR>GastoT.Observaciones
+ExpresionMultiple=S
+BordeAbajo=N
+EstiloAbajo=0
+AnchoTexto=47
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea8]
+Clave=Inicio: GastoT.ID
+Objetos=2
+Seccion=Inicio Grupo
+AltoEnCm=0.5
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+BordeArriba=N
+EstiloArriba=0
+Grupo=GastoT.ID
+BordeAbajo=S
+EstiloAbajo=1
+Visible=MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.S,GAS.P,GAS.A,GAS.GR)) y (no Config.GastoSolicitudAnticipoImpuesto)
+Renglones=1
+FondoColor=Blanco
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=8.79
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.Clase<BR>GastoT.SubClase
+AnchoTexto=47
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A8]
+Celda=A8
+Alineacion=Centrado
+AnchoEnCm=4.21
+FormatoValidacion=
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.Concepto)
+BordeArriba=N
+EstiloArriba=0
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B8]
+Celda=B8
+Alineacion=Centrado
+AnchoEnCm=3.39
+FormatoValidacion=
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.ImporteLinea)
+BordeArriba=N
+EstiloArriba=0
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C8]
+Celda=C8
+Alineacion=Centrado
+AnchoEnCm=3
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.ImporteLinea)
+BordeArriba=N
+EstiloArriba=0
+FormatoValidacion=
+BordeAbajo=S
+EstiloAbajo=1
+
+[Linea9]
+Clave=Inicio: GastoT.ID
+Objetos=7
+Seccion=Inicio Grupo
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AltoEnCm=0.47
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Grupo=GastoT.ID
+BordeAbajo=S
+EstiloAbajo=1
+Visible=MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB)) o Config.GastoSolicitudAnticipoImpuesto
+Renglones=1
+FondoColor=Blanco
+
+[Linea10]
+Clave=Detalle
+Objetos=3
+Seccion=Detalle
+BordeArriba=S
+EstiloArriba=3
+AltoEnCm=0.39
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+EstiloMarco=3
+Visible=MovTipoEn(<T>GAS<T>,GastoT.Mov, (GAS.S,GAS.P,GAS.A,GAS.GR)) y (no Config.GastoSolicitudAnticipoImpuesto)
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[D8]
+Celda=D8
+Alineacion=Centrado
+AnchoEnCm=3
+FormatoValidacion=
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.ImpuestosLinea)
+BordeAbajo=S
+EstiloAbajo=1
+
+[E8]
+Celda=E8
+Alineacion=Centrado
+AnchoEnCm=3
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.TotalLinea)
+BordeAbajo=S
+EstiloAbajo=1
+
+[A9]
+Celda=A9
+Alineacion=Centrado
+AnchoEnCm=4.21
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.Concepto)
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B9]
+Celda=B9
+Alineacion=Centrado
+AnchoEnCm=3.39
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.Referencia)
+BordeAbajo=S
+EstiloAbajo=1
+FormatoValidacion=
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A10]
+Celda=A10
+Alineacion=Izquierda
+AnchoEnCm=4.21
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.Concepto
+EstiloMarco=3
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B10]
+Celda=B10
+Alineacion=Derecha
+AnchoEnCm=3.39
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.ImporteLinea
+EstiloMarco=3
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[Linea11]
+Clave=Detalle
+Objetos=7
+Seccion=Detalle
+BordeArriba=S
+EstiloArriba=3
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+EstiloMarco=3
+Visible=MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB)) o Config.GastoSolicitudAnticipoImpuesto
+Grupo=
+Renglones=1
+FondoColor=Blanco
+
+[A11]
+Celda=A11
+Alineacion=Izquierda
+AnchoEnCm=4.21
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.Concepto
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B11]
+Celda=B11
+Alineacion=Izquierda
+AnchoEnCm=3.39
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.AcreedorRef+<T> <T>+GastoT.Referencia
+EstiloMarco=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C11]
+Celda=C11
+Alineacion=Derecha
+AnchoEnCm=0.79
+BordeArriba=S
+EstiloArriba=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.Cantidad
+EstiloMarco=3
+FormatoValidacion=(Cantidades)
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea12]
+Clave=Fin: GastoT.ID
+Objetos=6
+Seccion=Fin Grupo
+BordeArriba=S
+EstiloArriba=1
+AltoEnCm=0.6
+AVertical=Arriba
+Fuente={Arial, 8, Negro, [Negritas]}
+Grupo=GastoT.ID
+Visible=MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB)) o Config.GastoSolicitudAnticipoImpuesto
+Renglones=1
+FondoColor=Blanco
+
+[D11]
+Celda=D11
+Alineacion=Derecha
+AnchoEnCm=2.79
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.ImporteLinea
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A12]
+Celda=A12
+Alineacion=Izquierda
+AnchoEnCm=7.6
+BordeArriba=N
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=<T>Total<T>
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B12]
+Celda=B12
+Alineacion=Izquierda
+AnchoEnCm=0.79
+BordeArriba=N
+EstiloArriba=1
+FormatoValidacion=
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=GAS
+ListaParametros1=GastoT.ID
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=GAS
+ListaParametros1=GastoT.ID
+ListaParametros=S
+Visible=S
+ActivoCondicion=Usuario.EnviarExcel
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=2.5
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.DA, GAS.SR, GAS.ASC, GAS.OI, GAS.CB, GAS.AB)), CampoNombre(GastoT.CtaDinero)+<T>:<T>)<BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.DA, GAS.SR, GAS.ASC, GAS.OI, GAS.CB, GAS.AB)), CampoNombre(GastoT.FormaPago)+<T>:<T>)
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D6]
+Celda=D6
+Alineacion=Izquierda
+AnchoEnCm=4.11
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.DA, GAS.SR, GAS.ASC, GAS.OI, GAS.CB, GAS.AB)) y ConDatos(GastoT.Dinero), GastoT.DineroCtaDinero+<T> (<T>+GastoT.Dinero+<T> <T>+GastoT.DineroID+<T>)<T>)<BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.A, GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.DA, GAS.SR, GAS.ASC, GAS.OI, GAS.CB, GAS.AB)), GastoT.FormaPago)
+FormatoValidacion=(Monetario)
+AnchoTexto=22
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C12]
+Celda=C12
+Alineacion=Derecha
+AnchoEnCm=2.79
+BordeArriba=S
+EstiloArriba=1
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(GastoT.ImporteLinea)
+FormatoValidacion=(Monetario)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+AnchoEnCm=2.5
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si((MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH))) y (GastoT.Anticipo > 0), CampoNombre(GastoT.Anticipo)+<T>:<T>)<BR>Si((MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH))) y (GastoT.Anticipo > 0), <T>Diferencia:<T>)
+ExpresionMultiple=S
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D5]
+Celda=D5
+Alineacion=Derecha
+AnchoEnCm=3.4
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si((MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH))) y (GastoT.Anticipo > 0), GastoT.Anticipo)<BR>Si((MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH))) y (GastoT.Anticipo > 0), GastoT.Importe+GastoT.Impuestos-GastoT.Anticipo)
+ExpresionMultiple=S
+AnchoTexto=18
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A4]
+Celda=A4
+Alineacion=Derecha
+AnchoEnCm=4.21
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Prov.Tipo+<T>:<T>
+
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=9.4
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Prov.Nombre+<T> (<T>+Prov.Proveedor+<T>)<T>
+
+[C4]
+Celda=C4
+Alineacion=Derecha
+AnchoEnCm=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Si(MovTipoEn(<T>GAS<T>, GastoT.Mov), (GAS.C, GAS.CCH)), CampoNombre(GastoT.Anticipo)+<T>:<T>)<BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov), (GAS.C, GAS.CCH)), <T>Diferencia:<T>)
+ExpresionMultiple=S
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+AnchoEnCm=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH)), GastoT.Anticipo)<BR>Si(MovTipoEn(<T>GAS<T>, GastoT.Mov, (GAS.C, GAS.CCH)), GastoT.Importe+GastoT.Impuestos-GastoT.Anticipo)
+ExpresionMultiple=S
+
+[C10]
+Celda=C10
+Alineacion=Derecha
+AnchoEnCm=0.79
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.Cantidad
+AnchoTexto=16
+EstiloAbajo=3
+FondoColor=Blanco
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D10]
+Celda=D10
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.ImpuestosLinea
+
+[E10]
+Celda=E10
+Alineacion=Derecha
+AnchoEnCm=3
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.TotalLinea
+
+[Linea13]
+Clave=Pie
+Objetos=3
+Seccion=Pie Página
+BordeArriba=S
+EstiloArriba=3
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+FondoColor=Blanco
+
+[C7]
+Celda=C7
+Alineacion=Derecha
+AnchoEnCm=2.5
+ExpresionMultiple=S
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CampoNombre(GastoT.Importe)+<T>:<T><BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.DG, GAS.DGP, GAS.CP, GAS.OI, GAS.CB, GAS.AB), CampoNombre(GastoT.Impuestos)+<T>:<T>)<BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB), <T>Retenciones:<T>)<BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB), <T>Importe Total:<T>)
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D7]
+Celda=D7
+Alineacion=Derecha
+AnchoEnCm=3.39
+FormatoValidacion=(Monetario)
+ExpresionMultiple=S
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=GastoT.Importe<BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB), GastoT.Impuestos)<BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB), GastoT.Retencion)<BR>Si(MovTipo(<T>GAS<T>, GastoT.Mov) en (GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.DC, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.CB, GAS.AB), GastoT.Importe+GastoT.Impuestos-GastoT.Retencion)
+AnchoTexto=18
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C9]
+Celda=C9
+Alineacion=Izquierda
+AnchoEnCm=0.79
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=
+AnchoTexto=5
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D9]
+Celda=D9
+Alineacion=Centrado
+AnchoEnCm=2.79
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.ImporteLinea)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E9]
+Celda=E9
+Alineacion=Centrado
+AnchoEnCm=2.79
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.ImpuestosLinea)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+FormatoValidacion=
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[E11]
+Celda=E11
+Alineacion=Derecha
+AnchoEnCm=2.79
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.ImpuestosLinea
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D12]
+Celda=D12
+Alineacion=Derecha
+AnchoEnCm=2.79
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(GastoT.ImpuestosLinea)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[A13]
+Celda=A13
+Alineacion=Izquierda
+AnchoEnCm=0
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=dddddd (hh:nn am/pm)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B13]
+Celda=B13
+Alineacion=Izquierda
+AnchoEnCm=9
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=dddddd (hh:nn am/pm)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[C13]
+Celda=C13
+Alineacion=Derecha
+AnchoEnCm=10.61
+BordeArriba=S
+EstiloArriba=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F9]
+Celda=F9
+Alineacion=Centrado
+AnchoEnCm=2.79
+AnchoTexto=16
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(GastoT.RetencionLinea)
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+FormatoValidacion=(Monetario)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[F11]
+Celda=F11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.79
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=GastoT.RetencionLinea
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E12]
+Celda=E12
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.79
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(GastoT.RetencionLinea)
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[G9]
+Celda=G9
+Alineacion=Centrado
+AnchoEnCm=2.79
+AnchoTexto=15
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre(GastoT.TotalLinea)
+
+[G11]
+Celda=G11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.79
+AnchoTexto=15
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=GastoT.TotalLinea
+
+[F12]
+Celda=F12
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.79
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(GastoT.TotalLinea)
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

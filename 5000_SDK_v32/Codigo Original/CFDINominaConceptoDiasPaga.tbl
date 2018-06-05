@@ -1,0 +1,48 @@
+
+[Tabla]
+Icono=0
+Clave=CFDINominaConceptoDiasPaga
+Nombre=CFDINominaConceptoDiasPaga
+Archivo=CFDINominaConceptoDiasPaga
+Modulos=(Todos)
+Singular=CFDINominaConceptoDiasPaga
+
+TipoTabla=General
+ListaCampos=Concepto
+
+LlavePrimaria=Concepto
+SQL=(Lista)
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Vista
+AyudaMemTabla=ConceptoNominaRecibo
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaForma=CFDINOminaConceptoLista
+AyudaVista=CFDINominaConceptoLista
+AyudaCampo=CFDINominaConceptoLista.NominaConcepto
+AyudaMultiple=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Concepto Incorrecto<T>
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(*) FROM CFDINominaConceptoLista WHERE Concepto = :tConcepto<T>, CFDINominaConceptoDiasPaga:CFDINominaConceptoDiasPaga.Concepto) > 0<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Falso<BR>Fin
+
+
+[Tabla.ListaCampos]
+(Inicio)=Concepto
+Concepto=ClaveSAT
+ClaveSAT=ConceptoSAT
+ConceptoSAT=(Fin)
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Concepto
+Concepto=FROM CFDINominaConceptoDiasPaga
+FROM CFDINominaConceptoDiasPaga=(Fin)

@@ -1,0 +1,64 @@
+
+[Tabla]
+Icono=0
+Clave=MonActualizacionAuto
+Nombre=MonActualizacionAuto
+Archivo=MonActualizacionAuto
+Modulos=(Todos)
+Singular=MonActualizacionAuto
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=ActualizacionAuto
+SQL=(Lista)
+[ActualizacionAuto]
+Clave=ActualizacionAuto
+Nombre=Actualización Automática
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Url]
+Clave=Url
+Nombre=URL
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[ExpInicial]
+Clave=ExpInicial
+Nombre=Expresión Búsqueda Inicial
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[ExpFinal]
+Clave=ExpFinal
+Nombre=Expreción Búsqueda Final
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ActualizacionAuto
+ActualizacionAuto=Url
+Url=ExpInicial
+ExpInicial=ExpFinal
+ExpFinal=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ActualizacionAuto,
+ActualizacionAuto,=Url,
+Url,=ExpInicial,
+ExpInicial,=ExpFinal
+ExpFinal=FROM MonActualizacionAuto
+FROM MonActualizacionAuto=(Fin)

@@ -1,0 +1,1137 @@
+[Tabla]
+Icono=0
+Clave=Precio
+Archivo=Precio
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+LlavePrimaria=ID
+Nombre=Precios
+Singular=Precio
+ControlID=S
+CampoID=ID
+ListaRelaciones=(Lista)
+ControlEstatus=S
+ControlCambios=S
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+EstatusDefault=ACTIVA
+CampoSucursal=Sucursal
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=Número de Política
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+CondicionDespliege=NivelArticulo y (no NivelArtGrupo) y (no NivelArtCat) y (no NivelArtFam) y (no NivelArtABC) y (no NivelFabricante)
+TipoDatos=Texto
+
+[SubCuenta]
+Clave=SubCuenta
+Nombre=Opción
+TamanoValidacion=20
+Tamano=50
+CondicionDespliege=NivelArticulo y NivelSubCuenta y (no NivelArtCat) y (no NivelArtFam)
+AyudaEnCaptura=Editor Opciones
+AyudaOpcionesArticulo=Precio:Precio.Articulo
+Mayusculas=S
+
+TipoDatos=Texto
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=5
+Tamano=5
+AyudaMemTabla=Empresa
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelEmpresa
+TipoDatos=Texto
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=Proy
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelProyecto
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=
+OpcionesPresentacion=Consulta Opcional
+OpcionesLlave=Auto
+OpcionesPredefinidas=Movimientos Módulo
+CondicionDespliege=NivelMov
+OpcionesModulo=VTAS
+TipoDatos=Texto
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelAlmacen
+TipoDatos=Texto
+
+[ArtCat]
+Clave=ArtCat
+Nombre=Categoría
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=ArtCat
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=
+CondicionDespliege=NivelArtCat y (no NivelArticulo)
+TipoDatos=Texto
+
+[ArtFam]
+Clave=ArtFam
+Nombre=Familia
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=ArtFam
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelArtFam y (no NivelArticulo)
+TipoDatos=Texto
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+AyudaEnCaptura=Vista
+TamanoValidacion=10
+Tamano=10
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+CondicionDespliege=NivelCliente y (no NivelCteGrupo) y (no NivelCteCat) y (no NivelCteFam) y (no NivelCteZona)
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+TipoDatos=Texto
+
+[CteCat]
+Clave=CteCat
+Nombre=Categoría
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=CteCat
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelCteCat y (no NivelCliente)
+TipoDatos=Texto
+
+[CteFam]
+Clave=CteFam
+Nombre=Familia
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=CteFam
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelCteFam y (no NivelCliente)
+TipoDatos=Texto
+
+[CteZona]
+Clave=CteZona
+Nombre=Zona
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=Zona
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelCteZona
+TipoDatos=Texto
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=Condicion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelCondicion
+TipoDatos=Texto
+
+[DeFecha]
+Clave=DeFecha
+Nombre=DeFecha
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[AFecha]
+Clave=AFecha
+Nombre=AFecha
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[FechaD]
+Clave=FechaD
+Nombre=Del
+AyudaEnCaptura=Calendario
+TamanoValidacion=15
+TipoDatos=FechaHora
+CondicionDespliege=ConVigencia
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+
+[FechaA]
+Clave=FechaA
+Nombre=Al
+AyudaEnCaptura=Calendario
+TamanoValidacion=15
+TipoDatos=FechaHora
+CondicionDespliege=ConVigencia
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+AyudaEnCaptura=Vista
+TamanoValidacion=10
+Tamano=10
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+CondicionDespliege=NivelAgente
+Mayusculas=S
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+TipoDatos=Texto
+
+[Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+
+[NivelArticulo]
+Clave=NivelArticulo
+Nombre=por Artículo
+TamanoValidacion=20
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+RefrescarTodoCondiciones=
+CondicionDespliege=(no NivelArtGrupo) y (no NivelArtCat) y (no NivelArtFam) y (no NivelArtABC) y (no NivelFabricante) y (no NivelArtLinea) y (no NivelArtRama)
+
+[NivelCliente]
+Clave=NivelCliente
+Nombre=por Cliente
+TamanoValidacion=20
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+RefrescarTodoCondiciones=
+ValorPorOmision=Falso
+CondicionDespliege=(no NivelCteGrupo) y (no NivelCteCat) y (no NivelCteFam) y (no NivelCteZona)
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=20
+Tamano=23
+ValorPorOmision=<T>% Descuento<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Tipos Politicas Precios
+OpcionesRenglones=20
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+TipoDatos=Texto
+
+[ConVigencia]
+Clave=ConVigencia
+Nombre=&Vigencia
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[NivelSubCuenta]
+Clave=NivelSubCuenta
+Nombre=por Opción
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=SubCuenta
+CondicionDespliege=NivelArticulo y (no NivelArtCat) y (no NivelArtFam)
+RefrescarTodoCondiciones=
+
+[NivelArtCat]
+Clave=NivelArtCat
+Nombre=por Categoría Artículo
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+RefrescarTodoCondiciones=
+CondicionDespliege=no NivelArticulo
+
+[NivelArtFam]
+Clave=NivelArtFam
+Nombre=por Familia Artículo
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+RefrescarTodoCondiciones=
+CondicionDespliege=no NivelArticulo
+
+[NivelCteCat]
+Clave=NivelCteCat
+Nombre=por Categoría Cliente
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=no NivelCliente
+RefrescarTodoCondiciones=
+
+[NivelCteFam]
+Clave=NivelCteFam
+Nombre=por Familia Cliente
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=no NivelCliente
+RefrescarTodoCondiciones=
+
+[NivelCteZona]
+Clave=NivelCteZona
+Nombre=por Zona Cliente
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+CondicionDespliege=no NivelCliente
+RefrescarTodoCondiciones=
+
+[NivelEmpresa]
+Clave=NivelEmpresa
+Nombre=por Empresa
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[NivelProyecto]
+Clave=NivelProyecto
+Nombre=por Proyecto
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Proyecto
+
+[NivelMov]
+Clave=NivelMov
+Nombre=por Movimiento
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Mov
+
+[NivelAlmacen]
+Clave=NivelAlmacen
+Nombre=por Almacén
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Almacen
+
+[NivelCondicion]
+Clave=NivelCondicion
+Nombre=por Condición
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Condicion
+
+[NivelAgente]
+Clave=NivelAgente
+Nombre=por Agente
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Agente
+RefrescarTodoCondiciones=
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=UltimoCambio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[NivelCteGrupo]
+Clave=NivelCteGrupo
+Nombre=por Grupo Cliente
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=no NivelCliente
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=(Lista)
+
+[CteGrupo]
+Clave=CteGrupo
+Nombre=Grupo
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=CteGrupo
+AyudaMemRenglones=8
+CondicionDespliege=NivelCteGrupo y (no NivelCliente)
+TipoDatos=Texto
+
+[ArticuloObsequio]
+Clave=ArticuloObsequio
+Nombre=Artículo obsequio
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+CondicionDespliege=Tipo=<T>Obsequio<T>
+TipoDatos=Texto
+
+[CantidadObsequio]
+Clave=CantidadObsequio
+Nombre=Cantidad
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=
+CondicionDespliege=Tipo=<T>Obsequio<T>
+
+[NivelArtGrupo]
+Clave=NivelArtGrupo
+Nombre=por Grupo Artículo
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=no NivelArticulo
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=(Lista)
+
+[ArtGrupo]
+Clave=ArtGrupo
+Nombre=ArtGrupo
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=ArtGrupo
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelArtGrupo y (no NivelArticulo)
+TipoDatos=Texto
+
+[NivelFabricante]
+Clave=NivelFabricante
+Nombre=por Fabricante
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=no NivelArticulo
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=
+ValorPorOmision=Falso
+ListaRefrescarCondiciones=(Lista)
+
+[Fabricante]
+Clave=Fabricante
+Nombre=Fabricante
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NivelFabricante y (no NivelArticulo)
+AyudaMemTabla=Fabricante
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NivelMoneda]
+Clave=NivelMoneda
+Nombre=por Moneda
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Moneda
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+AyudaMemTabla=Mon
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelMoneda
+TipoDatos=Texto
+
+[NivelFormaEnvio]
+Clave=NivelFormaEnvio
+Nombre=por Forma Envio
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=FormaEnvio
+
+[FormaEnvio]
+Clave=FormaEnvio
+Nombre=FormaEnvio
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=FormaEnvio
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelFormaEnvio
+TipoDatos=Texto
+
+[Nivel]
+Clave=Nivel
+Nombre=Nivel
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>Normal<T>
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ListaPrecios]
+Clave=ListaPrecios
+Nombre=Lista Precios
+AyudaEnCaptura=Expresion
+TamanoValidacion=5
+Tamano=20
+ValorPorOmision=<T>Todas<T>
+TipoDatos=Texto
+
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=Lista(<T>Todas<T>, <T>1<T>, <T>2<T>, <T>3<T>, <T>4<T>, <T>5<T>, <T>6<T>, <T>7<T>, <T>8<T>, <T>9<T>, <T>10<T>)+NuevaLinea+SQLEnLista(<T>SELECT Lista FROM ListaPreciosEsp ORDER BY Orden<T>)
+[NivelServicioTipo]
+Clave=NivelServicioTipo
+Nombre=por Tipo Servicio
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ServicioTipo
+
+[ServicioTipo]
+Clave=ServicioTipo
+Nombre=Tipo Servicio
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NivelServicioTipo
+AyudaMemTabla=ServicioTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NivelContratoTipo]
+Clave=NivelContratoTipo
+Nombre=por Tipo Contrato
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ContratoTipo
+
+[ContratoTipo]
+Clave=ContratoTipo
+Nombre=Tipo Contrato
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NivelContratoTipo
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioContratoTipo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NivelUnidadVenta]
+Clave=NivelUnidadVenta
+Nombre=por Unidad Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=UnidadVenta
+
+[UnidadVenta]
+Clave=UnidadVenta
+Nombre=Unidad Venta
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NivelUnidadVenta
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[NivelArtABC]
+Clave=NivelArtABC
+Nombre=por ABC
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=no NivelArticulo
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[ArtABC]
+Clave=ArtABC
+Nombre=ABC
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=NivelArtABC y (no NivelArticulo)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaMemTabla=Sucursal
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelSucursal
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT COUNT(*) FROM Sucursal WHERE Sucursal=:nSuc<T>, Precio:Precio.Sucursal)>0
+
+[NivelSucursal]
+Clave=NivelSucursal
+Nombre=por Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ValorPorOmision=Falso
+
+[NivelArtLinea]
+Clave=NivelArtLinea
+Nombre=por Línea
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=no NivelArticulo
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=Falso
+
+[ArtLinea]
+Clave=ArtLinea
+Nombre=Línea
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtLinea
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=NivelArtLinea y (no NivelArticulo)
+TipoDatos=Texto
+
+[NivelArtRama]
+Clave=NivelArtRama
+Nombre=por Rama
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=no NivelArticulo
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+
+[ArtRama]
+Clave=ArtRama
+Nombre=Rama
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtRama
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+CondicionDespliege=NivelArtRama y (no NivelArticulo)
+TipoDatos=Texto
+
+[wMostrar]
+Clave=wMostrar
+Nombre=Mostrar en Internet
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NivelRegion]
+Clave=NivelRegion
+Nombre=por Region
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Region]
+Clave=Region
+Nombre=Region
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=NivelRegion
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=SucursalRegion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+
+
+[NivelArticulo.ListaRefrescarCondiciones]
+(Inicio)=NivelSubCuenta
+NivelSubCuenta=SubCuenta
+SubCuenta=NivelArtGrupo
+NivelArtGrupo=ArtGrupo
+ArtGrupo=NivelArtCat
+NivelArtCat=ArtCat
+ArtCat=NivelArtFam
+NivelArtFam=ArtFam
+ArtFam=NivelArtABC
+NivelArtABC=ArtABC
+ArtABC=NivelFabricante
+NivelFabricante=Fabricante
+Fabricante=NivelArtLinea
+NivelArtLinea=ArtLinea
+ArtLinea=NivelArtRama
+NivelArtRama=ArtRama
+ArtRama=Articulo
+Articulo=(Fin)
+
+[NivelCliente.ListaRefrescarCondiciones]
+(Inicio)=NivelCteGrupo
+NivelCteGrupo=CteGrupo
+CteGrupo=NivelCteCat
+NivelCteCat=CteCat
+CteCat=NivelCteFam
+NivelCteFam=CteFam
+CteFam=NivelCteZona
+NivelCteZona=CteZona
+CteZona=Cliente
+Cliente=(Fin)
+
+[ConVigencia.ListaRefrescarCondiciones]
+(Inicio)=FechaD
+FechaD=FechaA
+FechaA=(Fin)
+
+[NivelArtCat.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtCat
+ArtCat=(Fin)
+
+[NivelArtFam.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtFam
+ArtFam=(Fin)
+
+[NivelCteCat.ListaRefrescarCondiciones]
+(Inicio)=NivelCliente
+NivelCliente=Cliente
+Cliente=CteCat
+CteCat=(Fin)
+
+[NivelCteFam.ListaRefrescarCondiciones]
+(Inicio)=NivelCliente
+NivelCliente=Cliente
+Cliente=CteFam
+CteFam=(Fin)
+
+[NivelCteZona.ListaRefrescarCondiciones]
+(Inicio)=NivelCliente
+NivelCliente=Cliente
+Cliente=CteZona
+CteZona=(Fin)
+
+[NivelCteGrupo.ListaRefrescarCondiciones]
+(Inicio)=NivelCliente
+NivelCliente=Cliente
+Cliente=CteGrupo
+CteGrupo=(Fin)
+
+[NivelArtGrupo.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtGrupo
+ArtGrupo=(Fin)
+
+[NivelFabricante.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=Fabricante
+Fabricante=(Fin)
+
+[Nivel.ListaOpciones]
+(Inicio)=Siempre
+Siempre=Promocion
+Promocion=Particular
+Particular=Exclusiva
+Exclusiva=Normal
+Normal=(Fin)
+
+
+[NivelArtABC.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtABC
+ArtABC=(Fin)
+
+[ArtABC.ListaOpciones]
+(Inicio)=A
+A=B
+B=C
+C=D
+D=E
+E=F
+F=G
+G=H
+H=I
+I=J
+J=K
+K=L
+L=M
+M=N
+N=O
+O=P
+P=Q
+Q=R
+R=S
+S=T
+T=U
+U=V
+V=W
+W=X
+X=Y
+Y=Z
+Z=(Fin)
+
+[NivelArtLinea.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtLinea
+ArtLinea=(Fin)
+
+[NivelArtRama.ListaRefrescarCondiciones]
+(Inicio)=NivelArticulo
+NivelArticulo=Articulo
+Articulo=ArtRama
+ArtRama=(Fin)
+
+
+
+
+[ListaPrecios.ListaOpciones]
+(Inicio)=Todas
+Todas=1
+1=2
+2=3
+3=4
+4=5
+5=6
+6=7
+7=8
+8=9
+9=10
+10=(Fin)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Tipo
+Tipo=Nivel
+Nivel=Descripcion
+Descripcion=Estatus
+Estatus=UltimoCambio
+UltimoCambio=NivelArticulo
+NivelArticulo=Articulo
+Articulo=NivelSubCuenta
+NivelSubCuenta=SubCuenta
+SubCuenta=NivelArtGrupo
+NivelArtGrupo=ArtGrupo
+ArtGrupo=NivelArtCat
+NivelArtCat=ArtCat
+ArtCat=NivelArtFam
+NivelArtFam=ArtFam
+ArtFam=NivelArtABC
+NivelArtABC=ArtABC
+ArtABC=NivelFabricante
+NivelFabricante=Fabricante
+Fabricante=NivelArtLinea
+NivelArtLinea=ArtLinea
+ArtLinea=NivelArtRama
+NivelArtRama=ArtRama
+ArtRama=NivelCliente
+NivelCliente=Cliente
+Cliente=NivelCteGrupo
+NivelCteGrupo=CteGrupo
+CteGrupo=NivelCteCat
+NivelCteCat=CteCat
+CteCat=NivelCteFam
+NivelCteFam=CteFam
+CteFam=NivelCteZona
+NivelCteZona=CteZona
+CteZona=NivelMoneda
+NivelMoneda=Moneda
+Moneda=NivelProyecto
+NivelProyecto=Proyecto
+Proyecto=NivelAlmacen
+NivelAlmacen=Almacen
+Almacen=NivelCondicion
+NivelCondicion=Condicion
+Condicion=NivelAgente
+NivelAgente=Agente
+Agente=NivelFormaEnvio
+NivelFormaEnvio=FormaEnvio
+FormaEnvio=NivelMov
+NivelMov=Mov
+Mov=NivelServicioTipo
+NivelServicioTipo=ServicioTipo
+ServicioTipo=NivelContratoTipo
+NivelContratoTipo=ContratoTipo
+ContratoTipo=NivelUnidadVenta
+NivelUnidadVenta=UnidadVenta
+UnidadVenta=NivelEmpresa
+NivelEmpresa=Empresa
+Empresa=NivelRegion
+NivelRegion=Region
+Region=NivelSucursal
+NivelSucursal=Sucursal
+Sucursal=ListaPrecios
+ListaPrecios=ConVigencia
+ConVigencia=FechaD
+FechaD=FechaA
+FechaA=ArticuloObsequio
+ArticuloObsequio=CantidadObsequio
+CantidadObsequio=wMostrar
+wMostrar=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=Descripcion,
+Descripcion,=Estatus,
+Estatus,=UltimoCambio,
+UltimoCambio,=NivelArticulo,
+NivelArticulo,=Articulo,
+Articulo,=NivelSubCuenta,
+NivelSubCuenta,=SubCuenta,
+SubCuenta,=NivelArtGrupo,
+NivelArtGrupo,=ArtGrupo,
+ArtGrupo,=NivelArtCat,
+NivelArtCat,=ArtCat,
+ArtCat,=NivelArtFam,
+NivelArtFam,=ArtFam,
+ArtFam,=NivelArtABC,
+NivelArtABC,=ArtABC,
+ArtABC,=NivelFabricante,
+NivelFabricante,=Fabricante,
+Fabricante,=NivelArtLinea,
+NivelArtLinea,=ArtLinea,
+ArtLinea,=NivelArtRama,
+NivelArtRama,=ArtRama,
+ArtRama,=NivelCliente,
+NivelCliente,=Cliente,
+Cliente,=NivelCteGrupo,
+NivelCteGrupo,=CteGrupo,
+CteGrupo,=NivelCteCat,
+NivelCteCat,=CteCat,
+CteCat,=NivelCteFam,
+NivelCteFam,=CteFam,
+CteFam,=NivelCteZona,
+NivelCteZona,=CteZona,
+CteZona,=NivelMoneda,
+NivelMoneda,=Moneda,
+Moneda,=NivelCondicion,
+NivelCondicion,=Condicion,
+Condicion,=NivelAlmacen,
+NivelAlmacen,=Almacen,
+Almacen,=NivelProyecto,
+NivelProyecto,=Proyecto,
+Proyecto,=NivelAgente,
+NivelAgente,=Agente,
+Agente,=NivelFormaEnvio,
+NivelFormaEnvio,=FormaEnvio,
+FormaEnvio,=NivelMov,
+NivelMov,=Mov,
+Mov,=NivelServicioTipo,
+NivelServicioTipo,=ServicioTipo,
+ServicioTipo,=NivelContratoTipo,
+NivelContratoTipo,=ContratoTipo,
+ContratoTipo,=NivelUnidadVenta,
+NivelUnidadVenta,=UnidadVenta,
+UnidadVenta,=NivelEmpresa,
+NivelEmpresa,=Empresa,
+Empresa,=NivelRegion,
+NivelRegion,=Region,
+Region,=NivelSucursal,
+NivelSucursal,=Sucursal,
+Sucursal,=Tipo,
+Tipo,=Nivel,
+Nivel,=ListaPrecios,
+ListaPrecios,=ConVigencia,
+ConVigencia,=FechaD,
+FechaD,=FechaA,
+FechaA,=ArticuloObsequio,
+ArticuloObsequio,=CantidadObsequio,
+CantidadObsequio,=wMostrar
+wMostrar=FROM Precio
+FROM Precio=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Art
+Art=Cte
+Cte=Agente
+Agente=(Fin)

@@ -1,0 +1,341 @@
+[Vista]
+Icono=0
+Clave=AspelCfgClientes
+Nombre=AspelCfgClientes
+Modulos=(Todos)
+Singular=AspelCfgClientes
+ListaTablas=AspelCfgClientes
+TablaPrincipal=AspelCfgClientes
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+SQL=SELECT<BR>  AspelCfgClientes.Mayor,<BR>  AspelCfgClientes.Descripcion,<BR>  AspelCfgClientes.Rama,<BR>  AspelCfgClientes.EsAcreedora,<BR>  AspelCfgClientes.EsAcumulativa,<BR>  AspelCfgClientes.Modulo,<BR>  AspelCfgClientes.Agrupador,<BR>  AspelCfgClientes.MovDebeContable,<BR>  AspelCfgClientes.MovHaberContable,<BR>  AspelCfgClientes.MovDebeNoContable,<BR>  AspelCfgClientes.MovHaberNoContable,<BR>  AspelCfgClientes.FactorDebeNoContable,<BR>  AspelCfgClientes.FactorHaberNoContable,<BR>  AspelCfgClientes.ClaveDebeNoContable,<BR>  AspelCfgClientes.ClaveHaberNoContable,<BR>  AspelCfgClientes.EstatusContable,<BR>  AspelCfgClientes.EstatusNoContable,<BR>  AspelCfgClientes.AfectaContabilidad<BR><BR>FROM<BR>  AspelCfgModuloMayor AspelCfgClientes
+
+[AspelCfgClientes.Mayor]
+Clave=AspelCfgClientes.Mayor
+Nombre=Mayor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=Mayor
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Mayor
+
+[AspelCfgClientes.Descripcion]
+Clave=AspelCfgClientes.Descripcion
+Nombre=Descripcion
+Visible=S
+TamanoValidacion=100
+Tamano=100
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Descripcion
+
+[AspelCfgClientes.Rama]
+Clave=AspelCfgClientes.Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=Rama
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Rama
+
+[AspelCfgClientes.EsAcreedora]
+Clave=AspelCfgClientes.EsAcreedora
+Nombre=EsAcreedora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=EsAcreedora
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EsAcreedora
+
+[AspelCfgClientes.EsAcumulativa]
+Clave=AspelCfgClientes.EsAcumulativa
+Nombre=EsAcumulativa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=EsAcumulativa
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EsAcumulativa
+
+[AspelCfgClientes.Modulo]
+Clave=AspelCfgClientes.Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+UnicamenteLectura=S
+LigaTabla=AspelCfgClientes
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Modulo
+
+[AspelCfgClientes.Agrupador]
+Clave=AspelCfgClientes.Agrupador
+Nombre=Agrupar movimientos por
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR><BR>Caso  AspelCfgClientes.Descripcion<BR>  Es <T>Ventas<T>       Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Compras<T>      Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Clientes<T>     Entonces Lista(<T><T>)<BR>  Es <T>Inventarios<T>  Entonces Lista(<T><T>)<BR>  Es <T>Proveedores<T>  Entonces Lista(<T><T>)<BR>Fin
+LigaTabla=AspelCfgClientes
+LigaCampo=Agrupador
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Agrupador
+
+[AspelCfgClientes.MovDebeContable]
+Clave=AspelCfgClientes.MovDebeContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,AspelCfgClientes.Modulo)
+LigaTabla=AspelCfgClientes
+LigaCampo=MovDebeContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovDebeContable
+
+[AspelCfgClientes.MovHaberContable]
+Clave=AspelCfgClientes.MovHaberContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,AspelCfgClientes.Modulo)
+LigaTabla=AspelCfgClientes
+LigaCampo=MovHaberContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovHaberContable
+
+[AspelCfgClientes.MovDebeNoContable]
+Clave=AspelCfgClientes.MovDebeNoContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+LigaTabla=AspelCfgClientes
+LigaCampo=MovDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovDebeNoContable
+
+[AspelCfgClientes.MovHaberNoContable]
+Clave=AspelCfgClientes.MovHaberNoContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+LigaTabla=AspelCfgClientes
+LigaCampo=MovHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MovHaberNoContable
+
+[AspelCfgClientes.FactorDebeNoContable]
+Clave=AspelCfgClientes.FactorDebeNoContable
+Nombre=Factor Debe
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+LigaTabla=AspelCfgClientes
+LigaCampo=FactorDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FactorDebeNoContable
+
+[AspelCfgClientes.FactorHaberNoContable]
+Clave=AspelCfgClientes.FactorHaberNoContable
+Nombre=Factor Haber
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+LigaTabla=AspelCfgClientes
+LigaCampo=FactorHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FactorHaberNoContable
+
+[AspelCfgClientes.ClaveDebeNoContable]
+Clave=AspelCfgClientes.ClaveDebeNoContable
+Nombre=Clave Afectación Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,AspelCfgClientes.Modulo)
+LigaTabla=AspelCfgClientes
+LigaCampo=ClaveDebeNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ClaveDebeNoContable
+
+[AspelCfgClientes.ClaveHaberNoContable]
+Clave=AspelCfgClientes.ClaveHaberNoContable
+Nombre=Clave Afectacion Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,AspelCfgClientes.Modulo)
+LigaTabla=AspelCfgClientes
+LigaCampo=ClaveHaberNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ClaveHaberNoContable
+
+[AspelCfgClientes.EstatusContable]
+Clave=AspelCfgClientes.EstatusContable
+Nombre=Estatus inicial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Estatus
+CondicionDespliege=AfectaContabilidad
+LigaTabla=AspelCfgClientes
+LigaCampo=EstatusContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=EstatusContable
+
+[AspelCfgClientes.EstatusNoContable]
+Clave=AspelCfgClientes.EstatusNoContable
+Nombre=Estatus Inicial
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Estatus
+OpcionesRenglones=8
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=No AfectaContabilidad
+LigaTabla=AspelCfgClientes
+LigaCampo=EstatusNoContable
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=EstatusNoContable
+
+[AspelCfgClientes.AfectaContabilidad]
+Clave=AspelCfgClientes.AfectaContabilidad
+Nombre=Contabilizar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+LigaTabla=AspelCfgClientes
+LigaCampo=AfectaContabilidad
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=AfectaContabilidad
+
+[Vista.ListaCampos]
+(Inicio)=AspelCfgClientes.Mayor
+AspelCfgClientes.Mayor=AspelCfgClientes.Descripcion
+AspelCfgClientes.Descripcion=AspelCfgClientes.Rama
+AspelCfgClientes.Rama=AspelCfgClientes.EsAcreedora
+AspelCfgClientes.EsAcreedora=AspelCfgClientes.EsAcumulativa
+AspelCfgClientes.EsAcumulativa=AspelCfgClientes.Modulo
+AspelCfgClientes.Modulo=AspelCfgClientes.Agrupador
+AspelCfgClientes.Agrupador=AspelCfgClientes.MovDebeContable
+AspelCfgClientes.MovDebeContable=AspelCfgClientes.MovHaberContable
+AspelCfgClientes.MovHaberContable=AspelCfgClientes.MovDebeNoContable
+AspelCfgClientes.MovDebeNoContable=AspelCfgClientes.MovHaberNoContable
+AspelCfgClientes.MovHaberNoContable=AspelCfgClientes.FactorDebeNoContable
+AspelCfgClientes.FactorDebeNoContable=AspelCfgClientes.FactorHaberNoContable
+AspelCfgClientes.FactorHaberNoContable=AspelCfgClientes.ClaveDebeNoContable
+AspelCfgClientes.ClaveDebeNoContable=AspelCfgClientes.ClaveHaberNoContable
+AspelCfgClientes.ClaveHaberNoContable=AspelCfgClientes.EstatusContable
+AspelCfgClientes.EstatusContable=AspelCfgClientes.EstatusNoContable
+AspelCfgClientes.EstatusNoContable=AspelCfgClientes.AfectaContabilidad
+AspelCfgClientes.AfectaContabilidad=(Fin)
+
+[AspelCfgClientes.FactorDebeNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)
+
+[AspelCfgClientes.FactorHaberNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)

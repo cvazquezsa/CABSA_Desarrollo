@@ -1,0 +1,133 @@
+
+[Tabla]
+Icono=0
+Clave=EmpresaCfgMovRecluta
+Nombre=EmpresaCfgMovRecluta
+Archivo=EmpresaCfgMovRecluta
+Modulos=(Todos)
+Singular=EmpresaCfgMovRecluta
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Empresa
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[REAutorizacionPlaza]
+Clave=REAutorizacionPlaza
+Nombre=Autorización Plaza
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+[REEntrevista]
+Clave=REEntrevista
+Nombre=Entrevista
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+[REContratacion]
+Clave=REContratacion
+Nombre=Contratación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+[RERechazoRequisicion]
+Clave=RERechazoRequisicion
+Nombre=Rechazo Requisición
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+[RESolicitudEvaluacion]
+Clave=RESolicitudEvaluacion
+Nombre=Solicitud Evaluación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+[REEvaluacion]
+Clave=REEvaluacion
+Nombre=Evaluación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=RE
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=REAutorizacionPlaza
+REAutorizacionPlaza=REEntrevista
+REEntrevista=REContratacion
+REContratacion=RERechazoRequisicion
+RERechazoRequisicion=RESolicitudEvaluacion
+RESolicitudEvaluacion=REEvaluacion
+REEvaluacion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=REAutorizacionPlaza,
+REAutorizacionPlaza,=REEntrevista,
+REEntrevista,=REContratacion,
+REContratacion,=RERechazoRequisicion,
+RERechazoRequisicion,=RESolicitudEvaluacion,
+RESolicitudEvaluacion,=REEvaluacion
+REEvaluacion=FROM EmpresaCfgMovRecluta
+FROM EmpresaCfgMovRecluta=(Fin)

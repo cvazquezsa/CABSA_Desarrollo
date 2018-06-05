@@ -1,0 +1,90 @@
+
+[Dialogo]
+Clave=GenerarProyectoServicio
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=544
+PosicionInicialArriba=301
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=267
+VentanaSiempreAlFrente=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaEstadoInicial=Normal
+VentanaExclusivaOpcion=0
+VentanaConIcono=S
+[Acciones.Reestructurar]
+Nombre=Reestructurar
+Boton=0
+NombreDesplegar=&Re-estructurar Proyecto Servicio
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+NombreEnBoton=S
+TipoAccion=Expresion
+
+
+
+Expresion=Generar(<T>PROY<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.Mov, Afectar.FormaCaptura)
+[Acciones.Concluido]
+Nombre=Concluido
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Concluir Proyecto Servicio
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expresion=Afectar(<T>PROY<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T><T>, Afectar.FormaCaptura)
+
+
+
+
+
+[Acciones.LineaBase]
+Nombre=LineaBase
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Línea Base
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+VisibleCondicion=Info.Mov(<T>Proyecto Servicio<T>)
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Reestructurar
+Reestructurar=Concluido
+Concluido=LineaBase
+LineaBase=(Fin)

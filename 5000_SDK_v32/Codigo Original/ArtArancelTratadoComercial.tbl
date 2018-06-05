@@ -1,0 +1,44 @@
+[Tabla]
+Icono=0
+Clave=ArtArancelTratadoComercial
+Archivo=ArtArancelTratadoComercial
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tratados Comerciales
+Singular=Tratado Comercial
+LlavePrimaria=Arancel<BR>TratadoComercial
+SQL=SELECT<BR>  Arancel,<BR>  TratadoComercial,<BR>  Porcentaje<BR><BR>FROM<BR>  ArtArancelTratadoComercial
+
+[Arancel]
+Clave=Arancel
+Nombre=Arancel
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Arancel
+
+[TratadoComercial]
+Clave=TratadoComercial
+Nombre=Tratado Comercial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TratadoComercial
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=% IGI
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Arancel
+Arancel=TratadoComercial
+TratadoComercial=Porcentaje
+Porcentaje=(Fin)

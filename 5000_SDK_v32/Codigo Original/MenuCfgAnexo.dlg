@@ -1,0 +1,70 @@
+[Dialogo]
+Clave=MenuCfgAnexo
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=830
+PosicionInicialArriba=501
+PosicionInicialAlturaCliente=162
+PosicionInicialAncho=260
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+
+[Acciones.AnexoDocTipo]
+Nombre=AnexoDocTipo
+Boton=0
+NombreDesplegar=&Tipos de Documentos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=AnexoDocTipo
+Activo=S
+Visible=S
+
+[Acciones.AnexoCat]
+Nombre=AnexoCat
+Boton=0
+NombreDesplegar=&Categorías de Anexos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=AnexoCat
+Activo=S
+Visible=S
+
+[Acciones.AnexoFam]
+Nombre=AnexoFam
+Boton=0
+NombreDesplegar=&Familias de Anexos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=AnexoFam
+Activo=S
+Visible=S
+
+[Acciones.AnexoGrupo]
+Nombre=AnexoGrupo
+Boton=0
+NombreDesplegar=&Grupos de Anexos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=AnexoGrupo
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=AnexoDocTipo
+AnexoDocTipo=AnexoCat
+AnexoCat=AnexoGrupo
+AnexoGrupo=AnexoFam
+AnexoFam=(Fin)

@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=CuboArticulo
+Nombre=Cubos del Artículo
+Icono=81
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+ListaAcciones=(Lista)
+PosicionInicialIzquierda=396
+PosicionInicialArriba=298
+PosicionInicialAlturaCliente=138
+PosicionInicialAncho=231
+
+[Acciones.Ventas]
+Nombre=Ventas
+Boton=0
+NombreDesplegar=Cubo &Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>VTAS<T>, <T>Articulo<T>, Info.Articulo, Info.Nombre)
+Activo=S
+Visible=S
+
+[Acciones.Inv]
+Nombre=Inv
+Boton=0
+NombreDesplegar=Cubo &Inventario
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>INV<T>, <T>Articulo<T>, Info.Articulo, Info.Nombre)
+Activo=S
+Visible=S
+
+[Acciones.Compras]
+Nombre=Compras
+Boton=0
+NombreDesplegar=Cubo C&ompras
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Cubo(<T>COMS<T>, <T>Articulo<T>, Info.Articulo, Info.Nombre)
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Ventas
+Ventas=Inv
+Inv=Compras
+Compras=(Fin)

@@ -1,0 +1,1170 @@
+[Tabla]
+Icono=0
+Clave=NominaConcepto
+Archivo=NominaConcepto
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Conceptos
+Singular=Concepto
+LlavePrimaria=NominaConcepto
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+ControlNivelAcceso=S
+CampoNivelAcceso=NivelAcceso
+
+SQL=(Lista)
+[NominaConcepto]
+Clave=NominaConcepto
+Nombre=Clave
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=40
+Tamano=50
+TipoDatos=Texto
+
+[Movimiento]
+Clave=Movimiento
+Nombre=Movimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CantidadBase]
+Clave=CantidadBase
+Nombre=Cantidad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CantidadPropiedad]
+Clave=CantidadPropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=CantidadBase=<T>Propiedad<T>
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+TipoDatos=Texto
+
+[CantidadEditar]
+Clave=CantidadEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CantidadBase<><T>N/A<T>
+
+[CantidadDef]
+Clave=CantidadDef
+Nombre=Cantidad (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=CantidadBase=<T>Especifica<T>
+
+[PorcentajeBase]
+Clave=PorcentajeBase
+Nombre=Porcentaje
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PorcentajePropiedad]
+Clave=PorcentajePropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+CondicionDespliege=PorcentajeBase=<T>Propiedad<T>
+TipoDatos=Texto
+
+[PorcentajeEditar]
+Clave=PorcentajeEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=PorcentajeBase<><T>N/A<T>
+
+[PorcentajeDef]
+Clave=PorcentajeDef
+Nombre=Porcentaje (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=PorcentajeBase=<T>Especifico<T>
+
+[ValorBase]
+Clave=ValorBase
+Nombre=Valor
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+OpcionesUnicamente=S
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ValorPropiedad]
+Clave=ValorPropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+CondicionDespliege=ValorBase=<T>Propiedad<T>
+TipoDatos=Texto
+
+[ValorEditar]
+Clave=ValorEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ValorBase<><T>N/A<T>
+
+[ValorDef]
+Clave=ValorDef
+Nombre=Valor (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ValorBase=<T>Especifico<T>
+
+[ImporteTopeBase]
+Clave=ImporteTopeBase
+Nombre=Tope (Importe)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ImporteTopePropiedad]
+Clave=ImporteTopePropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+CondicionDespliege=ImporteTopeBase=<T>Propiedad<T>
+TipoDatos=Texto
+
+[ImporteTopeEditar]
+Clave=ImporteTopeEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=ImporteTopeBase<><T>N/A<T>
+
+[ImporteTopeDef]
+Clave=ImporteTopeDef
+Nombre=Tope (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ImporteTopeBase=<T>Especifico<T>
+
+[AcreedorBase]
+Clave=AcreedorBase
+Nombre=Acreedor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AcreedorPropiedad]
+Clave=AcreedorPropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+CondicionDespliege=AcreedorBase=<T>Propiedad<T>
+TipoDatos=Texto
+
+[AcreedorDef]
+Clave=AcreedorDef
+Nombre=Acreedor (por omisión)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+CondicionDespliege=AcreedorBase=<T>Especifico<T>
+TipoDatos=Texto
+
+[VencimientoBase]
+Clave=VencimientoBase
+Nombre=Vencimiento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VencimientoDia]
+Clave=VencimientoDia
+Nombre=Día
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=VencimientoBase=<T>Dia Especifico<T>
+
+[VencimientoMes]
+Clave=VencimientoMes
+Nombre=Mes
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=VencimientoBase=<T>Dia Especifico<T>
+TipoDatos=Texto
+
+[GravaISR]
+Clave=GravaISR
+Nombre=Grava ISR
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ValorPorOmision=<T>Si<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[GravaIMSS]
+Clave=GravaIMSS
+Nombre=Grava IMSS
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ValorPorOmision=<T>Si<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[GravaImpuestoEstatal]
+Clave=GravaImpuestoEstatal
+Nombre=Grava Impuesto Estatal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Si<T>
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[GravaCedular]
+Clave=GravaCedular
+Nombre=Grava Impuesto Cedular
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>Si<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>NOM<T>
+ConRefrescar=S
+ListaRefrescar=ModuloMov
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=GenerarEstadisticaCxp
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Especial]
+Clave=Especial
+Nombre=Especial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TieneSubConceptos]
+Clave=TieneSubConceptos
+Nombre=Tiene Sub Conceptos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[AcreedorEditar]
+Clave=AcreedorEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=AcreedorBase<><T>N/A<T>
+
+[VencimientoEditar]
+Clave=VencimientoEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=VencimientoBase<><T>N/A<T>
+
+[CantidadTopeBase]
+Clave=CantidadTopeBase
+Nombre=Tope (Cantidad)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>N/A<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CantidadTopePropiedad]
+Clave=CantidadTopePropiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=CantidadTopeBase=<T>Propiedad<T>
+AyudaEnCaptura=Vista
+AyudaForma=PersonalPropLista
+AyudaVista=PersonalProp
+AyudaCampo=PersonalProp.Propiedad
+TipoDatos=Texto
+
+[CantidadTopeEditar]
+Clave=CantidadTopeEditar
+Nombre=Permite Editar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=CantidadTopeBase<><T>N/A<T>
+ValorPorOmision=Falso
+
+[CantidadTopeDef]
+Clave=CantidadTopeDef
+Nombre=Tope (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=CantidadTopeBase=<T>Especifico<T>
+
+[CantidadEsPorcentaje]
+Clave=CantidadEsPorcentaje
+Nombre=Es Porcentaje
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CantidadBase<><T>N/A<T>
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta Especifica
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+TipoDatos=Texto
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[SueldoVariable]
+Clave=SueldoVariable
+Nombre=Sueldo Variable
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[RequiereDiasTrabajados]
+Clave=RequiereDiasTrabajados
+Nombre=Requiere Días Trabajados
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[CuentaBase]
+Clave=CuentaBase
+Nombre=Cuenta Contable
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>N/A<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CuentaGrupo]
+Clave=CuentaGrupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=General.NivelAcceso
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=NivelAcceso
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Cuenta2]
+Clave=Cuenta2
+Nombre=Cuenta 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDestino
+TipoDatos=Texto
+
+[Relaciones.CtaDestino]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta2
+Clave=CtaDestino
+TablaRemota=CtaDestino
+LlaveRemota=Cuenta
+
+[ModuloMov]
+Clave=ModuloMov
+Nombre=Movimiento a Generar
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(Modulo)
+TipoDatos=Texto
+
+[GenerarEstadisticaCxp]
+Clave=GenerarEstadisticaCxp
+Nombre=Generar Estadistica Cxp
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Modulo=<T>CXC<T>
+
+[GravaPrimaAntiguedad]
+Clave=GravaPrimaAntiguedad
+Nombre=Grava Prima Antiguedad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+TipoDatos=Texto
+
+[GravaIndemnizacion]
+Clave=GravaIndemnizacion
+Nombre=Grava Indemnización
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+TipoDatos=Texto
+
+[AplicaPreelaborada]
+Clave=AplicaPreelaborada
+Nombre=Aplica Preelaborada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+CondicionDespliege=Mayusculas( Empresa.Pais )=<T>PANAMA<T>
+TipoDatos=Texto
+
+[GravaSeguroEducativo]
+Clave=GravaSeguroEducativo
+Nombre=Grava Seguro Educativo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+TipoDatos=Texto
+
+[GravaVacaciones]
+Clave=GravaVacaciones
+Nombre=Grava Vacaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+CondicionDespliege=Mayusculas( Empresa.Pais )=<T>PANAMA<T>
+TipoDatos=Texto
+
+[Sysmeca]
+Clave=Sysmeca
+Nombre=Sysmeca
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+CondicionDespliege=Mayusculas( Empresa.Pais )=<T>PANAMA<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SituacionCambio]
+Clave=SituacionCambio
+Nombre=Situación Cambio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaForma=CtaSituacion
+AyudaVista=CtaSituacion
+AyudaCampo=CtaSituacion.Situacion
+AyudaMemRenglones=10
+AyudaMemAvanzada=S
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=sqlenlista(<T>Select situacion from ctasituacion where rama=:tm<T>,<T>RH<T>)
+TipoDatos=Texto
+
+[Pais]
+Clave=Pais
+Nombre=Pais
+Visible=S
+TamanoValidacion=30
+Tamano=30
+ValorPorOmision=Empresa.pais
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorRefrescar=Empresa.pais
+TipoDatos=Texto
+
+[MovEspecificoNomina]
+Clave=MovEspecificoNomina
+Nombre=MovEspecificoNomina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[ObligacionFiscal]
+Clave=ObligacionFiscal
+Nombre=Obligación Fiscal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ObligacionFiscal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Tasa]
+Clave=Tasa
+Nombre=Tasa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+
+
+[Movimiento.ListaOpciones]
+(Inicio)=Percepcion
+Percepcion=Deduccion
+Deduccion=Estadistica
+Estadistica=(Fin)
+
+[CantidadBase.ListaRefrescarCondiciones]
+(Inicio)=CantidadPropiedad
+CantidadPropiedad=CantidadDef
+CantidadDef=CantidadEditar
+CantidadEditar=CantidadEsPorcentaje
+CantidadEsPorcentaje=(Fin)
+
+[CantidadBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifica
+Especifica=Propiedad
+Propiedad=Dias Periodo
+Dias Periodo=(Fin)
+
+[PorcentajeBase.ListaRefrescarCondiciones]
+(Inicio)=PorcentajeDef
+PorcentajeDef=PorcentajePropiedad
+PorcentajePropiedad=PorcentajeEditar
+PorcentajeEditar=(Fin)
+
+[PorcentajeBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Propiedad
+Propiedad=Factor Ausentismo
+Factor Ausentismo=(Fin)
+
+[ValorBase.ListaRefrescarCondiciones]
+(Inicio)=ValorDef
+ValorDef=ValorPropiedad
+ValorPropiedad=ValorEditar
+ValorEditar=(Fin)
+
+[ValorBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Propiedad
+Propiedad=Sueldo Diario
+Sueldo Diario=SDI
+SDI=Sueldo Periodo
+Sueldo Periodo=Sueldo Mensual
+Sueldo Mensual=Sueldo Anual
+Sueldo Anual=Sueldo Hora
+Sueldo Hora=Sueldo Hora Jornada
+Sueldo Hora Jornada=Salario Minimo Zona
+Salario Minimo Zona=Salario Minimo DF
+Salario Minimo DF=Acum Mes Ant Menos Vac
+Acum Mes Ant Menos Vac=Sueldo Diario Vac
+Sueldo Diario Vac=Sueldo Diario Mes
+Sueldo Diario Mes=Diario Vac Gasto
+Diario Vac Gasto=(Fin)
+
+[ImporteTopeBase.ListaRefrescarCondiciones]
+(Inicio)=ImporteTopeDef
+ImporteTopeDef=ImporteTopePropiedad
+ImporteTopePropiedad=ImporteTopeEditar
+ImporteTopeEditar=(Fin)
+
+[ImporteTopeBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Propiedad
+Propiedad=(Fin)
+
+[AcreedorBase.ListaRefrescarCondiciones]
+(Inicio)=AcreedorDef
+AcreedorDef=AcreedorPropiedad
+AcreedorPropiedad=AcreedorEditar
+AcreedorEditar=(Fin)
+
+[AcreedorBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Propiedad
+Propiedad=(Fin)
+
+[VencimientoBase.ListaRefrescarCondiciones]
+(Inicio)=VencimientoDia
+VencimientoDia=VencimientoMes
+VencimientoMes=VencimientoEditar
+VencimientoEditar=(Fin)
+
+[VencimientoBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Dia Especifico
+Dia Especifico=Fecha Emision Incidencia
+Fecha Emision Incidencia=Fecha Aplicacion Incidencia
+Fecha Aplicacion Incidencia=(Fin)
+
+[GravaISR.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=Horas Extras Dobles
+Horas Extras Dobles=Prima Dominical
+Prima Dominical=Prima Vacacional
+Prima Vacacional=ISR Liquidacion
+ISR Liquidacion=Vales Despensa
+Vales Despensa=Aguinaldo
+Aguinaldo=PTU
+PTU=Indemnizacion
+Indemnizacion=(Fin)
+
+[GravaIMSS.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=Premio Puntualidad
+Premio Puntualidad=Premio Asistencia
+Premio Asistencia=Vales Despensa
+Vales Despensa=GASTO REPRESENTACION
+GASTO REPRESENTACION=BONO PRODUCCION
+BONO PRODUCCION=(Fin)
+
+[GravaImpuestoEstatal.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=por Estado
+por Estado=(Fin)
+
+[GravaCedular.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=(Fin)
+
+[Modulo.ListaOpciones]
+(Inicio)=NOM
+NOM=CXP
+CXP=CXC
+CXC=GAS
+GAS=DIN
+DIN=(Fin)
+
+[Especial.ListaOpciones]
+(Inicio)=Horas Extras
+Horas Extras=Faltas
+Faltas=Incapacidades
+Incapacidades=Vacaciones
+Vacaciones=Dias
+Dias=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[CantidadTopeBase.ListaRefrescarCondiciones]
+(Inicio)=CantidadTopeDef
+CantidadTopeDef=CantidadTopePropiedad
+CantidadTopePropiedad=CantidadTopeEditar
+CantidadTopeEditar=(Fin)
+
+[CantidadTopeBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifico
+Especifico=Propiedad
+Propiedad=Dias Periodo
+Dias Periodo=Semanas Periodo
+Semanas Periodo=(Fin)
+
+[CuentaBase.ListaOpciones]
+(Inicio)=N/A
+N/A=Especifica
+Especifica=Personal
+Personal=(Fin)
+
+[Sysmeca.ListaOpciones]
+(Inicio)=03) Salario
+03) Salario=73) Gastos Representacion
+73) Gastos Representacion=74) Gratificaciones y Aguinaldo
+74) Gratificaciones y Aguinaldo=75) Bonificaciones
+75) Bonificaciones=80) Dieta
+80) Dieta=81) Prima Produccion
+81) Prima Produccion=82) Salario en Especie
+82) Salario en Especie=84) Combustible
+84) Combustible=85) Excedente de Bonificaciones
+85) Excedente de Bonificaciones=00) Codigos sin Especificar
+00) Codigos sin Especificar=(Fin)
+
+
+
+
+
+
+
+[ConceptoNOI]
+Clave=ConceptoNOI
+Nombre=ConceptoNOI
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=Falso
+CondicionDespliege=General.InterfazAspelNOI
+[ConceptoNOIValidado]
+Clave=ConceptoNOIValidado
+Nombre=Concepto NOI Validado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+OpcionesValidar=S
+
+
+
+
+
+
+
+
+
+
+CondicionDespliege=(General.InterfazAspelNOI)y(ConceptoNOI)
+
+
+
+
+
+
+
+
+
+
+
+
+[NomXID]
+Clave=NomXID
+Nombre=NomXID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+
+AyudaEnCaptura=Vista
+AyudaForma=NomXLista
+AyudaVista=NomX
+AyudaCampo=NomX.ID
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=NominaConcepto
+NominaConcepto=Concepto
+Concepto=Movimiento
+Movimiento=CantidadBase
+CantidadBase=CantidadDef
+CantidadDef=CantidadPropiedad
+CantidadPropiedad=CantidadEditar
+CantidadEditar=CantidadEsPorcentaje
+CantidadEsPorcentaje=PorcentajeBase
+PorcentajeBase=PorcentajeDef
+PorcentajeDef=PorcentajePropiedad
+PorcentajePropiedad=PorcentajeEditar
+PorcentajeEditar=ValorBase
+ValorBase=ValorDef
+ValorDef=ValorPropiedad
+ValorPropiedad=ValorEditar
+ValorEditar=CantidadTopeBase
+CantidadTopeBase=CantidadTopeDef
+CantidadTopeDef=CantidadTopePropiedad
+CantidadTopePropiedad=CantidadTopeEditar
+CantidadTopeEditar=ImporteTopeBase
+ImporteTopeBase=ImporteTopeDef
+ImporteTopeDef=ImporteTopePropiedad
+ImporteTopePropiedad=ImporteTopeEditar
+ImporteTopeEditar=AcreedorBase
+AcreedorBase=AcreedorDef
+AcreedorDef=AcreedorPropiedad
+AcreedorPropiedad=AcreedorEditar
+AcreedorEditar=VencimientoBase
+VencimientoBase=VencimientoDia
+VencimientoDia=VencimientoMes
+VencimientoMes=VencimientoEditar
+VencimientoEditar=GravaISR
+GravaISR=GravaIMSS
+GravaIMSS=GravaImpuestoEstatal
+GravaImpuestoEstatal=GravaCedular
+GravaCedular=Modulo
+Modulo=ModuloMov
+ModuloMov=Especial
+Especial=TieneSubConceptos
+TieneSubConceptos=Estatus
+Estatus=CuentaBase
+CuentaBase=CuentaGrupo
+CuentaGrupo=Cuenta
+Cuenta=Cuenta2
+Cuenta2=RequiereDiasTrabajados
+RequiereDiasTrabajados=SueldoVariable
+SueldoVariable=NivelAcceso
+NivelAcceso=GenerarEstadisticaCxp
+GenerarEstadisticaCxp=GravaPrimaAntiguedad
+GravaPrimaAntiguedad=GravaIndemnizacion
+GravaIndemnizacion=AplicaPreelaborada
+AplicaPreelaborada=GravaSeguroEducativo
+GravaSeguroEducativo=GravaVacaciones
+GravaVacaciones=Sysmeca
+Sysmeca=SituacionCambio
+SituacionCambio=Pais
+Pais=MovEspecificoNomina
+MovEspecificoNomina=ObligacionFiscal
+ObligacionFiscal=Tasa
+Tasa=ConceptoNOI
+ConceptoNOI=ConceptoNOIValidado
+ConceptoNOIValidado=NomXID
+NomXID=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=NominaConcepto,
+NominaConcepto,=Concepto,
+Concepto,=Movimiento,
+Movimiento,=CantidadBase,
+CantidadBase,=CantidadPropiedad,
+CantidadPropiedad,=CantidadEditar,
+CantidadEditar,=CantidadDef,
+CantidadDef,=CantidadEsPorcentaje,
+CantidadEsPorcentaje,=PorcentajeBase,
+PorcentajeBase,=PorcentajePropiedad,
+PorcentajePropiedad,=PorcentajeEditar,
+PorcentajeEditar,=PorcentajeDef,
+PorcentajeDef,=ValorBase,
+ValorBase,=ValorPropiedad,
+ValorPropiedad,=ValorEditar,
+ValorEditar,=ValorDef,
+ValorDef,=CantidadTopeBase,
+CantidadTopeBase,=CantidadTopePropiedad,
+CantidadTopePropiedad,=CantidadTopeEditar,
+CantidadTopeEditar,=CantidadTopeDef,
+CantidadTopeDef,=ImporteTopeBase,
+ImporteTopeBase,=ImporteTopePropiedad,
+ImporteTopePropiedad,=ImporteTopeEditar,
+ImporteTopeEditar,=ImporteTopeDef,
+ImporteTopeDef,=AcreedorBase,
+AcreedorBase,=AcreedorPropiedad,
+AcreedorPropiedad,=AcreedorEditar,
+AcreedorEditar,=AcreedorDef,
+AcreedorDef,=VencimientoBase,
+VencimientoBase,=VencimientoDia,
+VencimientoDia,=VencimientoMes,
+VencimientoMes,=VencimientoEditar,
+VencimientoEditar,=GravaISR,
+GravaISR,=GravaIMSS,
+GravaIMSS,=GravaImpuestoEstatal,
+GravaImpuestoEstatal,=GravaCedular,
+GravaCedular,=Modulo,
+Modulo,=ModuloMov,
+ModuloMov,=Especial,
+Especial,=TieneSubConceptos,
+TieneSubConceptos,=Estatus,
+Estatus,=CuentaBase,
+CuentaBase,=CuentaGrupo,
+CuentaGrupo,=Cuenta,
+Cuenta,=Cuenta2,
+Cuenta2,=RequiereDiasTrabajados,
+RequiereDiasTrabajados,=SueldoVariable,
+SueldoVariable,=GenerarEstadisticaCxp,
+GenerarEstadisticaCxp,=NivelAcceso,
+NivelAcceso,=MovEspecificoNomina,
+MovEspecificoNomina,=Sysmeca,
+Sysmeca,=GravaPrimaAntiguedad,
+GravaPrimaAntiguedad,=GravaIndemnizacion,
+GravaIndemnizacion,=AplicaPreelaborada,
+AplicaPreelaborada,=GravaSeguroEducativo,
+GravaSeguroEducativo,=GravaVacaciones,
+GravaVacaciones,=SituacionCambio,
+SituacionCambio,=Pais,
+Pais,=ObligacionFiscal,
+ObligacionFiscal,=Tasa,
+Tasa,=ConceptoNOI,
+ConceptoNOI,=ConceptoNOIValidado,
+ConceptoNOIValidado,=NomXID
+NomXID=FROM
+FROM=NominaConcepto
+NominaConcepto=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Cta
+Cta=CtaDestino
+CtaDestino=(Fin)

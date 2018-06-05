@@ -1,0 +1,74 @@
+
+[Tabla]
+Icono=0
+Clave=LDIFormaPago
+Nombre=LDIFormaPago
+Archivo=LDIFormaPago
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=FormaPago
+SQL=(Lista)
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+Requerido=S
+AyudaEnCaptura=Expresion
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLenLista(<T>SELECT FormaPago FROM FormaPago<T>)
+[Servicio]
+Clave=Servicio
+Nombre=Servicio
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+Requerido=S
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+
+
+
+
+
+Formula=SQLenLista(<T>SELECT Servicio FROM POSLDIServicio<T>)
+
+
+
+
+[POSForma]
+Clave=POSForma
+Nombre=POSForma
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.ListaCampos]
+(Inicio)=FormaPago
+FormaPago=Servicio
+Servicio=POSForma
+POSForma=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=FormaPago,
+FormaPago,=Servicio,
+Servicio,=POSForma
+POSForma=FROM LDIFormaPago
+FROM LDIFormaPago=(Fin)

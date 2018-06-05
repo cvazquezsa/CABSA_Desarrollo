@@ -1,0 +1,60 @@
+[Dialogo]
+Clave=AfectarReclutaPrioridad
+Nombre=<T>Cambiar Prioridad<T>
+Icono=7
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=165
+PosicionInicialAncho=195
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=414
+PosicionInicialArriba=301
+VentanaExclusiva=S
+VentanaEscCerrar=S
+
+[Acciones.Alta]
+Nombre=Alta
+Boton=0
+NombreDesplegar=&Alta Prioridad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=ProcesarSQL(<T>spAfectarTraficoRecluta :nSucursal, :nID, :tAccion, :tClave<T>, Sucursal, Info.ID, <T>PRIORIDAD<T>, <T>Alta<T>)
+VisibleCondicion=Info.Prioridad<><T>Alta<T>
+
+[Acciones.Normal]
+Nombre=Normal
+Boton=0
+NombreDesplegar=&Normal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=ProcesarSQL(<T>spAfectarTraficoRecluta :nSucursal, :nID, :tAccion, :tClave<T>, Sucursal, Info.ID, <T>PRIORIDAD<T>, <T>Normal<T>)
+VisibleCondicion=Info.Prioridad<><T>Normal<T>
+
+[Acciones.Baja]
+Nombre=Baja
+Boton=0
+NombreDesplegar=&Baja Prioridad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=ProcesarSQL(<T>spAfectarTraficoRecluta :nSucursal, :nID, :tAccion, :tClave<T>, Sucursal, Info.ID, <T>PRIORIDAD<T>, <T>Baja<T>)
+VisibleCondicion=Info.Prioridad<><T>Baja<T>
+
+[Dialogo.ListaAcciones]
+(Inicio)=Alta
+Alta=Normal
+Normal=Baja
+Baja=(Fin)

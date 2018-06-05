@@ -1,0 +1,110 @@
+
+[Vista]
+Icono=0
+Clave=eDocInHerrTablaST
+Nombre=eDocInHerrTablaST
+Modulos=(Todos)
+ListaTablas=eDocInHerrTablaST
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=eDocInHerrTablaST
+SQL=(Lista)
+[eDocInHerrTablaST.Estacion]
+Clave=eDocInHerrTablaST.Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+LigaTabla=eDocInHerrTablaST
+LigaCampo=Estacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Estacion
+
+[eDocInHerrTablaST.TablaSt]
+Clave=eDocInHerrTablaST.TablaSt
+Nombre=TablaSt
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=eDocInHerrTablaST
+LigaCampo=TablaSt
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TablaSt
+
+[eDocInHerrTablaST.Tablas]
+Clave=eDocInHerrTablaST.Tablas
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT SysTabla FROM SysTabla WHERE Tipo <>:tTipo<T>,<T>Movimiento<T>)
+LigaTabla=eDocInHerrTablaST
+LigaCampo=Tablas
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Tablas
+
+[eDocInHerrTablaST.CampoNombre]
+Clave=eDocInHerrTablaST.CampoNombre
+Nombre=Campo Nombre
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT           Campo FROM SysCampoExt WHERE Tabla = :tTabla<T>,eDocInHerrTablaST.Tablas)
+LigaTabla=eDocInHerrTablaST
+LigaCampo=CampoNombre
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CampoNombre
+
+[eDocInHerrTablaST.CampoValor]
+Clave=eDocInHerrTablaST.CampoValor
+Nombre=Campo Valor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT           Campo FROM SysCampoExt WHERE Tabla = :tTabla<T>,eDocInHerrTablaST.Tablas)
+LigaTabla=eDocInHerrTablaST
+LigaCampo=CampoValor
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CampoValor
+
+[Vista.ListaCampos]
+(Inicio)=eDocInHerrTablaST.Estacion
+eDocInHerrTablaST.Estacion=eDocInHerrTablaST.TablaSt
+eDocInHerrTablaST.TablaSt=eDocInHerrTablaST.Tablas
+eDocInHerrTablaST.Tablas=eDocInHerrTablaST.CampoNombre
+eDocInHerrTablaST.CampoNombre=eDocInHerrTablaST.CampoValor
+eDocInHerrTablaST.CampoValor=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=eDocInHerrTablaST.Estacion,
+eDocInHerrTablaST.Estacion,=eDocInHerrTablaST.TablaSt,
+eDocInHerrTablaST.TablaSt,=eDocInHerrTablaST.Tablas,
+eDocInHerrTablaST.Tablas,=eDocInHerrTablaST.CampoNombre,
+eDocInHerrTablaST.CampoNombre,=eDocInHerrTablaST.CampoValor
+eDocInHerrTablaST.CampoValor=FROM eDocInHerrTablaST
+FROM eDocInHerrTablaST=(Fin)

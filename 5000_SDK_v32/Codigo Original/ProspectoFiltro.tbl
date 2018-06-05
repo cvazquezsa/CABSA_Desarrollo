@@ -1,0 +1,88 @@
+[Tabla]
+Icono=0
+Clave=ProspectoFiltro
+Archivo=ProspectoFiltro
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Filtro
+Singular=Filtro
+LlavePrimaria=Estacion<BR>RID
+ControlID=S
+CampoID=RID
+SQL=SELECT<BR>  Estacion,<BR>  RID,<BR>  Campo,<BR>  Condicion,<BR>  Valor<BR><BR>FROM<BR>  ProspectoFiltro
+
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Campo
+AlCambiar=Asigna(Info.Campo, Campo)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT Campo FROM SysCampo WHERE Tabla=:tTabla<T>, <T>Prospecto<T>)+<BR>NuevaLinea+<BR>SQLEnLista(<T>SELECT Campo FROM SysCaracteristica WHERE Tabla=:tTabla<T>, <T>Prospecto<T>)
+
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>spProspectoFiltroAyuda :tEmpresa, :tCampo<T>, Empresa, Campo)
+
+[Condicion]
+Clave=Condicion
+Nombre=Condición
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Igual<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=RID
+RID=Campo
+Campo=Condicion
+Condicion=Valor
+Valor=(Fin)
+
+[Condicion.ListaOpciones]
+(Inicio)=Igual
+Igual=Parecido
+Parecido=Diferente
+Diferente=Mayor
+Mayor=Mayor o Igual
+Mayor o Igual=Menor
+Menor=Menor o Igual
+Menor o Igual=(Fin)

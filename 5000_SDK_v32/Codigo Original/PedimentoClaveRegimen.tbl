@@ -1,0 +1,35 @@
+[Tabla]
+Icono=0
+Clave=PedimentoClaveRegimen
+Archivo=PedimentoClaveRegimen
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Regimenes
+Singular=Regimen
+SQL=SELECT<BR>  PedimentoClave,<BR>  PedimentoRegimen<BR><BR>FROM<BR>  PedimentoClaveRegimen
+LlavePrimaria=PedimentoClave<BR>PedimentoRegimen
+
+[PedimentoClave]
+Clave=PedimentoClave
+Nombre=Clave
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Clave
+
+[PedimentoRegimen]
+Clave=PedimentoRegimen
+Nombre=Regimen
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PedimentoRegimen
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=PedimentoClave
+PedimentoClave=PedimentoRegimen
+PedimentoRegimen=(Fin)

@@ -1,0 +1,4525 @@
+[Tabla]
+Icono=0
+Clave=Art
+Archivo=Art
+Modulos=(Lista)
+ListaCampos=(Lista)
+Nombre=Artículos
+Singular=Artículo
+LlavePrimaria=Articulo
+ControlEstatus=S
+ControlCambios=S
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+CampoConsecutivo=Articulo
+ControlClase=
+CampoClase=
+CampoUsuario=RevisionUsuario
+ControlUsuarios=S
+CampoSituacion=Situacion
+CampoSituacionFecha=SituacionFecha
+ControlSituacion=S
+ControlSituacionFecha=S
+CampoSugerido=Articulo
+ControlSugerido=S
+ControlNivelAcceso=S
+CampoNivelAcceso=NivelAcceso
+ControlAccesoEspecifico=S
+TablaAccesoEspecifico=ArtAcceso
+CampoUsuarioCambio=Usuario
+ControlUsuarioCambio=S
+CampoSituacionUsuario=SituacionUsuario
+ControlSituacionUsuario=S
+CampoSituacionNota=SituacionNota
+ControlSituacionNota=S
+
+SQL=(Lista)
+[Articulo]
+Clave=Articulo
+Nombre=Clave
+Tamano=20
+TamanoValidacion=20
+Requerido=S
+MascaraEdicion=Config.ArtFormato
+CondicionEdicion=no TieneMovimientos
+Mayusculas=S
+TipoDatos=Texto
+
+[Descripcion1]
+Clave=Descripcion1
+Nombre=Descripción
+Tamano=100
+TamanoValidacion=30
+TipoDatos=Texto
+
+[Descripcion2]
+Clave=Descripcion2
+Nombre=Descripción
+Tamano=255
+TamanoValidacion=250
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ArtCat
+AyudaVista=ArtCat
+AyudaCampo=ArtCat.Categoria
+AyudaMemTabla=ArtCat
+AyudaMemEstilo=Validar captura
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=20
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Familia]
+Clave=Familia
+Nombre=Familia
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ArtFamLista
+AyudaVista=ArtFam
+AyudaCampo=ArtFam.Familia
+AyudaMemTabla=ArtFam
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Fabricante]
+Clave=Fabricante
+Nombre=Fabricante
+Tamano=50
+TamanoValidacion=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=Fabricante
+AyudaVista=Fabricante
+AyudaCampo=Fabricante.Fabricante
+AyudaMemTabla=Fabricante
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[Impuesto1]
+Clave=Impuesto1
+Nombre=% IVA
+TipoDatos=NumFlotante
+TamanoValidacion=10
+ValorPorOmision=General.DefImpuesto
+AyudaMemTabla=Imp
+AyudaMemOpc=Validar captura en la lista
+Requerido=S
+CondicionDespliege=no General.TipoImpuesto
+
+[Impuesto2]
+Clave=Impuesto2
+Nombre=% IEPS
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaMemTabla=Imp
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=no General.TipoImpuesto
+
+[Factor]
+Clave=Factor
+Nombre=Factor Costos
+Tamano=50
+TamanoValidacion=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ArtFactor
+AyudaVista=ArtFactor
+AyudaCampo=ArtFactor.Factor
+AyudaMemTabla=ArtFactor
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+
+[Unidad]
+Clave=Unidad
+Nombre=Unidad Venta
+Tamano=50
+TamanoValidacion=10
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Validaciones Memoria
+OpcionesPresentacion=Consulta Opcional
+ValorPorOmision=Si(Usuario.DefUnidad=<T>(Empresa)<T>, General.DefUnidad, Usuario.DefUnidad)
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[TipoCosteo]
+Clave=TipoCosteo
+Nombre=Tipo Costeo
+Tamano=10
+TamanoValidacion=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ValorPorOmision=Config.TipoCosteo
+CondicionDespliege=Config.FormaCosteo=<T>Articulo<T>
+CondicionEdicion=no TieneMovimientos
+TipoDatos=Texto
+
+ListaOpciones=(Lista)
+[Peso]
+Clave=Peso
+Nombre=Peso
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaEnCaptura=Calculadora
+
+[Tara]
+Clave=Tara
+Nombre=Tara
+OpcionesColumnas=1
+TipoDatos=NumFlotante
+TamanoValidacion=10
+
+[Volumen]
+Clave=Volumen
+Nombre=Volumen
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaEnCaptura=Calculadora
+
+[MonedaCosto]
+Clave=MonedaCosto
+Nombre=Moneda Costo
+Tamano=10
+TamanoValidacion=12
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=Mon
+AyudaVista=Mon
+AyudaCampo=Mon.Moneda
+Requerido=S
+ValorPorOmision=Config.MonedaCosteo
+AyudaMemTabla=Mon
+AyudaMemOpc=Unicamente opciones listadas
+CondicionEdicion=(no Usuario.BloquearMonedaArtCosto) y (no TieneMovimientos) y Config.MonedaCosteoNivelArticulo
+TipoDatos=Texto
+
+[MonedaPrecio]
+Clave=MonedaPrecio
+Nombre=Moneda Venta
+Tamano=10
+TamanoValidacion=12
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=Mon
+AyudaVista=Mon
+AyudaCampo=Mon.Moneda
+Requerido=S
+ValorPorOmision=Usuario.DefMoneda
+AyudaMemTabla=Mon
+AyudaMemOpc=Unicamente opciones listadas
+CondicionEdicion=no Usuario.BloquearMonedaArtPrecio
+TipoDatos=Texto
+
+[MargenMinimo]
+Clave=MargenMinimo
+Nombre=Margen Min.
+TipoDatos=NumMonetario
+TamanoValidacion=10
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Config.ValidarPrecios=<T>Margen Minimo<T>
+
+[PrecioLista]
+Clave=PrecioLista
+Nombre=&Precio Lista
+TipoDatos=NumMonetario
+TamanoValidacion=10
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Tamano=15
+TamanoValidacion=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=&Ultimo Cambio
+TipoDatos=FechaHora
+TamanoValidacion=15
+
+[Relaciones.ArtCat]
+TablaRemota=ArtCat
+Clave=ArtCat
+LlaveLocal=Categoria
+LlaveRemota=Categoria
+TipoRelacion=Opcional
+
+[Relaciones.ArtFam]
+TablaRemota=ArtFam
+Clave=ArtFam
+LlaveLocal=Familia
+LlaveRemota=Familia
+TipoRelacion=Opcional
+
+[Relaciones.ArtFactor]
+TablaRemota=ArtFactor
+Clave=ArtFactor
+LlaveLocal=Factor
+LlaveRemota=Factor
+TipoRelacion=Opcional
+
+[Relaciones.Mon]
+TablaRemota=Mon
+Clave=Mon
+LlaveLocal=MonedaCosto
+LlaveRemota=Moneda
+TipoRelacion=Forzoza
+
+[Utilidad]
+Clave=Utilidad
+Nombre=Tipo Utilidad
+Tamano=50
+TamanoValidacion=50
+AyudaMemTabla=ArtUtil
+AyudaMemOpc=Validar captura en la lista
+AyudaEnCaptura=Validaciones Memoria
+TipoDatos=Texto
+
+[Relaciones.ArtUtil]
+TablaRemota=ArtUtil
+Clave=ArtUtil
+LlaveLocal=Utilidad
+LlaveRemota=Utilidad
+TipoRelacion=Opcional
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+AyudaEnCaptura=Lista de Opciones
+Tamano=20
+TamanoValidacion=10
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Tipos Artículos
+OpcionesRenglones=8
+Requerido=S
+ValorPorOmision=Si(Usuario.DefArtTipo=<T>(Empresa)<T>, General.DefArtTipo, Usuario.DefArtTipo)
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=no TieneMovimientos
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[Mensaje]
+Clave=Mensaje
+Nombre=Mensaje Emergente
+TamanoValidacion=50x3
+Tamano=50
+TipoDatos=Texto
+
+[ClaveFabricante]
+Clave=ClaveFabricante
+Nombre=Código Fabricante
+TamanoValidacion=18
+Tamano=50
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.Presenta]
+TipoRelacion=Opcional
+LlaveLocal=Presentacion
+Clave=Presenta
+TablaRemota=Presenta
+LlaveRemota=Presentacion
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=ArtGrupo
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+
+[Clase]
+Clave=Clase
+Nombre=Clase
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+ListaOpciones=(Lista)
+OpcionesLlave=Auto
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[Accesorios]
+Clave=Accesorios
+Nombre=Tiene Accesorios
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Alta]
+Clave=Alta
+Nombre=Alta
+TamanoValidacion=15
+TipoDatos=FechaHora
+ValorPorOmision=Ahora
+
+[Conciliar]
+Clave=Conciliar
+Nombre=Conciliar Movimientos
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NombreCorto]
+Clave=NombreCorto
+Nombre=Nombre Corto
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[FactorAlterno]
+Clave=FactorAlterno
+Nombre=Factor
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Tipo=TipoPartida
+ValorPorOmision=1
+FormatoValidacion=#.####
+
+[PrecioAnterior]
+Clave=PrecioAnterior
+Nombre=Precio Anterior
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+Tamano=0
+
+[Precio2]
+Clave=Precio2
+Nombre=Precio &2
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>1
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Calculadora
+
+[Precio3]
+Clave=Precio3
+Nombre=Precio &3
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>2
+AyudaEnCaptura=Calculadora
+
+[Precio4]
+Clave=Precio4
+Nombre=Precio &4
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>3
+
+[Precio5]
+Clave=Precio5
+Nombre=Precio &5
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>4
+
+[Refacciones]
+Clave=Refacciones
+Nombre=Tiene Refacciones
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[DescuentoCompra]
+Clave=DescuentoCompra
+Nombre=% Desc Compra
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.##
+AyudaEnCaptura=Calculadora
+CondicionEdicion=no Config.ArtDescuentoCompraCascada
+
+[CategoriaActivoFijo]
+Clave=CategoriaActivoFijo
+Nombre=Categoría Activo Fijo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ActivoFCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+
+[Comision]
+Clave=Comision
+Nombre=Tipo Comisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtComision
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Relaciones.ArtComision]
+TipoRelacion=Opcional
+LlaveLocal=Comision
+Clave=ArtComision
+TablaRemota=ArtComision
+LlaveRemota=Comision
+
+[Arancel]
+Clave=Arancel
+Nombre=Arancel
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtArancel
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=ArtArancel
+TipoDatos=Texto
+
+[ABC]
+Clave=ABC
+Nombre=ABC
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=1
+Tamano=1
+Mayusculas=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Sustitutos]
+Clave=Sustitutos
+Nombre=Tiene Sustitutos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[PrecioMinimo]
+Clave=PrecioMinimo
+Nombre=Precio Mínimo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Config.ValidarPrecios=<T>Precio Minimo<T>
+
+[UnidadCompra]
+Clave=UnidadCompra
+Nombre=Unidad Compra/Producción
+Visible=S
+TamanoValidacion=11
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Si(Usuario.DefUnidad=<T>(Empresa)<T>, General.DefUnidad, Usuario.DefUnidad)
+AyudaMemEnBlanco=S
+ValorRefrescar=Unidad
+ConRefrescar=S
+ListaRefrescar=UnidadTarima
+TipoDatos=Texto
+
+[Relaciones.AcumRU]
+TipoRelacion=Forzosa
+LlaveLocal=(Lista)
+Clave=AcumRU
+TablaRemota=AcumRU
+LlaveRemota=(Lista)
+
+[Relaciones.AcumU]
+TipoRelacion=Forzosa
+LlaveLocal=(Lista)
+Clave=AcumU
+TablaRemota=AcumU
+LlaveRemota=(Lista)
+
+[Relaciones.ArtConCosto]
+TipoRelacion=Forzosa
+LlaveLocal=(Lista)
+Clave=ArtConCosto
+TablaRemota=ArtConCosto
+LlaveRemota=(Lista)
+
+[Impuesto3]
+Clave=Impuesto3
+Nombre=% Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no General.TipoImpuesto
+
+[Precio6]
+Clave=Precio6
+Nombre=Precio &6
+Visible=S
+TamanoValidacion=4
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>5
+AyudaEnCaptura=Calculadora
+
+[Precio7]
+Clave=Precio7
+Nombre=Precio &7
+Visible=S
+TamanoValidacion=4
+TipoDatos=NumMonetario
+CondicionDespliege=Config.VentaPrecios>6
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Precio8]
+Clave=Precio8
+Nombre=Precio &8
+Visible=S
+TamanoValidacion=4
+TipoDatos=NumMonetario
+CondicionDespliege=Config.VentaPrecios>7
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Precio9]
+Clave=Precio9
+Nombre=Precio &9
+Visible=S
+TamanoValidacion=4
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>8
+AyudaEnCaptura=Calculadora
+
+[Precio10]
+Clave=Precio10
+Nombre=Precio 1&0
+Visible=S
+TamanoValidacion=4
+TipoDatos=NumMonetario
+Monetario=S
+CondicionDespliege=Config.VentaPrecios>9
+AyudaEnCaptura=Calculadora
+
+[Relaciones.ArtCostoCapas]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=ArtCostoCapas
+TablaRemota=ArtCostoCapas
+LlaveRemota=(Lista)
+
+[Refrigeracion]
+Clave=Refrigeracion
+Nombre=Requiere Refrigeración
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TieneCaducidad]
+Clave=TieneCaducidad
+Nombre=Tiene Caducidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CaducidadMinima
+
+[SeProduce]
+Clave=SeProduce
+Nombre=Se &Produce
+Visible=S
+TamanoValidacion=9
+TipoDatos=Lógico
+ValorPorOmision=Falso
+RefrescarTodo=
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=General.Prod
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ListaRefrescar=AlmacenROP
+
+[ProdCantidad]
+Clave=ProdCantidad
+Nombre=&Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[ProdUsuario]
+Clave=ProdUsuario
+Nombre=U&suario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>(Mismo)<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Usuario
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+CondicionDespliege=no EsFormula
+TipoDatos=Texto
+
+[CategoriaProd]
+Clave=CategoriaProd
+Nombre=Categoría Producción
+Visible=S
+TamanoValidacion=20
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtCatProd
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=General.Prod
+TipoDatos=Texto
+
+[ProdPasoTotal]
+Clave=ProdPasoTotal
+Nombre=Pasos T&otales
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=1
+CondicionDespliege=ProdConPasos
+
+[ProdMov]
+Clave=ProdMov
+Nombre=&Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>(por omision)<T>
+TipoDatos=Texto
+
+[ProdMovGrupo]
+Clave=ProdMovGrupo
+Nombre=Grupo Producción
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=General.Prod
+TipoDatos=Texto
+
+[ProdEstacion]
+Clave=ProdEstacion
+Nombre=&Estación (por omisión)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=EstacionLista
+AyudaVista=Estacion
+AyudaCampo=Estacion.Estacion
+AyudaIgnoraChequeos=S
+AyudaRefrescar=S
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.Estacion]
+TipoRelacion=Opcional
+LlaveLocal=ProdEstacion
+Clave=Estacion
+TablaRemota=Estacion
+LlaveRemota=Estacion
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ArtRama
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+AyudaRefrescar=S
+AyudaIgnoraChequeos=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe<T>
+ValidacionCondicion=SQL(<T>SELECT Cuenta FROM ArtRama WHERE Cuenta=:tRama<T>, Rama)<>Nulo
+TipoDatos=Texto
+
+[Relaciones.ArtRama]
+TipoRelacion=Opcional
+LlaveLocal=Rama
+Clave=ArtRama
+TablaRemota=ArtRama
+LlaveRemota=Cuenta
+
+[wMostrar]
+Clave=wMostrar
+Nombre=Comercio Electrónico
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[TiempoEntrega]
+Clave=TiempoEntrega
+Nombre=&Tiempo Entrega
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=SeCompra o SeProduce
+
+[TiempoEntregaUnidad]
+Clave=TiempoEntregaUnidad
+Nombre=Unidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=SeCompra o SeProduce
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Relaciones.ArtPrecioListaMoneda]
+TipoRelacion=Forzosa
+LlaveLocal=Articulo
+Clave=ArtPrecioListaMoneda
+TablaRemota=ArtPrecioListaMoneda
+LlaveRemota=Articulo
+
+[ProdOpciones]
+Clave=ProdOpciones
+Nombre=&Material Opcional
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Info.ArtTipoOpcion<>TipoNo
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Merma]
+Clave=Merma
+Nombre=Merma
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.####
+AyudaEnCaptura=Calculadora
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[ProdRuta]
+Clave=ProdRuta
+Nombre=&Ruta Producción (por omisión)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProdRutaLista
+AyudaVista=ProdRuta
+AyudaCampo=ProdRuta.Ruta
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=ProdRuta
+CondicionDespliege=SeProduce y (no EsFormula)
+TipoDatos=Texto
+
+[Relaciones.ProdRuta]
+TipoRelacion=Opcional
+LlaveLocal=ProdRuta
+Clave=ProdRuta
+TablaRemota=ProdRuta
+LlaveRemota=Ruta
+
+[CantidadOrdenar]
+Clave=CantidadOrdenar
+Nombre=&Cantidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=(no (EsFormula y SeProduce)) y (LoteOrdenar <> <T>Lote por Lote<T>)
+
+[SeCompra]
+Clave=SeCompra
+Nombre=Se C&ompra
+Visible=S
+TamanoValidacion=9
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+ListaRefrescar=AlmacenROP
+RefrescarTodoCondiciones=S
+
+[SeVende]
+Clave=SeVende
+Nombre=&Se Vende
+Visible=S
+TamanoValidacion=9
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ListaRefrescar=AlmacenROP
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=RutaDistribucion
+
+[InvSeguridad]
+Clave=InvSeguridad
+Nombre=&Inventario Seguridad
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=no (EsFormula y SeProduce)
+
+[LoteOrdenar]
+Clave=LoteOrdenar
+Nombre=Tamaño Lote
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=Config.ProdLoteOrdenar
+CondicionDespliege=no (EsFormula y SeProduce)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[MultiplosOrdenar]
+Clave=MultiplosOrdenar
+Nombre=Múltiplos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=(no (EsFormula y SeProduce)) y (LoteOrdenar=<T>Cantidad Minima / Multiplos<T>)
+ValorPorOmision=1
+
+[Desperdicio]
+Clave=Desperdicio
+Nombre=Desperdicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#.####
+AyudaEnCaptura=Calculadora
+
+[EsFormula]
+Clave=EsFormula
+Nombre=Es &Formula
+Visible=S
+TamanoValidacion=9
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=SeProduce
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[AlmacenROP]
+Clave=AlmacenROP
+Nombre=Almacén Orden
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=AlmROP
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+CondicionDespliege=no (EsFormula y SeProduce)
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+AyudaMemAvanzada=S
+TipoDatos=Texto
+
+[ProdVerCostoAcumulado]
+Clave=ProdVerCostoAcumulado
+Nombre=Ver C&osto Acumulado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[ProdVerMerma]
+Clave=ProdVerMerma
+Nombre=Ver M&ermas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[ProdVerDesperdicio]
+Clave=ProdVerDesperdicio
+Nombre=Ver &Desperdicios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[RevisionUltima]
+Clave=RevisionUltima
+Nombre=Ultima Revisión
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ConRefrescar=S
+ListaRefrescar=RevisionSiguiente
+
+[RevisionUsuario]
+Clave=RevisionUsuario
+Nombre=Usuario Revisión
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=UsuarioLista
+AyudaVista=UsuarioA
+AyudaCampo=Usuario.Usuario
+ValidacionUsaTabla=S
+ValidacionTablas=Usuario
+TipoDatos=Texto
+
+[RevisionFrecuencia]
+Clave=RevisionFrecuencia
+Nombre=Frecuencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ConRefrescar=S
+ListaRefrescar=RevisionSiguiente
+
+[RevisionFrecuenciaUnidad]
+Clave=RevisionFrecuenciaUnidad
+Nombre=Unidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ConRefrescar=S
+ListaRefrescar=RevisionSiguiente
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Relaciones.Usuario]
+TipoRelacion=Opcional
+LlaveLocal=RevisionUsuario
+Clave=Usuario
+TablaRemota=Usuario
+LlaveRemota=Usuario
+
+[RevisionSiguiente]
+Clave=RevisionSiguiente
+Nombre=Siguiente Revisión
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+ValorRefrescar=IncTiempoUnidad(RevisionUltima, RevisionFrecuencia, RevisionFrecuenciaUnidad)
+
+[ProdVerConcentracion]
+Clave=ProdVerConcentracion
+Nombre=Ver C&oncentración
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[TipoOpcion]
+Clave=TipoOpcion
+Nombre=Opciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Tipos Opciones
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=(Tipo<><T>Juego<T>) y (no TieneMovimientos o (no Config.BloquearOpcionesArtConMovs))
+TipoDatos=Texto
+
+[TiempoEntregaSeg]
+Clave=TiempoEntregaSeg
+Nombre=TE Seguridad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Config.PlanTESeguridad y (SeCompra o SeProduce)
+
+[TiempoEntregaSegUnidad]
+Clave=TiempoEntregaSegUnidad
+Nombre=Unidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Config.PlanTESeguridad y (SeCompra o SeProduce)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Situacion]
+Clave=Situacion
+Nombre=Situación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=CtaSituacionINV
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[SituacionFecha]
+Clave=SituacionFecha
+Nombre=Fecha seguimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+AyudaEnCaptura=Calendario
+
+[EstatusPrecio]
+Clave=EstatusPrecio
+Nombre=Estatus Precio
+Visible=S
+TamanoValidacion=15
+Tamano=15
+Mayusculas=S
+ValorPorOmision=<T>NUEVO<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Servicios]
+Clave=Servicios
+Nombre=Tiene Servicios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Consumibles]
+Clave=Consumibles
+Nombre=Tiene Consumibles
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[UnidadCantidad]
+Clave=UnidadCantidad
+Nombre=# Partes
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+
+[Linea]
+Clave=Linea
+Nombre=Línea
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtLinea
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+
+[TipoCompra]
+Clave=TipoCompra
+Nombre=Tipo Compra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=SeCompra
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=Si(Usuario.LimitarCompraLocal, <T>Local<T>)
+CondicionEdicion=no Usuario.LimitarCompraLocal
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Registro1]
+Clave=Registro1
+Nombre=NOM
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Registro1Vencimiento]
+Clave=Registro1Vencimiento
+Nombre=Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[AlmacenEspecificoVenta]
+Clave=AlmacenEspecificoVenta
+Nombre=Almacén Específico Venta
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=AlmacenEspecificoVentaMov
+CondicionDespliege=Config.VentaArtAlmacenEspecifico
+TipoDatos=Texto
+
+[CostoEstandar]
+Clave=CostoEstandar
+Nombre=Costo Estándar
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[CostoReposicion]
+Clave=CostoReposicion
+Nombre=Costo Reposición
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[EstatusCosto]
+Clave=EstatusCosto
+Nombre=Estatus Costo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+Mayusculas=S
+ValorPorOmision=<T>SINCAMBIO<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Relaciones.ArtCostoEmpresa]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=ArtCostoEmpresa
+TablaRemota=ArtCostoEmpresa
+LlaveRemota=(Lista)
+
+[Margen]
+Clave=Margen
+Nombre=% Margen
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+
+[AlmacenEspecificoVentaMov]
+Clave=AlmacenEspecificoVentaMov
+Nombre=Movimiento Especifico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesModulo=VTAS
+CondicionDespliege=Config.VentaArtAlmacenEspecifico y ConDatos(AlmacenEspecificoVenta)
+TipoDatos=Texto
+
+[RutaDistribucion]
+Clave=RutaDistribucion
+Nombre=Ruta Distribución
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=RutaDistribucion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Config.RutaDistribucion
+CondicionDespliege=SeVende y Config.RutaDistribucionNivelArticulo
+TipoDatos=Texto
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor (por omisión)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=ProvLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Prov
+CondicionDespliege=SeCompra
+TipoDatos=Texto
+
+[Relaciones.Prov]
+TipoRelacion=Opcional
+LlaveLocal=Proveedor
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+[NivelAcceso]
+Clave=NivelAcceso
+Nombre=Acceso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemTabla=NivelAccesoEsp
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=General.NivelAcceso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+Formula=Si(General.NivelAccesoEsp, SQLEnLista(<T>SELECT Nivel FROM NivelAccesoEsp ORDER BY Orden<T>), SQLEnLista(<T>SELECT Nivel FROM NivelAcceso ORDER BY Orden<T>))
+TipoDatos=Texto
+
+[ProdVerPorcentaje]
+Clave=ProdVerPorcentaje
+Nombre=&%
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Temporada]
+Clave=Temporada
+Nombre=Temporada
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtTemporada
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+
+[SolicitarPrecios]
+Clave=SolicitarPrecios
+Nombre=Solicitar Precios al Vender
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Config.VentaSolicitarPrecios
+ValorPorOmision=Falso
+
+[AutoRecaudacion]
+Clave=AutoRecaudacion
+Nombre=Recaudación/Liquidación
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=General.Autotransportes
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+CondicionDespliege=General.Autotransportes
+Formula=Si<BR>  AutoRecaudacion en (<T>Percepcion<T>, <T>Deduccion<T>)<BR>Entonces<BR>  SQLEnLista(<T>SELECT Concepto FROM ConceptoNominaRecibo<T>)<BR>Sino <BR>  ListaConceptos(<T>GAS<T>)<BR>Fin
+TipoDatos=Texto
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta Contable
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=Cta
+CondicionDespliege=General.Autotransportes o Config.ContCtaArticulo
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.Cta]
+TipoRelacion=Opcional
+LlaveLocal=Cuenta
+Clave=Cta
+TablaRemota=Cta
+LlaveRemota=Cuenta
+
+[Espacios]
+Clave=Espacios
+Nombre=Controla Espacios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.Espacios
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=Tipo=<T>Servicio<T>
+
+[EspaciosSobreventa]
+Clave=EspaciosSobreventa
+Nombre=% Sobreventa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=Config.EspaciosSobreventa
+
+[EspaciosNivel]
+Clave=EspaciosNivel
+Nombre=Nivel
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Config.EspaciosNivel
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EspaciosMinutos]
+Clave=EspaciosMinutos
+Nombre=Intervalo (Minutos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesLlave=Opción
+ValorPorOmision=Config.EspaciosMinutos
+ListaOpciones=(Lista)
+
+[EspaciosBloquearAnteriores]
+Clave=EspaciosBloquearAnteriores
+Nombre=Bloquear Fechas Anteriores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Config.EspaciosBloquearAnteriores
+
+[EspaciosHoraD]
+Clave=EspaciosHoraD
+Nombre=De Hora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+ValorPorOmision=Config.EspaciosHoraD
+TipoDatos=Texto
+
+[EspaciosHoraA]
+Clave=EspaciosHoraA
+Nombre=A Hora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Horas
+CondicionDespliege=EspaciosNivel=<T>Hora<T>
+ValorPorOmision=Config.EspaciosHoraA
+TipoDatos=Texto
+
+[Retencion1]
+Clave=Retencion1
+Nombre=% Retención ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no General.TipoImpuesto<BR>//Config.CompraRetenciones y (no General.TipoImpuesto)
+
+[Retencion2]
+Clave=Retencion2
+Nombre=% Retención IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no General.TipoImpuesto<BR>//Config.CompraRetenciones y (no General.TipoImpuesto)
+
+[BasculaPesar]
+Clave=BasculaPesar
+Nombre=Pesar (Báscula Electrónica)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EspaciosEspecificos]
+Clave=EspaciosEspecificos
+Nombre=Espacios Específicos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+CondicionEdicion=Espacios y (Tipo=<T>Servicio<T>)
+RefrescarTodoCondiciones=S
+CondicionDespliege=General.Espacios
+
+[SerieLoteInfo]
+Clave=SerieLoteInfo
+Nombre=Series/Lotes Informativas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no TieneMovimientos
+CondicionDespliege=Tipo en (<T>Serie<T>, <T>Lote<T>)
+
+[CantidadMinimaVenta]
+Clave=CantidadMinimaVenta
+Nombre=Cantidad Minima Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[EstimuloFiscal]
+Clave=EstimuloFiscal
+Nombre=% Estimulo Fiscal
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[OrigenPais]
+Clave=OrigenPais
+Nombre=País Origen
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Pais
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[OrigenLocalidad]
+Clave=OrigenLocalidad
+Nombre=Localidad Origen
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Incentivo]
+Clave=Incentivo
+Nombre=Incentivo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Config.VentaIncentivos
+
+[FactorCompra]
+Clave=FactorCompra
+Nombre=Factor Compra
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+CondicionDespliege=General.Ford
+AyudaEnCaptura=Calculadora
+
+[Horas]
+Clave=Horas
+Nombre=Horas
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[ISAN]
+Clave=ISAN
+Nombre=ISAN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Tipo=<T>VIN<T>
+ValorRefrescar=Tipo=TipoVIN
+
+[Relaciones.CtaSituacion]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=CtaSituacion
+TablaRemota=CtaSituacion
+LlaveRemota=(Lista)
+
+[ExcluirDescFormaPago]
+Clave=ExcluirDescFormaPago
+Nombre=Excluir Desc. Forma Pago
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[EsDeducible]
+Clave=EsDeducible
+Nombre=Deducible
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=General.DefEsDeducible
+
+[CantidadMaximaVenta]
+Clave=CantidadMaximaVenta
+Nombre=Cantidad Máxima Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+[Peaje]
+Clave=Peaje
+Nombre=Peaje
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[CodigoAlterno]
+Clave=CodigoAlterno
+Nombre=Código Alterno
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+TipoDatos=Texto
+
+[TipoCatalogo]
+Clave=TipoCatalogo
+Nombre=Tipo Catálogo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Resurtible<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[AnexosAlFacturar]
+Clave=AnexosAlFacturar
+Nombre=Anexos al Facturar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=Config.VentaAnexosAlFacturar
+ValorPorOmision=Falso
+
+[CaducidadMinima]
+Clave=CaducidadMinima
+Nombre=Caducidad Mínima (Días)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Config.CompraCaducidad y TieneCaducidad
+RequeridoActivo=S
+ValorMinimo=1
+
+[LotesFijos]
+Clave=LotesFijos
+Nombre=Lotes Fijos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=Tipo=<T>Lote<T>
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Actividades]
+Clave=Actividades
+Nombre=Actividades
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[ValidarPresupuestoCompra]
+Clave=ValidarPresupuestoCompra
+Nombre=Validar Presupuesto Compra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Config.CompraValidarPresupuesto<><T>No<T>
+ValorPorOmision=<T>No<T>
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SeriesLotesAutoOrden]
+Clave=SeriesLotesAutoOrden
+Nombre=Surtido Automático
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Tipo en (TipoSerie, TipoLote, TipoVIN, TipoPartida)
+ValorPorOmision=<T>(Empresa)<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[UnidadTraspaso]
+Clave=UnidadTraspaso
+Nombre=Unidad Traspaso
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=Unidad
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[LotesAuto]
+Clave=LotesAuto
+Nombre=Lotes Consecutivos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=(Tipo=<T>Lote<T>) y (no LotesFijos)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Consecutivo
+
+[Consecutivo]
+Clave=Consecutivo
+Nombre=Ultimo Consecutivo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=(Tipo=<T>Lote<T>) y LotesAuto
+CondicionEdicion=(Tipo=<T>Lote<T>) y (no LotesFijos)
+
+[TipoEmpaque]
+Clave=TipoEmpaque
+Nombre=Tipo Empaque
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoEmpaque
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Modelo]
+Clave=Modelo
+Nombre=Modelo
+Visible=S
+TamanoValidacion=4
+Tamano=4
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+AyudaMemTabla=ArtModelo
+TipoDatos=Texto
+
+[Version]
+Clave=Version
+Nombre=Versión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaMemEnBlanco=S
+AyudaMemTabla=ArtVersion
+TipoDatos=Texto
+
+[Direccion]
+Clave=Direccion
+Nombre=Dirección
+Tamano=100
+TamanoValidacion=250
+TipoDatos=Texto
+
+[EntreCalles]
+Clave=EntreCalles
+Nombre=Entre las Calles
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Plano]
+Clave=Plano
+Nombre=Plano
+Visible=S
+TamanoValidacion=15
+Tamano=15
+Mayusculas=S
+TipoDatos=Texto
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[Colonia]
+Clave=Colonia
+Nombre=Colonia
+Tamano=100
+TamanoValidacion=30
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Colonia, Colonia)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.Colonia
+TipoDatos=Texto
+
+[CodigoPostal]
+Clave=CodigoPostal
+Nombre=Código Postal
+Tamano=15
+TamanoValidacion=10
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.CodigoPostal, CodigoPostal)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.CodigoPostal
+TipoDatos=Texto
+
+[Poblacion]
+Clave=Poblacion
+Nombre=Población
+Tamano=100
+TamanoValidacion=30
+TipoDatos=Texto
+
+[Estado]
+Clave=Estado
+Nombre=Estado
+Tamano=30
+TamanoValidacion=30
+AyudaMemTabla=PaisEstadoMexico
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Consulta opcional
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+TipoDatos=Texto
+
+[Pais]
+Clave=Pais
+Nombre=País
+Tamano=30
+TamanoValidacion=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Paises
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[Delegacion]
+Clave=Delegacion
+Nombre=Delegación
+Visible=S
+TamanoValidacion=30
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=(Lista)
+ValorRefrescar=Si(Info.Copiar, Info.Delegacion, Delegacion)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.Delegacion
+TipoDatos=Texto
+
+[TieneDireccion]
+Clave=TieneDireccion
+Nombre=Tiene Dirección
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=Ruta
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+ValorRefrescar=Si(Info.Copiar, Asigna(Info.Copiar, Falso) Info.Ruta, Ruta)
+TipoDatos=Texto
+
+[Codigo]
+Clave=Codigo
+Nombre=Código
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+TipoDatos=Texto
+
+[ClaveVehicular]
+Clave=ClaveVehicular
+Nombre=Clave Vehicular
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[TipoVehiculo]
+Clave=TipoVehiculo
+Nombre=Tipo Vehículo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[DiasLibresIntereses]
+Clave=DiasLibresIntereses
+Nombre=Días Libres Intereses
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[PrecioLiberado]
+Clave=PrecioLiberado
+Nombre=Precio Liberado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[DireccionNumero]
+Clave=DireccionNumero
+Nombre=Número Exterior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Retencion3]
+Clave=Retencion3
+Nombre=% Retención 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no General.TipoImpuesto<BR>//Config.CompraRetenciones y (no General.TipoImpuesto)
+
+[ValidarCodigo]
+Clave=ValidarCodigo
+Nombre=Validar Código UPC / EAN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=no TieneMovimientos
+
+[Presentacion]
+Clave=Presentacion
+Nombre=Presentación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Presentacion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[GarantiaPlazo]
+Clave=GarantiaPlazo
+Nombre=Garantía (Plazo)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[CostoIdentificado]
+Clave=CostoIdentificado
+Nombre=Costo Identificado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=((Tipo=TipoSerie) y (no Config.CosteoSeries)) o ((Tipo=TipoLote) y (no Config.CosteoLotes))
+
+[CantidadTarima]
+Clave=CantidadTarima
+Nombre=Cantidad por Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=Tipo<><T>Serie<T>
+ValorRefrescar=CantidadCamaTarima * CamasTarima
+[UnidadTarima]
+Clave=UnidadTarima
+Nombre=Unidad Tarima
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorRefrescar=Vacio(UnidadCompra, Unidad)
+TipoDatos=Texto
+
+[DepartamentoDetallista]
+Clave=DepartamentoDetallista
+Nombre=Departamento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=DepartamentoDetallistaLista
+AyudaVista=DepartamentoDetallista
+AyudaCampo=DepartamentoDetallista.Departamento
+ValidacionUsaTabla=S
+ValidacionTablas=DepartamentoDetallista
+
+[Relaciones.DepartamentoDetallista]
+TipoRelacion=Opcional
+LlaveLocal=DepartamentoDetallista
+Clave=DepartamentoDetallista
+TablaRemota=DepartamentoDetallista
+LlaveRemota=Departamento
+
+[Relaciones.ArtArancel]
+TipoRelacion=Opcional
+LlaveLocal=Arancel
+Clave=ArtArancel
+TablaRemota=ArtArancel
+LlaveRemota=Arancel
+
+[TratadoComercial]
+Clave=TratadoComercial
+Nombre=Tratado Comercial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TratadoComercial
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[CuentaPresupuesto]
+Clave=CuentaPresupuesto
+Nombre=Cuenta Presupuesto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionUsaTabla=S
+ValidacionTablas=CtaPresupuesto
+CondicionDespliege=General.PPTO y Config.ContCtaArticulo
+TipoDatos=Texto
+
+[Relaciones.CtaPresupuesto]
+TipoRelacion=Opcional
+LlaveLocal=CuentaPresupuesto
+Clave=CtaPresupuesto
+TablaRemota=CtaPresupuesto
+LlaveRemota=Cuenta
+
+[ProgramaSectorial]
+Clave=ProgramaSectorial
+Nombre=Programa Sectorial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=ProgramaSectorial
+AyudaVista=ProgramaSectorial
+AyudaCampo=ProgramaSectorial.ProgramaSectorial
+AyudaMemTabla=ProgramaSectorial
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ArancelDesperdicio]
+Clave=ArancelDesperdicio
+Nombre=Arancel Desperdicio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ArtArancel
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=ArtArancel2
+TipoDatos=Texto
+
+[Relaciones.ArtArancel2]
+TipoRelacion=Opcional
+LlaveLocal=ArancelDesperdicio
+Clave=ArtArancel2
+TablaRemota=ArtArancel2
+LlaveRemota=Arancel
+
+[PedimentoClave]
+Clave=PedimentoClave
+Nombre=Clave Pedimento
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaForma=PedimentoClave
+AyudaMemTabla=PedimentoClave
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[PedimentoRegimen]
+Clave=PedimentoRegimen
+Nombre=Régimen Pedimento
+Visible=S
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PedimentoRegimen
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Permiso]
+Clave=Permiso
+Nombre=Permiso
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[PermisoRenglon]
+Clave=PermisoRenglon
+Nombre=Renglón
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[MinimoTarima]
+Clave=MinimoTarima
+Nombre=Mínimo (en Domicilios)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=Tipo<><T>Serie<T>
+[SituacionUsuario]
+Clave=SituacionUsuario
+Nombre=Usuario seguimiento
+Visible=S
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[SituacionNota]
+Clave=SituacionNota
+Nombre=Nota
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Cuenta2]
+Clave=Cuenta2
+Nombre=Cuenta Contable 2
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=General.Autotransportes o Config.ContCtaArticulo
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionConCondiciones=S
+ValidacionCondicion=Cuenta2=SQL(<T>SELECT Cuenta FROM Cta WHERE Cuenta=:tCta<T>, Cuenta2)
+ValidacionMensajeError=<T>No Existe<T>
+TipoDatos=Texto
+
+[Cuenta3]
+Clave=Cuenta3
+Nombre=Cuenta Contable 3
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=General.Autotransportes o Config.ContCtaArticulo
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CtaLista
+AyudaVista=CtaLista
+AyudaCampo=CtaLista.Cuenta
+ValidacionConCondiciones=S
+ValidacionCondicion=Cuenta3=SQL(<T>SELECT Cuenta FROM Cta WHERE Cuenta=:tCta<T>, Cuenta3)
+ValidacionMensajeError=<T>No Existe<T>
+TipoDatos=Texto
+
+[DireccionNumeroInt]
+Clave=DireccionNumeroInt
+Nombre=Número Interior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Impuesto1Excento]
+Clave=Impuesto1Excento
+Nombre=Exento IVA
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[InflacionPresupuesto]
+Clave=InflacionPresupuesto
+Nombre=% Inflación
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=CalcularPresupuesto
+AyudaEnCaptura=Calculadora
+
+[CalcularPresupuesto]
+Clave=CalcularPresupuesto
+Nombre=Calcular Presupuesto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=InflacionPresupuesto
+
+[Excento2]
+Clave=Excento2
+Nombre=Exento ISR
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Excento3]
+Clave=Excento3
+Nombre=Exento IETU
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ContUso]
+Clave=ContUso
+Nombre=Centro Costos por Omisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostosLista
+AyudaVista=CentroCostosLista
+AyudaCampo=CentroCostosLista.CentroCostos
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos
+CondicionDespliege=Config.ContCentrosCostos
+TipoDatos=Texto
+
+[ContUso2]
+Clave=ContUso2
+Nombre=Centro Costos 2  por Omisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostos2Lista
+AyudaVista=CentroCostos2Lista
+AyudaCampo=CentroCostos2Lista.CentroCostos2
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos2
+CondicionDespliege=Config.ContCentrosCostos
+TipoDatos=Texto
+
+[ContUso3]
+Clave=ContUso3
+Nombre=Centro Costos 3  por Omisión
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostos3Lista
+AyudaVista=CentroCostos3Lista
+AyudaCampo=CentroCostos3Lista.CentroCostos3
+ValidacionUsaTabla=S
+ValidacionTablas=CentroCostos3
+CondicionDespliege=Config.ContCentrosCostos
+TipoDatos=Texto
+
+[Relaciones.CentroCostos]
+TipoRelacion=Opcional
+LlaveLocal=ContUso
+Clave=CentroCostos
+TablaRemota=CentroCostos
+LlaveRemota=CentroCostos
+
+[Relaciones.CentroCostos2]
+TipoRelacion=Opcional
+LlaveLocal=ContUso2
+Clave=CentroCostos2
+TablaRemota=CentroCostos2
+LlaveRemota=CentroCostos2
+
+[Relaciones.CentroCostos3]
+TipoRelacion=Opcional
+LlaveLocal=ContUso3
+Clave=CentroCostos3
+TablaRemota=CentroCostos3
+LlaveRemota=CentroCostos3
+
+[Unidad.ListaRefrescar]
+(Inicio)=UnidadCompra
+UnidadCompra=UnidadTraspaso
+UnidadTraspaso=UnidadTarima
+UnidadTarima=(Fin)
+
+
+[Estatus.ListaOpciones]
+(Inicio)=PROTOTIPO
+PROTOTIPO=ALTA
+ALTA=DESCONTINUADO
+DESCONTINUADO=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[Tipo.ListaRefrescar]
+(Inicio)=ISAN
+ISAN=LotesFijos
+LotesFijos=(Fin)
+
+[Clase.ListaOpciones]
+(Inicio)=De Linea
+De Linea=Sobre Pedido
+Sobre Pedido=Nuevo
+Nuevo=Descontinuado
+Descontinuado=(Fin)
+
+[ABC.ListaOpciones]
+(Inicio)=A
+A=B
+B=C
+C=D
+D=E
+E=F
+F=G
+G=H
+H=I
+I=J
+J=K
+K=L
+L=M
+M=N
+N=O
+O=P
+P=Q
+Q=R
+R=S
+S=T
+T=U
+U=V
+V=W
+W=X
+X=Y
+Y=Z
+Z=(Fin)
+
+[Relaciones.AcumRU.LlaveLocal]
+(Inicio)={Comillas(Empresa)}
+{Comillas(Empresa)}={Comillas(Info.Rama)}
+{Comillas(Info.Rama)}=Articulo
+Articulo=(Fin)
+
+[Relaciones.AcumRU.LlaveRemota]
+(Inicio)=Empresa
+Empresa=Rama
+Rama=Cuenta
+Cuenta=(Fin)
+
+[Relaciones.AcumU.LlaveLocal]
+(Inicio)={Comillas(Empresa)}
+{Comillas(Empresa)}={Comillas(Info.Rama)}
+{Comillas(Info.Rama)}=Articulo
+Articulo=(Fin)
+
+[Relaciones.AcumU.LlaveRemota]
+(Inicio)=Empresa
+Empresa=Rama
+Rama=Cuenta
+Cuenta=(Fin)
+
+[Relaciones.ArtConCosto.LlaveLocal]
+(Inicio)=Articulo
+Articulo={Comillas(Empresa)}
+{Comillas(Empresa)}=(Fin)
+
+[Relaciones.ArtConCosto.LlaveRemota]
+(Inicio)=Articulo
+Articulo=Empresa
+Empresa=(Fin)
+
+[Relaciones.ArtCostoCapas.LlaveLocal]
+(Inicio)=<T>{Empresa}<T>
+<T>{Empresa}<T>=Articulo
+Articulo=(Fin)
+
+[Relaciones.ArtCostoCapas.LlaveRemota]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=(Fin)
+
+[TiempoEntregaUnidad.ListaOpciones]
+(Inicio)=Dias
+Dias=Semanas
+Semanas=Meses
+Meses=(Fin)
+
+[LoteOrdenar.ListaRefrescarCondiciones]
+(Inicio)=CantidadOrdenar
+CantidadOrdenar=MultiplosOrdenar
+MultiplosOrdenar=(Fin)
+
+[LoteOrdenar.ListaOpciones]
+(Inicio)=Lote por Lote
+Lote por Lote=Cantidad Minima / Multiplos
+Cantidad Minima / Multiplos=Cantidad Fija
+Cantidad Fija=(Fin)
+
+[RevisionFrecuenciaUnidad.ListaOpciones]
+(Inicio)=Dias
+Dias=Semanas
+Semanas=Meses
+Meses=Años
+Años=(Fin)
+
+[TiempoEntregaSegUnidad.ListaOpciones]
+(Inicio)=Dias
+Dias=Semanas
+Semanas=Meses
+Meses=(Fin)
+
+[EstatusPrecio.ListaOpciones]
+(Inicio)=SINCAMBIO
+SINCAMBIO=NUEVO
+NUEVO=SUBIO
+SUBIO=BAJO
+BAJO=DESCONTINUADO
+DESCONTINUADO=(Fin)
+
+[TipoCompra.ListaOpciones]
+(Inicio)=Local
+Local=Centralizada
+Centralizada=(Fin)
+
+[EstatusCosto.ListaOpciones]
+(Inicio)=SINCAMBIO
+SINCAMBIO=SUBIO
+SUBIO=BAJO
+BAJO=(Fin)
+
+[Relaciones.ArtCostoEmpresa.LlaveLocal]
+(Inicio)=<T>{Empresa}<T>
+<T>{Empresa}<T>=Articulo
+Articulo=(Fin)
+
+[Relaciones.ArtCostoEmpresa.LlaveRemota]
+(Inicio)=Empresa
+Empresa=Articulo
+Articulo=(Fin)
+
+[AutoRecaudacion.ListaOpciones]
+(Inicio)=Ingreso Precio
+Ingreso Precio=Ingreso Costo
+Ingreso Costo=Gasto
+Gasto=Gasto No Reembolsable
+Gasto No Reembolsable=Consumo
+Consumo=Percepcion
+Percepcion=Deduccion
+Deduccion=(Fin)
+
+[EspaciosNivel.ListaRefrescarCondiciones]
+(Inicio)=EspaciosHoraD
+EspaciosHoraD=EspaciosHoraA
+EspaciosHoraA=EspaciosMinutos
+EspaciosMinutos=(Fin)
+
+[EspaciosNivel.ListaOpciones]
+(Inicio)=Dia
+Dia=Hora
+Hora=(Fin)
+
+[EspaciosMinutos.ListaOpciones]
+(Inicio)=15
+15=20
+20=30
+30=60
+60=90
+90=120
+120=(Fin)
+
+[TipoCatalogo.ListaOpciones]
+(Inicio)=Resurtible
+Resurtible=Ocasion
+Ocasion=Oferta
+Oferta=(Fin)
+
+[ValidarPresupuestoCompra.ListaOpciones]
+(Inicio)=No
+No=Mensual
+Mensual=Acumulado
+Acumulado=Anual
+Anual=(Fin)
+
+[SeriesLotesAutoOrden.ListaOpciones]
+(Inicio)=(Empresa)
+(Empresa)=No
+No=Ascendente
+Ascendente=Descendente
+Descendente=Fecha 1
+Fecha 1=(Fin)
+
+[Colonia.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=CodigoPostal
+CodigoPostal=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[CodigoPostal.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[Delegacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Ruta
+Ruta=(Fin)
+
+[TipoVehiculo.ListaOpciones]
+(Inicio)=Automovil
+Automovil=Camion
+Camion=Motocicleta
+Motocicleta=(Fin)
+
+[NivelToleranciaCosto]
+Clave=NivelToleranciaCosto
+Nombre=Nivel Tolerancia Costo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=<T>(Empresa)<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ToleranciaCosto]
+Clave=ToleranciaCosto
+Nombre=% Tolerancia Costo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+CondicionDespliege=NivelToleranciaCosto = <T>Articulo<T>
+
+[ToleranciaCostoInferior]
+Clave=ToleranciaCostoInferior
+Nombre=% Tolerancia Costo Inferior
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+CondicionDespliege=NivelToleranciaCosto = <T>Articulo<T>
+
+[NivelToleranciaCosto.ListaRefrescarCondiciones]
+(Inicio)=ToleranciaCosto
+ToleranciaCosto=ToleranciaCostoInferior
+ToleranciaCostoInferior=(Fin)
+
+[NivelToleranciaCosto.ListaOpciones]
+(Inicio)=(Empresa)
+(Empresa)=Articulo
+Articulo=(Fin)
+
+[Relaciones.CtaSituacion.LlaveLocal]
+(Inicio)={Comillas('INV')}
+{Comillas('INV')}=Situacion
+Situacion=(Fin)
+
+[Relaciones.CtaSituacion.LlaveRemota]
+(Inicio)=Rama
+Rama=Situacion
+Situacion=(Fin)
+
+[ObjetoGasto]
+Clave=ObjetoGasto
+Nombre=Objeto Gasto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CPObjetoGastoLista
+AyudaVista=CPObjetoGasto
+AyudaCampo=CPObjetoGasto.ObjetoGasto
+ValidacionUsaTabla=S
+ValidacionTablas=CPObjetoGasto
+CondicionDespliege=General.CP
+
+[Relaciones.CPObjetoGasto]
+TipoRelacion=Opcional
+LlaveLocal=ObjetoGasto
+Clave=CPObjetoGasto
+TablaRemota=CPObjetoGasto
+LlaveRemota=ObjetoGasto
+
+[ObjetoGastoRef]
+Clave=ObjetoGastoRef
+Nombre=Objeto Gasto Referencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CPObjetoGastoLista
+AyudaVista=CPObjetoGasto
+AyudaCampo=CPObjetoGasto.ObjetoGasto
+ValidacionUsaTabla=S
+ValidacionTablas=CPObjetoGastoRef
+CondicionDespliege=General.CP
+
+[Estructura]
+Clave=Estructura
+Nombre=Estructura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Relaciones.CPObjetoGastoRef]
+TipoRelacion=Opcional
+LlaveLocal=ObjetoGastoRef
+Clave=CPObjetoGastoRef
+TablaRemota=CPObjetoGastoRef
+LlaveRemota=ObjetoGasto
+
+[ClavePresupuestalImpuesto1]
+Clave=ClavePresupuestalImpuesto1
+Nombre=Clave Presupuestal (IVA)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+Mayusculas=S
+CondicionDespliege=General.CP
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+ValidacionUsaTabla=S
+ValidacionTablas=ClavePresupuestal
+
+[Relaciones.ClavePresupuestal]
+TipoRelacion=Opcional
+LlaveLocal=ClavePresupuestalImpuesto1
+Clave=ClavePresupuestal
+TablaRemota=ClavePresupuestal
+LlaveRemota=ClavePresupuestal
+
+[TipoImpuesto1]
+Clave=TipoImpuesto1
+Nombre=Tipo Impuesto 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaMemTabla=TipoImpuesto1
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=TipoImpuesto1Lista
+AyudaVista=TipoImpuesto1
+AyudaCampo=TipoImpuesto1.TipoImpuesto
+
+ValorMinimo=SQL(<T>SELECT MIN(TipoImpuesto) FROM TipoImpuesto1<T>)
+ValorMaximo=SQL(<T>SELECT MAX(TipoImpuesto) FROM TipoImpuesto1<T>)
+[TipoImpuesto2]
+Clave=TipoImpuesto2
+Nombre=Tipo Impuesto 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaMemTabla=TipoImpuesto2
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=TipoImpuesto2Lista
+AyudaVista=TipoImpuesto2
+AyudaCampo=TipoImpuesto2.TipoImpuesto
+
+ValorMinimo=SQL(<T>SELECT MIN(TipoImpuesto) FROM TipoImpuesto2<T>)
+ValorMaximo=SQL(<T>SELECT MAX(TipoImpuesto) FROM TipoImpuesto2<T>)
+[TipoImpuesto3]
+Clave=TipoImpuesto3
+Nombre=Tipo Impuesto 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaMemTabla=TipoImpuesto3
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=TipoImpuesto3Lista
+AyudaVista=TipoImpuesto3
+AyudaCampo=TipoImpuesto3.TipoImpuesto
+
+ValorMinimo=SQL(<T>SELECT MIN(TipoImpuesto) FROM TipoImpuesto3<T>)
+ValorMaximo=SQL(<T>SELECT MAX(TipoImpuesto) FROM TipoImpuesto3<T>)
+[TipoRetencion1]
+Clave=TipoRetencion1
+Nombre=Tipo Retención 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion1
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[TipoRetencion2]
+Clave=TipoRetencion2
+Nombre=Tipo Retención 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion2
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[TipoRetencion3]
+Clave=TipoRetencion3
+Nombre=Tipo Retención 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=TipoRetencion3
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[TipoImpuesto4]
+Clave=TipoImpuesto4
+Nombre=Tipo Impuesto 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaMemTabla=TipoImpuesto4
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaForma=TipoImpuesto4Lista
+AyudaVista=TipoImpuesto4
+AyudaCampo=TipoImpuesto4.TipoImpuesto
+
+
+ValorMinimo=SQL(<T>SELECT MIN(TipoImpuesto) FROM TipoImpuesto4<T>)
+ValorMaximo=SQL(<T>SELECT MAX(TipoImpuesto) FROM TipoImpuesto4<T>)
+[TipoImpuesto5]
+Clave=TipoImpuesto5
+Nombre=Tipo Impuesto 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=TipoImpuesto5Lista
+AyudaVista=TipoImpuesto5
+AyudaCampo=TipoImpuesto5.TipoImpuesto
+
+ValorMinimo=SQL(<T>SELECT MIN(TipoImpuesto) FROM TipoImpuesto5<T>)
+ValorMaximo=SQL(<T>SELECT MAX(TipoImpuesto) FROM TipoImpuesto5<T>)
+[ISBN]
+Clave=ISBN
+Nombre=ISBN
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[SAUX]
+Clave=SAUX
+Nombre=Servicios Auxiliares
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.SAUX y (Tipo = <T>Servicio<T>)
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[TipoArticulo]
+Clave=TipoArticulo
+Nombre=Tipo Articulo (MES)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Asigna(Temp.Logico, SQL(<T>Select IntelMESInterfase from EmpresaCfg Where Empresa = :t1<T>, Empresa))<BR>Temp.Logico
+AyudaEnCaptura=Vista
+AyudaForma=TipoArticuloMES
+AyudaVista=TipoArticuloMES
+AyudaCampo=TipoArticuloMES.Codigo
+
+[TipoVariante]
+Clave=TipoVariante
+Nombre=Tipo Variante
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORClavePrincipal]
+Clave=INFORClavePrincipal
+Nombre=INFORClavePrincipal
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[INFORStockMinimo]
+Clave=INFORStockMinimo
+Nombre=Stock Mínimo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORStockMaximo]
+Clave=INFORStockMaximo
+Nombre=Stock Máximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORPrefijo]
+Clave=INFORPrefijo
+Nombre=Prefijo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+ConRefrescarCondiciones=S
+
+[INFORSufijo]
+Clave=INFORSufijo
+Nombre=Sufijo
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+ListaOpciones=(Lista)
+[CodigoEstructura]
+Clave=CodigoEstructura
+Nombre=Codigo Estructura
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR
+UnicamenteLectura=S
+
+[INFORTipo]
+Clave=INFORTipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=General.ProdInterfazINFOR   y(Tipo en (<T>Normal<T>,<T>Lote<T>,<T>VIN<T>,<T>Partida<T>,<T>Juego<T>,<T>Serie<T>))
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+RequeridoActivo=S
+
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+[INFORCuarentena]
+Clave=INFORCuarentena
+Nombre=Días Cuarentena
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=General.ProdInterfazINFOR   y(Tipo en (<T>Normal<T>,<T>Lote<T>,<T>VIN<T>,<T>Partida<T>,<T>Juego<T>,<T>Serie<T>))
+ConRefrescarCondiciones=S
+
+[INFORClavePlanta]
+Clave=INFORClavePlanta
+Nombre=INFORClavePlanta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=8
+TipoDatos=Texto
+Tamano=8
+
+[INFORTrazabilidad]
+Clave=INFORTrazabilidad
+Nombre=Trazabilidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORLotificacionPropia]
+Clave=INFORLotificacionPropia
+Nombre=Lotificación Propia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+
+[INFORUltimoNumeroLote]
+Clave=INFORUltimoNumeroLote
+Nombre=Último No. Lote
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+ValorPorOmision=0
+
+[INFORUnidadesMaximaLote]
+Clave=INFORUnidadesMaximaLote
+Nombre=Unidades Máx. Lote
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+
+[INFORTieneNoSerie]
+Clave=INFORTieneNoSerie
+Nombre=Tiene No. de Serie
+Visible=S
+TamanoValidacion=30
+TipoDatos=Lógico
+CondicionDespliege=General.ProdInterfazINFOR  y( Tipo en(<T>Serie<T>,<T>Lote<T>) )
+RequeridoActivo=S
+
+[INFORSMR]
+Clave=INFORSMR
+Nombre=SMR
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORTipoDeAsignacion]
+Clave=INFORTipoDeAsignacion
+Nombre=Tipo de Asignación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR   y(Tipo en (<T>Normal<T>,<T>Lote<T>,<T>VIN<T>,<T>Partida<T>,<T>Juego<T>,<T>Serie<T>))
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+ListaOpciones=(Lista)
+[INFORNoSerie]
+Clave=INFORNoSerie
+Nombre=No.
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORFormato]
+Clave=INFORFormato
+Nombre=Formato
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR
+
+[INFORAlmacenProd]
+Clave=INFORAlmacenProd
+Nombre=Almacen Producción
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.ProdInterfazINFOR   y(Tipo en (<T>Normal<T>,<T>Lote<T>,<T>VIN<T>,<T>Partida<T>,<T>Juego<T>,<T>Serie<T>))
+AyudaEnCaptura=Vista
+AyudaForma=AlmLista
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+
+RequeridoActivo=S
+[ReferenciaIntelisisService]
+Clave=ReferenciaIntelisisService
+Nombre=Intelisis Service Referencia
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=General.ProdInterfazINFOR
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+Formula=Caso SQL(<T>SELECT PlantaSucEmpresa FROM Version<T>)<BR>  Es <T>Empresa<T> Entonces SQLEnLista(<T>SELECT DISTINCT ReferenciaIntelisisService FROM Empresa<T>)<BR>  Es <T>Sucursal<T>Entonces SQLEnLista(<T>SELECT DISTINCT ReferenciaIntelisisService FROM Sucursal<T>)<BR>Fin
+
+
+
+
+[AltoTarima]
+Clave=AltoTarima
+Nombre=Alto Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ConRefrescar=S
+ListaRefrescar=VolumenTarima
+
+[LargoTarima]
+Clave=LargoTarima
+Nombre=Largo Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ConRefrescar=S
+ListaRefrescar=VolumenTarima
+
+[AnchoTarima]
+Clave=AnchoTarima
+Nombre=Ancho Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ConRefrescar=S
+ListaRefrescar=VolumenTarima
+
+[VolumenTarima]
+Clave=VolumenTarima
+Nombre=Volúmen Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=AltoTarima * LargoTarima * AnchoTarima
+
+[PesoTarima]
+Clave=PesoTarima
+Nombre=Peso Tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[CantidadCamaTarima]
+Clave=CantidadCamaTarima
+Nombre=Cantidad por cama
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ConRefrescar=S
+ListaRefrescar=CantidadTarima
+CondicionDespliege=No((Art:Art.Tipo = <T>Serie<T>) y (Art:Art.SerieLoteInfo = Falso ))
+
+[CamasTarima]
+Clave=CamasTarima
+Nombre=Camas por tarima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ConRefrescar=S
+ListaRefrescar=CantidadTarima
+CondicionDespliege=Tipo<><T>Serie<T>
+
+[EstibaMaxima]
+Clave=EstibaMaxima
+Nombre=Estiba Maxima
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=1
+AyudaEnCaptura=Calculadora
+
+CondicionDespliege=PermiteEstibar
+[TaraTarima]
+Clave=TaraTarima
+Nombre=Tara
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[ControlArticulo]
+Clave=ControlArticulo
+Nombre=Control
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ValorPorOmision=<T>Posicion<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DiasControlCaducidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+AlCambiar=Si ControlArticulo = <T>Caducidad<T><BR>  Entonces<BR>    Asigna(TieneCaducidad, 1)<BR>  Sino<BR>    Asigna(TieneCaducidad, 0)<BR>Fin
+RequeridoActivo=S
+OpcionesLlave=Opción
+ListaOpciones=(Lista)
+
+[DiasControlCaducidad]
+Clave=DiasControlCaducidad
+Nombre=Días Control Caducidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Art:Art.ControlArticulo=<T>Caducidad<T> Y 1=2
+ValorPorOmision=0
+AyudaEnCaptura=Calculadora
+
+
+[EstibaMismaFecha]
+Clave=EstibaMismaFecha
+Nombre=Tarimas Misma Fecha
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[TipoRotacion]
+Clave=TipoRotacion
+Nombre=Tipo Rotación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+CondicionDespliege=Config.WMSRotacionArticulo
+RequeridoActivo=S
+Formula=SQLEnLista(<T>SELECT Rotacion FROM ArtRotacion<T>)
+
+[ControlArticulo.ListaOpciones]
+(Inicio)=Caducidad
+Caducidad=Fecha Entrada
+Fecha Entrada=Posición
+Posición=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[PermiteEstibar]
+Clave=PermiteEstibar
+Nombre=Permite Estibas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=EstibaMaxima
+
+
+
+
+[PermiteEstibar.ListaRefrescarCondiciones]
+(Inicio)=EstibaMaxima
+EstibaMaxima=EstibaMismaFecha
+EstibaMismaFecha=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ClavePresupuestalRetencion1]
+Clave=ClavePresupuestalRetencion1
+Nombre=Clave Presupuestal (Retención 1)
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+Mayusculas=S
+CondicionDespliege=General.CP
+AyudaEnCaptura=Vista
+AyudaForma=ClavePresupuestalLista
+AyudaVista=ClavePresupuestal
+AyudaCampo=ClavePresupuestal.ClavePresupuestal
+ValidacionUsaTabla=S
+ValidacionTablas=ClavePresupuestal2
+[Relaciones.ClavePresupuestal2]
+TipoRelacion=Opcional
+LlaveLocal=ClavePresupuestalRetencion1
+Clave=ClavePresupuestal2
+TablaRemota=ClavePresupuestal2
+LlaveRemota=ClavePresupuestal
+
+
+
+
+
+
+
+
+
+[EmidaRecargaTelefonica]
+Clave=EmidaRecargaTelefonica
+Nombre=Artículo Recarga Telefónica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EmidaTiempoAire]
+Clave=EmidaTiempoAire
+Nombre=Artículo Tiempo Aire
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+
+
+
+
+
+
+
+[POSForma]
+Clave=POSForma
+Nombre=Desplegar Forma POS
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=(General.InterfazEmida y General.POS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[LDI]
+Clave=LDI
+Nombre=LDI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[LDIServicio]
+Clave=LDIServicio
+Nombre=Servicio LDI
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+AyudaEnCaptura=Expresion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Distinct Servicio FROM LDIServicio<T>)
+[TarimasReacomodar]
+Clave=TarimasReacomodar
+Nombre=No. Tarimas a Reacomodar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[INFORSufijo.ListaOpciones]
+(Inicio)=PRODUCTO ACABADO
+PRODUCTO ACABADO=SEMIELABORADO
+SEMIELABORADO=TRABAJO EXTERIOR
+TRABAJO EXTERIOR=MATERIA PRIMA
+MATERIA PRIMA=ii.      SEMIELABORADO
+ii.      SEMIELABORADO=iii.      TRABAJO EXTERIOR
+iii.      TRABAJO EXTERIOR=iv.      MATERIA PRIMA
+iv.      MATERIA PRIMA=(Fin)
+
+
+[INFORTipoDeAsignacion.ListaOpciones]
+(Inicio)=FIFO
+FIFO=FEFO
+FEFO=LIFO
+LIFO=(Fin)
+
+
+
+
+
+
+
+
+
+
+[INFORTipo.ListaOpciones]
+(Inicio)=PRODUCTO ACABADO
+PRODUCTO ACABADO=SEMIELABORADO
+SEMIELABORADO=TRABAJO EXTERIOR
+TRABAJO EXTERIOR=MATERIA PRIMA
+MATERIA PRIMA=(Fin)
+
+
+
+
+
+
+
+
+
+[EsFactory]
+Clave=EsFactory
+Nombre=Es Artículo Factory
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+RefrescarTodo=S
+CondicionDespliege=General.ProdInterfazINFOR
+
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+
+
+
+
+
+
+[TipoCosteo.ListaOpciones]
+(Inicio)=Promedio
+Promedio=Estandar
+Estandar=Reposicion
+Reposicion=PEPS
+PEPS=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Calificacion]
+Clave=Calificacion
+Nombre=Calificacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumPequeño
+
+[MFATipoDeducibilidad]
+Clave=MFATipoDeducibilidad
+Nombre=MFATipoDeducibilidad
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[ArticuloWeb]
+Clave=ArticuloWeb
+Nombre=ArticuloWeb
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[CantidadPresentacion]
+Clave=CantidadPresentacion
+Nombre=CantidadPresentacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[POSAgenteDetalle]
+Clave=POSAgenteDetalle
+Nombre=POSAgenteDetalle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[MaterialPeligroso]
+Clave=MaterialPeligroso
+Nombre=Material/Residuo Peligroso
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=0
+
+
+
+
+[SMR]
+Clave=SMR
+Nombre=Serie Minima Rentable
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[AlmMesComs]
+Clave=AlmMesComs
+Nombre=Almacén Compra (MES)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=Asigna(Temp.Logico, SQL(<T>Select IntelMESInterfase from EmpresaCfg Where Empresa = :t1<T>, Empresa))<BR>Temp.Logico
+
+[MinimoCompra]
+Clave=MinimoCompra
+Nombre=Mínimo Compra
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[StockMinimo]
+Clave=StockMinimo
+Nombre=Stock Mínimo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[StockMaximo]
+Clave=StockMaximo
+Nombre=Stock Máximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Relaciones.Alm]
+TipoRelacion=Opcional
+LlaveLocal=AlmacenEspecificoVenta
+Clave=Alm
+TablaRemota=Alm
+LlaveRemota=Almacen
+
+
+
+
+
+[Relaciones.TipoImpuesto1]
+TipoRelacion=Opcional
+LlaveLocal=TipoImpuesto1
+Clave=TipoImpuesto1
+TablaRemota=TipoImpuesto1
+LlaveRemota=TipoImpuesto
+
+[Relaciones.TipoImpuesto2]
+TipoRelacion=Opcional
+LlaveLocal=TipoImpuesto2
+Clave=TipoImpuesto2
+TablaRemota=TipoImpuesto2
+LlaveRemota=TipoImpuesto
+
+[Relaciones.TipoImpuesto3]
+TipoRelacion=Opcional
+LlaveLocal=TipoImpuesto3
+Clave=TipoImpuesto3
+TablaRemota=TipoImpuesto3
+LlaveRemota=TipoImpuesto
+
+[Relaciones.TipoImpuesto4]
+TipoRelacion=Opcional
+LlaveLocal=TipoImpuesto4
+Clave=TipoImpuesto4
+TablaRemota=TipoImpuesto4
+LlaveRemota=TipoImpuesto
+
+[Relaciones.TipoImpuesto5]
+TipoRelacion=Opcional
+LlaveLocal=TipoImpuesto5
+Clave=TipoImpuesto5
+TablaRemota=TipoImpuesto5
+LlaveRemota=TipoImpuesto
+
+[Relaciones.TipoRetencion1]
+TipoRelacion=Opcional
+LlaveLocal=TipoRetencion1
+Clave=TipoRetencion1
+TablaRemota=TipoRetencion1
+LlaveRemota=TipoRetencion
+
+[Relaciones.TipoRetencion2]
+TipoRelacion=Opcional
+LlaveLocal=TipoRetencion2
+Clave=TipoRetencion2
+TablaRemota=TipoRetencion2
+LlaveRemota=TipoRetencion
+
+[Relaciones.TipoRetencion3]
+TipoRelacion=Opcional
+LlaveLocal=TipoRetencion3
+Clave=TipoRetencion3
+TablaRemota=TipoRetencion3
+LlaveRemota=TipoRetencion
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=Rama
+Rama=Descripcion1
+Descripcion1=Descripcion2
+Descripcion2=NombreCorto
+NombreCorto=Grupo
+Grupo=Categoria
+Categoria=CategoriaActivoFijo
+CategoriaActivoFijo=Familia
+Familia=Fabricante
+Fabricante=Linea
+Linea=ClaveFabricante
+ClaveFabricante=Impuesto1
+Impuesto1=Impuesto2
+Impuesto2=Impuesto3
+Impuesto3=Factor
+Factor=Unidad
+Unidad=UnidadCompra
+UnidadCompra=UnidadTraspaso
+UnidadTraspaso=UnidadCantidad
+UnidadCantidad=TipoCosteo
+TipoCosteo=Peso
+Peso=Tara
+Tara=Volumen
+Volumen=Tipo
+Tipo=TipoOpcion
+TipoOpcion=Accesorios
+Accesorios=Refacciones
+Refacciones=Servicios
+Servicios=Consumibles
+Consumibles=MonedaCosto
+MonedaCosto=MonedaPrecio
+MonedaPrecio=MargenMinimo
+MargenMinimo=PrecioMinimo
+PrecioMinimo=DescuentoCompra
+DescuentoCompra=PrecioLista
+PrecioLista=FactorAlterno
+FactorAlterno=PrecioAnterior
+PrecioAnterior=Utilidad
+Utilidad=Comision
+Comision=Arancel
+Arancel=ABC
+ABC=Clase
+Clase=Estatus
+Estatus=EstatusPrecio
+EstatusPrecio=UltimoCambio
+UltimoCambio=Sustitutos
+Sustitutos=Alta
+Alta=Conciliar
+Conciliar=Mensaje
+Mensaje=Precio2
+Precio2=Precio3
+Precio3=Precio4
+Precio4=Precio5
+Precio5=Precio6
+Precio6=Precio7
+Precio7=Precio8
+Precio8=Precio9
+Precio9=Precio10
+Precio10=Refrigeracion
+Refrigeracion=TieneCaducidad
+TieneCaducidad=ProdCantidad
+ProdCantidad=ProdUsuario
+ProdUsuario=CategoriaProd
+CategoriaProd=ProdPasoTotal
+ProdPasoTotal=ProdMov
+ProdMov=ProdMovGrupo
+ProdMovGrupo=ProdOpciones
+ProdOpciones=ProdEstacion
+ProdEstacion=wMostrar
+wMostrar=TiempoEntrega
+TiempoEntrega=TiempoEntregaUnidad
+TiempoEntregaUnidad=TiempoEntregaSeg
+TiempoEntregaSeg=TiempoEntregaSegUnidad
+TiempoEntregaSegUnidad=Merma
+Merma=Desperdicio
+Desperdicio=Usuario
+Usuario=ProdRuta
+ProdRuta=InvSeguridad
+InvSeguridad=SeVende
+SeVende=SeCompra
+SeCompra=SeProduce
+SeProduce=EsFormula
+EsFormula=LoteOrdenar
+LoteOrdenar=CantidadOrdenar
+CantidadOrdenar=MultiplosOrdenar
+MultiplosOrdenar=AlmacenROP
+AlmacenROP=ProdVerCostoAcumulado
+ProdVerCostoAcumulado=ProdVerMerma
+ProdVerMerma=ProdVerDesperdicio
+ProdVerDesperdicio=ProdVerConcentracion
+ProdVerConcentracion=RevisionUsuario
+RevisionUsuario=RevisionUltima
+RevisionUltima=RevisionFrecuencia
+RevisionFrecuencia=RevisionFrecuenciaUnidad
+RevisionFrecuenciaUnidad=RevisionSiguiente
+RevisionSiguiente=Situacion
+Situacion=SituacionFecha
+SituacionFecha=SituacionUsuario
+SituacionUsuario=SituacionNota
+SituacionNota=TipoCompra
+TipoCompra=TieneMovimientos
+TieneMovimientos=Registro1
+Registro1=Registro1Vencimiento
+Registro1Vencimiento=AlmacenEspecificoVenta
+AlmacenEspecificoVenta=AlmacenEspecificoVentaMov
+AlmacenEspecificoVentaMov=CostoEstandar
+CostoEstandar=CostoReposicion
+CostoReposicion=EstatusCosto
+EstatusCosto=Margen
+Margen=RutaDistribucion
+RutaDistribucion=Proveedor
+Proveedor=NivelAcceso
+NivelAcceso=ProdVerPorcentaje
+ProdVerPorcentaje=Temporada
+Temporada=SolicitarPrecios
+SolicitarPrecios=AutoRecaudacion
+AutoRecaudacion=Concepto
+Concepto=Cuenta
+Cuenta=Espacios
+Espacios=EspaciosEspecificos
+EspaciosEspecificos=EspaciosSobreventa
+EspaciosSobreventa=EspaciosNivel
+EspaciosNivel=EspaciosBloquearAnteriores
+EspaciosBloquearAnteriores=EspaciosHoraD
+EspaciosHoraD=EspaciosHoraA
+EspaciosHoraA=EspaciosMinutos
+EspaciosMinutos=Retencion1
+Retencion1=Retencion2
+Retencion2=Retencion3
+Retencion3=BasculaPesar
+BasculaPesar=SerieLoteInfo
+SerieLoteInfo=CantidadMinimaVenta
+CantidadMinimaVenta=CantidadMaximaVenta
+CantidadMaximaVenta=EstimuloFiscal
+EstimuloFiscal=OrigenPais
+OrigenPais=OrigenLocalidad
+OrigenLocalidad=Incentivo
+Incentivo=FactorCompra
+FactorCompra=Horas
+Horas=ISAN
+ISAN=ExcluirDescFormaPago
+ExcluirDescFormaPago=EsDeducible
+EsDeducible=Peaje
+Peaje=CodigoAlterno
+CodigoAlterno=TipoCatalogo
+TipoCatalogo=AnexosAlFacturar
+AnexosAlFacturar=CaducidadMinima
+CaducidadMinima=Actividades
+Actividades=ValidarPresupuestoCompra
+ValidarPresupuestoCompra=SeriesLotesAutoOrden
+SeriesLotesAutoOrden=LotesFijos
+LotesFijos=LotesAuto
+LotesAuto=Consecutivo
+Consecutivo=TipoEmpaque
+TipoEmpaque=Modelo
+Modelo=Version
+Version=TieneDireccion
+TieneDireccion=Direccion
+Direccion=DireccionNumero
+DireccionNumero=DireccionNumeroInt
+DireccionNumeroInt=EntreCalles
+EntreCalles=Plano
+Plano=Observaciones
+Observaciones=Colonia
+Colonia=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=CodigoPostal
+CodigoPostal=Delegacion
+Delegacion=Ruta
+Ruta=Codigo
+Codigo=ClaveVehicular
+ClaveVehicular=TipoVehiculo
+TipoVehiculo=DiasLibresIntereses
+DiasLibresIntereses=PrecioLiberado
+PrecioLiberado=ValidarCodigo
+ValidarCodigo=Presentacion
+Presentacion=GarantiaPlazo
+GarantiaPlazo=CostoIdentificado
+CostoIdentificado=CantidadTarima
+CantidadTarima=UnidadTarima
+UnidadTarima=MinimoTarima
+MinimoTarima=DepartamentoDetallista
+DepartamentoDetallista=TratadoComercial
+TratadoComercial=CuentaPresupuesto
+CuentaPresupuesto=ProgramaSectorial
+ProgramaSectorial=ArancelDesperdicio
+ArancelDesperdicio=PedimentoClave
+PedimentoClave=PedimentoRegimen
+PedimentoRegimen=Permiso
+Permiso=PermisoRenglon
+PermisoRenglon=Cuenta2
+Cuenta2=Cuenta3
+Cuenta3=Impuesto1Excento
+Impuesto1Excento=InflacionPresupuesto
+InflacionPresupuesto=CalcularPresupuesto
+CalcularPresupuesto=Excento2
+Excento2=Excento3
+Excento3=ContUso
+ContUso=ContUso2
+ContUso2=ContUso3
+ContUso3=NivelToleranciaCosto
+NivelToleranciaCosto=ToleranciaCosto
+ToleranciaCosto=ToleranciaCostoInferior
+ToleranciaCostoInferior=ObjetoGasto
+ObjetoGasto=ObjetoGastoRef
+ObjetoGastoRef=Estructura
+Estructura=ClavePresupuestalImpuesto1
+ClavePresupuestalImpuesto1=ClavePresupuestalRetencion1
+ClavePresupuestalRetencion1=TipoImpuesto2
+TipoImpuesto2=TipoImpuesto3
+TipoImpuesto3=TipoImpuesto4
+TipoImpuesto4=TipoRetencion1
+TipoRetencion1=TipoRetencion2
+TipoRetencion2=TipoRetencion3
+TipoRetencion3=TipoImpuesto5
+TipoImpuesto5=ISBN
+ISBN=SAUX
+SAUX=TipoArticulo
+TipoArticulo=INFORClavePrincipal
+INFORClavePrincipal=INFORStockMinimo
+INFORStockMinimo=INFORStockMaximo
+INFORStockMaximo=INFORPrefijo
+INFORPrefijo=INFORSufijo
+INFORSufijo=CodigoEstructura
+CodigoEstructura=INFORTipo
+INFORTipo=INFORCuarentena
+INFORCuarentena=INFORClavePlanta
+INFORClavePlanta=INFORTrazabilidad
+INFORTrazabilidad=INFORLotificacionPropia
+INFORLotificacionPropia=INFORUltimoNumeroLote
+INFORUltimoNumeroLote=INFORUnidadesMaximaLote
+INFORUnidadesMaximaLote=INFORTieneNoSerie
+INFORTieneNoSerie=INFORSMR
+INFORSMR=INFORTipoDeAsignacion
+INFORTipoDeAsignacion=INFORNoSerie
+INFORNoSerie=INFORFormato
+INFORFormato=INFORAlmacenProd
+INFORAlmacenProd=ReferenciaIntelisisService
+ReferenciaIntelisisService=TipoVariante
+TipoVariante=TipoImpuesto1
+TipoImpuesto1=AltoTarima
+AltoTarima=LargoTarima
+LargoTarima=AnchoTarima
+AnchoTarima=TaraTarima
+TaraTarima=VolumenTarima
+VolumenTarima=PesoTarima
+PesoTarima=CantidadCamaTarima
+CantidadCamaTarima=CamasTarima
+CamasTarima=EstibaMaxima
+EstibaMaxima=ControlArticulo
+ControlArticulo=DiasControlCaducidad
+DiasControlCaducidad=EstibaMismaFecha
+EstibaMismaFecha=TipoRotacion
+TipoRotacion=PermiteEstibar
+PermiteEstibar=EmidaRecargaTelefonica
+EmidaRecargaTelefonica=EmidaTiempoAire
+EmidaTiempoAire=POSForma
+POSForma=LDI
+LDI=LDIServicio
+LDIServicio=TarimasReacomodar
+TarimasReacomodar=EsFactory
+EsFactory=Calificacion
+Calificacion=MFATipoDeducibilidad
+MFATipoDeducibilidad=ArticuloWeb
+ArticuloWeb=CantidadPresentacion
+CantidadPresentacion=POSAgenteDetalle
+POSAgenteDetalle=MaterialPeligroso
+MaterialPeligroso=SMR
+SMR=AlmMesComs
+AlmMesComs=MinimoCompra
+MinimoCompra=StockMinimo
+StockMinimo=StockMaximo
+StockMaximo=(Fin)
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Articulo,
+Articulo,=Rama,
+Rama,=Descripcion1,
+Descripcion1,=Descripcion2,
+Descripcion2,=NombreCorto,
+NombreCorto,=Grupo,
+Grupo,=Categoria,
+Categoria,=CategoriaActivoFijo,
+CategoriaActivoFijo,=Familia,
+Familia,=Linea,
+Linea,=Fabricante,
+Fabricante,=ClaveFabricante,
+ClaveFabricante,=Impuesto1,
+Impuesto1,=Impuesto2,
+Impuesto2,=Impuesto3,
+Impuesto3,=Factor,
+Factor,=Unidad,
+Unidad,=UnidadCompra,
+UnidadCompra,=UnidadTraspaso,
+UnidadTraspaso,=UnidadCantidad,
+UnidadCantidad,=TipoCosteo,
+TipoCosteo,=Peso,
+Peso,=Tara,
+Tara,=Volumen,
+Volumen,=Tipo,
+Tipo,=TipoOpcion,
+TipoOpcion,=Accesorios,
+Accesorios,=Refacciones,
+Refacciones,=Sustitutos,
+Sustitutos,=Servicios,
+Servicios,=Consumibles,
+Consumibles,=MonedaCosto,
+MonedaCosto,=MonedaPrecio,
+MonedaPrecio,=MargenMinimo,
+MargenMinimo,=PrecioLista,
+PrecioLista,=PrecioMinimo,
+PrecioMinimo,=FactorAlterno,
+FactorAlterno,=PrecioAnterior,
+PrecioAnterior,=Utilidad,
+Utilidad,=DescuentoCompra,
+DescuentoCompra,=Clase,
+Clase,=Estatus,
+Estatus,=UltimoCambio,
+UltimoCambio,=Alta,
+Alta,=Conciliar,
+Conciliar,=Mensaje,
+Mensaje,=Comision,
+Comision,=Arancel,
+Arancel,=ArancelDesperdicio,
+ArancelDesperdicio,=ABC,
+ABC,=Usuario,
+Usuario,=Precio2,
+Precio2,=Precio3,
+Precio3,=Precio4,
+Precio4,=Precio5,
+Precio5,=Precio6,
+Precio6,=Precio7,
+Precio7,=Precio8,
+Precio8,=Precio9,
+Precio9,=Precio10,
+Precio10,=Refrigeracion,
+Refrigeracion,=TieneCaducidad,
+TieneCaducidad,=BasculaPesar,
+BasculaPesar,=SeProduce,
+SeProduce,=Situacion,
+Situacion,=SituacionFecha,
+SituacionFecha,=SituacionUsuario,
+SituacionUsuario,=SituacionNota,
+SituacionNota,=EstatusPrecio,
+EstatusPrecio,=wMostrar,
+wMostrar,=Merma,
+Merma,=Desperdicio,
+Desperdicio,=SeCompra,
+SeCompra,=SeVende,
+SeVende,=EsFormula,
+EsFormula,=TiempoEntrega,
+TiempoEntrega,=TiempoEntregaUnidad,
+TiempoEntregaUnidad,=TiempoEntregaSeg,
+TiempoEntregaSeg,=TiempoEntregaSegUnidad,
+TiempoEntregaSegUnidad,=LoteOrdenar,
+LoteOrdenar,=CantidadOrdenar,
+CantidadOrdenar,=MultiplosOrdenar,
+MultiplosOrdenar,=InvSeguridad,
+InvSeguridad,=ProdRuta,
+ProdRuta,=AlmacenROP,
+AlmacenROP,=CategoriaProd,
+CategoriaProd,=ProdCantidad,
+ProdCantidad,=ProdUsuario,
+ProdUsuario,=ProdPasoTotal,
+ProdPasoTotal,=ProdMovGrupo,
+ProdMovGrupo,=ProdEstacion,
+ProdEstacion,=ProdOpciones,
+ProdOpciones,=ProdVerConcentracion,
+ProdVerConcentracion,=ProdVerCostoAcumulado,
+ProdVerCostoAcumulado,=ProdVerMerma,
+ProdVerMerma,=ProdVerDesperdicio,
+ProdVerDesperdicio,=ProdVerPorcentaje,
+ProdVerPorcentaje,=RevisionUltima,
+RevisionUltima,=RevisionUsuario,
+RevisionUsuario,=RevisionFrecuencia,
+RevisionFrecuencia,=RevisionFrecuenciaUnidad,
+RevisionFrecuenciaUnidad,=RevisionSiguiente,
+RevisionSiguiente,=ProdMov,
+ProdMov,=TipoCompra,
+TipoCompra,=TieneMovimientos,
+TieneMovimientos,=Registro1,
+Registro1,=Registro1Vencimiento,
+Registro1Vencimiento,=AlmacenEspecificoVenta,
+AlmacenEspecificoVenta,=AlmacenEspecificoVentaMov,
+AlmacenEspecificoVentaMov,=RutaDistribucion,
+RutaDistribucion,=CostoEstandar,
+CostoEstandar,=CostoReposicion,
+CostoReposicion,=EstatusCosto,
+EstatusCosto,=Margen,
+Margen,=Proveedor,
+Proveedor,=NivelAcceso,
+NivelAcceso,=Temporada,
+Temporada,=SolicitarPrecios,
+SolicitarPrecios,=AutoRecaudacion,
+AutoRecaudacion,=Concepto,
+Concepto,=Cuenta,
+Cuenta,=Retencion1,
+Retencion1,=Retencion2,
+Retencion2,=Retencion3,
+Retencion3,=Espacios,
+Espacios,=EspaciosEspecificos,
+EspaciosEspecificos,=EspaciosSobreventa,
+EspaciosSobreventa,=EspaciosNivel,
+EspaciosNivel,=EspaciosMinutos,
+EspaciosMinutos,=EspaciosBloquearAnteriores,
+EspaciosBloquearAnteriores,=EspaciosHoraD,
+EspaciosHoraD,=EspaciosHoraA,
+EspaciosHoraA,=SerieLoteInfo,
+SerieLoteInfo,=CantidadMinimaVenta,
+CantidadMinimaVenta,=CantidadMaximaVenta,
+CantidadMaximaVenta,=EstimuloFiscal,
+EstimuloFiscal,=OrigenPais,
+OrigenPais,=OrigenLocalidad,
+OrigenLocalidad,=Incentivo,
+Incentivo,=FactorCompra,
+FactorCompra,=Horas,
+Horas,=ISAN,
+ISAN,=ExcluirDescFormaPago,
+ExcluirDescFormaPago,=EsDeducible,
+EsDeducible,=Peaje,
+Peaje,=CodigoAlterno,
+CodigoAlterno,=TipoCatalogo,
+TipoCatalogo,=AnexosAlFacturar,
+AnexosAlFacturar,=CaducidadMinima,
+CaducidadMinima,=Actividades,
+Actividades,=ValidarPresupuestoCompra,
+ValidarPresupuestoCompra,=SeriesLotesAutoOrden,
+SeriesLotesAutoOrden,=LotesFijos,
+LotesFijos,=LotesAuto,
+LotesAuto,=Consecutivo,
+Consecutivo,=TipoEmpaque,
+TipoEmpaque,=Modelo,
+Modelo,=Version,
+Version,=TieneDireccion,
+TieneDireccion,=Direccion,
+Direccion,=DireccionNumero,
+DireccionNumero,=DireccionNumeroInt,
+DireccionNumeroInt,=EntreCalles,
+EntreCalles,=Plano,
+Plano,=Observaciones,
+Observaciones,=Colonia,
+Colonia,=Delegacion,
+Delegacion,=Poblacion,
+Poblacion,=Estado,
+Estado,=Pais,
+Pais,=CodigoPostal,
+CodigoPostal,=Ruta,
+Ruta,=Codigo,
+Codigo,=ClaveVehicular,
+ClaveVehicular,=TipoVehiculo,
+TipoVehiculo,=DiasLibresIntereses,
+DiasLibresIntereses,=PrecioLiberado,
+PrecioLiberado,=ValidarCodigo,
+ValidarCodigo,=Presentacion,
+Presentacion,=GarantiaPlazo,
+GarantiaPlazo,=CostoIdentificado,
+CostoIdentificado,=CantidadTarima,
+CantidadTarima,=UnidadTarima,
+UnidadTarima,=MinimoTarima,
+MinimoTarima,=DepartamentoDetallista,
+DepartamentoDetallista,=TratadoComercial,
+TratadoComercial,=CuentaPresupuesto,
+CuentaPresupuesto,=ProgramaSectorial,
+ProgramaSectorial,=PedimentoClave,
+PedimentoClave,=PedimentoRegimen,
+PedimentoRegimen,=Permiso,
+Permiso,=PermisoRenglon,
+PermisoRenglon,=Cuenta2,
+Cuenta2,=Cuenta3,
+Cuenta3,=Impuesto1Excento,
+Impuesto1Excento,=CalcularPresupuesto,
+CalcularPresupuesto,=InflacionPresupuesto,
+InflacionPresupuesto,=Excento2,
+Excento2,=Excento3,
+Excento3,=ContUso,
+ContUso,=ContUso2,
+ContUso2,=ContUso3,
+ContUso3,=NivelToleranciaCosto,
+NivelToleranciaCosto,=ToleranciaCosto,
+ToleranciaCosto,=ToleranciaCostoInferior,
+ToleranciaCostoInferior,=ObjetoGasto,
+ObjetoGasto,=ObjetoGastoRef,
+ObjetoGastoRef,=ClavePresupuestalImpuesto1,
+ClavePresupuestalImpuesto1,=ISBN,
+ISBN,=Estructura,
+Estructura,=TipoImpuesto1,
+TipoImpuesto1,=TipoImpuesto2,
+TipoImpuesto2,=TipoImpuesto3,
+TipoImpuesto3,=TipoImpuesto4,
+TipoImpuesto4,=TipoImpuesto5,
+TipoImpuesto5,=TipoRetencion1,
+TipoRetencion1,=TipoRetencion2,
+TipoRetencion2,=TipoRetencion3,
+TipoRetencion3,=Calificacion,
+Calificacion,=SAUX,
+SAUX,=TipoArticulo,
+TipoArticulo,=MFATipoDeducibilidad,
+MFATipoDeducibilidad,=ClavePresupuestalRetencion1,
+ClavePresupuestalRetencion1,=LDI,
+LDI,=INFORClavePrincipal,
+INFORClavePrincipal,=INFORStockMinimo,
+INFORStockMinimo,=INFORStockMaximo,
+INFORStockMaximo,=INFORPrefijo,
+INFORPrefijo,=INFORSufijo,
+INFORSufijo,=CodigoEstructura,
+CodigoEstructura,=TipoVariante,
+TipoVariante,=INFORTipo,
+INFORTipo,=INFORCuarentena,
+INFORCuarentena,=INFORClavePlanta,
+INFORClavePlanta,=INFORTrazabilidad,
+INFORTrazabilidad,=INFORLotificacionPropia,
+INFORLotificacionPropia,=INFORUltimoNumeroLote,
+INFORUltimoNumeroLote,=INFORUnidadesMaximaLote,
+INFORUnidadesMaximaLote,=INFORTieneNoSerie,
+INFORTieneNoSerie,=INFORSMR,
+INFORSMR,=INFORTipoDeAsignacion,
+INFORTipoDeAsignacion,=INFORNoSerie,
+INFORNoSerie,=INFORFormato,
+INFORFormato,=INFORAlmacenProd,
+INFORAlmacenProd,=ReferenciaIntelisisService,
+ReferenciaIntelisisService,=EsFactory,
+EsFactory,=AltoTarima,
+AltoTarima,=LargoTarima,
+LargoTarima,=AnchoTarima,
+AnchoTarima,=TaraTarima,
+TaraTarima,=VolumenTarima,
+VolumenTarima,=PesoTarima,
+PesoTarima,=CantidadCamaTarima,
+CantidadCamaTarima,=CamasTarima,
+CamasTarima,=EstibaMaxima,
+EstibaMaxima,=ControlArticulo,
+ControlArticulo,=DiasControlCaducidad,
+DiasControlCaducidad,=EstibaMismaFecha,
+EstibaMismaFecha,=TipoRotacion,
+TipoRotacion,=PermiteEstibar,
+PermiteEstibar,=EmidaRecargaTelefonica,
+EmidaRecargaTelefonica,=EmidaTiempoAire,
+EmidaTiempoAire,=LDIServicio,
+LDIServicio,=POSForma,
+POSForma,=ArticuloWeb,
+ArticuloWeb,=TarimasReacomodar,
+TarimasReacomodar,=CantidadPresentacion,
+CantidadPresentacion,=POSAgenteDetalle,
+POSAgenteDetalle,=MaterialPeligroso
+MaterialPeligroso=SMR,
+SMR,=AlmMesComs,
+AlmMesComs,=MinimoCompra,
+MinimoCompra,=StockMinimo,
+StockMinimo,=StockMaximo
+StockMaximo=FROM Art
+FROM Art=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=ArtCat
+ArtCat=ArtFam
+ArtFam=ArtFactor
+ArtFactor=ArtUtil
+ArtUtil=Presenta
+Presenta=ArtComision
+ArtComision=AcumU
+AcumU=AcumRU
+AcumRU=ArtConCosto
+ArtConCosto=ArtCostoCapas
+ArtCostoCapas=Estacion
+Estacion=ArtRama
+ArtRama=ArtPrecioListaMoneda
+ArtPrecioListaMoneda=ProdRuta
+ProdRuta=Usuario
+Usuario=ArtCostoEmpresa
+ArtCostoEmpresa=Prov
+Prov=Cta
+Cta=CtaSituacion
+CtaSituacion=DepartamentoDetallista
+DepartamentoDetallista=ArtArancel
+ArtArancel=CtaPresupuesto
+CtaPresupuesto=ArtArancel2
+ArtArancel2=CentroCostos
+CentroCostos=CentroCostos2
+CentroCostos2=CentroCostos3
+CentroCostos3=CPObjetoGasto
+CPObjetoGasto=CPObjetoGastoRef
+CPObjetoGastoRef=ClavePresupuestal
+ClavePresupuestal=ClavePresupuestal2
+ClavePresupuestal2=Alm
+Alm=TipoImpuesto1
+TipoImpuesto1=TipoImpuesto2
+TipoImpuesto2=TipoImpuesto3
+TipoImpuesto3=TipoImpuesto4
+TipoImpuesto4=TipoImpuesto5
+TipoImpuesto5=TipoRetencion1
+TipoRetencion1=TipoRetencion2
+TipoRetencion2=TipoRetencion3
+TipoRetencion3=(Fin)

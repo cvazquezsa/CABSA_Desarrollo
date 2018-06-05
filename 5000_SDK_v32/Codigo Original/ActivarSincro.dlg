@@ -1,0 +1,54 @@
+
+[Dialogo]
+Clave=ActivarSincro
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEstadoInicial=Normal
+VentanaSiempreAlFrente=S
+VentanaExclusiva=S
+VentanaEscCerrar=S
+[Acciones.SincroSSB]
+Nombre=SincroSSB
+Boton=0
+NombreDesplegar=Sincro &Service Broker
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Temp.Texto,<T>SSB<T>)
+Activo=S
+Visible=S
+
+[Acciones.SincroIS]
+Nombre=SincroIS
+Boton=0
+NombreDesplegar=Sincro &Intelisis Service
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Asigna(Temp.Texto,<T>IS<T>)  
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=SincroSSB
+SincroSSB=SincroIS
+SincroIS=(Fin)

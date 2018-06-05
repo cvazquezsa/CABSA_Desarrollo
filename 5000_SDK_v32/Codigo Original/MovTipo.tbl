@@ -1,0 +1,1808 @@
+[Tabla]
+Icono=0
+Clave=MovTipo
+Archivo=MovTipo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tipos de Movimientos
+Singular=Tipo de Movimiento
+LlavePrimaria=(Lista)
+ListaRelaciones=(Lista)
+
+SQL=(Lista)
+[Mov]
+Clave=Mov
+Nombre=Nombre
+Tamano=20
+TamanoValidacion=20
+ConRefrescar=S
+ListaRefrescar=ConsecutivoMov
+TipoDatos=Texto
+
+[Icono]
+Clave=Icono
+Nombre=Icono
+TipoDatos=Numérico
+TamanoValidacion=10
+EsIcono=S
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Tamano=5
+TamanoValidacion=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Módulos
+OpcionesRenglones=8
+OpcionesUnicamente=S
+ValorPorOmision=Info.Modulo
+TipoDatos=Texto
+
+[Clave]
+Clave=Clave
+Nombre=Clave Afectación
+AyudaEnCaptura=Vista
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaForma=MovClaveLista
+AyudaVista=MovClave
+AyudaCampo=MovClave.Clave
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=MovClave
+ConRefrescarCondiciones=S
+Mayusculas=S
+RefrescarTodoCondiciones=S
+ConRefrescar=S
+ListaRefrescar=Factor
+TipoDatos=Texto
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+TamanoValidacion=5
+Tamano=0
+TipoDatos=Numérico
+
+[ConsecutivoModulo]
+Clave=ConsecutivoModulo
+Nombre=Consecutivo Módulo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=5
+Tamano=5
+OpcionesColumnas=1
+OpcionesPredefinidas=Módulos
+OpcionesRenglones=8
+ValorPorOmision=Info.Modulo
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+TipoDatos=Texto
+
+[ConsecutivoMov]
+Clave=ConsecutivoMov
+Nombre=Consecutivo Movimiento
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=Mov
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+TipoDatos=Texto
+
+[ConsecutivoPorPeriodo]
+Clave=ConsecutivoPorPeriodo
+Nombre=Consecutivo por Periodo
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=(TipoConsecutivo=<T>Modulo<T>) y (Modulo=<T>CONT<T>)
+
+[ConsecutivoPorEjercicio]
+Clave=ConsecutivoPorEjercicio
+Nombre=Consecutivo por Ejercicio
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=(TipoConsecutivo=<T>Modulo<T>) y (Modulo=<T>CONT<T>)
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[ConsecutivoPorEmpresa]
+Clave=ConsecutivoPorEmpresa
+Nombre=Consecutivo por Empresa
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+OpcionesUnicamente=S
+OpcionesPresentacion=Consulta Opcional
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Si<T>
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Relaciones.MovClave]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=MovClave
+TablaRemota=MovClave
+LlaveRemota=(Lista)
+
+[Factor]
+Clave=Factor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=1.0
+CondicionEdicion=Usuario.ModificarFactorMovTipo
+ValorRefrescar=MovTipo:MovClave.Factor
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacén
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Alm
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=Clave en (VTAS.VCR, VTAS.DCR)
+TipoDatos=Texto
+
+[DiasVencimiento]
+Clave=DiasVencimiento
+Nombre=Dias Vencimiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Info.Modulo en (<T>ST<T>, <T>GAS<T>, <T>DIN<T>)
+
+[NomProcesarIncidencias]
+Clave=NomProcesarIncidencias
+Nombre=Procesar Incidencias
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(no NomAuto) y (Clave en (NOM.N, NOM.NA, NOM.NE, NOM.NC))
+ValorPorOmision=Verdadero
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[NomGenerarBaja]
+Clave=NomGenerarBaja
+Nombre=Generar Baja
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(no NomAuto) y (Clave en (NOM.N, NOM.NA, NOM.NE, NOM.NC))
+ValorPorOmision=Falso
+
+[GenerarParalelo]
+Clave=GenerarParalelo
+Nombre=Generar Paralelo (Atención)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>No<T>
+CondicionDespliege=Info.Modulo<><T>ST<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PV]
+Clave=PV
+Nombre=Punto Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Info.Modulo=<T>VTAS<T>
+ValorPorOmision=Falso
+
+[EstatusContabilizar]
+Clave=EstatusContabilizar
+Nombre=Estatus Contabilizar
+Visible=S
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>(por Omision)<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+RequeridoActivo=S
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[SucursalEsp]
+Clave=SucursalEsp
+Nombre=Sucursal Especifica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionUsaTabla=S
+ValidacionTablas=Sucursal
+CondicionDespliege=ConsecutivoSucursalEsp
+
+[ConsecutivoSucursalEsp]
+Clave=ConsecutivoSucursalEsp
+Nombre=Consecutivo Sucursal Específica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[Relaciones.Sucursal]
+TipoRelacion=Opcional
+LlaveLocal=SucursalEsp
+Clave=Sucursal
+TablaRemota=Sucursal
+LlaveRemota=Sucursal
+
+[GenerarGasto]
+Clave=GenerarGasto
+Nombre=Generar Gasto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionDespliege=Si Info.Modulo en (<T>INV<T>, <T>DIN<T>, <T>CXC<T>)<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Si Info.Modulo en (<T>AF<T>)<BR>  Entonces<BR>    Si (Config.AFGenerarGasto = Verdadero)<BR>    Entonces<BR>      Verdadero<BR>    Sino<BR>      Falso<BR>    Fin<BR>  Fin<BR>Fin
+
+[GastoMov]
+Clave=GastoMov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=GenerarGasto
+AyudaEnCaptura=Expresion
+TipoDatos=Texto
+
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Si Modulo = <T>AF<T><BR>Entonces<BR>  SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND Clave = :tClave ORDER BY Orden<T>, <T>GAS<T>, <T>GAS.EST<T>)<BR>Sino<BR>  SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo ORDER BY Orden<T>, <T>GAS<T>)<BR>Fin
+[GastoClase]
+Clave=GastoClase
+Nombre=Clasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Si Modulo <> <T>AF<T><BR>Entonces<BR>  GenerarGasto<BR>Sino<BR>  GenerarGasto y(AFMovGenerarGastoCfg = <T>Especifico<T>)<BR>Fin
+ConRefrescar=S
+ListaRefrescar=GastoSubClase
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=GastoSubClase
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+TipoDatos=Texto
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo ORDER BY Orden<T>,<T>GAS<T>)
+
+[GastoSubClase]
+Clave=GastoSubClase
+Nombre=Subclasificación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Si Modulo <> <T>AF<T><BR>Entonces<BR>  GenerarGasto<BR>Sino<BR>  GenerarGasto y(AFMovGenerarGastoCfg = <T>Especifico<T>)<BR>Fin
+ValorRefrescar=<T><T>
+CondicionEdicion=ConDatos(GastoClase)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+TipoDatos=Texto
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Modulo = :tModulo AND Clase = :tClase ORDER BY Orden<T>,<T>GAS<T>, MovTipo:MovTipo.GastoClase)
+
+[GastoAcreedor]
+Clave=GastoAcreedor
+Nombre=Acreedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=AcreedorLista
+AyudaVista=Prov
+AyudaCampo=Prov.Proveedor
+ValidacionUsaTabla=S
+ValidacionTablas=Acreedor
+TipoDatos=Texto
+
+[Relaciones.Acreedor]
+TipoRelacion=Opcional
+LlaveLocal=GastoAcreedor
+Clave=Acreedor
+TablaRemota=Acreedor
+LlaveRemota=Proveedor
+
+[eMailAuto]
+Clave=eMailAuto
+Nombre=Avisos Automáticos (e-mail)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NomDividirCantidades]
+Clave=NomDividirCantidades
+Nombre=Dividir Cantidades
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+CondicionDespliege=Clave en (NOM.CD, NOM.CDH, NOM.VT)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=DividirCatorcenas
+
+[SinAfectarVINCostoExtra]
+Clave=SinAfectarVINCostoExtra
+Nombre=SinAfectarVINCostoExtra
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ConsecutivoControl]
+Clave=ConsecutivoControl
+Nombre=Control Consecutivos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[TipoPago]
+Clave=TipoPago
+Nombre=Tipo Pago
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Modulo en (<T>CXC<T>, <T>CXP<T>)
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[GastoFactor]
+Clave=GastoFactor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1
+
+[CE]
+Clave=CE
+Nombre=Campos Extras
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=General.CamposExtras=<T>Campos Extras<T>
+
+[CEAntesAfectar]
+Clave=CEAntesAfectar
+Nombre=Presentar Antes Afectar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CE
+CondicionEdicion=General.CamposExtras=<T>Campos Extras<T>
+
+[CEAfectarContacto]
+Clave=CEAfectarContacto
+Nombre=Afectar Contacto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=CE
+CondicionEdicion=General.CamposExtras=<T>Campos Extras<T>
+
+[NomAuto]
+Clave=NomAuto
+Nombre=Nómina Automática
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+CondicionDespliege=General.NomAuto y (Clave en (NOM.N, NOM.NA, NOM.NE, NOM.NC))
+RefrescarTodoCondiciones=S
+
+[NomAutoTipo]
+Clave=NomAutoTipo
+Nombre=Tipo Nómina
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[NomAutoCalcSDI]
+Clave=NomAutoCalcSDI
+Nombre=Calcular SDI (Fin Bimestre)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[NomAutoCxc]
+Clave=NomAutoCxc
+Nombre=Descontar Cuentas por Cobrar
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[NomAutoCalendarioEsp]
+Clave=NomAutoCalendarioEsp
+Nombre=Calendario Especial
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[ImpresionInmediata]
+Clave=ImpresionInmediata
+Nombre=Impresión Inmediata
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ConsecutivoFEA]
+Clave=ConsecutivoFEA
+Nombre=FEA
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=(TipoConsecutivo=<T>Modulo<T>) y General.FEA y (Info.Modulo=<T>VTAS<T>)
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Consecutivo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[EditarDeptoDetallista]
+Clave=EditarDeptoDetallista
+Nombre=Editar Departamento Detallista
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.SistemaDetallista y (Modulo=<T>GAS<T>)
+ValorPorOmision=Falso
+
+[ProyectoContactoTipo]
+Clave=ProyectoContactoTipo
+Nombre=Tipo Contacto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[AfectarPresupuesto]
+Clave=AfectarPresupuesto
+Nombre=Afectar Presupuesto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Config.ContMovPresupuesto y (Info.Modulo en (<T>VTAS<T>, <T>COMS<T>, <T>CXC<T>, <T>CXP<T>, <T>GAS<T>))
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[CFD]
+Clave=CFD
+Nombre=CFD
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Empresa.CFD
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ValorPorOmision=Falso
+
+[CFD_tipoDeComprobante]
+Clave=CFD_tipoDeComprobante
+Nombre=Tipo de Comprobante
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+TipoDatos=Texto
+
+CondicionDespliege=CFD o CFDFlex
+AyudaMemRenglones=6
+AyudaMemOpc=Consulta opcional
+RequeridoActivo=S
+Formula=SQLEnLista(<T>SELECT * FROM dbo.fnListaCFD_tipoDeComprobante(:tEmpresa)<T>, Empresa)
+
+
+[CFD_Reporte]
+Clave=CFD_Reporte
+Nombre=Reporte (Parámetro ID)
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+TipoDatos=Texto
+CondicionDespliege=CFD o CFDFlex
+Formula=ListaReportes
+
+[Instrucciones]
+Clave=Instrucciones
+Nombre=Instrucciones
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[PlantillaProyecto]
+Clave=PlantillaProyecto
+Nombre=Plantilla (por Omisión)
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PlantillaProyecto
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[PlantillaProyectoFija]
+Clave=PlantillaProyectoFija
+Nombre=Fija
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[GastoConcepto]
+Clave=GastoConcepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+TipoDatos=Texto
+CondicionDespliege=Si Modulo <> <T>AF<T><BR>Entonces<BR>  GenerarGasto<BR>Sino<BR>  GenerarGasto y(AFMovGenerarGastoCfg = <T>Especifico<T>)<BR>Fin
+Formula=Lista(Si(Info.Modulo=<T>INV<T>, <T>(Articulo)<T>,  Si(Info.Modulo<><T>AF<T>, <T>(Movimiento)<T>, <T><T>))+NuevaLinea+SQLEnLista(<T>SELECT Concepto FROM Concepto WHERE Modulo=:tModulo AND ISNULL(Clase, :tVacio) = ISNULL(:tClase, :tVacio) AND ISNULL(SubClase, :tVacio)=ISNULL(:tSubClase, :tVacio)<T>, <T>GAS<T>, <T><T>, GastoClase, <T><T>, <T><T>, GastoSubClase, <T><T>))
+
+[FormaTipo]
+Clave=FormaTipo
+Nombre=Tipo Forma
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=FormaTipoFormasLista
+AyudaVista=FormaTipo
+AyudaCampo=FormaTipo.FormaTipo
+ValidacionUsaTabla=S
+ValidacionTablas=FormaTipoFormas
+Mayusculas=S
+TipoDatos=Texto
+
+[Relaciones.FormaTipoFormas]
+TipoRelacion=Opcional
+LlaveLocal=FormaTipo
+Clave=FormaTipoFormas
+TablaRemota=FormaTipoFormas
+LlaveRemota=FormaTipo
+
+[FormaFija]
+Clave=FormaFija
+Nombre=Fija
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AplicarOfertas]
+Clave=AplicarOfertas
+Nombre=Aplicar Ofertas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(Info.Modulo=<T>VTAS<T>) y General.OFER
+ValorPorOmision=Falso
+
+[FormaAnexaOmision]
+Clave=FormaAnexaOmision
+Nombre=Forma Anexa por Omisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=Caso Modulo = <T>Proy<T><BR>  Entonces Lista(<T>ProyectoDesarrollo<T>)<BR>Fin
+TipoDatos=Texto
+
+[ProyectoLineaBase]
+Clave=ProyectoLineaBase
+Nombre=ProyectoLineaBase
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[ProyectoSugerir]
+Clave=ProyectoSugerir
+Nombre=Clave Proyecto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Abierto<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TraspasoExpress]
+Clave=TraspasoExpress
+Nombre=Traspaso Express
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Clave en (<T>INV.SI<T>, <T>INV.DTI<T>)
+
+[ModuloCentral]
+Clave=ModuloCentral
+Nombre=Módulo Central
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=Version.ModuloCentral
+
+[AfectarFiscal]
+Clave=AfectarFiscal
+Nombre=Afectar Módulo Fiscal
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+ValorPorOmision=<T>No<T>
+CondicionDespliege=General.Fiscal
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+TipoDatos=Texto
+Formula=Lista(<T>No<T>,<T>Emision Acumulable<T>,<T>Endoso Acumulable<T>,<T>Flujo Acumulable<T>,<T>Emision Deducible<T>,<T>Endoso Deducible<T>,<T>Flujo Deducible<T>,<T>Conciliacion<T>)+Si(Info.Modulo=<T>DIN<T>, NuevaLinea+<T>(Directo)<T>)
+
+[SubClave]
+Clave=SubClave
+Nombre=Sub Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=MovSubClaveLista
+AyudaVista=MovClave
+AyudaCampo=MovClave.Clave
+ValidacionUsaTabla=S
+ValidacionTablas=MovSubClave
+AyudaBusquedaRapida=Asigna(Info.Clave, Clave)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+TipoDatos=Texto
+
+[Relaciones.MovSubClave]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=MovSubClave
+TablaRemota=MovSubClave
+LlaveRemota=(Lista)
+
+[DefUsuario]
+Clave=DefUsuario
+Nombre=Usuario por Omisión
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=UsuarioLista
+AyudaVista=UsuarioA
+AyudaCampo=Usuario.Usuario
+ValidacionUsaTabla=S
+ValidacionTablas=Usuario
+TipoDatos=Texto
+
+[Relaciones.Usuario]
+TipoRelacion=Opcional
+LlaveLocal=DefUsuario
+Clave=Usuario
+TablaRemota=Usuario
+LlaveRemota=Usuario
+
+[SubFoliosOrigen]
+Clave=SubFoliosOrigen
+Nombre=Sub Folio Basado en el Origen
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=General.SubFoliosOrigen
+ValorPorOmision=Falso
+
+[RequiereAutorizacion]
+Clave=RequiereAutorizacion
+Nombre=Requiere Autorización
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Info.Modulo=<T>GES<T>
+
+[ObligacionFiscal]
+Clave=ObligacionFiscal
+Nombre=Obligación Fiscal
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=AfectarFiscal=<T>(Directo)<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ObligacionFiscal
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[ObligacionFiscalTasa]
+Clave=ObligacionFiscalTasa
+Nombre=Tasa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=AfectarFiscal=<T>(Directo)<T>
+
+[ObligacionFiscalTipoImporte]
+Clave=ObligacionFiscalTipoImporte
+Nombre=Tipo Importe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionDespliege=AfectarFiscal=<T>(Directo)<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[EsISRReglamento]
+Clave=EsISRReglamento
+Nombre=EsISRReglamento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[TipoConsecutivo]
+Clave=TipoConsecutivo
+Nombre=Tipo Consecutivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+ValorPorOmision=<T>Modulo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ConsecutivoGeneral]
+Clave=ConsecutivoGeneral
+Nombre=Consecutivo General
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Consecutivo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=TipoConsecutivo=<T>General<T>
+TipoDatos=Texto
+
+[ConsecutivoPorEmpresa.ListaOpciones]
+(Inicio)=Si
+Si=No
+No=Grupo
+Grupo=(Fin)
+
+[Relaciones.MovClave.LlaveLocal]
+(Inicio)=Modulo
+Modulo=Clave
+Clave=(Fin)
+
+[Relaciones.MovClave.LlaveRemota]
+(Inicio)=Modulo
+Modulo=Clave
+Clave=(Fin)
+
+[GenerarParalelo.ListaOpciones]
+(Inicio)=No
+No=Atencion Clientes
+Atencion Clientes=Atencion Proveedores
+Atencion Proveedores=Atencion Personal
+Atencion Personal=Proyectos
+Proyectos=Servicios Internos
+Servicios Internos=(Fin)
+
+[EstatusContabilizar.ListaOpciones]
+(Inicio)=(por Omision)
+(por Omision)=PENDIENTE
+PENDIENTE=VIGENTE
+VIGENTE=PROCESAR
+PROCESAR=CONCLUIDO
+CONCLUIDO=CONCILIADO
+CONCILIADO=(Fin)
+
+[TipoPago.ListaOpciones]
+(Inicio)=Efectivo
+Efectivo=Documentos
+Documentos=(Fin)
+
+[NomAutoTipo.ListaOpciones]
+(Inicio)=Normal
+Normal=Ajuste
+Ajuste=Vacaciones
+Vacaciones=Finiquito
+Finiquito=Liquidacion
+Liquidacion=Aguinaldo
+Aguinaldo=PTU
+PTU=Liquidacion Fondo Ahorro
+Liquidacion Fondo Ahorro=Liquidacion Caja Ahorro
+Liquidacion Caja Ahorro=Ajuste Anual
+Ajuste Anual=H.Profesional
+H.Profesional=H.Asimilable
+H.Asimilable=SDI
+SDI=(Fin)
+
+[NomAutoCxc.ListaOpciones]
+(Inicio)=No
+No=Parciales
+Parciales=Completas
+Completas=(Fin)
+
+[ProyectoContactoTipo.ListaOpciones]
+(Inicio)=Prospecto
+Prospecto=Cliente
+Cliente=Proveedor
+Proveedor=Personal
+Personal=Agente
+Agente=(Fin)
+
+[AfectarPresupuesto.ListaOpciones]
+(Inicio)=(por Omision)
+(por Omision)=No
+No=Asignar
+Asignar=Desasignar
+Desasignar=Reservar
+Reservar=Desreservar
+Desreservar=Ejercer Reservado
+Ejercer Reservado=Desejercer Reservado
+Desejercer Reservado=Ejercer Directo
+Ejercer Directo=Desejercer Directo
+Desejercer Directo=(Fin)
+
+[ProyectoSugerir.ListaOpciones]
+(Inicio)=Abierto
+Abierto=Movimiento
+Movimiento=Catalogo
+Catalogo=(Fin)
+
+[Relaciones.MovSubClave.LlaveLocal]
+(Inicio)=Modulo
+Modulo=SubClave
+SubClave=(Fin)
+
+[Relaciones.MovSubClave.LlaveRemota]
+(Inicio)=Modulo
+Modulo=Clave
+Clave=(Fin)
+
+[ObligacionFiscalTipoImporte.ListaOpciones]
+(Inicio)=Base
+Base=- Base
+- Base=Obligacion Fiscal
+Obligacion Fiscal=- Obligacion Fiscal
+- Obligacion Fiscal=(Fin)
+
+[TipoConsecutivo.ListaRefrescarCondiciones]
+(Inicio)=ConsecutivoModulo
+ConsecutivoModulo=ConsecutivoMov
+ConsecutivoMov=ConsecutivoPorPeriodo
+ConsecutivoPorPeriodo=ConsecutivoPorEjercicio
+ConsecutivoPorEjercicio=ConsecutivoPorEmpresa
+ConsecutivoPorEmpresa=ConsecutivoSucursalEsp
+ConsecutivoSucursalEsp=ConsecutivoControl
+ConsecutivoControl=ConsecutivoFEA
+ConsecutivoFEA=ConsecutivoGeneral
+ConsecutivoGeneral=(Fin)
+
+[TipoConsecutivo.ListaOpciones]
+(Inicio)=Modulo
+Modulo=General
+General=(Fin)
+
+[ArrastrarTipoCambioGenerarMov]
+Clave=ArrastrarTipoCambioGenerarMov
+Nombre=Arrastrar Tipo Cambio al Generar Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[AfectarCP]
+Clave=AfectarCP
+Nombre=Afectar Control Presupuestal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=General.CP
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[AplicarCP]
+Clave=AplicarCP
+Nombre=Aplicación
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=21
+CondicionDespliege=General.CP y (Info.Modulo noen (<T>GAS<T>, <T>COMS<T>))
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ListaOpciones=(Lista)
+
+[FactorCP]
+Clave=FactorCP
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=1.0
+
+[ReservarCP]
+Clave=ReservarCP
+Nombre=Reservar
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[AnticiposCP]
+Clave=AnticiposCP
+Nombre=Anticipos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>No<T>
+ListaOpciones=(Lista)
+
+[AnticiposCP.ListaOpciones]
+(Inicio)=No
+No=Si
+Si=Desanticipar
+Desanticipar=(Fin)
+
+[AfectarCP.ListaOpciones]
+(Inicio)=No
+No=Presupuesto
+Presupuesto=Comprometido
+Comprometido=Comprometido 2
+Comprometido 2=Devengado
+Devengado=Devengado 2
+Devengado 2=Ejercido
+Ejercido=Ejercido Pagado
+Ejercido Pagado=Remanente Disp.
+Remanente Disp.=Sobrante
+Sobrante=Anticipos
+Anticipos=(Fin)
+
+[AplicarCP.ListaOpciones]
+(Inicio)=No
+No=Presupuesto
+Presupuesto=Comprometido
+Comprometido=Comprometido 2
+Comprometido 2=Devengado
+Devengado=Devengado 2
+Devengado 2=Ejercido
+Ejercido=Ejercido Pagado
+Ejercido Pagado=Remanente Disp.
+Remanente Disp.=Sobrante
+Sobrante=Anticipos
+Anticipos=(Fin)
+
+[ReservarCP.ListaOpciones]
+(Inicio)=No
+No=Si
+Si=Desreservar
+Desreservar=Ajustar TC
+Ajustar TC=(Fin)
+
+[EcuadorMostrarAnexo]
+Clave=EcuadorMostrarAnexo
+Nombre=EcuadorMostrarAnexo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[GuatemalaLibroVentaExento]
+Clave=GuatemalaLibroVentaExento
+Nombre=GuatemalaLibroVentaExento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[FactorFiscalEsp]
+Clave=FactorFiscalEsp
+Nombre=Factor Fiscal Especial
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(General.Fiscal)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=FactorFiscal
+
+[FactorFiscal]
+Clave=FactorFiscal
+Nombre=Factor Fiscal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=(General.Fiscal) y (FactorFiscalEsp)
+
+[AfectarFiscal.ListaRefrescarCondiciones]
+(Inicio)=ObligacionFiscal
+ObligacionFiscal=ObligacionFiscalTasa
+ObligacionFiscalTasa=ObligacionFiscalTipoImporte
+ObligacionFiscalTipoImporte=FactorFiscalEsp
+FactorFiscalEsp=FactorFiscal
+FactorFiscal=(Fin)
+
+[eDocEstatus]
+Clave=eDocEstatus
+Nombre=Estatus Documento Electrónico
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT :tPENDIENTE CAMPO UNION SELECT :tVIGENTE CAMPO UNION SELECT :tPROCESAR CAMPO UNION SELECT :tCONCLUIDO CAMPO UNION SELECT :tCONCILIADO<T>, <T>PENDIENTE<T>, <T>VIGENTE<T>, <T>PROCESAR<T>, <T>CONCLUIDO<T>, <T>CONCILIADO<T>)
+
+[eDoc]
+Clave=eDoc
+Nombre=Documento Electrónico
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT eDoc FROM eDoc WHERE Modulo = :tModulo<T>,Modulo)
+
+[CFDFlex]
+Clave=CFDFlex
+Nombre=CFD Flexible
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(General.CFDFlex) y (General.eDoc)
+AlCambiar=Forma.ActualizarControles
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+[eDocEstatus.ListaOpciones]
+(Inicio)=PENDIENTE
+PENDIENTE=VIGENTE
+VIGENTE=PROCESAR
+PROCESAR=CONCLUIDO
+CONCLUIDO=CONCILIADO
+CONCILIADO=(Fin)
+
+[DividirCatorcenas]
+Clave=DividirCatorcenas
+Nombre=Dividir Catorcenas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Clave en (NOM.CD, NOM.CDH, NOM.VT)
+CondicionEdicion=NomDividirCantidades
+
+[CFD_tipoDeComprobante.ListaOpciones]
+(Inicio)=ingreso
+ingreso=egreso
+egreso=traslado
+traslado=(Fin)
+
+[Interno]
+Clave=Interno
+Nombre=Interno
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=MovTipo:MovTipo.Modulo EN(<T>CXC<T>,<T>CXP<T>,<T>DIN<T>)
+
+[SAUXMov]
+Clave=SAUXMov
+Nombre=Movimiento a Generar
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=MovTipo:MovTipo.Modulo <> <T>SAUX<T>
+ValorPorOmision=<T><T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND Clave <> :tClave<T>,<T>SAUX<T>,<T>SAUX.S<T>)
+
+[SAUXMovInvPendiente]
+Clave=SAUXMovInvPendiente
+Nombre=Solicitud Pendiente
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(MovTipo:MovTipo.Modulo = <T>SAUX<T>) Y (MovTipo:MovTipo.Clave = <T>SAUX.SS<T>)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND Clave IN(:tClave1, :tClave2) AND SubClave = :tSubClave<T>, <T>INV<T>, <T>INV.SM<T>, <T>INV.CM<T>, <T>INV.SAUX<T>)
+
+[SAUXMovInvConcluida]
+Clave=SAUXMovInvConcluida
+Nombre=Solicitud Concluida
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=(MovTipo:MovTipo.Modulo = <T>SAUX<T>) Y (MovTipo:MovTipo.Clave = <T>SAUX.SS<T>)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Mov FROM MovTipo WHERE Modulo = :tModulo AND Clave IN(:tClave1, :tClave2) AND SubClave = :tSubClave<T>, <T>INV<T>, <T>INV.SM<T>, <T>INV.CM<T>, <T>INV.SAUX<T>)
+
+[OpcionPermitirDescontinuado]
+Clave=OpcionPermitirDescontinuado
+Nombre=Utilizar Opciones Descontinuadas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(General.OpcionBloquearDescontinuado) y ((Info.Modulo = <T>VTAS<T>) O (Info.Modulo = <T>COMS<T>) O (Info.Modulo = <T>PROD<T>) O (Info.Modulo = <T>INV<T>))
+
+[CFDReporteJasper]
+Clave=CFDReporteJasper
+Nombre=Reporte Jasper
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=CFDFlex y SQL(<T>SELECT 1 FROM EmpresaCFD WHERE Empresa = :tEmpresa AND Reporteador = :tReporteador<T>, Empresa,<T>Jasper Reports<T>)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+Formula=SQLEnLista(<T>SELECT Reporte FROM EmpresaCFDJasperReports WHERE Empresa = :tEmpresa AND Modulo = :tModulo<T>, Empresa, Info.Modulo)
+[SAT_MN]
+Clave=SAT_MN
+Nombre=Información del SAT en Moneda Nacional
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=CFDFlex
+
+[CFDFlex.ListaRefrescarCondiciones]
+(Inicio)=CFD_tipoDeComprobante
+CFD_tipoDeComprobante=CFD_Reporte
+CFD_Reporte=SAT_MN
+SAT_MN=(Fin)
+
+[CFDEsParcialidad]
+Clave=CFDEsParcialidad
+Nombre=CFD Es Parcialidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Info.Modulo = <T>CXC<T> Y (CFDFlex o CFD)
+
+[AFMovGenerarGastoCfg]
+Clave=AFMovGenerarGastoCfg
+Nombre=Concepto a Nivel
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[AFMovGenerarGastoCfg.ListaOpciones]
+(Inicio)=Activo Fijo
+Activo Fijo=Especifico
+Especifico=Categoria
+Categoria=(Fin)
+
+
+
+
+
+[SerieMES]
+Clave=SerieMES
+Nombre=Serie Factory
+Visible=S
+TamanoValidacion=2
+TipoDatos=Texto
+Tamano=3
+CondicionDespliege=General.ProdInterfazINFOR
+
+
+[TCAccion]
+Clave=TCAccion
+Nombre=Acción
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+
+OpcionesPredefinidas=Ninguna
+[TCAccion.ListaOpciones]
+(Inicio)=Auth
+Auth=Credit
+Credit=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[CFDReporteIntelisis]
+Clave=CFDReporteIntelisis
+Nombre=Reporte Intelisis
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+CondicionDespliege=CFDFlex y SQL(<T>SELECT 1 FROM EmpresaCFD WHERE Empresa = :tEmpresa AND Reporteador = :tReporteador<T>, Empresa,<T>Reporteador Intelisis<T>)
+
+
+
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+Formula=ListaReportes
+[CFDReportBuilder]
+Clave=CFDReportBuilder
+Nombre=Reporte Builder
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=CFDFlex y SQL(<T>SELECT 1 FROM EmpresaCFD WHERE Empresa = :tEmpresa AND Reporteador = :tReporteador<T>, Empresa,<T>Report Builder<T>)
+
+
+
+
+
+
+
+
+
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=8
+AyudaRefrescar=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Formula=SQLEnLista(<T>SELECT Reporte FROM EmpresaCFDBuilder WHERE Empresa = :tEmpresa AND Modulo = :tModulo<T>, Empresa, Info.Modulo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[PrefijoSucursal]
+Clave=PrefijoSucursal
+Nombre=Tomar prefijo de la Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+
+
+
+
+
+
+CondicionDespliege=MovTipo(<T>DIN<T>, Mov) en (DIN.CHE, DIN.CH)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[CartaPorte]
+Clave=CartaPorte
+Nombre=Carta Porte
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[EstatusCartaPorte]
+Clave=EstatusCartaPorte
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+
+
+
+
+AyudaEnCaptura=Lista de Opciones
+
+
+
+
+
+
+
+
+
+
+
+
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+[RutaCartaPorte]
+Clave=RutaCartaPorte
+Nombre=Ruta:
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+
+
+
+
+AyudaEnCaptura=Buscar Directorio
+
+
+
+
+
+
+
+
+
+
+
+
+
+[EstatusCartaPorte.ListaOpciones]
+(Inicio)=CONCILIADO
+CONCILIADO=CONCLUIDO
+CONCLUIDO=PENDIENTE
+PENDIENTE=PROCESAR
+PROCESAR=VIGENTE
+VIGENTE=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=Orden
+Orden=Clave
+Clave=SubClave
+SubClave=Icono
+Icono=Grupo
+Grupo=EstatusContabilizar
+EstatusContabilizar=ConsecutivoModulo
+ConsecutivoModulo=ConsecutivoMov
+ConsecutivoMov=ConsecutivoPorPeriodo
+ConsecutivoPorPeriodo=ConsecutivoPorEjercicio
+ConsecutivoPorEjercicio=ConsecutivoPorEmpresa
+ConsecutivoPorEmpresa=Factor
+Factor=Almacen
+Almacen=DiasVencimiento
+DiasVencimiento=NomProcesarIncidencias
+NomProcesarIncidencias=NomGenerarBaja
+NomGenerarBaja=NomDividirCantidades
+NomDividirCantidades=GenerarParalelo
+GenerarParalelo=PV
+PV=ConsecutivoSucursalEsp
+ConsecutivoSucursalEsp=SucursalEsp
+SucursalEsp=GenerarGasto
+GenerarGasto=GastoMov
+GastoMov=GastoClase
+GastoClase=GastoSubClase
+GastoSubClase=GastoConcepto
+GastoConcepto=GastoAcreedor
+GastoAcreedor=eMailAuto
+eMailAuto=SinAfectarVINCostoExtra
+SinAfectarVINCostoExtra=ConsecutivoControl
+ConsecutivoControl=TipoPago
+TipoPago=GastoFactor
+GastoFactor=CE
+CE=CEAntesAfectar
+CEAntesAfectar=CEAfectarContacto
+CEAfectarContacto=NomAuto
+NomAuto=NomAutoTipo
+NomAutoTipo=NomAutoCalcSDI
+NomAutoCalcSDI=NomAutoCxc
+NomAutoCxc=NomAutoCalendarioEsp
+NomAutoCalendarioEsp=ImpresionInmediata
+ImpresionInmediata=ConsecutivoFEA
+ConsecutivoFEA=EditarDeptoDetallista
+EditarDeptoDetallista=AfectarPresupuesto
+AfectarPresupuesto=CFD
+CFD=CFD_tipoDeComprobante
+CFD_tipoDeComprobante=CFD_Reporte
+CFD_Reporte=Instrucciones
+Instrucciones=ProyectoContactoTipo
+ProyectoContactoTipo=PlantillaProyecto
+PlantillaProyecto=PlantillaProyectoFija
+PlantillaProyectoFija=FormaTipo
+FormaTipo=FormaFija
+FormaFija=AplicarOfertas
+AplicarOfertas=FormaAnexaOmision
+FormaAnexaOmision=ProyectoLineaBase
+ProyectoLineaBase=ProyectoSugerir
+ProyectoSugerir=TraspasoExpress
+TraspasoExpress=ModuloCentral
+ModuloCentral=AfectarFiscal
+AfectarFiscal=DefUsuario
+DefUsuario=SubFoliosOrigen
+SubFoliosOrigen=RequiereAutorizacion
+RequiereAutorizacion=ObligacionFiscal
+ObligacionFiscal=ObligacionFiscalTasa
+ObligacionFiscalTasa=ObligacionFiscalTipoImporte
+ObligacionFiscalTipoImporte=EsISRReglamento
+EsISRReglamento=TipoConsecutivo
+TipoConsecutivo=ConsecutivoGeneral
+ConsecutivoGeneral=ArrastrarTipoCambioGenerarMov
+ArrastrarTipoCambioGenerarMov=AfectarCP
+AfectarCP=AplicarCP
+AplicarCP=FactorCP
+FactorCP=ReservarCP
+ReservarCP=AnticiposCP
+AnticiposCP=EcuadorMostrarAnexo
+EcuadorMostrarAnexo=GuatemalaLibroVentaExento
+GuatemalaLibroVentaExento=FactorFiscalEsp
+FactorFiscalEsp=FactorFiscal
+FactorFiscal=eDocEstatus
+eDocEstatus=eDoc
+eDoc=SerieMES
+SerieMES=CFDFlex
+CFDFlex=Interno
+Interno=SAUXMov
+SAUXMov=SAUXMovInvPendiente
+SAUXMovInvPendiente=SAUXMovInvConcluida
+SAUXMovInvConcluida=DividirCatorcenas
+DividirCatorcenas=OpcionPermitirDescontinuado
+OpcionPermitirDescontinuado=CFDReporteJasper
+CFDReporteJasper=CFDReportBuilder
+CFDReportBuilder=CFDReporteIntelisis
+CFDReporteIntelisis=SAT_MN
+SAT_MN=CFDEsParcialidad
+CFDEsParcialidad=AFMovGenerarGastoCfg
+AFMovGenerarGastoCfg=TCAccion
+TCAccion=PrefijoSucursal
+PrefijoSucursal=CartaPorte
+CartaPorte=EstatusCartaPorte
+EstatusCartaPorte=RutaCartaPorte
+RutaCartaPorte=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Modulo,
+Modulo,=Mov,
+Mov,=Orden,
+Orden,=Clave,
+Clave,=SubClave,
+SubClave,=ConsecutivoModulo,
+ConsecutivoModulo,=ConsecutivoMov,
+ConsecutivoMov,=Grupo,
+Grupo,=Icono,
+Icono,=Factor,
+Factor,=ConsecutivoPorPeriodo,
+ConsecutivoPorPeriodo,=ConsecutivoPorEjercicio,
+ConsecutivoPorEjercicio,=ConsecutivoPorEmpresa,
+ConsecutivoPorEmpresa,=ConsecutivoSucursalEsp,
+ConsecutivoSucursalEsp,=ConsecutivoControl,
+ConsecutivoControl,=SucursalEsp,
+SucursalEsp,=Almacen,
+Almacen,=DiasVencimiento,
+DiasVencimiento,=NomProcesarIncidencias,
+NomProcesarIncidencias,=NomGenerarBaja,
+NomGenerarBaja,=NomDividirCantidades,
+NomDividirCantidades,=GenerarParalelo,
+GenerarParalelo,=PV,
+PV,=EstatusContabilizar,
+EstatusContabilizar,=AfectarPresupuesto,
+AfectarPresupuesto,=AfectarFiscal,
+AfectarFiscal,=ObligacionFiscal,
+ObligacionFiscal,=ObligacionFiscalTasa,
+ObligacionFiscalTasa,=ObligacionFiscalTipoImporte,
+ObligacionFiscalTipoImporte,=GenerarGasto,
+GenerarGasto,=GastoMov,
+GastoMov,=GastoClase,
+GastoClase,=GastoSubClase,
+GastoSubClase,=GastoAcreedor,
+GastoAcreedor,=GastoFactor,
+GastoFactor,=GastoConcepto,
+GastoConcepto,=eMailAuto,
+eMailAuto,=SinAfectarVINCostoExtra,
+SinAfectarVINCostoExtra,=TipoPago,
+TipoPago,=CE,
+CE,=CEAntesAfectar,
+CEAntesAfectar,=CEAfectarContacto,
+CEAfectarContacto,=NomAuto,
+NomAuto,=NomAutoTipo,
+NomAutoTipo,=NomAutoCalcSDI,
+NomAutoCalcSDI,=NomAutoCxc,
+NomAutoCxc,=NomAutoCalendarioEsp,
+NomAutoCalendarioEsp,=ImpresionInmediata,
+ImpresionInmediata,=ConsecutivoFEA,
+ConsecutivoFEA,=EditarDeptoDetallista,
+EditarDeptoDetallista,=ProyectoContactoTipo,
+ProyectoContactoTipo,=PlantillaProyecto,
+PlantillaProyecto,=PlantillaProyectoFija,
+PlantillaProyectoFija,=ProyectoLineaBase,
+ProyectoLineaBase,=CFD,
+CFD,=CFD_tipoDeComprobante,
+CFD_tipoDeComprobante,=CFD_Reporte,
+CFD_Reporte,=Instrucciones,
+Instrucciones,=FormaTipo,
+FormaTipo,=FormaFija,
+FormaFija,=AplicarOfertas,
+AplicarOfertas,=FormaAnexaOmision,
+FormaAnexaOmision,=TraspasoExpress,
+TraspasoExpress,=ModuloCentral,
+ModuloCentral,=DefUsuario,
+DefUsuario,=SubFoliosOrigen,
+SubFoliosOrigen,=RequiereAutorizacion,
+RequiereAutorizacion,=TipoConsecutivo,
+TipoConsecutivo,=ConsecutivoGeneral,
+ConsecutivoGeneral,=ArrastrarTipoCambioGenerarMov,
+ArrastrarTipoCambioGenerarMov,=AfectarCP,
+AfectarCP,=AplicarCP,
+AplicarCP,=FactorCP,
+FactorCP,=ReservarCP,
+ReservarCP,=AnticiposCP,
+AnticiposCP,=EcuadorMostrarAnexo,
+EcuadorMostrarAnexo,=GuatemalaLibroVentaExento,
+GuatemalaLibroVentaExento,=FactorFiscalEsp,
+FactorFiscalEsp,=FactorFiscal,
+FactorFiscal,=eDocEstatus,
+eDocEstatus,=SerieMES,
+SerieMES,=eDoc,
+eDoc,=CFDFlex,
+CFDFlex,=SAUXMov,
+SAUXMov,=SAUXMovInvPendiente,
+SAUXMovInvPendiente,=SAUXMovInvConcluida,
+SAUXMovInvConcluida,=Interno,
+Interno,=OpcionPermitirDescontinuado,
+OpcionPermitirDescontinuado,=CFDEsParcialidad,
+CFDEsParcialidad,=EsISRReglamento,
+EsISRReglamento,=DividirCatorcenas,
+DividirCatorcenas,=CFDReporteJasper,
+CFDReporteJasper,=CFDReportBuilder,
+CFDReportBuilder,=CFDReporteIntelisis,
+CFDReporteIntelisis,=ProyectoSugerir,
+ProyectoSugerir,=SAT_MN,
+SAT_MN,=AFMovGenerarGastoCfg,
+AFMovGenerarGastoCfg,=TCAccion,
+TCAccion,=PrefijoSucursal,
+PrefijoSucursal,=CartaPorte,
+CartaPorte,=EstatusCartaPorte,
+EstatusCartaPorte,=RutaCartaPorte
+RutaCartaPorte=FROM MovTipo
+FROM MovTipo=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=MovClave
+MovClave=MovSubClave
+MovSubClave=Sucursal
+Sucursal=Acreedor
+Acreedor=FormaTipoFormas
+FormaTipoFormas=Usuario
+Usuario=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Modulo
+Modulo=Mov
+Mov=(Fin)

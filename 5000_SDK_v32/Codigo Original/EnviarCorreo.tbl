@@ -1,0 +1,77 @@
+[Tabla]
+Icono=0
+Clave=EnviarCorreo
+Archivo=EnviarCorreo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Enviar Correos
+Singular=Enviar Correo
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  ID,<BR>  Fecha,<BR>  Asunto,<BR>  Mensaje,<BR>  Anexos,<BR>  Grupo<BR><BR>FROM<BR>  EnviarCorreo
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+ValorPorOmision=Ahora
+AyudaEnCaptura=Calendario
+
+[Asunto]
+Clave=Asunto
+Nombre=Asunto
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[Mensaje]
+Clave=Mensaje
+Nombre=Mensaje
+Visible=S
+TamanoValidacion=50x3
+TipoDatos=Memo
+
+[Anexos]
+Clave=Anexos
+Nombre=Anexos (La ruta que indique debe estar accesible desde el SQL Server, ej: \\servidor\archivos\prueba.xls)
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Archivo
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo Contacto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=<T>(Todos)<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=<T>(Todos)<T>+Si(INfo.Nombre=<T>Clientes<T>, NuevaLinea+SQLEnLista(<T>SELECT Grupo FROM CteCtoGrupo<T>))
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Fecha
+Fecha=Asunto
+Asunto=Mensaje
+Mensaje=Anexos
+Anexos=Grupo
+Grupo=(Fin)

@@ -1,0 +1,769 @@
+[Tabla]
+Icono=0
+Clave=BPlan
+Nombre=Business Plan
+Archivo=BPlan
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+ListaRelaciones=(Lista)
+LlavePrimaria=ID
+ControlID=S
+ControlCambios=S
+ControlEjercicios=S
+ControlEmpresas=S
+CampoID=ID
+CampoUltimoCambio=UltimoCambio
+CampoEjercicio=Ejercicio
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+ControlSucursal=S
+CampoSucursal=Sucursal
+SQL=SELECT<BR>  ID,<BR>  Modulo,<BR>  Empresa,<BR>  Ejercicio,<BR>  Sucursal,<BR>  UEN,<BR>  Moneda,<BR>  Articulo,<BR>  Clase,<BR>  SubClase,<BR>  Concepto,<BR>  CentroCostos,<BR>  Plaza,<BR>  Personal,<BR>  Usuario,<BR>  UltimoCambio,<BR>  CantidadBase1,<BR>  CantidadBase2,<BR>  CantidadBase3,<BR>  CantidadBase4,<BR>  CantidadBase5,<BR>  CantidadBase6,<BR>  CantidadBase7,<BR>  CantidadBase8,<BR>  CantidadBase9,<BR>  CantidadBase10,<BR>  CantidadBase11,<BR>  CantidadBase12,<BR>  PrecioBase1,<BR>  PrecioBase2,<BR>  PrecioBase3,<BR>  PrecioBase4,<BR>  PrecioBase5,<BR>  PrecioBase6,<BR>  PrecioBase7,<BR>  PrecioBase8,<BR>  PrecioBase9,<BR>  PrecioBase10,<BR>  PrecioBase11,<BR>  PrecioBase12,<BR>  Inc,<BR>  Inc2,<BR>  Inc3,<BR>  Precio,<BR>  Inf,<BR>  Usar,<BR>  Cantidad1,<BR>  Cantidad2,<BR>  Cantidad3,<BR>  Cantidad4,<BR>  Cantidad5,<BR>  Cantidad6,<BR>  Cantidad7,<BR>  Cantidad8,<BR>  Cantidad9,<BR>  Cantidad10,<BR>  Cantidad11,<BR>  Cantidad12,<BR>  Precio1,<BR>  Precio2,<BR>  Precio3,<BR>  Precio4,<BR>  Precio5,<BR>  Precio6,<BR>  Precio7,<BR>  Precio8,<BR>  Precio9,<BR>  Precio10,<BR>  Precio11,<BR>  Precio12<BR><BR>FROM<BR>  BPlan
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Modulo
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Info.Modulo en (<T>COMS<T>, <T>VTAS<T>)
+AyudaEnCaptura=Vista
+AyudaForma=ArtLista
+AyudaVista=Art
+AyudaCampo=Art.Articulo
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Info.Modulo en (<T>GAS<T>, <T>NOM<T>)
+AyudaEnCaptura=Vista
+AyudaForma=GastoConcepto
+AyudaVista=GastoConcepto
+AyudaCampo=Concepto
+AyudaBusquedaRapida=Asigna(Info.Clase, Clase)<BR>Asigna(Info.SubClase, SubClase)<BR>Asigna(Info.Acreedor, Nulo)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+
+[Personal]
+Clave=Personal
+Nombre=Personal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=Info.Modulo = <T>NOM<T>
+TipoDatos=Texto
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=UltimoCambio
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[CantidadBase1]
+Clave=CantidadBase1
+Nombre=Ene
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase2]
+Clave=CantidadBase2
+Nombre=Feb
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase3]
+Clave=CantidadBase3
+Nombre=Mar
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase4]
+Clave=CantidadBase4
+Nombre=Abr
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase5]
+Clave=CantidadBase5
+Nombre=May
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase6]
+Clave=CantidadBase6
+Nombre=Jun
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase7]
+Clave=CantidadBase7
+Nombre=Jul
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase8]
+Clave=CantidadBase8
+Nombre=Ago
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase9]
+Clave=CantidadBase9
+Nombre=Sep
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase10]
+Clave=CantidadBase10
+Nombre=Oct
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase11]
+Clave=CantidadBase11
+Nombre=Nov
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[CantidadBase12]
+Clave=CantidadBase12
+Nombre=Dic
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[PrecioBase1]
+Clave=PrecioBase1
+Nombre=Precio 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase2]
+Clave=PrecioBase2
+Nombre=Precio 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase3]
+Clave=PrecioBase3
+Nombre=Precio 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase4]
+Clave=PrecioBase4
+Nombre=Precio 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase5]
+Clave=PrecioBase5
+Nombre=Precio 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase6]
+Clave=PrecioBase6
+Nombre=Precio 6
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase7]
+Clave=PrecioBase7
+Nombre=Precio 7
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase8]
+Clave=PrecioBase8
+Nombre=Precio 8
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase9]
+Clave=PrecioBase9
+Nombre=Precio 9
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase10]
+Clave=PrecioBase10
+Nombre=Precio 10
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase11]
+Clave=PrecioBase11
+Nombre=Precio 11
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[PrecioBase12]
+Clave=PrecioBase12
+Nombre=Precio 12
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Inc]
+Clave=Inc
+Nombre=% Moderado
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+AyudaEnCaptura=Calculadora
+
+[Inc2]
+Clave=Inc2
+Nombre=% Optimista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+AyudaEnCaptura=Calculadora
+
+[Inc3]
+Clave=Inc3
+Nombre=% Pesimista
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+AyudaEnCaptura=Calculadora
+
+[Precio]
+Clave=Precio
+Nombre=Precio
+Visible=S
+TamanoValidacion=10
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+Tamano=20
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+Formula=SQLEnLista(<T>SELECT Lista FROM VerBPlanListaPrecio ORDER BY Orden<T>)
+TipoDatos=Texto
+
+[Inf]
+Clave=Inf
+Nombre=% Inflación
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Usar]
+Clave=Usar
+Nombre=Método
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+TipoDatos=Texto
+
+[Cantidad1]
+Clave=Cantidad1
+Nombre=Cantidad 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad2]
+Clave=Cantidad2
+Nombre=Cantidad 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad3]
+Clave=Cantidad3
+Nombre=Cantidad 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad4]
+Clave=Cantidad4
+Nombre=Cantidad 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad5]
+Clave=Cantidad5
+Nombre=Cantidad 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad6]
+Clave=Cantidad6
+Nombre=Cantidad 6
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad7]
+Clave=Cantidad7
+Nombre=Cantidad 7
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad8]
+Clave=Cantidad8
+Nombre=Cantidad 8
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad9]
+Clave=Cantidad9
+Nombre=Cantidad 9
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad11]
+Clave=Cantidad11
+Nombre=Cantidad 11
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Cantidad12]
+Clave=Cantidad12
+Nombre=Cantidad 12
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Cantidad=S
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Precio1]
+Clave=Precio1
+Nombre=Precio 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio2]
+Clave=Precio2
+Nombre=Precio 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio3]
+Clave=Precio3
+Nombre=Precio 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio4]
+Clave=Precio4
+Nombre=Precio 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio5]
+Clave=Precio5
+Nombre=Precio 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio6]
+Clave=Precio6
+Nombre=Precio 6
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio7]
+Clave=Precio7
+Nombre=Precio 7
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio8]
+Clave=Precio8
+Nombre=Precio 8
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio9]
+Clave=Precio9
+Nombre=Precio 9
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio10]
+Clave=Precio10
+Nombre=Precio 10
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio11]
+Clave=Precio11
+Nombre=Precio 11
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Precio12]
+Clave=Precio12
+Nombre=Precio 12
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Relaciones.Art]
+TipoRelacion=Opcional
+LlaveLocal=Articulo
+Clave=Art
+TablaRemota=Art
+LlaveRemota=Articulo
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Moneda
+
+[Relaciones.Personal]
+TipoRelacion=Opcional
+LlaveLocal=Personal
+Clave=Personal
+TablaRemota=Personal
+LlaveRemota=Personal
+
+[Relaciones.Concepto]
+TipoRelacion=Opcional
+LlaveLocal=Concepto
+Clave=Concepto
+TablaRemota=Concepto
+LlaveRemota=Concepto
+
+[Cantidad10]
+Clave=Cantidad10
+Nombre=Cantidad 10
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=Info.Modulo <> <T>NOM<T>
+
+[Clase]
+Clave=Clase
+Nombre=Clase
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Info.Modulo = <T>GAS<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tM<T>, <T>GAS<T>)
+
+[SubClase]
+Clave=SubClase
+Nombre=SubClase
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Info.Modulo = <T>GAS<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT SubClase FROM SubClase WHERE Clase = :tC AND Modulo = :tM<T>, Clase, <T>GAS<T>)
+
+[Plaza]
+Clave=Plaza
+Nombre=Plaza
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=Info.Modulo en (<T>NOM<T>)
+TipoDatos=Texto
+
+[CentroCostos]
+Clave=CentroCostos
+Nombre=Centro Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[Relaciones.CentroCostos]
+TipoRelacion=Opcional
+LlaveLocal=CentroCostos
+Clave=CentroCostos
+TablaRemota=CentroCostos
+LlaveRemota=CentroCostos
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Modulo
+Modulo=Empresa
+Empresa=Ejercicio
+Ejercicio=Sucursal
+Sucursal=UEN
+UEN=Moneda
+Moneda=Articulo
+Articulo=Clase
+Clase=SubClase
+SubClase=Concepto
+Concepto=CentroCostos
+CentroCostos=Plaza
+Plaza=Personal
+Personal=Usuario
+Usuario=UltimoCambio
+UltimoCambio=CantidadBase1
+CantidadBase1=CantidadBase2
+CantidadBase2=CantidadBase3
+CantidadBase3=CantidadBase4
+CantidadBase4=CantidadBase5
+CantidadBase5=CantidadBase6
+CantidadBase6=CantidadBase7
+CantidadBase7=CantidadBase8
+CantidadBase8=CantidadBase9
+CantidadBase9=CantidadBase10
+CantidadBase10=CantidadBase11
+CantidadBase11=CantidadBase12
+CantidadBase12=PrecioBase1
+PrecioBase1=PrecioBase2
+PrecioBase2=PrecioBase3
+PrecioBase3=PrecioBase4
+PrecioBase4=PrecioBase5
+PrecioBase5=PrecioBase6
+PrecioBase6=PrecioBase7
+PrecioBase7=PrecioBase8
+PrecioBase8=PrecioBase9
+PrecioBase9=PrecioBase10
+PrecioBase10=PrecioBase11
+PrecioBase11=PrecioBase12
+PrecioBase12=Inc
+Inc=Inc2
+Inc2=Inc3
+Inc3=Precio
+Precio=Inf
+Inf=Usar
+Usar=Cantidad1
+Cantidad1=Cantidad2
+Cantidad2=Cantidad3
+Cantidad3=Cantidad4
+Cantidad4=Cantidad5
+Cantidad5=Cantidad6
+Cantidad6=Cantidad7
+Cantidad7=Cantidad8
+Cantidad8=Cantidad9
+Cantidad9=Cantidad10
+Cantidad10=Cantidad11
+Cantidad11=Cantidad12
+Cantidad12=Precio1
+Precio1=Precio2
+Precio2=Precio3
+Precio3=Precio4
+Precio4=Precio5
+Precio5=Precio6
+Precio6=Precio7
+Precio7=Precio8
+Precio8=Precio9
+Precio9=Precio10
+Precio10=Precio11
+Precio11=Precio12
+Precio12=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Art
+Art=Personal
+Personal=Concepto
+Concepto=CentroCostos
+CentroCostos=(Fin)
+
+[Usar.ListaOpciones]
+(Inicio)=Moderado
+Moderado=Optimista
+Optimista=Pesimista
+Pesimista=(Fin)

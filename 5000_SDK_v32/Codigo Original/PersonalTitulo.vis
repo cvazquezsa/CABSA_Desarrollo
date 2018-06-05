@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=PersonalTitulo
+Nombre=PersonalTitulo
+Modulos=(Todos)
+Singular=PersonalTitulo
+ListaTablas=PersonalTitulo
+TablaPrincipal=PersonalTitulo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=PersonalTitulo.Titulo
+UsarJOIN=S
+SQL=SELECT<BR>  PersonalTitulo.Titulo<BR><BR>FROM<BR>  PersonalTitulo
+
+[PersonalTitulo.Titulo]
+Clave=PersonalTitulo.Titulo
+LigaTabla=PersonalTitulo
+LigaCampo=Titulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Titulo

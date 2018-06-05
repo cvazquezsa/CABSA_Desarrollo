@@ -1,0 +1,47 @@
+[Tabla]
+Icono=0
+Clave=GrupoTrabajo
+Archivo=GrupoTrabajo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Grupo de Trabajo
+Singular=Grupos de Trabajo
+LlavePrimaria=GrupoTrabajo
+CampoSugerido=GrupoTrabajo
+SQL=SELECT<BR>  GrupoTrabajo,<BR>  Multiple,<BR>  DirectorioCodigo<BR><BR>FROM<BR>  GrupoTrabajo
+
+[GrupoTrabajo]
+Clave=GrupoTrabajo
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Mayusculas=
+Requerido=S
+TipoDatos=Texto
+
+[Multiple]
+Clave=Multiple
+Nombre=Multiple
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[DirectorioCodigo]
+Clave=DirectorioCodigo
+Nombre=Directorio Objetos Especiales
+Visible=S
+TamanoValidacion=150
+Tamano=150
+
+[Tabla.ListaCampos]
+(Inicio)=GrupoTrabajo
+GrupoTrabajo=Multiple
+Multiple=DirectorioCodigo
+DirectorioCodigo=(Fin)

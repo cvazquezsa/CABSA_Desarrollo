@@ -1,0 +1,67 @@
+[Tabla]
+Icono=0
+Clave=PersonalPropValor
+Archivo=PersonalPropValor
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Propiedades
+Singular=Propiedad
+LlavePrimaria=Rama<BR>Cuenta<BR>Propiedad
+CampoCuenta=Cuenta
+ListaRelaciones=PersonalProp
+SQL=SELECT<BR>  Rama,<BR>  Cuenta,<BR>  Propiedad,<BR>  Valor<BR><BR>FROM<BR>  PersonalPropValor
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Rama
+TipoDatos=Texto
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+TamanoValidacion=20
+Tamano=50
+ValorPorOmision=Info.Cuenta
+
+[Propiedad]
+Clave=Propiedad
+Nombre=Propiedad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=Caso PersonalPropValor:PersonalProp.TipoDatos<BR>  Es <T>Texto<T>    Entonces <T>Excede Longitud Máxima<T><BR>  Es <T>Numerico<T> Entonces <T>No es un Valor Numérico<T><BR>Fin
+ValidacionCondicion=Caso PersonalPropValor:PersonalProp.TipoDatos<BR>  Es <T>Texto<T>    Entonces Longitud(Valor) <= PersonalPropValor:PersonalProp.LongitudMaxima<BR>  Es <T>Numerico<T> Entonces EsNumerico(Valor)<BR>Fin
+Formula=SQLEnLista(<T>SELECT DISTINCT Valor FROM PersonalPropValor WHERE Rama=:tRama AND Propiedad=:tProp<T>, Rama, Propiedad)
+
+[Relaciones.PersonalProp]
+TipoRelacion=Forzosa
+LlaveLocal=Propiedad
+Clave=PersonalProp
+TablaRemota=PersonalProp
+LlaveRemota=Propiedad
+
+[Tabla.ListaCampos]
+(Inicio)=Rama
+Rama=Cuenta
+Cuenta=Propiedad
+Propiedad=Valor
+Valor=(Fin)

@@ -1,0 +1,683 @@
+[Reporte]
+Clave=InvCapa
+Nombre=Capas de Costos
+Icono=0
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+Orientacion=por Omision
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros=S
+Columnas=1
+Vista=InvCapa
+Parametros1=Art.Articulo
+Parametros2=Entre
+Parametros3=N
+PosicionInicialAltura=450
+PosicionInicialAncho=814
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+ImpresoraPixeles=(Auto)
+OtroOrden=S
+ListaOrden=(Lista)
+Filtros=S
+TieneFiltroAbierto=S
+FiltroAbierto=InvCapa.Empresa=<T>{Empresa}<T>
+ExpresionesAntes=Si(Info.Almacen=<T>(TODOS)<T>, Asigna(Info.Almacen, Nulo))<BR>Si(Rep.InvVal=<T>(Sin Valuar)<T>, Asigna(Rep.InvVal, Nulo))
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Inicio: InvCapa.Articulo<BR>Detalle<BR>Fin: InvCapa.Articulo<BR>Final<BR>Pie
+VentanaIzquierda=74
+VentanaArriba=174
+VentanaAltura=420
+VentanaAncho=875
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Objetos=6
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+ExpresionesAntesImprimir=
+Marco=N
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Capas de Costos<T>
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=48
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=3.4
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(InvCapa.Articulo)
+Marco=N
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=18
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea3]
+Clave=Inicio: InvCapa.Articulo
+Objetos=2
+Seccion=Inicio Grupo
+AltoEnCm=0.6
+AVertical=Centrado
+Fuente={Arial, 10, Negro, [Negritas]}
+Marco=N
+EstiloMarco=3
+BordeArriba=N
+EstiloArriba=0
+Grupo=InvCapa.Articulo
+Visible=
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Detalle
+Objetos=6
+Seccion=Detalle
+EstiloMarco=3
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Grupo=
+Visible=
+ExpresionesAntesImprimir=
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=InvCapa
+ListaParametros1=Info.ArticuloD<BR>Info.ArticuloA
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=InvCapa
+ListaParametros1=Info.ArticuloD<BR>Info.ArticuloA
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[F3]
+Celda=F3
+Alineacion=Derecha
+AnchoEnCm=3.2
+Marco=N
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Valor*Existencias
+FormatoValidacion=(Monetario)
+AnchoTexto=15
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+CBTipo=UPC A
+
+[F4]
+Celda=F4
+Alineacion=Izquierda
+AnchoEnCm=2
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=InvCapa.Fecha
+FormatoValidacion=dd/mmm/yyyy
+AnchoTexto=10
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+CBTipo=UPC A
+OmitirFormato=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=N
+CBDigitoVerificador=N
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=3.4
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=
+BordeArriba=N
+EstiloArriba=3
+AnchoTexto=18
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=2.5
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=InvCapa.Existencia
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+FormatoValidacion=(Cantidades)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C4]
+Celda=C4
+Alineacion=Derecha
+AnchoEnCm=3
+EstiloMarco=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=InvCapa.Costo
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=2.5
+Marco=N
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(InvCapa.Existencia)
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C2]
+Celda=C2
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=N
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(InvCapa.Costo)
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[D2]
+Celda=D2
+Alineacion=Centrado
+AnchoEnCm=3
+Marco=N
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CostoTotal)
+BordeAbajo=S
+EstiloAbajo=1
+AnchoTexto=16
+FondoColor=Blanco
+CBTipo=UPC A
+OmitirFormato=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea5]
+Clave=Fin: InvCapa.Articulo
+Objetos=5
+Seccion=Fin Grupo
+Grupo=InvCapa.Articulo
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas]}
+BordeArriba=S
+EstiloArriba=1
+Renglones=1
+FondoColor=Blanco
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=3.4
+BordeArriba=N
+EstiloArriba=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+AnchoTexto=18
+FondoColor=Blanco
+CBTipo=UPC A
+FormatoValidacion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=2.5
+BordeArriba=S
+EstiloArriba=1
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+AnchoTexto=13
+FondoColor=Blanco
+CBTipo=UPC A
+Expresion=Suma(InvCapa.Existencia)
+FormatoValidacion=(Cantidades)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=3.39
+AnchoTexto=18
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=InvCapa.Articulo
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B3]
+Celda=B3
+Alineacion=Izquierda
+AnchoEnCm=8.5
+AnchoTexto=46
+BordeArriba=N
+EstiloMarco=3
+EstiloArriba=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Art.Descripcion1
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[F2]
+Celda=F2
+Alineacion=Centrado
+AnchoEnCm=2
+AnchoTexto=10
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(InvCapa.Fecha)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[Linea6]
+Clave=Final
+Objetos=5
+Seccion=Final
+Grupo=
+AltoEnCm=0.6
+Renglones=1
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, [Negritas]}
+AVertical=Centrado
+
+[Linea7]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=CostoTotal
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E4]
+Celda=E4
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3.5
+AnchoTexto=19
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=InvCapa.Mov+<T> <T>+InvCapa.MovID
+OmitirFormato=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C5]
+Celda=C5
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=
+EstiloArriba=1
+
+[D5]
+Celda=D5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(CostoTotal)
+OmitirFormato=N
+EstiloArriba=1
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=3.4
+AnchoTexto=18
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=<T>Total<T>
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+FormatoValidacion=(Cantidades)
+AnchoEnCm=2.5
+AnchoTexto=13
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(InvCapa.Existencia)
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[C6]
+Celda=C6
+Alineacion=Izquierda
+FormatoValidacion=
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=9
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+[D6]
+Celda=D6
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Suma(CostoTotal)
+OmitirFormato=N
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+
+[E2]
+Celda=E2
+Alineacion=Centrado
+AnchoEnCm=3.5
+AnchoTexto=19
+BordeAbajo=S
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(InvCapa.Mov)
+
+[E5]
+Celda=E5
+Alineacion=Izquierda
+AnchoEnCm=5.5
+AnchoTexto=30
+BordeArriba=S
+EstiloArriba=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+
+[E6]
+Celda=E6
+Alineacion=Izquierda
+AnchoEnCm=5.5
+AnchoTexto=30
+BordeArriba=S
+EstiloArriba=2
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 10, Negro, [Negritas]}
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
+
+[Reporte.ListaOrden]
+(Inicio)=InvCapa.Articulo<TAB>(Acendente)
+InvCapa.Articulo<TAB>(Acendente)=InvCapa.Fecha<TAB>(Acendente)
+InvCapa.Fecha<TAB>(Acendente)=(Fin)

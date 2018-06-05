@@ -1,0 +1,67 @@
+[Tabla]
+Icono=0
+Clave=FormaVirtual
+Archivo=FormaVirtual
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Formas Virtuales
+Singular=Forma Virtual
+LlavePrimaria=FormaVirtual
+SQL=SELECT<BR>  FormaVirtual,<BR>  Titulo,<BR>  Forma,<BR>  Modo<BR><BR>FROM<BR>  FormaVirtual
+
+[FormaVirtual]
+Clave=FormaVirtual
+Nombre=Forma Virtual
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+[Forma]
+Clave=Forma
+Nombre=Forma
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Consulta opcional
+Formula=ListaFormas
+
+[Modo]
+Clave=Modo
+Nombre=Modo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>por Omision<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Titulo]
+Clave=Titulo
+Nombre=Titulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[Tabla.ListaCampos]
+(Inicio)=FormaVirtual
+FormaVirtual=Titulo
+Titulo=Forma
+Forma=Modo
+Modo=(Fin)
+
+[Modo.ListaOpciones]
+(Inicio)=por Omision
+por Omision=Deteccion
+Deteccion=Ejecucion
+Ejecucion=(Fin)

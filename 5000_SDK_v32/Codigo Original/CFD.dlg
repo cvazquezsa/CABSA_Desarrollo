@@ -1,0 +1,25 @@
+[Dialogo]
+Clave=CFD
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Generar
+PosicionInicialAlturaCliente=80
+PosicionInicialAncho=500
+
+[Acciones.Generar]
+Nombre=Generar
+Boton=0
+NombreDesplegar=Expresion
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=PlugIn(<T>GuardarLista<T>, <T>spPruebaCFD<T>, <T>c:\1.txt<T>))

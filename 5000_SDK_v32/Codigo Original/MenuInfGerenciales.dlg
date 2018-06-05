@@ -1,0 +1,40 @@
+
+[Dialogo]
+Clave=MenuInfGerenciales
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+
+ListaAcciones=(Lista)
+[Acciones.Ventas]
+Nombre=Ventas
+Boton=0
+NombreDesplegar=&Ventas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuInfGerencialesVentas
+Activo=S
+Visible=S
+
+[Acciones.UtilAgrup]
+Nombre=UtilAgrup
+Boton=0
+NombreDesplegar=Utilidades &Agrupadores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuInfGerencialesUtil
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Ventas
+Ventas=UtilAgrup
+UtilAgrup=(Fin)

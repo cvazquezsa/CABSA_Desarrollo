@@ -1,0 +1,72 @@
+[Tabla]
+Icono=0
+Clave=aroFactor
+Archivo=aroFactor
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Factores
+Singular=Factor
+LlavePrimaria=FactorRiesgo
+Niveles=S
+CampoAcumulativa=EsEstructura
+SQL=SELECT<BR>  FactorRiesgo,<BR>  Nombre,<BR>  Descripcion,<BR>  EsEstructura,<BR>  Orden<BR><BR>FROM<BR>  aroFactor
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=EstructuraEnOrden(FactorRiesgo, 5)
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=100
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+TipoDatos=Texto
+
+[FactorRiesgo]
+Clave=FactorRiesgo
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Clave Incorrecta<T>
+ConRefrescar=S
+ListaRefrescar=Orden
+ValidacionCondicion=EstructuraOk(FactorRiesgo, <T><T>, 5)
+TipoDatos=Texto
+
+[EsEstructura]
+Clave=EsEstructura
+Nombre=Estructura
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=FactorRiesgo
+FactorRiesgo=Nombre
+Nombre=Descripcion
+Descripcion=EsEstructura
+EsEstructura=Orden
+Orden=(Fin)

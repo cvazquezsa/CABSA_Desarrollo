@@ -1,0 +1,61 @@
+[Vista]
+Icono=0
+Clave=DICSA_CteVentaAcum
+Nombre=Ventas Acumuladas
+Modulos=(Todos)
+Singular=Venta Acumulada
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+SQL=spDICSA_CteVentaAcum <T>{Empresa}<T>, {Sucursal}, <T>{Usuario}<T>, {EstacionTrabajo}, <T>{FechaFormatoServidor(FechaTrabajo)}<T>, <T>{Info.Cliente}<T>
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Año
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Ejercicio
+
+[Ventas]
+Clave=Ventas
+Nombre=Ventas
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Ventas
+Monetario=S
+
+[Devoluciones]
+Clave=Devoluciones
+Nombre=Devoluciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Devoluciones
+Monetario=S
+
+[ChequesDevueltos]
+Clave=ChequesDevueltos
+Nombre=Cheques Devueltos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=ChequesDevueltos
+Monetario=S
+
+[DiasPromedioCobro]
+Clave=DiasPromedioCobro
+Nombre=Días Promedio Cobro
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=DiasPromedioCobro
+
+[Vista.ListaCampos]
+(Inicio)=Ejercicio
+Ejercicio=Ventas
+Ventas=Devoluciones
+Devoluciones=ChequesDevueltos
+ChequesDevueltos=DiasPromedioCobro
+DiasPromedioCobro=(Fin)

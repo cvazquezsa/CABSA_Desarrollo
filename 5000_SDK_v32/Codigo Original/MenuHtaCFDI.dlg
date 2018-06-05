@@ -1,0 +1,55 @@
+
+[Dialogo]
+Clave=MenuHtaCFDI
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+PosicionInicialIzquierda=269
+PosicionInicialArriba=263
+
+
+
+ListaAcciones=(Lista)
+
+[Acciones.Nomina]
+Nombre=Nomina
+Boton=0
+NombreDesplegar=Nómina
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuHerramientaCFDINOM
+Activo=S
+
+VisibleCondicion=Si(SQL(<T>SELECT COUNT(*) FROM sysobjects where name = :tNombre<T>, <T>CFDINominaVersion<T>), Verdadero, Falso)
+[Acciones.Terceros]
+Nombre=Terceros
+Boton=0
+NombreDesplegar=Terceros
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuHerramientaCFDITerceros
+Activo=S
+
+
+
+
+
+
+
+VisibleCondicion=Si(SQL(<T>SELECT COUNT(*) FROM sysobjects where name = :tNombre<T>, <T>CFDITercerosVersion<T>), Verdadero, Falso)
+
+
+[Dialogo.ListaAcciones]
+(Inicio)=Nomina
+Nomina=Terceros
+Terceros=(Fin)

@@ -1,0 +1,41 @@
+[Dialogo]
+Clave=MenuCfgPC
+Nombre=Precios y Costos
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=104
+PosicionInicialAncho=500
+
+[Acciones.Precio]
+Nombre=Precio
+Boton=0
+NombreDesplegar=&Precios Calculados
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PrecioCalc
+Activo=S
+Visible=S
+
+[Acciones.PrecioMetodo]
+Nombre=PrecioMetodo
+Boton=0
+NombreDesplegar=Métodos (Precios y Costos)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PrecioMetodo
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Precio
+Precio=PrecioMetodo
+PrecioMetodo=(Fin)

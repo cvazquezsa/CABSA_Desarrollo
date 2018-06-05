@@ -1,0 +1,341 @@
+[Tabla]
+Icono=0
+Clave=Beneficiario
+Archivo=Beneficiario
+Modulos=(Lista)
+TipoTabla=Movimientos
+ListaCampos=(Lista)
+Nombre=Beneficiarios
+Singular=Beneficiario
+LlavePrimaria=Beneficiario
+ControlID=S
+ControlEstatus=S
+CampoID=Beneficiario
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+ListaRelaciones=(Lista)
+SQL=SELECT<BR>  Beneficiario,<BR>  Cliente,<BR>  Instrumento,<BR>  Nombre,<BR>  Info1,<BR>  Info2,<BR>  Info3,<BR>  Info4,<BR>  InfoAd1,<BR>  InfoAd2,<BR>  InfoAd3,<BR>  InfoAd4,<BR>  InfoAd5,<BR>  InfoAd6,<BR>  InfoAd7,<BR>  InfoAd8,<BR>  Institucion,<BR>  InstitucionUsar,<BR>  Intermediario,<BR>  IntermediarioUsar,<BR>  Estatus<BR><BR>FROM<BR>  Beneficiario
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+AyudaEnCaptura=Vista
+TamanoValidacion=10
+Tamano=10
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+Mayusculas=S
+Requerido=S
+ValorPorOmision=Si(ConDatos(Info.Cliente), Info.Cliente, Nulo)
+ConRefrescar=S
+ListaRefrescar=Nombre
+TipoDatos=Texto
+
+[Instrumento]
+Clave=Instrumento
+Nombre=Instrumento
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=10
+Tamano=10
+AyudaForma=InstrumentoLista
+AyudaVista=Instrumento
+AyudaCampo=Instrumento.Instrumento
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionUsaTabla=S
+Mayusculas=S
+AyudaMemTabla=Instrumento
+AyudaMemAvanzada=S
+ValorPorOmision=Info.Instrumento
+ValidacionTablas=Instrumento
+Requerido=S
+TipoDatos=Texto
+
+[Institucion]
+Clave=Institucion
+Nombre=Institución Financiera
+AyudaEnCaptura=Vista
+TamanoValidacion=15
+Tamano=20
+AyudaForma=InstitucionFinLista
+AyudaVista=InstitucionFin
+AyudaCampo=InstitucionFin.Institucion
+ValidacionUsaTabla=S
+ValidacionTablas=InstitucionFin
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=InstitucionUsar
+ListaRefrescarCondiciones=InstitucionUsar
+TipoDatos=Texto
+
+[InstitucionUsar]
+Clave=InstitucionUsar
+Nombre=A través de
+AyudaEnCaptura=Expresion
+TamanoValidacion=10
+Tamano=10
+OpcionesPresentacion=Consulta Opcional
+ValorRefrescar=Caso Izquierda(Beneficiario:InstitucionFin.Institucion, 2) <BR>  Es <T>MX<T> Entonces <T>Banxico<T><BR>  Es <T>SW<T> Entonces <T>Swift<T><BR>Sino<BR>  <T>ABA<T><BR>Fin
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Si(Izquierda(Beneficiario:InstitucionFin.Institucion, 2)=<T>MX<T>,<T>Banxico<T>,Lista(<T>ABA<T>, <T>BOFA<T>, <T>Swift<T>, <T>Chips<T>))
+TipoDatos=Texto
+
+[Intermediario]
+Clave=Intermediario
+Nombre=Intermediario
+AyudaEnCaptura=Vista
+TamanoValidacion=10
+Tamano=20
+AyudaForma=InstitucionFinLista
+AyudaVista=InstitucionFin
+AyudaCampo=InstitucionFin.Institucion
+ValidacionUsaTabla=S
+ValidacionTablas=InstitucionFinInter
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=IntermediarioUsar
+ListaRefrescarCondiciones=IntermediarioUsar
+TipoDatos=Texto
+
+[IntermediarioUsar]
+Clave=IntermediarioUsar
+Nombre=A través de
+AyudaEnCaptura=Expresion
+TamanoValidacion=10
+Tamano=10
+OpcionesPresentacion=Consulta Opcional
+ValorRefrescar=Caso Izquierda(Beneficiario:InstitucionFinInter.Institucion, 2) <BR>  Es <T>MX<T> Entonces <T>Banxico<T><BR>  Es <T>SW<T> Entonces <T>Swift<T><BR>Sino<BR>  <T>ABA<T><BR>Fin
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Si(Izquierda(Beneficiario:InstitucionFinInter.Institucion, 2)=<T>MX<T>,<T>Banxico<T>,Lista(<T>ABA<T>, <T>BOFA<T>, <T>Swift<T>, <T>Chips<T>))
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[Relaciones.InstitucionFin]
+TipoRelacion=Opcional
+LlaveLocal=Institucion
+Clave=InstitucionFin
+TablaRemota=InstitucionFin
+LlaveRemota=Institucion
+
+[Relaciones.InstitucionFinInter]
+TipoRelacion=Opcional
+LlaveLocal=Intermediario
+Clave=InstitucionFinInter
+TablaRemota=InstitucionFinInter
+LlaveRemota=Institucion
+
+[Relaciones.Cte]
+TipoRelacion=Forzosa
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Relaciones.Instrumento]
+TipoRelacion=Forzosa
+LlaveLocal=Instrumento
+Clave=Instrumento
+TablaRemota=Instrumento
+LlaveRemota=Instrumento
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+TamanoValidacion=30
+Tamano=100
+Mayusculas=S
+ValorRefrescar=Si(Vacio(Nombre), Beneficiario:Cte.Nombre, Nombre)
+ValorPorOmision=Info.ClienteNombre
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=Info2
+
+[Beneficiario]
+Clave=Beneficiario
+Nombre=Consecutivo
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Info1]
+Clave=Info1
+Nombre=Información Beneficiario
+TamanoValidacion=30
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 25 Caracteres<T>
+ValidacionCondicion=Longitud(Info1)<26
+
+[Info2]
+Clave=Info2
+Nombre=..
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValorRefrescar=Izquierda(Nombre, 35)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValorPorOmision=Izquierda(Info.ClienteNombre, 35)
+ValidacionCondicion=Longitud(Info2)<36
+
+[Info3]
+Clave=Info3
+Nombre=Información Beneficiario
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(Info3)<36
+
+[Info4]
+Clave=Info4
+Nombre=Información Beneficiario
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(Info4)<36
+
+[InfoAd1]
+Clave=InfoAd1
+Nombre=Información Adicional
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Longitud(InfoAd1)<36
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+
+[InfoAd3]
+Clave=InfoAd3
+Nombre=..
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd3)<36
+
+[InfoAd4]
+Clave=InfoAd4
+Nombre=..
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd4)<36
+
+[InfoAd2]
+Clave=InfoAd2
+Nombre=..
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd2)<36
+
+[InfoAd5]
+Clave=InfoAd5
+Nombre=Información Adicional
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd5)<36
+
+[InfoAd6]
+Clave=InfoAd6
+Nombre=Información Adicional
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd6)<36
+
+[InfoAd7]
+Clave=InfoAd7
+Nombre=Información Adicional
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd7)<36
+
+[InfoAd8]
+Clave=InfoAd8
+Nombre=Información Adicional
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Máximo 35 Caracteres<T>
+ValidacionCondicion=Longitud(InfoAd8)<36
+
+[Tabla.Modulos]
+(Inicio)=DIN
+DIN=CAM
+CAM=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Beneficiario
+Beneficiario=Nombre
+Nombre=Cliente
+Cliente=Info1
+Info1=Info2
+Info2=Info3
+Info3=Info4
+Info4=Instrumento
+Instrumento=Institucion
+Institucion=InstitucionUsar
+InstitucionUsar=InfoAd1
+InfoAd1=InfoAd2
+InfoAd2=InfoAd3
+InfoAd3=InfoAd4
+InfoAd4=InfoAd5
+InfoAd5=InfoAd6
+InfoAd6=InfoAd7
+InfoAd7=InfoAd8
+InfoAd8=Intermediario
+Intermediario=IntermediarioUsar
+IntermediarioUsar=Estatus
+Estatus=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Cte
+Cte=Instrumento
+Instrumento=InstitucionFin
+InstitucionFin=InstitucionFinInter
+InstitucionFinInter=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)

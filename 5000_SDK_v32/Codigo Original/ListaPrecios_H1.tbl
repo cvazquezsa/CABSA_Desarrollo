@@ -1,0 +1,196 @@
+[Tabla]
+Icono=0
+Clave=ListaPrecios_H1
+Archivo=ListaPrecios_H1
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Descuento Alterno
+Singular=Descuento Alterno
+LlavePrimaria=Lista<BR>Moneda
+SQL=SELECT<BR>  Lista,<BR>  Moneda,<BR>  Desc1,<BR>  Desc2,<BR>  Desc3,<BR>  Desc4,<BR>  Desc5,<BR>  Desc6,<BR>  Desc7,<BR>  Desc8,<BR>  Desc9,<BR>  Desc10,<BR>  Desc11,<BR>  Desc12,<BR>  Desc13,<BR>  Desc14,<BR>  Desc15,<BR>  ListaPrecio1,<BR>  ListaPrecio2<BR><BR>FROM<BR>  ListaPrecios_H1
+
+[Lista]
+Clave=Lista
+Nombre=Lista
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Lista
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Moneda
+TipoDatos=Texto
+
+[Desc1]
+Clave=Desc1
+Nombre=% Descuento 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc2]
+Clave=Desc2
+Nombre=% Descuento 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc3]
+Clave=Desc3
+Nombre=% Descuento 3
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc4]
+Clave=Desc4
+Nombre=% Descuento 4
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc5]
+Clave=Desc5
+Nombre=% Descuento 5
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc6]
+Clave=Desc6
+Nombre=% Descuento 6
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc7]
+Clave=Desc7
+Nombre=% Descuento 7
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc8]
+Clave=Desc8
+Nombre=% Descuento 8
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc9]
+Clave=Desc9
+Nombre=% Descuento 9
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc10]
+Clave=Desc10
+Nombre=% Descuento 10
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc11]
+Clave=Desc11
+Nombre=% Descuento 11
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc12]
+Clave=Desc12
+Nombre=% Descuento 12
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc13]
+Clave=Desc13
+Nombre=% Descuento 13
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc14]
+Clave=Desc14
+Nombre=% Descuento 14
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Desc15]
+Clave=Desc15
+Nombre=% Descuento 15
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[ListaPrecio1]
+Clave=ListaPrecio1
+Nombre=Lista Precios (Precio 1)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Info.Lista
+
+[ListaPrecio2]
+Clave=ListaPrecio2
+Nombre=Lista Precios (Precio 2)
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Lista
+Lista=Moneda
+Moneda=Desc1
+Desc1=Desc2
+Desc2=Desc3
+Desc3=Desc4
+Desc4=Desc5
+Desc5=Desc6
+Desc6=Desc7
+Desc7=Desc8
+Desc8=Desc9
+Desc9=Desc10
+Desc10=Desc11
+Desc11=Desc12
+Desc12=Desc13
+Desc13=Desc14
+Desc14=Desc15
+Desc15=ListaPrecio1
+ListaPrecio1=ListaPrecio2
+ListaPrecio2=(Fin)

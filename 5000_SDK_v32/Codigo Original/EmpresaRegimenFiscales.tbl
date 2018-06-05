@@ -1,0 +1,77 @@
+[Tabla]
+Icono=0
+Clave=EmpresaRegimenFiscales
+Archivo=EmpresaRegimenFiscales
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=EmpresaRegimenFiscales
+Singular=EmpresaRegimenFiscales
+ListaRelaciones=FiscalRegimen
+LlavePrimaria=(Lista)
+CampoEstatus=Estatus
+CampoEmpresa=Empresa
+EstatusDefault=ALTA
+
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+TipoDatos=Texto
+
+
+
+
+
+
+[FiscalRegimen]
+Clave=FiscalRegimen
+Nombre=Régimen Fiscal
+Visible=S
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+AyudaEnCaptura=Expresion
+AyudaForma=FiscalRegimen
+AyudaVista=FiscalRegimen
+AyudaCampo=FiscalRegimen.FiscalRegimen
+AyudaRefrescar=S
+
+AyudaMemRenglones=4
+AyudaMemOpc=Validar captura en la lista
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>IF EXISTS(SELECT * FROM FiscalRegimen WHERE FiscalRegimen = :tFiscalRegimen) SELECT 0 ELSE SELECT 1<T>, FiscalRegimen)=0
+Formula=SQLEnLista(<T>SELECT FiscalRegimen FROM FiscalRegimen<T>)
+[Relaciones.FiscalRegimen]
+TipoRelacion=Forzosa
+LlaveLocal=FiscalRegimen
+Clave=FiscalRegimen
+TablaRemota=FiscalRegimen
+LlaveRemota=FiscalRegimen
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=FiscalRegimen
+FiscalRegimen=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=FiscalRegimen
+FiscalRegimen=FROM EmpresaRegimenFiscales
+FROM EmpresaRegimenFiscales=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Empresa
+Empresa=FiscalRegimen
+FiscalRegimen=(Fin)

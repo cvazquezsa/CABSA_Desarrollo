@@ -1,0 +1,43 @@
+[Tabla]
+Icono=0
+Clave=ArtFecha
+Archivo=ArtFecha
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Fechas
+Singular=Fechas
+LlavePrimaria=Articulo<BR>FechaD
+SQL=SELECT<BR>  Articulo,<BR>  FechaD,<BR>  FechaA<BR><BR>FROM<BR>  ArtFecha
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.Articulo
+
+[FechaD]
+Clave=FechaD
+Nombre=De Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dddddd
+
+[FechaA]
+Clave=FechaA
+Nombre=A Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dddddd
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=FechaD
+FechaD=FechaA
+FechaA=(Fin)

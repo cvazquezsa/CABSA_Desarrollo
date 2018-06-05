@@ -1,0 +1,94 @@
+[Tabla]
+Icono=0
+Clave=EmpresaConcepto
+Archivo=EmpresaConcepto
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Conceptos por Omisión
+Singular=Concepto por Omisión
+LlavePrimaria=Empresa<BR>Modulo<BR>Mov
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov,<BR>  Concepto,<BR>  Requerido,<BR>  UtilizarEste<BR><BR>FROM<BR>  EmpresaConcepto
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Info.Empresa
+Mayusculas=S
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+OpcionesUnicamente=S
+OpcionesLlave=Auto
+OpcionesPredefinidas=Módulos
+Mayusculas=S
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+AyudaEnCaptura=Expresion
+TamanoValidacion=20
+Tamano=20
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=ListaMovimientos(EmpresaConcepto:EmpresaConcepto.Modulo)
+
+[Concepto]
+Clave=Concepto
+Nombre=Concepto por Omisión
+AyudaEnCaptura=Expresion
+TamanoValidacion=50
+Tamano=50
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT Concepto FROM Concepto WHERE Modulo = :tModulo ORDER BY Orden<T>,EmpresaConcepto:EmpresaConcepto.Modulo)
+TipoDatos=Texto
+
+[Requerido]
+Clave=Requerido
+Nombre=Requerido
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[UtilizarEste]
+Clave=UtilizarEste
+Nombre=sin Datos, Utilizar omisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Modulo
+Modulo=Mov
+Mov=Concepto
+Concepto=Requerido
+Requerido=UtilizarEste
+UtilizarEste=(Fin)

@@ -1,0 +1,247 @@
+[Tabla]
+Icono=0
+Clave=AspelCfgCompras
+Archivo=AspelCfgModuloMayor
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=AspelCfgModuloMayor
+LlavePrimaria=Modulo
+SQL=SELECT<BR>  Mayor,<BR>  Descripcion,<BR>  Rama,<BR>  EsAcreedora,<BR>  EsAcumulativa,<BR>  Modulo,<BR>  Agrupador,<BR>  MovDebeContable,<BR>  MovHaberContable,<BR>  MovDebeNoContable,<BR>  MovHaberNoContable,<BR>  FactorDebeNoContable,<BR>  FactorHaberNoContable,<BR>  ClaveDebeNoContable,<BR>  ClaveHaberNoContable,<BR>  EstatusContable,<BR>  EstatusNoContable,<BR>  AfectaContabilidad<BR><BR>FROM<BR>  AspelCfgModuloMayor
+
+[Mayor]
+Clave=Mayor
+Nombre=Mayor
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+TamanoValidacion=100
+Tamano=100
+UnicamenteLectura=S
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+TamanoValidacion=20
+Tamano=20
+UnicamenteLectura=S
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=EsAcreedora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+
+[EsAcumulativa]
+Clave=EsAcumulativa
+Nombre=EsAcumulativa
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+UnicamenteLectura=S
+
+[Agrupador]
+Clave=Agrupador
+Nombre=Agrupar movimientos por
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR><BR>Caso  Descripcion<BR>  Es <T>Ventas<T>       Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Compras<T>      Entonces Lista(<T>Dia<T>,<T>Semana<T>,<T>Mes<T>,<T>Año<T>)<BR>  Es <T>Clientes<T>     Entonces Lista(<T><T>)<BR>  Es <T>Inventarios<T>  Entonces Lista(<T><T>)<BR>  Es <T>Proveedores<T>  Entonces Lista(<T><T>)<BR>Fin
+
+[MovDebeContable]
+Clave=MovDebeContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,Modulo)
+
+[MovHaberContable]
+Clave=MovHaberContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=AfectaContabilidad
+Formula=SQLENLISTA(<T>SELECT Mov FROM MOVTIPO WHERE MODULO = :tModulo<T>,Modulo)
+
+[MovDebeNoContable]
+Clave=MovDebeNoContable
+Nombre=Tipo Movimiento Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+
+[MovHaberNoContable]
+Clave=MovHaberNoContable
+Nombre=Tipo Movimiento Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+
+[FactorDebeNoContable]
+Clave=FactorDebeNoContable
+Nombre=Factor Debe
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+[FactorHaberNoContable]
+Clave=FactorHaberNoContable
+Nombre=Factor Haber
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionEdicion=NO AfectaContabilidad
+CondicionDespliege=NO AfectaContabilidad
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+[ClaveDebeNoContable]
+Clave=ClaveDebeNoContable
+Nombre=Clave Afectación Debe
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,Modulo)
+
+[ClaveHaberNoContable]
+Clave=ClaveHaberNoContable
+Nombre=Clave Afectacion Haber
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionDespliege=NO AfectaContabilidad
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+Formula=SQLENLISTA(<T>SELECT Clave FROM MovClave WHERE MODULO = :tModulo<T>,Modulo)
+
+[EstatusContable]
+Clave=EstatusContable
+Nombre=Estatus inicial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Estatus
+CondicionDespliege=AfectaContabilidad
+
+[EstatusNoContable]
+Clave=EstatusNoContable
+Nombre=Estatus Inicial
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Estatus
+OpcionesRenglones=8
+CondicionDespliege=NO AfectaContabilidad
+CondicionEdicion=No AfectaContabilidad
+
+[AfectaContabilidad]
+Clave=AfectaContabilidad
+Nombre=Contabilizar
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=
+ListaRefrescarCondiciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=Mayor
+Mayor=Descripcion
+Descripcion=Rama
+Rama=EsAcreedora
+EsAcreedora=EsAcumulativa
+EsAcumulativa=Modulo
+Modulo=Agrupador
+Agrupador=MovDebeContable
+MovDebeContable=MovHaberContable
+MovHaberContable=MovDebeNoContable
+MovDebeNoContable=MovHaberNoContable
+MovHaberNoContable=FactorDebeNoContable
+FactorDebeNoContable=FactorHaberNoContable
+FactorHaberNoContable=ClaveDebeNoContable
+ClaveDebeNoContable=ClaveHaberNoContable
+ClaveHaberNoContable=EstatusContable
+EstatusContable=EstatusNoContable
+EstatusNoContable=AfectaContabilidad
+AfectaContabilidad=(Fin)
+
+[FactorDebeNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)
+
+[FactorHaberNoContable.ListaOpciones]
+(Inicio)=1
+1=-1
+-1=(Fin)
+
+[AfectaContabilidad.ListaRefrescarCondiciones]
+(Inicio)=MovDebeContable
+MovDebeContable=MovHaberContable
+MovHaberContable=MovDebeNoContable
+MovDebeNoContable=MovHaberNoContable
+MovHaberNoContable=FactorDebeNoContable
+FactorDebeNoContable=FactorHaberNoContable
+FactorHaberNoContable=ClaveDebeNoContable
+ClaveDebeNoContable=ClaveHaberNoContable
+ClaveHaberNoContable=EstatusContable
+EstatusContable=EstatusNoContable
+EstatusNoContable=(Fin)

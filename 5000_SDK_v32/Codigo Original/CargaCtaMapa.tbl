@@ -1,0 +1,119 @@
+[Tabla]
+Icono=0
+Clave=CargaCtaMapa
+Archivo=CargaCtaMapa
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Mapeo
+Singular=Mapeo
+LlavePrimaria=ID<BR>RID
+CampoID=RID
+CampoTipo=Tipo
+ControlID=S
+SQL=SELECT<BR>  ID,<BR>  RID,<BR>  TablaCampo,<BR>  Campo,<BR>  Expresion,<BR>  Orden,<BR>  Nivel<BR><BR>FROM<BR>  CargaCtaMapa
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Caso TablaCampo<BR>  Es <T>Contactos<T> Entonces SQLEnLista(<T>SELECT Campo FROM SysCampo WHERE Tabla=:tTabla<T>, <T>ProspectoCto<T>)<BR>  Es <T>Características<T> Entonces SQLEnLista(<T>SELECT Campo FROM FormaExtraCampo WHERE FormaTipo=:tTipo ORDER BY Orden<T>, Info.Tipo)<BR>Sino<BR>  SQLEnLista(<T>SELECT Campo FROM SysCampo WHERE Tabla=:tTabla<T>, <T>Prospecto<T>)<BR>Fin
+
+[TablaCampo]
+Clave=TablaCampo
+Nombre=Tabla
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=(Lista)
+
+[RID]
+Clave=RID
+Nombre=RID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Expresion]
+Clave=Expresion
+Nombre=Expresión (SQL)
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=20
+TamanoValidacion=255
+Tamano=250
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Nivel]
+Clave=Nivel
+Nombre=&Registro
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=TablaCampo=<T>Contactos<T>
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=RID
+RID=TablaCampo
+TablaCampo=Campo
+Campo=Expresion
+Expresion=Orden
+Orden=Nivel
+Nivel=(Fin)
+
+[TablaCampo.ListaOpciones]
+(Inicio)=Principal
+Principal=Contactos
+Contactos=Características
+Características=(Fin)
+
+[Expresion.ListaOpciones]
+(Inicio)=C1
+C1=C2
+C2=C3
+C3=C4
+C4=C5
+C5=C6
+C6=C7
+C7=..
+..=C1 + C2
+C1 + C2=C1 + <T>, <T> + C2
+C1 + <T>, <T> + C2=UPPER(C1)
+UPPER(C1)=SUBSTRING(C1, 1, 10)
+SUBSTRING(C1, 1, 10)=CONVERT(datetime, C1, 103)
+CONVERT(datetime, C1, 103)=<T>Mexico<T>
+<T>Mexico<T>=(Fin)

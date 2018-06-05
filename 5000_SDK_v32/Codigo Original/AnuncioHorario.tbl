@@ -1,0 +1,51 @@
+[Tabla]
+Icono=0
+Clave=AnuncioHorario
+Archivo=AnuncioHorario
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Horarios
+Singular=Horario
+LlavePrimaria=Horario
+SQL=SELECT<BR>  Horario,<BR>  HoraD,<BR>  HoraA<BR><BR>FROM<BR>  AnuncioHorario
+
+[Horario]
+Clave=Horario
+Nombre=Horario
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[HoraD]
+Clave=HoraD
+Nombre=De Hora
+Visible=S
+TamanoValidacion=15
+MascaraEdicion=00:00;2
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+Tamano=5
+TipoDatos=Texto
+
+[HoraA]
+Clave=HoraA
+Nombre=A Hora
+Visible=S
+TamanoValidacion=15
+MascaraEdicion=00:00;2
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Horas
+OpcionesRenglones=8
+Tamano=5
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Horario
+Horario=HoraD
+HoraD=HoraA
+HoraA=(Fin)

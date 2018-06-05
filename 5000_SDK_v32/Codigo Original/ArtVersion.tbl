@@ -1,0 +1,25 @@
+[Tabla]
+Icono=0
+Clave=ArtVersion
+Archivo=ArtVersion
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=Version
+Nombre=Versiones
+Singular=Versión
+LlavePrimaria=Version
+CampoSugerido=Version
+SQL=SELECT<BR>  Version<BR><BR>FROM<BR>  ArtVersion
+
+[Version]
+Clave=Version
+Nombre=Nombre
+Tamano=50
+TamanoValidacion=50
+Requerido=S
+
+[Tabla.Modulos]
+(Inicio)=INV
+INV=VTAS
+VTAS=COMS
+COMS=(Fin)

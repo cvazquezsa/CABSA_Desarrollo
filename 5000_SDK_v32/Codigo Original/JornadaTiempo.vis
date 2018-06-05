@@ -1,0 +1,47 @@
+[Vista]
+Icono=0
+Clave=JornadaTiempo
+Nombre=Jornada Laboral
+Modulos=(Todos)
+Singular=Jornada Laboral
+ListaTablas=JornadaTiempo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=JornadaTiempo
+UsarJOIN=S
+SQL=SELECT<BR>  JornadaTiempo.Jornada,<BR>  JornadaTiempo.Entrada,<BR>  JornadaTiempo.Salida<BR><BR>FROM<BR>  JornadaTiempo
+
+[JornadaTiempo.Jornada]
+Clave=JornadaTiempo.Jornada
+LigaTabla=JornadaTiempo
+LigaCampo=Jornada
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Jornada
+
+[JornadaTiempo.Entrada]
+Clave=JornadaTiempo.Entrada
+LigaTabla=JornadaTiempo
+LigaCampo=Entrada
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Entrada
+
+[JornadaTiempo.Salida]
+Clave=JornadaTiempo.Salida
+LigaTabla=JornadaTiempo
+LigaCampo=Salida
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=Salida
+
+[Vista.ListaCampos]
+(Inicio)=JornadaTiempo.Jornada
+JornadaTiempo.Jornada=JornadaTiempo.Entrada
+JornadaTiempo.Entrada=JornadaTiempo.Salida
+JornadaTiempo.Salida=(Fin)

@@ -1,0 +1,116 @@
+[Tabla]
+Icono=0
+Clave=ArtJuego
+Archivo=ArtJuego
+Modulos=(Lista)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Juegos
+Singular=Juego
+LlavePrimaria=Articulo<BR>Juego
+CampoID=ID
+SQL=SELECT<BR>  Articulo,<BR>  Juego,<BR>  Descripcion,<BR>  Cantidad,<BR>  CantidadVariable,<BR>  PrecioIndependiente,<BR>  Opcional,<BR>  SinOpcionOmision,<BR>  ListaPreciosEsp,<BR>  HeredarOpcion<BR><BR>FROM<BR>  ArtJuego
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Tamano=20
+TamanoValidacion=20
+ValorPorOmision=Info.Articulo
+Mayusculas=S
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad requerida
+TipoDatos=NumFlotante
+TamanoValidacion=10
+ValorPorOmision=1
+
+[CantidadVariable]
+Clave=CantidadVariable
+Nombre=Permite variar la cantidad al momento de vender
+TipoDatos=Lógico
+TamanoValidacion=10
+ValorPorOmision=Verdadero
+
+[PrecioIndependiente]
+Clave=PrecioIndependiente
+Nombre=Precio independiente del precio del juego
+TipoDatos=Lógico
+TamanoValidacion=10
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=ListaPreciosEsp
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción del Componente
+Tamano=100
+TamanoValidacion=100
+Requerido=
+TipoDatos=Texto
+
+[SinOpcionOmision]
+Clave=SinOpcionOmision
+Nombre=sin Opción (por Omisión)
+TipoDatos=Lógico
+TamanoValidacion=10
+ValorPorOmision=Falso
+
+[Opcional]
+Clave=Opcional
+Nombre=Componente Opcional
+TipoDatos=Lógico
+TamanoValidacion=10
+ValorPorOmision=Falso
+
+[Juego]
+Clave=Juego
+Nombre=Clave Orden
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+ValorPorOmision=IncLetras(SQL(<T>SELECT MAX(Juego) FROM ArtJuego WHERE Articulo = :tArticulo<T>,Info.Articulo))
+TipoDatos=Texto
+
+[ListaPreciosEsp]
+Clave=ListaPreciosEsp
+Nombre=Lista Precios Especifica
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=PrecioIndependiente
+TipoDatos=Texto
+
+[HeredarOpcion]
+Clave=HeredarOpcion
+Nombre=Heredar Opción
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Tabla.Modulos]
+(Inicio)=VTAS
+VTAS=INV
+INV=COMS
+COMS=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Articulo
+Articulo=Juego
+Juego=Descripcion
+Descripcion=Cantidad
+Cantidad=CantidadVariable
+CantidadVariable=PrecioIndependiente
+PrecioIndependiente=Opcional
+Opcional=SinOpcionOmision
+SinOpcionOmision=ListaPreciosEsp
+ListaPreciosEsp=HeredarOpcion
+HeredarOpcion=(Fin)

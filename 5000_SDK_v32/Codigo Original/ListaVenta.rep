@@ -1,0 +1,104 @@
+[Reporte]
+Clave=ListaVenta
+Nombre=Venta
+Icono=0
+Vista=Venta
+Tipo=Reporte
+SubmenuPreliminar=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 8, Negro, []}
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Caracteres=132
+Renglones=66
+MargenInferior=2
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FormatoSinConexion=S
+ASCIISinModos=S
+Puerto=LPT1
+Parametros=S
+Columnas=1
+PosicionInicialAltura=450
+PosicionInicialAncho=630
+
+[Formato]
+ListaLineas=Detalle
+VentanaIzquierda=192
+VentanaArriba=174
+VentanaAltura=420
+VentanaAncho=640
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Detalle
+Objetos=4
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=4
+AnchoTexto=22
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Venta.Mov
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=2
+AnchoTexto=11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Venta.MovID
+
+[C1]
+Celda=C1
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=11
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Venta.Cliente
+
+[D1]
+Celda=D1
+Alineacion=Izquierda
+AnchoEnCm=6.5
+AnchoTexto=35
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=SQL(<T>SELECT Nombre FROM Cte WHERE Cliente = <T>+Comillas(Venta.Cliente))

@@ -1,0 +1,41 @@
+[Dialogo]
+Clave=GenerarSAUXServicio
+Nombre=Servicio
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Servicio
+PosicionInicialIzquierda=673
+PosicionInicialArriba=386
+PosicionInicialAlturaCliente=90
+PosicionInicialAncho=254
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaExclusiva=S
+VentanaSiempreAlFrente=S
+
+
+[Acciones.Servicio]
+Nombre=Servicio
+Boton=0
+NombreDesplegar=Generar &Servicio
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarSAUXPendiente
+Activo=S
+Visible=S
+
+
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.SAUXServicio)
+[Dialogo.ListaAcciones]
+(Inicio)=Servicio
+Servicio=servicio1
+servicio1=(Fin)

@@ -1,0 +1,30 @@
+[Tabla]
+Icono=0
+Clave=ProgramaSectorial
+Archivo=ProgramaSectorial
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Programa Sectorial
+Singular=Programa Sectorial
+LlavePrimaria=ProgramaSectorial
+SQL=SELECT<BR>  ProgramaSectorial,<BR>  Descripcion<BR><BR>FROM<BR>  ProgramaSectorial
+
+[ProgramaSectorial]
+Clave=ProgramaSectorial
+Nombre=Programa Sectorial
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=255
+Tamano=255
+
+[Tabla.ListaCampos]
+(Inicio)=ProgramaSectorial
+ProgramaSectorial=Descripcion
+Descripcion=(Fin)

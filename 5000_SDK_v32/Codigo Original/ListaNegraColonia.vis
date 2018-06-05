@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ListaNegraColonia
+Nombre=Lista Negra
+Modulos=(Todos)
+Singular=Lista Negra
+ListaTablas=ListaNegraColonia
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ListaNegraColonia.Colonia
+TablaPrincipal=ListaNegraColonia
+CamposBusquedaRapida=ListaNegraColonia.Colonia
+UsarJOIN=S
+SQL=SELECT<BR>  ListaNegraColonia.Colonia<BR><BR>FROM<BR>  ListaNegraColonia
+
+[ListaNegraColonia.Colonia]
+Clave=ListaNegraColonia.Colonia
+LigaTabla=ListaNegraColonia
+LigaCampo=Colonia
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Colonia

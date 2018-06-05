@@ -1,0 +1,568 @@
+[Tabla]
+Icono=0
+Clave=ProvSucursal
+Archivo=ProvSucursal
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Sucursales
+Singular=Sucursal
+LlavePrimaria=(Lista)
+ControlEstatus=S
+ControlCambios=S
+CampoEstatus=Estatus
+CampoUltimoCambio=UltimoCambio
+EstatusDefault=ALTA
+CampoID=ID
+ListaRelaciones=(Lista)
+
+SQL=(Lista)
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Tamano=100
+TamanoValidacion=60
+TipoDatos=Texto
+
+[Direccion]
+Clave=Direccion
+Nombre=Dirección
+Tamano=100
+TamanoValidacion=250
+TipoDatos=Texto
+
+[Colonia]
+Clave=Colonia
+Nombre=Colonia
+Tamano=30
+TamanoValidacion=30
+ValorRefrescar=Si(Info.Copiar, Info.Colonia, Colonia)
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.Colonia
+TipoDatos=Texto
+
+[CodigoPostal]
+Clave=CodigoPostal
+Nombre=Código Postal
+Tamano=15
+TamanoValidacion=10
+Mayusculas=S
+ValorRefrescar=Si(Info.Copiar, Info.CodigoPostal, CodigoPostal)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.CodigoPostal
+ConRefrescar=S
+ListaRefrescar=(Lista)
+TipoDatos=Texto
+
+[Poblacion]
+Clave=Poblacion
+Nombre=Población
+Tamano=100
+TamanoValidacion=30
+TipoDatos=Texto
+
+[Estado]
+Clave=Estado
+Nombre=Estado
+Tamano=30
+TamanoValidacion=30
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PaisEstadoMexico
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+TipoDatos=Texto
+
+[Pais]
+Clave=Pais
+Nombre=País
+AyudaEnCaptura=Lista de Opciones
+Tamano=30
+TamanoValidacion=30
+OpcionesPresentacion=Consulta Opcional
+OpcionesColumnas=1
+OpcionesPredefinidas=Paises
+OpcionesRenglones=8
+ValorRefrescar=Si(Info.Copiar, Info.Pais, Pais)
+TipoDatos=Texto
+
+[Zona]
+Clave=Zona
+Nombre=Zona
+AyudaEnCaptura=Validaciones Memoria
+Tamano=30
+TamanoValidacion=50
+AyudaMemTabla=Zona
+AyudaMemOpc=Validar captura en la lista
+AyudaMemEnBlanco=S
+AyudaMemRenglones=12
+AyudaForma=ZonaLista
+AyudaVista=Zona
+AyudaCampo=Zona.Zona
+AyudaMemAvanzada=S
+ValorRefrescar=Si(Info.Copiar, Info.Zona)
+TipoDatos=Texto
+
+[Telefonos]
+Clave=Telefonos
+Nombre=Teléfonos
+Tamano=100
+TamanoValidacion=100
+TipoDatos=Texto
+
+[Fax]
+Clave=Fax
+Nombre=Fax
+OpcionesColumnas=1
+OpcionesRenglones=8
+Tamano=50
+TamanoValidacion=30
+TipoDatos=Texto
+
+[PedirTono]
+Clave=PedirTono
+Nombre=Pedir Tono
+TipoDatos=Lógico
+TamanoValidacion=10
+ValorPorOmision=Falso
+
+[Contacto1]
+Clave=Contacto1
+Nombre=Contactos
+Tamano=50
+TamanoValidacion=50
+TipoDatos=Texto
+
+[Contacto2]
+Clave=Contacto2
+Nombre=Contacto 2
+Tamano=50
+TamanoValidacion=50
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Tamano=15
+TamanoValidacion=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[UltimoCambio]
+Clave=UltimoCambio
+Nombre=Ultimo Cambio
+TipoDatos=FechaHora
+TamanoValidacion=15
+
+[ZonaImpuesto]
+Clave=ZonaImpuesto
+Nombre=Zona Impuestos
+AyudaEnCaptura=Validaciones Memoria
+Tamano=30
+TamanoValidacion=50
+AyudaMemTabla=ZonaImp
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+AyudaMemRenglones=12
+TipoDatos=Texto
+
+[eMail1]
+Clave=eMail1
+Nombre=Correo electrónico
+Tamano=50
+TamanoValidacion=30
+TipoDatos=Texto
+
+[eMail2]
+Clave=eMail2
+Nombre=Correo electrónico 2
+Tamano=50
+TamanoValidacion=30
+TipoDatos=Texto
+
+[ID]
+Clave=ID
+Nombre=Número
+TipoDatos=Numérico
+TamanoValidacion=10
+ValorPorOmision=SQL(<T>SELECT MAX(ID) FROM ProvSucursal WHERE Proveedor = :t1<T>, Info.Proveedor)+1
+CondicionEdicion=no TieneMovimientos
+
+[Mensaje]
+Clave=Mensaje
+Nombre=Mensaje Emergente
+TamanoValidacion=50x3
+Tamano=50
+TipoDatos=Texto
+
+[Extencion1]
+Clave=Extencion1
+Nombre=Extensión 1
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Extencion2]
+Clave=Extencion2
+Nombre=Extensión 2
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Alta]
+Clave=Alta
+Nombre=Alta
+TamanoValidacion=15
+TipoDatos=FechaHora
+ValorPorOmision=Ahora
+
+[EntreCalles]
+Clave=EntreCalles
+Nombre=Entre las Calles
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Plano]
+Clave=Plano
+Nombre=Plano
+Visible=S
+TamanoValidacion=15
+Tamano=15
+Mayusculas=S
+TipoDatos=Texto
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=AgenteEnviarA
+Mayusculas=S
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoría
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CteCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CteGrupo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Familia]
+Clave=Familia
+Nombre=Familia
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=CteFam
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Delegacion]
+Clave=Delegacion
+Nombre=Delegación
+Visible=S
+TamanoValidacion=30
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=(Lista)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalLista
+AyudaVista=CodigoPostal
+AyudaCampo=CodigoPostal.Delegacion
+ValorRefrescar=Si(Info.Copiar, Info.Delegacion, Delegacion)
+TipoDatos=Texto
+
+[Ruta]
+Clave=Ruta
+Nombre=Ruta
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Ruta
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+ValorRefrescar=Si(Info.Copiar, Asigna(Info.Copiar, Falso) Info.Ruta, Ruta)
+TipoDatos=Texto
+
+[Contrasena]
+Clave=Contrasena
+Nombre=Contraseña
+Visible=S
+TamanoValidacion=10
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+TipoDatos=Texto
+
+[eMailAuto]
+Clave=eMailAuto
+Nombre=Avisos Automáticos (e-mail)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+[Encargado]
+Clave=Encargado
+Nombre=Encargado
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[DireccionNumero]
+Clave=DireccionNumero
+Nombre=Número Exterior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[GLN]
+Clave=GLN
+Nombre=GLN
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Mayusculas=S
+TipoDatos=Texto
+
+[DireccionNumeroInt]
+Clave=DireccionNumeroInt
+Nombre=Número Interior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[Proveedor]
+Clave=Proveedor
+Nombre=Proveedor
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+ValorPorOmision=Info.Proveedor
+TipoDatos=Texto
+
+[Relaciones.Prov]
+TipoRelacion=Forzosa
+LlaveLocal=Proveedor
+Clave=Prov
+TablaRemota=Prov
+LlaveRemota=Proveedor
+
+
+[Colonia.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[CodigoPostal.ListaRefrescar]
+(Inicio)=Delegacion
+Delegacion=Colonia
+Colonia=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+[Delegacion.ListaRefrescar]
+(Inicio)=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Estado
+Estado=Pais
+Pais=Ruta
+Ruta=(Fin)
+
+[Relaciones.AgenteEnviarA]
+TipoRelacion=Forzosa
+LlaveLocal=Agente
+Clave=AgenteEnviarA
+TablaRemota=AgenteEnviarA
+LlaveRemota=Agente
+
+[Tabla.ListaCampos]
+(Inicio)=Proveedor
+Proveedor=ID
+ID=Clave
+Clave=Nombre
+Nombre=Direccion
+Direccion=DireccionNumero
+DireccionNumero=DireccionNumeroInt
+DireccionNumeroInt=EntreCalles
+EntreCalles=Plano
+Plano=Observaciones
+Observaciones=Delegacion
+Delegacion=Colonia
+Colonia=CodigoPostal
+CodigoPostal=Poblacion
+Poblacion=Estado
+Estado=Pais
+Pais=Zona
+Zona=Telefonos
+Telefonos=Fax
+Fax=PedirTono
+PedirTono=Contacto1
+Contacto1=Contacto2
+Contacto2=eMail1
+eMail1=eMail2
+eMail2=ZonaImpuesto
+ZonaImpuesto=Estatus
+Estatus=UltimoCambio
+UltimoCambio=Alta
+Alta=Mensaje
+Mensaje=Extencion1
+Extencion1=Extencion2
+Extencion2=Agente
+Agente=Categoria
+Categoria=Grupo
+Grupo=Familia
+Familia=TieneMovimientos
+TieneMovimientos=Ruta
+Ruta=Contrasena
+Contrasena=eMailAuto
+eMailAuto=Encargado
+Encargado=GLN
+GLN=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Proveedor,
+  Proveedor,=  ID,
+  ID,=  Nombre,
+  Nombre,=  Direccion,
+  Direccion,=  DireccionNumero,
+  DireccionNumero,=  DireccionNumeroInt,
+  DireccionNumeroInt,=  EntreCalles,
+  EntreCalles,=  Plano,
+  Plano,=  Observaciones,
+  Observaciones,=  Colonia,
+  Colonia,=  Delegacion,
+  Delegacion,=  Poblacion,
+  Poblacion,=  Estado,
+  Estado,=  Pais,
+  Pais,=  Zona,
+  Zona,=  Ruta,
+  Ruta,=  CodigoPostal,
+  CodigoPostal,=  Telefonos,
+  Telefonos,=  Fax,
+  Fax,=  PedirTono,
+  PedirTono,=  Contacto1,
+  Contacto1,=  Contacto2,
+  Contacto2,=  Extencion1,
+  Extencion1,=  Extencion2,
+  Extencion2,=  eMail1,
+  eMail1,=  eMail2,
+  eMail2,=  eMailAuto,
+  eMailAuto,=  ZonaImpuesto,
+  ZonaImpuesto,=  Agente,
+  Agente,=  Estatus,
+  Estatus,=  UltimoCambio,
+  UltimoCambio,=  Alta,
+  Alta,=  Mensaje,
+  Mensaje,=  Categoria,
+  Categoria,=  Grupo,
+  Grupo,=  Familia,
+  Familia,=  TieneMovimientos,
+  TieneMovimientos,=  Contrasena,
+  Contrasena,=  Clave,
+  Clave,=  Encargado,
+  Encargado,=  GLN
+  GLN=FROM
+FROM=  ProvSucursal
+  ProvSucursal=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Prov
+Prov=AgenteEnviarA
+AgenteEnviarA=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Proveedor
+Proveedor=ID
+ID=(Fin)

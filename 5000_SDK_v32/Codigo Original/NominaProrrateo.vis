@@ -1,0 +1,33 @@
+
+[Vista]
+Icono=0
+Clave=NominaProrrateo
+Nombre=NominaProrrateo
+Modulos=(Todos)
+Singular=NominaProrrateo
+ListaTablas=NominaProrrateo
+TablaPrincipal=NominaProrrateo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=NominaProrrateo.Prorrateo
+SQL=(Lista)
+[NominaProrrateo.Prorrateo]
+Clave=NominaProrrateo.Prorrateo
+Nombre=Prorrateo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=NominaProrrateo
+LigaCampo=Prorrateo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Prorrateo
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=NominaProrrateo.Prorrateo
+NominaProrrateo.Prorrateo=FROM NominaProrrateo
+FROM NominaProrrateo=(Fin)

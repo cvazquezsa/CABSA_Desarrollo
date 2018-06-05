@@ -1,0 +1,51 @@
+[Tabla]
+Icono=0
+Clave=EmpresaCfgCxcVoucher
+Archivo=EmpresaCfgCxcVoucher
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=Empresa<BR>Mov
+CampoMov=Mov
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Mov,<BR>  MovGenerar<BR><BR>FROM<BR>  EmpresaCfgCxcVoucher
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+ValorPorOmision=Empresa
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento sin Aceptar
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+
+[MovGenerar]
+Clave=MovGenerar
+Nombre=Movimiento a Generar
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Movimientos Módulo
+OpcionesRenglones=8
+OpcionesModulo=CXC
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Mov
+Mov=MovGenerar
+MovGenerar=(Fin)

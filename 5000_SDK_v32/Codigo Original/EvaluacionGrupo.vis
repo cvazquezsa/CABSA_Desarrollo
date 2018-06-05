@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=EvaluacionGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=EvaluacionGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=EvaluacionGrupo.Grupo
+TablaPrincipal=EvaluacionGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  EvaluacionGrupo.Grupo<BR><BR>FROM<BR>  EvaluacionGrupo
+
+[EvaluacionGrupo.Grupo]
+Clave=EvaluacionGrupo.Grupo
+LigaTabla=EvaluacionGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

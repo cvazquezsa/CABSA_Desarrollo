@@ -1,0 +1,43 @@
+[Vista]
+Icono=0
+Clave=CambioPresentacionSugerir
+Nombre=Cambio de Presentación
+Modulos=(Todos)
+Singular=Cambio de Presentación
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+SQL=spCambioPresentacionSugerir <T>{Empresa}<T>, <T>{Info.Almacen}<T>, <T>{Info.Articulo}<T>, {Info.Cantidad}
+
+[Articulo]
+Clave=Articulo
+Nombre=Artículo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Articulo
+Mayusculas=S
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=Descripcion
+
+[Disponible]
+Clave=Disponible
+Nombre=Disponible
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Disponible
+Cantidad=S
+
+[Vista.ListaCampos]
+(Inicio)=Articulo
+Articulo=Descripcion
+Descripcion=Disponible
+Disponible=(Fin)

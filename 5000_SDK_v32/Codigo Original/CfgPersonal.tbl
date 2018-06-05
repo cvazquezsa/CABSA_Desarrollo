@@ -1,0 +1,536 @@
+[Tabla]
+Icono=0
+Clave=CfgPersonal
+Archivo=CfgPersonal
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Configuración
+Singular=Configuración
+LlavePrimaria=Configuracion
+SQL=SELECT<BR>  Configuracion,<BR>  Sueldo,<BR>  Faltas,<BR>  RetardosFalta,<BR>  Incapacidades,<BR>  HorasExtras,<BR>  DescansosLaborados,<BR>  DescansosLaboradosFactor,<BR>  DomingosEnJornada,<BR>  DomingosLaborados,<BR>  DomingosLaboradosFactor,<BR>  DomingosPrima,<BR>  FestivosLaborados,<BR>  FestivosLaboradosFactor,<BR>  Vales,<BR>  ValesPorcentaje,<BR>  ValesBase,<BR>  PremioAsistencia,<BR>  PremioAsistenciaPorcentaje,<BR>  PremioAsistenciaBase,<BR>  PremioPuntualidad,<BR>  PremioPuntualidadPorcentaje,<BR>  PremioPuntualidadBase,<BR>  VacacionesDisfrutadas,<BR>  VacacionesPagadas,<BR>  VacacionesAniversario,<BR>  VacacionesPagoPrima,<BR>  VacacionesPrima,<BR>  DiasAguinaldo<BR><BR>FROM<BR>  CfgPersonal
+
+[Configuracion]
+Clave=Configuracion
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Faltas]
+Clave=Faltas
+Nombre=Faltas
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ValorPorOmision=<T>Dias Habiles Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Incapacidades]
+Clave=Incapacidades
+Nombre=Incapacidades
+Visible=S
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Dias Habiles Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Sueldo]
+Clave=Sueldo
+Nombre=Sueldo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Dias Periodo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DescansosLaborados]
+Clave=DescansosLaborados
+Nombre=Descansos Laborados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ValorPorOmision=<T>Dias Periodo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DescansosLaboradosFactor]
+Clave=DescansosLaboradosFactor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=2
+AyudaEnCaptura=Calculadora
+
+[DomingosLaborados]
+Clave=DomingosLaborados
+Nombre=Domingos Laborados
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Dias Periodo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DomingosLaboradosFactor]
+Clave=DomingosLaboradosFactor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=2
+
+[FestivosLaborados]
+Clave=FestivosLaborados
+Nombre=Festivos Laborados
+Visible=S
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Dias Periodo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[FestivosLaboradosFactor]
+Clave=FestivosLaboradosFactor
+Nombre=Factor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=2
+
+[VacacionesDisfrutadas]
+Clave=VacacionesDisfrutadas
+Nombre=Vacaciones Disfrutadas
+Visible=S
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Dias Habiles Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VacacionesPagadas]
+Clave=VacacionesPagadas
+Nombre=Vacaciones Pagadas
+Visible=S
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ValorPorOmision=<T>Dias Habiles Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[RetardosFalta]
+Clave=RetardosFalta
+Nombre=# Retardos Generan Falta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=3
+
+[Vales]
+Clave=Vales
+Nombre=Vales
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Siempre<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[ValesPorcentaje]
+Clave=ValesPorcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=10
+AyudaEnCaptura=Calculadora
+
+[ValesBase]
+Clave=ValesBase
+Nombre=Base
+Visible=S
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Sueldo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PremioAsistencia]
+Clave=PremioAsistencia
+Nombre=Premio Asistencia
+Visible=S
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Siempre<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PremioAsistenciaPorcentaje]
+Clave=PremioAsistenciaPorcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=10
+
+[PremioAsistenciaBase]
+Clave=PremioAsistenciaBase
+Nombre=Base
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Sueldo<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PremioPuntualidad]
+Clave=PremioPuntualidad
+Nombre=Premio Puntualidad
+Visible=S
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Siempre<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[PremioPuntualidadPorcentaje]
+Clave=PremioPuntualidadPorcentaje
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=10
+
+[PremioPuntualidadBase]
+Clave=PremioPuntualidadBase
+Nombre=Base
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Sueldo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[DomingosPrima]
+Clave=DomingosPrima
+Nombre=% Prima Dominical
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=25
+
+[DomingosEnJornada]
+Clave=DomingosEnJornada
+Nombre=Domingos en Jornada
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Domingos Periodo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesPredefinidas=Ninguna
+TipoDatos=Texto
+
+[HorasExtras]
+Clave=HorasExtras
+Nombre=Horas Extras
+Visible=S
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Dias Periodo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VacacionesPagoPrima]
+Clave=VacacionesPagoPrima
+Nombre=Pago Prima
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=30
+ValorPorOmision=<T>Aniversario<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[VacacionesPrima]
+Clave=VacacionesPrima
+Nombre=% Prima Vacacional
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+ValorPorOmision=25
+
+[VacacionesAniversario]
+Clave=VacacionesAniversario
+Nombre=Vacaciones Aniversario
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Dias Habiles Promedio<T>
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[DiasAguinaldo]
+Clave=DiasAguinaldo
+Nombre=Dias Aguinaldo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=15
+
+[Tabla.ListaCampos]
+(Inicio)=Configuracion
+Configuracion=Sueldo
+Sueldo=Faltas
+Faltas=RetardosFalta
+RetardosFalta=Incapacidades
+Incapacidades=HorasExtras
+HorasExtras=DescansosLaborados
+DescansosLaborados=DescansosLaboradosFactor
+DescansosLaboradosFactor=DomingosLaborados
+DomingosLaborados=DomingosLaboradosFactor
+DomingosLaboradosFactor=DomingosPrima
+DomingosPrima=DomingosEnJornada
+DomingosEnJornada=FestivosLaborados
+FestivosLaborados=FestivosLaboradosFactor
+FestivosLaboradosFactor=Vales
+Vales=ValesPorcentaje
+ValesPorcentaje=ValesBase
+ValesBase=PremioAsistencia
+PremioAsistencia=PremioAsistenciaPorcentaje
+PremioAsistenciaPorcentaje=PremioAsistenciaBase
+PremioAsistenciaBase=PremioPuntualidad
+PremioPuntualidad=PremioPuntualidadPorcentaje
+PremioPuntualidadPorcentaje=PremioPuntualidadBase
+PremioPuntualidadBase=VacacionesPagoPrima
+VacacionesPagoPrima=VacacionesPrima
+VacacionesPrima=VacacionesAniversario
+VacacionesAniversario=VacacionesDisfrutadas
+VacacionesDisfrutadas=VacacionesPagadas
+VacacionesPagadas=DiasAguinaldo
+DiasAguinaldo=(Fin)
+
+[Faltas.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[Incapacidades.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[Sueldo.ListaOpciones]
+(Inicio)=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=(Fin)
+
+[DescansosLaborados.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[DomingosLaborados.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[FestivosLaborados.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[VacacionesDisfrutadas.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[VacacionesPagadas.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[Vales.ListaOpciones]
+(Inicio)=Siempre
+Siempre=sin Faltas
+sin Faltas=sin Faltas ni Retardos
+sin Faltas ni Retardos=Nunca
+Nunca=(Fin)
+
+[ValesBase.ListaOpciones]
+(Inicio)=Sueldo
+Sueldo=Sueldo menos Faltas
+Sueldo menos Faltas=Sueldo menos Ausentismo
+Sueldo menos Ausentismo=(Fin)
+
+[PremioAsistencia.ListaOpciones]
+(Inicio)=Siempre
+Siempre=sin Faltas
+sin Faltas=sin Faltas ni Retardos
+sin Faltas ni Retardos=Nunca
+Nunca=(Fin)
+
+[PremioAsistenciaBase.ListaOpciones]
+(Inicio)=Sueldo
+Sueldo=Sueldo menos Faltas
+Sueldo menos Faltas=Sueldo menos Ausentismo
+Sueldo menos Ausentismo=(Fin)
+
+[PremioPuntualidad.ListaOpciones]
+(Inicio)=Siempre
+Siempre=sin Faltas
+sin Faltas=sin Faltas ni Retardos
+sin Faltas ni Retardos=Nunca
+Nunca=(Fin)
+
+[PremioPuntualidadBase.ListaOpciones]
+(Inicio)=Sueldo
+Sueldo=Sueldo menos Faltas
+Sueldo menos Faltas=Sueldo menos Ausentismo
+Sueldo menos Ausentismo=(Fin)
+
+[DomingosEnJornada.ListaOpciones]
+(Inicio)=Domingos Periodo
+Domingos Periodo=Domingos Promedio
+Domingos Promedio=(Fin)
+
+[HorasExtras.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)
+
+[VacacionesPagoPrima.ListaOpciones]
+(Inicio)=Aniversario
+Aniversario=Vacaciones Disfrutadas/Pagadas
+Vacaciones Disfrutadas/Pagadas=(Fin)
+
+[VacacionesAniversario.ListaOpciones]
+(Inicio)=No
+No=Dias Periodo
+Dias Periodo=Dias Habiles Promedio
+Dias Habiles Promedio=Dias Naturales
+Dias Naturales=SDI
+SDI=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=MovCtoGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=MovCtoGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=MovCtoGrupo.Grupo
+TablaPrincipal=MovCtoGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  MovCtoGrupo.Grupo<BR><BR>FROM<BR>  MovCtoGrupo
+
+[MovCtoGrupo.Grupo]
+Clave=MovCtoGrupo.Grupo
+LigaTabla=MovCtoGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
