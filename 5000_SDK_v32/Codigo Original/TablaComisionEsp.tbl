@@ -1,0 +1,44 @@
+[Tabla]
+Icono=0
+Clave=TablaComisionEsp
+Archivo=TablaComisionEsp
+Modulos=(Todos)
+TipoTabla=Cuentas
+ListaCampos=(Lista)
+Nombre=Comisiones Especiales
+Singular=Comisiones Especiales
+LlavePrimaria=TablaComisionEsp
+SQL=SELECT<BR>  TablaComisionEsp,<BR>  Tipo<BR><BR>FROM<BR>  TablaComisionEsp
+
+[TablaComisionEsp]
+Clave=TablaComisionEsp
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+
+[Tabla.ListaCampos]
+(Inicio)=TablaComisionEsp
+TablaComisionEsp=Tipo
+Tipo=(Fin)
+
+[Tipo.ListaOpciones]
+(Inicio)=Comision Cobranza
+Comision Cobranza=Bono Cobranza
+Bono Cobranza=Premiacion Cobranza
+Premiacion Cobranza=Comision Venta
+Comision Venta=Bono Venta
+Bono Venta=Bono Proporcional
+Bono Proporcional=(Fin)

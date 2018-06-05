@@ -1,0 +1,49 @@
+
+[Tabla]
+Icono=0
+Clave=TablaValorD
+Nombre=Tabla ValorD
+Archivo=TablaValorD
+Modulos=(Todos)
+Singular=Tabla ValorD
+
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+
+SQL=(Lista)
+LlavePrimaria=(Lista)
+[TablaValor]
+Clave=TablaValor
+Nombre=TablaValor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Tabla
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Tabla.ListaCampos]
+(Inicio)=TablaValor
+TablaValor=Valor
+Valor=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TablaValor,
+TablaValor,=Valor
+Valor=FROM TablaValorD
+FROM TablaValorD=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=TablaValor
+TablaValor=Valor
+Valor=(Fin)

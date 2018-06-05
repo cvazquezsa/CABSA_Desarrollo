@@ -1,0 +1,111 @@
+
+[Tabla]
+Icono=0
+Clave=SincroISTransmisorSucursal
+Archivo=SincroISTransmisorSucursal
+Modulos=(Todos)
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=Sucursal
+ControlSucursal=S
+CampoSucursal=Sucursal
+SQL=(Lista)
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Servidor]
+Clave=Servidor
+Nombre=Servidor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista( <T>EXEC spLinkedServers<T>)
+[BaseDatosNombre]
+Clave=BaseDatosNombre
+Nombre=Base de Datos
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+
+
+
+
+
+
+
+
+
+
+[SincroISDropBox]
+Clave=SincroISDropBox
+Nombre=Usar Drop Box
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+ValorPorOmision=Verdadero
+
+
+CondicionDespliege=SQL(<T>SELECT ISNULL(SincroISDropBox, 0) FROM Version<T>)
+
+
+
+
+
+
+[HabilitarCompresion]
+Clave=HabilitarCompresion
+Nombre=Habilitar Compresión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+
+ValorPorOmision=Falso
+
+
+[Tabla.ListaCampos]
+(Inicio)=Sucursal
+Sucursal=Servidor
+Servidor=BaseDatosNombre
+BaseDatosNombre=SincroISDropBox
+SincroISDropBox=HabilitarCompresion
+HabilitarCompresion=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Sucursal,
+Sucursal,=Servidor,
+Servidor,=BaseDatosNombre,
+BaseDatosNombre,=SincroISDropBox,
+SincroISDropBox,=HabilitarCompresion
+HabilitarCompresion=FROM SincroISTransmisorSucursal
+FROM SincroISTransmisorSucursal=(Fin)

@@ -1,0 +1,41 @@
+[Tabla]
+Icono=0
+Clave=TareaEstado
+Archivo=TareaEstado
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Estados
+Singular=Estados
+LlavePrimaria=Orden<BR>Estado
+SQL=SELECT<BR>  Orden,<BR>  Estado,<BR>  NombrePlural<BR><BR>FROM<BR>  TareaEstado
+
+[Orden]
+Clave=Orden
+Nombre=Orden
+TamanoValidacion=10
+TipoDatos=Numérico
+Requerido=S
+ValorPorOmision=1
+
+[Estado]
+Clave=Estado
+Nombre=Nombre singular
+TamanoValidacion=25
+Tamano=30
+Requerido=S
+TipoDatos=Texto
+
+[NombrePlural]
+Clave=NombrePlural
+Nombre=Nombre plural
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Estado
+Estado=Orden
+Orden=NombrePlural
+NombrePlural=(Fin)

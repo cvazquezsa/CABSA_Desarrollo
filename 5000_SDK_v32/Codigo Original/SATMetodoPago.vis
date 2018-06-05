@@ -1,0 +1,31 @@
+
+[Vista]
+Icono=0
+Clave=SATMetodoPago
+Modulos=(Todos)
+ListaTablas=SATMetodoPago
+TablaPrincipal=SATMetodoPago
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=SATMetodoPago.Clave
+SQL=(Lista)
+[SATMetodoPago.Clave]
+Clave=SATMetodoPago.Clave
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+LigaTabla=SATMetodoPago
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Clave
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=SATMetodoPago.Clave
+SATMetodoPago.Clave=FROM SATMetodoPago
+FROM SATMetodoPago=(Fin)

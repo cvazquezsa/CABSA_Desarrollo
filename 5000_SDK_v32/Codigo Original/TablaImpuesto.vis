@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=TablaImpuesto
+Nombre=Tabla Impuestos
+Modulos=(Todos)
+Singular=Tabla Impuestos
+ListaTablas=TablaImpuesto
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=TablaImpuesto
+UsarJOIN=S
+SQL=SELECT<BR>  TablaImpuesto.TablaImpuesto,<BR>  TablaImpuesto.PeriodoTipo<BR><BR>FROM<BR>  TablaImpuesto
+
+[TablaImpuesto.TablaImpuesto]
+Clave=TablaImpuesto.TablaImpuesto
+LigaTabla=TablaImpuesto
+LigaCampo=TablaImpuesto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TablaImpuesto
+
+[TablaImpuesto.PeriodoTipo]
+Clave=TablaImpuesto.PeriodoTipo
+LigaTabla=TablaImpuesto
+LigaCampo=PeriodoTipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=PeriodoTipo
+
+[Vista.ListaCampos]
+(Inicio)=TablaImpuesto.TablaImpuesto
+TablaImpuesto.TablaImpuesto=TablaImpuesto.PeriodoTipo
+TablaImpuesto.PeriodoTipo=(Fin)

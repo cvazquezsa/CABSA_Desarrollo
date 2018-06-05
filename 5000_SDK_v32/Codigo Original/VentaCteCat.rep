@@ -1,0 +1,671 @@
+[Reporte]
+Clave=VentaCteCat
+Icono=0
+TamanoPagina=2
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+Orientacion=por Omision
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros=S
+Columnas=1
+PosicionInicialAltura=575
+PosicionInicialAncho=802
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Ascii=S
+Impresora=S
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=(por Omisión)
+Tipo=Reporte
+Nombre=Rep.Ventas
+Vista=VentaCteCat
+Filtros=S
+TieneFiltroAbierto=S
+FiltroAbierto=v.Estatus = <T>CONCLUIDO<T> AND<BR>v.Empresa = <T>{Empresa}<T> AND<BR>v.FechaEmision BETWEEN <T>{FechaFormatoServidor(Info.FechaD)}<T> AND <T>{FechaFormatoServidor(Info.FechaA)}<T> AND<BR>v.Mov IN ({<BR>ListaEntreComillas(<BR>Si(Rep.Ventas en (<T>Ventas y Devoluciones<T>, <T>Ventas<T>),       MovTipoNombresEnLista(<T>VTAS<T>, VTAS.F)+MovTipoNombresEnLista(<T>VTAS<T>, VTAS.FAR)+MovTipoNombresEnLista(<T>VTAS<T>, VTAS.FB)+MovTipoNombresEnLista(<T>VTAS<T>, VTAS.FM))+<BR>Si(Rep.Ventas en (<T>Ventas y Devoluciones<T>, <T>Devoluciones<T>), MovTipoNombresEnLista(<T>VTAS<T>, VTAS.D)+MovTipoNombresEnLista(<T>VTAS<T>, VTAS.DF)+MovTipoNombresEnLista(<T>VTAS<T>, VTAS.B)), <T>, <T>)<BR>})
+PosicionInicialAlturaCliente=548
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Detalle<BR>Fin: Moneda<BR>Pie
+VentanaIzquierda=67
+VentanaArriba=187
+VentanaAltura=394
+VentanaAncho=890
+PanelArriba=162
+PanelBotones=79
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.37
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Objetos=0
+Seccion=Encabezado Página
+AltoEnCm=0.26
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Marco=N
+ExpresionesAntesImprimir=
+Renglones=1
+FondoColor=Blanco
+BordeAbajo=N
+EstiloAbajo=0
+
+[Linea3]
+Clave=Encabezado
+Objetos=8
+Seccion=Encabezado Página
+Marco=N
+EstiloMarco=0
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Visible=
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+BordeArriba=N
+EstiloArriba=0
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=11
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=ReporteNombre+<T> (<T>+FechaEnTexto(Info.FechaD,<T>dd/mmm/aaaa<T>) +<T> - <T>+FechaEnTexto(Info.FechaA,<T>dd/mmm/aaaa<T>)+<T>)<T>
+Marco=N
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=59
+FondoColor=Blanco
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[Linea4]
+Clave=Detalle
+Objetos=8
+Seccion=Detalle
+EstiloMarco=3
+AltoEnCm=0.4
+AVertical=Centrado
+Visible=
+Fuente={Arial, 8, Negro, []}
+Marco=N
+BordeAbajo=N
+EstiloAbajo=3
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+Grupo=
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+Activo=S
+Visible=S
+ClaveAccion=VentaCteCat
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=VentaCteCat
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea5]
+Clave=Fin: Moneda
+Objetos=8
+Seccion=Fin Grupo
+AltoEnCm=0.84
+AVertical=Arriba
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloMarco=0
+Visible=
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=S
+EstiloArriba=1
+Renglones=2
+FondoColor=Blanco
+Grupo=Moneda
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=3.29
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+EstiloMarco=0
+Expresion=<T>Total en <T>+Moneda
+BordeAbajo=N
+EstiloAbajo=0
+BordeArriba=N
+EstiloArriba=1
+AnchoTexto=17
+FondoColor=Blanco
+FormatoValidacion=
+CBTipo=UPC A
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=2.21
+EstiloMarco=0
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(PrecioTotal)
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+BordeAbajo=N
+EstiloAbajo=0
+AnchoTexto=12
+FondoColor=Blanco
+CBTipo=UPC A
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=8.61
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A3]
+Celda=A3
+Alineacion=Centrado
+AnchoEnCm=3.3
+AnchoTexto=18
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Categoría del Cliente<T>
+BordeAbajo=S
+CBTipo=UPC A
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(PrecioTotal)
+BordeAbajo=S
+CBTipo=UPC A
+
+[C3]
+Celda=C3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(DescuentosTotales)
+BordeAbajo=S
+CBTipo=UPC A
+
+[D3]
+Celda=D3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(SubTotal)
+BordeAbajo=S
+CBTipo=UPC A
+
+[E3]
+Celda=E3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Impuestos)
+BordeAbajo=S
+CBTipo=UPC A
+
+[F3]
+Celda=F3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=12
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(ImporteTotal)
+BordeAbajo=S
+CBTipo=UPC A
+
+[G3]
+Celda=G3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.2
+AnchoTexto=12
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(CostoTotal)
+BordeAbajo=S
+CBTipo=UPC A
+
+[H3]
+Celda=H3
+Alineacion=Centrado
+FormatoValidacion=
+AnchoEnCm=2.21
+AnchoTexto=16
+BordeArriba=N
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=<T>Utilidad<T>
+BordeAbajo=S
+CBTipo=UPC A
+
+[H4]
+Celda=H4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=16
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=SubTotal-CostoTotal
+EstiloMarco=3
+EstiloAbajo=3
+CBTipo=UPC A
+
+[Linea6]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+Grupo=
+AltoEnCm=0.4
+Renglones=1
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(DescuentosTotales)
+BordeAbajo=N
+CBTipo=UPC A
+
+[D5]
+Celda=D5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(SubTotal)
+BordeAbajo=N
+CBTipo=UPC A
+
+[E5]
+Celda=E5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(Impuestos)
+BordeAbajo=N
+CBTipo=UPC A
+
+[F5]
+Celda=F5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(ImporteTotal)
+BordeAbajo=N
+CBTipo=UPC A
+
+[G5]
+Celda=G5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(CostoTotal)
+BordeAbajo=N
+CBTipo=UPC A
+
+[H5]
+Celda=H5
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=16
+BordeArriba=S
+EstiloMarco=0
+EstiloArriba=1
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(SubTotal-CostoTotal)
+BordeAbajo=N
+CBTipo=UPC A
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=9
+AnchoTexto=15
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+FormatoValidacion=dddddd (hh:nn am/pm)
+BordeArriba=S
+CBTipo=UPC A
+
+[B6]
+Celda=B6
+Alineacion=Derecha
+FormatoValidacion=
+AnchoEnCm=10.61
+AnchoTexto=15
+BordeArriba=S
+EstiloArriba=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+CBTipo=UPC A
+
+[A2]
+Celda=A2
+Alineacion=Izquierda
+AnchoEnCm=2.79
+ExpresionMultiple=S
+AnchoTexto=15
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Del: <T>+FechaEnTexto(Info.FechaD, <T>dd/mmm/aaaa<T>)<BR><T>Al : <T>+FechaEnTexto(Info.FechaA, <T>dd/mmm/aaaa<T>)
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=3.29
+AnchoTexto=17
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Categoria
+CBTipo=UPC A
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=PrecioTotal
+CBTipo=UPC A
+
+[C4]
+Celda=C4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=DescuentosTotales
+CBTipo=UPC A
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=SubTotal
+CBTipo=UPC A
+
+[E4]
+Celda=E4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Impuestos
+CBTipo=UPC A
+
+[F4]
+Celda=F4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=12
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=ImporteTotal
+CBTipo=UPC A
+
+[G4]
+Celda=G4
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.21
+AnchoTexto=11
+BordeArriba=S
+EstiloMarco=3
+EstiloArriba=3
+EstiloAbajo=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=CostoTotal
+CBTipo=UPC A
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

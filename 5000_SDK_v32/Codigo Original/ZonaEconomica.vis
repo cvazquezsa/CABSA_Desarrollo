@@ -1,0 +1,37 @@
+[Vista]
+Icono=0
+Clave=ZonaEconomica
+Nombre=Zonas Economicas
+Modulos=(Todos)
+Singular=Zona Economica
+ListaTablas=ZonaEconomica
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ZonaEconomica
+UsarJOIN=S
+SQL=SELECT<BR>  ZonaEconomica.Zona,<BR>  ZonaEconomica.SueldoMinimo<BR><BR>FROM<BR>  ZonaEconomica
+
+[ZonaEconomica.Zona]
+Clave=ZonaEconomica.Zona
+LigaTabla=ZonaEconomica
+LigaCampo=Zona
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=Zona
+
+[ZonaEconomica.SueldoMinimo]
+Clave=ZonaEconomica.SueldoMinimo
+LigaTabla=ZonaEconomica
+LigaCampo=SueldoMinimo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=SueldoMinimo
+
+[Vista.ListaCampos]
+(Inicio)=ZonaEconomica.Zona
+ZonaEconomica.Zona=ZonaEconomica.SueldoMinimo
+ZonaEconomica.SueldoMinimo=(Fin)

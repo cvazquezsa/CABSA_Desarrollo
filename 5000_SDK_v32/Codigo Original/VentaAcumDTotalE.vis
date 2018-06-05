@@ -1,0 +1,256 @@
+
+[Vista]
+Icono=0
+Clave=VentaAcumDTotalE
+Nombre=VentaAcumDTotalE
+Modulos=(Todos)
+Singular=VentaAcumDTotalE
+
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+SQL=SELECT * FROM (SELECT Cte.Cliente,Cte.Nombre,Cte.NombreCorto,Art.Articulo,Art.Rama,Art.Descripcion1,Art.Categoria,Art.Familia,Art.Grupo,Art.Fabricante,Art.Codigo,<T>VentaMes<T> = (SELECT Sum(Cargos) - Sum(Abonos)FROM AcumRU WHERE Cuenta = Art.Articulo AND Grupo = Cte.Cliente AND Moneda = SaldoRU.Moneda AND Empresa = <T>{Empresa}<T> AND Ejercicio={EjercicioTrabajo} AND Periodo={PeriodoTrabajo}),<T>CantidadMes<T> = (SELECT Sum(CargosU) - Sum(AbonosU) FROM AcumRU WHERE Cuenta = Art.Articulo AND Grupo = Cte.Cliente AND Moneda = SaldoRU.Moneda AND Empresa = <T>{Empresa}<T> AND Ejercicio={EjercicioTrabajo} AND Periodo={PeriodoTrabajo}),<T>VentaAcum<T>= Sum(SaldoRU.Saldo),<T>CantidadAcum<T> = Sum(SaldoRU.SaldoU),SaldoRU.Moneda FROM SaldoRU JOIN Art ON SaldoRU.Cuenta = Art.Articulo AND SaldoRU.Empresa = <T>{Empresa}<T> AND SaldoRU.Rama = <T>VTAS<T> JOIN Cte ON SaldoRU.Grupo = Cte.Cliente GROUP BY SaldoRU.Moneda,Cte.Cliente,Cte.Nombre,Cte.NombreCorto,Art.Articulo,Art.Rama,Art.Descripcion1,Art.Categoria,Art.Familia,Art.Grupo,Art.Fabricante,Art.Codigo)Art
+[Vista.SQL]
+(Inicio)=SELECT (
+SELECT (=SELECT 
+SELECT =  Cte.Cliente, 
+  Cte.Cliente, =  Cte.Nombre,
+  Cte.Nombre,=  Cte.NombreCorto,
+  Cte.NombreCorto,=  Art.Articulo,
+  Art.Articulo,=  Art.Rama,
+  Art.Rama,=  Art.Descripcion1,
+  Art.Descripcion1,=  Art.Categoria,
+  Art.Categoria,=  Art.Familia,
+  Art.Familia,=  Art.Grupo,
+  Art.Grupo,=  Art.Fabricante,
+  Art.Fabricante,=  Art.Codigo,
+  Art.Codigo,=  'VentaMes'   <IGUAL> 
+  'VentaMes'   <IGUAL> =(SELECT Sum(Cargos) - Sum(Abonos)
+(SELECT Sum(Cargos) - Sum(Abonos)=   FROM AcumRU 
+   FROM AcumRU =  WHERE Cuenta <IGUAL> Art.Articulo AND Grupo <IGUAL> Cte.Cliente AND Moneda <IGUAL> SaldoRU.Moneda AND
+  WHERE Cuenta <IGUAL> Art.Articulo AND Grupo <IGUAL> Cte.Cliente AND Moneda <IGUAL> SaldoRU.Moneda AND=        Empresa <IGUAL> '{Empresa}' AND 
+        Empresa <IGUAL> '{Empresa}' AND =        Ejercicio<IGUAL>{EjercicioTrabajo} AND Periodo<IGUAL>{PeriodoTrabajo}),
+        Ejercicio<IGUAL>{EjercicioTrabajo} AND Periodo<IGUAL>{PeriodoTrabajo}),=  'CantidadMes'   <IGUAL> 
+  'CantidadMes'   <IGUAL> =(SELECT Sum(CargosU) - Sum(AbonosU)
+(SELECT Sum(CargosU) - Sum(AbonosU)=   FROM AcumRU <LN#21>
+   FROM AcumRU <LN#21>=  WHERE Cuenta <IGUAL> Art.Articulo AND Grupo <IGUAL> Cte.Cliente AND Moneda <IGUAL> SaldoRU.Moneda AND<LN#22>
+  WHERE Cuenta <IGUAL> Art.Articulo AND Grupo <IGUAL> Cte.Cliente AND Moneda <IGUAL> SaldoRU.Moneda AND<LN#22>=        Empresa <IGUAL> '{Empresa}' AND <LN#23>
+        Empresa <IGUAL> '{Empresa}' AND <LN#23>=        Ejercicio<IGUAL>{EjercicioTrabajo} AND Periodo<IGUAL>{PeriodoTrabajo}),<LN#24>
+        Ejercicio<IGUAL>{EjercicioTrabajo} AND Periodo<IGUAL>{PeriodoTrabajo}),<LN#24>=  'VentaAcum'  <IGUAL> Sum(SaldoRU.Saldo),
+  'VentaAcum'  <IGUAL> Sum(SaldoRU.Saldo),=  'CantidadAcum' <IGUAL> Sum(SaldoRU.SaldoU),
+  'CantidadAcum' <IGUAL> Sum(SaldoRU.SaldoU),=  SaldoRU.Moneda
+  SaldoRU.Moneda=FROM 
+FROM =  SaldoRU
+  SaldoRU=  JOIN Art ON SaldoRU.Cuenta <IGUAL> Art.Articulo AND SaldoRU.Empresa <IGUAL> '{Empresa}' AND SaldoRU.Rama <IGUAL> 'VTAS'
+  JOIN Art ON SaldoRU.Cuenta <IGUAL> Art.Articulo AND SaldoRU.Empresa <IGUAL> '{Empresa}' AND SaldoRU.Rama <IGUAL> 'VTAS'=  JOIN Cte ON SaldoRU.Grupo <IGUAL> Cte.Cliente
+  JOIN Cte ON SaldoRU.Grupo <IGUAL> Cte.Cliente=GROUP BY 
+GROUP BY =  SaldoRU.Moneda,
+  SaldoRU.Moneda,=  Cte.Cliente, <LN#36>
+  Cte.Cliente, <LN#36>=  Cte.Nombre,<LN#37>
+  Cte.Nombre,<LN#37>=  Cte.NombreCorto,<LN#38>
+  Cte.NombreCorto,<LN#38>=  Art.Articulo, 
+  Art.Articulo, =  Art.Rama,<LN#40>
+  Art.Rama,<LN#40>=  Art.Descripcion1, 
+  Art.Descripcion1, =  Art.Categoria,<LN#42>
+  Art.Categoria,<LN#42>=  Art.Familia,<LN#43>
+  Art.Familia,<LN#43>=  Art.Grupo,<LN#44>
+  Art.Grupo,<LN#44>=  Art.Fabricante,<LN#45>
+  Art.Fabricante,<LN#45>=  Art.Codigo)Suma
+  Art.Codigo)Suma=(Fin)
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Cliente
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+
+[NombreCorto]
+Clave=NombreCorto
+Nombre=NombreCorto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=NombreCorto
+
+[Articulo]
+Clave=Articulo
+Nombre=Articulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Articulo
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Rama
+
+[Descripcion1]
+Clave=Descripcion1
+Nombre=Descripcion1
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion1
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoria
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria
+
+[Familia]
+Clave=Familia
+Nombre=Familia
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Familia
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[Fabricante]
+Clave=Fabricante
+Nombre=Fabricante
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Fabricante
+
+[Codigo]
+Clave=Codigo
+Nombre=Codigo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Codigo
+
+[VentaMes]
+Clave=VentaMes
+Nombre=VentaMes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=VentaMes
+
+[CantidadMes]
+Clave=CantidadMes
+Nombre=CantidadMes
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=CantidadMes
+
+[VentaAcum]
+Clave=VentaAcum
+Nombre=VentaAcum
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=VentaAcum
+
+[CantidadAcum]
+Clave=CantidadAcum
+Nombre=CantidadAcum
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=CantidadAcum
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Moneda
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Cliente
+Cliente=Nombre
+Nombre=NombreCorto
+NombreCorto=Articulo
+Articulo=Rama
+Rama=Descripcion1
+Descripcion1=Categoria
+Categoria=Familia
+Familia=Grupo
+Grupo=Fabricante
+Fabricante=Codigo
+Codigo=VentaMes
+VentaMes=CantidadMes
+CantidadMes=VentaAcum
+VentaAcum=CantidadAcum
+CantidadAcum=Moneda
+Moneda=(Fin)

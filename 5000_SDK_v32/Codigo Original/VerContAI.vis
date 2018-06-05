@@ -1,0 +1,64 @@
+[Vista]
+Icono=0
+Clave=VerContAI
+Modulos=(Todos)
+TipoTabla=General
+Nombre=Saldo Promedio Diario
+Singular=Saldo Promedio Diario
+VistaIndependiente=S
+ListaCampos=(Lista)
+ListaCalculados=Factor
+SQL=EXEC spGenerarContAI <T>{Empresa}<T>,<BR>                      {Info.Ejercicio},<BR>                      {Info.PeriodoD},<BR>                      {Info.PeriodoA}
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Cuenta
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=Descripcion
+TipoDatos=Texto
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=Es Acreedora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcreedora
+
+[Factor]
+Clave=Factor
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Factor
+Formula=Si(EsAcreedora,-1,1)
+
+[SMA]
+Clave=SMA
+Nombre=Saldo Medio Anual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SMA
+Monetario=S
+
+[Vista.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=Descripcion
+Descripcion=EsAcreedora
+EsAcreedora=SMA
+SMA=(Fin)

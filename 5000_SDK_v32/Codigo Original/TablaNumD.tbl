@@ -1,0 +1,40 @@
+[Tabla]
+Icono=0
+Clave=TablaNumD
+Archivo=TablaNumD
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tabla Numérica
+Singular=Tabla Numérica
+LlavePrimaria=TablaNum<BR>Numero
+SQL=SELECT<BR>  TablaNum,<BR>  Numero,<BR>  Valor<BR><BR>FROM<BR>  TablaNumD
+
+[TablaNum]
+Clave=TablaNum
+Nombre=TablaNum
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tabla
+TipoDatos=Texto
+
+[Numero]
+Clave=Numero
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Tabla.ListaCampos]
+(Inicio)=TablaNum
+TablaNum=Numero
+Numero=Valor
+Valor=(Fin)

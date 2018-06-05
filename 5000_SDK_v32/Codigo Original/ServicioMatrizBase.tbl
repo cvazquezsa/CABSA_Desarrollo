@@ -1,0 +1,100 @@
+[Tabla]
+Icono=0
+Clave=ServicioMatrizBase
+Archivo=ServicioMatrizBase
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Servicios
+Singular=Servicio
+LlavePrimaria=Vehiculo<BR>Modelo<BR>Motor<BR>Cilindros<BR>Transmision<BR>Traccion
+CampoID=ID
+CampoEstatus=Estatus
+CampoSubCuenta=SubCuenta
+CampoCuenta=Articulo
+EstatusDefault=ALTA
+SQL=SELECT<BR>  Vehiculo,<BR>  Modelo,<BR>  Motor,<BR>  Cilindros,<BR>  Transmision,<BR>  Traccion<BR><BR>FROM<BR>  ServicioMatrizBase
+
+[Vehiculo]
+Clave=Vehiculo
+Nombre=Vehículo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioVehiculo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+TipoDatos=Texto
+
+[Modelo]
+Clave=Modelo
+Nombre=Modelo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioModelo
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+
+[Motor]
+Clave=Motor
+Nombre=Motor
+Visible=S
+TamanoValidacion=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioMotor
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+Tamano=20
+
+[Cilindros]
+Clave=Cilindros
+Nombre=Cilindros
+Visible=S
+TamanoValidacion=50
+TipoDatos=Numérico
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioCilindros
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+
+[Transmision]
+Clave=Transmision
+Nombre=Transmision
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioTransmision
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+TipoDatos=Texto
+
+[Traccion]
+Clave=Traccion
+Nombre=Traccion
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ServicioTraccion
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Vehiculo
+Vehiculo=Modelo
+Modelo=Motor
+Motor=Cilindros
+Cilindros=Transmision
+Transmision=Traccion
+Traccion=(Fin)

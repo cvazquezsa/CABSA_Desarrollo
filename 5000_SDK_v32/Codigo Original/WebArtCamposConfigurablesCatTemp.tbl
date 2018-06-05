@@ -1,0 +1,53 @@
+
+[Tabla]
+Icono=0
+Clave=WebArtCamposConfigurablesCatTemp
+Nombre=WebArtCamposConfigurablesCatTemp
+Archivo=WebArtCamposConfigurablesCatTemp
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+LlavePrimaria=(Lista)
+ControlTipo=S
+CampoTipo=Tipo
+SQL=(Lista)
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ValorPorOmision=EstacionTrabajo
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Tipo FROM WebArtCamposConfigurablesCat<T>)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=Tipo
+Tipo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=Tipo
+Tipo=FROM WebArtCamposConfigurablesCatTemp
+FROM WebArtCamposConfigurablesCatTemp=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Estacion
+Estacion=Tipo
+Tipo=(Fin)

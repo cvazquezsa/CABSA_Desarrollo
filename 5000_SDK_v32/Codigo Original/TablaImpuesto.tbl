@@ -1,0 +1,38 @@
+[PeriodoTipo]
+Clave=PeriodoTipo
+Nombre=Periodo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Tipos Periodos
+Requerido=S
+TipoDatos=Texto
+
+[TablaImpuesto]
+Clave=TablaImpuesto
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+TipoDatos=Texto
+
+[Tabla]
+ListaCampos=(Lista)
+Icono=0
+Clave=TablaImpuesto
+Nombre=Tabla Impuestos
+Archivo=TablaImpuesto
+Modulos=(Todos)
+Singular=Tabla Impuestos
+LlavePrimaria=TablaImpuesto
+TipoTabla=Configuracion
+SQL=SELECT<BR>  TablaImpuesto,<BR>  PeriodoTipo<BR><BR>FROM<BR>  TablaImpuesto
+
+[Tabla.ListaCampos]
+(Inicio)=TablaImpuesto
+TablaImpuesto=PeriodoTipo
+PeriodoTipo=(Fin)

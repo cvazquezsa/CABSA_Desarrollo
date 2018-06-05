@@ -1,0 +1,240 @@
+[Tabla]
+Icono=0
+Clave=TipoTasa
+Archivo=TipoTasa
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tipos Tasas
+Singular=Tipo Tasa
+LlavePrimaria=TipoTasa
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+SQL=SELECT<BR>  TipoTasa,<BR>  Descripcion,<BR>  EsTasaFija,<BR>  TasaFija,<BR>  TasaBase,<BR>  TasaBase2,<BR>  TasaBase3,<BR>  SobreTasa,<BR>  SobreTasaEn,<BR>  TasaTotalMinima,<BR>  TasaTotalMaxima,<BR>  MoratoriosFactor,<BR>  PagoAnticipadoFactor,<BR>  ImpuestoIncluido,<BR>  Estatus,<BR>  RetencionPuntos,<BR>  ComisionPorcentaje<BR><BR>FROM<BR>  TipoTasa
+
+[TipoTasa]
+Clave=TipoTasa
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[TasaFija]
+Clave=TasaFija
+Nombre=%
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=EsTasaFija
+
+[DisposicionTipo]
+Clave=DisposicionTipo
+Nombre=Tipo Disposición
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Revolvente<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[TasaBase]
+Clave=TasaBase
+Nombre=Tasa Base
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Tasa
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=no EsTasaFija
+TipoDatos=Texto
+
+[SobreTasa]
+Clave=SobreTasa
+Nombre=Sobre Tasa
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no EsTasaFija
+AyudaEnCaptura=Calculadora
+
+[SobreTasaEn]
+Clave=SobreTasaEn
+Nombre=Sobre Tasa En
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Puntos<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+OpcionesUnicamente=S
+CondicionDespliege=no EsTasaFija
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=(Lista)
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[TasaBase2]
+Clave=TasaBase2
+Nombre=Tasa Suplente 1
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Tasa
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=no EsTasaFija
+TipoDatos=Texto
+
+[TasaBase3]
+Clave=TasaBase3
+Nombre=Tasa Suplente 2
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Tasa
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=no EsTasaFija
+TipoDatos=Texto
+
+[EsTasaFija]
+Clave=EsTasaFija
+Nombre=Tasa Fija
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[TasaTotalMinima]
+Clave=TasaTotalMinima
+Nombre=Tasa Total Miníma
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no EsTasaFija
+AyudaEnCaptura=Calculadora
+
+[TasaTotalMaxima]
+Clave=TasaTotalMaxima
+Nombre=Tasa Total Máxima
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionDespliege=no EsTasaFija
+AyudaEnCaptura=Calculadora
+
+[MoratoriosFactor]
+Clave=MoratoriosFactor
+Nombre=Factor Intereses Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[ImpuestoIncluido]
+Clave=ImpuestoIncluido
+Nombre=% Impuesto Incluido
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[PagoAnticipadoFactor]
+Clave=PagoAnticipadoFactor
+Nombre=Factor Pena Pago Anticipado
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[RetencionPuntos]
+Clave=RetencionPuntos
+Nombre=Retención (Puntos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[ComisionPorcentaje]
+Clave=ComisionPorcentaje
+Nombre=% Comisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=TipoTasa
+TipoTasa=Descripcion
+Descripcion=EsTasaFija
+EsTasaFija=TasaFija
+TasaFija=TasaBase
+TasaBase=TasaBase2
+TasaBase2=TasaBase3
+TasaBase3=SobreTasa
+SobreTasa=SobreTasaEn
+SobreTasaEn=TasaTotalMinima
+TasaTotalMinima=TasaTotalMaxima
+TasaTotalMaxima=MoratoriosFactor
+MoratoriosFactor=PagoAnticipadoFactor
+PagoAnticipadoFactor=ImpuestoIncluido
+ImpuestoIncluido=Estatus
+Estatus=RetencionPuntos
+RetencionPuntos=ComisionPorcentaje
+ComisionPorcentaje=(Fin)
+
+[DisposicionTipo.ListaOpciones]
+(Inicio)=Total
+Total=Parcial
+Parcial=Revolvente
+Revolvente=(Fin)
+
+[SobreTasaEn.ListaOpciones]
+(Inicio)=Puntos
+Puntos=%
+%=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)

@@ -1,0 +1,699 @@
+[Reporte]
+Clave=MEX01
+Nombre=ModuloExtra01
+Icono=0
+Vista=ModuloExtra01T
+Tipo=Reporte
+BarraHerramientas=S
+Menus=S
+OtroOrden=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraPixeles=(Auto)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+FuentePorOmision={Arial, 10, Negro, []}
+Caracteres=132
+Renglones=66
+MargenInferior=2
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Impresora=S
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+ASCIISinModos=S
+Puerto=LPT1
+ListaOrden=ModuloExtra01D.ID<TAB>(Acendente)
+Parametros1=ModuloExtra01D.ID
+Parametros2==
+Parametros3=N
+Parametros=S
+ListaAcciones=(Lista)
+PosicionInicialAlturaCliente=418
+PosicionInicialAncho=812
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=&Reporte Impresora
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Impresora
+ClaveAccion=MEX01
+Activo=S
+Visible=S
+ListaParametros=S
+ListaParametros1=ModuloExtra01.ID
+
+EspacioPrevio=S
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+E
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=MEX01
+ListaParametros1=ModuloExtra01.ID
+ListaParametros=S
+Visible=S
+
+ActivoCondicion=Usuario.EnviarExcel
+[Formato]
+VentanaIzquierda=39
+VentanaArriba=0
+VentanaAltura=768
+VentanaAncho=1288
+PanelArriba=308
+PanelBotones=80
+ListaLineas=Encabezado<BR>Inicio: ModuloExtra01D.ID<BR>Inicio: ModuloExtra01D.ID<BR>Inicio: ModuloExtra01D.ID<BR>Inicio: ModuloExtra01D.ID<BR>Inicio: ModuloExtra01D.ID<BR>Detalle<BR>Fin: ModuloExtra01D.ID<BR>Pie
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=S
+EstiloAbajo=3
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9.1
+AnchoTexto=49
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ModuloExtra01<T>
+BordeAbajo=S
+EstiloAbajo=3
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=9.89
+AnchoTexto=53
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+
+[Linea2]
+Clave=Inicio: ModuloExtra01D.ID
+Seccion=Inicio Grupo
+Grupo=ModuloExtra01D.ID
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, []}
+AVertical=Centrado
+
+[Linea3]
+Clave=Inicio: ModuloExtra01D.ID
+Objetos=5
+Seccion=Inicio Grupo
+Grupo=ModuloExtra01D.ID
+AltoEnCm=0.47
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 9, Negro, []}
+AVertical=Centrado
+Marco=S
+EstiloMarco=1
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=4.21
+AnchoTexto=23
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01.Mov & <T>  <T> & ModuloExtra01.MovID
+Marco=S
+EstiloMarco=1
+
+[B3]
+Celda=B3
+Alineacion=Centrado
+AnchoEnCm=3.61
+AnchoTexto=19
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=EstatusNombreSingular(ModuloExtra01.Estatus)
+Marco=S
+EstiloMarco=1
+
+[C3]
+Celda=C3
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01.Proyecto
+Marco=S
+EstiloMarco=1
+
+[D3]
+Celda=D3
+Alineacion=Derecha
+AnchoEnCm=4.7
+AnchoTexto=25
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01.Moneda+Si(ModuloExtra01.TipoCambio<>1,<T>: <T>&ModuloExtra01.TipoCambio)
+Marco=S
+EstiloMarco=1
+
+[Linea4]
+Clave=Inicio: ModuloExtra01D.ID
+Seccion=Inicio Grupo
+Grupo=ModuloExtra01D.ID
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, []}
+AVertical=Centrado
+
+[Linea5]
+Clave=Inicio: ModuloExtra01D.ID
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=ModuloExtra01D.ID
+AltoEnCm=1.2
+Renglones=4
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, []}
+AVertical=Centrado
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=2.29
+ExpresionMultiple=S
+AnchoTexto=12
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=CampoNombre( ModuloExtra01.Referencia ) & <T>:<T><BR>CampoNombre( ModuloExtra01.Concepto )  & <T>:<T><BR>CampoNombre( ModuloExtra01.Observaciones ) & <T>:<T>
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=16.71
+ExpresionMultiple=S
+AnchoTexto=90
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01.Referencia<BR>ModuloExtra01.Concepto<BR>ModuloExtra01.Observaciones
+
+[Linea6]
+Clave=Inicio: ModuloExtra01D.ID
+Objetos=3
+Seccion=Inicio Grupo
+Grupo=ModuloExtra01D.ID
+AltoEnCm=0.55
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+AVertical=Centrado
+Marco=N
+BordeAbajo=S
+EstiloMarco=2
+EstiloAbajo=1
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=1.71
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Artículo<T>
+Marco=N
+BordeAbajo=S
+EstiloMarco=2
+EstiloAbajo=1
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=1.61
+AnchoTexto=9
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Cantidad<T>
+Marco=N
+BordeAbajo=S
+EstiloMarco=2
+EstiloAbajo=1
+
+[C6]
+Celda=C6
+Alineacion=Derecha
+AnchoEnCm=2.79
+AnchoTexto=11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Precio<T>
+Marco=N
+BordeAbajo=S
+EstiloMarco=2
+EstiloAbajo=1
+
+
+
+[Linea7]
+Clave=Detalle
+Objetos=3
+Seccion=Detalle
+AltoEnCm=0.4
+Renglones=1
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+BordeAbajo=N
+EstiloAbajo=3
+
+[A7]
+Celda=A7
+Alineacion=Izquierda
+AnchoEnCm=1.7
+AnchoTexto=9
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01D.Articulo
+BordeAbajo=N
+EstiloAbajo=3
+
+[B7]
+Celda=B7
+Alineacion=Derecha
+AnchoEnCm=1.61
+AnchoTexto=9
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01D.Cantidad
+BordeAbajo=N
+EstiloAbajo=3
+
+FormatoValidacion=#,.###
+[C7]
+Celda=C7
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=2.79
+AnchoTexto=15
+Marco=N
+EstiloMarco=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01D.Precio
+BordeAbajo=N
+EstiloAbajo=3
+
+
+
+[E3]
+Celda=E3
+Alineacion=Derecha
+AnchoEnCm=4.89
+AnchoTexto=26
+Marco=S
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 9, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=ModuloExtra01.FechaEmision
+FormatoValidacion=d mmmm yyyy
+
+
+
+
+
+[Linea8]
+Clave=Fin: ModuloExtra01D.ID
+Objetos=3
+Seccion=Fin Grupo
+AltoEnCm=0.4
+Renglones=3
+Visible=
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, [Negritas]}
+AVertical=Centrado
+
+Grupo=ModuloExtra01D.ID
+[A8]
+Celda=A8
+Alineacion=Derecha
+AnchoEnCm=6.11
+AnchoTexto=33
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+[B8]
+Celda=B8
+Alineacion=Derecha
+AnchoEnCm=3
+AnchoTexto=16
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Totales:<T>
+
+ExpresionMultiple=S
+[C8]
+Celda=C8
+Alineacion=Derecha
+AnchoEnCm=3.21
+AnchoTexto=17
+BordeAbajo=N
+EstiloMarco=0
+EstiloAbajo=0
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=
+
+FormatoValidacion=(Monetario)
+ExpresionMultiple=S
+
+
+[Linea9]
+Clave=Pie
+Seccion=Pie Página
+Grupo=
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+Objetos=2
+
+
+
+
+
+
+
+
+BordeArriba=S
+EstiloArriba=3
+[A9]
+Celda=A9
+Alineacion=Izquierda
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoEnCm=12.39
+AnchoTexto=67
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Ahora
+
+BordeArriba=S
+EstiloArriba=3
+[B9]
+Celda=B9
+Alineacion=Derecha
+AnchoEnCm=6.61
+AnchoTexto=36
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Página <T>+ReportePaginaNumero
+
+
+
+
+
+BordeArriba=S
+EstiloArriba=3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

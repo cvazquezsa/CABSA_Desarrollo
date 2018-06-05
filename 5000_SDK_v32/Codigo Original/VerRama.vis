@@ -1,0 +1,291 @@
+[Vista]
+Icono=0
+Clave=VerRama
+Nombre=Ramas
+Modulos=(Todos)
+Singular=Rama
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+Niveles=S
+CampoAcumulativa=EsAcumulativa
+ListaCalculados=(Lista)
+ControlPeriodos=S
+CampoPeriodo=Periodo
+TipoPeriodo=Contable
+SQL=spVerRama<BR>  {Comillas(Empresa)}, <BR>  {EstacionTrabajo},<BR>  {Comillas(Explorar.Modulo)},<BR>  {Comillas(Explorar.Rama)},<BR>  {Explorar.Ejercicio},<BR>  {Explorar.Periodo},<BR>  {Explorar.PeriodoDe},<BR>  {Explorar.PeriodoA},<BR>  {LogicoEnBit(Explorar.VerSaldoActual)},<BR>  {LogicoEnBit(Explorar.Acumulado)},<BR>  {LogicoEnBit(Explorar.Todo)},<BR>  {Comillas(Explorar.Vista)},<BR>  {Comillas(Explorar.Comparar)},<BR>  {Comillas(Info.ContMoneda)}
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Clave
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Cuenta
+CondicionDespliege=(Tipo<>TipoEstructura) y Explorar.VerCuenta
+
+[Rama]
+Clave=Rama
+Nombre=Rama
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Rama
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=Descripcion
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=Es Acreedora
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcreedora
+
+[EsAcumulativa]
+Clave=EsAcumulativa
+Nombre=Es Acumulativa
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcumulativa
+
+[Final]
+Clave=Final
+Nombre=Final
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Final
+Monetario=S
+
+[FinalU]
+Clave=FinalU
+Nombre=Final
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=FinalU
+
+[SubCuenta]
+Clave=SubCuenta
+Nombre=Detalles
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=SubCuenta
+CondicionDespliege=Explorar.Vista=<T>Detalles<T>
+
+[Inicio]
+Clave=Inicio
+Nombre=Inicio
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Inicio
+Monetario=S
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerInicio
+
+[Cargos]
+Clave=Cargos
+Nombre=Cargos
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Cargos
+Monetario=S
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerCargos
+
+[Abonos]
+Clave=Abonos
+Nombre=Abonos
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Abonos
+Monetario=S
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerAbonos
+
+[InicioU]
+Clave=InicioU
+Nombre=Inicio
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=InicioU
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerInicio
+
+[CargosU]
+Clave=CargosU
+Nombre=Cargos
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=CargosU
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerCargos
+
+[AbonosU]
+Clave=AbonosU
+Nombre=Abonos
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=AbonosU
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerAbonos
+
+[FinalDeudor]
+Clave=FinalDeudor
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Final Deudor
+CondicionDespliege=Explorar.VerSaldoActual o Explorar.VerFinal
+Formula=Si(Periodo=999,Cargos,Si(no EsAcreedora, Final))
+
+[FinalAcreedor]
+Clave=FinalAcreedor
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Final Acreedor
+CondicionDespliege=Explorar.VerSaldoActual o Explorar.VerFinal
+Formula=Si(Periodo=999,Abonos,Si(EsAcreedora, -Final))
+
+[InicioDeudor]
+Clave=InicioDeudor
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Inicio Deudor
+Formula=Si(no EsAcreedora, Inicio)
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerInicio
+
+[InicioAcreedor]
+Clave=InicioAcreedor
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Inicio Acreedor
+Formula=Si(EsAcreedora, -Inicio)
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerInicio
+
+[CambioNeto]
+Clave=CambioNeto
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Cambio Neto
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerCambioNeto
+Formula=Si(EsAcreedora, Abonos-Cargos, Cargos-Abonos)
+
+[SaldoMedio]
+Clave=SaldoMedio
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Saldo Medio
+CondicionDespliege=no Explorar.VerSaldoActual y Explorar.VerMedio
+Formula=Si(EsAcreedora, -(Inicio+Final)/2, (Inicio+Final)/2)
+
+[Comparacion]
+Clave=Comparacion
+Nombre=Anterior
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Comparacion
+Monetario=S
+CondicionDespliege=Explorar.Comparar = <T>Anterior<T>
+
+[Diferencia]
+Clave=Diferencia
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Diferencia
+Formula=Si(Comparacion<>Nulo,Final-Comparacion)
+CondicionDespliege=(Explorar.Comparar<><T><T>) y Explorar.VerDiferencia
+
+[Porcentaje]
+Clave=Porcentaje
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=%
+CondicionDespliege=(Explorar.Comparar<><T><T>) y Explorar.VerPorcentaje
+Formula=Si(Comparacion<>Nulo,(Final/Comparacion)*100)
+FormatoValidacion=#.00
+Monetario=
+
+[Presupuesto]
+Clave=Presupuesto
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TipoCalculo=Independiente
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Presupuesto
+Formula=Comparacion
+CondicionDespliege=Explorar.Comparar=<T>Presupuesto<T>
+FormatoValidacion=
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Periodo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+TamanoValidacion=15
+Tamano=15
+ClaveBDE=Tipo
+
+[Vista.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=SubCuenta
+SubCuenta=Rama
+Rama=Descripcion
+Descripcion=EsAcreedora
+EsAcreedora=EsAcumulativa
+EsAcumulativa=Tipo
+Tipo=Inicio
+Inicio=Cargos
+Cargos=Abonos
+Abonos=Final
+Final=Comparacion
+Comparacion=InicioU
+InicioU=CargosU
+CargosU=AbonosU
+AbonosU=FinalU
+FinalU=Periodo
+Periodo=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=InicioDeudor
+InicioDeudor=InicioAcreedor
+InicioAcreedor=FinalDeudor
+FinalDeudor=FinalAcreedor
+FinalAcreedor=CambioNeto
+CambioNeto=SaldoMedio
+SaldoMedio=Diferencia
+Diferencia=Porcentaje
+Porcentaje=Presupuesto
+Presupuesto=(Fin)

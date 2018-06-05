@@ -1,0 +1,54 @@
+[Vista]
+Icono=0
+Clave=TipoOperacion
+Nombre=Tipo Operación (Proveedores)
+Modulos=(Todos)
+Singular=Tipo Operación (Proveedores)
+ListaTablas=TipoOperacion
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=(Lista)
+TablaPrincipal=TipoOperacion
+UsarJOIN=S
+
+
+
+
+
+
+
+
+
+SQL=(Lista)
+[TipoOperacion.Codigo]
+Clave=TipoOperacion.Codigo
+LigaTabla=TipoOperacion
+LigaCampo=Codigo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Codigo
+
+[TipoOperacion.Clave]
+Clave=TipoOperacion.Clave
+LigaTabla=TipoOperacion
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Clave
+
+[Vista.ListaCampos]
+(Inicio)=TipoOperacion.Codigo
+TipoOperacion.Codigo=TipoOperacion.Clave
+TipoOperacion.Clave=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=TipoOperacion.Codigo,
+TipoOperacion.Codigo,=TipoOperacion.Clave
+TipoOperacion.Clave=FROM TipoOperacion
+FROM TipoOperacion=(Fin)

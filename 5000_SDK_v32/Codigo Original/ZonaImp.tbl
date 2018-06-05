@@ -1,0 +1,40 @@
+[Tabla]
+Icono=0
+Clave=ZonaImp
+Archivo=ZonaImp
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Zonas de Impuestos
+Singular=Zona de Impuestos
+LlavePrimaria=Zona<BR>Impuesto
+SQL=SELECT<BR>  Zona,<BR>  Impuesto,<BR>  Porcentaje<BR><BR>FROM<BR>  ZonaImp
+
+[Zona]
+Clave=Zona
+Nombre=Zona
+Tamano=30
+TamanoValidacion=50
+AyudaMemTabla=Zona
+AyudaMemOpc=Validar captura en la lista
+
+[Impuesto]
+Clave=Impuesto
+Nombre=Impuesto Base
+AyudaEnCaptura=Calculadora
+TipoDatos=NumFlotante
+TamanoValidacion=10
+AyudaMemTabla=Imp
+AyudaMemOpc=Validar captura en la lista
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=Impuesto Zona
+TipoDatos=NumFlotante
+TamanoValidacion=10
+
+[Tabla.ListaCampos]
+(Inicio)=Zona
+Zona=Impuesto
+Impuesto=Porcentaje
+Porcentaje=(Fin)

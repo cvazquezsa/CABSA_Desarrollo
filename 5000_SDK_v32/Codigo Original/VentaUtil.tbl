@@ -1,0 +1,356 @@
+[Tabla]
+Icono=0
+Clave=VentaUtil
+Archivo=VentaUtil
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Ventas
+Singular=Ventas
+LlavePrimaria=ID
+CampoID=ID
+CampoMov=Mov
+CampoMovID=MovID
+CampoEmpresa=Empresa
+ListaRelaciones=(Lista)
+ControlSucursal=S
+CampoSucursal=Sucursal
+ControlProyectos=S
+CampoProyecto=Proyecto
+
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Mov
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[MovID]
+Clave=MovID
+Nombre=MovID
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=20
+
+[Movimiento]
+Clave=Movimiento
+Nombre=Movimiento
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=51
+Tamano=51
+TipoDatos=Texto
+
+[MovClave]
+Clave=MovClave
+Nombre=MovClave
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+[FechaEmision]
+Clave=FechaEmision
+Nombre=&Fecha Emisión
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Cliente]
+Clave=Cliente
+Nombre=Cliente
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Proyecto]
+Clave=Proyecto
+Nombre=Proyecto
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[TipoCambio]
+Clave=TipoCambio
+Nombre=TipoCambio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Almacen]
+Clave=Almacen
+Nombre=Almacen
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Cantidad]
+Clave=Cantidad
+Nombre=Cantidad
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Precio]
+Clave=Precio
+Nombre=Precio Total
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[DescuentoTipo]
+Clave=DescuentoTipo
+Nombre=DescuentoTipo
+TamanoValidacion=1
+Tamano=1
+TipoDatos=Texto
+
+[DescuentoLinea]
+Clave=DescuentoLinea
+Nombre=Descuento Linea
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[CostoTotal]
+Clave=CostoTotal
+Nombre=Costo 
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Relaciones.Cte]
+TipoRelacion=Forzosa
+LlaveLocal=Cliente
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[DescuentoGlobal]
+Clave=DescuentoGlobal
+Nombre=Descuento Global
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,
+
+[Modulo]
+Clave=Modulo
+Nombre=Modulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=4
+Tamano=4
+TipoDatos=Texto
+
+[ComisionTotal]
+Clave=ComisionTotal
+Nombre=Comisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[EnviarA]
+Clave=EnviarA
+Nombre=Sucursal Cliente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=10
+TipoDatos=Texto
+
+[Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+
+[Relaciones.CteEnviarA]
+TipoRelacion=Opcional
+LlaveLocal=(Lista)
+Clave=CteEnviarA
+TablaRemota=CteEnviarA
+LlaveRemota=(Lista)
+
+[Impuestos]
+Clave=Impuestos
+Nombre=Impuestos
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[UEN]
+Clave=UEN
+Nombre=UEN
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+
+[Relaciones.CteEnviarA.LlaveLocal]
+(Inicio)=Cliente
+Cliente=EnviarA
+EnviarA=(Fin)
+
+[Relaciones.CteEnviarA.LlaveRemota]
+(Inicio)=Cliente
+Cliente=ID
+ID=(Fin)
+
+[Relaciones.ContMoneda]
+TipoRelacion=Forzosa
+LlaveLocal=Empresa
+Clave=ContMoneda
+TablaRemota=ContMoneda
+LlaveRemota=Empresa
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Empresa
+Empresa=Sucursal
+Sucursal=Mov
+Mov=MovID
+MovID=Movimiento
+Movimiento=Ejercicio
+Ejercicio=Periodo
+Periodo=MovClave
+MovClave=FechaEmision
+FechaEmision=Cliente
+Cliente=EnviarA
+EnviarA=Agente
+Agente=Proyecto
+Proyecto=UEN
+UEN=Moneda
+Moneda=TipoCambio
+TipoCambio=Almacen
+Almacen=DescuentoGlobal
+DescuentoGlobal=Impuestos
+Impuestos=Cantidad
+Cantidad=Precio
+Precio=DescuentoTipo
+DescuentoTipo=DescuentoLinea
+DescuentoLinea=Importe
+Importe=CostoTotal
+CostoTotal=ComisionTotal
+ComisionTotal=Modulo
+Modulo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Empresa,
+  Empresa,=  Sucursal,
+  Sucursal,=  FechaEmision,
+  FechaEmision,=  Modulo,
+  Modulo,=  ID,
+  ID,=  Mov,
+  Mov,=  MovID,
+  MovID,=  Movimiento,
+  Movimiento,=  MovClave,
+  MovClave,=  Ejercicio,
+  Ejercicio,=  Periodo,
+  Periodo,=  Cliente,
+  Cliente,=  EnviarA,
+  EnviarA,=  Agente,
+  Agente,=  Proyecto,
+  Proyecto,=  UEN,
+  UEN,=  Moneda,
+  Moneda,=  TipoCambio,
+  TipoCambio,=  Almacen,
+  Almacen,=  DescuentoGlobal,
+  DescuentoGlobal,=  Impuestos,
+  Impuestos,=  Cantidad,
+  Cantidad,=  Precio,
+  Precio,=  DescuentoTipo,
+  DescuentoTipo,=  DescuentoLinea,
+  DescuentoLinea,=  Importe,
+  Importe,=  CostoTotal,
+  CostoTotal,=  ComisionTotal
+  ComisionTotal=FROM
+FROM=  VentaUtil
+  VentaUtil=(Fin)
+
+[Tabla.ListaRelaciones]
+(Inicio)=Cte
+Cte=CteEnviarA
+CteEnviarA=Agente
+Agente=ContMoneda
+ContMoneda=(Fin)

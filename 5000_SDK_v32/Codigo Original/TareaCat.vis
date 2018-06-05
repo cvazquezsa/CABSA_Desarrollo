@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TareaCat
+Nombre=Categorías
+Modulos=(Todos)
+Singular=Categoría
+ListaTablas=TareaCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TareaCat.Categoria
+TablaPrincipal=TareaCat
+UsarJOIN=S
+SQL=SELECT<BR>  TareaCat.Categoria<BR><BR>FROM<BR>  TareaCat
+
+[TareaCat.Categoria]
+Clave=TareaCat.Categoria
+LigaTabla=TareaCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

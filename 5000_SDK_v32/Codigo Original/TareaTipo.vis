@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TareaTipo
+Nombre=Tipos de Tareas
+Modulos=(Todos)
+Singular=Tipo Tarea
+ListaTablas=TareaTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TareaTipo.Tipo
+TablaPrincipal=TareaTipo
+UsarJOIN=S
+SQL=SELECT<BR>  TareaTipo.Tipo<BR><BR>FROM<BR>  TareaTipo
+
+[TareaTipo.Tipo]
+Clave=TareaTipo.Tipo
+LigaTabla=TareaTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

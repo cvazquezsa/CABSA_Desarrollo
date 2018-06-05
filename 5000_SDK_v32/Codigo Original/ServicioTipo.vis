@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=ServicioTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=ServicioTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioTipo.Tipo
+TablaPrincipal=ServicioTipo
+CamposBusquedaRapida=ServicioTipo.Tipo
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioTipo.Tipo<BR><BR>FROM<BR>  ServicioTipo
+
+[ServicioTipo.Tipo]
+Clave=ServicioTipo.Tipo
+LigaTabla=ServicioTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

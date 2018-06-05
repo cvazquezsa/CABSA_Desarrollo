@@ -1,0 +1,24 @@
+[Vista]
+Icono=0
+Clave=TablaAnual
+Nombre=Tablas
+Modulos=(Todos)
+Singular=Tabla
+ListaTablas=TablaAnual
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=TablaAnual.TablaAnual
+TablaPrincipal=TablaAnual
+UsarJOIN=S
+SQL=SELECT<BR>  TablaAnual.TablaAnual<BR><BR>FROM<BR>  TablaAnual
+
+[TablaAnual.TablaAnual]
+Clave=TablaAnual.TablaAnual
+LigaTabla=TablaAnual
+LigaCampo=TablaAnual
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TablaAnual

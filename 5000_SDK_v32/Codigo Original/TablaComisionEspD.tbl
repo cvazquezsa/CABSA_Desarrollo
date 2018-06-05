@@ -1,0 +1,74 @@
+[Tabla]
+Icono=0
+Clave=TablaComisionEspD
+Archivo=TablaComisionEspD
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Comisiones Esp
+Singular=Comisiones Esp
+LlavePrimaria=TablaComisionEsp<BR>Desde<BR>Hasta
+SQL=SELECT<BR>  TablaComisionEsp,<BR>  Desde,<BR>  Hasta,<BR>  Porcentaje,<BR>  Importe,<BR>  Importe2<BR><BR>FROM<BR>  TablaComisionEspD
+
+[TablaComisionEsp]
+Clave=TablaComisionEsp
+Nombre=Tabla
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tabla
+TipoDatos=Texto
+
+[Desde]
+Clave=Desde
+Nombre=Desde
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Hasta]
+Clave=Hasta
+Nombre=Hasta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Info.Tipo <> <T>Bono Cobranza<T>
+
+[Porcentaje]
+Clave=Porcentaje
+Nombre=Porcentaje
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Info.Tipo=<T>Bono Cobranza<T>
+
+[Importe2]
+Clave=Importe2
+Nombre=Importe (Trisemana)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+CondicionDespliege=Info.Tipo = <T>Premiacion Cobranza<T>
+
+[Tabla.ListaCampos]
+(Inicio)=TablaComisionEsp
+TablaComisionEsp=Desde
+Desde=Hasta
+Hasta=Porcentaje
+Porcentaje=Importe
+Importe=Importe2
+Importe2=(Fin)

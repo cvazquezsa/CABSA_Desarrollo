@@ -1,0 +1,174 @@
+[Tabla]
+Icono=0
+Clave=VINSeguro
+Archivo=VINSeguro
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Seguros
+Singular=Seguro
+LlavePrimaria=VIN<BR>ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  VIN,<BR>  ID,<BR>  Aseguradora,<BR>  Poliza,<BR>  PolizaTipo,<BR>  PolizaEmision,<BR>  PolizaVencimiento,<BR>  PolizaPlan,<BR>  PolizaEstado,<BR>  PrimaNeta,<BR>  TipoDeducible,<BR>  Observaciones,<BR>  CteAseguradora<BR><BR>FROM<BR>  VINSeguro
+ListaRelaciones=Cte
+
+[VIN]
+Clave=VIN
+Nombre=VIN
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=Info.VIN
+TipoDatos=Texto
+
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+
+[Aseguradora]
+Clave=Aseguradora
+Nombre=Aseguradora
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Aseguradora
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Poliza]
+Clave=Poliza
+Nombre=Número Póliza
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[PrimaNeta]
+Clave=PrimaNeta
+Nombre=Prima Neta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+TamanoValidacion=50x3
+Tamano=255
+TipoDatos=Texto
+VerificarOrtografia=S
+
+[PolizaTipo]
+Clave=PolizaTipo
+Nombre=Tipo Póliza
+Visible=S
+TamanoValidacion=20
+Tamano=50
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PolizaTipo
+AyudaMemEnBlanco=S
+TipoDatos=Texto
+
+[PolizaEmision]
+Clave=PolizaEmision
+Nombre=Fecha Emisión
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[PolizaVencimiento]
+Clave=PolizaVencimiento
+Nombre=Vencimiento
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+
+[PolizaPlan]
+Clave=PolizaPlan
+Nombre=Plan
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PolizaPlan
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[PolizaEstado]
+Clave=PolizaEstado
+Nombre=Estado
+Visible=S
+TamanoValidacion=30
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=PolizaEstado
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[TipoDeducible]
+Clave=TipoDeducible
+Nombre=Tipo Deducible
+Visible=S
+TamanoValidacion=50x3
+Tamano=255
+TipoDatos=Texto
+
+[CteAseguradora]
+Clave=CteAseguradora
+Nombre=Aseguradora
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=CteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+
+[Relaciones.Cte]
+TipoRelacion=Opcional
+LlaveLocal=CteAseguradora
+Clave=Cte
+TablaRemota=Cte
+LlaveRemota=Cliente
+
+[Tabla.ListaCampos]
+(Inicio)=VIN
+VIN=ID
+ID=CteAseguradora
+CteAseguradora=Aseguradora
+Aseguradora=Poliza
+Poliza=PrimaNeta
+PrimaNeta=Observaciones
+Observaciones=PolizaTipo
+PolizaTipo=PolizaEmision
+PolizaEmision=PolizaVencimiento
+PolizaVencimiento=PolizaPlan
+PolizaPlan=PolizaEstado
+PolizaEstado=TipoDeducible
+TipoDeducible=(Fin)

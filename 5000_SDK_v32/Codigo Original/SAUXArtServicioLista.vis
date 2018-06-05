@@ -1,0 +1,98 @@
+
+[Vista]
+Icono=0
+Clave=SAUXArtServicioLista
+Nombre=SAUXArtServicioLista
+Modulos=(Todos)
+Singular=SAUXArtServicioLista
+
+
+ListaRelaciones=SAUXArtServicio.SAUXServicio
+
+
+
+
+
+
+
+ListaCampos=(Lista)
+
+
+VistaIndependiente=S
+
+
+
+
+
+
+
+
+
+
+
+SQL=EXEC spLugarConsumo <T>{Info.Articulo}<T>
+[Relaciones.SAUXArtServicio.SAUXServicio]
+Clave=SAUXArtServicio.SAUXServicio
+TablaRemota=SAUXServicio
+LlaveLocal=SAUXArtServicio.Servicio
+LlaveRemota=Servicio
+TipoRelacion=Forzosa
+
+
+
+
+
+[Vista.ListaTablas]
+(Inicio)=SAUXArtServicio
+SAUXArtServicio=SAUXServicio
+SAUXServicio=(Fin)
+
+
+
+[Vista.SQL]
+(Inicio)=SELECT 'Solicitud Pendiente', 'Solicitud Pendiente'
+SELECT 'Solicitud Pendiente', 'Solicitud Pendiente'= UNION ALL
+ UNION ALL=SELECT 'Solicitud Concluida', 'Solicitud Concluida'
+SELECT 'Solicitud Concluida', 'Solicitud Concluida'= UNION ALL<LN#3>
+ UNION ALL<LN#3>=SELECT s.Servicio, s.Descripcion
+SELECT s.Servicio, s.Descripcion=  FROM SAUXArtServicio a
+  FROM SAUXArtServicio a=  JOIN SAUXServicio s ON a.Servicio<IGUAL>s.Servicio
+  JOIN SAUXServicio s ON a.Servicio<IGUAL>s.Servicio= WHERE a.Articulo <IGUAL> '{Info.Articulo}'
+ WHERE a.Articulo <IGUAL> '{Info.Articulo}'=(Fin)
+
+
+
+
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Clave
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripcion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Descripcion
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Clave
+Clave=Descripcion
+Descripcion=(Fin)

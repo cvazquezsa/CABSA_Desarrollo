@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TasaGrupo
+Nombre=Tasas
+Modulos=(Todos)
+Singular=Tasa
+ListaTablas=TasaGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TasaGrupo.Grupo
+TablaPrincipal=TasaGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  TasaGrupo.Grupo<BR><BR>FROM<BR>  TasaGrupo
+
+[TasaGrupo.Grupo]
+Clave=TasaGrupo.Grupo
+LigaTabla=TasaGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

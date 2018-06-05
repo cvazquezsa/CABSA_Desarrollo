@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ServicioMotor
+Nombre=Motores
+Modulos=(Todos)
+Singular=Motor
+ListaTablas=ServicioMotor
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioMotor.Motor
+TablaPrincipal=ServicioMotor
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioMotor.Motor<BR><BR>FROM<BR>  ServicioMotor
+
+[ServicioMotor.Motor]
+Clave=ServicioMotor.Motor
+LigaTabla=ServicioMotor
+LigaCampo=Motor
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Motor

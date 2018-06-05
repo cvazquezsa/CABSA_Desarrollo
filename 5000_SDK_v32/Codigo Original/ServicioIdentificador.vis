@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ServicioIdentificador
+Nombre=Identificadores
+Modulos=(Todos)
+Singular=Identificador
+ListaTablas=ServicioIdentificador
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioIdentificador.Identificador
+TablaPrincipal=ServicioIdentificador
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioIdentificador.Identificador<BR><BR>FROM<BR>  ServicioIdentificador
+
+[ServicioIdentificador.Identificador]
+Clave=ServicioIdentificador.Identificador
+LigaTabla=ServicioIdentificador
+LigaCampo=Identificador
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Identificador

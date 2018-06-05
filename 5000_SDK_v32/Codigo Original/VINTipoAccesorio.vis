@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=VINTipoAccesorio
+Nombre=Tipo
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=VINTipoAccesorio
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=VINTipoAccesorio.Tipo
+TablaPrincipal=VINTipoAccesorio
+UsarJOIN=S
+SQL=SELECT<BR>  VINTipoAccesorio.Tipo<BR><BR>FROM<BR>  VINTipoAccesorio
+
+[VINTipoAccesorio.Tipo]
+Clave=VINTipoAccesorio.Tipo
+LigaTabla=VINTipoAccesorio
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

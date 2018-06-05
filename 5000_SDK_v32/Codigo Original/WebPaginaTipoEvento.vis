@@ -1,0 +1,65 @@
+[Vista]
+Icono=0
+Clave=WebPaginaTipoEvento
+Nombre=Tipos Eventos
+Modulos=(Todos)
+Singular=Tipo Evento
+ListaTablas=WebPaginaTipoEvento
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=WebPaginaTipoEvento
+SQL=SELECT<BR>  WebPaginaTipoEvento.Tipo,<BR>  WebPaginaTipoEvento.Numero,<BR>  WebPaginaTipoEvento.Color<BR><BR>FROM<BR>  WebPaginaTipoEvento
+
+[WebPaginaTipoEvento.Tipo]
+Clave=WebPaginaTipoEvento.Tipo
+Nombre=Tipo Evento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=WebPaginaTipoEvento
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Tipo
+
+[WebPaginaTipoEvento.Numero]
+Clave=WebPaginaTipoEvento.Numero
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Numero Incorrecto del 1 al 10<T>
+ValidacionCondicion=WebPaginaTipoEvento.Numero en (1,2,3,4,5,6,7,8,9,10)
+LigaTabla=WebPaginaTipoEvento
+LigaCampo=Numero
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Numero
+
+[WebPaginaTipoEvento.Color]
+Clave=WebPaginaTipoEvento.Color
+Nombre=Color
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=WebColor
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+LigaTabla=WebPaginaTipoEvento
+LigaCampo=Color
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Color
+
+[Vista.ListaCampos]
+(Inicio)=WebPaginaTipoEvento.Tipo
+WebPaginaTipoEvento.Tipo=WebPaginaTipoEvento.Numero
+WebPaginaTipoEvento.Numero=WebPaginaTipoEvento.Color
+WebPaginaTipoEvento.Color=(Fin)

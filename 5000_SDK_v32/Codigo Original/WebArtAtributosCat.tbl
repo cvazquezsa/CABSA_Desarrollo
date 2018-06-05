@@ -1,0 +1,31 @@
+
+[Tabla]
+Icono=0
+Clave=WebArtAtributosCat
+Nombre=WebArtAtributosCat
+Archivo=WebArtAtributosCat
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=Tipo
+LlavePrimaria=Tipo
+ControlTipo=S
+CampoTipo=Tipo
+SQL=(Lista)
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Tipo
+Tipo=FROM WebArtAtributosCat
+FROM WebArtAtributosCat=(Fin)

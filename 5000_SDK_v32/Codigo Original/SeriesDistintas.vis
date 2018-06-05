@@ -1,0 +1,21 @@
+[Vista]
+Icono=0
+Clave=SeriesDistintas
+Nombre=Series
+Modulos=(Todos)
+Singular=Serie
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=SerieLote
+LlavePrimaria=SerieLote
+CamposBusquedaRapida=SerieLote
+SQL=SELECT DISTINCT SerieLote FROM SerieLote
+
+[SerieLote]
+Clave=SerieLote
+Nombre=Serie/Lote
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=SerieLote
+TipoDatos=Texto

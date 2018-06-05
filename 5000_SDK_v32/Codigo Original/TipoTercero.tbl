@@ -1,0 +1,84 @@
+[Tabla]
+Icono=0
+Clave=TipoTercero
+Archivo=TipoTercero
+Modulos=(Todos)
+TipoTabla=Maestros
+LlavePrimaria=(Lista)
+Nombre=Tipo Tercero (Proveedores)
+Singular=Tipo Tercero (Proveedores)
+
+
+
+
+ListaCampos=(Lista)
+
+
+SQL=(Lista)
+[Codigo]
+Clave=Codigo
+Nombre=Codigo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+
+
+
+[TipoTercero.ListaOpciones]
+(Inicio)=Proveedor Nacional
+Proveedor Nacional=Proveedor Extranjero
+Proveedor Extranjero=Proveedor Global
+Proveedor Global=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Codigo
+Codigo=Clave
+Clave=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Codigo,
+Codigo,=Clave
+Clave=FROM TipoTercero
+FROM TipoTercero=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Codigo
+Codigo=Clave
+Clave=(Fin)

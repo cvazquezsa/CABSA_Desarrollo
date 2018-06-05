@@ -1,0 +1,81 @@
+[Tabla]
+Icono=0
+Clave=VentaRestringida
+Archivo=VentaRestringida
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Venta Restringida
+Singular=Venta Restringida
+LlavePrimaria=Empresa<BR>Agrupador<BR>Nombre
+ControlEmpresas=S
+CampoEmpresa=Empresa
+SQL=SELECT<BR>  Empresa,<BR>  Agrupador,<BR>  Nombre,<BR>  FechaD,<BR>  FechaA<BR><BR>FROM<BR>  VentaRestringida
+
+[Agrupador]
+Clave=Agrupador
+Nombre=Agrupador Artículo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=Caso VentaRestringida:VentaRestringida.Agrupador<BR>  Es <T>Categoria<T>  Entonces SQLEnLista(<T>SELECT Categoria FROM ArtCat<T>) <BR>  Es <T>Grupo<T>      Entonces SQLEnLista(<T>SELECT Grupo FROM ArtGrupo<T>) <BR>  Es <T>Familia<T>    Entonces SQLEnLista(<T>SELECT Familia FROM ArtFam<T>) <BR>  Es <T>Fabricante<T> Entonces SQLEnLista(<T>SELECT Fabricante FROM Fabricante<T>) <BR>  Es <T>Linea<T>      Entonces SQLEnLista(<T>SELECT Linea FROM ArtLinea<T>) <BR>Fin
+TipoDatos=Texto
+
+[FechaD]
+Clave=FechaD
+Nombre=De Fecha/Hora
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+AyudaEnCaptura=Calendario
+
+[FechaA]
+Clave=FechaA
+Nombre=A Fecha/Hora
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa hh:nn am/pm
+AyudaEnCaptura=Calendario
+
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+Tamano=5
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Agrupador
+Agrupador=Nombre
+Nombre=FechaD
+FechaD=FechaA
+FechaA=(Fin)
+
+[Agrupador.ListaOpciones]
+(Inicio)=Categoria
+Categoria=Grupo
+Grupo=Familia
+Familia=Fabricante
+Fabricante=Linea
+Linea=(Fin)

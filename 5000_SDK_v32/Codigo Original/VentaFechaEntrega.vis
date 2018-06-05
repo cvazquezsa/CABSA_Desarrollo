@@ -1,0 +1,34 @@
+[Vista]
+Icono=0
+Clave=VentaFechaEntrega
+Nombre=Fecha Entrega
+Modulos=(Todos)
+ListaTablas=Venta
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=Venta
+UsarJOIN=S
+SQL=SELECT<BR>  Venta.ID,<BR>  Venta.FechaEntrega<BR><BR>FROM<BR>  Venta
+
+[Venta.ID]
+Clave=Venta.ID
+LigaTabla=Venta
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=ID
+
+[Venta.FechaEntrega]
+Clave=Venta.FechaEntrega
+LigaTabla=Venta
+LigaCampo=FechaEntrega
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=FechaEntrega
+
+[Vista.ListaCampos]
+(Inicio)=Venta.ID
+Venta.ID=Venta.FechaEntrega
+Venta.FechaEntrega=(Fin)

@@ -1,0 +1,33 @@
+[Tabla]
+Icono=0
+Clave=TipoCuenta
+Archivo=TipoCuenta
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos Cuentas
+Singular=Tipo Cuenta
+LlavePrimaria=ClaveOrden<BR>TipoCuenta
+SQL=SELECT<BR>  ClaveOrden,<BR>  TipoCuenta<BR><BR>FROM<BR>  TipoCuenta
+
+[ClaveOrden]
+Clave=ClaveOrden
+Nombre=Orden
+TamanoValidacion=5
+Tamano=5
+Mayusculas=S
+Requerido=S
+TipoDatos=Texto
+
+[TipoCuenta]
+Clave=TipoCuenta
+Nombre=Clave
+TamanoValidacion=20
+Tamano=20
+Requerido=S
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=TipoCuenta
+TipoCuenta=ClaveOrden
+ClaveOrden=(Fin)

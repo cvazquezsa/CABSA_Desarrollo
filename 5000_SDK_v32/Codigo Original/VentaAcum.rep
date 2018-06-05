@@ -1,0 +1,383 @@
+[Reporte]
+Clave=VentaAcum
+Nombre=Ventas
+Icono=0
+Vista=VentaAcum
+MargenArriba=1
+MargenAbajo=1
+MargenIzquierdo=1
+MargenDerecho=1
+Orientacion=por Omision
+FuentePorOmision={Arial, 8, Negro, []}
+Ascii=S
+Impresora=S
+ImpresoraEspecifica=(por Omisión)
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+TamanoPagina=2
+AnchoPagina=21.6
+LargoPagina=27.9
+Parametros1=Cliente
+Parametros2=Entre
+Parametros3=N
+Parametros=S
+Columnas=1
+PosicionInicialAltura=450
+PosicionInicialAncho=798
+Menus=S
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Tipo=Reporte
+
+[Formato]
+ListaLineas=Encabezado<BR>Encabezado<BR>Detalle<BR>Fin: Moneda<BR>Pie
+VentanaIzquierda=74
+VentanaArriba=174
+VentanaAltura=420
+VentanaAncho=876
+PanelArriba=120
+PanelBotones=80
+
+[Linea1]
+Clave=Encabezado
+Objetos=2
+Seccion=Encabezado Página
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeAbajo=S
+EstiloAbajo=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea2]
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.6
+AVertical=Abajo
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Objetos=4
+BordeAbajo=S
+EstiloAbajo=1
+Renglones=1
+FondoColor=Blanco
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=9
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Ventas Acumualdas<T>
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[Linea3]
+Clave=Detalle
+Objetos=4
+Seccion=Detalle
+EstiloMarco=3
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+BordeArriba=S
+EstiloArriba=3
+Renglones=1
+FondoColor=Blanco
+
+[Linea4]
+Clave=Fin: Moneda
+Objetos=3
+Seccion=Fin Grupo
+Grupo=Moneda
+AltoEnCm=0.6
+AVertical=Arriba
+Fuente={Arial, 8, Negro, [Negritas]}
+BordeArriba=S
+EstiloArriba=1
+Visible=
+Renglones=1
+FondoColor=Blanco
+
+[B1]
+Celda=B1
+Alineacion=Derecha
+AnchoEnCm=10.61
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Empresa.Nombre
+BordeAbajo=S
+EstiloAbajo=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=3
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Cliente)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[B2]
+Celda=B2
+Alineacion=Centrado
+AnchoEnCm=8
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(Nombre)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[C2]
+Celda=C2
+Alineacion=Centrado
+AnchoEnCm=4
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(VentaMes)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[D2]
+Celda=D2
+Alineacion=Centrado
+AnchoEnCm=4
+BordeAbajo=S
+EstiloAbajo=1
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas + Cursiva]}
+Expresion=CampoNombre(VentaAcum)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=3
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Cliente
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[B3]
+Celda=B3
+Alineacion=Izquierda
+AnchoEnCm=8
+EstiloMarco=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Nombre
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[C3]
+Celda=C3
+Alineacion=Derecha
+AnchoEnCm=4
+EstiloMarco=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=VentaMes
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[D3]
+Celda=D3
+Alineacion=Derecha
+AnchoEnCm=4
+EstiloMarco=3
+FormatoValidacion=(Monetario)
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=VentaAcum
+BordeArriba=S
+EstiloArriba=3
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=9
+BordeArriba=S
+EstiloArriba=3
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=Ahora
+FormatoValidacion=dddddd (hh:nn am/pm)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[B5]
+Celda=B5
+Alineacion=Derecha
+AnchoEnCm=10.61
+BordeArriba=S
+EstiloArriba=3
+FormatoValidacion=
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, []}
+Expresion=<T>Página <T>+ReportePaginaNumero
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[C5]
+Celda=C5
+Alineacion=Derecha
+AnchoEnCm=4
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(VentaAcum)
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=11
+BordeArriba=S
+EstiloArriba=1
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=<T>Total <T>+Moneda
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[B4]
+Celda=B4
+Alineacion=Derecha
+AnchoEnCm=4
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(VentaMes)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[C4]
+Celda=C4
+Alineacion=Derecha
+AnchoEnCm=4
+BordeArriba=S
+EstiloArriba=1
+FormatoValidacion=(Monetario)
+AVertical=Arriba
+TipoImagen=Estirada
+Fuente={Arial, 8, Negro, [Negritas]}
+Expresion=Suma(VentaAcum)
+AnchoTexto=15
+FondoColor=Blanco
+CBTipo=UPC A
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreEnBoton=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+NombreDesplegar=Imprimir
+EnBarraHerramientas=S
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Reportes Impresora
+ClaveAccion=VentaAcum
+ListaParametros1=Info.ClienteD<BR>Info.ClienteA
+ListaParametros=S
+Activo=S
+Visible=S
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=67
+NombreDesplegar=Enviar a E&xcel
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Reportes Excel
+ClaveAccion=VentaAcum
+ListaParametros1=Info.ClienteD<BR>Info.ClienteA
+ListaParametros=S
+ActivoCondicion=Usuario.EnviarExcel
+Visible=S
+
+[Linea5]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+BordeArriba=S
+EstiloArriba=3
+AltoEnCm=0.4
+AVertical=Centrado
+Fuente={Arial, 8, Negro, []}
+Renglones=1
+FondoColor=Blanco
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)

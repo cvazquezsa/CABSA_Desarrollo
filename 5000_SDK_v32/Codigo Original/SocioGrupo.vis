@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=SocioGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=SocioGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=SocioGrupo.Grupo
+TablaPrincipal=SocioGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  SocioGrupo.Grupo<BR><BR>FROM<BR>  SocioGrupo
+
+[SocioGrupo.Grupo]
+Clave=SocioGrupo.Grupo
+LigaTabla=SocioGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

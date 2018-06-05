@@ -1,0 +1,33 @@
+
+[Vista]
+Icono=0
+Clave=WebArtAtributosCat
+Nombre=WebArtAtributosCat
+Modulos=(Todos)
+ListaTablas=WebArtAtributosCat
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=WebArtAtributosCat.Tipo
+TablaPrincipal=WebArtAtributosCat
+
+
+SQL=(Lista)
+[WebArtAtributosCat.Tipo]
+Clave=WebArtAtributosCat.Tipo
+LigaTabla=WebArtAtributosCat
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo
+
+
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=WebArtAtributosCat.Tipo
+WebArtAtributosCat.Tipo=FROM WebArtAtributosCat
+FROM WebArtAtributosCat=(Fin)

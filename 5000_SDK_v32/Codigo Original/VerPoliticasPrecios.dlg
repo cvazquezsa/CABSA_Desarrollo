@@ -1,0 +1,32 @@
+[Dialogo]
+Clave=VerPoliticasPrecios
+Icono=64
+TipoMensaje=General
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+AccionesTamanoBoton=15x5
+ListaAcciones=Aceptar
+AccionesCentro=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaEscCerrar=S
+PosicionInicialIzquierda=243
+PosicionInicialArriba=274
+PosicionInicialAltura=213
+PosicionInicialAncho=537
+VentanaConIcono=S
+VentanaExclusiva=S
+Nombre=Info.Articulo+<T> - <T>+Info.Descripcion+Si(ConDatos(Info.SubCuenta), <T> (<T>+Info.SubCuenta+<T>)<T>)
+PosicionInicialAlturaCliente=186
+Mensaje=<T>Políticas de Precios Aplicadas:<T>+NuevaLinea+NuevaLinea+Info.Mensaje
+
+[Acciones.Aceptar]
+Nombre=Aceptar
+Boton=0
+NombreDesplegar=&Aceptar
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S

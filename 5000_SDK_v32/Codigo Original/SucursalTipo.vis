@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=SucursalTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=SucursalTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=SucursalTipo.Tipo
+TablaPrincipal=SucursalTipo
+UsarJOIN=S
+SQL=SELECT<BR>  SucursalTipo.Tipo<BR><BR>FROM<BR>  SucursalTipo
+
+[SucursalTipo.Tipo]
+Clave=SucursalTipo.Tipo
+LigaTabla=SucursalTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo

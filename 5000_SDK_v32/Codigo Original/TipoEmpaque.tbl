@@ -1,0 +1,41 @@
+[Tabla]
+Icono=0
+Clave=TipoEmpaque
+Archivo=TipoEmpaque
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos Empaques
+Singular=Tipo Empaque
+LlavePrimaria=TipoEmpaque
+SQL=SELECT<BR>  TipoEmpaque,<BR>  Clave,<BR>  Tipo<BR><BR>FROM<BR>  TipoEmpaque
+
+[TipoEmpaque]
+Clave=TipoEmpaque
+Nombre=Tipo Empaque
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+
+[Tabla.ListaCampos]
+(Inicio)=TipoEmpaque
+TipoEmpaque=Clave
+Clave=Tipo
+Tipo=(Fin)

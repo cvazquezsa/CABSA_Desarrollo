@@ -1,0 +1,33 @@
+[Tabla]
+Icono=0
+Clave=WebSucursalImagenTemp
+Nombre=WebSucursalImagenTemp
+Archivo=WebSucursalImagenTemp
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=Estacion<BR>Sucursal<BR>Archivo
+SQL=SELECT<BR>  Estacion,<BR>  Sucursal,<BR>  Archivo<BR><BR>FROM<BR>  WebSucursalImagenTemp
+LlavePrimaria=Estacion<BR>Sucursal
+ControlSucursal=S
+CampoSucursal=Sucursal
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=EstacionTrabajo
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.Sucursal
+[Archivo]
+Clave=Archivo
+Nombre=Archivo
+Visible=S
+TamanoValidacion=255
+Tamano=255
+AyudaEnCaptura=Buscar Direccion

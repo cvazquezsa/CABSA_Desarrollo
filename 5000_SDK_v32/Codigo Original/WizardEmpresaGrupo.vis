@@ -1,0 +1,75 @@
+[Vista]
+Icono=0
+Clave=WizardEmpresaGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=EmpresaGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=EmpresaGrupo
+UsarJOIN=S
+
+SQL=SELECT EmpresaGrupo.Grupo, EmpresaGrupo.Clave FROM EmpresaGrupo
+[EmpresaGrupo.Grupo]
+Clave=EmpresaGrupo.Grupo
+LigaTabla=EmpresaGrupo
+LigaCampo=Grupo
+ClaveBDE=Grupo
+
+Ligado=S
+[EmpresaGrupo.Clave]
+Clave=EmpresaGrupo.Clave
+LigaTabla=EmpresaGrupo
+LigaCampo=Clave
+ClaveBDE=Clave
+
+
+
+
+
+
+Ligado=S
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=  EmpresaGrupo.Grupo,
+  EmpresaGrupo.Grupo,=  EmpresaGrupo.Clave
+  EmpresaGrupo.Clave=FROM
+FROM=  EmpresaGrupo
+  EmpresaGrupo=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=EmpresaGrupo.Grupo
+EmpresaGrupo.Grupo=EmpresaGrupo.Clave
+EmpresaGrupo.Clave=(Fin)

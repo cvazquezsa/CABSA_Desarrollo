@@ -1,0 +1,239 @@
+[Tabla]
+Icono=0
+Clave=TipoAmortizacion
+Archivo=TipoAmortizacion
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tipos Amortización
+Singular=Tipo Amortización
+LlavePrimaria=TipoAmortizacion
+ControlEstatus=S
+CampoEstatus=Estatus
+EstatusDefault=ALTA
+ListaRelaciones=MetodoAmortizacion
+
+SQL=SELECT<BR>  TipoAmortizacion,<BR>  Descripcion,<BR>  Metodo,<BR>  PagoInhabiles,<BR>  PagoVencimiento,<BR>  PagoDias,<BR>  PeriodosGraciaCapital,<BR>  Estatus,<BR>  ComisionesFinanciadas,<BR>  ReinversionAutomatica,<BR>  DiasIncluirUltima,<BR>  FinMes,<BR>  PagoDiasQ1,<BR>  PagoDiasQ2<BR><BR>FROM<BR>  TipoAmortizacion
+[TipoAmortizacion]
+Clave=TipoAmortizacion
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+TipoDatos=Texto
+
+[PagoVencimiento]
+Clave=PagoVencimiento
+Nombre=Vencimiento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Metodo en (10,11,12,20,30,31,40, 50)
+ValorPorOmision=<T>Fin de Mes<T>
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+
+TipoDatos=Texto
+ListaOpciones=(Lista)
+[PagoDias]
+Clave=PagoDias
+Nombre=Días
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=(Metodo en (10,11,12,20,30,31,40, 50)) y (PagoVencimiento en (<T>Dia Especifico<T>, <T>Dias<T>))
+
+[PagoInhabiles]
+Clave=PagoInhabiles
+Nombre=Pago en Días Inhabiles
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ValorPorOmision=<T>Posterior Habil<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+CondicionDespliege=Metodo <> 40
+ListaOpciones=(Lista)
+
+TipoDatos=Texto
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[PeriodosGraciaCapital]
+Clave=PeriodosGraciaCapital
+Nombre=Periodos de Gracia (Capital)
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=Metodo en (10,11,12)
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ValorRefrescar=TipoAmortizacion:MetodoAmortizacion.Descripcion
+TipoDatos=Texto
+
+[Metodo]
+Clave=Metodo
+Nombre=Método
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=MetodoAmortizacion
+AyudaVista=MetodoAmortizacion
+AyudaCampo=MetodoAmortizacion.Numero
+ValidacionUsaTabla=S
+ValidacionTablas=MetodoAmortizacion
+ConRefrescar=S
+ListaRefrescar=Descripcion
+
+[Relaciones.MetodoAmortizacion]
+TipoRelacion=Opcional
+LlaveLocal=Metodo
+Clave=MetodoAmortizacion
+TablaRemota=MetodoAmortizacion
+LlaveRemota=Numero
+
+[ComisionesFinanciadas]
+Clave=ComisionesFinanciadas
+Nombre=Comisiones Financiadas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Metodo noen (40, 50)
+
+[ReinversionAutomatica]
+Clave=ReinversionAutomatica
+Nombre=Reinversión Automática
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionDespliege=Metodo noen (40, 50)
+
+
+
+[PagoInhabiles.ListaOpciones]
+(Inicio)=Si
+Si=Posterior Habil
+Posterior Habil=Anterior Habil
+Anterior Habil=(Fin)
+
+[Estatus.ListaOpciones]
+(Inicio)=ALTA
+ALTA=BLOQUEADO
+BLOQUEADO=BAJA
+BAJA=(Fin)
+
+
+
+
+[DiasIncluirUltima]
+Clave=DiasIncluirUltima
+Nombre=Incluir al Final
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(Metodo en (10,11,12,20,30,31,40, 50)) y (PagoVencimiento = <T>Dias<T>)
+
+
+
+[FinMes]
+Clave=FinMes
+Nombre=Días 15 y Fin de Mes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+CondicionDespliege=(Metodo en (10,11,12,20,30,31,40, 50)) y (PagoVencimiento =<T>Quincenal<T>)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=(Lista)
+[PagoDiasQ1]
+Clave=PagoDiasQ1
+Nombre=Día Quincena 1
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+CondicionDespliege=(Metodo en (10,11,12,20,30,31,40, 50)) y (PagoVencimiento =<T>Quincenal<T>) y (FinMes = Falso)
+[PagoDiasQ2]
+Clave=PagoDiasQ2
+Nombre=Día Quincena 2
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+CondicionDespliege=(Metodo en (10,11,12,20,30,31,40, 50)) y (PagoVencimiento =<T>Quincenal<T>) y (FinMes = Falso)
+
+
+[PagoVencimiento.ListaRefrescarCondiciones]
+(Inicio)=PagoDias
+PagoDias=DiasIncluirUltima
+DiasIncluirUltima=FinMes
+FinMes=PagoDiasQ1
+PagoDiasQ1=PagoDiasQ2
+PagoDiasQ2=(Fin)
+
+[PagoVencimiento.ListaOpciones]
+(Inicio)=Fin de Mes
+Fin de Mes=Dia Especifico
+Dia Especifico=Dias
+Dias=Quincenal
+Quincenal=(Fin)
+
+
+
+
+
+
+
+
+
+
+
+
+[FinMes.ListaRefrescarCondiciones]
+(Inicio)=PagoDiasQ1
+PagoDiasQ1=PagoDiasQ2
+PagoDiasQ2=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=TipoAmortizacion
+TipoAmortizacion=Metodo
+Metodo=Descripcion
+Descripcion=PagoInhabiles
+PagoInhabiles=PagoVencimiento
+PagoVencimiento=PagoDias
+PagoDias=PeriodosGraciaCapital
+PeriodosGraciaCapital=ComisionesFinanciadas
+ComisionesFinanciadas=ReinversionAutomatica
+ReinversionAutomatica=Estatus
+Estatus=DiasIncluirUltima
+DiasIncluirUltima=FinMes
+FinMes=PagoDiasQ1
+PagoDiasQ1=PagoDiasQ2
+PagoDiasQ2=(Fin)

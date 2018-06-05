@@ -1,0 +1,58 @@
+[Tabla]
+Icono=0
+Clave=TablaAnualD
+Archivo=TablaAnualD
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tablas
+Singular=Tabla
+LlavePrimaria=TablaAnual<BR>Ejercicio<BR>Periodo
+CampoPeriodo=Periodo
+CampoEjercicio=Ejercicio
+SQL=SELECT<BR>  TablaAnual,<BR>  Ejercicio,<BR>  Periodo,<BR>  Importe<BR><BR>FROM<BR>  TablaAnualD
+
+[TablaAnual]
+Clave=TablaAnual
+Nombre=Tabla
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tabla
+TipoDatos=Texto
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.Ejercicio
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=10
+TipoDatos=Numérico
+OpcionesPresentacion=Consulta Opcional
+ListaOpciones=
+OpcionesLlave=Auto
+OpcionesPredefinidas=Meses Num.
+OpcionesUnicamente=S
+
+[Importe]
+Clave=Importe
+Nombre=Importe
+AyudaEnCaptura=Calculadora
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Tabla.ListaCampos]
+(Inicio)=TablaAnual
+TablaAnual=Ejercicio
+Ejercicio=Periodo
+Periodo=Importe
+Importe=(Fin)

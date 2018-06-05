@@ -1,0 +1,135 @@
+
+[Tabla]
+Icono=0
+Clave=TarjetaMonedero
+Nombre=TarjetaMonedero
+Archivo=TarjetaMonedero
+Modulos=(Todos)
+Singular=TarjetaMonedero
+TipoTabla=Cuentas
+
+ListaCampos=(Lista)
+LlavePrimaria=(Lista)
+ControlEstatus=S
+ControlUsuarios=S
+CampoEstatus=Estatus
+CampoUsuario=Usuario
+CampoEmpresa=Empresa
+EstatusDefault=ALTA
+SQL=(Lista)
+[Empresa]
+Clave=Empresa
+Nombre=Empresa
+Visible=S
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+
+ValorPorOmision=Empresa
+[Serie]
+Clave=Serie
+Nombre=No. Monedero
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+CondicionEdicion=no TieneMovimientos
+ConRefrescar=S
+ListaRefrescar=FechaAlta
+Mayusculas=S
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+[TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ValorPorOmision=Falso
+[Usuario]
+Clave=Usuario
+Nombre=Usuario Alta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+ValorPorOmision=Usuario
+[FechaAlta]
+Clave=FechaAlta
+Nombre=Fecha de Alta
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+ValorPorOmision=Hoy
+[UsuarioActivacion]
+Clave=UsuarioActivacion
+Nombre=Usuario Activacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[FechaActivacion]
+Clave=FechaActivacion
+Nombre=Fecha de Activacion
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+FormatoValidacion=dd/mmmm/aaaa
+CondicionDespliege=Estatus en (<T>ACTIVA<T>,<T>BAJA<T>)
+[FechaBaja]
+Clave=FechaBaja
+Nombre=Fecha de Baja
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmmm/aaaa
+CondicionDespliege=Estatus = <T>BAJA<T>
+
+
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Empresa
+Empresa=Serie
+Serie=Estatus
+Estatus=TieneMovimientos
+TieneMovimientos=Usuario
+Usuario=FechaAlta
+FechaAlta=UsuarioActivacion
+UsuarioActivacion=FechaActivacion
+FechaActivacion=FechaBaja
+FechaBaja=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Empresa,
+Empresa,=Serie,
+Serie,=Estatus,
+Estatus,=TieneMovimientos,
+TieneMovimientos,=Usuario,
+Usuario,=FechaAlta,
+FechaAlta,=UsuarioActivacion,
+UsuarioActivacion,=FechaActivacion,
+FechaActivacion,=FechaBaja
+FechaBaja=FROM TarjetaMonedero
+FROM TarjetaMonedero=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Empresa
+Empresa=Serie
+Serie=(Fin)

@@ -1,0 +1,43 @@
+[Tabla]
+Icono=0
+Clave=TablaStD
+Archivo=TablaStD
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Tabla Conversión
+Singular=Tabla Conversión
+LlavePrimaria=TablaSt<BR>Nombre
+SQL=SELECT<BR>  TablaSt,<BR>  Nombre,<BR>  Valor<BR><BR>FROM<BR>  TablaStD
+
+[TablaSt]
+Clave=TablaSt
+Nombre=TablaSt
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorPorOmision=Info.Tabla
+TipoDatos=Texto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=10
+Tamano=50
+Requerido=S
+TipoDatos=Texto
+
+[Valor]
+Clave=Valor
+Nombre=Valor
+Visible=S
+TamanoValidacion=10
+Tamano=50
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=TablaSt
+TablaSt=Nombre
+Nombre=Valor
+Valor=(Fin)

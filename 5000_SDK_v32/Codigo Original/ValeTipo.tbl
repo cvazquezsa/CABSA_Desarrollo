@@ -1,0 +1,64 @@
+[Tabla]
+Icono=0
+Clave=ValeTipo
+Archivo=ValeTipo
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tipos
+Singular=Tipo
+LlavePrimaria=Tipo
+ControlTipo=S
+CampoTipo=Tipo
+SQL=SELECT<BR>  Tipo,<BR>  Precio,<BR>  Moneda,<BR>  TieneVigencia<BR><BR>FROM<BR>  ValeTipo
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Precio]
+Clave=Precio
+Nombre=Precio (por omisión)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[TieneVigencia]
+Clave=TieneVigencia
+Nombre=Tiene Vigencia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda (por omisión)
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Config.ContMoneda
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Mon
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Precio
+Precio=Moneda
+Moneda=TieneVigencia
+TieneVigencia=(Fin)

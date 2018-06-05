@@ -1,0 +1,87 @@
+
+[Tabla]
+Icono=0
+Clave=WebArtCamposConfigurablesCatD
+Nombre=WebArtCamposConfigurablesCatD
+Archivo=WebArtCamposConfigurablesCatD
+Modulos=(Todos)
+TipoTabla=General
+
+ListaCampos=(Lista)
+LlavePrimaria=(Lista)
+ControlTipo=S
+CampoTipo=Tipo
+SQL=(Lista)
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+ValorPorOmision=Info.Tipo
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+
+[TipoCampo]
+Clave=TipoCampo
+Nombre=Tipo Campo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=255
+TipoDatos=Texto
+Tamano=255
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+
+
+
+
+
+
+
+
+
+
+ListaOpciones=(Lista)
+
+
+
+[TipoCampo.ListaOpciones]
+(Inicio)=Texto Corto
+Texto Corto=Texto Área
+Texto Área=Checkbox
+Checkbox=Menú de selección
+Menú de selección=(Fin)
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Nombre
+Nombre=TipoCampo
+TipoCampo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Tipo,
+Tipo,=Nombre,
+Nombre,=TipoCampo
+TipoCampo=FROM WebArtCamposConfigurablesCatD
+FROM WebArtCamposConfigurablesCatD=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Tipo
+Tipo=Nombre
+Nombre=(Fin)

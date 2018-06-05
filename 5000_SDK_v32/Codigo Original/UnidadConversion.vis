@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=UnidadConversion
+Nombre=Unidades Conversión
+Modulos=(Todos)
+Singular=Unidades Conversión
+ListaTablas=UnidadConversion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=UnidadConversion
+UsarJOIN=S
+SQL=SELECT<BR>  UnidadConversion.Unidad,<BR>  UnidadConversion.Conversion<BR><BR>FROM<BR>  UnidadConversion
+
+[UnidadConversion.Unidad]
+Clave=UnidadConversion.Unidad
+LigaTabla=UnidadConversion
+LigaCampo=Unidad
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Unidad
+
+[UnidadConversion.Conversion]
+Clave=UnidadConversion.Conversion
+LigaTabla=UnidadConversion
+LigaCampo=Conversion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Conversion
+
+[Vista.ListaCampos]
+(Inicio)=UnidadConversion.Unidad
+UnidadConversion.Unidad=UnidadConversion.Conversion
+UnidadConversion.Conversion=(Fin)

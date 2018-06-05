@@ -1,0 +1,33 @@
+[Dialogo]
+Clave=VentaAuto
+Nombre=Menú
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Auto
+PosicionInicialIzquierda=534
+PosicionInicialArriba=450
+PosicionInicialAlturaCliente=90
+PosicionInicialAncho=212
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEscCerrar=S
+
+[Acciones.Auto]
+Nombre=Auto
+Boton=0
+NombreDesplegar=&Autotransportes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Venta
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.SubModuloVenta, <T>AUTO<T>)

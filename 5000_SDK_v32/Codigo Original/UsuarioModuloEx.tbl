@@ -1,0 +1,67 @@
+[Tabla]
+Icono=0
+Clave=UsuarioModuloEx
+Archivo=UsuarioModuloEx
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Excepciones
+Singular=Excepción
+LlavePrimaria=(Lista)
+CampoUsuario=Usuario
+
+SQL=(Lista)
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Usuario
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Módulos
+
+[BloquearFiltroSucursal]
+Clave=BloquearFiltroSucursal
+Nombre=Bloquear Filtro Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=Usuario
+Usuario=Modulo
+Modulo=BloquearFiltroSucursal
+BloquearFiltroSucursal=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=  Usuario,
+  Usuario,=  Modulo,
+  Modulo,=  BloquearFiltroSucursal
+  BloquearFiltroSucursal=FROM
+FROM=  UsuarioModuloEx
+  UsuarioModuloEx=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=Usuario
+Usuario=Modulo
+Modulo=(Fin)

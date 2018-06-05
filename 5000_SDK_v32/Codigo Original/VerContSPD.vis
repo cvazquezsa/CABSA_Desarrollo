@@ -1,0 +1,74 @@
+[Vista]
+Icono=0
+Clave=VerContSPD
+Modulos=(Todos)
+TipoTabla=General
+Nombre=Saldo Promedio Diario
+Singular=Saldo Promedio Diario
+VistaIndependiente=S
+ListaCampos=(Lista)
+ListaCalculados=Factor
+SQL=EXEC spGenerarContSPD {EstacionTrabajo},<BR>                     <T>{Empresa}<T>,<BR>                      {Info.Ejercicio},<BR>                      {Info.Periodo},<BR>                      {Comillas(Info.CuentaD)},<BR>                      {Comillas(Info.CuentaA)}<BR>SELECT c.Cuenta, c.Descripcion, c.EsAcreedora, s.SPD, s.SMM<BR>  FROM Cta c<BR>  JOIN VerContSPD s ON c.Cuenta = s.Cuenta
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Cuenta
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=100
+Tamano=100
+ClaveBDE=Descripcion
+TipoDatos=Texto
+
+[EsAcreedora]
+Clave=EsAcreedora
+Nombre=Es Acreedora
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ClaveBDE=EsAcreedora
+
+[SPD]
+Clave=SPD
+Nombre=Saldo Promedio Diario
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SPD
+Monetario=S
+
+[SMM]
+Clave=SMM
+Nombre=Saldo Medio Mensual
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=SMM
+Monetario=S
+
+[Factor]
+Clave=Factor
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Factor
+Formula=Si(EsAcreedora,-1,1)
+
+[Vista.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=Descripcion
+Descripcion=EsAcreedora
+EsAcreedora=SPD
+SPD=SMM
+SMM=(Fin)

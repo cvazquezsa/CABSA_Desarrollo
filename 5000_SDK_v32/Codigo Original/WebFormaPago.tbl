@@ -1,0 +1,55 @@
+[Tabla]
+Icono=0
+Clave=WebFormaPago
+Nombre=WebFormaPago
+Archivo=WebFormaPago
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=FormaPagoWeb<BR>FormaPago<BR>CtaDinero<BR>Sucursal
+LlavePrimaria=FormaPagoWeb<BR>FormaPago
+SQL=SELECT<BR>  Sucursal,<BR>  FormaPagoWeb,<BR>  FormaPago,<BR>  CtaDinero<BR><BR>FROM<BR>  WebFormaPago
+ControlSucursal=S
+CampoSucursal=Sucursal
+[FormaPagoWeb]
+Clave=FormaPagoWeb
+Nombre=Forma Pago Web
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Requerido=S
+Formula=SQLEnLista(<T>SELECT DISTINCT Nombre FROM WebFormaPagoOmision<T>)
+TipoDatos=Texto
+[FormaPago]
+Clave=FormaPago
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemTabla=FormaPago
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Requerido=S
+Formula=SQLEnLista(<T>SELECT DISTINCT FormaPago FROM FormaPago ORDER BY FormaPago<T>)
+TipoDatos=Texto
+[CtaDinero]
+Clave=CtaDinero
+Nombre=Cuenta Dinero
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+TipoDatos=Texto
+[Sucursal]
+Clave=Sucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.Sucursal

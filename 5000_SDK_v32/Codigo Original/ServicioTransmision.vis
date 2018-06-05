@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ServicioTransmision
+Nombre=Transmisiones
+Modulos=(Todos)
+Singular=Transmision
+ListaTablas=ServicioTransmision
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioTransmision.Transmision
+TablaPrincipal=ServicioTransmision
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioTransmision.Transmision<BR><BR>FROM<BR>  ServicioTransmision
+
+[ServicioTransmision.Transmision]
+Clave=ServicioTransmision.Transmision
+LigaTabla=ServicioTransmision
+LigaCampo=Transmision
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Transmision

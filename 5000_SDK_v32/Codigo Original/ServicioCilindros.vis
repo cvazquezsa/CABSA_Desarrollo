@@ -1,0 +1,22 @@
+[Vista]
+Icono=0
+Clave=ServicioCilindros
+Nombre=Cilindros
+Modulos=(Todos)
+Singular=Cilindros
+ListaTablas=ServicioCilindros
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioCilindros.Cilindros
+TablaPrincipal=ServicioCilindros
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioCilindros.Cilindros<BR><BR>FROM<BR>  ServicioCilindros
+
+[ServicioCilindros.Cilindros]
+Clave=ServicioCilindros.Cilindros
+LigaTabla=ServicioCilindros
+LigaCampo=Cilindros
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Cilindros

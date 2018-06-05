@@ -1,0 +1,47 @@
+[Tabla]
+Icono=0
+Clave=WebPaginaTipoEvento
+Archivo=WebPaginaTipoEvento
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tipos Evento
+Singular=Tipo Evento
+LlavePrimaria=Numero
+CampoTipo=Tipo
+SQL=SELECT<BR>  Tipo,<BR>  Numero,<BR>  Color<BR><BR>FROM<BR>  WebPaginaTipoEvento
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo Evento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Numero]
+Clave=Numero
+Nombre=Número
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>del 0 al 10<T>
+ValidacionCondicion=Numero en (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+[Color]
+Clave=Color
+Nombre=Color
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=WebColor
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Tipo
+Tipo=Numero
+Numero=Color
+Color=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TablaEvaluacion
+Nombre=Tablas Numéricas
+Modulos=(Todos)
+Singular=Tabla Numérica
+ListaTablas=TablaEvaluacion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TablaEvaluacion.TablaEvaluacion
+TablaPrincipal=TablaEvaluacion
+UsarJOIN=S
+SQL=SELECT<BR>  TablaEvaluacion.TablaEvaluacion<BR><BR>FROM<BR>  TablaEvaluacion
+
+[TablaEvaluacion.TablaEvaluacion]
+Clave=TablaEvaluacion.TablaEvaluacion
+LigaTabla=TablaEvaluacion
+LigaCampo=TablaEvaluacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=TablaEvaluacion

@@ -1,0 +1,104 @@
+
+[Vista]
+Icono=0
+Clave=WebArtVariacion2
+Nombre=WebArtVariacion
+Modulos=(Todos)
+ListaTablas=WebArtVariacion2
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=WebArtVariacion2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL=(Lista)
+[WebArtVariacion2.ID]
+Clave=WebArtVariacion2.ID
+LigaTabla=WebArtVariacion2
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=ID
+
+[WebArtVariacion2.Orden]
+Clave=WebArtVariacion2.Orden
+LigaTabla=WebArtVariacion2
+LigaCampo=Orden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Orden
+
+[WebArtVariacion2.Nombre]
+Clave=WebArtVariacion2.Nombre
+LigaTabla=WebArtVariacion2
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+
+[WebArtVariacion2.NumeroOpciones]
+Clave=WebArtVariacion2.NumeroOpciones
+LigaTabla=WebArtVariacion2
+LigaCampo=NumeroOpciones
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=NumeroOpciones
+
+[WebArtVariacion2.ProveedorID]
+Clave=WebArtVariacion2.ProveedorID
+LigaTabla=WebArtVariacion2
+LigaCampo=ProveedorID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=ProveedorID
+
+[WebArtVariacion2.GUID]
+Clave=WebArtVariacion2.GUID
+LigaTabla=WebArtVariacion2
+LigaCampo=GUID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Bytes
+Tamano=16
+ClaveBDE=GUID
+
+[Vista.ListaCampos]
+(Inicio)=WebArtVariacion2.ID
+WebArtVariacion2.ID=WebArtVariacion2.Orden
+WebArtVariacion2.Orden=WebArtVariacion2.Nombre
+WebArtVariacion2.Nombre=WebArtVariacion2.NumeroOpciones
+WebArtVariacion2.NumeroOpciones=WebArtVariacion2.ProveedorID
+WebArtVariacion2.ProveedorID=WebArtVariacion2.GUID
+WebArtVariacion2.GUID=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=  WebArtVariacion2.ID,
+  WebArtVariacion2.ID,=  WebArtVariacion2.Orden,
+  WebArtVariacion2.Orden,=  WebArtVariacion2.Nombre,
+  WebArtVariacion2.Nombre,=  WebArtVariacion2.NumeroOpciones,
+  WebArtVariacion2.NumeroOpciones,=  WebArtVariacion2.ProveedorID,
+  WebArtVariacion2.ProveedorID,=  WebArtVariacion2.GUID
+  WebArtVariacion2.GUID=FROM
+FROM=  WebArtVariacion2
+  WebArtVariacion2=(Fin)

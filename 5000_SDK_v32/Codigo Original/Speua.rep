@@ -1,0 +1,342 @@
+[Reporte]
+Clave=Speua
+Nombre=Movimientos de Dinero
+Icono=6
+Vista=DineroT
+TamanoPagina=2
+MargenArriba=0
+MargenAbajo=0
+MargenIzquierdo=1
+MargenDerecho=1
+AnchoPagina=21.6
+LargoPagina=27.9
+FuentePorOmision={Arial, 10, Negro, []}
+Parametros1=Dinero.ID
+Parametros2==
+Parametros3=N
+Parametros=S
+Columnas=1
+OtroOrden=S
+ListaOrden=Dinero.ID<TAB>(Acendente)
+PosicionInicialAltura=449
+PosicionInicialAncho=812
+PosicionInicialIzquierda=45
+PosicionInicialArriba=75
+BarraHerramientas=S
+ListaAcciones=(Lista)
+Menus=S
+Orientacion=Vertical
+Ascii=S
+Impresora=S
+ImpresoraMatriz=
+ImpresoraFactor=(Auto)
+ImpresoraAlto=(Auto)
+ImpresoraEspecifica=Speuas en 132.147.160.18_9902
+ListaCampos=
+ListaExpresiones=
+Filtros=S
+FiltroRespetar=S
+ImprimirDirectamente=S
+FormatoSinConexion=S
+Tipo=Reporte
+PosicionInicialAlturaCliente=422
+
+[Formato]
+ListaLineas=Inicio: Dinero.ID<BR>Inicio: Dinero.ID<BR>Inicio:<BR>Inicio: Dinero.ID<BR>Inicio: Dinero.ID<BR>Inicio: Dinero.ID<BR>Fin: Dinero.ID
+VentanaIzquierda=108
+VentanaArriba=10
+VentanaAltura=664
+VentanaAncho=808
+PanelArriba=314
+PanelBotones=128
+
+[Linea1]
+Clave=Inicio: Dinero.ID
+Seccion=Inicio Grupo
+FondoColor=Blanco
+AltoEnCm=2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=2
+Grupo=Dinero.ID
+Marco=N
+EstiloMarco=0
+Renglones=1
+
+[Linea2]
+Clave=Inicio: Dinero.ID
+Seccion=Inicio Grupo
+FondoColor=Blanco
+AltoEnCm=1.5
+AVertical=Abajo
+Fuente={Arial, 10, Negro, [Cursiva]}
+Objetos=2
+Grupo=Dinero.ID
+Marco=N
+BordeArriba=N
+BorqueIzquierdo=N
+EstiloMarco=1
+Renglones=1
+
+[Linea3]
+Clave=Inicio:
+Seccion=Inicio Grupo
+Marco=N
+EstiloMarco=0
+FondoColor=Blanco
+AltoEnCm=1.2
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=1
+Grupo=
+BordeArriba=N
+BorqueIzquierdo=N
+FondoEstilo=0
+Renglones=1
+
+[Linea4]
+Clave=Inicio: Dinero.ID
+Objetos=2
+Seccion=Inicio Grupo
+FondoColor=Blanco
+AltoEnCm=5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Grupo=Dinero.ID
+Marco=N
+EstiloMarco=0
+FondoEstilo=0
+BordeAbajo=N
+Visible=
+Renglones=13
+
+[A1]
+Celda=A1
+Alineacion=Izquierda
+AnchoEnCm=3
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=
+Marco=N
+BordeArriba=N
+BordeAbajo=N
+BordeIzquierdo=N
+BordeDerecho=N
+EstiloMarco=0
+AnchoTexto=15
+CBTipo=UPC A
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=Bcos
+ListaParametros1=Dinero.ID
+ListaParametros=S
+Visible=S
+Activo=S
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+P
+EnMenu=S
+EspacioPrevio=S
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=23
+NombreDesplegar=&Cerrar
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Visible=S
+Activo=S
+EnMenu=S
+UsaTeclaRapida=S
+TeclaRapida=Alt+F4
+EspacioPrevio=
+NombreEnBoton=S
+EnBarraHerramientas=S
+
+[A2]
+Celda=A2
+Alineacion=Centrado
+AnchoEnCm=18.11
+Marco=N
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 12, Negro, [Negritas]}
+Expresion=<T>Tesoreria Electrónica<T>
+AnchoTexto=97
+CBTipo=UPC A
+
+[B2]
+Celda=B2
+Alineacion=Izquierda
+AnchoEnCm=8.39
+Marco=N
+EstiloMarco=1
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Tahoma, 10, Negro, []}
+Expresion=
+FormatoValidacion=
+AnchoTexto=15
+CBTipo=UPC A
+
+[D5]
+Celda=D5
+Alineacion=Derecha
+AnchoEnCm=2.61
+EstiloMarco=3
+FondoColor=Blanco
+FormatoValidacion=(Monetario)
+ExpresionMultiple=S
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, [Negritas]}
+Expresion=Dinero.Importe<BR>Dinero.Comisiones<BR>Dinero.Impuestos<BR>Si((Dinero.Comisiones>0) o (Dinero.Impuestos>0),Dinero.Importe+Dinero.Comisiones+Dinero.Impuestos)
+
+[B5]
+Celda=B5
+Alineacion=Izquierda
+AnchoEnCm=10.11
+BordeAbajo=N
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=Beneficiario.Info2<BR><BR>Beneficiario.Info1<BR><BR>SQL(<T>Select Nombre from InstitucionFin where Institucion = :tInstitucion<T>, Beneficiario.Institucion)  +  <T>      (<T> + Beneficiario.Institucion + <T>)<T><BR><BR>Beneficiario.Info3<BR><BR>Beneficiario.Info4<BR><BR><T>OP: <T> + Dinero.Referencia + <T>           USR: <T> + Dinero.Usuario
+AnchoTexto=54
+BordeArriba=N
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[Linea5]
+Clave=Inicio: Dinero.ID
+Objetos=2
+Seccion=Inicio Grupo
+Grupo=Dinero.ID
+FondoColor=Blanco
+AltoEnCm=8
+AVertical=Abajo
+Fuente={Tahoma, 10, Negro, []}
+Renglones=15
+
+[Linea6]
+Clave=Inicio: Dinero.ID
+Seccion=Inicio Grupo
+Grupo=Dinero.ID
+FondoColor=Blanco
+AltoEnCm=1.5
+AVertical=Centrado
+Fuente={Arial, 10, Negro, []}
+Objetos=2
+Renglones=1
+
+[A4]
+Celda=A4
+Alineacion=Izquierda
+AnchoEnCm=3.5
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=<T>PAGAREMOS EL:<T><BR><BR><T>CUENTA:<T><BR><BR><T>INSTRUMENTO:<T><BR><BR><T>IMPORTE:<T>
+AnchoTexto=15
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[B4]
+Celda=B4
+Alineacion=Izquierda
+AnchoEnCm=10.1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=FechaDMA( Dinero.FechaEmision) <BR><BR>CtaDinero.Descripcion<BR><BR><T>PAGO A TERCEROS  Y/O  SPEUA<T><BR><BR>AlinearDerecha( MonetarioEnTexto(Dinero.Importe ), 18, <T>*<T>)<BR><BR><T>(<T> + NumEnEspañol(Dinero.Importe, <T>Pesos<T> ) + <T> M.N.)<T>
+AnchoTexto=54
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[A5]
+Celda=A5
+Alineacion=Izquierda
+AnchoEnCm=3.5
+FondoColor=Blanco
+AVertical=Abajo
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=<T>A FAVOR DE:<T><BR><BR><T>CUENTA:<T><BR><BR><T>BANCO:<T><BR><BR><T>PLAZA:<T><BR><BR><T>SUCURSAL:<T><BR><BR><T>REFERENCIA:<T>
+AnchoTexto=15
+ExpresionMultiple=S
+CBTipo=UPC A
+
+[B1]
+Celda=B1
+Alineacion=Izquierda
+AnchoEnCm=15.11
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 14, Negro, [Negritas]}
+Expresion=<T>MASARI CASA DE CAMBIO, S.A. DE C.V.<T>
+AnchoTexto=15
+CBTipo=UPC A
+
+[Linea7]
+Clave=Fin: Dinero.ID
+Seccion=Fin Grupo
+Grupo=Dinero.ID
+AltoEnCm=8.7
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 10, Negro, []}
+AVertical=Centrado
+
+[A6]
+Celda=A6
+Alineacion=Izquierda
+AnchoEnCm=3.5
+AnchoTexto=15
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=<T>ENVIADA POR:<T>
+CBTipo=UPC A
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=10.1
+AnchoTexto=15
+BordeArriba=S
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 10, Negro, []}
+Expresion=<T>NOMBRE                                RASTREO
+CBTipo=UPC A
+
+[A3]
+Celda=A3
+Alineacion=Izquierda
+AnchoEnCm=8.21
+AnchoTexto=44
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+Fuente={Arial, 14, Negro, [Negritas]}
+Expresion=<T>FOLIO:<T> + Dinero.MovID
+CBTipo=UPC A
+
+[Reporte.ListaAcciones]
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=(Fin)

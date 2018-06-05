@@ -1,0 +1,49 @@
+[Dialogo]
+Clave=TraspasarAcumulados
+Nombre=<T>Traspasar Acumulados de <T>+(Info.Ejercicio-1)+<T> a <T>+Info.Ejercicio
+Icono=7
+TipoMensaje=Precaución
+TipoDialogo=Mensaje
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=(Lista)
+PosicionInicialAltura=125
+PosicionInicialAncho=313
+PosicionInicialIzquierda=355
+PosicionInicialArriba=318
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+VentanaEscCerrar=S
+VentanaExclusiva=S
+PosicionInicialAlturaCliente=98
+Mensaje=<T>¿ Esta Seguro que desea Continuar ?<T>
+
+[Acciones.Aceptar]
+Nombre=Aceptar
+Boton=0
+NombreDesplegar=&Sí
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=ProcesarSQL(<T>spTraspasarSaldos :tEmpresa, :nEjercicio<T>, Empresa, Info.Ejercicio)
+
+[Acciones.Cancelar]
+Nombre=Cancelar
+Boton=0
+NombreDesplegar=&No
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar
+Activo=S
+Visible=S
+
+[Dialogo.ListaAcciones]
+(Inicio)=Aceptar
+Aceptar=Cancelar
+Cancelar=(Fin)

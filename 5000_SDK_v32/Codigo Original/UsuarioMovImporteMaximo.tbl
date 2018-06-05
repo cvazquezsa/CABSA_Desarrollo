@@ -1,0 +1,112 @@
+[Tabla]
+Icono=0
+Clave=UsuarioMovImporteMaximo
+Archivo=UsuarioMovImporteMaximo
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=(Lista)
+Nombre=Importe Máximo
+Singular=Importe Máximo
+LlavePrimaria=Usuario<BR>Modulo<BR>Mov
+CampoMov=Mov
+CampoUsuario=Usuario
+SQL=SELECT<BR>  Usuario,<BR>  Modulo,<BR>  Mov,<BR>  ImporteMaximo,<BR>  NoDeducibleMaximo,<BR>  DescuentoGlobalMaximo,<BR>  DescuentoLineaMaximo,<BR>  DescuentoMaximo<BR><BR>FROM<BR>  UsuarioMovImporteMaximo
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Usuario
+TipoDatos=Texto
+
+[Modulo]
+Clave=Modulo
+Nombre=Módulo
+Visible=S
+TamanoValidacion=5
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=12
+ListaOpciones=(Lista)
+TipoDatos=Texto
+
+[Mov]
+Clave=Mov
+Nombre=Movimiento
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+Formula=ListaMovimientos(UsuarioMovImporteMaximo:UsuarioMovImporteMaximo.Modulo)
+TipoDatos=Texto
+
+[ImporteMaximo]
+Clave=ImporteMaximo
+Nombre=Importe Máximo (MN)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[NoDeducibleMaximo]
+Clave=NoDeducibleMaximo
+Nombre=Máximo No Deducible (MN)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[DescuentoGlobalMaximo]
+Clave=DescuentoGlobalMaximo
+Nombre=% Descuento Global Máximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[DescuentoLineaMaximo]
+Clave=DescuentoLineaMaximo
+Nombre=% Descuento Linea Máximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+
+[DescuentoMaximo]
+Clave=DescuentoMaximo
+Nombre=Descuento Máximo (MN)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+[Tabla.ListaCampos]
+(Inicio)=Usuario
+Usuario=Modulo
+Modulo=Mov
+Mov=ImporteMaximo
+ImporteMaximo=NoDeducibleMaximo
+NoDeducibleMaximo=DescuentoMaximo
+DescuentoMaximo=DescuentoGlobalMaximo
+DescuentoGlobalMaximo=DescuentoLineaMaximo
+DescuentoLineaMaximo=(Fin)
+
+[Modulo.ListaOpciones]
+(Inicio)=VTAS
+VTAS=COMS
+COMS=CXC
+CXC=CXP
+CXP=DIN
+DIN=GAS
+GAS=(Fin)

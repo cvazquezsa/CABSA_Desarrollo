@@ -1,0 +1,29 @@
+
+[Vista]
+Icono=0
+Clave=UsuarioPerfilForma
+Nombre=Perfil Formas
+Modulos=(Todos)
+Singular=Perfil Formas
+ListaTablas=UsuarioPerfilForma
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=UsuarioPerfilForma.Perfil
+TablaPrincipal=UsuarioPerfilForma
+SQL=SELECT<BR>  UsuarioPerfilForma.Perfil<BR><BR>FROM<BR>  UsuarioPerfilForma
+[UsuarioPerfilForma.Perfil]
+Clave=UsuarioPerfilForma.Perfil
+Nombre=Perfil
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=UsuarioPerfilForma
+LigaCampo=Perfil
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Perfil

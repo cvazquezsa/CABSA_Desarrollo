@@ -1,0 +1,54 @@
+[Vista]
+Icono=0
+Clave=TipoTercero
+Nombre=Tipo Tercero (Proveedores)
+Modulos=(Todos)
+Singular=Tipo Tercero (Proveedores)
+ListaTablas=TipoTercero
+UsoCapturas=S
+UsoReportes=S
+UsoAfectaciones=S
+ListaCampos=(Lista)
+TablaPrincipal=TipoTercero
+UsarJOIN=S
+
+
+
+
+
+
+
+
+
+SQL=(Lista)
+[TipoTercero.Codigo]
+Clave=TipoTercero.Codigo
+LigaTabla=TipoTercero
+LigaCampo=Codigo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Codigo
+
+[TipoTercero.Clave]
+Clave=TipoTercero.Clave
+LigaTabla=TipoTercero
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Clave
+
+[Vista.ListaCampos]
+(Inicio)=TipoTercero.Codigo
+TipoTercero.Codigo=TipoTercero.Clave
+TipoTercero.Clave=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=TipoTercero.Codigo,
+TipoTercero.Codigo,=TipoTercero.Clave
+TipoTercero.Clave=FROM TipoTercero
+FROM TipoTercero=(Fin)

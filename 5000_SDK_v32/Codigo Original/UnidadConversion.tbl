@@ -1,0 +1,46 @@
+[Tabla]
+Icono=0
+Clave=UnidadConversion
+Archivo=UnidadConversion
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Unidades Conversión
+Singular=Unidad Conversión
+LlavePrimaria=Unidad<BR>Conversion
+SQL=SELECT<BR>  Unidad,<BR>  Conversion<BR><BR>FROM<BR>  UnidadConversion
+
+[Unidad]
+Clave=Unidad
+Nombre=Unidad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+Requerido=S
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Conversion]
+Clave=Conversion
+Nombre=Conversión Válida
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+Requerido=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No puede ser la Misma Unidad<T>
+AyudaForma=Unidad
+ValidacionCondicion=Conversion<>Unidad
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Unidad
+Unidad=Conversion
+Conversion=(Fin)

@@ -1,0 +1,140 @@
+[Vista]
+Icono=0
+Clave=VerSincroISLog
+Nombre=Bitácora
+Modulos=(Todos)
+Singular=Bitácora
+ListaTablas=VerSincroISLog
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=(Lista)
+TablaPrincipal=VerSincroISLog
+TRCLLocal=S
+
+SQL=(Lista)
+[VerSincroISLog.RID]
+Clave=VerSincroISLog.RID
+LigaTabla=VerSincroISLog
+LigaCampo=RID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=RID
+
+[VerSincroISLog.Solicitud]
+Clave=VerSincroISLog.Solicitud
+LigaTabla=VerSincroISLog
+LigaCampo=Solicitud
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=36
+ClaveBDE=Solicitud
+
+[VerSincroISLog.Conversacion]
+Clave=VerSincroISLog.Conversacion
+LigaTabla=VerSincroISLog
+LigaCampo=Conversacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=36
+ClaveBDE=Conversacion
+
+[VerSincroISLog.ConversacionTabla]
+Clave=VerSincroISLog.ConversacionTabla
+Nombre=Tabla
+Visible=S
+TamanoValidacion=100
+Tamano=100
+LigaTabla=VerSincroISLog
+LigaCampo=ConversacionTabla
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ConversacionTabla
+
+[VerSincroISLog.SucursalOrigen]
+Clave=VerSincroISLog.SucursalOrigen
+LigaTabla=VerSincroISLog
+LigaCampo=SucursalOrigen
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=SucursalOrigen
+
+[VerSincroISLog.SucursalDestino]
+Clave=VerSincroISLog.SucursalDestino
+LigaTabla=VerSincroISLog
+LigaCampo=SucursalDestino
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=SucursalDestino
+
+[VerSincroISLog.FechaEnvio]
+Clave=VerSincroISLog.FechaEnvio
+LigaTabla=VerSincroISLog
+LigaCampo=FechaEnvio
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=FechaEnvio
+
+[VerSincroISLog.FechaRecibo]
+Clave=VerSincroISLog.FechaRecibo
+LigaTabla=VerSincroISLog
+LigaCampo=FechaRecibo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=FechaHora
+ClaveBDE=FechaRecibo
+
+[VerSincroISLog.PaqueteCambios]
+Clave=VerSincroISLog.PaqueteCambios
+LigaTabla=VerSincroISLog
+LigaCampo=PaqueteCambios
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=PaqueteCambios
+
+[VerSincroISLog.PaqueteBajas]
+Clave=VerSincroISLog.PaqueteBajas
+LigaTabla=VerSincroISLog
+LigaCampo=PaqueteBajas
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=PaqueteBajas
+
+
+
+[Vista.ListaCampos]
+(Inicio)=VerSincroISLog.RID
+VerSincroISLog.RID=VerSincroISLog.Solicitud
+VerSincroISLog.Solicitud=VerSincroISLog.Conversacion
+VerSincroISLog.Conversacion=VerSincroISLog.ConversacionTabla
+VerSincroISLog.ConversacionTabla=VerSincroISLog.SucursalOrigen
+VerSincroISLog.SucursalOrigen=VerSincroISLog.SucursalDestino
+VerSincroISLog.SucursalDestino=VerSincroISLog.FechaEnvio
+VerSincroISLog.FechaEnvio=VerSincroISLog.FechaRecibo
+VerSincroISLog.FechaRecibo=VerSincroISLog.PaqueteCambios
+VerSincroISLog.PaqueteCambios=VerSincroISLog.PaqueteBajas
+VerSincroISLog.PaqueteBajas=(Fin)
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=  VerSincroISLog.RID,
+  VerSincroISLog.RID,=  VerSincroISLog.Solicitud,
+  VerSincroISLog.Solicitud,=  VerSincroISLog.Conversacion,
+  VerSincroISLog.Conversacion,=  VerSincroISLog.ConversacionTabla,
+  VerSincroISLog.ConversacionTabla,=  VerSincroISLog.SucursalOrigen,
+  VerSincroISLog.SucursalOrigen,=  VerSincroISLog.SucursalDestino,
+  VerSincroISLog.SucursalDestino,=  VerSincroISLog.FechaEnvio,
+  VerSincroISLog.FechaEnvio,=  VerSincroISLog.FechaRecibo,
+  VerSincroISLog.FechaRecibo,=  VerSincroISLog.PaqueteCambios,
+  VerSincroISLog.PaqueteCambios,=  VerSincroISLog.PaqueteBajas
+  VerSincroISLog.PaqueteBajas=FROM
+FROM=  VerSincroISLog
+  VerSincroISLog=(Fin)

@@ -1,0 +1,57 @@
+
+[Tabla]
+Icono=0
+Clave=TCProcesadorTrans
+Nombre=TCProcesadorTrans
+Archivo=TCProcesadorTrans
+Modulos=(Todos)
+Singular=TCProcesadorTrans
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=ProcesadorTrans
+SQL=(Lista)
+[ProcesadorTrans]
+Clave=ProcesadorTrans
+Nombre=Procesador Transacciones
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+
+
+
+
+
+[TerminalEquiv]
+Clave=TerminalEquiv
+Nombre=Terminal Equivalente
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+
+OpcionesUnicamente=S
+
+
+ValorPorOmision=Falso
+
+
+[Tabla.ListaCampos]
+(Inicio)=ProcesadorTrans
+ProcesadorTrans=TerminalEquiv
+TerminalEquiv=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ProcesadorTrans,
+ProcesadorTrans,=TerminalEquiv
+TerminalEquiv=FROM TCProcesadorTrans
+FROM TCProcesadorTrans=(Fin)

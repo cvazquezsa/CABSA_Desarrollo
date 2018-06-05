@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ServicioTraccion
+Nombre=Tracciones
+Modulos=(Todos)
+Singular=Traccion
+ListaTablas=ServicioTraccion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioTraccion.Traccion
+TablaPrincipal=ServicioTraccion
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioTraccion.Traccion<BR><BR>FROM<BR>  ServicioTraccion
+
+[ServicioTraccion.Traccion]
+Clave=ServicioTraccion.Traccion
+LigaTabla=ServicioTraccion
+LigaCampo=Traccion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Traccion

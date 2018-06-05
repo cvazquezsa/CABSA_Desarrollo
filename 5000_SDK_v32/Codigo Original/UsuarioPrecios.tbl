@@ -1,0 +1,36 @@
+[Tabla]
+Icono=0
+Clave=UsuarioPrecios
+Archivo=UsuarioPrecios
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Precios
+LlavePrimaria=Usuario<BR>ListaPrecios
+CampoUsuario=Usuario
+Singular=Precios
+SQL=SELECT<BR>  Usuario,<BR>  ListaPrecios<BR><BR>FROM<BR>  UsuarioPrecios
+
+[Usuario]
+Clave=Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorPorOmision=Info.Usuario
+
+[ListaPrecios]
+Clave=ListaPrecios
+Nombre=Lista Precios
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=Usuario
+Usuario=ListaPrecios
+ListaPrecios=(Fin)

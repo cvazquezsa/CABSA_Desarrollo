@@ -1,0 +1,57 @@
+[Tabla]
+Icono=0
+Clave=WebSituacion
+Archivo=WebSituacion
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+SQL=(Lista)
+[ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+[EnviarCorreo]
+Clave=EnviarCorreo
+Nombre=Enviar Correo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=falso
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ID
+ID=Nombre
+Nombre=EnviarCorreo
+EnviarCorreo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ID,
+ID,=Nombre,
+Nombre,=EnviarCorreo
+EnviarCorreo=FROM WebSituacion
+FROM WebSituacion=(Fin)

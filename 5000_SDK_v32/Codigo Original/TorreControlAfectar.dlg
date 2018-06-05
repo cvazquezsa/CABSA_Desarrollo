@@ -1,0 +1,49 @@
+[Dialogo]
+Clave=TorreControlAfectar
+Nombre=Generar
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+PosicionInicialIzquierda=411
+PosicionInicialArriba=310
+PosicionInicialAlturaCliente=114
+PosicionInicialAncho=201
+VentanaSiempreAlFrente=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+VentanaConIcono=S
+VentanaEscCerrar=S
+ListaAcciones=(Lista)
+
+[Acciones.Factura]
+Nombre=Factura
+Boton=0
+NombreDesplegar=&Factura
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Mov, ConfigMov.VentaFactura)
+
+[Acciones.Consumo]
+Nombre=Consumo
+Boton=0
+NombreDesplegar=Consumo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Mov, ConfigMov.VentaConsumo)
+
+[Dialogo.ListaAcciones]
+(Inicio)=Factura
+Factura=Consumo
+Consumo=(Fin)

@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=TipoCuenta
+Nombre=Tipos de Cuentas
+Modulos=(Todos)
+Singular=Tipo de Cuenta
+ListaTablas=TipoCuenta
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=TipoCuenta
+UsarJOIN=S
+SQL=SELECT<BR>  TipoCuenta.TipoCuenta,<BR>  TipoCuenta.ClaveOrden<BR><BR>FROM<BR>  TipoCuenta
+
+[TipoCuenta.TipoCuenta]
+Clave=TipoCuenta.TipoCuenta
+LigaTabla=TipoCuenta
+LigaCampo=TipoCuenta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=TipoCuenta
+
+[TipoCuenta.ClaveOrden]
+Clave=TipoCuenta.ClaveOrden
+LigaTabla=TipoCuenta
+LigaCampo=ClaveOrden
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=ClaveOrden
+
+[Vista.ListaCampos]
+(Inicio)=TipoCuenta.TipoCuenta
+TipoCuenta.TipoCuenta=TipoCuenta.ClaveOrden
+TipoCuenta.ClaveOrden=(Fin)

@@ -1,0 +1,42 @@
+[Vista]
+Icono=0
+Clave=VerReciprocidad
+Nombre=Reciprocidad
+Modulos=(Todos)
+Singular=Reciprocidad
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+SQL=spACReciprocidad <T>{Empresa}<T>,<BR>                 <T>{Info.Cliente}<T>,<BR>                 {Info.Importe},<BR>                 <T>{Info.TipoCredito}<T>,<BR>                 <T>{Info.Articulo}<T>
+
+[Acciones]
+Clave=Acciones
+Nombre=Acciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=Acciones
+
+[AccionesImporte]
+Clave=AccionesImporte
+Nombre=Importe Acciones
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=AccionesImporte
+Monetario=S
+
+[InversionTotal]
+Clave=InversionTotal
+Nombre=Inversión Total
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=InversionTotal
+Monetario=S
+
+[Vista.ListaCampos]
+(Inicio)=Acciones
+Acciones=AccionesImporte
+AccionesImporte=InversionTotal
+InversionTotal=(Fin)

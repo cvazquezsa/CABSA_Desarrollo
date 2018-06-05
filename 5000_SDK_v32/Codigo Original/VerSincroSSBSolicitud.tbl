@@ -1,0 +1,85 @@
+[Tabla]
+Icono=0
+Clave=VerSincroSSBSolicitud
+Archivo=VerSincroSSBSolicitud
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Solicitudes
+Singular=Solicitud
+LlavePrimaria=Solicitud
+ControlEstatus=S
+CampoEstatus=Estatus
+ControlTipo=S
+CampoTipo=Tipo
+CampoSucursalDestino=SucursalDestino
+CampoSucursalOrigen=SucursalOrigen
+SQL=SELECT<BR>  Solicitud,<BR>  Tipo,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR>  FechaEnvio,<BR>  FechaRecibo,<BR>  Estatus<BR><BR>FROM<BR>  VerSincroSSBSolicitud
+
+[Solicitud]
+Clave=Solicitud
+Nombre=Solicitud
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=36
+TipoDatos=Texto
+Tamano=36
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[SucursalOrigen]
+Clave=SucursalOrigen
+Nombre=Sucursal Origen
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[SucursalDestino]
+Clave=SucursalDestino
+Nombre=Sucursal Destino
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+[FechaEnvio]
+Clave=FechaEnvio
+Nombre=Fecha Envio
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmmm/aaaa hh:nn am/pm
+
+[FechaRecibo]
+Clave=FechaRecibo
+Nombre=Fecha Recibo
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmmm/aaaa hh:nn am/pm
+
+[Estatus]
+Clave=Estatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+
+[Tabla.ListaCampos]
+(Inicio)=Solicitud
+Solicitud=Tipo
+Tipo=SucursalOrigen
+SucursalOrigen=SucursalDestino
+SucursalDestino=FechaEnvio
+FechaEnvio=FechaRecibo
+FechaRecibo=Estatus
+Estatus=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=SucursalRegion
+Nombre=Regiones
+Modulos=(Todos)
+Singular=Región
+ListaTablas=SucursalRegion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=SucursalRegion.Region
+TablaPrincipal=SucursalRegion
+UsarJOIN=S
+SQL=SELECT<BR>  SucursalRegion.Region<BR><BR>FROM<BR>  SucursalRegion
+
+[SucursalRegion.Region]
+Clave=SucursalRegion.Region
+LigaTabla=SucursalRegion
+LigaCampo=Region
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Region

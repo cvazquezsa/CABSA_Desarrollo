@@ -1,0 +1,360 @@
+
+
+[Estacion]
+Clave=Estacion
+Nombre=Estacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=128
+TipoDatos=Texto
+Tamano=128
+
+[BD1Orden]
+Clave=BD1Orden
+Nombre=<T>Orden  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Orden <> BD2Orden<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Orden]
+Clave=BD2Orden
+Nombre=<T>Orden  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Orden <> BD2Orden<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1TipoDatos]
+Clave=BD1TipoDatos
+Nombre=<T>Tipo de Datos  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+ColorFondoEsp=Si BD1TipoDatos <> BD2TipoDatos<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2TipoDatos]
+Clave=BD2TipoDatos
+Nombre=<T>Tipo de Datos  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+ColorFondoEsp=Si BD1TipoDatos <> BD2TipoDatos<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1Ancho]
+Clave=BD1Ancho
+Nombre=<T>Ancho  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Ancho <> BD2Ancho<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Ancho]
+Clave=BD2Ancho
+Nombre=<T>Ancho  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Ancho <> BD2Ancho<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1Precision]
+Clave=BD1Precision
+Nombre=<T>Precision  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Precision <> BD2Precision<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Precision]
+Clave=BD2Precision
+Nombre=<T>Precision  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Precision <> BD2Precision<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1Escala]
+Clave=BD1Escala
+Nombre=<T>Escala  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Escala <> BD2Escala<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Escala]
+Clave=BD2Escala
+Nombre=<T>Escala  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+
+ColorFondoEsp=Si BD1Escala <> BD2Escala<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1AceptaNulos]
+Clave=BD1AceptaNulos
+Nombre=<T>Acepta Nulos  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1AceptaNulos <> BD2AceptaNulos<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2AceptaNulos]
+Clave=BD2AceptaNulos
+Nombre=<T>Acepta Nulos  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1AceptaNulos <> BD2AceptaNulos<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1EsIdentity]
+Clave=BD1EsIdentity
+Nombre=<T>Es Identity  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1EsIdentity <> BD2EsIdentity<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2EsIdentity]
+Clave=BD2EsIdentity
+Nombre=<T>Es Identity  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1EsIdentity <> BD2EsIdentity<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1EsCalculado]
+Clave=BD1EsCalculado
+Nombre=<T>Es Calculado  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1EsCalculado <> BD2EsCalculado<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2EsCalculado]
+Clave=BD2EsCalculado
+Nombre=<T>Es Calculado  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+ColorFondoEsp=Si BD1EsCalculado <> BD2EsCalculado<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1Collation]
+Clave=BD1Collation
+Nombre=<T>Collation  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+ColorFondoEsp=Si BD1Collation <> BD2Collation<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Collation]
+Clave=BD2Collation
+Nombre=<T>Collation  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+ColorFondoEsp=Si BD1Collation <> BD2Collation<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD1Tipo]
+Clave=BD1Tipo
+Nombre=<T>Tipo  (<T>+  SQL(<T>SELECT InfoBaseDatos1 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+ColorFondoEsp=Si BD1Tipo <> BD2Tipo<BR>Entonces<BR><T>Rojo<T><BR>Fin
+NombreExpresion=S
+[BD2Tipo]
+Clave=BD2Tipo
+Nombre=<T>Tipo  (<T>+  SQL(<T>SELECT InfoBaseDatos2 FROM RepParam WHERE Estacion = :nEstacion<T>, EstacionTrabajo) + <T>)<T>
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ColorFondoEsp=Si BD1Tipo <> BD2Tipo<BR>Entonces<BR><T>Rojo<T><BR>Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NombreExpresion=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TablaNombre]
+Clave=TablaNombre
+Nombre=Tabla
+Visible=S
+TamanoValidacion=128
+TipoDatos=Texto
+Tamano=128
+
+[Tabla]
+ListaCampos=(Lista)
+
+Icono=0
+Clave=SincroComparacion
+Nombre=SincroComparacion
+Archivo=SincroComparacion
+Modulos=(Todos)
+Singular=SincroComparacion
+SQL=(Lista)
+LlavePrimaria=Estacion
+TipoTabla=General
+[Tabla.ListaCampos]
+(Inicio)=Estacion
+Estacion=TablaNombre
+TablaNombre=Campo
+Campo=BD1Orden
+BD1Orden=BD2Orden
+BD2Orden=BD1TipoDatos
+BD1TipoDatos=BD2TipoDatos
+BD2TipoDatos=BD1Ancho
+BD1Ancho=BD2Ancho
+BD2Ancho=BD1Precision
+BD1Precision=BD2Precision
+BD2Precision=BD1Escala
+BD1Escala=BD2Escala
+BD2Escala=BD1AceptaNulos
+BD1AceptaNulos=BD2AceptaNulos
+BD2AceptaNulos=BD1EsIdentity
+BD1EsIdentity=BD2EsIdentity
+BD2EsIdentity=BD1EsCalculado
+BD1EsCalculado=BD2EsCalculado
+BD2EsCalculado=BD1Collation
+BD1Collation=BD2Collation
+BD2Collation=BD1Tipo
+BD1Tipo=BD2Tipo
+BD2Tipo=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=Estacion,
+Estacion,=TablaNombre,
+TablaNombre,=Campo,
+Campo,=BD1Orden,
+BD1Orden,=BD2Orden,
+BD2Orden,=BD1TipoDatos,
+BD1TipoDatos,=BD2TipoDatos,
+BD2TipoDatos,=BD1Ancho,
+BD1Ancho,=BD2Ancho,
+BD2Ancho,=BD1Precision,
+BD1Precision,=BD2Precision,
+BD2Precision,=BD1Escala,
+BD1Escala,=BD2Escala,
+BD2Escala,=BD1AceptaNulos,
+BD1AceptaNulos,=BD2AceptaNulos,
+BD2AceptaNulos,=BD1EsIdentity,
+BD1EsIdentity,=BD2EsIdentity,
+BD2EsIdentity,=BD1EsCalculado,
+BD1EsCalculado,=BD2EsCalculado,
+BD2EsCalculado,=BD1Collation,
+BD1Collation,=BD2Collation,
+BD2Collation,=BD1Tipo,
+BD1Tipo,=BD2Tipo
+BD2Tipo=FROM SincroComparacion
+FROM SincroComparacion=(Fin)

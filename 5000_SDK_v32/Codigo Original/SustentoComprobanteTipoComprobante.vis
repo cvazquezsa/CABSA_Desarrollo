@@ -1,0 +1,45 @@
+
+[Vista]
+Icono=0
+Clave=SustentoComprobanteTipoComprobante
+Nombre=SustentoComprobanteTipoComprobante
+Modulos=(Todos)
+Singular=SustentoComprobanteTipoComprobante
+ListaTablas=SustentoComprobanteTipoComprobante
+UsoCapturas=S
+UsoReportes=S
+
+ListaCampos=SustentoComprobanteTipoComprobante.SustentoComprobante<BR>SustentoComprobanteTipoComprobante.TIpoComprobante
+TablaPrincipal=SustentoComprobanteTipoComprobante
+SQL=SELECT<BR>  SustentoComprobanteTipoComprobante.SustentoComprobante,<BR>  SustentoComprobanteTipoComprobante.TIpoComprobante<BR><BR>FROM<BR>  SustentoComprobanteTipoComprobante
+CamposBusquedaRapida=SustentoComprobanteTipoComprobante.SustentoComprobante<BR>SustentoComprobanteTipoComprobante.TIpoComprobante
+[SustentoComprobanteTipoComprobante.SustentoComprobante]
+Clave=SustentoComprobanteTipoComprobante.SustentoComprobante
+Nombre=Sustento Comprobante
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+ValorPorOmision=Info.Nombre
+LigaTabla=SustentoComprobanteTipoComprobante
+LigaCampo=SustentoComprobante
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SustentoComprobante
+
+[SustentoComprobanteTipoComprobante.TIpoComprobante]
+Clave=SustentoComprobanteTipoComprobante.TIpoComprobante
+Nombre=Tipo Comprobante
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=TipoComprobantelLista
+AyudaVista=TipoComprobante
+AyudaCampo=TipoComprobante.TipoComprobante
+LigaTabla=SustentoComprobanteTipoComprobante
+LigaCampo=TIpoComprobante
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TIpoComprobante

@@ -1,0 +1,45 @@
+[Tabla]
+Icono=0
+Clave=TareaDef
+Archivo=TareaDef
+Modulos=(Todos)
+TipoTabla=Maestros
+ListaCampos=(Lista)
+Nombre=Tareas
+Singular=Tarea
+LlavePrimaria=Tarea
+SQL=SELECT<BR>  Tarea,<BR>  Categoria,<BR>  Tiempo<BR><BR>FROM<BR>  TareaDef
+
+[Tarea]
+Clave=Tarea
+Nombre=Tarea
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[Categoria]
+Clave=Categoria
+Nombre=Categoria
+AyudaEnCaptura=Validaciones Memoria
+TamanoValidacion=50
+Tamano=50
+AyudaMemTabla=TareaCat
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+TipoDatos=Texto
+
+[Tiempo]
+Clave=Tiempo
+Nombre=Tiempo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+[Tabla.ListaCampos]
+(Inicio)=Tarea
+Tarea=Categoria
+Categoria=Tiempo
+Tiempo=(Fin)

@@ -1,0 +1,71 @@
+[Vista]
+Icono=0
+Clave=VerContOARecursos
+Nombre=Origen y Aplicación de Recursos
+Modulos=(Todos)
+Singular=Origen y Aplicación de Recursos
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+ListaCalculados=(Lista)
+SQL=spVerContOARecursos <T>{Empresa}<T>,<BR>                     {Info.Ejercicio},<BR>                     {Info.PeriodoD},<BR>                     {Info.PeriodoA},<BR>                    <T>{Config.CtaResultados}<T>,<BR>                    <T>{Info.ContMoneda}<T>
+
+[Cuenta]
+Clave=Cuenta
+Nombre=Cuenta
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+Tamano=20
+ClaveBDE=Cuenta
+TipoDatos=Texto
+
+[Descripcion]
+Clave=Descripcion
+Nombre=Descripción
+Visible=S
+TamanoValidacion=50
+Tamano=100
+ClaveBDE=Descripcion
+TipoDatos=Texto
+
+[CambioNeto]
+Clave=CambioNeto
+Nombre=Cambio Neto
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=CambioNeto
+Monetario=S
+
+[Origen]
+Clave=Origen
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Origen
+Monetario=S
+Formula=Si(CambioNeto<0, -CambioNeto)
+
+[Aplicacion]
+Clave=Aplicacion
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Aplicación
+Monetario=S
+Formula=Si(CambioNeto>0,CambioNeto)
+
+[Vista.ListaCampos]
+(Inicio)=Cuenta
+Cuenta=Descripcion
+Descripcion=CambioNeto
+CambioNeto=(Fin)
+
+[Vista.ListaCalculados]
+(Inicio)=Origen
+Origen=Aplicacion
+Aplicacion=(Fin)

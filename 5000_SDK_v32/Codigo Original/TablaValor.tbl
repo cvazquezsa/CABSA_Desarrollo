@@ -1,0 +1,29 @@
+[Tabla]
+Icono=0
+Clave=TablaValor
+Nombre=Tablas Conversión
+Archivo=TablaValor
+Modulos=(Todos)
+TipoTabla=Configuracion
+ListaCampos=TablaValor
+Singular=Tablas Conversión
+LlavePrimaria=TablaValor
+
+SQL=(Lista)
+[TablaValor]
+Clave=TablaValor
+Nombre=Tabla Valor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+
+
+
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=TablaValor
+TablaValor=FROM TablaValor
+FROM TablaValor=(Fin)

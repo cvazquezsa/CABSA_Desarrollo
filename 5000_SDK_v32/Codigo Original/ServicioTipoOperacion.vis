@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=ServicioTipoOperacion
+Nombre=Tipos Ordenes
+Modulos=(Todos)
+Singular=Tipo Orden
+ListaTablas=ServicioTipoOperacion
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+TablaPrincipal=ServicioTipoOperacion
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioTipoOperacion.TipoOperacion,<BR>  ServicioTipoOperacion.Clave<BR><BR>FROM<BR>  ServicioTipoOperacion
+
+[ServicioTipoOperacion.TipoOperacion]
+Clave=ServicioTipoOperacion.TipoOperacion
+LigaTabla=ServicioTipoOperacion
+LigaCampo=TipoOperacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TipoOperacion
+
+[ServicioTipoOperacion.Clave]
+Clave=ServicioTipoOperacion.Clave
+LigaTabla=ServicioTipoOperacion
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Clave
+
+[Vista.ListaCampos]
+(Inicio)=ServicioTipoOperacion.TipoOperacion
+ServicioTipoOperacion.TipoOperacion=ServicioTipoOperacion.Clave
+ServicioTipoOperacion.Clave=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TituloTipo
+Nombre=Tipos
+Modulos=(Todos)
+Singular=Tipo
+ListaTablas=TituloTipo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TituloTipo.Tipo
+TablaPrincipal=TituloTipo
+UsarJOIN=S
+SQL=SELECT<BR>  TituloTipo.Tipo<BR><BR>FROM<BR>  TituloTipo
+
+[TituloTipo.Tipo]
+Clave=TituloTipo.Tipo
+LigaTabla=TituloTipo
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo

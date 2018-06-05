@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=SucursalCat
+Nombre=Categorias
+Modulos=(Todos)
+Singular=Categoria
+ListaTablas=SucursalCat
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=SucursalCat.Categoria
+TablaPrincipal=SucursalCat
+UsarJOIN=S
+SQL=SELECT<BR>  SucursalCat.Categoria<BR><BR>FROM<BR>  SucursalCat
+
+[SucursalCat.Categoria]
+Clave=SucursalCat.Categoria
+LigaTabla=SucursalCat
+LigaCampo=Categoria
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Categoria

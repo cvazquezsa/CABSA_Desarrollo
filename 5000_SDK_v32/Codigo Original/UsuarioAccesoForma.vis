@@ -1,0 +1,50 @@
+
+[Vista]
+Icono=0
+Clave=UsuarioAccesoForma
+Nombre=Acceso Formas
+Modulos=(Todos)
+Singular=Acceso Forma
+ListaTablas=UsuarioAccesoForma
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=(Lista)
+TablaPrincipal=UsuarioAccesoForma
+SQL=SELECT<BR>  UsuarioAccesoForma.Usuario,<BR>  UsuarioAccesoForma.Forma<BR><BR>FROM<BR>  UsuarioAccesoForma
+[UsuarioAccesoForma.Usuario]
+Clave=UsuarioAccesoForma.Usuario
+Nombre=Usuario
+Visible=S
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ValorPorOmision=Info.Usuario
+LigaTabla=UsuarioAccesoForma
+LigaCampo=Usuario
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Usuario
+
+[UsuarioAccesoForma.Forma]
+Clave=UsuarioAccesoForma.Forma
+Nombre=Forma
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Consulta opcional
+Formula=ListaFormas
+LigaTabla=UsuarioAccesoForma
+LigaCampo=Forma
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Forma
+
+[Vista.ListaCampos]
+(Inicio)=UsuarioAccesoForma.Usuario
+UsuarioAccesoForma.Usuario=UsuarioAccesoForma.Forma
+UsuarioAccesoForma.Forma=(Fin)

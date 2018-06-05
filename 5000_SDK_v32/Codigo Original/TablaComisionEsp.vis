@@ -1,0 +1,38 @@
+[Vista]
+Icono=0
+Clave=TablaComisionEsp
+Modulos=(Todos)
+ListaTablas=TablaComisionEsp
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=(Lista)
+Nombre=Comisiones Especiales
+Singular=Comisiones Especiales
+TablaPrincipal=TablaComisionEsp
+UsarJOIN=S
+SQL=SELECT<BR>  TablaComisionEsp.TablaComisionEsp,<BR>  TablaComisionEsp.Tipo<BR><BR>FROM<BR>  TablaComisionEsp
+
+[TablaComisionEsp.TablaComisionEsp]
+Clave=TablaComisionEsp.TablaComisionEsp
+LigaTabla=TablaComisionEsp
+LigaCampo=TablaComisionEsp
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TablaComisionEsp
+
+[TablaComisionEsp.Tipo]
+Clave=TablaComisionEsp.Tipo
+LigaTabla=TablaComisionEsp
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Tipo
+
+[Vista.ListaCampos]
+(Inicio)=TablaComisionEsp.TablaComisionEsp
+TablaComisionEsp.TablaComisionEsp=TablaComisionEsp.Tipo
+TablaComisionEsp.Tipo=(Fin)

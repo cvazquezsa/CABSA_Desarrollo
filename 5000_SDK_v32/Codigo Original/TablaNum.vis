@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TablaNum
+Nombre=Tablas Numéricas
+Modulos=(Todos)
+Singular=Tabla Numérica
+ListaTablas=TablaNum
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TablaNum.TablaNum
+TablaPrincipal=TablaNum
+UsarJOIN=S
+SQL=SELECT<BR>  TablaNum.TablaNum<BR><BR>FROM<BR>  TablaNum
+
+[TablaNum.TablaNum]
+Clave=TablaNum.TablaNum
+LigaTabla=TablaNum
+LigaCampo=TablaNum
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TablaNum

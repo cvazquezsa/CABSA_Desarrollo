@@ -1,0 +1,74 @@
+
+[Vista]
+Icono=0
+Clave=SAUXContactoLista
+Nombre=SAUXContactoLista
+Modulos=(Todos)
+Singular=Contacto Lista
+
+VistaIndependiente=S
+TipoTabla=General
+ListaCampos=(Lista)
+
+SQL=EXEC spContactoLista <T>{Info.ContactoTipo}<T>
+[Contacto]
+Clave=Contacto
+Nombre=Contacto
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Contacto
+
+[Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre
+
+
+
+
+
+[Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=9
+TipoDatos=Texto
+Tamano=9
+ClaveBDE=Tipo
+
+
+
+
+
+
+[Vista.SQL]
+(Inicio)=SELECT Contacto, Nombre, Tipo FROM
+SELECT Contacto, Nombre, Tipo FROM=(SELECT Cliente as Contacto, Nombre as Nombre, 'Cliente' as Tipo FROM Cte
+(SELECT Cliente as Contacto, Nombre as Nombre, 'Cliente' as Tipo FROM Cte=  UNION ALL
+  UNION ALL= SELECT Proveedor as Contacto, Nombre as Nombre, 'Proveedor' as Tipo FROM Prov
+ SELECT Proveedor as Contacto, Nombre as Nombre, 'Proveedor' as Tipo FROM Prov= )ContactoLista
+ )ContactoLista=(Fin)
+
+
+
+
+
+
+
+[Vista.ListaCampos]
+(Inicio)=Contacto
+Contacto=Nombre
+Nombre=Tipo
+Tipo=(Fin)

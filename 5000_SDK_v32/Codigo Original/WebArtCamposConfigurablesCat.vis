@@ -1,0 +1,33 @@
+
+[Vista]
+Icono=0
+Clave=WebArtCamposConfigurablesCat
+Nombre=WebArtCamposConfigurablesCat
+Modulos=(Todos)
+ListaTablas=WebArtCamposConfigurablesCat
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=WebArtCamposConfigurablesCat.Tipo
+TablaPrincipal=WebArtCamposConfigurablesCat
+
+
+SQL=(Lista)
+[WebArtCamposConfigurablesCat.Tipo]
+Clave=WebArtCamposConfigurablesCat.Tipo
+LigaTabla=WebArtCamposConfigurablesCat
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Tipo
+
+
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=WebArtCamposConfigurablesCat.Tipo
+WebArtCamposConfigurablesCat.Tipo=FROM WebArtCamposConfigurablesCat
+FROM WebArtCamposConfigurablesCat=(Fin)

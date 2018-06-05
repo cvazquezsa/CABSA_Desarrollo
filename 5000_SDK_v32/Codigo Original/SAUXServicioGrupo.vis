@@ -1,0 +1,37 @@
+[Vista]
+Icono=0
+Clave=SAUXServicioGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=SAUXServicioGrupo
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+ListaCampos=SAUXServicioGrupo.Grupo
+TablaPrincipal=SAUXServicioGrupo
+
+
+
+SQL=(Lista)
+[Vista.ListaCampos]
+(Inicio)=SAUXServicioGrupo.Grupo
+SAUXServicioGrupo.Grupo=SAUXServicioGrupo.Icono
+SAUXServicioGrupo.Icono=(Fin)
+
+
+[SAUXServicioGrupo.Grupo]
+Clave=SAUXServicioGrupo.Grupo
+LigaTabla=SAUXServicioGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=SAUXServicioGrupo.Grupo
+SAUXServicioGrupo.Grupo=FROM SAUXServicioGrupo
+FROM SAUXServicioGrupo=(Fin)

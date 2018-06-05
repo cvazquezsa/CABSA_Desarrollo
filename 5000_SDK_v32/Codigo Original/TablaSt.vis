@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=TablaSt
+Nombre=Tablas Conversión
+Modulos=(Todos)
+Singular=Tabla Conversión
+ListaTablas=TablaSt
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=TablaSt.TablaSt
+TablaPrincipal=TablaSt
+UsarJOIN=S
+SQL=SELECT<BR>  TablaSt.TablaSt<BR><BR>FROM<BR>  TablaSt
+
+[TablaSt.TablaSt]
+Clave=TablaSt.TablaSt
+LigaTabla=TablaSt
+LigaCampo=TablaSt
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=TablaSt

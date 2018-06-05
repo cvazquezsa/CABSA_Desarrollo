@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=SucursalGrupo
+Nombre=Grupos
+Modulos=(Todos)
+Singular=Grupo
+ListaTablas=SucursalGrupo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=SucursalGrupo.Grupo
+TablaPrincipal=SucursalGrupo
+UsarJOIN=S
+SQL=SELECT<BR>  SucursalGrupo.Grupo<BR><BR>FROM<BR>  SucursalGrupo
+
+[SucursalGrupo.Grupo]
+Clave=SucursalGrupo.Grupo
+LigaTabla=SucursalGrupo
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Grupo

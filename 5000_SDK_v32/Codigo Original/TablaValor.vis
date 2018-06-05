@@ -1,0 +1,32 @@
+
+[Vista]
+Icono=0
+Clave=TablaValor
+Nombre=TablaValorD
+Modulos=(Todos)
+ListaTablas=TablaValor
+UsoCapturas=S
+UsoReportes=S
+UsarJOIN=S
+
+ListaCampos=TablaValor.TablaValor
+TablaPrincipal=TablaValor
+SQL=(Lista)
+[TablaValor.TablaValor]
+Clave=TablaValor.TablaValor
+Nombre=Tabla Valor
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=TablaValor
+LigaCampo=TablaValor
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TablaValor
+
+[Vista.SQL]
+(Inicio)=SELECT
+SELECT=TablaValor.TablaValor
+TablaValor.TablaValor=FROM TablaValor
+FROM TablaValor=(Fin)

@@ -1,0 +1,23 @@
+[Vista]
+Icono=0
+Clave=ServicioVehiculo
+Nombre=Vehiculos
+Modulos=(Todos)
+Singular=Vehiculo
+ListaTablas=ServicioVehiculo
+UsoCapturas=S
+UsoReportes=S
+ListaCampos=ServicioVehiculo.Vehiculo
+TablaPrincipal=ServicioVehiculo
+UsarJOIN=S
+SQL=SELECT<BR>  ServicioVehiculo.Vehiculo<BR><BR>FROM<BR>  ServicioVehiculo
+
+[ServicioVehiculo.Vehiculo]
+Clave=ServicioVehiculo.Vehiculo
+LigaTabla=ServicioVehiculo
+LigaCampo=Vehiculo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Vehiculo

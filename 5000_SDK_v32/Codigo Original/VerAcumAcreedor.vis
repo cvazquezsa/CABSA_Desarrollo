@@ -1,0 +1,143 @@
+[Vista]
+Icono=0
+Clave=VerAcumAcreedor
+Nombre=Acumulados
+Modulos=(Todos)
+Singular=Acumulado
+VistaIndependiente=S
+TipoTabla=Saldos
+ListaCampos=(Lista)
+ListaCalculados=Mes
+TipoPeriodo=Mensual
+ControlPeriodos=S
+ControlEjercicios=S
+CampoPeriodo=Periodo
+CampoEjercicio=Ejercicio
+SQL=spVerAcumulados<BR>  {Comillas(Empresa)}, <BR>  {EstacionTrabajo},<BR>  {Comillas(Explorar.Rama)}, <BR>  {Comillas(Explorar.Grupo)}, <BR>  {Comillas(Explorar.Cuenta)}, <BR>  {Explorar.Ejercicio}, <BR>  {LogicoEnBit(Explorar.VerGrupo)},<BR>  1,<BR>  {Comillas(Info.ContMoneda)}
+
+[Periodo]
+Clave=Periodo
+Nombre=Periodo
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Periodo
+
+[Ejercicio]
+Clave=Ejercicio
+Nombre=Ejercicio
+TamanoValidacion=10
+TipoDatos=Numérico
+ClaveBDE=Ejercicio
+
+[Cargos]
+Clave=Cargos
+Nombre=Abonos
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Cargos
+Monetario=S
+CondicionDespliege=Explorar.EsMonetario y (Usuario.Costos o (Explorar.Rama noen (<T>INV<T>, <T>COMS<T>)))
+
+[Abonos]
+Clave=Abonos
+Nombre=Cargos
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Abonos
+Monetario=S
+CondicionDespliege=Explorar.EsMonetario y (Usuario.Costos o (Explorar.Rama noen (<T>INV<T>, <T>COMS<T>)))
+
+[Inicio]
+Clave=Inicio
+Nombre=Inicio
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Inicio
+Monetario=S
+CondicionDespliege=Explorar.EsMonetario y (Usuario.Costos o (Explorar.Rama noen (<T>INV<T>, <T>COMS<T>)))
+
+[Final]
+Clave=Final
+Nombre=Final
+TamanoValidacion=10
+TipoDatos=NumMonetario
+ClaveBDE=Final
+Monetario=S
+CondicionDespliege=Explorar.EsMonetario y (Usuario.Costos o (Explorar.Rama noen (<T>INV<T>, <T>COMS<T>)))
+
+[InicioU]
+Clave=InicioU
+Nombre=Inicio #
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=InicioU
+CondicionDespliege=Explorar.EsUnidades y (Explorar.Cuenta<><T><T>)
+FormatoValidacion=#.##
+
+[CargosU]
+Clave=CargosU
+Nombre=Abonos #
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=CargosU
+CondicionDespliege=Explorar.EsUnidades y (Explorar.Cuenta<><T><T>)
+FormatoValidacion=#.##
+
+[AbonosU]
+Clave=AbonosU
+Nombre=Cargos #
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=AbonosU
+CondicionDespliege=Explorar.EsUnidades y (Explorar.Cuenta<><T><T>)
+FormatoValidacion=#.##
+
+[FinalU]
+Clave=FinalU
+Nombre=Final #
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ClaveBDE=FinalU
+CondicionDespliege=Explorar.EsUnidades y (Explorar.Cuenta<><T><T>)
+FormatoValidacion=#.##
+
+[Mes]
+Clave=Mes
+Tamano=20
+TipoCampo=Calculado
+TamanoValidacion=20
+Alineacion=por Omisión
+Nombre=Mes
+Formula=PeriodoNombre(Periodo, Explorar.Rama)
+
+[Moneda]
+Clave=Moneda
+Nombre=Moneda
+TamanoValidacion=10
+Tamano=10
+ClaveBDE=Moneda
+CondicionDespliege=Explorar.EsMonetario y (Usuario.Costos o (Explorar.Rama noen (<T>INV<T>, <T>COMS<T>)))
+TipoDatos=Texto
+
+[Grupo]
+Clave=Grupo
+Nombre=Grupo
+TamanoValidacion=10
+Tamano=10
+ClaveBDE=Grupo
+TipoDatos=Texto
+
+[Vista.ListaCampos]
+(Inicio)=Grupo
+Grupo=Moneda
+Moneda=Periodo
+Periodo=Ejercicio
+Ejercicio=Inicio
+Inicio=Cargos
+Cargos=Abonos
+Abonos=Final
+Final=InicioU
+InicioU=CargosU
+CargosU=AbonosU
+AbonosU=FinalU
+FinalU=(Fin)

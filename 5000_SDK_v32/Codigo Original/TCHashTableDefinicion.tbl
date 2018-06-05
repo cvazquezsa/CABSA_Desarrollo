@@ -1,0 +1,149 @@
+
+[Tabla]
+Icono=0
+Clave=TCHashTableDefinicion
+Nombre=TCHashTableDefinicion
+Archivo=TCHashTableDefinicion
+Modulos=(Todos)
+Singular=TCHashTableDefinicion
+
+TipoTabla=General
+ListaCampos=(Lista)
+
+LlavePrimaria=(Lista)
+SQL=(Lista)
+[ProcesadorTrans]
+Clave=ProcesadorTrans
+Nombre=Procesador Transacciones
+Visible=S
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+ValorPorOmision=Info.Proveedor
+[Campo]
+Clave=Campo
+Nombre=Campo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=(Lista)
+[Columna]
+Clave=Columna
+Nombre=Columna
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+
+OpcionesPredefinidas=Ninguna
+[Columna.ListaOpciones]
+(Inicio)=COLUMNA1
+COLUMNA1=COLUMNA2
+COLUMNA2=COLUMNA3
+COLUMNA3=COLUMNA4
+COLUMNA4=COLUMNA5
+COLUMNA5=COLUMNA6
+COLUMNA6=COLUMNA7
+COLUMNA7=COLUMNA8
+COLUMNA8=COLUMNA9
+COLUMNA9=COLUMNA10
+COLUMNA10=COLUMNA11
+COLUMNA11=COLUMNA12
+COLUMNA12=COLUMNA13
+COLUMNA13=COLUMNA14
+COLUMNA14=COLUMNA15
+COLUMNA15=COLUMNA16
+COLUMNA16=COLUMNA17
+COLUMNA17=COLUMNA18
+COLUMNA18=COLUMNA19
+COLUMNA19=COLUMNA20
+COLUMNA20=COLUMNA21
+COLUMNA21=COLUMNA22
+COLUMNA22=COLUMNA23
+COLUMNA23=COLUMNA24
+COLUMNA24=COLUMNA25
+COLUMNA25=COLUMNA26
+COLUMNA26=COLUMNA27
+COLUMNA27=COLUMNA28
+COLUMNA28=COLUMNA29
+COLUMNA29=COLUMNA30
+COLUMNA30=COLUMNA31
+COLUMNA31=COLUMNA32
+COLUMNA32=COLUMNA33
+COLUMNA33=COLUMNA34
+COLUMNA34=COLUMNA35
+COLUMNA35=COLUMNA36
+COLUMNA36=COLUMNA37
+COLUMNA37=COLUMNA38
+COLUMNA38=COLUMNA39
+COLUMNA39=COLUMNA40
+COLUMNA40=(Fin)
+
+
+
+
+
+
+
+
+[Campo.ListaOpciones]
+(Inicio)=ARQC
+ARQC=Banco Emisor
+Banco Emisor=Codigo Autorizacion
+Codigo Autorizacion=Codigo Error
+Codigo Error=Codigo Procesador
+Codigo Procesador=E1
+E1=E2
+E2=E3
+E3=Estatus
+Estatus=Fecha Expiracion
+Fecha Expiracion=Fecha Fin
+Fecha Fin=Fecha Inicio
+Fecha Inicio=ID Orden
+ID Orden=Mensaje Error
+Mensaje Error=Mensaje Procesador
+Mensaje Procesador=Numero Tarjeta
+Numero Tarjeta=Severidad Error
+Severidad Error=Tarjetahabiente
+Tarjetahabiente=Texto
+Texto=Tipo Operacion
+Tipo Operacion=Tipo Tarjeta
+Tipo Tarjeta=Tipo Transaccion
+Tipo Transaccion=Total
+Total=Track1
+Track1=Track2
+Track2=(Fin)
+
+
+
+
+[Tabla.ListaCampos]
+(Inicio)=ProcesadorTrans
+ProcesadorTrans=Campo
+Campo=Columna
+Columna=(Fin)
+
+[Tabla.SQL]
+(Inicio)=SELECT
+SELECT=ProcesadorTrans,
+ProcesadorTrans,=Campo,
+Campo,=Columna
+Columna=FROM TCHashTableDefinicion
+FROM TCHashTableDefinicion=(Fin)
+
+[Tabla.LlavePrimaria]
+(Inicio)=ProcesadorTrans
+ProcesadorTrans=Campo
+Campo=(Fin)

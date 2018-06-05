@@ -1,0 +1,43 @@
+[Tabla]
+Icono=0
+Clave=ServicioTipoOrden
+Archivo=ServicioTipoOrden
+Modulos=(Todos)
+TipoTabla=General
+ListaCampos=(Lista)
+Nombre=Tipos Ordenes
+Singular=Tipo Orden
+SQL=SELECT<BR>  TipoOrden,<BR>  Clave,<BR>  ListaPreciosEsp<BR><BR>FROM<BR>  ServicioTipoOrden
+LlavePrimaria=TipoOrden
+
+[TipoOrden]
+Clave=TipoOrden
+Nombre=Nombre
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=20
+Tamano=20
+
+[ListaPreciosEsp]
+Clave=ListaPreciosEsp
+Nombre=Lista Precios Específico
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=ListaPreciosEsp
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[Tabla.ListaCampos]
+(Inicio)=TipoOrden
+TipoOrden=Clave
+Clave=ListaPreciosEsp
+ListaPreciosEsp=(Fin)
