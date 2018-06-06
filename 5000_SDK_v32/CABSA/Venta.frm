@@ -9149,7 +9149,10 @@ ListaAccionesMultiples=(Lista)
 
 Menu=&Edición
 
-ActivoCondicion=(MovTipo( <T>VTAS<T>, Venta:Venta.Mov ) = <T>VTAS.F<T>) y  (fnSubMovTipo( <T>VTAS<T>, Venta:Venta.Mov ) = <T>VTAS.FPR<T>)
+
+
+
+
 VisibleCondicion=(MovTipo( <T>VTAS<T>, Venta:Venta.Mov ) = <T>VTAS.F<T>) y  (fnSubMovTipo( <T>VTAS<T>, Venta:Venta.Mov ) = <T>VTAS.FPR<T>)
 
 
@@ -9158,30 +9161,6 @@ VisibleCondicion=(MovTipo( <T>VTAS<T>, Venta:Venta.Mov ) = <T>VTAS.F<T>) y  (fnS
 (Inicio)=Variables
 Variables=VtasProrrateo
 VtasProrrateo=(Fin)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 [Forma.ListaCarpetas]
 (Inicio)=Ficha

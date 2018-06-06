@@ -3208,6 +3208,10 @@ ColorFondo=Blanco
 
 
 
+
+
+
+
 [Ficha.ListaEnCaptura]
 (Inicio)=Dinero.Mov
 Dinero.Mov=Dinero.MovID
@@ -3244,15 +3248,6 @@ Dinero.ContUso=Dinero.ConceptoFE
 Dinero.ConceptoFE=Dinero.ConceptoFEFondos
 Dinero.ConceptoFEFondos=Dinero.ClasificacionConcFEFondos
 Dinero.ClasificacionConcFEFondos=(Fin)
-
-
-
-
-
-
-
-
-
 
 
 
