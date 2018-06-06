@@ -2030,7 +2030,7 @@ BEGIN
   SELECT @Clave = Clave FROM MovTipo WHERE Modulo = @Modulo AND Mov = @Mov
 
   SELECT @Valor = CASE
-                    WHEN @Clave IN ('COMS.EI','COMS.GX') THEN 1
+                    WHEN @Clave IN ('COMS.EI','COMS.GX') THEN 1 -- 'COMS.EG'
                     ELSE 0
                   END
   RETURN @Valor
@@ -2451,6 +2451,7 @@ CREATE PROC spDIOTObtenerPago
 --//WITH ENCRYPTION
 AS
 BEGIN
+
 	EXEC xpDIOTObtenerPago @Estacion, @Empresa, @FechaD, @FechaA
 
 	IF NOT EXISTS (SELECT 1 FROM #Pagos WHERE TipoInsert = 1)
@@ -2475,16 +2476,15 @@ BEGIN
 							Importe,FechaEmision, OrigenTipo, OrigenIID, Origen,
 							OrigenMID,ContID, ContMov, ContMovID
 					   FROM #Tesoreria
-  
+ 
+ -- SELECT * FROM #Tesoreria WHERE MOVID = '106'
 
-  --SELECT * FROM #Tesoreria
-  
   --Insertamos Los Pagos
   INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
 					 TipoCambio, Dinero, DineroID, FechaConciliacion, DineroMov, DineroMovID,
 					 DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID,TipoInsert
 					 )
-			  SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, CASE ISNULL(mtdc.Mov, '') WHEN '' THEN c.FechaEmision ELSE c.DineroFechaConciliacion END, d.Aplica, d.AplicaID, d.Importe*c.TipoCambio,
+			  SELECT DISTINCT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, CASE ISNULL(mtdc.Mov, '') WHEN '' THEN c.FechaEmision ELSE c.DineroFechaConciliacion END, d.Aplica, d.AplicaID, d.Importe*c.TipoCambio,
 					 c.TipoCambio, c.Dinero, c.DineroID, c.DineroFechaConciliacion, c.Dinero, c.DineroID,
 					 t.Mov, t.MovID, t.FormaPago, t.Importe,t.ContID, t.ContMov, t.ContMovID,1
 			    FROM Cxp c
@@ -2504,13 +2504,16 @@ BEGIN
 				 --AND c.Estatus =('CONCLUIDO')
 				 --AND o.Estatus IN('PENDIENTE','CONCLUIDO')
 				 AND c.Empresa = @Empresa
-				 
-  --Insertamos Los Pagos que son Aplicaciones de Anticipos
-  INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
+
+ --SELECT 1, * FROM #Pagos WHERE MOVID = '154'
+ 
+ 
+ ----------- JB SE AGREGAN LOS ENDOSO PROVENIENTES DE GASTOS DIVERSOS
+ INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
 					 TipoCambio, Dinero, DineroID, FechaConciliacion, DineroMov, DineroMovID,
 					 DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID,TipoInsert
-					 )	   
-			  SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END, d.Aplica, d.AplicaID, d.Importe*c.TipoCambio, 
+					 )
+ SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END, d.Aplica, d.AplicaID, d.Importe*c.TipoCambio, 
 	                 c.TipoCambio, c.Dinero, c.DineroID, CASE mtmda.Mov WHEN NULL THEN c.DineroFechaConciliacion ELSE c2.DineroFechaConciliacion END,  c.Dinero,	 c.DineroID,  
 	                 NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1
 				FROM Cxp c
@@ -2526,16 +2529,51 @@ BEGIN
      LEFT OUTER JOIN DIOTPagoConciliado mtdc ON mtdc.Mov = c.Mov AND ISNULL(mtdc.Aplica, d.Aplica) = d.Aplica
 				JOIN DIOTCfg ON c.Empresa = DIOTCfg.Empresa
 			   WHERE mtmde.Mov IS NULL
-				 AND (mt.Clave IN (SELECT Clave FROM DIOTPagoClave) OR (mtmda.Mov IS NOT NULL))
-				 AND mt.Clave = 'CXP.ANC'
+				and  (mt.Clave IN (SELECT Clave FROM DIOTPagoClave) OR (mtmda.Mov IS NOT NULL))
+				 and mt.Clave = 'CXP.ANC'
 				 AND mt2.Clave NOT IN ('CXP.NC')
 				 AND ((NULLIF(c.Origen,'') IS NULL AND NULLIF(c.OrigenTipo,'') IS NULL AND NULLIF(c.OrigenID,'') IS NULL) OR (c.OrigenTipo = 'CXP'))
-				 AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END ELSE CASE mtmda.Mov WHEN NULL THEN c.DineroFechaConciliacion ELSE c2.DineroFechaConciliacion END END BETWEEN @FechaD AND @FechaA
+				-- AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END ELSE CASE mtmda.Mov WHEN NULL THEN c.DineroFechaConciliacion ELSE c2.DineroFechaConciliacion END END BETWEEN @FechaD AND @FechaA
+				 AND c.FechaEmision  BETWEEN @FechaD AND @FechaA
 				 AND c.Estatus =('CONCLUIDO')
 				 AND o.Estatus IN('PENDIENTE', 'CONCLUIDO')
 				 AND ISNULL(c2.Estatus, 'CONCLUIDO') = 'CONCLUIDO'
 				 AND c.Empresa = @Empresa
-				 
+
+ -----------
+
+  ----Insertamos Los Pagos que son Aplicaciones de Anticipos
+  --INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
+		--			 TipoCambio, Dinero, DineroID, FechaConciliacion, DineroMov, DineroMovID,
+		--			 DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID,TipoInsert
+		--			 )	   
+		--	  SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END, d.Aplica, d.AplicaID, d.Importe*c.TipoCambio, 
+	 --                c.TipoCambio, c.Dinero, c.DineroID, CASE mtmda.Mov WHEN NULL THEN c.DineroFechaConciliacion ELSE c2.DineroFechaConciliacion END,  c.Dinero,	 c.DineroID,  
+	 --                NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1
+		--		FROM Cxp c
+		--		JOIN CxpD d ON c.ID = d.ID
+		--		JOIN Cxp o ON c.Empresa = o.Empresa AND d.Aplica = o.Mov AND d.AplicaID = o.MovID
+		--		JOIN MovTipo mt ON c.Mov = mt.Mov AND mt.Modulo = 'CXP'
+		--		JOIN Prov p ON c.Proveedor = p.Proveedor
+	 --LEFT OUTER JOIN MovTipo mt2 ON mt2.Modulo = c.OrigenTipo AND mt2.Mov = c.Origen
+  --   LEFT OUTER JOIN CxpD d2 ON d2.Aplica = c.Mov AND d2.AplicaID = c.MovID
+  --   LEFT OUTER JOIN Cxp c2 ON c2.ID = d2.ID AND c2.Empresa = c.Empresa
+  --   LEFT OUTER JOIN DIOTPagoAdicion mtmda ON mtmda.Mov = c.Mov AND ISNULL(mtmda.Aplica, d.Aplica) = d.Aplica
+  --   LEFT OUTER JOIN DIOTPagoExcepcion mtmde ON mtmde.Mov = c.Mov AND ISNULL(mtmde.Aplica, d.Aplica) = d.Aplica
+  --   LEFT OUTER JOIN DIOTPagoConciliado mtdc ON mtdc.Mov = c.Mov AND ISNULL(mtdc.Aplica, d.Aplica) = d.Aplica
+		--		JOIN DIOTCfg ON c.Empresa = DIOTCfg.Empresa
+		--	   WHERE mtmde.Mov IS NULL
+		--		 AND (mt.Clave IN (SELECT Clave FROM DIOTPagoClave) OR (mtmda.Mov IS NOT NULL))
+		--		 AND mt.Clave = 'CXP.ANC'
+		--		 AND mt2.Clave NOT IN ('CXP.NC')
+		--		 AND ((NULLIF(c.Origen,'') IS NULL AND NULLIF(c.OrigenTipo,'') IS NULL AND NULLIF(c.OrigenID,'') IS NULL) OR (c.OrigenTipo = 'CXP'))
+		--		 AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN CASE mtmda.Mov WHEN NULL THEN c.FechaEmision ELSE c2.FechaEmision END ELSE CASE mtmda.Mov WHEN NULL THEN c.DineroFechaConciliacion ELSE c2.DineroFechaConciliacion END END BETWEEN @FechaD AND @FechaA
+		--		 AND c.Estatus =('CONCLUIDO')
+		--		 AND o.Estatus IN('PENDIENTE', 'CONCLUIDO')
+		--		 AND ISNULL(c2.Estatus, 'CONCLUIDO') = 'CONCLUIDO'
+		--		 AND c.Empresa = @Empresa
+
+	 			 
   --Insertamos Los Pagos que son Aplicaciones de Credito Proveedor
   INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
 					 TipoCambio, Dinero, DineroID, FechaConciliacion, DineroMov, DineroMovID,
@@ -2566,7 +2604,9 @@ BEGIN
 				 AND o.Estatus IN('PENDIENTE', 'CONCLUIDO')
 				 AND ISNULL(c2.Estatus, 'CONCLUIDO') = 'CONCLUIDO'
 				 AND c.Empresa = @Empresa
-
+  
+ 
+   
   RETURN
 END
 GO
@@ -2670,7 +2710,7 @@ BEGIN
   DECLARE @CxpGastoDiverso		varchar(20)
 
   SELECT @CxpGastoDiverso = CxpGastoDiverso FROM EmpresaCfgMov WHERE Empresa = @Empresa
-  
+
   --Insertamos Los Documentos de Cxp que vienen de Compras y que no son Entradas de Importación y no son Gastos Diversos
   EXEC xpDIOTObtenerDocumentoCOMS @Estacion, @Empresa, @FechaD, @FechaA, @CalcularBaseImportacion, @COMSIVAImportacionAnticipado
   IF NOT EXISTS(SELECT 1 FROM #Documentos WHERE TipoInsert = 1)
@@ -2730,6 +2770,8 @@ BEGIN
 						AND MovTipo.Clave NOT IN ('COMS.EI','COMS.GX')
 						AND Cxp.Mov = @CxpGastoDiverso
 
+
+
 	--BUG22150 BUG24887
 	IF @CalcularBaseImportacion = 1 AND @COMSIVAImportacionAnticipado = 0
 	BEGIN
@@ -2780,6 +2822,8 @@ BEGIN
 						   --BUG24887
 						   c.Mov, Cxp.Origen, Cxp.OrigenID, c.Empresa, DIOTCfg.CalcularBaseImportacion, ISNULL(Art.Impuesto1Excento,0), Prov.ImportadorRegistro, DineroMov, DineroMovID, eg.DefImpuesto,
 						   p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID
+
+
   END
   ELSE IF @CalcularBaseImportacion = 0 AND @COMSIVAImportacionAnticipado = 1
   BEGIN
@@ -2796,7 +2840,7 @@ BEGIN
 							(ISNULL(cxp.Importe, 0) + ISNULL(cxp.Impuestos, 0))*cxp.TipoCambio,
 							d.Concepto, d.Concepto, dbo.fnDIOTEsImportacion('COMS', co.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(0.0/*d.Impuestos2*/,0.0)*c.TipoCambio, 0.0,  
 							SUM(cgd.Retencion*cgd.TipoCambio),
-							SUM(cgd.Retencion2*cgd.TipoCambio),
+							isnull(SUM(cgd.Retencion2*cgd.TipoCambio),100),
 							DineroMov, DineroMovID, 
 							-1,
 							100,
@@ -2825,6 +2869,7 @@ BEGIN
 							co.Mov, co.MovID, co.Empresa, CalcularBaseImportacion, Cxp.Origen, Cxp.OrigenID, c.Empresa,
 							DineroMov, DineroMovID,
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID							
+
   
   
   --Insertamos Los Documentos de Cxp que vienen de Gastos Diversos, son conceptos de IVA de Importación y no generaron Gasto
@@ -2841,7 +2886,7 @@ BEGIN
 							(ISNULL(cxp.Importe, 0) + ISNULL(cxp.Impuestos, 0))*cxp.TipoCambio,
 							Cxp.Concepto, Cxp.Concepto, dbo.fnDIOTEsImportacion('COMS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(0.0/*d.Impuestos2*/,0.0)*c.TipoCambio, 0.0,  
 							SUM(cgd.Retencion*cgd.TipoCambio),
-							SUM(cgd.Retencion2*cgd.TipoCambio),
+							isnull(SUM(cgd.Retencion2*cgd.TipoCambio),100),
 							DineroMov, DineroMovID, 
 							-1,
 							100,
@@ -2868,7 +2913,65 @@ BEGIN
 							cxp.Importe, cxp.Impuestos, cxp.TipoCambio, Cxp.Concepto, c.Mov, Concepto.Impuesto1Excento,DineroMov, DineroMovID, c.MovID,c.Empresa,
 							DIOTCfg.CalcularBaseImportacion, c.TipoCambio,
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID
+  
+  
+
+  ---------------JB  AGREGA ENDOSO CON APLICACIONES --
+   --  INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
+			--				ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero, Importe, BaseIVA, Tasa, IVA,
+			--				ConceptoClave,Concepto, EsImportacion, EsExcento, IEPS, ISAN, Retencion1, Retencion2, DineroMov, DineroMovID, 
+			--				BaseIVAImportacion, PorcentajeDeducible,
+			--				DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert)
+			--		 SELECT	Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, c2.Proveedor, Prov.Nombre, Prov.RFC, Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('COMS', c2.Mov), 
+			--				dbo.fnDIOTTipoTercero(c2.Proveedor), 
+			--				--SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+			--				--SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+			--				(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+			--				(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+			--				ISNULL(NULLIF(dbo.fnDIOTIVATasa(cxp.Empresa, cxp.Importe, cxp.Impuestos), 0), eg.DefImpuesto),
+			--				(ISNULL(cxp.Impuestos, 0))*cxp.TipoCambio,
+			--				Cxp.Concepto, Cxp.Concepto, dbo.fnDIOTEsImportacion('COMS', c3.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(0.0/*d.Impuestos2*/,0.0)*c2.TipoCambio, 0.0,  
+			--			    (Cxp.Retencion*Cxp.TipoCambio),
+			--				isnull((Cxp.Retencion2*Cxp.TipoCambio),0),
+			--				DineroMov,  DineroMovID, 
+			--				-1,
+			--				100,
+			--				p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID, 3
+
+			--			--    ,cxp.Mov, cxp.Importe, cxp.Impuestos, cxp.Retencion, cxp.Retencion2
+			--		   --     ,dbo.fnDIOTTipoTercero(c2.Proveedor)
+
+			--		   FROM #Pagos p
+			--		   JOIN Cxp ON p.Empresa = Cxp.Empresa AND p.Aplica = Cxp.Mov AND p.AplicaID = Cxp.MovID
+			--		   JOIN Cxp c2 ON c2.Empresa = cxp.Empresa AND c2.Mov = cxp.Origen AND c2.MovID = cxp.OrigenID
+			--		   JOIN Compra c3 ON c3.MovID = c2.OrigenID AND c3.Mov = c2.Origen AND c2.OrigenTipo = 'COMS' AND c3.Empresa = c2.Empresa
+			--		   JOIN CompraD cd on c3.ID = cd.ID
+			--		   JOIN CompraTCalc ctc ON ctc.RenglonSub = cd.RenglonSub AND ctc.Renglon = cd.Renglon AND ctc.ID = cd.ID 
+			--		   JOIN MovTipo mt ON c3.Mov = mt.Mov AND mt.Modulo = 'COMS'
+			--		   JOIN MovTipo mt2 ON Cxp.Mov = mt2.Mov AND mt2.Modulo = 'CXP'
+			--	  LEFT JOIN CompraGastoDiverso cgd ON cgd.Id = c3.id AND cgd.Concepto IN (SELECT Concepto FROM DIOTConceptoImportacion)
+			--		   JOIN Prov ON c2.Proveedor = Prov.Proveedor
+			--LEFT OUTER JOIN Pais ON Prov.Pais = Pais.Pais
+			--LEFT OUTER JOIN DIOTPais dp ON Pais.Pais = dp.Pais
+			--		   JOIN Version ver ON 1 = 1
+			--LEFT OUTER JOIN Concepto ON cxp.Concepto = Concepto.Concepto AND Concepto.Modulo = 'COMSG'      
+			--		   JOIN DIOTCfg ON DIOTCfg.Empresa = Cxp.Empresa      
+			--		   JOIN EmpresaGral eg ON Cxp.Empresa = eg.Empresa
+			--		  WHERE --ISNULL(mt.Clave, '') IN ('COMS.EI','COMS.GX')
+			--			--AND ISNULL(mt2.Clave,'') IN ('CXP.FAC','CXP.D')
+			--			--AND cxp.Concepto IN(SELECT Concepto FROM DIOTConceptoIVAImportacion)
+			--			c2.Mov = @CxpGastoDiverso
+				  
+			--	  GROUP BY Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC,
+			--				Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, c2.Mov, c2.Proveedor, cxp.Empresa, cxp.Importe, cxp.Impuestos, eg.DefImpuesto,
+			--				cxp.Importe, cxp.Impuestos, cxp.TipoCambio, Cxp.Concepto, c3.Mov, Concepto.Impuesto1Excento,DineroMov, DineroMovID, c2.MovID,c2.Empresa,
+			--				DIOTCfg.CalcularBaseImportacion, c2.TipoCambio,Cxp.Retencion, Cxp.Retencion2,
+			--				p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID		
 							
+  ----------------
+
+  
+
   --Insertamos Los Documentos de Cxp que vienen de Gastos Diversos y no generaron Gasto	y son pagados con Endoso o Documento				 
     INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
 							ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero, Importe, BaseIVA, Tasa, IVA,
@@ -2877,13 +2980,17 @@ BEGIN
 							DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert)
 					 SELECT	Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC, Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('COMS', c2.Mov), 
 							dbo.fnDIOTTipoTercero(c2.Proveedor), 
-							SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
-							SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
-							ISNULL(NULLIF(dbo.fnDIOTIVATasa(cxp.Empresa, cxp.Importe, cxp.Impuestos), 0), eg.DefImpuesto),
+						--	SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+						--	SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+						
+							(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+							(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+		                
+						    ISNULL(NULLIF(dbo.fnDIOTIVATasa(cxp.Empresa, cxp.Importe, cxp.Impuestos), 0), eg.DefImpuesto),
 							(ISNULL(cxp.Importe, 0) + ISNULL(cxp.Impuestos, 0))*cxp.TipoCambio,
 							Cxp.Concepto, Cxp.Concepto, dbo.fnDIOTEsImportacion('COMS', c2.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(0.0/*d.Impuestos2*/,0.0)*c2.TipoCambio, 0.0,  
 							SUM(cgd.Retencion*cgd.TipoCambio),
-							SUM(cgd.Retencion2*cgd.TipoCambio),
+							isnull(SUM(cgd.Retencion2*cgd.TipoCambio),100),
 							DineroMov, DineroMovID, 
 							-1,
 							100,
@@ -2913,6 +3020,8 @@ BEGIN
 							cxp.Importe, cxp.Impuestos, cxp.TipoCambio, Cxp.Concepto, c2.Mov, Concepto.Impuesto1Excento,DineroMov, DineroMovID, c2.MovID,c2.Empresa,
 							DIOTCfg.CalcularBaseImportacion, c2.TipoCambio,
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID					
+
+--SELECT * FROM #Documentos WHERE MOV = 'ENDOSO'
 	
   END
   ELSE IF @CalcularBaseImportacion = 0 AND @COMSIVAImportacionAnticipado = 0
@@ -2922,7 +3031,9 @@ BEGIN
 							Tasa, IVA, ConceptoClave, Concepto, EsImportacion, EsExcento, IEPS, ISAN, Retencion1, Retencion2, DineroMov, DineroMovID,
 							DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert)
 					 SELECT Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC,
-							Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('COMS', c.Mov), dbo.fnDIOTTipoTercero(Cxp.Proveedor), ctc.SubTotal*c.TipoCambio, ROUND((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c.TipoCambio, 2),
+							Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('COMS', c.Mov), 
+							dbo.fnDIOTTipoTercero(Cxp.Proveedor), 
+							ctc.SubTotal*c.TipoCambio, ROUND((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c.TipoCambio, 2),
 							ISNULL(d.Impuesto1, 0), ISNULL(ctc.Impuesto1Total,0.0)*c.TipoCambio, Art.Articulo, Art.Descripcion1, dbo.fnDIOTEsImportacion('COMS', c.Mov), ISNULL(Art.Impuesto1Excento,0), ISNULL(ctc.Impuesto2Total,0.0)*c.TipoCambio, 0.0,  cgd.Retencion*cgd.TipoCambio, cgd.Retencion2*cgd.TipoCambio, DineroMov, DineroMovID,
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID, 3
 					   FROM #Pagos p
@@ -2955,7 +3066,7 @@ BEGIN
 					 SELECT Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC,
 							Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(Cxp.Proveedor), d.Importe*c.TipoCambio, (ISNULL(d.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(d.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(d.Impuestos,0.0) IS NULL THEN NULL ELSE d.Impuesto1 END, 
 							ISNULL(d.Impuestos,0.0)*c.TipoCambio, d.Concepto, d.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(d.Impuestos2,0.0)*c.TipoCambio, 0.0,  d.Retencion*c.TipoCambio, d.Retencion2*c.TipoCambio,
-							DineroMov, DineroMovID, d.PorcentajeDeducible,
+							DineroMov, DineroMovID, isnull(d.PorcentajeDeducible,100),
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID, 4
 					   FROM #Pagos p
 					   JOIN Cxp ON p.Empresa = Cxp.Empresa AND p.Aplica = Cxp.Mov AND p.AplicaID = Cxp.MovID
@@ -2975,6 +3086,8 @@ BEGIN
 						--BUG24887
 						AND d.Concepto NOT IN(SELECT Concepto FROM DIOTConceptoImportacion UNION ALL SELECT Concepto FROM DIOTConceptoIVAImportacion)
 
+
+
 	--BUG22150 BUG24755
 	--Insertamos Los Documentos de Cxp que vienen de Gastos
 	EXEC xpDIOTObtenerDocumentoGAS2 @Estacion, @Empresa, @FechaD, @FechaA, @CalcularBaseImportacion, @COMSIVAImportacionAnticipado
@@ -2985,7 +3098,7 @@ BEGIN
 							DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert)
 					 SELECT Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, ISNULL(NULLIF(RTRIM(d.AcreedorRef), ''), c.Acreedor), Prov.Nombre, Prov.RFC,
 							Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(Cxp.Proveedor), d.Importe*c.TipoCambio, (ISNULL(d.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(d.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(d.Impuestos,0.0) IS NULL THEN NULL ELSE d.Impuesto1 END, ISNULL(d.Impuestos,0.0)*c.TipoCambio, 
-							d.Concepto, d.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(d.Impuestos2,0.0)*c.TipoCambio, 0.0,  d.Retencion*c.TipoCambio, d.Retencion2*c.TipoCambio, DineroMov, DineroMovID, d.PorcentajeDeducible,
+							d.Concepto, d.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(d.Impuestos2,0.0)*c.TipoCambio, 0.0,  d.Retencion*c.TipoCambio, d.Retencion2*c.TipoCambio, DineroMov, DineroMovID, isnull(d.PorcentajeDeducible,100),
 							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID, 5
 					   FROM #Pagos p
 					   JOIN Cxp ON p.Empresa = Cxp.Empresa AND p.Aplica = Cxp.Mov AND p.AplicaID = Cxp.MovID
@@ -3006,6 +3119,7 @@ BEGIN
 						 --BUG24887
 						AND d.Concepto NOT IN(SELECT Concepto FROM DIOTConceptoImportacion UNION ALL SELECT Concepto FROM DIOTConceptoIVAImportacion)
 
+
   --Insertamos Los Documentos de Cxp que vienen de Gastos Diversos
   --BUG24755
   INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
@@ -3016,7 +3130,7 @@ BEGIN
 				   SELECT Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC,
 						  Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(Cxp.Proveedor), d.Importe*c.TipoCambio, (ISNULL(d.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(d.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(d.Impuestos,0.0) IS NULL THEN NULL ELSE d.Impuesto1 END, 
 						  ISNULL(d.Impuestos,0.0)*c.TipoCambio, d.Concepto, d.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(d.Impuestos2,0.0)*c.TipoCambio, 0.0,  d.Retencion*c.TipoCambio, d.Retencion2*c.TipoCambio,
-						  DineroMov, DineroMovID, d.PorcentajeDeducible,
+						  DineroMov, DineroMovID, isnull(d.PorcentajeDeducible,100),
 						  p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID
 					 FROM #Pagos p
 					 JOIN Cxp ON p.Empresa = Cxp.Empresa AND p.Aplica = Cxp.Mov AND p.AplicaID = Cxp.MovID
@@ -3031,6 +3145,8 @@ BEGIN
 					 JOIN Version ver ON 1 = 1   
 					WHERE (ISNULL(mt.Clave, '') IN ('COMS.EI','COMS.GX') 
 					  AND d.Concepto NOT IN(SELECT Concepto FROM DIOTConceptoImportacion UNION ALL SELECT Concepto FROM DIOTConceptoIVAImportacion))
+
+
 
 	--BUG24887
 	--Insertamos Los Documentos de Cxp que vienen de Gastos Diversos y no generaron Gasto
@@ -3082,6 +3198,7 @@ BEGIN
 					  WHERE ISNULL(DIOTArt.Articulo, '') = Art.Articulo
 						AND mt.Clave IN ('CXP.FAC','CXP.D')		
 						AND c2.Mov <> @CxpGastoDiverso
+
 						
 	--Insertamos Los Documentos de Cxp que vienen de Gastos y son pagados con Endoso o Documento
 	INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
@@ -3108,6 +3225,7 @@ BEGIN
 					   JOIN Version ver ON 1 = 1
 					  WHERE d.Concepto NOT IN(SELECT Concepto FROM DIOTConceptoImportacion UNION ALL SELECT Concepto FROM DIOTConceptoIVAImportacion)
 						AND mt.Clave IN ('CXP.FAC','CXP.D')
+
 						
 	--Insertamos Los Documentos de Cxp que son Credito Proveedor
 	INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
@@ -3127,7 +3245,6 @@ BEGIN
 				  LEFT JOIN DIOTPais dp ON Pais.Pais = dp.Pais      
 					   JOIN Version ver ON 1 = 1
 					  WHERE mt.Clave IN ('CXP.NC')
-
 
 	--Insertamos Los Documentos de Cxp que no tienen Origen
 	INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
@@ -3149,6 +3266,75 @@ BEGIN
 					  WHERE mt.Clave NOT IN ('CXP.FAC','CXP.D','CXP.NC')
 					    --AND Cxp.FechaEmision BETWEEN @FechaD AND @FechaA
 						AND Cxp.Estatus IN('PENDIENTE', 'CONCLUIDO')
+
+
+						---------------JB  AGREGA ENDOSO CON APLICACIONES --
+     INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
+							ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero, Importe, BaseIVA, Tasa, IVA,
+							ConceptoClave,Concepto, EsImportacion, EsExcento, IEPS, ISAN, Retencion1, Retencion2, DineroMov, DineroMovID, 
+							BaseIVAImportacion, PorcentajeDeducible,
+							DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert)
+					 SELECT	DISTINCT Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC, Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('COMS', c2.Mov), 
+							dbo.fnDIOTTipoTercero(Cxp.Proveedor), 
+							--SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+							--SUM(((ISNULL(ctc.SubTotal,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(ctc.Impuesto2Total,0.0) ELSE 0.0 END)*c2.TipoCambio)) + dbo.fnDIOTBaseIVAImportacion(c2.Mov, c2.MovID, c2.Empresa, CalcularBaseImportacion),
+							(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+							(ISNULL(cxp.Importe, 0) )*cxp.TipoCambio,
+							ISNULL(NULLIF(dbo.fnDIOTIVATasa(cxp.Empresa, cxp.Importe, cxp.Impuestos), 0), eg.DefImpuesto),
+							(ISNULL(cxp.Impuestos, 0))*cxp.TipoCambio,
+							Cxp.Concepto, Cxp.Concepto, dbo.fnDIOTEsImportacion('COMS', cxp.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(0.0/*d.Impuestos2*/,0.0)*c2.TipoCambio, 0.0,  
+						    (Cxp.Retencion*Cxp.TipoCambio),
+							isnull((Cxp.Retencion2*Cxp.TipoCambio),0),
+							DineroMov,  DineroMovID, 
+							-1,
+							100,
+							p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID, 3
+
+						--    ,cxp.Mov, cxp.Importe, cxp.Impuestos, cxp.Retencion, cxp.Retencion2
+					   --     ,dbo.fnDIOTTipoTercero(c2.Proveedor)
+					  -- ,Cxp.Proveedor, c3.proveedor
+					   FROM #Pagos p
+					   JOIN Cxp ON p.Empresa = Cxp.Empresa AND p.Aplica = Cxp.Mov AND p.AplicaID = Cxp.MovID
+					   JOIN Cxp c2 ON c2.Empresa = cxp.Empresa AND c2.Mov = cxp.Origen AND c2.MovID = cxp.OrigenID
+					   JOIN Compra c3 ON c3.MovID = c2.OrigenID AND c3.Mov = c2.Origen AND c2.OrigenTipo = 'COMS' AND c3.Empresa = c2.Empresa
+					   JOIN CompraD cd on c3.ID = cd.ID
+					   JOIN CompraTCalc ctc ON ctc.RenglonSub = cd.RenglonSub AND ctc.Renglon = cd.Renglon AND ctc.ID = cd.ID 
+					   JOIN MovTipo mt ON c3.Mov = mt.Mov AND mt.Modulo = 'COMS'
+					   JOIN MovTipo mt2 ON Cxp.Mov = mt2.Mov AND mt2.Modulo = 'CXP'
+				  LEFT JOIN CompraGastoDiverso cgd ON cgd.Id = c3.id AND cgd.Concepto IN (SELECT Concepto FROM DIOTConceptoImportacion)
+					   JOIN Prov ON Cxp.Proveedor = Prov.Proveedor
+			LEFT OUTER JOIN Pais ON Prov.Pais = Pais.Pais
+			LEFT OUTER JOIN DIOTPais dp ON Pais.Pais = dp.Pais
+					   JOIN Version ver ON 1 = 1
+			LEFT OUTER JOIN Concepto ON cxp.Concepto = Concepto.Concepto AND Concepto.Modulo = 'COMSG'      
+					   JOIN DIOTCfg ON DIOTCfg.Empresa = Cxp.Empresa      
+					   JOIN EmpresaGral eg ON Cxp.Empresa = eg.Empresa
+					  WHERE --ISNULL(mt.Clave, '') IN ('COMS.EI','COMS.GX')
+						--AND ISNULL(mt2.Clave,'') IN ('CXP.FAC','CXP.D')
+						--AND cxp.Concepto IN(SELECT Concepto FROM DIOTConceptoIVAImportacion)
+						c2.Mov in (@CxpGastoDiverso,'Gasto Extemporaneo')
+						AND p.Mov = 'Aplicación Anticipo' AND Cxp.Mov = 'Endoso'
+				  --EXCEPT
+				  --SELECT ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor, Nombre, RFC,
+						--	ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero, Importe, BaseIVA, Tasa, IVA,
+						--	ConceptoClave,Concepto, EsImportacion, EsExcento, IEPS, ISAN, Retencion1, Retencion2, DineroMov, DineroMovID, 
+						--	BaseIVAImportacion, PorcentajeDeducible,
+						--	DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert
+						--FROM #Documentos
+
+				  --GROUP BY Cxp.ID, Cxp.Empresa, p.Mov, p.MovID, Cxp.Mov, Cxp.MovID, Cxp.Ejercicio, Cxp.Periodo, Cxp.FechaEmision, Cxp.Proveedor, Prov.Nombre, Prov.RFC,
+						--	Prov.ImportadorRegistro, dp.Pais, dp.Nacionalidad, c2.Mov, c2.Proveedor, cxp.Empresa, cxp.Importe, cxp.Impuestos, eg.DefImpuesto,
+						--	cxp.Importe, cxp.Impuestos, cxp.TipoCambio, Cxp.Concepto, c3.Mov, Concepto.Impuesto1Excento,DineroMov, DineroMovID, c2.MovID,c2.Empresa,
+						--	DIOTCfg.CalcularBaseImportacion, c2.TipoCambio,Cxp.Retencion, Cxp.Retencion2,
+						--	p.DineroMov2, p.DineroMovID2, p.DineroFormaPago, p.DineroImporte, p.ContID, p.ContMov, p.ContMovID		
+							
+  ----------------
+
+
+--SELECT * FROM #Documentos WHERE MOV = 'ENDOSO' ORDER BY MOVID
+-- SELECT Aplica, AplicaID, Mov, MovID  FROM #Pagos
+
+ -- SELECT * FROM #Documentos --WHERE PAGOID = '111'
 						
 	RETURN
 END
@@ -3247,6 +3433,9 @@ BEGIN
 						   DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert
 					  FROM #Pagos						   
 	END
+	
+	--SELECT * FROM #PAGOS
+
 END
 GO
 
@@ -3275,6 +3464,7 @@ CREATE PROC spDIOTObtenerComprobante
 --//WITH ENCRYPTION
 AS
 BEGIN
+
 	EXEC xpDIOTObtenerComprobante @Estacion, @Empresa, @FechaD, @FechaA
 	IF NOT EXISTS (SELECT 1 FROM #Pagos WHERE TipoInsert = 3)
 	INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
@@ -3305,6 +3495,37 @@ BEGIN
 					   DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert
 				  FROM #Pagos
 
+
+---- COMPROBANTES SIN DINERO Y SE QUITA LOS QUE SI CUENTAN SON CHEQUE, NO SE INCLUYE POLIZAS
+INSERT INTO #Pagos(ID, Empresa, Mov, MovID, Ejercicio, Periodo, FechaEmision, Aplica, AplicaID, Importe,
+					   TipoCambio, Dinero, DineroID, FechaConciliacion, EsComprobante, DineroMov, DineroMovID,
+					   DineroMov2, DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert
+					   )
+SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, c.Mov, c.MovID, SUM((ISNULL(cd.Importe,0.0)+ISNULL(cd.Impuestos,0.0)+ISNULL(cd.Impuestos2,0.0)-ISNULL(cd.Retencion,0.0)-ISNULL(cd.Retencion2,0.0))*c.TipoCambio), 
+					   c.TipoCambio, c.Dinero, c.DineroID, c.DineroFechaConciliacion, 1, c.Dinero, c.DineroID,
+					   c.Mov, c.MovID, c.FormaPago, c.Importe,c.ContID, c.Poliza, c.PolizaID, 3
+				  FROM Gasto c
+				  JOIN GastoD cd ON cd.ID = c.ID
+				--  JOIN #Tesoreria t ON t.OrigenTipo = 'GAS'--AND t.OrigenMID = c.ID -- AND c.Dinero = 'Solicitud Cheque' -- t.Mov AND c.DineroID = t.MovID
+				  JOIN MovTipo mt ON mt.Mov = c.Mov AND mt.Modulo = 'GAS'
+				  JOIN DIOTConcepto co ON co.Concepto = cd.Concepto
+	   LEFT OUTER JOIN DIOTPagoConciliado mtdc ON mtdc.Mov = c.Mov AND ISNULL(mtdc.Aplica, c.Mov) = c.Mov     
+				  JOIN DIOTCfg ON c.Empresa = DIOTCfg.Empresa                   
+				 WHERE c.Estatus IN ('PENDIENTE','CONCLUIDO')
+				   AND (mt.Clave IN ('GAS.C'))
+				   AND cd.Importe IS NOT NULL
+				   AND c.Empresa = @Empresa
+				   AND c.Mov + '' + c.MovID NOT IN (SELECT MOV + '' + MOVID FROM #Pagos)
+				   AND c.FechaEmision  BETWEEN @FechaD AND @FechaA
+				   --AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN c.FechaEmision ELSE c.DineroFechaConciliacion END BETWEEN @FechaD AND @FechaA
+			  GROUP BY c.ID, c.Empresa, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, c.Mov, c.MovID, 
+					   c.TipoCambio, c.Dinero, c.DineroID, c.DineroFechaConciliacion, c.Dinero, c.DineroID
+					   ,c.FormaPago, c.Importe, c.ContID, c.Poliza, c.PolizaID
+
+				
+----
+
+
   --BUG22150 BUG24755
   INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor,
 						  Nombre, RFC, ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero,
@@ -3315,7 +3536,7 @@ BEGIN
 						  --BUG24887
 				   SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, ISNULL(NULLIF(RTRIM(cd.AcreedorRef), ''), c.Acreedor), 
 						  p.Nombre, p.RFC, p.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(c.Acreedor),
-						  cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END, ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, cd.PorcentajeDeducible,
+						  cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END, ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, isnull(cd.PorcentajeDeducible,100),
 						  t.Mov, t.MovID, t.FormaPago, t.Importe,t.ContID, t.ContMov, t.ContMovID, 3
 					 FROM Gasto c
 					 JOIN GastoD cd ON cd.ID = c.ID
@@ -3332,8 +3553,45 @@ BEGIN
 					WHERE c.Estatus IN ('PENDIENTE','CONCLUIDO')
 					  AND (mt.Clave IN ('GAS.C'))
 					  AND cd.Importe IS NOT NULL
-					  AND c.Empresa = @Empresa
+					  AND c.Empresa = @Empresa					 
 					  --AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN c.FechaEmision ELSE c.DineroFechaConciliacion END BETWEEN @FechaD AND @FechaA
+
+---- COMPROBANTES SIN DINERO Y QUE NO ESTEN PREVIOS
+ INSERT INTO #Documentos(ID, Empresa, Pago, PagoID, Mov, MovID, Ejercicio, Periodo, FechaEmision, Proveedor,
+						  Nombre, RFC, ImportadorRegistro, Pais, Nacionalidad, TipoDocumento, TipoTercero,
+						  Importe, BaseIVA, Tasa, IVA, ConceptoClave, Concepto, EsImportacion, EsExcento, 
+						  IEPS, ISAN, Retencion1, Retencion2, PorcentajeDeducible,
+						  DineroMov2,	DineroMovID2, DineroFormaPago, DineroImporte, ContID, ContMov, ContMovID, TipoInsert
+						  )
+  SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, ISNULL(NULLIF(RTRIM(cd.AcreedorRef), ''), c.Acreedor), 
+						  p.Nombre, p.RFC, p.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(c.Acreedor),
+						  cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END, ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, isnull(cd.PorcentajeDeducible,100),
+						  c.Mov, c.MovID, c.FormaPago, c.Importe, c.ContID, c.Poliza, c.PolizaID, 3 -- t.ContID, t.ContMov, t.ContMovID, 3
+						
+					 FROM Gasto c
+					 JOIN GastoD cd ON cd.ID = c.ID
+					-- JOIN #Tesoreria t ON t.OrigenTipo = 'GAS' --AND t.OrigenMID = c.ID AND c.Dinero = t.Mov AND c.DineroID = t.MovID
+					 AND c.Dinero IS NULL
+					 JOIN MovTipo mt ON mt.Mov = c.Mov AND mt.Modulo = 'GAS'
+					 JOIN Concepto ON cd.Concepto = Concepto.Concepto AND Concepto.Modulo = 'GAS'
+					 JOIN DIOTConcepto co ON co.Concepto = cd.Concepto
+					 JOIN Prov p ON p.Proveedor = ISNULL(NULLIF(RTRIM(cd.AcreedorRef), ''), c.Acreedor)
+		  LEFT OUTER JOIN Pais ON p.Pais = Pais.Pais
+		  LEFT OUTER JOIN DIOTPais dp ON Pais.Pais = dp.Pais
+		  LEFT OUTER JOIN DIOTPagoConciliado mtdc ON mtdc.Mov = c.Mov AND ISNULL(mtdc.Aplica, c.Mov) = c.Mov     
+					 JOIN DIOTCfg ON c.Empresa = DIOTCfg.Empresa
+					 JOIN Version ver ON 1=1
+					WHERE c.Estatus IN ('PENDIENTE','CONCLUIDO')
+					  AND (mt.Clave IN ('GAS.C'))
+					  AND cd.Importe IS NOT NULL
+					  AND c.Empresa = @Empresa
+					  AND c.Mov + '' + c.MovID NOT IN (SELECT MOV + '' + MOVID FROM #Documentos)
+					  AND c.FechaEmision  BETWEEN @FechaD AND @FechaA
+					  --AND CASE ISNULL(mtdc.Mov, '') WHEN '' THEN c.FechaEmision ELSE c.DineroFechaConciliacion END BETWEEN @FechaD AND @FechaA
+---
+
+--SELECT * FROM #Documentos
+
 END
 GO
 
@@ -3429,7 +3687,7 @@ BEGIN
 							  --BUG24887
 					   SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, c.Acreedor,
 							  p.Nombre, p.RFC, p.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(c.Acreedor), cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END, 
-							  ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, cd.PorcentajeDeducible,
+							  ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, isnull(cd.PorcentajeDeducible,100),
 							  t.Mov, t.MovID, t.FormaPago, t.Importe,t.ContID, t.ContMov, t.ContMovID, 4
 						 FROM Gasto c
 						 JOIN GastoD cd ON cd.ID = c.ID
@@ -3460,7 +3718,7 @@ BEGIN
 								--BUG24887
 						 SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, ISNULL(NULLIF(RTRIM(cd.AcreedorRef), ''), c.Acreedor), 
 								p.Nombre, p.RFC, p.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(c.Acreedor), cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END, 
-								ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, cd.PorcentajeDeducible,
+								ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, isnull(cd.PorcentajeDeducible,100),
 								t.Mov, t.MovID, t.FormaPago, t.Importe,t.ContID, t.ContMov, t.ContMovID, 4
 						   FROM Gasto c
 						   JOIN GastoD cd ON cd.ID = c.ID
@@ -3491,7 +3749,7 @@ BEGIN
 								)
 						 SELECT c.ID, c.Empresa, c.Mov, c.MovID, c.Mov, c.MovID, c.Ejercicio, c.Periodo, c.FechaEmision, ISNULL(NULLIF(RTRIM(cd.AcreedorRef), ''), c.Acreedor),
 								p.Nombre, p.RFC, p.ImportadorRegistro, dp.Pais, dp.Nacionalidad, dbo.fnDIOTTipoDocumento('GAS', c.Mov), dbo.fnDIOTTipoTercero(c.Acreedor), cd.Importe*c.TipoCambio, (ISNULL(cd.Importe,0.0) + CASE WHEN ISNULL(ver.Impuesto2BaseImpuesto1,0.0) = 1 THEN ISNULL(cd.Impuestos2,0.0) ELSE 0.0 END)*c.TipoCambio, CASE WHEN NULLIF(cd.Impuestos,0.0) IS NULL THEN NULL ELSE cd.Impuesto1 END,
-								ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, cd.PorcentajeDeducible,
+								ISNULL(cd.Impuestos,0.0)*c.TipoCambio, cd.Concepto,   cd.Concepto, dbo.fnDIOTEsImportacion('GAS', c.Mov), ISNULL(Concepto.Impuesto1Excento,0), ISNULL(cd.Impuestos2,0.0)*c.TipoCambio, 0.0, cd.Retencion*c.TipoCambio, cd.Retencion2*c.TipoCambio, isnull(cd.PorcentajeDeducible,100),
 								t.Mov, t.MovID, t.FormaPago, t.Importe,t.ContID, t.ContMov, t.ContMovID, 4
 						   FROM Gasto c
 						   JOIN GastoD cd ON cd.ID = c.ID
@@ -3564,6 +3822,9 @@ BEGIN
        SET TipoOperacion = @Rubro
      WHERE RID = @RID
   END
+
+ -- SELECT * FROM #Documentos
+
 END
 GO
 
@@ -3588,8 +3849,9 @@ BEGIN
 		  @MovID				varchar(20),
 		  @Factor				float,
 		  @FechaPago			datetime,
-		  @Signo				int
-		  		  
+		  @Signo				int,
+		  @ImporteAplica        float
+	  		  		  
   SELECT @RIDAnt = 0
   WHILE(1=1)
   BEGIN
@@ -3616,8 +3878,41 @@ BEGIN
        
     SELECT @Factor = @ImportePago / NULLIF(@Importe, 0)
     
-    --SELECT * FROM #Documentos
-        
+	SELECT @ImporteAplica = Importe + Impuestos FROM CXP WHERE MOV = @Aplica AND MOVID = @AplicaID
+
+	/*
+	  
+    IF @MovID = '18'
+     BEGIN
+	 
+	   SELECT *
+      FROM #Documentos 
+     WHERE Empresa = @Empresa 
+       AND Mov = @Aplica 
+       AND MovID = @AplicaID 
+       AND Pago = @Mov 
+       AND PagoID = @MovID
+	   
+	   SELECT @ImporteAplica = Importe + Impuestos FROM CXP WHERE MOV = @Aplica AND MOVID = @AplicaID
+
+	   SELECT  @ImporteAplica, @Factor, @ImportePago ,@Importe, @ImportePago * (16/100.0)*@Factor
+
+	   SELECT   SUM(Importe*(Tasa/100.0)),    		
+		       ISNULL(SUM(Importe*(Tasa/100.0))*@Factor,0)
+		       
+              
+		  FROM #Documentos 
+		 WHERE Empresa = @Empresa AND Mov = @Aplica AND MovID = @AplicaID AND Pago = @Mov AND PagoID = @MovID
+
+	 END
+	 
+	 */
+
+	 -- JB  SE TUVO QUE AJUSTAR PARA EN EL CASO DE ENDOSO NO TOME EN CUENTA EL FACTOR
+	 -- JB SE AGREGO OTRO AJUSTE EN CASO DE IMPORTES IGUALES NO TOME EN CUENTA EL FACTOR
+
+	-- SELECT * FROM  #Documentos 
+
     INSERT INTO DIOTD(
     		   EstacionTrabajo, Empresa, Mov, MovID, Pago, PagoID, Proveedor, Nombre, RFC, TipoOperacion, Tasa, TipoDocumento, TipoTercero, Pais, Nacionalidad, FechaEmision,  FechaPago, Ejercicio, Periodo, EsImportacion, EsExcento, Concepto, ConceptoClave, Factor,
     		   Importe, 
@@ -3625,17 +3920,17 @@ BEGIN
     		   --BUG22834 BUG24755
     		   Retencion2, ImportadorRegistro, BaseIVAImportacion, DineroMov, DineroMovID, PorcentajeDeducible,
     		   DineroMov2, DineroMovID2, DineroImporte, DineroFormaPago, ContID, ContMov, ContMovID)
-		SELECT @Estacion, Empresa, Mov, MovID, Pago, PagoID, Proveedor, Nombre, RFC, TipoOperacion, Tasa, TipoDocumento, TipoTercero, Pais, Nacionalidad, FechaEmision, @FechaPago, Ejercicio, Periodo, EsImportacion, EsExcento, Concepto, ConceptoClave, @Factor,
-               ISNULL(SUM(BaseIVA)*@Factor,0),   
+		SELECT DISTINCT @Estacion, Empresa, Mov, MovID, Pago, PagoID, Proveedor, Nombre, RFC, TipoOperacion, Tasa, TipoDocumento, TipoTercero, Pais, Nacionalidad, FechaEmision, @FechaPago, Ejercicio, Periodo, EsImportacion, EsExcento, Concepto, ConceptoClave, @Factor,
+               CASE WHEN @Aplica = 'ENDOSO' then SUM(BaseIVA) ELSE ISNULL(SUM(BaseIVA)*@Factor,0) END,   
                --BUG24887            		
 		       CASE TipoOperacion
 		         WHEN 2 THEN ISNULL(SUM(IVA)*@Factor,0)		        
 		         WHEN 3 THEN ISNULL(SUM(IVA)*@Factor,0)
-		         ELSE        ISNULL(SUM(Importe*(Tasa/100.0))*@Factor,0)
+		         ELSE CASE WHEN @Aplica = 'ENDOSO' then ISNULL(SUM(Importe*(Tasa/100.0)),0)  ELSE  (CASE WHEN @ImportePago = @ImporteAplica  THEN ISNULL(SUM(Importe*(Tasa/100.0)),0) ELSE ISNULL(SUM(Importe*(Tasa/100.0))*@Factor,0) END) END
 		       END,
-               ISNULL(SUM(Retencion2)*@Factor,0),
+               CASE WHEN @Aplica = 'ENDOSO' then ISNULL(SUM(Retencion2),0) ELSE ISNULL(SUM(Retencion2)*@Factor,0) END,
                --BUG22834 BUG24755
-               ImportadorRegistro, SUM(BaseIVAImportacion), DineroMov, DineroMovID, PorcentajeDeducible,
+               ImportadorRegistro, SUM(BaseIVAImportacion), DineroMov, DineroMovID, isnull(PorcentajeDeducible,100),
                DineroMov2, DineroMovID2, DineroImporte, DineroFormaPago, ContID, ContMov, ContMovID
 		  FROM #Documentos 
 		 WHERE Empresa = @Empresa AND Mov = @Aplica AND MovID = @AplicaID AND Pago = @Mov AND PagoID = @MovID
@@ -3646,6 +3941,8 @@ BEGIN
 				  DineroMov2, DineroMovID2, DineroImporte, DineroFormaPago, ContID, ContMov, ContMovID
 
   END
+  
+  
 
   UPDATE DIOTD 
      SET Importe = Importe*-1,
@@ -3669,6 +3966,9 @@ BEGIN
     SELECT @Estacion,        Rubro, Descripcion, 0,       0
       FROM DIOTIVARubro
      WHERE Rubro NOT IN(SELECT Rubro FROM DIOT WHERE EstacionTrabajo = @Estacion)
+
+--	 SELECT * FROM DIOTD
+
 END
 GO
 
@@ -3717,15 +4017,18 @@ BEGIN
     SELECT @Rubro1     = ISNULL(SUM(Importe), 0)   FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 1
 
     --BUG24755
-    SELECT @Rubro1IVA  = ISNULL(SUM(IVA),0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 1
+    SELECT @Rubro1IVA = 0 -- ISNULL(SUM(IVA),0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 1
       
-    SELECT @Rubro3     = ISNULL(SUM(Importe*((100-PorcentajeDeducible)/100.0) ), 0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
+    SELECT @Rubro3    = ISNULL(SUM(IVA), 0)/(tasa/100.0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2 group by tasa
+	                    --ISNULL(SUM(Importe*((100-PorcentajeDeducible)/100.0) ), 0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
 	                    --ISNULL(SUM(Importe), 0)   FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
     
-    --BUG24755
-    SELECT @Rubro3IVA  = ISNULL(SUM(IVA*((100-PorcentajeDeducible)/100.0) ), 0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
+    --BUG24755	 
+    -- SELECT @Rubro3IVA  = ISNULL(SUM(IVA*((100-PorcentajeDeducible)/100.0) ), 0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
 	                    --ISNULL(SUM(IVA),0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2        
-    
+    -- JB se Quito la operacion para que pase el IVA como viene
+	SELECT @Rubro3IVA  =  0 --ISNULL(SUM(IVA), 0) FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 2
+
     --BUG22834
     SELECT @Rubro5     = ISNULL(SUM(Importe), 0)   FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 3
     SELECT @Rubro6     = ISNULL(SUM(Importe), 0)   FROM DIOTD WHERE EstacionTrabajo = @Estacion AND Proveedor = @Proveedor AND TipoOperacion = 4
@@ -3740,7 +4043,7 @@ BEGIN
 			RFC, IDFiscal, NombreExtranjero, 
 			Pais, 
 			Nacionalidad,  Rubro1,  Rubro1IVA,  /*Rubro2,  Rubro2IVA,  */Rubro3 , Rubro3IVA,  /*Rubro4,  Rubro4IVA,  */Rubro5,  Rubro6,  Rubro7,  Retencion2,  Rubro10IVA)
-	 SELECT @Estacion,
+	 SELECT DISTINCT @Estacion,
 	        CASE d.TipoTercero WHEN 'Nacional' THEN '04' WHEN 'Extranjero' THEN '05' ELSE '04' END, 
 	        CASE ISNULL(o.TipoOperacion, 'Otros') WHEN 'Prestacion Servicios' THEN '03' WHEN 'Arrendamiento Inmuebles' THEN '06' WHEN 'Otros' THEN '85' END, 
 	        ISNULL(d.RFC, ''), ISNULL(d.ImportadorRegistro, ''), ISNULL(d.Nombre, ''), 
@@ -4337,7 +4640,7 @@ BEGIN
     DineroMov			varchar(20) NULL,
 	DineroMovID			varchar(20) NULL,
     --BUG24755
-    PorcentajeDeducible	float		NOT NULL DEFAULT 100,
+    PorcentajeDeducible	float		NULL DEFAULT 100,
 	TipoInsert			int			NULL,
     ImporteFactor       float       NULL,
     -------------------------------------------------------------------
@@ -4381,8 +4684,11 @@ BEGIN
 				 SELECT Empresa, ModuloRaiz, IDRaiz, MovRaiz, MovIDRaiz, 
 						OModulo, OID, OMov, OMovID, DModulo, DID, DMov, DMovID
 				   FROM Cte ORDER BY 4,1
+   
   END
-        
+
+ -- SELECT * FROM #Movtos where MovIDRaiz = '106'
+
   EXEC spDIOTObtenerPago @Estacion, @Empresa, @FechaD, @FechaA
 
   IF @CxpAnticiposPagadosPeriodo = 1
