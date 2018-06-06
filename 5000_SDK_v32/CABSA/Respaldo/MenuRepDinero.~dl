@@ -175,7 +175,11 @@ Visible=S
 
 
 
-Expresion=Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  Browser(General.RSReportASPX + <T>%2fFlujoEfectivoFondos&rs:Command=Render<T>)<BR>Fin
+
+
+
+
+Expresion=Si<BR>   SQL(<T>SELECT RSReportASPX FROM EmpresaGRAL WHERE Empresa=:tEmpresa<T>,Empresa))=<T><T><BR>Entonces<BR>  Informacion(<T>SQL Server Reporting Services. Falta especificar la Dirección (Report.aspx) en Configuración General de la Empresa.<T>)<BR>Sino<BR>  URL(General.RSReportASPX + <T>%2fFlujoEfectivoFondos&rs:Command=Render<T>)<BR>Fin
 
 
 [Dialogo.ListaAcciones]

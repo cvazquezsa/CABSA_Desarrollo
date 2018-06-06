@@ -1538,6 +1538,7 @@ AyudaEnCaptura=Vista
 ValidacionUsaTabla=S
 ValidacionTablas=ConceptoFEFondos
 CondicionDespliege=SQL(<T>SELECT dbo.fnCABSubClaveConcFEFondo (:t1, :t2)<T>,<T>DIN<T>,Mov)
+RequeridoActivo=S
 [ClasificacionConcFEFondos]
 Clave=ClasificacionConcFEFondos
 Nombre=Clasificacion FEF
@@ -1553,13 +1554,17 @@ AyudaEnCaptura=Vista
 
 
 
-CondicionDespliege=SQL(<T>SELECT dbo.fnCABSubClaveConcFEFondo (:t1, :t2)<T>,<T>DIN<T>,Mov)          
+CondicionDespliege=SQL(<T>SELECT dbo.fnCABSubClaveConcFEFondo (:t1, :t2)<T>,<T>DIN<T>,Mov)
+RequeridoActivo=S
 [Relaciones.ClasificacionConceptoFEF]
 TipoRelacion=Opcional
 LlaveLocal=ClasificacionConcFEFondos
 Clave=ClasificacionConceptoFEF
 TablaRemota=ClasificacionConcFEFondos
 LlaveRemota=Clasificacion
+
+
+
 
 
 
