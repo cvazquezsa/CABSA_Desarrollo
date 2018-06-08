@@ -45,6 +45,7 @@ ClaveAccion=BancoSucursal
 Activo=S
 Visible=S
 
+EspacioPrevio=S
 [Acciones.BeneficiarioNombre]
 Nombre=BeneficiarioNombre
 Boton=0
@@ -107,8 +108,27 @@ Visible=S
 
 
 
+
+
+
+[Acciones.CBSDispersion]
+Nombre=CBSDispersion
+Boton=0
+NombreDesplegar=&Dispersión y Envío de Comprobantes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ConfigDispersion
+Activo=S
+Visible=S
+
+
+
+
+
 [Dialogo.ListaAcciones]
-(Inicio)=BancoSucursal
+(Inicio)=CBSDispersion
+CBSDispersion=BancoSucursal
 BancoSucursal=BeneficiarioNombre
 BeneficiarioNombre=InstitucionFin
 InstitucionFin=ConceptoFE

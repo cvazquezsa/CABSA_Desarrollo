@@ -925,9 +925,9 @@ Activo=S
 Antes=S
 DespuesGuardar=S
 Visible=S
-AntesExpresiones=Asigna(Info.Rama, <T>DIN<T>)<BR>Asigna(Info.Fecha, Dinero:Dinero.FechaEmision)<BR>Asigna(Info.ID, Dinero:Dinero.ID)<BR>Asigna(Info.AnexoCfg, (no FormaBloqueada) y (Usuario.ModificarAnexosMovConcluidos o (Dinero:Dinero.Estatus noen (EstatusCancelado, EstatusConcluido))))<BR>Asigna(Info.Descripcion, Dinero:Dinero.Mov+<T> <T>+Dinero:Dinero.MovID)
 RefrescarDespues=S
 
+AntesExpresiones=Asigna(Info.Rama, <T>DIN<T>)<BR>Asigna(Info.Fecha, Dinero:Dinero.FechaEmision)<BR>Asigna(Info.ID, Dinero:Dinero.ID)<BR>Asigna(Info.AnexoCfg, (no FormaBloqueada) y (Usuario.ModificarAnexosMovConcluidos o (Dinero:Dinero.Estatus noen (EstatusCancelado, EstatusConcluido)) o (fnSubMovTipo(<T>DIN<T>,Dinero:Dinero.Mov)EN(<T>DIN.DISP<T>) y (Dinero:Dinero.Estatus = EstatusConcluido))))<BR>Asigna(Info.Descripcion, Dinero:Dinero.Mov+<T> <T>+Dinero:Dinero.MovID)
 [Acciones.Sugerir]
 Nombre=Sugerir
 Boton=20
@@ -3248,6 +3248,12 @@ Dinero.ContUso=Dinero.ConceptoFE
 Dinero.ConceptoFE=Dinero.ConceptoFEFondos
 Dinero.ConceptoFEFondos=Dinero.ClasificacionConcFEFondos
 Dinero.ClasificacionConcFEFondos=(Fin)
+
+
+
+
+
+
 
 
 
