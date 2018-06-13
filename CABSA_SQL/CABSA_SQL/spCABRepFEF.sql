@@ -51,11 +51,11 @@ BEGIN
 		FROM CABAuxiliarFEFondos caf
 			JOIN Dinero d ON caf.ModuloID = d.ID AND caf.Modulo = 'DIN'
 			JOIN Empresa e ON caf.Empresa = e.Empresa
-			JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
+			LEFT JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
 		WHERE caf.Cancelado = 0 AND caf.Empresa = @Empresa AND caf.FechaEmision >= @FechaD
 			AND caf.FechaEmision <= @FechaA AND d.ClasificacionConcFEFondos = ISNULL(@ClasificacionConcFEFondos,d.ClasificacionConcFEFondos)
 			AND ISNULL(ccf.EsConcentradora,0) = ISNULL(@VerConcentradoras, ISNULL(ccf.EsConcentradora,0))
-
+		
 		SELECT 
 		@SaldoInicial = ISNULL(SUM(CASE 
 			WHEN caf.Clasificacion = 'ORIGEN DE DEPOSITOS Y CARGOS' THEN 1
@@ -63,7 +63,7 @@ BEGIN
 		END * caf.Importe),0)
 		FROM CABAuxiliarFEFondos caf
 			JOIN Dinero d ON caf.ModuloID = d.ID AND caf.Modulo = 'DIN'
-			JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
+			LEFT JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
 		WHERE caf.Cancelado = 0 AND caf.Empresa = @Empresa AND caf.FechaEmision < @FechaD  
 		AND d.ClasificacionConcFEFondos = ISNULL(@ClasificacionConcFEFondos,d.ClasificacionConcFEFondos)
 		AND ISNULL(ccf.EsConcentradora,0) = ISNULL(@VerConcentradoras, ISNULL(ccf.EsConcentradora,0))
@@ -75,7 +75,7 @@ BEGIN
 		END * caf.Importe),0)
 		FROM CABAuxiliarFEFondos caf
 			JOIN Dinero d ON caf.ModuloID = d.ID AND caf.Modulo = 'DIN'
-			JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
+			LEFT JOIN ClasificacionConcFEFondos ccf ON d.ClasificacionConcFEFondos = ccf.Clasificacion
 		WHERE caf.Cancelado = 0 AND caf.Empresa = @Empresa AND caf.FechaEmision <= @FechaA  
 		AND d.ClasificacionConcFEFondos = ISNULL(@ClasificacionConcFEFondos,d.ClasificacionConcFEFondos)
 		AND ISNULL(ccf.EsConcentradora,0) = ISNULL(@VerConcentradoras, ISNULL(ccf.EsConcentradora,0))
@@ -83,6 +83,7 @@ BEGIN
 		UPDATE @Reporte SET SaldoInicial = @SaldoInicial, SaldoFinal = @SaldoFinal
 		--SELECT @SaldoInicial
 		SELECT * FROM @Reporte
+		 --ORDER BY ID
 END
 GO
-EXEC spCABRepFEF 'FAS', '20180501', '20180531','(Todas)',0
+EXEC spCABRepFEF 'FOMAQ', '20180430', '20180531','(Todas)',0

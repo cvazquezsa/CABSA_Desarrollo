@@ -26,6 +26,7 @@ IF NOT EXISTS(SELECT * FROM SysObjects WHERE name = 'ConceptoFE' AND type='U')
 	CREATE TABLE ConceptoFE(
 		ConceptoFE varchar(50) PRIMARY KEY NOT NULL
 		)
+EXEC spAlter_Table 'ConceptoFE', 'Clasificacion','varchar(100) NULL'
 /**** TERMINA: CONCEPTO FLujo de Efectivo ****/
 --DROP TABLE VtasProrrateo
 
